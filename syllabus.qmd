@@ -100,7 +100,7 @@ Find the tentative schedule [here](schedule.qmd).
 | D     | 60 - 64.99 |
 | F     | \<= 59.99  |
 
-## Course and Cedars-Sinai policies
+## Cedars-Sinai policies
 
 ### Attendance
 
