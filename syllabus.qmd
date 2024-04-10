@@ -1,0 +1,113 @@
+---
+title: "Syllabus"
+format:
+    html: default
+    #pdf: default
+---
+
+# BTS 510 Syllabus -- Summer 2024
+
+## Intructor information
+
+* Stefany Coxe, Ph.D.  
+    * [stefany.coxe@cshs.org](mailto:stefany.coxe@cshs.org)  
+    * Office hours: 
+* Yujie Cui, M.S.
+    * [yujie.cui@cshs.org](yujie.cui@cshs.org)
+    * Office hours:
+* Michael Luu, M.P.H.
+    * [michael.luu@cshs.org](michael.luu@cshs.org)
+    * Office hours:
+
+## Course information
+
+### Learning goals
+
+This course covers topics related to **statistical analysis of experimental studies**. Topics include using and manipulating datasets, plotting data, probability, estimation and uncertainty, and statistical methods for experimental designs, such as comparing 2 independent or dependent means, comparing 2 independent or dependent proportions, and controlling for multiple comparisons.
+
+#### Learning objectives
+
+* **Compare** and **contrast** possible analysis options based on the *experimental design* and *research question*
+* **Select** the appropriate analysis approach for the research question
+* **Analyze** data with statistical methods appropriate to the research question
+* **Create** a written report of your findings
+* **Make conclusions** about your research question(s) based on those results
+
+### Course structure 
+
+#### Time and location
+
+We will meet in-person on **Thursday** from *9am to 10:30am* in **XXX**.
+
+#### Course format
+
+This course takes place in a **[flipped](https://en.wikipedia.org/wiki/Flipped_classroom), hybrid format**. We will meet in person for 1 hour 30 minutes each week. This time will be spent on **hands-on statistical programming in R**. You will be responsible for completing course assignments such as videos and readings **prior to class** in order to be prepared to participate in the in-person meeting. You will also have assignments to complete outside of class.
+
+Each week will follow a similar structure:
+
+* Monday: Lecture videos posted
+* Wednesday: Watch lecture and respond to survey by 8pm Wednesday
+* Thursday: In-person meeting to review material and work on applications
+* Sunday: Homework assignment due by end of day (midnight)
+
+### Software
+
+We will be using **R** for this course. It's ok if you don't know how to use R (but also great if you do!). We'll start from scratch in the first few weeks. I will provide information about the specific procedures you will need to know for this course.
+
+* R is free and open source and works on any platform (Windows, Mac, Unix)
+    * Download R [here](https://cran.r-project.org/)
+    * I also recommend using Rstudio, which can be downloaded [here](https://posit.co/download/rstudio-desktop/)
+    * If you use a Chromebook or tablet, you can use [Rstudio via the cloud](https://posit.cloud/)
+        * I have not used this much, so I don't know all its shortcomings
+
+### Assessments
+
+Your work in this course will be assessed using a variety of methods.
+
+#### Lecture videos (10%)
+
+Watch the lecture video. Respond to the survey afterward with questions and comments.
+
+#### Homework (60%)
+
+There will be six (6) homework assignments. The assignments generally involve running analyses in R, interpreting output, and presenting the results.
+
+<!-- #### Readings (20%) -->
+
+<!-- There will be five (5) special topics that we'll cover with group article discussions in Perusall. I will provide prompts / direction; you will annotate the article with questions and comments. These are designed to give you some experience reading and understanding statistics and methodology articles (which can be really hard to read) and to get you to think about the topics in more detail. You will also write up a short (~500 word) reflection on each topic. More details to come. -->
+
+#### Final project (30%)
+
+You will pick one of the five special topics and write a longer (2 to 3 page) summary of the topic, primarily using the listed readings. More details to come.
+
+### Tentative schedule
+
+Find the tentative schedule [here](schedule.qmd).
+
+### Grades
+
+| Grade | Percentage |
+|:------|:-----------|
+| A+    | \>=97      |
+| A     | 93 - 96.99 |
+| A-    | 90 - 92.99 |
+| B+    | 87 - 89.99 |
+| B     | 83 - 86.99 |
+| B-    | 80 - 82.99 |
+| C+    | 77 - 79.99 |
+| C     | 70 - 76.99 |
+| D+    | 65 - 69.99 |
+| D     | 60 - 64.99 |
+| F     | \<= 59.99  |
+
+## Course and Cedars-Sinai policies
+
+### Attendance
+
+Attendance is not explicitly part of your grade in this course, but activities completed during the in-person portion of the course will be **very** helpful. If you need to miss class (such as for illness, religious event, professional activity, university-sanctioned event, or **any other reason**), please contact me to make any necessary arrangements.
+
+### Academic dishonesty and misconduct
+
+Please refer to your [policy handbook](https://www.cedars-sinai.edu/content/dam/cedars-sinai/education/documents/graduate-research-education/graduate-school-of-biomedical-sciences-handbook.pdf) for a description of what constitutes academic dishonesty. 
+
+* **While you may work with other students on your homework assignments, I expect all students to complete and turn in their own work.**

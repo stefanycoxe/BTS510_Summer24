@@ -1,0 +1,90 @@
+---
+title: "References"
+---
+
+## General resources
+
+* UCLA Statistical Consulting: [https://stats.oarc.ucla.edu/](https://stats.oarc.ucla.edu/)
+
+* Statistics for Biologists portfolio: [https://www.nature.com/collections/qghhqm](https://www.nature.com/collections/qghhqm)
+
+* Motulsky, H. (2014). Intuitive biostatistics: a nonmathematical guide to statistical thinking. Oxford University Press, USA.
+
+## R, Rstudio, markdown
+
+* R packages in the [**tidyverse**](https://www.tidyverse.org/), which includes:
+    * **dplyr**: [https://dplyr.tidyverse.org/](https://dplyr.tidyverse.org/)
+    * **ggplot2**: [https://ggplot2.tidyverse.org/](https://ggplot2.tidyverse.org/)
+    * **tidyr**: [https://tidyr.tidyverse.org/](https://tidyr.tidyverse.org/)
+
+* Wickham, H., Çetinkaya-Rundel, M., & Grolemund, G. (2023). R for data science. "O'Reilly Media, Inc.". 
+    * Full book available here: [https://r4ds.hadley.nz/](https://r4ds.hadley.nz/)
+
+* Xie, Y., Allaire, J. J., & Grolemund, G. (2018). R markdown: The definitive guide. Chapman and Hall/CRC. 
+    * Full book available here: [https://bookdown.org/yihui/rmarkdown/](https://bookdown.org/yihui/rmarkdown/)
+    
+* Cheatsheets on various topics, including markdown: [https://posit.co/resources/cheatsheets/](https://posit.co/resources/cheatsheets/)
+    
+* "Next gen" of markdown: [Quarto](https://quarto.org/)
+    * We're using markdown instead because Quarto is still pretty new and has more bugs
+    
+* Imai, K., & Williams, N. W. (2022). Quantitative Social Science: An Introduction in Tidyverse. Princeton University Press.
+
+## Graphical comparisons
+
+* Cumming, G., & Finch, S. (2005). Inference by Eye: Confidence Intervals and How to Read Pictures of Data. American Psychologist, 60(2), 170–180. https://doi.org/10.1037/0003-066X.60.2.170
+
+* Cumming, G. (2009). Inference by eye: Reading the overlap of independent confidence intervals. Statistics in medicine, 28(2), 205-220.
+
+## Special Topics for Final Project
+
+### Heterogeneity
+
+* Richter SH. Systematic heterogenization for better reproducibility in animal experimentation. Lab animal. 2017 Sep;46(9):343-9.
+
+* Usui T, Macleod MR, McCann SK, Senior AM, Nakagawa S. Meta-analysis of variation suggests that embracing variability improves both replicability
+and generalizability in preclinical research. PLoS biology. 2021 May 19;19(5):e3001009.
+
+* Voelkl B, Vogt L, Sena ES, Würbel H. Reproducibility of preclinical animal research improves with heterogeneity of study samples. PLoS biology. 2018
+Feb 22;16(2):e2003693.
+
+### $p$-value misuses
+
+* Cohen, J. (1994). The earth is round (p<. 05). American psychologist, 49(12), 997.
+
+* Head ML, Holman L, Lanfear R, Kahn AT, Jennions MD. The extent and consequences of p-hacking in science. PLoS Biol. 2015 Mar 13;13(3):e1002106.
+
+* Gelman A, Stern H. The difference between “significant” and “not significant” is not itself statistically significant. The American Statistician. 2006 Nov
+1;60(4):328-31.
+
+* Greenland S, Senn SJ, Rothman KJ, Carlin JB, Poole C, Goodman SN, Altman DG. Statistical tests, P values, confidence intervals, and power: a guide to
+misinterpretations. European journal of epidemiology. 2016 Apr;31(4):337-50.
+
+### Reporting in pre-clinical sciences
+
+* Avey MT, Moher D, Sullivan KJ, Fergusson D, Griffin G, Grimshaw JM, Hutton B, Lalu MM, Macleod M, Marshall J, Mei SH. The devil is in the details:
+incomplete reporting in preclinical animal research. PLoS One. 2016 Nov 17;11(11):e0166733.
+
+* Percie du Sert N, Ahluwalia A, Alam S, Avey MT, Baker M, Browne WJ, Clark A, Cuthill IC, Dirnagl U, Emerson M, Garner P. Reporting animal research:
+Explanation and elaboration for the ARRIVE guidelines 2.0. PLoS biology. 2020 Jul 14;18(7):e3000411.
+
+* Serghiou S, Contopoulos-Ioannidis DG, Boyack KW, Riedel N, Wallach JD, Ioannidis JP. Assessment of transparency indicators across the biomedical
+literature: How open is open?. PLoS biology. 2021 Mar 1;19(3):e3001107.
+
+### Reproducibility in science
+
+* Begley CG, Ellis LM. Raise standards for preclinical cancer research. Nature. 2012 Mar;483(7391):531-3. 
+
+* Begley CG, Ioannidis JP. Reproducibility in science: improving the standard for basic and preclinical research. Circulation research. 2015 Jan
+2;116(1):116-26.
+
+* Errington TM, Denis A, Perfito N, Iorns E, Nosek BA. Reproducibility in Cancer Biology: Challenges for assessing replicability in preclinical cancer
+biology. eLife. 2021 Dec 7;10:e67995.
+
+### Sex as a biological variable
+
+* Beery AK. Inclusion of females does not increase variability in rodent research studies. Current opinion in behavioral sciences. 2018 Oct 1;23:143-9.
+
+* Garcia-Sifuentes Y, Maney DL. Reporting and misreporting of sex differences in the biological sciences. eLife 2021;10:e70817
+
+* Woitowich NC, Beery A, Woodruff T. Meta-research: a 10-year follow-up study of sex inclusion in the biological sciences. eLife. 2020 Jun 9;9:e56344.

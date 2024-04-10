@@ -1,0 +1,36 @@
+---
+title: "Schedule"
+format:
+    html: default
+#    pdf: default
+---
+
+**Due dates subject to change** due to weather, emergency, scheduling changes, etc. 
+
+**L**: Watch lecture videos and respond to survey by **Wednesday at 8pm**.
+
+**H**: Homework assignments are due by the **end of Sunday (midnight)**.
+
+**Final project** due week of August 12
+
+Week	| Date          |	Topic	                    |	L	|	H	|
+|:------|:--------------|:------------------------------|:------|:------|
+1	    |	April 29	|	Introduction, R, markdown	|	1	|		|
+2	    |	May 06	    |	Data manipulation	        |	2	|	1	|
+3	    |	May 13	    |	Descriptives	            |	3	|		|
+4	    |	May 20	    |	ggplot	                    |	4	|	2	|
+5	    |	May 27	    |	HOLIDAY	                    |		|		|
+6	    |	June 03	    |	ggplot	                    |	5	|	3	|
+7	    |	June 10	    |	Sampling distributions	    |	6	|		|
+8	    |	June 17	    |	Estimation and uncertainty	|	7	|	4	|
+9	    |	June 24	    |	Hypothesis testing 1	    |	8	|		|
+10	    |	July 01	    |	HOLIDAY	                    |		|		|
+11	    |	July 08	    |	Hypothesis testing 2	    |	9	|	5	|
+12	    |	July 15	    |	Multiple comparisons	    |	10	|		|
+13	    |	July 22	    |	One way ANOVA	            |	11	|	6	|
+14	    |	July 29	    |	Two way ANOVA	            |	12	|		|
+15	    |	August 05	|	TBD	                        |		|		|
+16	    |	August 12	|	TBD	                        |		| Final	| 
+
+
+
