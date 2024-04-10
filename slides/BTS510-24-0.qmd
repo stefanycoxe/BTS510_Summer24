@@ -9,13 +9,13 @@ format:
   #   toc-depth: 2
   #   self-contained: true
   #   #output-file: "Mult22-1-handout"
-  pdf: 
-    toc: true
-    number-sections: true
-    #slide-level: 3
-    toc-depth: 2
-    shift-heading-level-by: 0
-    number-offset: [2]
+  # pdf: 
+  #   toc: true
+  #   number-sections: true
+  #   #slide-level: 3
+  #   toc-depth: 2
+  #   shift-heading-level-by: 0
+  #   number-offset: [2]
   revealjs:
     toc: false
     number-sections: true
