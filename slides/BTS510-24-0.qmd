@@ -1,0 +1,164 @@
+---
+title: "Introduction to Biostatistics"
+format:
+  # html: 
+  #   toc: true
+  #   toc-location: left
+  #   slide-level: 3
+  #   number-sections: true
+  #   toc-depth: 2
+  #   self-contained: true
+  #   #output-file: "Mult22-1-handout"
+  pdf: 
+    toc: true
+    number-sections: true
+    #slide-level: 3
+    toc-depth: 2
+    shift-heading-level-by: 0
+    number-offset: [2]
+  revealjs:
+    toc: false
+    number-sections: true
+    #slide-level: 3
+    scrollable: true
+    self-contained: true
+    slide-number: true
+    width: 1200
+knitr: 
+  opts_chunk:
+    echo: false
+    message: false
+    warning: false
+---
+
+# Overview
+
+## About me
+
+- Dr. Stefany Coxe
+  - Ph.D. in Quantitative Psychology from [Arizona State University](https://psychology.asu.edu/degree/graduate/quantitative-psychology)
+
+- Originally from Southern California but I've lived in other *warm* places like Phoenix and Miami
+
+- I love statistics and want you to love them too!
+
+## About your co-instructors
+
+* Yujie Cui, M.S.
+    * [yujie.cui@cshs.org](yujie.cui@cshs.org)
+    * Office hours:
+* Michael Luu, M.P.H.
+    * [michael.luu@cshs.org](michael.luu@cshs.org)
+    * Office hours:
+
+## This course
+
+- This course covers topics related to **statistical analysis of experimental studies**
+  - Using and manipulating datasets, plotting data, probability, estimation and uncertainty, comparing 2 independent or dependent means, comparing 2 independent or dependent proportions, controlling for multiple comparisons 
+    
+> Jeff Edwards, September 2017 CARMA talk: \
+Becoming methodologically self-reliant is **empowering**, **satisfying**, and **essential** to your success as a researcher.
+
+## Hybrid course
+
+- We meet **in person** for **1 hour 30 minutes** each week 
+
+  - Work through code  
+  - Interpret output
+
+- All other content is delivered **asynchronously via web**
+
+  - Recorded lectures (before meeting)  
+  - Homework (after meeting)  
+
+# Schedule
+
+## Course schedule
+
+- **Monday**: Materials for the week will be available 
+
+- **Wednesday by 8pm**: Watch lecture video and complete survey 
+
+- **Thursday at 9am**: Meet in person in XXXX 
+
+- **Sunday by midnight**: Homework assignment due 
+
+# Activities
+
+## Lecture survey
+
+Each week, there will be a recorded lecture video
+
+- Background material to do in-class exercises
+
+- Watch the video
+
+- Complete the survey to provide comments and questions
+
+## In-person class time
+
+- Briefly review the lecture and answer any questions
+
+- Code, output, and interpretation
+
+- Wrap up and final questions
+
+## Homework assignments
+
+Six (6) homework assignments
+
+- Programming assignments
+  
+  - Write code to learn to program in R
+
+- Data and research question 
+
+  - You run the appropriate analyses and write up the results 
+
+# Software
+
+## Statistical software
+
+- **R** software
+  - OK if you don't know how to use it (but also great if you do!)
+  - *Free* and *open source* and works on any platform 
+    - Rstudio is a **graphical** IDE (integrated development environment) for R
+    - Links in the syllabus to install R and Rstudio
+
+# Wrap-up
+
+## How can you be successful?
+
+- Come to class prepared and ready to run analyses 
+
+    - Videos watched. On time. Software ready. Fed. Caffeinated.
+
+- Communicate with instructors
+
+    - There are more of you than there are us
+    
+## Where can I find out more about...?
+
+- Check the website. Really.
+
+    - Syllabus, all the course materials, due dates, policies, etc.
+    
+    - Many pages of references, organized by topic
+
+- Email me or XXXX
+
+    - If you can get your question into an email, I can almost always answer it in an email
+
+## What's next?
+
+**Get prepared for our in-person meeting on Thursday**
+
+- Watch the Lecture 1 video 
+
+    - Complete the survey
+    
+- Get your software set up
+
+    - Install R (and Rstudio) 
+    
+- Come to class ready to do things!

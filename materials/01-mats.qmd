@@ -1,0 +1,25 @@
+---
+title: "Week 1: Introduction"
+---
+
+## Learning objectives
+
+* Review the course topics, structure, and goals
+* Start using **R** and **Rstudio**
+* Start using [R markdown documents](https://rmarkdown.rstudio.com/) as a **reproducible** method to present analyses along with **narrative text**
+
+## Before class: Lecture 
+
+{{< video https://youtu.be/2YJ4wZd5pmk width="400" height="300" >}}
+
+* [Lecture survey](https://forms.gle/17uKUR5xP9G45NEg8){target="_blank"}: Complete by XXX
+* [Slides (html)](/_site/slides/Mult23-0.html){target="_blank"}
+    
+## During class: Lab
+
+
+
+## After class: Assignment 
+
+* **No homework this week**
+
