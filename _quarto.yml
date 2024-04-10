@@ -1,0 +1,64 @@
+project:
+  type: website
+
+website:
+  title: "BTS 510 <br> Summer 2024"
+  sidebar:
+    style: "docked" 
+    search: true
+    collapse-level: 1 
+    contents:
+      - index.qmd
+      - syllabus.qmd  
+      - schedule.qmd 
+      - section: "Materials"
+        contents:       
+          - materials/index.qmd   
+          - materials/00-mats.qmd
+          - materials/01-mats.qmd 
+          #- materials/02-mats.qmd
+          #- materials/03-mats.qmd
+          #- materials/04-mats.qmd
+          #- materials/05-mats.qmd
+          #- materials/06-mats.qmd  
+          #- materials/07-mats.qmd
+          #- materials/08-mats.qmd 
+      - section: "Assignments"
+        contents:
+          - assignments/index.qmd    
+          - assignments/hw1.qmd
+          #- assignments/hw2.qmd
+          #- assignments/hw3.qmd  
+          #- assignments/hw4.qmd
+          #- assignments/hw5.qmd
+          #- assignments/hw6.qmd
+          #- assignments/hw7.qmd
+          #- assignments/readings1.qmd
+          #- assignments/readings2.qmd
+          #- assignments/readings3.qmd
+          #- assignments/readings4.qmd
+          #- assignments/readings5.qmd
+          - assignments/final.qmd  
+      - refs.qmd 
+          
+  # sidebar:
+  #   - title: "Materials"
+  #     style: "docked"
+  #     contents:
+  #       - section: materials/index.qmd
+  #       - section: "Weekly materials"
+  #         contents:
+  #           - text: "Week 1: Introduction"
+  #             file: materials/01-mats.qmd
+  #           - text: "Week 2: Data manipulation"
+  #             file: materials/02-mats.qmd
+              
+format:   
+  html: 
+    number-sections: false 
+    theme: flatly
+    css: styles.css
+    toc: true
+
+
+
