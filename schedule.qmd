@@ -11,7 +11,7 @@ format:
 
 **H**: Homework assignments are due by the **end of Sunday (midnight)**.
 
-**Final project** due week of August 12
+**Final project** due week of August 12 (date TBD)
 
 Week	| Date          |	Topic	                    |	L	|	H	|
 |:------|:--------------|:------------------------------|:------|:------|

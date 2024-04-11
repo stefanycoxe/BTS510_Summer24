@@ -12,7 +12,7 @@ title: "Week 0: Read me first!"
     
 * Introduction
     * Here is a short video ([Lecture 0]()) to orient you to the course and the **flipped** format
-    * Here are the [slides](/_site/slides/BTS510-24-0.html){target="_blank"} from the video
+    * Here are the [slides](/docs/slides/BTS510-24-0.html){target="_blank"} from the video
 
 * Week 1 materials [here](../materials/01-mats.qmd)  
     * Watch lecture video 1

@@ -4,4 +4,4 @@ title: "Homework 1"
 
 ## R markdown and manipulating data
 
-### Due XXX
+### Due Sunday, May 12 by end of day (midnight)

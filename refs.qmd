@@ -26,7 +26,7 @@ title: "References"
 * Cheatsheets on various topics, including markdown: [https://posit.co/resources/cheatsheets/](https://posit.co/resources/cheatsheets/)
     
 * "Next gen" of markdown: [Quarto](https://quarto.org/)
-    * We're using markdown instead because Quarto is still pretty new and has more bugs
+    * We're using markdown instead because Quarto is still pretty new and requires some additional installation. Feel free to use Quarto if you're up for it -- most of the concepts translate directly
     
 * Imai, K., & Williams, N. W. (2022). Quantitative Social Science: An Introduction in Tidyverse. Princeton University Press.
 

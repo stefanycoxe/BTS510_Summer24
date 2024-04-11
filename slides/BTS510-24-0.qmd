@@ -46,10 +46,10 @@ knitr:
 
 * Yujie Cui, M.S.
     * [yujie.cui@cshs.org](yujie.cui@cshs.org)
-    * Office hours:
+    * Office hours: TBD
 * Michael Luu, M.P.H.
     * [michael.luu@cshs.org](michael.luu@cshs.org)
-    * Office hours:
+    * Office hours: TBD
 
 ## This course
 
@@ -79,7 +79,7 @@ Becoming methodologically self-reliant is **empowering**, **satisfying**, and **
 
 - **Wednesday by 8pm**: Watch lecture video and complete survey 
 
-- **Thursday at 9am**: Meet in person in XXXX 
+- **Thursday at 9am**: Meet in person in G-511 Auditorium (PDC) 
 
 - **Sunday by midnight**: Homework assignment due 
 
@@ -145,7 +145,7 @@ Six (6) homework assignments
     
     - Many pages of references, organized by topic
 
-- Email me or XXXX
+- Email me or Yujie or Michael
 
     - If you can get your question into an email, I can almost always answer it in an email
 

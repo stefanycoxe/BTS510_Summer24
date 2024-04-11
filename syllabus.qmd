@@ -11,13 +11,13 @@ format:
 
 * Stefany Coxe, Ph.D.  
     * [stefany.coxe@cshs.org](mailto:stefany.coxe@cshs.org)  
-    * Office hours: 
+    * Office hours: TBD
 * Yujie Cui, M.S.
     * [yujie.cui@cshs.org](yujie.cui@cshs.org)
-    * Office hours:
+    * Office hours: TBD
 * Michael Luu, M.P.H.
     * [michael.luu@cshs.org](michael.luu@cshs.org)
-    * Office hours:
+    * Office hours: TBD
 
 ## Course information
 
@@ -37,11 +37,11 @@ This course covers topics related to **statistical analysis of experimental stud
 
 #### Time and location
 
-We will meet in-person on **Thursday** from *9am to 10:30am* in **XXX**.
+We will meet in-person on **Thursday** from *9am to 10:30am* in **G-511 Auditorium in PDC**.
 
 #### Course format
 
-This course takes place in a **[flipped](https://en.wikipedia.org/wiki/Flipped_classroom), hybrid format**. We will meet in person for 1 hour 30 minutes each week. This time will be spent on **hands-on statistical programming in R**. You will be responsible for completing course assignments such as videos and readings **prior to class** in order to be prepared to participate in the in-person meeting. You will also have assignments to complete outside of class.
+This course takes place in a **[flipped](https://en.wikipedia.org/wiki/Flipped_classroom), hybrid format**. We will meet in person for 1 hour 30 minutes each week. This time will be spent on **hands-on statistical programming in R**. You will be responsible for completing course assignments such as videos and readings **prior to class** in order to be prepared to participate in the in-person meeting. You will also have assignments to complete after class.
 
 Each week will follow a similar structure:
 
