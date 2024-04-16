@@ -46,25 +46,24 @@ knitr:
 
 * Yujie Cui, M.S.
     * [yujie.cui@cshs.org](yujie.cui@cshs.org)
-    * Office hours: TBD
 * Michael Luu, M.P.H.
     * [michael.luu@cshs.org](michael.luu@cshs.org)
-    * Office hours: TBD
 
 ## This course
 
-- This course covers topics related to **statistical analysis of experimental studies**
+- This course covers topics related to **applied statistical analysis of experimental studies**
   - Using and manipulating datasets, plotting data, probability, estimation and uncertainty, comparing 2 independent or dependent means, comparing 2 independent or dependent proportions, controlling for multiple comparisons 
     
 > Jeff Edwards, September 2017 CARMA talk: \
 Becoming methodologically self-reliant is **empowering**, **satisfying**, and **essential** to your success as a researcher.
 
-## Hybrid course
+## Hybrid, flipped course
 
 - We meet **in person** for **1 hour 30 minutes** each week 
 
-  - Work through code  
+  - Work through R code  
   - Interpret output
+  - Q & A
 
 - All other content is delivered **asynchronously via web**
 
@@ -85,7 +84,7 @@ Becoming methodologically self-reliant is **empowering**, **satisfying**, and **
 
 # Activities
 
-## Lecture survey
+## Lecture and survey
 
 Each week, there will be a recorded lecture video
 
@@ -115,6 +114,14 @@ Six (6) homework assignments
 
   - You run the appropriate analyses and write up the results 
 
+## Final project
+
+- Pick one of five special topics (see References)
+
+- Write a short "guidebook" on the topic
+
+- More details to come
+
 # Software
 
 ## Statistical software
@@ -136,6 +143,7 @@ Six (6) homework assignments
 - Communicate with instructors
 
     - There are more of you than there are us
+    - I don't know what's going on with each of you
     
 ## Where can I find out more about...?
 

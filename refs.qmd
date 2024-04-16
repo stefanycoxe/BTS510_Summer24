@@ -60,6 +60,8 @@ Feb 22;16(2):e2003693.
 * Greenland S, Senn SJ, Rothman KJ, Carlin JB, Poole C, Goodman SN, Altman DG. Statistical tests, P values, confidence intervals, and power: a guide to
 misinterpretations. European journal of epidemiology. 2016 Apr;31(4):337-50.
 
+* Rosnow, R. L., & Rosenthal, R. (1989). Statistical procedures and the justification of knowledge in psychological science. American Psychologist, 44(10), 1276-1284. 
+
 ### Reporting in pre-clinical sciences
 
 * Avey MT, Moher D, Sullivan KJ, Fergusson D, Griffin G, Grimshaw JM, Hutton B, Lalu MM, Macleod M, Marshall J, Mei SH. The devil is in the details:

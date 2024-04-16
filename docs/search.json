@@ -40,24 +40,236 @@
     ]
   },
   {
-    "objectID": "schedule.html",
-    "href": "schedule.html",
-    "title": "Schedule",
+    "objectID": "slides/BTS510-24-0.html#about-me",
+    "href": "slides/BTS510-24-0.html#about-me",
+    "title": "Introduction to Biostatistics",
+    "section": "1.1 About me",
+    "text": "1.1 About me\n\nDr. Stefany Coxe\n\nPh.D. in Quantitative Psychology from Arizona State University\n\nOriginally from Southern California but I’ve lived in other warm places like Phoenix and Miami\nI love statistics and want you to love them too!"
+  },
+  {
+    "objectID": "slides/BTS510-24-0.html#about-your-co-instructors",
+    "href": "slides/BTS510-24-0.html#about-your-co-instructors",
+    "title": "Introduction to Biostatistics",
+    "section": "1.2 About your co-instructors",
+    "text": "1.2 About your co-instructors\n\nYujie Cui, M.S.\n\nyujie.cui@cshs.org\n\nMichael Luu, M.P.H.\n\nmichael.luu@cshs.org"
+  },
+  {
+    "objectID": "slides/BTS510-24-0.html#this-course",
+    "href": "slides/BTS510-24-0.html#this-course",
+    "title": "Introduction to Biostatistics",
+    "section": "1.3 This course",
+    "text": "1.3 This course\n\nThis course covers topics related to applied statistical analysis of experimental studies\n\nUsing and manipulating datasets, plotting data, probability, estimation and uncertainty, comparing 2 independent or dependent means, comparing 2 independent or dependent proportions, controlling for multiple comparisons\n\n\n\nJeff Edwards, September 2017 CARMA talk:\nBecoming methodologically self-reliant is empowering, satisfying, and essential to your success as a researcher."
+  },
+  {
+    "objectID": "slides/BTS510-24-0.html#hybrid-flipped-course",
+    "href": "slides/BTS510-24-0.html#hybrid-flipped-course",
+    "title": "Introduction to Biostatistics",
+    "section": "1.4 Hybrid, flipped course",
+    "text": "1.4 Hybrid, flipped course\n\nWe meet in person for 1 hour 30 minutes each week\n\nWork through R code\n\nInterpret output\nQ & A\n\nAll other content is delivered asynchronously via web\n\nRecorded lectures (before meeting)\n\nHomework (after meeting)"
+  },
+  {
+    "objectID": "slides/BTS510-24-0.html#course-schedule",
+    "href": "slides/BTS510-24-0.html#course-schedule",
+    "title": "Introduction to Biostatistics",
+    "section": "2.1 Course schedule",
+    "text": "2.1 Course schedule\n\nMonday: Materials for the week will be available\nWednesday by 8pm: Watch lecture video and complete survey\nThursday at 9am: Meet in person in G-511 Auditorium (PDC)\nSunday by midnight: Homework assignment due"
+  },
+  {
+    "objectID": "slides/BTS510-24-0.html#lecture-and-survey",
+    "href": "slides/BTS510-24-0.html#lecture-and-survey",
+    "title": "Introduction to Biostatistics",
+    "section": "3.1 Lecture and survey",
+    "text": "3.1 Lecture and survey\nEach week, there will be a recorded lecture video\n\nBackground material to do in-class exercises\nWatch the video\nComplete the survey to provide comments and questions"
+  },
+  {
+    "objectID": "slides/BTS510-24-0.html#in-person-class-time",
+    "href": "slides/BTS510-24-0.html#in-person-class-time",
+    "title": "Introduction to Biostatistics",
+    "section": "3.2 In-person class time",
+    "text": "3.2 In-person class time\n\nBriefly review the lecture and answer any questions\nCode, output, and interpretation\nWrap up and final questions"
+  },
+  {
+    "objectID": "slides/BTS510-24-0.html#homework-assignments",
+    "href": "slides/BTS510-24-0.html#homework-assignments",
+    "title": "Introduction to Biostatistics",
+    "section": "3.3 Homework assignments",
+    "text": "3.3 Homework assignments\nSix (6) homework assignments\n\nProgramming assignments\n\nWrite code to learn to program in R\n\nData and research question\n\nYou run the appropriate analyses and write up the results"
+  },
+  {
+    "objectID": "slides/BTS510-24-0.html#final-project",
+    "href": "slides/BTS510-24-0.html#final-project",
+    "title": "Introduction to Biostatistics",
+    "section": "3.4 Final project",
+    "text": "3.4 Final project\n\nPick one of five special topics (see References)\nWrite a short “guidebook” on the topic\nMore details to come"
+  },
+  {
+    "objectID": "slides/BTS510-24-0.html#statistical-software",
+    "href": "slides/BTS510-24-0.html#statistical-software",
+    "title": "Introduction to Biostatistics",
+    "section": "4.1 Statistical software",
+    "text": "4.1 Statistical software\n\nR software\n\nOK if you don’t know how to use it (but also great if you do!)\nFree and open source and works on any platform\n\nRstudio is a graphical IDE (integrated development environment) for R\nLinks in the syllabus to install R and Rstudio"
+  },
+  {
+    "objectID": "slides/BTS510-24-0.html#how-can-you-be-successful",
+    "href": "slides/BTS510-24-0.html#how-can-you-be-successful",
+    "title": "Introduction to Biostatistics",
+    "section": "5.1 How can you be successful?",
+    "text": "5.1 How can you be successful?\n\nCome to class prepared and ready to run analyses\n\nVideos watched. On time. Software ready. Fed. Caffeinated.\n\nCommunicate with instructors\n\nThere are more of you than there are us\nI don’t know what’s going on with each of you"
+  },
+  {
+    "objectID": "slides/BTS510-24-0.html#where-can-i-find-out-more-about",
+    "href": "slides/BTS510-24-0.html#where-can-i-find-out-more-about",
+    "title": "Introduction to Biostatistics",
+    "section": "5.2 Where can I find out more about…?",
+    "text": "5.2 Where can I find out more about…?\n\nCheck the website. Really.\n\nSyllabus, all the course materials, due dates, policies, etc.\nMany pages of references, organized by topic\n\nEmail me or Yujie or Michael\n\nIf you can get your question into an email, I can almost always answer it in an email"
+  },
+  {
+    "objectID": "slides/BTS510-24-0.html#whats-next",
+    "href": "slides/BTS510-24-0.html#whats-next",
+    "title": "Introduction to Biostatistics",
+    "section": "5.3 What’s next?",
+    "text": "5.3 What’s next?\nGet prepared for our in-person meeting on Thursday\n\nWatch the Lecture 1 video\n\nComplete the survey\n\nGet your software set up\n\nInstall R (and Rstudio)\n\nCome to class ready to do things!"
+  },
+  {
+    "objectID": "refs.html",
+    "href": "refs.html",
+    "title": "References",
     "section": "",
-    "text": "Due dates subject to change due to weather, emergency, scheduling changes, etc.\nL: Watch lecture videos and respond to survey by Wednesday at 8pm.\nH: Homework assignments are due by the end of Sunday (midnight).\nFinal project due week of August 12 (date TBD)\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nL\nH\n\n\n\n\n1\nApril 29\nIntroduction, R, markdown\n1\n\n\n\n2\nMay 06\nData manipulation\n2\n1\n\n\n3\nMay 13\nDescriptives\n3\n\n\n\n4\nMay 20\nggplot\n4\n2\n\n\n5\nMay 27\nHOLIDAY\n\n\n\n\n6\nJune 03\nggplot\n5\n3\n\n\n7\nJune 10\nSampling distributions\n6\n\n\n\n8\nJune 17\nEstimation and uncertainty\n7\n4\n\n\n9\nJune 24\nHypothesis testing 1\n8\n\n\n\n10\nJuly 01\nHOLIDAY\n\n\n\n\n11\nJuly 08\nHypothesis testing 2\n9\n5\n\n\n12\nJuly 15\nMultiple comparisons\n10\n\n\n\n13\nJuly 22\nOne way ANOVA\n11\n6\n\n\n14\nJuly 29\nTwo way ANOVA\n12\n\n\n\n15\nAugust 05\nTBD\n\n\n\n\n16\nAugust 12\nTBD\n\nFinal",
+    "text": "UCLA Statistical Consulting: https://stats.oarc.ucla.edu/\nStatistics for Biologists portfolio: https://www.nature.com/collections/qghhqm\nMotulsky, H. (2014). Intuitive biostatistics: a nonmathematical guide to statistical thinking. Oxford University Press, USA.",
     "crumbs": [
-      "Schedule"
+      "References"
     ]
   },
   {
-    "objectID": "materials/index.html",
-    "href": "materials/index.html",
-    "title": "Materials overview",
+    "objectID": "refs.html#general-resources",
+    "href": "refs.html#general-resources",
+    "title": "References",
     "section": "",
-    "text": "Lecture notes and videos, code files, and other materials for the course are here\nCheck the menu on the left for week-by-week materials\n\n\n\n\n\n\nNote\n\n\n\nRight click (or control click) and select “Save link as…” to download files",
+    "text": "UCLA Statistical Consulting: https://stats.oarc.ucla.edu/\nStatistics for Biologists portfolio: https://www.nature.com/collections/qghhqm\nMotulsky, H. (2014). Intuitive biostatistics: a nonmathematical guide to statistical thinking. Oxford University Press, USA.",
+    "crumbs": [
+      "References"
+    ]
+  },
+  {
+    "objectID": "refs.html#r-rstudio-markdown",
+    "href": "refs.html#r-rstudio-markdown",
+    "title": "References",
+    "section": "R, Rstudio, markdown",
+    "text": "R, Rstudio, markdown\n\nR packages in the tidyverse, which includes:\n\ndplyr: https://dplyr.tidyverse.org/\nggplot2: https://ggplot2.tidyverse.org/\ntidyr: https://tidyr.tidyverse.org/\n\nWickham, H., Çetinkaya-Rundel, M., & Grolemund, G. (2023). R for data science. “O’Reilly Media, Inc.”.\n\nFull book available here: https://r4ds.hadley.nz/\n\nXie, Y., Allaire, J. J., & Grolemund, G. (2018). R markdown: The definitive guide. Chapman and Hall/CRC.\n\nFull book available here: https://bookdown.org/yihui/rmarkdown/\n\nCheatsheets on various topics, including markdown: https://posit.co/resources/cheatsheets/\n“Next gen” of markdown: Quarto\n\nWe’re using markdown instead because Quarto is still pretty new and requires some additional installation. Feel free to use Quarto if you’re up for it – most of the concepts translate directly\n\nImai, K., & Williams, N. W. (2022). Quantitative Social Science: An Introduction in Tidyverse. Princeton University Press.",
+    "crumbs": [
+      "References"
+    ]
+  },
+  {
+    "objectID": "refs.html#graphical-comparisons",
+    "href": "refs.html#graphical-comparisons",
+    "title": "References",
+    "section": "Graphical comparisons",
+    "text": "Graphical comparisons\n\nCumming, G., & Finch, S. (2005). Inference by Eye: Confidence Intervals and How to Read Pictures of Data. American Psychologist, 60(2), 170–180. https://doi.org/10.1037/0003-066X.60.2.170\nCumming, G. (2009). Inference by eye: Reading the overlap of independent confidence intervals. Statistics in medicine, 28(2), 205-220.",
+    "crumbs": [
+      "References"
+    ]
+  },
+  {
+    "objectID": "refs.html#special-topics-for-final-project",
+    "href": "refs.html#special-topics-for-final-project",
+    "title": "References",
+    "section": "Special Topics for Final Project",
+    "text": "Special Topics for Final Project\n\nHeterogeneity\n\nRichter SH. Systematic heterogenization for better reproducibility in animal experimentation. Lab animal. 2017 Sep;46(9):343-9.\nUsui T, Macleod MR, McCann SK, Senior AM, Nakagawa S. Meta-analysis of variation suggests that embracing variability improves both replicability and generalizability in preclinical research. PLoS biology. 2021 May 19;19(5):e3001009.\nVoelkl B, Vogt L, Sena ES, Würbel H. Reproducibility of preclinical animal research improves with heterogeneity of study samples. PLoS biology. 2018 Feb 22;16(2):e2003693.\n\n\n\n\\(p\\)-value misuses\n\nCohen, J. (1994). The earth is round (p&lt;. 05). American psychologist, 49(12), 997.\nHead ML, Holman L, Lanfear R, Kahn AT, Jennions MD. The extent and consequences of p-hacking in science. PLoS Biol. 2015 Mar 13;13(3):e1002106.\nGelman A, Stern H. The difference between “significant” and “not significant” is not itself statistically significant. The American Statistician. 2006 Nov 1;60(4):328-31.\nGreenland S, Senn SJ, Rothman KJ, Carlin JB, Poole C, Goodman SN, Altman DG. Statistical tests, P values, confidence intervals, and power: a guide to misinterpretations. European journal of epidemiology. 2016 Apr;31(4):337-50.\nRosnow, R. L., & Rosenthal, R. (1989). Statistical procedures and the justification of knowledge in psychological science. American Psychologist, 44(10), 1276-1284.\n\n\n\nReporting in pre-clinical sciences\n\nAvey MT, Moher D, Sullivan KJ, Fergusson D, Griffin G, Grimshaw JM, Hutton B, Lalu MM, Macleod M, Marshall J, Mei SH. The devil is in the details: incomplete reporting in preclinical animal research. PLoS One. 2016 Nov 17;11(11):e0166733.\nPercie du Sert N, Ahluwalia A, Alam S, Avey MT, Baker M, Browne WJ, Clark A, Cuthill IC, Dirnagl U, Emerson M, Garner P. Reporting animal research: Explanation and elaboration for the ARRIVE guidelines 2.0. PLoS biology. 2020 Jul 14;18(7):e3000411.\nSerghiou S, Contopoulos-Ioannidis DG, Boyack KW, Riedel N, Wallach JD, Ioannidis JP. Assessment of transparency indicators across the biomedical literature: How open is open?. PLoS biology. 2021 Mar 1;19(3):e3001107.\n\n\n\nReproducibility in science\n\nBegley CG, Ellis LM. Raise standards for preclinical cancer research. Nature. 2012 Mar;483(7391):531-3.\nBegley CG, Ioannidis JP. Reproducibility in science: improving the standard for basic and preclinical research. Circulation research. 2015 Jan 2;116(1):116-26.\nErrington TM, Denis A, Perfito N, Iorns E, Nosek BA. Reproducibility in Cancer Biology: Challenges for assessing replicability in preclinical cancer biology. eLife. 2021 Dec 7;10:e67995.\n\n\n\nSex as a biological variable\n\nBeery AK. Inclusion of females does not increase variability in rodent research studies. Current opinion in behavioral sciences. 2018 Oct 1;23:143-9.\nGarcia-Sifuentes Y, Maney DL. Reporting and misreporting of sex differences in the biological sciences. eLife 2021;10:e70817\nWoitowich NC, Beery A, Woodruff T. Meta-research: a 10-year follow-up study of sex inclusion in the biological sciences. eLife. 2020 Jun 9;9:e56344.",
+    "crumbs": [
+      "References"
+    ]
+  },
+  {
+    "objectID": "materials/02-mats.html",
+    "href": "materials/02-mats.html",
+    "title": "Week 2: Data manipulation",
+    "section": "",
+    "text": "Read data into R from external formats (e.g., Excel, .csv, SPSS)\nUse dplyr functions in R to manipulate datasets (e.g., create new variables)\nUse tidyr functions in R to organize and re-structure datasets"
+  },
+  {
+    "objectID": "materials/02-mats.html#learning-objectives",
+    "href": "materials/02-mats.html#learning-objectives",
+    "title": "Week 2: Data manipulation",
+    "section": "",
+    "text": "Read data into R from external formats (e.g., Excel, .csv, SPSS)\nUse dplyr functions in R to manipulate datasets (e.g., create new variables)\nUse tidyr functions in R to organize and re-structure datasets"
+  },
+  {
+    "objectID": "materials/02-mats.html#before-class-lecture",
+    "href": "materials/02-mats.html#before-class-lecture",
+    "title": "Week 2: Data manipulation",
+    "section": "Before class: Lecture",
+    "text": "Before class: Lecture\n\n\nLecture survey: Complete by XXX\nSlides"
+  },
+  {
+    "objectID": "materials/02-mats.html#during-class-lab",
+    "href": "materials/02-mats.html#during-class-lab",
+    "title": "Week 2: Data manipulation",
+    "section": "During class: Lab",
+    "text": "During class: Lab"
+  },
+  {
+    "objectID": "materials/02-mats.html#after-class-assignment",
+    "href": "materials/02-mats.html#after-class-assignment",
+    "title": "Week 2: Data manipulation",
+    "section": "After class: Assignment",
+    "text": "After class: Assignment\n\nHomework 1"
+  },
+  {
+    "objectID": "materials/00-mats.html",
+    "href": "materials/00-mats.html",
+    "title": "Week 0: Read me first!",
+    "section": "",
+    "text": "This course will be dependent on software and technology. Therefore, in preparation for the first class meeting:\n\nInstall R from here\nInstall Rstudio from here (optional but will make your life easier)\nMake sure to bring your laptop to class on Thursday\n\nSyllabus\n\nTake a look at the syllabus\n\nIntroduction\n\nHere is a short video (Lecture 0) to orient you to the course and the flipped format\nHere are the slides from the video\n\nWeek 1 materials here\n\nWatch lecture video 1\nComplete the lecture survey\nThis will prepare you for our first in-person meeting on Thursday morning",
     "crumbs": [
       "Materials",
-      "Materials overview"
+      "Week 0: Read me first!"
+    ]
+  },
+  {
+    "objectID": "final.html",
+    "href": "final.html",
+    "title": "Final Project",
+    "section": "",
+    "text": "Blah blah blah"
+  },
+  {
+    "objectID": "assignments/hw2.html#descriptive-statistics",
+    "href": "assignments/hw2.html#descriptive-statistics",
+    "title": "Homework 2",
+    "section": "Descriptive statistics",
+    "text": "Descriptive statistics"
+  },
+  {
+    "objectID": "assignments/final.html",
+    "href": "assignments/final.html",
+    "title": "Final project",
+    "section": "",
+    "text": "You will pick one of the five special topics and write a longer (2 to 3 page) summary of the topic, primarily using the listed readings.\nWe will also have a discussion of these topics in the last class session\nMore details to come…",
+    "crumbs": [
+      "Assignments",
+      "Final project"
+    ]
+  },
+  {
+    "objectID": "assignments/index.html",
+    "href": "assignments/index.html",
+    "title": "Assignments overview",
+    "section": "",
+    "text": "You will be assessed in this course using 3 types of assignments\n\nIn this section\n\nHomework assignments: About every other week \nFinal project: End of semester project\n\nIn the Materials section\n\nLecture videos and surveys",
+    "crumbs": [
+      "Assignments",
+      "Assignments overview"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
+    "section": "",
+    "text": "Welcome to the course website for BTS 510: Biostatistics for Summer 2024!\nFollow the links to the left to find the syllabus, schedule, and course materials\nYou can contact me at: stefany.coxe@cshs.org\nWe will meet each Thursday from 9am to 10:30am in G-511 Auditorium in PDC",
+    "crumbs": [
+      "Home"
     ]
   },
   {
@@ -116,229 +328,178 @@
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Home",
+    "objectID": "materials/index.html",
+    "href": "materials/index.html",
+    "title": "Materials overview",
     "section": "",
-    "text": "Welcome to the course website for BTS 510: Biostatistics for Summer 2024!\nFollow the links to the left to find the syllabus, schedule, and course materials\nYou can contact me at: stefany.coxe@cshs.org\nWe will meet each Thursday from 9am to 10:30am in G-511 Auditorium in PDC",
-    "crumbs": [
-      "Home"
-    ]
-  },
-  {
-    "objectID": "assignments/index.html",
-    "href": "assignments/index.html",
-    "title": "Assignments overview",
-    "section": "",
-    "text": "You will be assessed in this course using 3 types of assignments\n\nIn this section\n\nHomework assignments: About every other week \nFinal project: End of semester project\n\nIn the Materials section\n\nLecture videos and surveys",
-    "crumbs": [
-      "Assignments",
-      "Assignments overview"
-    ]
-  },
-  {
-    "objectID": "assignments/final.html",
-    "href": "assignments/final.html",
-    "title": "Final project",
-    "section": "",
-    "text": "You will pick one of the five special topics and write a longer (2 to 3 page) summary of the topic, primarily using the listed readings.\nWe will also have a discussion of these topics in the last class session\nMore details to come…",
-    "crumbs": [
-      "Assignments",
-      "Final project"
-    ]
-  },
-  {
-    "objectID": "assignments/hw2.html#descriptive-statistics",
-    "href": "assignments/hw2.html#descriptive-statistics",
-    "title": "Homework 2",
-    "section": "Descriptive statistics",
-    "text": "Descriptive statistics"
-  },
-  {
-    "objectID": "final.html",
-    "href": "final.html",
-    "title": "Final Project",
-    "section": "",
-    "text": "Blah blah blah"
-  },
-  {
-    "objectID": "materials/00-mats.html",
-    "href": "materials/00-mats.html",
-    "title": "Week 0: Read me first!",
-    "section": "",
-    "text": "This course will be dependent on software and technology. Therefore, in preparation for the first class meeting:\n\nInstall R from here\nInstall Rstudio from here (optional but will make your life easier)\nMake sure to bring your laptop to class on Thursday\n\nSyllabus\n\nTake a look at the syllabus\n\nIntroduction\n\nHere is a short video (Lecture 0) to orient you to the course and the flipped format\nHere are the slides from the video\n\nWeek 1 materials here\n\nWatch lecture video 1\nComplete the lecture survey\nThis will prepare you for our first in-person meeting on Thursday morning",
+    "text": "Lecture notes and videos, code files, and other materials for the course are here\nCheck the menu on the left for week-by-week materials\n\n\n\n\n\n\nNote\n\n\n\nRight click (or control click) and select “Save link as…” to download files",
     "crumbs": [
       "Materials",
-      "Week 0: Read me first!"
+      "Materials overview"
     ]
   },
   {
-    "objectID": "materials/02-mats.html",
-    "href": "materials/02-mats.html",
-    "title": "Week 2: Data manipulation",
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "Schedule",
     "section": "",
-    "text": "Read data into R from external formats (e.g., Excel, .csv, SPSS)\nUse dplyr functions in R to manipulate datasets (e.g., create new variables)\nUse tidyr functions in R to organize and re-structure datasets"
-  },
-  {
-    "objectID": "materials/02-mats.html#learning-objectives",
-    "href": "materials/02-mats.html#learning-objectives",
-    "title": "Week 2: Data manipulation",
-    "section": "",
-    "text": "Read data into R from external formats (e.g., Excel, .csv, SPSS)\nUse dplyr functions in R to manipulate datasets (e.g., create new variables)\nUse tidyr functions in R to organize and re-structure datasets"
-  },
-  {
-    "objectID": "materials/02-mats.html#before-class-lecture",
-    "href": "materials/02-mats.html#before-class-lecture",
-    "title": "Week 2: Data manipulation",
-    "section": "Before class: Lecture",
-    "text": "Before class: Lecture\n\n\nLecture survey: Complete by XXX\nSlides"
-  },
-  {
-    "objectID": "materials/02-mats.html#during-class-lab",
-    "href": "materials/02-mats.html#during-class-lab",
-    "title": "Week 2: Data manipulation",
-    "section": "During class: Lab",
-    "text": "During class: Lab"
-  },
-  {
-    "objectID": "materials/02-mats.html#after-class-assignment",
-    "href": "materials/02-mats.html#after-class-assignment",
-    "title": "Week 2: Data manipulation",
-    "section": "After class: Assignment",
-    "text": "After class: Assignment\n\nHomework 1"
-  },
-  {
-    "objectID": "refs.html",
-    "href": "refs.html",
-    "title": "References",
-    "section": "",
-    "text": "UCLA Statistical Consulting: https://stats.oarc.ucla.edu/\nStatistics for Biologists portfolio: https://www.nature.com/collections/qghhqm\nMotulsky, H. (2014). Intuitive biostatistics: a nonmathematical guide to statistical thinking. Oxford University Press, USA.",
+    "text": "Due dates subject to change due to weather, emergency, scheduling changes, etc.\nL: Watch lecture videos and respond to survey by Wednesday at 8pm.\nH: Homework assignments are due by the end of Sunday (midnight).\nFinal project due week of August 12 (date TBD)\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nL\nH\n\n\n\n\n1\nApril 29\nIntroduction, R, markdown\n1\n\n\n\n2\nMay 06\nData manipulation\n2\n1\n\n\n3\nMay 13\nDescriptives\n3\n\n\n\n4\nMay 20\nggplot\n4\n2\n\n\n5\nMay 27\nHOLIDAY\n\n\n\n\n6\nJune 03\nggplot\n5\n3\n\n\n7\nJune 10\nSampling distributions\n6\n\n\n\n8\nJune 17\nEstimation and uncertainty\n7\n4\n\n\n9\nJune 24\nHypothesis testing 1\n8\n\n\n\n10\nJuly 01\nHOLIDAY\n\n\n\n\n11\nJuly 08\nHypothesis testing 2\n9\n5\n\n\n12\nJuly 15\nMultiple comparisons\n10\n\n\n\n13\nJuly 22\nOne way ANOVA\n11\n6\n\n\n14\nJuly 29\nTwo way ANOVA\n12\n\n\n\n15\nAugust 05\nTBD\n\n\n\n\n16\nAugust 12\nTBD\n\nFinal",
     "crumbs": [
-      "References"
+      "Schedule"
     ]
   },
   {
-    "objectID": "refs.html#general-resources",
-    "href": "refs.html#general-resources",
-    "title": "References",
-    "section": "",
-    "text": "UCLA Statistical Consulting: https://stats.oarc.ucla.edu/\nStatistics for Biologists portfolio: https://www.nature.com/collections/qghhqm\nMotulsky, H. (2014). Intuitive biostatistics: a nonmathematical guide to statistical thinking. Oxford University Press, USA.",
-    "crumbs": [
-      "References"
-    ]
-  },
-  {
-    "objectID": "refs.html#r-rstudio-markdown",
-    "href": "refs.html#r-rstudio-markdown",
-    "title": "References",
-    "section": "R, Rstudio, markdown",
-    "text": "R, Rstudio, markdown\n\nR packages in the tidyverse, which includes:\n\ndplyr: https://dplyr.tidyverse.org/\nggplot2: https://ggplot2.tidyverse.org/\ntidyr: https://tidyr.tidyverse.org/\n\nWickham, H., Çetinkaya-Rundel, M., & Grolemund, G. (2023). R for data science. “O’Reilly Media, Inc.”.\n\nFull book available here: https://r4ds.hadley.nz/\n\nXie, Y., Allaire, J. J., & Grolemund, G. (2018). R markdown: The definitive guide. Chapman and Hall/CRC.\n\nFull book available here: https://bookdown.org/yihui/rmarkdown/\n\nCheatsheets on various topics, including markdown: https://posit.co/resources/cheatsheets/\n“Next gen” of markdown: Quarto\n\nWe’re using markdown instead because Quarto is still pretty new and requires some additional installation. Feel free to use Quarto if you’re up for it – most of the concepts translate directly\n\nImai, K., & Williams, N. W. (2022). Quantitative Social Science: An Introduction in Tidyverse. Princeton University Press.",
-    "crumbs": [
-      "References"
-    ]
-  },
-  {
-    "objectID": "refs.html#graphical-comparisons",
-    "href": "refs.html#graphical-comparisons",
-    "title": "References",
-    "section": "Graphical comparisons",
-    "text": "Graphical comparisons\n\nCumming, G., & Finch, S. (2005). Inference by Eye: Confidence Intervals and How to Read Pictures of Data. American Psychologist, 60(2), 170–180. https://doi.org/10.1037/0003-066X.60.2.170\nCumming, G. (2009). Inference by eye: Reading the overlap of independent confidence intervals. Statistics in medicine, 28(2), 205-220.",
-    "crumbs": [
-      "References"
-    ]
-  },
-  {
-    "objectID": "refs.html#special-topics-for-final-project",
-    "href": "refs.html#special-topics-for-final-project",
-    "title": "References",
-    "section": "Special Topics for Final Project",
-    "text": "Special Topics for Final Project\n\nHeterogeneity\n\nRichter SH. Systematic heterogenization for better reproducibility in animal experimentation. Lab animal. 2017 Sep;46(9):343-9.\nUsui T, Macleod MR, McCann SK, Senior AM, Nakagawa S. Meta-analysis of variation suggests that embracing variability improves both replicability and generalizability in preclinical research. PLoS biology. 2021 May 19;19(5):e3001009.\nVoelkl B, Vogt L, Sena ES, Würbel H. Reproducibility of preclinical animal research improves with heterogeneity of study samples. PLoS biology. 2018 Feb 22;16(2):e2003693.\n\n\n\n\\(p\\)-value misuses\n\nCohen, J. (1994). The earth is round (p&lt;. 05). American psychologist, 49(12), 997.\nHead ML, Holman L, Lanfear R, Kahn AT, Jennions MD. The extent and consequences of p-hacking in science. PLoS Biol. 2015 Mar 13;13(3):e1002106.\nGelman A, Stern H. The difference between “significant” and “not significant” is not itself statistically significant. The American Statistician. 2006 Nov 1;60(4):328-31.\nGreenland S, Senn SJ, Rothman KJ, Carlin JB, Poole C, Goodman SN, Altman DG. Statistical tests, P values, confidence intervals, and power: a guide to misinterpretations. European journal of epidemiology. 2016 Apr;31(4):337-50.\n\n\n\nReporting in pre-clinical sciences\n\nAvey MT, Moher D, Sullivan KJ, Fergusson D, Griffin G, Grimshaw JM, Hutton B, Lalu MM, Macleod M, Marshall J, Mei SH. The devil is in the details: incomplete reporting in preclinical animal research. PLoS One. 2016 Nov 17;11(11):e0166733.\nPercie du Sert N, Ahluwalia A, Alam S, Avey MT, Baker M, Browne WJ, Clark A, Cuthill IC, Dirnagl U, Emerson M, Garner P. Reporting animal research: Explanation and elaboration for the ARRIVE guidelines 2.0. PLoS biology. 2020 Jul 14;18(7):e3000411.\nSerghiou S, Contopoulos-Ioannidis DG, Boyack KW, Riedel N, Wallach JD, Ioannidis JP. Assessment of transparency indicators across the biomedical literature: How open is open?. PLoS biology. 2021 Mar 1;19(3):e3001107.\n\n\n\nReproducibility in science\n\nBegley CG, Ellis LM. Raise standards for preclinical cancer research. Nature. 2012 Mar;483(7391):531-3.\nBegley CG, Ioannidis JP. Reproducibility in science: improving the standard for basic and preclinical research. Circulation research. 2015 Jan 2;116(1):116-26.\nErrington TM, Denis A, Perfito N, Iorns E, Nosek BA. Reproducibility in Cancer Biology: Challenges for assessing replicability in preclinical cancer biology. eLife. 2021 Dec 7;10:e67995.\n\n\n\nSex as a biological variable\n\nBeery AK. Inclusion of females does not increase variability in rodent research studies. Current opinion in behavioral sciences. 2018 Oct 1;23:143-9.\nGarcia-Sifuentes Y, Maney DL. Reporting and misreporting of sex differences in the biological sciences. eLife 2021;10:e70817\nWoitowich NC, Beery A, Woodruff T. Meta-research: a 10-year follow-up study of sex inclusion in the biological sciences. eLife. 2020 Jun 9;9:e56344.",
-    "crumbs": [
-      "References"
-    ]
-  },
-  {
-    "objectID": "slides/BTS510-24-0.html#about-me",
-    "href": "slides/BTS510-24-0.html#about-me",
+    "objectID": "slides/BTS510-24-1.html#learning-objectives-1",
+    "href": "slides/BTS510-24-1.html#learning-objectives-1",
     "title": "Introduction to Biostatistics",
-    "section": "1.1 About me",
-    "text": "1.1 About me\n\nDr. Stefany Coxe\n\nPh.D. in Quantitative Psychology from Arizona State University\n\nOriginally from Southern California but I’ve lived in other warm places like Phoenix and Miami\nI love statistics and want you to love them too!"
+    "section": "1.1 Learning objectives",
+    "text": "1.1 Learning objectives\n\nReview the course topics, structure, and goals\nStart using R and Rstudio\nStart using R markdown documents as a reproducible method to present analyses along with narrative text"
   },
   {
-    "objectID": "slides/BTS510-24-0.html#about-your-co-instructors",
-    "href": "slides/BTS510-24-0.html#about-your-co-instructors",
+    "objectID": "slides/BTS510-24-1.html#what-is-statistics-interdisciplinary",
+    "href": "slides/BTS510-24-1.html#what-is-statistics-interdisciplinary",
     "title": "Introduction to Biostatistics",
-    "section": "1.2 About your co-instructors",
-    "text": "1.2 About your co-instructors\n\nYujie Cui, M.S.\n\nyujie.cui@cshs.org\nOffice hours: TBD\n\nMichael Luu, M.P.H.\n\nmichael.luu@cshs.org\nOffice hours: TBD"
+    "section": "2.1 What is statistics? Interdisciplinary",
+    "text": "2.1 What is statistics? Interdisciplinary\n\nMathematics\nProbability\nUncertainty\nProgramming / computer science\nIntegrated into science"
   },
   {
-    "objectID": "slides/BTS510-24-0.html#this-course",
-    "href": "slides/BTS510-24-0.html#this-course",
+    "objectID": "slides/BTS510-24-1.html#what-is-statistics-people-solving-problems",
+    "href": "slides/BTS510-24-1.html#what-is-statistics-people-solving-problems",
     "title": "Introduction to Biostatistics",
-    "section": "1.3 This course",
-    "text": "1.3 This course\n\nThis course covers topics related to statistical analysis of experimental studies\n\nUsing and manipulating datasets, plotting data, probability, estimation and uncertainty, comparing 2 independent or dependent means, comparing 2 independent or dependent proportions, controlling for multiple comparisons\n\n\n\nJeff Edwards, September 2017 CARMA talk:\nBecoming methodologically self-reliant is empowering, satisfying, and essential to your success as a researcher."
+    "section": "2.2 What is statistics? People solving problems",
+    "text": "2.2 What is statistics? People solving problems\n\nWilliam Sealy Gosset\n\nGuinness Brewing Company: Making better beer\n\\(t\\)-distribution and \\(t\\)-test\n\nRonald Fisher\n\nRothamsted Experimental Station: Agricultural questions\nAnalysis of variance (ANOVA) and \\(F\\)-distribution\nPopularized the \\(p\\)-value and \\(p &lt; .05\\) as a cut-off"
   },
   {
-    "objectID": "slides/BTS510-24-0.html#hybrid-course",
-    "href": "slides/BTS510-24-0.html#hybrid-course",
+    "objectID": "slides/BTS510-24-1.html#what-is-statistics-context",
+    "href": "slides/BTS510-24-1.html#what-is-statistics-context",
     "title": "Introduction to Biostatistics",
-    "section": "1.4 Hybrid course",
-    "text": "1.4 Hybrid course\n\nWe meet in person for 1 hour 30 minutes each week\n\nWork through code\n\nInterpret output\n\nAll other content is delivered asynchronously via web\n\nRecorded lectures (before meeting)\n\nHomework (after meeting)"
+    "section": "2.3 What is statistics? Context",
+    "text": "2.3 What is statistics? Context\n\nhttps://www.instagram.com/p/Bx8p0Pih6qs/"
   },
   {
-    "objectID": "slides/BTS510-24-0.html#course-schedule",
-    "href": "slides/BTS510-24-0.html#course-schedule",
+    "objectID": "slides/BTS510-24-1.html#what-is-statistics-context-1",
+    "href": "slides/BTS510-24-1.html#what-is-statistics-context-1",
     "title": "Introduction to Biostatistics",
-    "section": "2.1 Course schedule",
-    "text": "2.1 Course schedule\n\nMonday: Materials for the week will be available\nWednesday by 8pm: Watch lecture video and complete survey\nThursday at 9am: Meet in person in G-511 Auditorium (PDC)\nSunday by midnight: Homework assignment due"
+    "section": "2.4 What is statistics? Context",
+    "text": "2.4 What is statistics? Context\n\nThis thing is 8 feet tall. Is that tall?\n\nFor a person: Yes\nFor a building: No\n\nThese two things are 12 inches different in height. Is that a lot?\n\nFor people: Yes\nFor buildings: No"
   },
   {
-    "objectID": "slides/BTS510-24-0.html#lecture-survey",
-    "href": "slides/BTS510-24-0.html#lecture-survey",
+    "objectID": "slides/BTS510-24-1.html#when-to-think-about-statistics",
+    "href": "slides/BTS510-24-1.html#when-to-think-about-statistics",
     "title": "Introduction to Biostatistics",
-    "section": "3.1 Lecture survey",
-    "text": "3.1 Lecture survey\nEach week, there will be a recorded lecture video\n\nBackground material to do in-class exercises\nWatch the video\nComplete the survey to provide comments and questions"
+    "section": "2.5 When to think about statistics?",
+    "text": "2.5 When to think about statistics?\n\n\nStudy design\nData collection\n\n\n\nData analysis\n\n\n\n\nInterpretation\n\n\n\n\nRonald Fisher:   To call in the statistician after the experiment is done may be no more than asking him to perform a post-mortem examination: he may be able to say what the experiment died of."
   },
   {
-    "objectID": "slides/BTS510-24-0.html#in-person-class-time",
-    "href": "slides/BTS510-24-0.html#in-person-class-time",
+    "objectID": "slides/BTS510-24-1.html#topics",
+    "href": "slides/BTS510-24-1.html#topics",
     "title": "Introduction to Biostatistics",
-    "section": "3.2 In-person class time",
-    "text": "3.2 In-person class time\n\nBriefly review the lecture and answer any questions\nCode, output, and interpretation\nWrap up and final questions"
+    "section": "2.6 Topics",
+    "text": "2.6 Topics\n\nReading in and manipulating data in R\nMaking plots in R\nDescriptive statistics\nProbability, sampling distributions, uncertainty\nComparing 2 means or proportions\nControlling for multiple comparisons\nComparing 3 or more means"
   },
   {
-    "objectID": "slides/BTS510-24-0.html#homework-assignments",
-    "href": "slides/BTS510-24-0.html#homework-assignments",
+    "objectID": "slides/BTS510-24-1.html#what-youll-learn-about",
+    "href": "slides/BTS510-24-1.html#what-youll-learn-about",
     "title": "Introduction to Biostatistics",
-    "section": "3.3 Homework assignments",
-    "text": "3.3 Homework assignments\nSix (6) homework assignments\n\nProgramming assignments\n\nWrite code to learn to program in R\n\nData and research question\n\nYou run the appropriate analyses and write up the results"
+    "section": "2.7 What you’ll learn about",
+    "text": "2.7 What you’ll learn about\n\nProgramming (in R)\nProbability and mathematics underlying statistical methods\nConducting (some) statistical analyses\nPresenting results of statistical analyses\nThinking about issues in science related to statistics"
   },
   {
-    "objectID": "slides/BTS510-24-0.html#statistical-software",
-    "href": "slides/BTS510-24-0.html#statistical-software",
+    "objectID": "slides/BTS510-24-1.html#what-is-r",
+    "href": "slides/BTS510-24-1.html#what-is-r",
     "title": "Introduction to Biostatistics",
-    "section": "4.1 Statistical software",
-    "text": "4.1 Statistical software\n\nR software\n\nOK if you don’t know how to use it (but also great if you do!)\nFree and open source and works on any platform\n\nRstudio is a graphical IDE (integrated development environment) for R\nLinks in the syllabus to install R and Rstudio"
+    "section": "3.1 What is R?",
+    "text": "3.1 What is R?\n\nFree, open source software\n\nWindows, Mac, Unix, cloud\n\nObject-oriented programming language\nBuilt-in capabilities (“packages”)\nUsers can write their own packages and functions"
   },
   {
-    "objectID": "slides/BTS510-24-0.html#how-can-you-be-successful",
-    "href": "slides/BTS510-24-0.html#how-can-you-be-successful",
+    "objectID": "slides/BTS510-24-1.html#what-is-r-1",
+    "href": "slides/BTS510-24-1.html#what-is-r-1",
     "title": "Introduction to Biostatistics",
-    "section": "5.1 How can you be successful?",
-    "text": "5.1 How can you be successful?\n\nCome to class prepared and ready to run analyses\n\nVideos watched. On time. Software ready. Fed. Caffeinated.\n\nCommunicate with instructors\n\nThere are more of you than there are us"
+    "section": "3.2 What is R?",
+    "text": "3.2 What is R?"
   },
   {
-    "objectID": "slides/BTS510-24-0.html#where-can-i-find-out-more-about",
-    "href": "slides/BTS510-24-0.html#where-can-i-find-out-more-about",
+    "objectID": "slides/BTS510-24-1.html#what-does-object-oriented-mean",
+    "href": "slides/BTS510-24-1.html#what-does-object-oriented-mean",
     "title": "Introduction to Biostatistics",
-    "section": "5.2 Where can I find out more about…?",
-    "text": "5.2 Where can I find out more about…?\n\nCheck the website. Really.\n\nSyllabus, all the course materials, due dates, policies, etc.\nMany pages of references, organized by topic\n\nEmail me or Yujie or Michael\n\nIf you can get your question into an email, I can almost always answer it in an email"
+    "section": "3.3 What does “object-oriented” mean?",
+    "text": "3.3 What does “object-oriented” mean?\n\nProgramming built on the idea of “objects”\nEverything is an object\n\nIf you have an object’s name, you can do something with it\n\nObjects: Datasets, variables, analyses, plots"
   },
   {
-    "objectID": "slides/BTS510-24-0.html#whats-next",
-    "href": "slides/BTS510-24-0.html#whats-next",
+    "objectID": "slides/BTS510-24-1.html#what-does-object-oriented-mean-1",
+    "href": "slides/BTS510-24-1.html#what-does-object-oriented-mean-1",
     "title": "Introduction to Biostatistics",
-    "section": "5.3 What’s next?",
-    "text": "5.3 What’s next?\nGet prepared for our in-person meeting on Thursday\n\nWatch the Lecture 1 video\n\nComplete the survey\n\nGet your software set up\n\nInstall R (and Rstudio)\n\nCome to class ready to do things!"
+    "section": "3.4 What does “object-oriented” mean?",
+    "text": "3.4 What does “object-oriented” mean?\n\nx &lt;- c(1, 1, 2, 3, 5, 8)\nx\n\n[1] 1 1 2 3 5 8\n\n\n\nLine 1\n\nDefine an object called x that is this set of numbers\n&lt;- is the assignment operator\n\nLine 2\n\nPrint the object x"
+  },
+  {
+    "objectID": "slides/BTS510-24-1.html#what-is-a-function",
+    "href": "slides/BTS510-24-1.html#what-is-a-function",
+    "title": "Introduction to Biostatistics",
+    "section": "3.5 What is a function?",
+    "text": "3.5 What is a function?\n\nPre-written piece of code that\n\nTakes one or more inputs (or arguments)\nProduces one or more outputs"
+  },
+  {
+    "objectID": "slides/BTS510-24-1.html#what-is-a-function-1",
+    "href": "slides/BTS510-24-1.html#what-is-a-function-1",
+    "title": "Introduction to Biostatistics",
+    "section": "3.6 What is a function?",
+    "text": "3.6 What is a function?\n\nmean(x)\n\n[1] 3.333333\n\n\n\nInput: x\nOutput: mean of x\n\nDocumentation for mean() function"
+  },
+  {
+    "objectID": "slides/BTS510-24-1.html#what-is-a-package",
+    "href": "slides/BTS510-24-1.html#what-is-a-package",
+    "title": "Introduction to Biostatistics",
+    "section": "3.7 What is a package?",
+    "text": "3.7 What is a package?\n\nCollection of functions (that work together in some way)\n\ndplyr package is a set of functions to manipulate data\nggplot package is a set of functions to create plots\nstats package (built-in) is a set of functions to perform basic statistical operations"
+  },
+  {
+    "objectID": "slides/BTS510-24-1.html#what-is-a-package-1",
+    "href": "slides/BTS510-24-1.html#what-is-a-package-1",
+    "title": "Introduction to Biostatistics",
+    "section": "3.8 What is a package?",
+    "text": "3.8 What is a package?\n\nTo use functions in a package, you need to\n\nInstall the package\n\nJust once per machine / Rstudio\n\nLoad or library() the package\n\nEvery time you use it"
+  },
+  {
+    "objectID": "slides/BTS510-24-1.html#what-is-rstudio",
+    "href": "slides/BTS510-24-1.html#what-is-rstudio",
+    "title": "Introduction to Biostatistics",
+    "section": "3.9 What is Rstudio?",
+    "text": "3.9 What is Rstudio?\n\nIntegrated development environment (IDE) for R\nGraphical user interface to use R\n\nManage installed packages\nConnect to git / github\nEasily see loaded datasets"
+  },
+  {
+    "objectID": "slides/BTS510-24-1.html#what-is-rstudio-1",
+    "href": "slides/BTS510-24-1.html#what-is-rstudio-1",
+    "title": "Introduction to Biostatistics",
+    "section": "3.10 What is Rstudio?",
+    "text": "3.10 What is Rstudio?"
+  },
+  {
+    "objectID": "slides/BTS510-24-1.html#what-is-markdown",
+    "href": "slides/BTS510-24-1.html#what-is-markdown",
+    "title": "Introduction to Biostatistics",
+    "section": "4.1 What is “markdown”?",
+    "text": "4.1 What is “markdown”?\n\n“Markup” language to format plain text\n\nHTML: hyper-text markup language\n\nHeadings, links, italics / bold, bullet points, equations\nOutput final, formatted document into multiple formats\n\nHTML, Word, PDF documents or slides\n\nUsed across a wide variety of platforms, not just in R\n\nGithub, Jekyll, note-taking apps"
+  },
+  {
+    "objectID": "slides/BTS510-24-1.html#markdown-example",
+    "href": "slides/BTS510-24-1.html#markdown-example",
+    "title": "Introduction to Biostatistics",
+    "section": "4.2 markdown example",
+    "text": "4.2 markdown example\n\nhttps://www.markdownguide.org/getting-started/#kicking-the-tires"
+  },
+  {
+    "objectID": "slides/BTS510-24-1.html#rmarkdown-package",
+    "href": "slides/BTS510-24-1.html#rmarkdown-package",
+    "title": "Introduction to Biostatistics",
+    "section": "4.3 rmarkdown package",
+    "text": "4.3 rmarkdown package\n\nImplements markdown in R\nLets you create several document types\n\nHTML or PDF or Word documents\nSlides in HTML or PDF or Powerpoint\n\nDoes all the heavy lifting to convert your markdown document to the final, formatted version"
+  },
+  {
+    "objectID": "slides/BTS510-24-1.html#what-about-quarto",
+    "href": "slides/BTS510-24-1.html#what-about-quarto",
+    "title": "Introduction to Biostatistics",
+    "section": "4.4 What about Quarto?",
+    "text": "4.4 What about Quarto?\n\n“Next gen” of markdown\nWorks with multiple languages (even in the same document): R, Python, Julia\nAdditional features\nAdditional installation burden (and bugs!)"
   }
 ]

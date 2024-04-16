@@ -1,0 +1,228 @@
+---
+title: "Introduction to Biostatistics"
+format:
+  # html: 
+  #   toc: true
+  #   toc-location: left
+  #   slide-level: 3
+  #   number-sections: true
+  #   toc-depth: 2
+  #   self-contained: true
+  #   #output-file: "Mult22-1-handout"
+  # pdf: 
+  #   toc: true
+  #   number-sections: true
+  #   #slide-level: 3
+  #   toc-depth: 2
+  #   shift-heading-level-by: 0
+  #   number-offset: [2]
+  revealjs:
+    toc: false
+    number-sections: true
+    #slide-level: 3
+    scrollable: true
+    self-contained: true
+    slide-number: true
+    width: 1200
+knitr: 
+  opts_chunk:
+    echo: false
+    message: false
+    warning: false
+---
+
+# Learning objectives
+
+## Learning objectives
+
+* Review the course topics, structure, and goals
+* Start using **R** and **Rstudio**
+* Start using [R markdown documents](https://rmarkdown.rstudio.com/) as a **reproducible** method to present analyses along with **narrative text**
+
+# Course topics and goals
+
+## What is statistics? **Interdisciplinary**
+
+- Mathematics
+- Probability
+- Uncertainty
+- Programming / computer science
+- Integrated into science
+
+## What is statistics? **People solving problems**
+
+- William Sealy Gosset
+  - Guinness Brewing Company: Making better beer
+  - $t$-distribution and $t$-test 
+  
+- Ronald Fisher
+  - Rothamsted Experimental Station: Agricultural questions
+  - Analysis of variance (ANOVA) and $F$-distribution
+  - Popularized the $p$-value and $p < .05$ as a cut-off
+
+## What is statistics? **Context**
+
+![](drwho4.jpg)
+
+[https://www.instagram.com/p/Bx8p0Pih6qs/](https://www.instagram.com/p/Bx8p0Pih6qs/)
+
+## What is statistics? **Context**
+
+- This thing is *8 feet tall*. **Is that tall?**
+  - For a person: Yes
+  - For a building: No
+
+- These two things are *12 inches different* in height. **Is that a lot?**
+  - For people: Yes
+  - For buildings: No
+
+## When to think about statistics?
+
+<ul>
+- Study design
+
+- Data collection
+
+::: {.fragment .highlight-red}  
+- Data analysis  
+:::  
+
+- Interpretation
+</ul>
+
+. . .
+
+> Ronald Fisher: \ 
+To call in the statistician after the experiment is done may be no more than asking him to perform a post-mortem examination: he may be able to say what the experiment died of.
+
+## Topics
+
+- Reading in and manipulating data in R
+- Making plots in R
+- Descriptive statistics
+- Probability, sampling distributions, uncertainty
+- Comparing 2 means or proportions
+- Controlling for multiple comparisons
+- Comparing 3 or more means
+
+## What you'll learn about
+
+- Programming (in R)
+- Probability and mathematics underlying statistical methods
+- Conducting (some) statistical analyses
+- Presenting results of statistical analyses
+- Thinking about issues in science related to statistics
+
+# R and Rstudio
+
+## What is R?
+
+- Free, open source software
+  - Windows, Mac, Unix, cloud
+- Object-oriented programming language
+- Built-in capabilities ("packages")
+- Users can write their own packages and functions
+
+## What is R?
+
+![](r.jpg)
+
+## What does "object-oriented" mean?
+
+- Programming built on the idea of "objects"
+- Everything is an object
+  - If you have an object's *name*, you can do something with it
+- Objects: Datasets, variables, analyses, plots
+
+## What does "object-oriented" mean?
+
+```{r, echo = TRUE}
+x <- c(1, 1, 2, 3, 5, 8)
+x
+```
+
+- Line 1
+  - Define an **object** called `x` that is this set of numbers 
+  - `<-` is the assignment operator
+- Line 2
+  - Print the object `x`  
+
+## What is a function?
+
+- Pre-written piece of code that 
+  - Takes **one or more inputs** (or arguments)
+  - Produces **one or more outputs**
+
+## What is a function?
+
+```{r, echo = TRUE}
+mean(x)
+```
+
+- Input: `x`
+- Output: mean of `x`
+
+[Documentation for `mean()` function](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/mean)
+
+## What is a package?
+
+- Collection of functions (that work together in some way)
+  - **dplyr** package is a set of functions to manipulate data
+  - **ggplot** package is a set of functions to create plots
+  - **stats** package (built-in) is a set of functions to perform basic statistical operations
+  
+## What is a package?
+
+- To use functions in a package, you need to
+  - **Install** the package
+    - *Just once* per machine / Rstudio 
+  - **Load** or `library()` the package
+    - *Every time* you use it
+
+## What is Rstudio?
+
+- Integrated development environment (IDE) for **R**
+- Graphical user interface to use **R**
+  - Manage installed packages
+  - Connect to git / github
+  - Easily see loaded datasets
+  
+## What is Rstudio?
+
+![](rstudio.jpg)
+
+# R markdown
+
+## What is "markdown"?
+
+- "Markup" language to format plain text
+  - HTML: hyper-text markup language
+- Headings, links, italics / bold, bullet points, equations
+- Output final, formatted document into multiple formats
+  - HTML, Word, PDF documents or slides
+- Used across a wide variety of platforms, not just in **R**
+  - Github, Jekyll, note-taking apps
+
+## markdown example
+
+![](dillinger.avif)
+
+[https://www.markdownguide.org/getting-started/#kicking-the-tires](https://www.markdownguide.org/getting-started/#kicking-the-tires)
+
+## **rmarkdown** package
+
+- Implements markdown in **R**
+- Lets you create several document types
+  - HTML or PDF or Word documents
+  - Slides in HTML or PDF or Powerpoint
+- Does all the heavy lifting to convert your markdown document to the final, formatted version
+
+## What about Quarto?
+
+- "Next gen" of markdown
+- Works with multiple languages (even in the same document): R, Python, Julia
+- Additional features
+- Additional installation burden (and bugs!)
+
+
+
