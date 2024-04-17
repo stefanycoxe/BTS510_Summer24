@@ -353,21 +353,21 @@
     "href": "slides/BTS510-24-1.html#learning-objectives-1",
     "title": "Introduction to Biostatistics",
     "section": "1.1 Learning objectives",
-    "text": "1.1 Learning objectives\n\nReview the course topics, structure, and goals\nStart using R and Rstudio\nStart using R markdown documents as a reproducible method to present analyses along with narrative text"
+    "text": "1.1 Learning objectives\n\nReview the course topics and goals\nStart using R and Rstudio\nStart using R markdown documents as a reproducible method to present analyses along with narrative text"
   },
   {
     "objectID": "slides/BTS510-24-1.html#what-is-statistics-interdisciplinary",
     "href": "slides/BTS510-24-1.html#what-is-statistics-interdisciplinary",
     "title": "Introduction to Biostatistics",
     "section": "2.1 What is statistics? Interdisciplinary",
-    "text": "2.1 What is statistics? Interdisciplinary\n\nMathematics\nProbability\nUncertainty\nProgramming / computer science\nIntegrated into science"
+    "text": "2.1 What is statistics? Interdisciplinary\n\nMathematics\nProbability\nUncertainty\nProgramming / computer science\nDecision making\nIntegrated into science"
   },
   {
-    "objectID": "slides/BTS510-24-1.html#what-is-statistics-people-solving-problems",
-    "href": "slides/BTS510-24-1.html#what-is-statistics-people-solving-problems",
+    "objectID": "slides/BTS510-24-1.html#what-is-statistics-people",
+    "href": "slides/BTS510-24-1.html#what-is-statistics-people",
     "title": "Introduction to Biostatistics",
-    "section": "2.2 What is statistics? People solving problems",
-    "text": "2.2 What is statistics? People solving problems\n\nWilliam Sealy Gosset\n\nGuinness Brewing Company: Making better beer\n\\(t\\)-distribution and \\(t\\)-test\n\nRonald Fisher\n\nRothamsted Experimental Station: Agricultural questions\nAnalysis of variance (ANOVA) and \\(F\\)-distribution\nPopularized the \\(p\\)-value and \\(p &lt; .05\\) as a cut-off"
+    "section": "2.2 What is statistics? People",
+    "text": "2.2 What is statistics? People\n\nWilliam Sealy Gosset\n\nGuinness Brewing Company: Making better beer\n\\(t\\)-distribution and \\(t\\)-test\n\nRonald Fisher\n\nRothamsted Experimental Station: Agricultural questions\nAnalysis of variance (ANOVA) and \\(F\\)-distribution\nPopularized the \\(p\\)-value and \\(p &lt; .05\\) as a cut-off"
   },
   {
     "objectID": "slides/BTS510-24-1.html#what-is-statistics-context",
@@ -444,7 +444,7 @@
     "href": "slides/BTS510-24-1.html#what-is-a-function-1",
     "title": "Introduction to Biostatistics",
     "section": "3.6 What is a function?",
-    "text": "3.6 What is a function?\n\nmean(x)\n\n[1] 3.333333\n\n\n\nInput: x\nOutput: mean of x\n\nDocumentation for mean() function"
+    "text": "3.6 What is a function?\n\nmean(x)\n\n[1] 3.333333\n\n\n\nFunction: mean()\nInput: x\nOutput: mean of x\n\nDocumentation for mean() function"
   },
   {
     "objectID": "slides/BTS510-24-1.html#what-is-a-package",
@@ -458,7 +458,7 @@
     "href": "slides/BTS510-24-1.html#what-is-a-package-1",
     "title": "Introduction to Biostatistics",
     "section": "3.8 What is a package?",
-    "text": "3.8 What is a package?\n\nTo use functions in a package, you need to\n\nInstall the package\n\nJust once per machine / Rstudio\n\nLoad or library() the package\n\nEvery time you use it"
+    "text": "3.8 What is a package?\n\nTo use functions in a package, you need to\n\nInstall the package\n\nJust once per machine / R install\n\nLoad or library() the package\n\nEvery time you use it"
   },
   {
     "objectID": "slides/BTS510-24-1.html#what-is-rstudio",
@@ -479,7 +479,7 @@
     "href": "slides/BTS510-24-1.html#what-is-markdown",
     "title": "Introduction to Biostatistics",
     "section": "4.1 What is “markdown”?",
-    "text": "4.1 What is “markdown”?\n\n“Markup” language to format plain text\n\nHTML: hyper-text markup language\n\nHeadings, links, italics / bold, bullet points, equations\nOutput final, formatted document into multiple formats\n\nHTML, Word, PDF documents or slides\n\nUsed across a wide variety of platforms, not just in R\n\nGithub, Jekyll, note-taking apps"
+    "text": "4.1 What is “markdown”?\n\n“Markup” language to format plain text\n\nHTML: Hyper-Text Markup Language\n\nHeadings, links, italics / bold, bullet points, equations\nOutput final, formatted document into multiple formats\n\nHTML, Word, PDF documents or slides\n\nUsed across a wide variety of platforms, not just in R\n\nGithub, Jekyll, note-taking apps"
   },
   {
     "objectID": "slides/BTS510-24-1.html#markdown-example",
@@ -489,17 +489,45 @@
     "text": "4.2 markdown example\n\nhttps://www.markdownguide.org/getting-started/#kicking-the-tires"
   },
   {
+    "objectID": "slides/BTS510-24-1.html#markdown-example-organization",
+    "href": "slides/BTS510-24-1.html#markdown-example-organization",
+    "title": "Introduction to Biostatistics",
+    "section": "4.3 markdown example: Organization",
+    "text": "4.3 markdown example: Organization\n\nOrganize document with headings\n\n# Level 1 heading\n## Level 2 heading\n### Level 3 heading\n\nMost documents can have a table of contents, which will use these headings"
+  },
+  {
+    "objectID": "slides/BTS510-24-1.html#markdown-example-format-text",
+    "href": "slides/BTS510-24-1.html#markdown-example-format-text",
+    "title": "Introduction to Biostatistics",
+    "section": "4.4 markdown example: Format text",
+    "text": "4.4 markdown example: Format text\n\n*italics* turns into italics\n**bold** turns into bold\nMathematical text in between pairs of $\n\n$R^2_{multiple}$ turns into \\(R^2_{multiple}\\)\n$\\hat{Y} = b_0 + b_1 X_1$ turns into \\(\\hat{Y} = b_0 + b_1 X_1\\)"
+  },
+  {
+    "objectID": "slides/BTS510-24-1.html#markdown-example-code-chunks",
+    "href": "slides/BTS510-24-1.html#markdown-example-code-chunks",
+    "title": "Introduction to Biostatistics",
+    "section": "4.5 markdown example: Code chunks",
+    "text": "4.5 markdown example: Code chunks\n```{r, echo = TRUE}\nx &lt;- c(1, 1, 2, 3, 5, 8)\nmean(x)\n```\n\nIntersperse text and code in the same document\n\nDescription of data and analysis\nAnalysis\nSummarize the results"
+  },
+  {
     "objectID": "slides/BTS510-24-1.html#rmarkdown-package",
     "href": "slides/BTS510-24-1.html#rmarkdown-package",
     "title": "Introduction to Biostatistics",
-    "section": "4.3 rmarkdown package",
-    "text": "4.3 rmarkdown package\n\nImplements markdown in R\nLets you create several document types\n\nHTML or PDF or Word documents\nSlides in HTML or PDF or Powerpoint\n\nDoes all the heavy lifting to convert your markdown document to the final, formatted version"
+    "section": "4.6 rmarkdown package",
+    "text": "4.6 rmarkdown package\n\nImplements markdown in R\nLets you create several document types\n\nHTML or PDF or Word documents\nSlides in HTML or PDF or Powerpoint\n\nDoes all the heavy lifting to convert your markdown document to the final, formatted version"
   },
   {
     "objectID": "slides/BTS510-24-1.html#what-about-quarto",
     "href": "slides/BTS510-24-1.html#what-about-quarto",
     "title": "Introduction to Biostatistics",
-    "section": "4.4 What about Quarto?",
-    "text": "4.4 What about Quarto?\n\n“Next gen” of markdown\nWorks with multiple languages (even in the same document): R, Python, Julia\nAdditional features\nAdditional installation burden (and bugs!)"
+    "section": "4.7 What about Quarto?",
+    "text": "4.7 What about Quarto?\n\n“Next gen” of markdown\nWorks with multiple languages (even in the same document): R, Python, Julia\nAdditional features\nAdditional installation burden (and conflicts!)"
+  },
+  {
+    "objectID": "slides/BTS510-24-1.html#in-class-activities-1",
+    "href": "slides/BTS510-24-1.html#in-class-activities-1",
+    "title": "Introduction to Biostatistics",
+    "section": "5.1 In-class activities",
+    "text": "5.1 In-class activities\n\nAny questions on the course topics and goals\nStart using R and Rstudio\nStart using R markdown documents as a reproducible method to present analyses along with narrative text"
   }
 ]

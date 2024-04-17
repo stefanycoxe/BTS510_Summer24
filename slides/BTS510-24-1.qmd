@@ -35,7 +35,7 @@ knitr:
 
 ## Learning objectives
 
-* Review the course topics, structure, and goals
+* Review the course topics and goals
 * Start using **R** and **Rstudio**
 * Start using [R markdown documents](https://rmarkdown.rstudio.com/) as a **reproducible** method to present analyses along with **narrative text**
 
@@ -47,9 +47,10 @@ knitr:
 - Probability
 - Uncertainty
 - Programming / computer science
+- Decision making
 - Integrated into science
 
-## What is statistics? **People solving problems**
+## What is statistics? **People**
 
 - William Sealy Gosset
   - Guinness Brewing Company: Making better beer
@@ -159,6 +160,8 @@ x
 mean(x)
 ```
 
+
+- Function: `mean()`
 - Input: `x`
 - Output: mean of `x`
 
@@ -175,7 +178,7 @@ mean(x)
 
 - To use functions in a package, you need to
   - **Install** the package
-    - *Just once* per machine / Rstudio 
+    - *Just once* per machine / R install
   - **Load** or `library()` the package
     - *Every time* you use it
 
@@ -196,7 +199,7 @@ mean(x)
 ## What is "markdown"?
 
 - "Markup" language to format plain text
-  - HTML: hyper-text markup language
+  - HTML: **H**yper-**T**ext **M**arkup **L**anguage
 - Headings, links, italics / bold, bullet points, equations
 - Output final, formatted document into multiple formats
   - HTML, Word, PDF documents or slides
@@ -208,6 +211,36 @@ mean(x)
 ![](dillinger.avif)
 
 [https://www.markdownguide.org/getting-started/#kicking-the-tires](https://www.markdownguide.org/getting-started/#kicking-the-tires)
+
+## markdown example: Organization
+
+- Organize document with headings
+  - `# Level 1 heading`
+  - `## Level 2 heading`
+  - `### Level 3 heading`
+- Most documents can have a **table of contents**, which will use these headings
+
+## markdown example: Format text
+
+- `*italics*` turns into *italics*
+- `**bold**` turns into **bold**
+- Mathematical text in between pairs of `$`
+  - `$R^2_{multiple}$` turns into $R^2_{multiple}$
+  - `$\hat{Y} = b_0 + b_1 X_1$` turns into $\hat{Y} = b_0 + b_1 X_1$
+  
+## markdown example: Code chunks
+
+````{verbatim}
+```{r, echo = TRUE}
+x <- c(1, 1, 2, 3, 5, 8)
+mean(x)
+```
+````
+
+- Intersperse **text** and **code** in the same document
+  - Description of data and analysis
+  - Analysis
+  - Summarize the results
 
 ## **rmarkdown** package
 
@@ -222,7 +255,13 @@ mean(x)
 - "Next gen" of markdown
 - Works with multiple languages (even in the same document): R, Python, Julia
 - Additional features
-- Additional installation burden (and bugs!)
+- Additional installation burden (and conflicts!)
 
+# In-class activities
 
+## In-class activities
+
+* Any questions on the course topics and goals
+* Start using **R** and **Rstudio**
+* Start using [R markdown documents](https://rmarkdown.rstudio.com/) as a **reproducible** method to present analyses along with **narrative text**
 
