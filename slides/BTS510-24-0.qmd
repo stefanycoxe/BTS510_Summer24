@@ -37,6 +37,8 @@ knitr:
 
 - Dr. Stefany Coxe
   - Ph.D. in Quantitative Psychology from [Arizona State University](https://psychology.asu.edu/degree/graduate/quantitative-psychology)
+  - Biostatistician in Biostatistics Shared Resource
+  - Associate Professor in Computational Biomedicine
 
 - Originally from Southern California but I've lived in other *warm* places like Phoenix and Miami
 
@@ -104,15 +106,15 @@ Becoming methodologically self-reliant is **empowering**, **satisfying**, and **
 
 ## Homework assignments
 
-Six (6) homework assignments
+- Six (6) homework assignments
 
-- Programming assignments
+  - Programming assignments
   
-  - Write code to learn to program in R
+    - Write code to learn to program in R
 
-- Data and research question 
+  - Data and research question 
 
-  - You run the appropriate analyses and write up the results 
+    - You run the appropriate analyses and write up the results 
 
 ## Final project
 
