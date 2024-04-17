@@ -59,7 +59,7 @@ Becoming methodologically self-reliant is **empowering**, **satisfying**, and **
 
 ## Hybrid, flipped course
 
-- We meet **in person** for **1 hour 30 minutes** each week 
+- We meet **in person** for **1 hour 30 minutes** each week for **active learning**
 
   - Work through R code  
   - Interpret output
@@ -86,13 +86,13 @@ Becoming methodologically self-reliant is **empowering**, **satisfying**, and **
 
 ## Lecture and survey
 
-Each week, there will be a recorded lecture video
+- Each week, there will be a recorded lecture video
 
-- Background material to do in-class exercises
+  - Background material to do in-class exercises
 
-- Watch the video
+  - Watch the video
 
-- Complete the survey to provide comments and questions
+  - Complete the survey to provide comments and questions
 
 ## In-person class time
 
