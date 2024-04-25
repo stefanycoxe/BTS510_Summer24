@@ -10,7 +10,9 @@ title: "References"
 
 * Motulsky, H. (2014). Intuitive biostatistics: a nonmathematical guide to statistical thinking. Oxford University Press, USA.
 
-## R, Rstudio, markdown
+## R, Rstudio, markdown, Quarto
+
+* [Commonly used R packages for different tasks](https://support.posit.co/hc/en-us/articles/201057987-Quick-list-of-useful-R-packages)
 
 * R packages in the [**tidyverse**](https://www.tidyverse.org/), which includes:
     * **dplyr**: [https://dplyr.tidyverse.org/](https://dplyr.tidyverse.org/)
@@ -25,8 +27,7 @@ title: "References"
     
 * Cheatsheets on various topics, including markdown: [https://posit.co/resources/cheatsheets/](https://posit.co/resources/cheatsheets/)
     
-* "Next gen" of markdown: [Quarto](https://quarto.org/)
-    * We're using markdown instead because Quarto is still pretty new and requires some additional installation. Feel free to use Quarto if you're up for it -- most of the concepts translate directly
+* [Quarto](https://quarto.org/): "Next gen" of markdown
     
 * Imai, K., & Williams, N. W. (2022). Quantitative Social Science: An Introduction in Tidyverse. Princeton University Press.
 

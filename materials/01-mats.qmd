@@ -6,18 +6,17 @@ title: "Week 1: Introduction"
 
 * Review the course topics, structure, and goals
 * Start using **R** and **Rstudio**
-* Start using [R markdown documents](https://rmarkdown.rstudio.com/) as a **reproducible** method to present analyses along with **narrative text**
+* Start using [Quarto documents](https://quarto.org/) in R as a **reproducible** method to present analyses along with **narrative text**
 
 ## Before class: Lecture 
 
-{{< video https://youtu.be/2YJ4wZd5pmk width="400" height="300" >}}
-
-* [Lecture survey](https://forms.gle/17uKUR5xP9G45NEg8){target="_blank"}: Complete by XXX
-* [Slides (html)](/docs/slides/BTS510-24-1.html){target="_blank"}
+* [Lecture 1](https://youtu.be/7rf9gzg2WyM){target="_blank"} 
+* [Lecture survey](https://forms.gle/3viTXjk9Lx8kgpcK9){target="_blank"}: Complete by Wednesday, May 1 at 8pm
+* [Slides (html)](../slides/BTS510-24-1.qmd){target="_blank"}
     
 ## During class: Lab
 
-
+* [Lab 1 (html with link to code)](../lab/BTS510-24-lab1.qmd){target="_blank"}
 
 ## After class: Assignment 
 

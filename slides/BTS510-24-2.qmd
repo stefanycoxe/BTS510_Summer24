@@ -1,0 +1,45 @@
+---
+title: "Introduction to Biostatistics"
+format:
+  # html: 
+  #   toc: true
+  #   toc-location: left
+  #   slide-level: 3
+  #   number-sections: true
+  #   toc-depth: 2
+  #   self-contained: true
+  #   #output-file: "Mult22-1-handout"
+  # pdf: 
+  #   toc: true
+  #   number-sections: true
+  #   #slide-level: 3
+  #   toc-depth: 2
+  #   shift-heading-level-by: 0
+  #   number-offset: [2]
+  revealjs:
+    toc: false
+    number-sections: true
+    #slide-level: 3
+    scrollable: true
+    self-contained: true
+    slide-number: true
+    width: 1200
+knitr: 
+  opts_chunk:
+    echo: false
+    message: false
+    warning: false
+---
+
+# Learning objectives
+
+## Learning objectives
+
+
+
+# In-class activities
+
+## In-class activities
+
+
+

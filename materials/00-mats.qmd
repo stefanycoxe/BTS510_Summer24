@@ -5,16 +5,17 @@ title: "Week 0: Read me first!"
 * This course will be *dependent on software and technology*. Therefore, in preparation for the first class meeting:
     * Install R from [here](https://cran.r-project.org/)
     * Install Rstudio from [here](https://posit.co/download/rstudio-desktop/) (optional but will make your life easier)
+    * Install Quarto from [here](https://quarto.org/docs/get-started/)
     * Make sure to bring your laptop to class on **Thursday**
 
 * Syllabus  
     * Take a look at the [syllabus](../syllabus.qmd)
     
 * Introduction
-    * Here is a short video ([Lecture 0]()) to orient you to the course and the **flipped** format
-    * Here are the [slides](/docs/slides/BTS510-24-0.html){target="_blank"} from the video
+    * Here is a short video ([Lecture 0](https://youtu.be/_ctOsn4dZUI){target="_blank"}) to orient you to the course and the **flipped** format
+    * Here are the [slides](../slides/BTS510-24-0.qmd){target="_blank"} from the video
 
-* Week 1 materials [here](../materials/01-mats.qmd)  
+* Week 1 materials [here](../materials/01-mats.qmd){target="_blank"}  
     * Watch lecture video 1
     * Complete the lecture survey
     * This will prepare you for our first in-person meeting on **Thursday morning**
