@@ -11,7 +11,7 @@ format:
 
 * Stefany Coxe, Ph.D.  
     * [stefany.coxe@cshs.org](mailto:stefany.coxe@cshs.org)  
-    * Office hours: TBD
+    * Office hours: By appointment (send me an email to schedule)
 * Yujie Cui, M.S.
     * [yujie.cui@cshs.org](yujie.cui@cshs.org)
     * Office hours: TBD
@@ -59,6 +59,11 @@ We will be using **R** for this course. It's ok if you don't know how to use R (
     * I also recommend using Rstudio, which can be downloaded [here](https://posit.co/download/rstudio-desktop/)
     * If you use a Chromebook or tablet, you can use [Rstudio via the cloud](https://posit.cloud/)
         * I have not used this much, so I don't know all its shortcomings
+* We'll also be using [Quarto](https://quarto.org/)
+    * Publishing system based on markdown
+    * Intersperse plain text and code
+    * Output to convenient formats, like HTML, PDF, Word
+    * [Install Quarto](https://quarto.org/docs/get-started/)
 
 ### Assessments
 
@@ -72,13 +77,9 @@ Watch the lecture video. Respond to the survey afterward with questions and comm
 
 There will be six (6) homework assignments. The assignments generally involve running analyses in R, interpreting output, and presenting the results.
 
-<!-- #### Readings (20%) -->
-
-<!-- There will be five (5) special topics that we'll cover with group article discussions in Perusall. I will provide prompts / direction; you will annotate the article with questions and comments. These are designed to give you some experience reading and understanding statistics and methodology articles (which can be really hard to read) and to get you to think about the topics in more detail. You will also write up a short (~500 word) reflection on each topic. More details to come. -->
-
 #### Final project (30%)
 
-You will pick one of the five special topics and write a longer (2 to 3 page) summary of the topic, primarily using the listed readings. More details to come.
+You will pick one of the five special topics and write a summary of the topic, primarily using the listed readings. More details to come.
 
 ### Tentative schedule
 

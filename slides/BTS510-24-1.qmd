@@ -37,7 +37,7 @@ knitr:
 
 * Review the course topics and goals
 * Start using **R** and **Rstudio**
-* Start using [R markdown documents](https://rmarkdown.rstudio.com/) as a **reproducible** method to present analyses along with **narrative text**
+* Start using [Quarto documents](https://quarto.org/) in R as a **reproducible** method to present analyses along with **narrative text**
 
 # Course topics and goals
 
@@ -46,8 +46,9 @@ knitr:
 - Mathematics
 - Probability
 - Uncertainty
-- Programming / computer science
 - Decision making
+- Programming / computer science
+- Study design and methodology
 - Integrated into science
 
 ## What is statistics? **People**
@@ -160,7 +161,6 @@ x
 mean(x)
 ```
 
-
 - Function: `mean()`
 - Input: `x`
 - Output: mean of `x`
@@ -194,7 +194,7 @@ mean(x)
 
 ![](rstudio.jpg)
 
-# R markdown
+# Quarto and markdown
 
 ## What is "markdown"?
 
@@ -219,6 +219,7 @@ mean(x)
   - `## Level 2 heading`
   - `### Level 3 heading`
 - Most documents can have a **table of contents**, which will use these headings
+  - Slides have a table of contents accessed from bottom left
 
 ## markdown example: Format text
 
@@ -250,12 +251,13 @@ mean(x)
   - Slides in HTML or PDF or Powerpoint
 - Does all the heavy lifting to convert your markdown document to the final, formatted version
 
-## What about Quarto?
+## Quarto
 
 - "Next gen" of markdown
 - Works with multiple languages (even in the same document): R, Python, Julia
 - Additional features
-- Additional installation burden (and conflicts!)
+- Install Quarto from [here](https://quarto.org/docs/get-started/) 
+  - More general info [here](https://quarto.org/)
 
 # In-class activities
 
@@ -263,5 +265,5 @@ mean(x)
 
 * Any questions on the course topics and goals
 * Start using **R** and **Rstudio**
-* Start using [R markdown documents](https://rmarkdown.rstudio.com/) as a **reproducible** method to present analyses along with **narrative text**
+* Start using [Quarto](https://quarto.org/docs) in R as a **reproducible** method to present analyses along with **narrative text**
 

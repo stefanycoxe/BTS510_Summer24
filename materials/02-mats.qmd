@@ -12,7 +12,7 @@ title: "Week 2: Data manipulation"
 
 {{< video https://youtu.be/2YJ4wZd5pmk width="400" height="300" >}}
 
-* [Lecture survey](){target="_blank"}: Complete by XXX
+* [Lecture survey](https://forms.gle/FpY1tmQxW99NjLiA6){target="_blank"}: Complete by XXX
 * [Slides](/_site/slides/Mult23-0.html){target="_blank"}
     
 ## During class: Lab
