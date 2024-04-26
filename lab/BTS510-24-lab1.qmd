@@ -67,7 +67,7 @@ This first code chunk usually has more in it. See notes below. This code sets a 
     * `html-math-method: katex` is an option about the equations and math text. It's probably not necessary, but I include it anyway.
     * `number-sections: true` and `toc: true` produce the table of contents on the right side of this page and number the sections and sub-sections (remember headings and organization?) to make it easier to navigate
     * `code-tools: true` adds the `</> Code` button at the top that shows the code that made this page. You can copy the code (using the little "Copy to clipboard" icon in the upper right) and paste it right into R
-    * `code-block-bg: true` and `code-block-border-left: "#31BAE9"` make the code chunks a little more noticable -- they blended into the background too much otherwise.
+    * `code-block-bg: true` and `code-block-border-left: "#31BAE9"` make the code chunks a little more noticeable -- they blended into the background too much otherwise.
     * The YAML is one of the few places that **spacing matters**. Note how each sub-option is indented more than it's over-option. If you don't get this right, the file won't run
     * Read more about **YAML** options [here](https://quarto.org/docs/get-started/authoring/rstudio.html)
 * You can **label** each code chunk in the document
@@ -139,7 +139,7 @@ Some packages contain data. We will use the `gapminder` dataset from the **gapmi
 To load a *dataset*, use the `data()` function
 
 ```{r}
-data("gapminder")
+data(gapminder)
 ```
 
 ## Looking at your data
@@ -227,5 +227,6 @@ Complete these tasks by adding to this .qmd (quarto) file.
 5. How many **countries** are represented in the `gapminder` dataset? Where did you find that out?
 
 5. The `gapminder` dataset is longitudinal. Is it organized as tall or wide?
+
 
 

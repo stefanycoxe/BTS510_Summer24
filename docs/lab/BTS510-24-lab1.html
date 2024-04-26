@@ -4909,7 +4909,7 @@ Note
 <li><code>html-math-method: katex</code> is an option about the equations and math text. It’s probably not necessary, but I include it anyway.</li>
 <li><code>number-sections: true</code> and <code>toc: true</code> produce the table of contents on the right side of this page and number the sections and sub-sections (remember headings and organization?) to make it easier to navigate</li>
 <li><code>code-tools: true</code> adds the <code>&lt;/&gt; Code</code> button at the top that shows the code that made this page. You can copy the code (using the little “Copy to clipboard” icon in the upper right) and paste it right into R</li>
-<li><code>code-block-bg: true</code> and <code>code-block-border-left: &quot;#31BAE9&quot;</code> make the code chunks a little more noticable – they blended into the background too much otherwise.</li>
+<li><code>code-block-bg: true</code> and <code>code-block-border-left: &quot;#31BAE9&quot;</code> make the code chunks a little more noticeable – they blended into the background too much otherwise.</li>
 <li>The YAML is one of the few places that <strong>spacing matters</strong>. Note how each sub-option is indented more than it’s over-option. If you don’t get this right, the file won’t run</li>
 <li>Read more about <strong>YAML</strong> options <a href="https://quarto.org/docs/get-started/authoring/rstudio.html">here</a></li>
 </ul></li>
@@ -5002,7 +5002,7 @@ Note
 <p>Some packages contain data. We will use the <code>gapminder</code> dataset from the <strong>gapminder</strong> package. Another great source of dataset is the <a href="https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/00Index.html"><strong>datasets</strong> package</a>, which includes commonly used datasets such as <code>iris</code> and <code>mtcars</code>. (Note that if you want to use <code>iris</code> or <code>mtcars</code>, you’ll need to <strong>load</strong> it – it is installed with R by default, so you don’t need to install it.)</p>
 <p>To load a <em>dataset</em>, use the <code>data()</code> function</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;gapminder&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(gapminder)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
@@ -5703,7 +5703,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb17-69"><a href="#cb17-69" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span><span class="in">`html-math-method: katex`</span> is an option about the equations and math text. It&#39;s probably not necessary, but I include it anyway.</span>
 <span id="cb17-70"><a href="#cb17-70" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span><span class="in">`number-sections: true`</span> and <span class="in">`toc: true`</span> produce the table of contents on the right side of this page and number the sections and sub-sections (remember headings and organization?) to make it easier to navigate</span>
 <span id="cb17-71"><a href="#cb17-71" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span><span class="in">`code-tools: true`</span> adds the <span class="in">`&lt;/&gt; Code`</span> button at the top that shows the code that made this page. You can copy the code (using the little &quot;Copy to clipboard&quot; icon in the upper right) and paste it right into R</span>
-<span id="cb17-72"><a href="#cb17-72" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span><span class="in">`code-block-bg: true`</span> and <span class="in">`code-block-border-left: &quot;#31BAE9&quot;`</span> make the code chunks a little more noticable -- they blended into the background too much otherwise.</span>
+<span id="cb17-72"><a href="#cb17-72" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span><span class="in">`code-block-bg: true`</span> and <span class="in">`code-block-border-left: &quot;#31BAE9&quot;`</span> make the code chunks a little more noticeable -- they blended into the background too much otherwise.</span>
 <span id="cb17-73"><a href="#cb17-73" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>The YAML is one of the few places that **spacing matters**. Note how each sub-option is indented more than it&#39;s over-option. If you don&#39;t get this right, the file won&#39;t run</span>
 <span id="cb17-74"><a href="#cb17-74" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>Read more about **YAML** options <span class="co">[</span><span class="ot">here</span><span class="co">](https://quarto.org/docs/get-started/authoring/rstudio.html)</span></span>
 <span id="cb17-75"><a href="#cb17-75" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>You can **label** each code chunk in the document</span>
@@ -5775,7 +5775,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb17-145"><a href="#cb17-145" aria-hidden="true" tabindex="-1"></a>To load a *dataset*, use the <span class="in">`data()`</span> function</span>
 <span id="cb17-146"><a href="#cb17-146" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-149"><a href="#cb17-149" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb17-150"><a href="#cb17-150" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;gapminder&quot;</span>)</span>
+<span id="cb17-150"><a href="#cb17-150" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(gapminder)</span>
 <span id="cb17-151"><a href="#cb17-151" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb17-152"><a href="#cb17-152" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-153"><a href="#cb17-153" aria-hidden="true" tabindex="-1"></a><span class="fu">## Looking at your data</span></span>
@@ -5864,6 +5864,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb17-246"><a href="#cb17-246" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-247"><a href="#cb17-247" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>The <span class="in">`gapminder`</span> dataset is longitudinal. Is it organized as tall or wide?</span>
 <span id="cb17-248"><a href="#cb17-248" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-249"><a href="#cb17-249" aria-hidden="true" tabindex="-1"></a></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
