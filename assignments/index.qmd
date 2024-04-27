@@ -3,11 +3,10 @@ title: "Assignments overview"
 #callout-icon: false
 ---
 
-You will be assessed in this course using 3 types of assignments
+* You will be assessed in this course using 3 types of assignments
 
 * In this section
     * Homework assignments: About every other week
-    <!-- * Readings: Weeks that there isn't a homework assignment -->
     * Final project: End of semester project
 
 * In the [Materials](../materials/index.qmd) section

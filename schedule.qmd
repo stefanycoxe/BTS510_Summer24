@@ -2,7 +2,7 @@
 title: "Schedule"
 format:
     html: default
-#    pdf: default
+    pdf: default
 ---
 
 **Due dates subject to change** due to weather, emergency, scheduling changes, etc. 

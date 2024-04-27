@@ -3,10 +3,11 @@ title: "Materials overview"
 #callout-icon: false
 ---
 
-Lecture notes and videos, code files, and other materials for the course are here
-
-Check the menu on the left for week-by-week materials
+* Week by week materials are listed in the left menu
+    * For each week, there are lecture notes, lecture videos, code files, and other materials for the course
+    * All lecture videos (only) can be found [here](https://www.youtube.com/playlist?list=PLKrGRYggZL-G6-zdw9C_O6YJvh_b5g6OE)
+* Check the menu on the left for week-by-week materials
 
 ::: {.callout-note}
-Right click (or control click) and select "Save link as..." to download html files
+* Right click (or control click) and select "Save link as..." to download html files
 :::

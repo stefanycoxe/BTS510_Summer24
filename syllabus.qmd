@@ -2,7 +2,7 @@
 title: "Syllabus"
 format:
     html: default
-    #pdf: default
+    pdf: default
 ---
 
 # BTS 510 Syllabus -- Summer 2024
