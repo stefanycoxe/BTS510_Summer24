@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>BTS 510  Summer 2024 - BTS 510 Lab 1</title>
+<title>BTS 510  Summer 2024 - BTS 510 Lab 2</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -4790,27 +4790,17 @@ vertical-align: -.125em;
    
   <ul>
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">1</span> Learning objectives</a></li>
-  <li><a href="#where-is-the-code" id="toc-where-is-the-code" class="nav-link" data-scroll-target="#where-is-the-code"><span class="header-section-number">2</span> Where is the code???</a></li>
-  <li><a href="#a-few-miscellaneous-things-about-r-and-quarto" id="toc-a-few-miscellaneous-things-about-r-and-quarto" class="nav-link" data-scroll-target="#a-few-miscellaneous-things-about-r-and-quarto"><span class="header-section-number">3</span> A few miscellaneous things about R and Quarto</a>
+  <li><a href="#read-in-data" id="toc-read-in-data" class="nav-link" data-scroll-target="#read-in-data"><span class="header-section-number">2</span> Read in data</a>
   <ul class="collapse">
-  <li><a href="#about-r" id="toc-about-r" class="nav-link" data-scroll-target="#about-r"><span class="header-section-number">3.1</span> About R</a></li>
-  <li><a href="#about-quarto" id="toc-about-quarto" class="nav-link" data-scroll-target="#about-quarto"><span class="header-section-number">3.2</span> About Quarto</a></li>
+  <li><a href="#check-out-the-data" id="toc-check-out-the-data" class="nav-link" data-scroll-target="#check-out-the-data"><span class="header-section-number">2.1</span> Check out the data</a></li>
   </ul></li>
-  <li><a href="#installing-packages" id="toc-installing-packages" class="nav-link" data-scroll-target="#installing-packages"><span class="header-section-number">4</span> Installing packages</a></li>
-  <li><a href="#loading-packages" id="toc-loading-packages" class="nav-link" data-scroll-target="#loading-packages"><span class="header-section-number">5</span> Loading packages</a></li>
-  <li><a href="#reading-in-data" id="toc-reading-in-data" class="nav-link" data-scroll-target="#reading-in-data"><span class="header-section-number">6</span> Reading in data</a>
+  <li><a href="#convert-from-tall-to-wide-and-back-successfully" id="toc-convert-from-tall-to-wide-and-back-successfully" class="nav-link" data-scroll-target="#convert-from-tall-to-wide-and-back-successfully"><span class="header-section-number">3</span> Convert from tall to wide and back <strong>successfully</strong></a>
   <ul class="collapse">
-  <li><a href="#external-data" id="toc-external-data" class="nav-link" data-scroll-target="#external-data"><span class="header-section-number">6.1</span> External data</a></li>
-  <li><a href="#data-from-a-package" id="toc-data-from-a-package" class="nav-link" data-scroll-target="#data-from-a-package"><span class="header-section-number">6.2</span> Data from a package</a></li>
+  <li><a href="#step-1-select-only-some-variables-lifeexp" id="toc-step-1-select-only-some-variables-lifeexp" class="nav-link" data-scroll-target="#step-1-select-only-some-variables-lifeexp"><span class="header-section-number">3.1</span> Step 1: <code>select()</code> only some variables (<code>lifeExp</code>)</a></li>
+  <li><a href="#step-2-pivot_wider-to-convert-to-a-wide-dataset" id="toc-step-2-pivot_wider-to-convert-to-a-wide-dataset" class="nav-link" data-scroll-target="#step-2-pivot_wider-to-convert-to-a-wide-dataset"><span class="header-section-number">3.2</span> Step 2: <code>pivot_wider()</code> to convert to a wide dataset</a></li>
+  <li><a href="#step-3-pivot_longer-to-convert-back-to-a-tall-dataset" id="toc-step-3-pivot_longer-to-convert-back-to-a-tall-dataset" class="nav-link" data-scroll-target="#step-3-pivot_longer-to-convert-back-to-a-tall-dataset"><span class="header-section-number">3.3</span> Step 3: <code>pivot_longer()</code> to convert back to a tall dataset</a></li>
   </ul></li>
-  <li><a href="#looking-at-your-data" id="toc-looking-at-your-data" class="nav-link" data-scroll-target="#looking-at-your-data"><span class="header-section-number">7</span> Looking at your data</a>
-  <ul class="collapse">
-  <li><a href="#list-the-dataset" id="toc-list-the-dataset" class="nav-link" data-scroll-target="#list-the-dataset"><span class="header-section-number">7.1</span> List the dataset</a></li>
-  <li><a href="#head-function" id="toc-head-function" class="nav-link" data-scroll-target="#head-function"><span class="header-section-number">7.2</span> <code>head()</code> function</a></li>
-  <li><a href="#str-function" id="toc-str-function" class="nav-link" data-scroll-target="#str-function"><span class="header-section-number">7.3</span> <code>str()</code> function</a></li>
-  <li><a href="#glimpse-function" id="toc-glimpse-function" class="nav-link" data-scroll-target="#glimpse-function"><span class="header-section-number">7.4</span> <code>glimpse()</code> function</a></li>
-  </ul></li>
-  <li><a href="#activities" id="toc-activities" class="nav-link" data-scroll-target="#activities"><span class="header-section-number">8</span> Activities</a></li>
+  <li><a href="#manipulate-some-data" id="toc-manipulate-some-data" class="nav-link" data-scroll-target="#manipulate-some-data"><span class="header-section-number">4</span> Manipulate some data</a></li>
   </ul>
 </nav>
     </div>
@@ -4819,7 +4809,7 @@ vertical-align: -.125em;
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">BTS 510 Lab 1</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">BTS 510 Lab 2</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -4837,320 +4827,8 @@ vertical-align: -.125em;
 
 
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12345</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This first code chunk usually has more in it. See notes below. This code sets a random number seed so that if we do anything that requires a random number (e.g., create data with a random number generating function), it will produce the <strong>same values</strong> every time.</p>
-</div>
-</div>
-<section id="learning-objectives" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">1</span> Learning objectives</h2>
-<ul>
-<li>Start using <strong>R</strong> and <strong>Rstudio</strong></li>
-<li>Start using <strong>Quarto</strong> documents as a <strong>reproducible</strong> method to present analyses along with <strong>narrative text</strong></li>
-</ul>
-</section>
-<section id="where-is-the-code" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="where-is-the-code"><span class="header-section-number">2</span> Where is the code???</h2>
-<ul>
-<li>At the top of the page, in the upper right, there is a button that reads “&lt;/&gt; Code”
-<ul>
-<li>Click on that and a window with the code that made this page will pop up</li>
-<li>Click on the little notepad icon in the upper right to copy the entire document</li>
-</ul></li>
-</ul>
-</section>
-<section id="a-few-miscellaneous-things-about-r-and-quarto" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="a-few-miscellaneous-things-about-r-and-quarto"><span class="header-section-number">3</span> A few miscellaneous things about R and Quarto</h2>
-<section id="about-r" class="level3" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="about-r"><span class="header-section-number">3.1</span> About R</h3>
-<ul>
-<li>R is <strong>case sensitive</strong>
-<ul>
-<li><code>mean</code> is not the same as <code>Mean</code></li>
-<li>The object <code>b</code> is not the same as the object <code>B</code></li>
-</ul></li>
-<li>Extra returns don’t matter
-<ul>
-<li>Extra spaces generally don’t matter either</li>
-<li>I often add extra spaces, tabs, and returns to make the code more readable</li>
-</ul></li>
-<li>The assignment operator is <code>&lt;-</code>
-<ul>
-<li>“Put whatever is on the right side in the object named on the left side”</li>
-</ul></li>
-<li>Sometimes, equal isn’t equal
-<ul>
-<li>If you’re talking about <em>assigning</em> something to a value, you can use <code>=</code></li>
-<li>If you want to <em>compare</em> two values and make a decision based on it, you use <code>==</code></li>
-</ul></li>
-<li>There isn’t a standard, widely-used naming convention for variables, so you should pick something and try to be consistent
-<ul>
-<li>In general, variable names must start with a letter – no numbers or special characters</li>
-<li>There are some options for multi-word variable naming
-<ul>
-<li><code>variablename</code>: Just smush it all together</li>
-<li><code>variableName</code> or <code>VariableName</code>: Camel case</li>
-<li><code>variable_name</code> or <code>Variable_Name</code>: Snake case</li>
-<li><code>variable-name</code> or <code>Variable-Name</code>: Kebab case</li>
-</ul></li>
-<li>In general, make the variable names <strong>as short as possible</strong> while keeping each name unique</li>
-</ul></li>
-</ul>
-</section>
-<section id="about-quarto" class="level3" data-number="3.2">
-<h3 data-number="3.2" class="anchored" data-anchor-id="about-quarto"><span class="header-section-number">3.2</span> About Quarto</h3>
-<ul>
-<li>Look at the top of the Quarto file. The section with <code>---</code> at the top and bottom. This is the <strong>YAML</strong> (pronounced “yam-ull”). It provides options for the overall document.
-<ul>
-<li><code>title:</code> is pretty obvious</li>
-<li><code>format:</code> tells R which output format to produce when you knit the document together</li>
-<li>This is an <code>html</code> document, but you can specify <em>different</em> or <em>multiple</em> output formats, like both HTML and PDF
-<ul>
-<li>There are additional options that are specific to this format</li>
-<li><code>self-contained: true</code> and <code>self-contained-math: true</code> make sure that any additional files that are created, like figures are part of the HTML file. If I didn’t include this and sent you to the HTML file, the figures would be missing.</li>
-<li><code>html-math-method: katex</code> is an option about the equations and math text. It’s probably not necessary, but I include it anyway.</li>
-<li><code>number-sections: true</code> and <code>toc: true</code> produce the table of contents on the right side of this page and number the sections and sub-sections (remember headings and organization?) to make it easier to navigate</li>
-<li><code>code-tools: true</code> adds the <code>&lt;/&gt; Code</code> button at the top that shows the code that made this page. You can copy the code (using the little “Copy to clipboard” icon in the upper right) and paste it right into R</li>
-<li><code>code-block-bg: true</code> and <code>code-block-border-left: &quot;#31BAE9&quot;</code> make the code chunks a little more noticeable – they blended into the background too much otherwise.</li>
-<li>The YAML is one of the few places that <strong>spacing matters</strong>. Note how each sub-option is indented more than it’s over-option. If you don’t get this right, the file won’t run</li>
-<li>Read more about <strong>YAML</strong> options <a href="https://quarto.org/docs/get-started/authoring/rstudio.html">here</a></li>
-</ul></li>
-</ul></li>
-<li>You can <strong>label</strong> each code chunk in the document
-<ul>
-<li>This is a very smart thing to do – but I don’t do it consistently :(</li>
-<li>If you have an error, R will tell you which chunk has the problem
-<ul>
-<li>If the chunks are named, <strong>it will use the name</strong> so it’s easy to find</li>
-<li>If they’re not named, it will tell you something like “Unnamed chunk 52”, which is <em>less helpful</em></li>
-</ul></li>
-<li>Name your chunks with <code>#| label: name-of-this-chunk</code>
-<ul>
-<li>See the setup chunk above – that’s just its name, “setup”</li>
-</ul></li>
-</ul></li>
-<li>There are other options for code chunks. Here are some useful ones
-<ul>
-<li><code>echo: true</code>: Repeats the code in the output</li>
-<li><code>warning: false</code>: Suppress any warnings from R (<strong>not recommended</strong>)</li>
-<li><code>eval: false</code>: Don’t run this code, just print it (useful for teaching)</li>
-<li>For any of these, you can swap from <code>true</code> to <code>false</code> or vice versa and get the opposite effect</li>
-<li><code>fig-cap: &quot;My figure caption is cool&quot;</code>: Adds a caption to the figure produced in that chunk – useful for accessibility</li>
-<li>More info <a href="https://quarto.org/docs/computations/execution-options.html#output-options">here</a> and <a href="https://quarto.org/docs/computations/r.html#code-blocks">here</a></li>
-</ul></li>
-</ul>
-</section>
-</section>
-<section id="installing-packages" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="installing-packages"><span class="header-section-number">4</span> Installing packages</h2>
-<p>You must <strong>install</strong> a new package the first time you use it</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(gapminder)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>You only need to do this once. I have <strong>commented out</strong> this part of the code by putting <code>#</code> at the start of the line because I already have the package installed. If you try to install a package that is already installed, <em>you will probably get an error</em>.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>In my own work, I usually install packages via the Rstudio graphical user interface (GUI). I’m doing it this way for pedagogical reasons.</p>
-</div>
-</div>
-<p><strong>Alternatively</strong>, if you’re using Rstudio, you can quickly install packages in the “Packages” pane using the “Install” button, and <em>exclude this code</em>.</p>
-</section>
-<section id="loading-packages" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="loading-packages"><span class="header-section-number">5</span> Loading packages</h2>
-<p>You must <strong>load</strong> or <code>library()</code> a package each time you use it. This means that you need to load it at the top of each markdown or quarto file you write.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gapminder)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>This allows us to use the functions in these packages. If you’re loading multiple packages, just list each on it’s own line.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>In my own work, I usually load all packages in the “setup” chunk at the top of the document. I’m doing it this way for pedagogical reasons.</p>
-</div>
-</div>
-<p>The <a href="https://cran.r-project.org/web/packages/gapminder/index.html"><strong>gapminder</strong> package</a> is a <em>data package</em>. It provides a subset of the data available at <a href="gapminder.org">gapminder.org</a>. You may have heard about this data from Hans Rosling’s <a href="https://www.ted.com/talks/hans_rosling_the_best_stats_you_ve_ever_seen">very famous TED talk</a>.</p>
-</section>
-<section id="reading-in-data" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="reading-in-data"><span class="header-section-number">6</span> Reading in data</h2>
-<section id="external-data" class="level3" data-number="6.1">
-<h3 data-number="6.1" class="anchored" data-anchor-id="external-data"><span class="header-section-number">6.1</span> External data</h3>
-<p>You can read in data from almost any source.</p>
-<ul>
-<li>Comma-separated values (CSV) file: Use <code>read.csv()</code> (built-in)</li>
-<li>Excel: Use <code>read_excel()</code> function from <a href="https://readxl.tidyverse.org/"><strong>readxl</strong> package</a></li>
-<li>SAS, SPSS, Stata: Use the appropriate function from the <a href="https://haven.tidyverse.org/"><strong>haven</strong> package</a></li>
-<li>SAS, SPSS, S, Stata, Systat, Epi Info, Minitab: Use the appropriate function from the <a href="https://www.rdocumentation.org/packages/foreign/versions/0.8-86"><strong>foreign</strong> package</a></li>
-</ul>
-<p>If you’re using Rstudio, you can read in most types of data using “Import Dataset” in the “Environment” tab in the upper right pane.</p>
-<p>We’ll focus on this more next week. You’ll almost always be using external data (not internal R data) in your own research, so this is really important.</p>
-</section>
-<section id="data-from-a-package" class="level3" data-number="6.2">
-<h3 data-number="6.2" class="anchored" data-anchor-id="data-from-a-package"><span class="header-section-number">6.2</span> Data from a package</h3>
-<p>Some packages contain data. We will use the <code>gapminder</code> dataset from the <strong>gapminder</strong> package. Another great source of dataset is the <a href="https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/00Index.html"><strong>datasets</strong> package</a>, which includes commonly used datasets such as <code>iris</code> and <code>mtcars</code>. (Note that if you want to use <code>iris</code> or <code>mtcars</code>, you’ll need to <strong>load</strong> it – it is installed with R by default, so you don’t need to install it.)</p>
-<p>To load a <em>dataset</em>, use the <code>data()</code> function</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(gapminder)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-</section>
-<section id="looking-at-your-data" class="level2" data-number="7">
-<h2 data-number="7" class="anchored" data-anchor-id="looking-at-your-data"><span class="header-section-number">7</span> Looking at your data</h2>
-<p>There are a number of functions to help you examine your data. You should <strong>always</strong> look at your data to make sure it was read in correctly.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>What <strong>should</strong> your data look like? If you’re doing a typical experimental study, the organization of your dataset should follow a pretty standard format:</p>
-<ul>
-<li>Each row is a unit of study (i.e., person, animal, petri dish)</li>
-<li>Each column is a variable</li>
-</ul>
-<p>There are some deviations from this</p>
-<ul>
-<li><strong>Longitudinal studies</strong> have <em>multiple observations per unit</em> and can be organized 2 different ways
-<ul>
-<li><em>Wide</em> or <em>multivariate</em> format: Each repeated measure is a new variable (e.g., X1, X2, X3 for the X variable at 3 different time points)</li>
-<li><em>Tall</em> or <em>stacked</em> or <em>univariate</em> format: Each repeated measure is a new row, so each unit will have multiple rows of data (with an additional variable that indicates which time point is which)</li>
-</ul></li>
-<li>Data from <strong>non-experiments</strong> is often structured differently or even <em>unstructured</em>
-<ul>
-<li>Web scraping</li>
-<li>Data from devices or automated processes</li>
-<li>Data from someone who doesn’t know what they’re doing…</li>
-</ul></li>
-</ul>
-</div>
-</div>
-<section id="list-the-dataset" class="level3" data-number="7.1">
-<h3 data-number="7.1" class="anchored" data-anchor-id="list-the-dataset"><span class="header-section-number">7.1</span> List the dataset</h3>
-<p>If you want to view the dataset, you can just name the dataset. (You can also <code>print()</code> the dataset for the same result.)</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>gapminder</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1,704 × 6
-   country     continent  year lifeExp      pop gdpPercap
-   &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;
- 1 Afghanistan Asia       1952    28.8  8425333      779.
- 2 Afghanistan Asia       1957    30.3  9240934      821.
- 3 Afghanistan Asia       1962    32.0 10267083      853.
- 4 Afghanistan Asia       1967    34.0 11537966      836.
- 5 Afghanistan Asia       1972    36.1 13079460      740.
- 6 Afghanistan Asia       1977    38.4 14880372      786.
- 7 Afghanistan Asia       1982    39.9 12881816      978.
- 8 Afghanistan Asia       1987    40.8 13867957      852.
- 9 Afghanistan Asia       1992    41.7 16317921      649.
-10 Afghanistan Asia       1997    41.8 22227415      635.
-# ℹ 1,694 more rows</code></pre>
-</div>
-</div>
-</section>
-<section id="head-function" class="level3" data-number="7.2">
-<h3 data-number="7.2" class="anchored" data-anchor-id="head-function"><span class="header-section-number">7.2</span> <code>head()</code> function</h3>
-<p>The <a href="https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/head"><code>head()</code> function</a> will show the head of the dataset. By default, this shows the first 6 rows of the dataset</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gapminder)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 6
-  country     continent  year lifeExp      pop gdpPercap
-  &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;
-1 Afghanistan Asia       1952    28.8  8425333      779.
-2 Afghanistan Asia       1957    30.3  9240934      821.
-3 Afghanistan Asia       1962    32.0 10267083      853.
-4 Afghanistan Asia       1967    34.0 11537966      836.
-5 Afghanistan Asia       1972    36.1 13079460      740.
-6 Afghanistan Asia       1977    38.4 14880372      786.</code></pre>
-</div>
-</div>
-<p>You can change the number of rows it shows using the <code>n</code> argument. Here, I’ve asked for the first 15 rows instead.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gapminder, <span class="at">n =</span> <span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 15 × 6
-   country     continent  year lifeExp      pop gdpPercap
-   &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;
- 1 Afghanistan Asia       1952    28.8  8425333      779.
- 2 Afghanistan Asia       1957    30.3  9240934      821.
- 3 Afghanistan Asia       1962    32.0 10267083      853.
- 4 Afghanistan Asia       1967    34.0 11537966      836.
- 5 Afghanistan Asia       1972    36.1 13079460      740.
- 6 Afghanistan Asia       1977    38.4 14880372      786.
- 7 Afghanistan Asia       1982    39.9 12881816      978.
- 8 Afghanistan Asia       1987    40.8 13867957      852.
- 9 Afghanistan Asia       1992    41.7 16317921      649.
-10 Afghanistan Asia       1997    41.8 22227415      635.
-11 Afghanistan Asia       2002    42.1 25268405      727.
-12 Afghanistan Asia       2007    43.8 31889923      975.
-13 Albania     Europe     1952    55.2  1282697     1601.
-14 Albania     Europe     1957    59.3  1476505     1942.
-15 Albania     Europe     1962    64.8  1728137     2313.</code></pre>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>There is also a <code>tail()</code> function that – guess what – prints the last 6 rows of the dataset. If you wanted to check the end for some reason.</p>
-</div>
-</div>
-</section>
-<section id="str-function" class="level3" data-number="7.3">
-<h3 data-number="7.3" class="anchored" data-anchor-id="str-function"><span class="header-section-number">7.3</span> <code>str()</code> function</h3>
-<p>The <a href="https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/str"><code>str()</code> (for “structure”) function</a> tells you about the structure of the dataset. It shows the number of rows and columns, and summarizes some basic info about each variable (like whether it’s a number or character variable and the possible values).</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(gapminder)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>tibble [1,704 × 6] (S3: tbl_df/tbl/data.frame)
- $ country  : Factor w/ 142 levels &quot;Afghanistan&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
- $ continent: Factor w/ 5 levels &quot;Africa&quot;,&quot;Americas&quot;,..: 3 3 3 3 3 3 3 3 3 3 ...
- $ year     : int [1:1704] 1952 1957 1962 1967 1972 1977 1982 1987 1992 1997 ...
- $ lifeExp  : num [1:1704] 28.8 30.3 32 34 36.1 ...
- $ pop      : int [1:1704] 8425333 9240934 10267083 11537966 13079460 14880372 12881816 13867957 16317921 22227415 ...
- $ gdpPercap: num [1:1704] 779 821 853 836 740 ...</code></pre>
-</div>
-</div>
-</section>
-<section id="glimpse-function" class="level3" data-number="7.4">
-<h3 data-number="7.4" class="anchored" data-anchor-id="glimpse-function"><span class="header-section-number">7.4</span> <code>glimpse()</code> function</h3>
-<p>The <a href="https://dplyr.tidyverse.org/reference/glimpse.html"><code>glimpse()</code> function</a> is in the <strong>dplyr</strong> package in the <strong>tidyverse</strong>. We’re going to talk about <strong>dplyr</strong> more next week, but I wanted to include this function here. This function shows you the number of rows and columns in the dataset. It also flips your dataset so that the variables are rows and prints the dataset out.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12345</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
 ✔ dplyr     1.1.4     ✔ readr     2.1.5
@@ -5163,17 +4841,6 @@ Note
 ✖ dplyr::lag()    masks stats::lag()
 ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(gapminder)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Rows: 1,704
-Columns: 6
-$ country   &lt;fct&gt; &quot;Afghanistan&quot;, &quot;Afghanistan&quot;, &quot;Afghanistan&quot;, &quot;Afghanistan&quot;, …
-$ continent &lt;fct&gt; Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, …
-$ year      &lt;int&gt; 1952, 1957, 1962, 1967, 1972, 1977, 1982, 1987, 1992, 1997, …
-$ lifeExp   &lt;dbl&gt; 28.801, 30.332, 31.997, 34.020, 36.088, 38.438, 39.854, 40.8…
-$ pop       &lt;int&gt; 8425333, 9240934, 10267083, 11537966, 13079460, 14880372, 12…
-$ gdpPercap &lt;dbl&gt; 779.4453, 820.8530, 853.1007, 836.1971, 739.9811, 786.1134, …</code></pre>
-</div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -5185,21 +4852,199 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Don’t worry about all those warnings that show up about tidyverse and such after <code>library(tidyverse)</code>. That’s normal.</p>
+<ul>
+<li>Note that I’m loading all the packages at the top here
+<ul>
+<li><code>library(tidyverse)</code> will load all packages in the “tidyverse”, which includes <strong>dplyr</strong> and <strong>tidyr</strong> as well as <strong>ggplot2</strong> and some others</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<section id="learning-objectives" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">1</span> Learning objectives</h2>
+<ul>
+<li>Read data into R from external formats (e.g., Excel, .csv, SPSS)</li>
+<li>Use <a href="https://dplyr.tidyverse.org/"><strong>dplyr</strong> functions</a> in R to manipulate datasets (e.g., create new variables)</li>
+<li>Use <a href="https://tidyr.tidyverse.org/"><strong>tidyr</strong> functions</a> in R to organize and re-structure datasets</li>
+</ul>
+</section>
+<section id="read-in-data" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="read-in-data"><span class="header-section-number">2</span> Read in data</h2>
+<ul>
+<li>Read in the “gapminder.csv” file
+<ul>
+<li>You’ll need to either
+<ul>
+<li>Save it in the same folder as your .qmd file OR</li>
+<li>Supply the entire path to the file</li>
+</ul></li>
+<li>I have it saved in the same folder, so I’ll just give the file name</li>
+</ul></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>gap <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;gapminder.csv&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Because I already looked at the data, I know that it read in a couple variables differently from how the original data frame was set up
+<ul>
+<li>Specifically, the <code>country</code> and <code>continent</code> variables were originally “factor” variables but have read in here as “character” variables</li>
+<li>So I’m going to force them to be factor variables using the <code>as.factor()</code> function</li>
+<li>Among other things, this will make some of the “data view” functions show us the number of levels of the variable</li>
+</ul></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>gap<span class="sc">$</span>country <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(gap<span class="sc">$</span>country)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>gap<span class="sc">$</span>continent <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(gap<span class="sc">$</span>continent)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="check-out-the-data" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="check-out-the-data"><span class="header-section-number">2.1</span> Check out the data</h3>
+<ul>
+<li><code>head()</code> function</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gap)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      country continent year lifeExp      pop gdpPercap
+1 Afghanistan      Asia 1952  28.801  8425333  779.4453
+2 Afghanistan      Asia 1957  30.332  9240934  820.8530
+3 Afghanistan      Asia 1962  31.997 10267083  853.1007
+4 Afghanistan      Asia 1967  34.020 11537966  836.1971
+5 Afghanistan      Asia 1972  36.088 13079460  739.9811
+6 Afghanistan      Asia 1977  38.438 14880372  786.1134</code></pre>
+</div>
+</div>
+<ul>
+<li><code>str()</code> function</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(gap)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&#39;data.frame&#39;:   1704 obs. of  6 variables:
+ $ country  : Factor w/ 142 levels &quot;Afghanistan&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
+ $ continent: Factor w/ 5 levels &quot;Africa&quot;,&quot;Americas&quot;,..: 3 3 3 3 3 3 3 3 3 3 ...
+ $ year     : int  1952 1957 1962 1967 1972 1977 1982 1987 1992 1997 ...
+ $ lifeExp  : num  28.8 30.3 32 34 36.1 ...
+ $ pop      : int  8425333 9240934 10267083 11537966 13079460 14880372 12881816 13867957 16317921 22227415 ...
+ $ gdpPercap: num  779 821 853 836 740 ...</code></pre>
+</div>
+</div>
+<ul>
+<li><code>glimpse()</code> function</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(gap)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 1,704
+Columns: 6
+$ country   &lt;fct&gt; &quot;Afghanistan&quot;, &quot;Afghanistan&quot;, &quot;Afghanistan&quot;, &quot;Afghanistan&quot;, …
+$ continent &lt;fct&gt; Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, …
+$ year      &lt;int&gt; 1952, 1957, 1962, 1967, 1972, 1977, 1982, 1987, 1992, 1997, …
+$ lifeExp   &lt;dbl&gt; 28.801, 30.332, 31.997, 34.020, 36.088, 38.438, 39.854, 40.8…
+$ pop       &lt;int&gt; 8425333, 9240934, 10267083, 11537966, 13079460, 14880372, 12…
+$ gdpPercap &lt;dbl&gt; 779.4453, 820.8530, 853.1007, 836.1971, 739.9811, 786.1134, …</code></pre>
+</div>
+</div>
+<ul>
+<li>Data looks like it read in correctly
+<ul>
+<li>How many countries?</li>
+<li>How many years?</li>
+<li>How many variables (besides <code>country</code>, <code>continent</code>, and <code>year</code>)?</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="convert-from-tall-to-wide-and-back-successfully" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="convert-from-tall-to-wide-and-back-successfully"><span class="header-section-number">3</span> Convert from tall to wide and back <strong>successfully</strong></h2>
+<ul>
+<li>Part of the issue in the lecture with going back and forth easily is that we were converting <strong>multiple variables</strong>
+<ul>
+<li>This made it too complicated
+<ul>
+<li>(Although, of course, that’s what real data is like…)</li>
+</ul></li>
+<li>So let’s make this a little simpler and use only 1 variable: <code>lifeExp</code></li>
+</ul></li>
+</ul>
+<section id="step-1-select-only-some-variables-lifeexp" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="step-1-select-only-some-variables-lifeexp"><span class="header-section-number">3.1</span> Step 1: <code>select()</code> only some variables (<code>lifeExp</code>)</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>gap1 <span class="ot">&lt;-</span> gap <span class="sc">%&gt;%</span> <span class="fu">select</span>(country, continent, year, lifeExp)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gap1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      country continent year lifeExp
+1 Afghanistan      Asia 1952  28.801
+2 Afghanistan      Asia 1957  30.332
+3 Afghanistan      Asia 1962  31.997
+4 Afghanistan      Asia 1967  34.020
+5 Afghanistan      Asia 1972  36.088
+6 Afghanistan      Asia 1977  38.438</code></pre>
 </div>
 </div>
 </section>
+<section id="step-2-pivot_wider-to-convert-to-a-wide-dataset" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="step-2-pivot_wider-to-convert-to-a-wide-dataset"><span class="header-section-number">3.2</span> Step 2: <code>pivot_wider()</code> to convert to a wide dataset</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>gap1_wide <span class="ot">&lt;-</span> gap1 <span class="sc">%&gt;%</span> <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> year, </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">values_from =</span> lifeExp)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gap1_wide)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 14
+  country     continent `1952` `1957` `1962` `1967` `1972` `1977` `1982` `1987`
+  &lt;fct&gt;       &lt;fct&gt;      &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+1 Afghanistan Asia        28.8   30.3   32.0   34.0   36.1   38.4   39.9   40.8
+2 Albania     Europe      55.2   59.3   64.8   66.2   67.7   68.9   70.4   72  
+3 Algeria     Africa      43.1   45.7   48.3   51.4   54.5   58.0   61.4   65.8
+4 Angola      Africa      30.0   32.0   34     36.0   37.9   39.5   39.9   39.9
+5 Argentina   Americas    62.5   64.4   65.1   65.6   67.1   68.5   69.9   70.8
+6 Australia   Oceania     69.1   70.3   70.9   71.1   71.9   73.5   74.7   76.3
+# ℹ 4 more variables: `1992` &lt;dbl&gt;, `1997` &lt;dbl&gt;, `2002` &lt;dbl&gt;, `2007` &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<ul>
+<li>How many years of data are in this dataset?</li>
+</ul>
 </section>
-<section id="activities" class="level2" data-number="8">
-<h2 data-number="8" class="anchored" data-anchor-id="activities"><span class="header-section-number">8</span> Activities</h2>
-<p>Complete these tasks by adding to this .qmd (quarto) file.</p>
+<section id="step-3-pivot_longer-to-convert-back-to-a-tall-dataset" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="step-3-pivot_longer-to-convert-back-to-a-tall-dataset"><span class="header-section-number">3.3</span> Step 3: <code>pivot_longer()</code> to convert back to a tall dataset</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>gap1_tall <span class="ot">&lt;-</span> gap1_wide <span class="sc">%&gt;%</span> <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">14</span>, </span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">names_to =</span> <span class="st">&quot;year&quot;</span>, </span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">values_to =</span> <span class="st">&quot;lifeExp&quot;</span>)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gap1_tall)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 4
+  country     continent year  lifeExp
+  &lt;fct&gt;       &lt;fct&gt;     &lt;chr&gt;   &lt;dbl&gt;
+1 Afghanistan Asia      1952     28.8
+2 Afghanistan Asia      1957     30.3
+3 Afghanistan Asia      1962     32.0
+4 Afghanistan Asia      1967     34.0
+5 Afghanistan Asia      1972     36.1
+6 Afghanistan Asia      1977     38.4</code></pre>
+</div>
+</div>
+<ul>
+<li>Beautiful!
+<ul>
+<li>Though notice that R decided that <code>year</code> is now a character variable…</li>
+<li>If you wanted to, you could change that with the <code>as.numeric()</code> function as we did to convert variables to factors</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="manipulate-some-data" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="manipulate-some-data"><span class="header-section-number">4</span> Manipulate some data</h2>
+<ul>
+<li><strong>For each task, start with the original data, <code>gap</code></strong>, and use appropriate functions (e.g., <code>print()</code>, <code>head()</code>, <code>str()</code>, <code>glimpse()</code>) to <em>check that you have the data you were trying to get</em>.</li>
+</ul>
 <ol type="1">
-<li><p>Render / knit the file together into an HTML file.</p></li>
-<li><p>Render / knit the file together into a PDF file. You’ll need to install the <strong>tinytex</strong> package for this to work (or have LaTeX installed on your computer).</p></li>
-<li><p>How many rows are in the <code>gapminder</code> dataset? Where did you find that out?</p></li>
-<li><p>How many columns are in the <code>gapminder</code> dataset? Where did you find that out?</p></li>
-<li><p>How many <strong>countries</strong> are represented in the <code>gapminder</code> dataset? Where did you find that out?</p></li>
-<li><p>The <code>gapminder</code> dataset is longitudinal. Is it organized as tall or wide?</p></li>
+<li><p>Keep only observations from countries in Asia and Europe.</p></li>
+<li><p>Create a new variable that is the ratio of life expectancy to GDP.</p></li>
+<li><p>Create a new data frame with the mean GDP per capita for each continent.</p></li>
+<li><p>Find the country in the Americas with the largest population. What country was it and what year was it?</p></li>
+<li><p>Keep only data from Asia prior to 1975 and sort it according to population.</p></li>
+<li><p>How many countries have a life expectancy greater than 80 in 2007?</p></li>
 </ol>
 
 
@@ -5647,7 +5492,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class>
 <div class="sourceCode" id="cb17" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;BTS 510 Lab 1&quot;</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;BTS 510 Lab 2&quot;</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
 <span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co">    self-contained: true</span></span>
@@ -5663,220 +5508,119 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: setup</span></span>
 <span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12345</span>)</span>
-<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
-<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>This first code chunk usually has more in it. See notes below. This code sets a random number seed so that if we do anything that requires a random number (e.g., create data with a random number generating function), it will produce the **same values** every time.</span>
-<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a><span class="fu">## Learning objectives</span></span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
+<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Note that I&#39;m loading all the packages at the top here</span>
+<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`library(tidyverse)`</span> will load all packages in the &quot;tidyverse&quot;, which includes **dplyr** and **tidyr** as well as **ggplot2** and some others</span>
+<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Start using **R** and **Rstudio**</span>
-<span id="cb17-29"><a href="#cb17-29" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Start using **Quarto** documents as a **reproducible** method to present analyses along with **narrative text**</span>
-<span id="cb17-30"><a href="#cb17-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-31"><a href="#cb17-31" aria-hidden="true" tabindex="-1"></a><span class="fu">## Where is the code???</span></span>
-<span id="cb17-32"><a href="#cb17-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-33"><a href="#cb17-33" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>At the top of the page, in the upper right, there is a button that reads &quot;&lt;/&gt; Code&quot;</span>
-<span id="cb17-34"><a href="#cb17-34" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Click on that and a window with the code that made this page will pop up</span>
-<span id="cb17-35"><a href="#cb17-35" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Click on the little notepad icon in the upper right to copy the entire document</span>
-<span id="cb17-36"><a href="#cb17-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-37"><a href="#cb17-37" aria-hidden="true" tabindex="-1"></a><span class="fu">## A few miscellaneous things about R and Quarto</span></span>
-<span id="cb17-38"><a href="#cb17-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-39"><a href="#cb17-39" aria-hidden="true" tabindex="-1"></a><span class="fu">### About R</span></span>
-<span id="cb17-40"><a href="#cb17-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-41"><a href="#cb17-41" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>R is **case sensitive**</span>
-<span id="cb17-42"><a href="#cb17-42" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`mean`</span> is not the same as <span class="in">`Mean`</span></span>
-<span id="cb17-43"><a href="#cb17-43" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>The object <span class="in">`b`</span> is not the same as the object <span class="in">`B`</span></span>
-<span id="cb17-44"><a href="#cb17-44" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Extra returns don&#39;t matter</span>
-<span id="cb17-45"><a href="#cb17-45" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Extra spaces generally don&#39;t matter either</span>
-<span id="cb17-46"><a href="#cb17-46" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>I often add extra spaces, tabs, and returns to make the code more readable</span>
-<span id="cb17-47"><a href="#cb17-47" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>The assignment operator is <span class="in">`&lt;-`</span></span>
-<span id="cb17-48"><a href="#cb17-48" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>&quot;Put whatever is on the right side in the object named on the left side&quot;</span>
-<span id="cb17-49"><a href="#cb17-49" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Sometimes, equal isn&#39;t equal</span>
-<span id="cb17-50"><a href="#cb17-50" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>If you&#39;re talking about *assigning* something to a value, you can use <span class="in">`=`</span></span>
-<span id="cb17-51"><a href="#cb17-51" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>If you want to *compare* two values and make a decision based on it, you use <span class="in">`==`</span></span>
-<span id="cb17-52"><a href="#cb17-52" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>There isn&#39;t a standard, widely-used naming convention for variables, so you should pick something and try to be consistent</span>
-<span id="cb17-53"><a href="#cb17-53" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>In general, variable names must start with a letter -- no numbers or special characters</span>
-<span id="cb17-54"><a href="#cb17-54" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>There are some options for multi-word variable naming</span>
-<span id="cb17-55"><a href="#cb17-55" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span><span class="in">`variablename`</span>: Just smush it all together</span>
-<span id="cb17-56"><a href="#cb17-56" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span><span class="in">`variableName`</span> or <span class="in">`VariableName`</span>: Camel case</span>
-<span id="cb17-57"><a href="#cb17-57" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span><span class="in">`variable_name`</span> or <span class="in">`Variable_Name`</span>: Snake case</span>
-<span id="cb17-58"><a href="#cb17-58" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span><span class="in">`variable-name`</span> or <span class="in">`Variable-Name`</span>: Kebab case</span>
-<span id="cb17-59"><a href="#cb17-59" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>In general, make the variable names **as short as possible** while keeping each name unique</span>
-<span id="cb17-60"><a href="#cb17-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-61"><a href="#cb17-61" aria-hidden="true" tabindex="-1"></a><span class="fu">### About Quarto</span></span>
-<span id="cb17-62"><a href="#cb17-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-63"><a href="#cb17-63" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Look at the top of the Quarto file. The section with <span class="in">`---`</span> at the top and bottom. This is the **YAML** (pronounced &quot;yam-ull&quot;). It provides options for the overall document. </span>
-<span id="cb17-64"><a href="#cb17-64" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`title:`</span> is pretty obvious</span>
-<span id="cb17-65"><a href="#cb17-65" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`format:`</span> tells R which output format to produce when you knit the document together</span>
-<span id="cb17-66"><a href="#cb17-66" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>This is an <span class="in">`html`</span> document, but you can specify *different* or *multiple* output formats, like both HTML and PDF</span>
-<span id="cb17-67"><a href="#cb17-67" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>There are additional options that are specific to this format</span>
-<span id="cb17-68"><a href="#cb17-68" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span><span class="in">`self-contained: true`</span> and <span class="in">`self-contained-math: true`</span> make sure that any additional files that are created, like figures are part of the HTML file. If I didn&#39;t include this and sent you to the HTML file, the figures would be missing.</span>
-<span id="cb17-69"><a href="#cb17-69" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span><span class="in">`html-math-method: katex`</span> is an option about the equations and math text. It&#39;s probably not necessary, but I include it anyway.</span>
-<span id="cb17-70"><a href="#cb17-70" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span><span class="in">`number-sections: true`</span> and <span class="in">`toc: true`</span> produce the table of contents on the right side of this page and number the sections and sub-sections (remember headings and organization?) to make it easier to navigate</span>
-<span id="cb17-71"><a href="#cb17-71" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span><span class="in">`code-tools: true`</span> adds the <span class="in">`&lt;/&gt; Code`</span> button at the top that shows the code that made this page. You can copy the code (using the little &quot;Copy to clipboard&quot; icon in the upper right) and paste it right into R</span>
-<span id="cb17-72"><a href="#cb17-72" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span><span class="in">`code-block-bg: true`</span> and <span class="in">`code-block-border-left: &quot;#31BAE9&quot;`</span> make the code chunks a little more noticeable -- they blended into the background too much otherwise.</span>
-<span id="cb17-73"><a href="#cb17-73" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>The YAML is one of the few places that **spacing matters**. Note how each sub-option is indented more than it&#39;s over-option. If you don&#39;t get this right, the file won&#39;t run</span>
-<span id="cb17-74"><a href="#cb17-74" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>Read more about **YAML** options <span class="co">[</span><span class="ot">here</span><span class="co">](https://quarto.org/docs/get-started/authoring/rstudio.html)</span></span>
-<span id="cb17-75"><a href="#cb17-75" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>You can **label** each code chunk in the document</span>
-<span id="cb17-76"><a href="#cb17-76" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>This is a very smart thing to do -- but I don&#39;t do it consistently :(</span>
-<span id="cb17-77"><a href="#cb17-77" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>If you have an error, R will tell you which chunk has the problem</span>
-<span id="cb17-78"><a href="#cb17-78" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>If the chunks are named, **it will use the name** so it&#39;s easy to find</span>
-<span id="cb17-79"><a href="#cb17-79" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>If they&#39;re not named, it will tell you something like &quot;Unnamed chunk 52&quot;, which is *less helpful*</span>
-<span id="cb17-80"><a href="#cb17-80" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Name your chunks with <span class="in">`#| label: name-of-this-chunk`</span></span>
-<span id="cb17-81"><a href="#cb17-81" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>See the setup chunk above -- that&#39;s just its name, &quot;setup&quot;</span>
-<span id="cb17-82"><a href="#cb17-82" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>There are other options for code chunks. Here are some useful ones</span>
-<span id="cb17-83"><a href="#cb17-83" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`echo: true`</span>: Repeats the code in the output</span>
-<span id="cb17-84"><a href="#cb17-84" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`warning: false`</span>: Suppress any warnings from R (**not recommended**)</span>
-<span id="cb17-85"><a href="#cb17-85" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`eval: false`</span>: Don&#39;t run this code, just print it (useful for teaching)</span>
-<span id="cb17-86"><a href="#cb17-86" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>For any of these, you can swap from <span class="in">`true`</span> to <span class="in">`false`</span> or vice versa and get the opposite effect</span>
-<span id="cb17-87"><a href="#cb17-87" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`fig-cap: &quot;My figure caption is cool&quot;`</span>: Adds a caption to the figure produced in that chunk -- useful for accessibility</span>
-<span id="cb17-88"><a href="#cb17-88" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>More info <span class="co">[</span><span class="ot">here</span><span class="co">](https://quarto.org/docs/computations/execution-options.html#output-options)</span> and <span class="co">[</span><span class="ot">here</span><span class="co">](https://quarto.org/docs/computations/r.html#code-blocks)</span></span>
-<span id="cb17-89"><a href="#cb17-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-90"><a href="#cb17-90" aria-hidden="true" tabindex="-1"></a><span class="fu">## Installing packages</span></span>
-<span id="cb17-91"><a href="#cb17-91" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-92"><a href="#cb17-92" aria-hidden="true" tabindex="-1"></a>You must **install** a new package the first time you use it </span>
-<span id="cb17-93"><a href="#cb17-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-96"><a href="#cb17-96" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb17-97"><a href="#cb17-97" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages(gapminder)</span></span>
-<span id="cb17-98"><a href="#cb17-98" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a><span class="fu">## Learning objectives</span></span>
+<span id="cb17-29"><a href="#cb17-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-30"><a href="#cb17-30" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Read data into R from external formats (e.g., Excel, .csv, SPSS)</span>
+<span id="cb17-31"><a href="#cb17-31" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Use <span class="co">[</span><span class="ot">**dplyr** functions</span><span class="co">](https://dplyr.tidyverse.org/)</span> in R to manipulate datasets (e.g., create new variables)</span>
+<span id="cb17-32"><a href="#cb17-32" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Use <span class="co">[</span><span class="ot">**tidyr** functions</span><span class="co">](https://tidyr.tidyverse.org/)</span> in R to organize and re-structure datasets</span>
+<span id="cb17-33"><a href="#cb17-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-34"><a href="#cb17-34" aria-hidden="true" tabindex="-1"></a><span class="fu">## Read in data</span></span>
+<span id="cb17-35"><a href="#cb17-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-36"><a href="#cb17-36" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Read in the &quot;gapminder.csv&quot; file</span>
+<span id="cb17-37"><a href="#cb17-37" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>You&#39;ll need to either</span>
+<span id="cb17-38"><a href="#cb17-38" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>Save it in the same folder as your .qmd file OR</span>
+<span id="cb17-39"><a href="#cb17-39" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>Supply the entire path to the file</span>
+<span id="cb17-40"><a href="#cb17-40" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>I have it saved in the same folder, so I&#39;ll just give the file name</span>
+<span id="cb17-41"><a href="#cb17-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-44"><a href="#cb17-44" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb17-45"><a href="#cb17-45" aria-hidden="true" tabindex="-1"></a>gap <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;gapminder.csv&quot;</span>)</span>
+<span id="cb17-46"><a href="#cb17-46" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb17-47"><a href="#cb17-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-48"><a href="#cb17-48" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Because I already looked at the data, I know that it read in a couple variables differently from how the original data frame was set up</span>
+<span id="cb17-49"><a href="#cb17-49" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Specifically, the <span class="in">`country`</span> and <span class="in">`continent`</span> variables were originally &quot;factor&quot; variables but have read in here as &quot;character&quot; variables</span>
+<span id="cb17-50"><a href="#cb17-50" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>So I&#39;m going to force them to be factor variables using the <span class="in">`as.factor()`</span> function</span>
+<span id="cb17-51"><a href="#cb17-51" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Among other things, this will make some of the &quot;data view&quot; functions show us the number of levels of the variable</span>
+<span id="cb17-52"><a href="#cb17-52" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb17-55"><a href="#cb17-55" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb17-56"><a href="#cb17-56" aria-hidden="true" tabindex="-1"></a>gap<span class="sc">$</span>country <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(gap<span class="sc">$</span>country)</span>
+<span id="cb17-57"><a href="#cb17-57" aria-hidden="true" tabindex="-1"></a>gap<span class="sc">$</span>continent <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(gap<span class="sc">$</span>continent)</span>
+<span id="cb17-58"><a href="#cb17-58" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb17-59"><a href="#cb17-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-60"><a href="#cb17-60" aria-hidden="true" tabindex="-1"></a><span class="fu">### Check out the data</span></span>
+<span id="cb17-61"><a href="#cb17-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-62"><a href="#cb17-62" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="in">`head()`</span> function</span>
+<span id="cb17-63"><a href="#cb17-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-66"><a href="#cb17-66" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb17-67"><a href="#cb17-67" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gap)</span>
+<span id="cb17-68"><a href="#cb17-68" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb17-69"><a href="#cb17-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-70"><a href="#cb17-70" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="in">`str()`</span> function</span>
+<span id="cb17-71"><a href="#cb17-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-74"><a href="#cb17-74" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb17-75"><a href="#cb17-75" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(gap)</span>
+<span id="cb17-76"><a href="#cb17-76" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb17-77"><a href="#cb17-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-78"><a href="#cb17-78" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="in">`glimpse()`</span> function</span>
+<span id="cb17-79"><a href="#cb17-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-82"><a href="#cb17-82" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb17-83"><a href="#cb17-83" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(gap)</span>
+<span id="cb17-84"><a href="#cb17-84" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb17-85"><a href="#cb17-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-86"><a href="#cb17-86" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Data looks like it read in correctly</span>
+<span id="cb17-87"><a href="#cb17-87" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>How many countries?</span>
+<span id="cb17-88"><a href="#cb17-88" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>How many years?</span>
+<span id="cb17-89"><a href="#cb17-89" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>How many variables (besides <span class="in">`country`</span>, <span class="in">`continent`</span>, and <span class="in">`year`</span>)?</span>
+<span id="cb17-90"><a href="#cb17-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-91"><a href="#cb17-91" aria-hidden="true" tabindex="-1"></a><span class="fu">## Convert from tall to wide and back **successfully**</span></span>
+<span id="cb17-92"><a href="#cb17-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-93"><a href="#cb17-93" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Part of the issue in the lecture with going back and forth easily is that we were converting **multiple variables**</span>
+<span id="cb17-94"><a href="#cb17-94" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>This made it too complicated </span>
+<span id="cb17-95"><a href="#cb17-95" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>(Although, of course, that&#39;s what real data is like...)</span>
+<span id="cb17-96"><a href="#cb17-96" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>So let&#39;s make this a little simpler and use only 1 variable: <span class="in">`lifeExp`</span></span>
+<span id="cb17-97"><a href="#cb17-97" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb17-98"><a href="#cb17-98" aria-hidden="true" tabindex="-1"></a><span class="fu">### Step 1: `select()` only some variables (`lifeExp`)</span></span>
 <span id="cb17-99"><a href="#cb17-99" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-100"><a href="#cb17-100" aria-hidden="true" tabindex="-1"></a>You only need to do this once. I have **commented out** this part of the code by putting <span class="in">`#`</span> at the start of the line because I already have the package installed. If you try to install a package that is already installed, *you will probably get an error*.</span>
-<span id="cb17-101"><a href="#cb17-101" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-102"><a href="#cb17-102" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
-<span id="cb17-103"><a href="#cb17-103" aria-hidden="true" tabindex="-1"></a>In my own work, I usually install packages via the Rstudio graphical user interface (GUI). I&#39;m doing it this way for pedagogical reasons.</span>
-<span id="cb17-104"><a href="#cb17-104" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb17-105"><a href="#cb17-105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-106"><a href="#cb17-106" aria-hidden="true" tabindex="-1"></a>**Alternatively**, if you&#39;re using Rstudio, you can quickly install packages in the &quot;Packages&quot; pane using the &quot;Install&quot; button, and *exclude this code*.</span>
-<span id="cb17-107"><a href="#cb17-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-108"><a href="#cb17-108" aria-hidden="true" tabindex="-1"></a><span class="fu">## Loading packages</span></span>
-<span id="cb17-109"><a href="#cb17-109" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-110"><a href="#cb17-110" aria-hidden="true" tabindex="-1"></a>You must **load** or <span class="in">`library()`</span> a package each time you use it. This means that you need to load it at the top of each markdown or quarto file you write.</span>
-<span id="cb17-111"><a href="#cb17-111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-114"><a href="#cb17-114" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb17-115"><a href="#cb17-115" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gapminder)</span>
-<span id="cb17-116"><a href="#cb17-116" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb17-117"><a href="#cb17-117" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-118"><a href="#cb17-118" aria-hidden="true" tabindex="-1"></a>This allows us to use the functions in these packages. If you&#39;re loading multiple packages, just list each on it&#39;s own line.</span>
-<span id="cb17-119"><a href="#cb17-119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-120"><a href="#cb17-120" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
-<span id="cb17-121"><a href="#cb17-121" aria-hidden="true" tabindex="-1"></a>In my own work, I usually load all packages in the &quot;setup&quot; chunk at the top of the document. I&#39;m doing it this way for pedagogical reasons.</span>
-<span id="cb17-122"><a href="#cb17-122" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb17-123"><a href="#cb17-123" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-124"><a href="#cb17-124" aria-hidden="true" tabindex="-1"></a>The <span class="co">[</span><span class="ot">**gapminder** package</span><span class="co">](https://cran.r-project.org/web/packages/gapminder/index.html)</span> is a *data package*. It provides a subset of the data available at <span class="co">[</span><span class="ot">gapminder.org</span><span class="co">](gapminder.org)</span>. You may have heard about this data from Hans Rosling&#39;s <span class="co">[</span><span class="ot">very famous TED talk</span><span class="co">](https://www.ted.com/talks/hans_rosling_the_best_stats_you_ve_ever_seen)</span>. </span>
-<span id="cb17-125"><a href="#cb17-125" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-126"><a href="#cb17-126" aria-hidden="true" tabindex="-1"></a><span class="fu">## Reading in data</span></span>
-<span id="cb17-127"><a href="#cb17-127" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-128"><a href="#cb17-128" aria-hidden="true" tabindex="-1"></a><span class="fu">### External data</span></span>
+<span id="cb17-102"><a href="#cb17-102" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb17-103"><a href="#cb17-103" aria-hidden="true" tabindex="-1"></a>gap1 <span class="ot">&lt;-</span> gap <span class="sc">%&gt;%</span> <span class="fu">select</span>(country, continent, year, lifeExp)</span>
+<span id="cb17-104"><a href="#cb17-104" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gap1)</span>
+<span id="cb17-105"><a href="#cb17-105" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb17-106"><a href="#cb17-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-107"><a href="#cb17-107" aria-hidden="true" tabindex="-1"></a><span class="fu">### Step 2: `pivot_wider()` to convert to a wide dataset</span></span>
+<span id="cb17-108"><a href="#cb17-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-111"><a href="#cb17-111" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb17-112"><a href="#cb17-112" aria-hidden="true" tabindex="-1"></a>gap1_wide <span class="ot">&lt;-</span> gap1 <span class="sc">%&gt;%</span> <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> year, </span>
+<span id="cb17-113"><a href="#cb17-113" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">values_from =</span> lifeExp)</span>
+<span id="cb17-114"><a href="#cb17-114" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gap1_wide)</span>
+<span id="cb17-115"><a href="#cb17-115" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb17-116"><a href="#cb17-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-117"><a href="#cb17-117" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>How many years of data are in this dataset?</span>
+<span id="cb17-118"><a href="#cb17-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-119"><a href="#cb17-119" aria-hidden="true" tabindex="-1"></a><span class="fu">### Step 3: `pivot_longer()` to convert back to a tall dataset</span></span>
+<span id="cb17-120"><a href="#cb17-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-123"><a href="#cb17-123" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb17-124"><a href="#cb17-124" aria-hidden="true" tabindex="-1"></a>gap1_tall <span class="ot">&lt;-</span> gap1_wide <span class="sc">%&gt;%</span> <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">14</span>, </span>
+<span id="cb17-125"><a href="#cb17-125" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">names_to =</span> <span class="st">&quot;year&quot;</span>, </span>
+<span id="cb17-126"><a href="#cb17-126" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">values_to =</span> <span class="st">&quot;lifeExp&quot;</span>)</span>
+<span id="cb17-127"><a href="#cb17-127" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gap1_tall)</span>
+<span id="cb17-128"><a href="#cb17-128" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb17-129"><a href="#cb17-129" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-130"><a href="#cb17-130" aria-hidden="true" tabindex="-1"></a>You can read in data from almost any source.</span>
-<span id="cb17-131"><a href="#cb17-131" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-132"><a href="#cb17-132" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Comma-separated values (CSV) file: Use <span class="in">`read.csv()`</span> (built-in)</span>
-<span id="cb17-133"><a href="#cb17-133" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Excel: Use <span class="in">`read_excel()`</span> function from <span class="co">[</span><span class="ot">**readxl** package</span><span class="co">](https://readxl.tidyverse.org/)</span></span>
-<span id="cb17-134"><a href="#cb17-134" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>SAS, SPSS, Stata: Use the appropriate function from the <span class="co">[</span><span class="ot">**haven** package</span><span class="co">](https://haven.tidyverse.org/)</span></span>
-<span id="cb17-135"><a href="#cb17-135" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>SAS, SPSS, S, Stata, Systat, Epi Info, Minitab: Use the appropriate function from the <span class="co">[</span><span class="ot">**foreign** package</span><span class="co">](https://www.rdocumentation.org/packages/foreign/versions/0.8-86)</span></span>
-<span id="cb17-136"><a href="#cb17-136" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-137"><a href="#cb17-137" aria-hidden="true" tabindex="-1"></a>If you&#39;re using Rstudio, you can read in most types of data using &quot;Import Dataset&quot; in the &quot;Environment&quot; tab in the upper right pane.</span>
-<span id="cb17-138"><a href="#cb17-138" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-139"><a href="#cb17-139" aria-hidden="true" tabindex="-1"></a>We&#39;ll focus on this more next week. You&#39;ll almost always be using external data (not internal R data) in your own research, so this is really important.</span>
-<span id="cb17-140"><a href="#cb17-140" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-141"><a href="#cb17-141" aria-hidden="true" tabindex="-1"></a><span class="fu">### Data from a package</span></span>
-<span id="cb17-142"><a href="#cb17-142" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-143"><a href="#cb17-143" aria-hidden="true" tabindex="-1"></a>Some packages contain data. We will use the <span class="in">`gapminder`</span> dataset from the **gapminder** package. Another great source of dataset is the [**datasets** package](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/00Index.html), which includes commonly used datasets such as `iris` and `mtcars`. (Note that if you want to use `iris` or `mtcars`, you&#39;ll need to **load** it -- it is installed with R by default, so you don&#39;t need to install it.)</span>
-<span id="cb17-144"><a href="#cb17-144" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-145"><a href="#cb17-145" aria-hidden="true" tabindex="-1"></a>To load a *dataset*, use the <span class="in">`data()`</span> function</span>
-<span id="cb17-146"><a href="#cb17-146" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-149"><a href="#cb17-149" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb17-150"><a href="#cb17-150" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(gapminder)</span>
-<span id="cb17-151"><a href="#cb17-151" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb17-152"><a href="#cb17-152" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-153"><a href="#cb17-153" aria-hidden="true" tabindex="-1"></a><span class="fu">## Looking at your data</span></span>
-<span id="cb17-154"><a href="#cb17-154" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-155"><a href="#cb17-155" aria-hidden="true" tabindex="-1"></a>There are a number of functions to help you examine your data. You should **always** look at your data to make sure it was read in correctly.</span>
-<span id="cb17-156"><a href="#cb17-156" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-157"><a href="#cb17-157" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
-<span id="cb17-158"><a href="#cb17-158" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-159"><a href="#cb17-159" aria-hidden="true" tabindex="-1"></a>What **should** your data look like? If you&#39;re doing a typical experimental study, the organization of your dataset should follow a pretty standard format:</span>
-<span id="cb17-160"><a href="#cb17-160" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-161"><a href="#cb17-161" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Each row is a unit of study (i.e., person, animal, petri dish)</span>
-<span id="cb17-162"><a href="#cb17-162" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Each column is a variable </span>
-<span id="cb17-163"><a href="#cb17-163" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-164"><a href="#cb17-164" aria-hidden="true" tabindex="-1"></a>There are some deviations from this</span>
-<span id="cb17-165"><a href="#cb17-165" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-166"><a href="#cb17-166" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Longitudinal studies** have *multiple observations per unit* and can be organized 2 different ways</span>
-<span id="cb17-167"><a href="#cb17-167" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>*Wide* or *multivariate* format: Each repeated measure is a new variable (e.g., X1, X2, X3 for the X variable at 3 different time points)</span>
-<span id="cb17-168"><a href="#cb17-168" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>*Tall* or *stacked* or *univariate* format: Each repeated measure is a new row, so each unit will have multiple rows of data (with an additional variable that indicates which time point is which)</span>
-<span id="cb17-169"><a href="#cb17-169" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Data from **non-experiments** is often structured differently or even *unstructured*</span>
-<span id="cb17-170"><a href="#cb17-170" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Web scraping</span>
-<span id="cb17-171"><a href="#cb17-171" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Data from devices or automated processes</span>
-<span id="cb17-172"><a href="#cb17-172" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Data from someone who doesn&#39;t know what they&#39;re doing...</span>
-<span id="cb17-173"><a href="#cb17-173" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb17-174"><a href="#cb17-174" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb17-175"><a href="#cb17-175" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-176"><a href="#cb17-176" aria-hidden="true" tabindex="-1"></a><span class="fu">### List the dataset</span></span>
-<span id="cb17-177"><a href="#cb17-177" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-178"><a href="#cb17-178" aria-hidden="true" tabindex="-1"></a>If you want to view the dataset, you can just name the dataset. (You can also <span class="in">`print()`</span> the dataset for the same result.)</span>
-<span id="cb17-179"><a href="#cb17-179" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-182"><a href="#cb17-182" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb17-183"><a href="#cb17-183" aria-hidden="true" tabindex="-1"></a>gapminder</span>
-<span id="cb17-184"><a href="#cb17-184" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb17-185"><a href="#cb17-185" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-186"><a href="#cb17-186" aria-hidden="true" tabindex="-1"></a><span class="fu">### `head()` function</span></span>
-<span id="cb17-187"><a href="#cb17-187" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-188"><a href="#cb17-188" aria-hidden="true" tabindex="-1"></a>The <span class="co">[</span><span class="ot">`head()` function</span><span class="co">](https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/head)</span> will show the head of the dataset. By default, this shows the first 6 rows of the dataset</span>
-<span id="cb17-189"><a href="#cb17-189" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-192"><a href="#cb17-192" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb17-193"><a href="#cb17-193" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gapminder)</span>
-<span id="cb17-194"><a href="#cb17-194" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb17-195"><a href="#cb17-195" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-196"><a href="#cb17-196" aria-hidden="true" tabindex="-1"></a>You can change the number of rows it shows using the <span class="in">`n`</span> argument. Here, I&#39;ve asked for the first 15 rows instead.</span>
-<span id="cb17-197"><a href="#cb17-197" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-200"><a href="#cb17-200" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb17-201"><a href="#cb17-201" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gapminder, <span class="at">n =</span> <span class="dv">15</span>)</span>
-<span id="cb17-202"><a href="#cb17-202" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb17-203"><a href="#cb17-203" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-204"><a href="#cb17-204" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
-<span id="cb17-205"><a href="#cb17-205" aria-hidden="true" tabindex="-1"></a>There is also a <span class="in">`tail()`</span> function that -- guess what -- prints the last 6 rows of the dataset. If you wanted to check the end for some reason.</span>
-<span id="cb17-206"><a href="#cb17-206" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb17-207"><a href="#cb17-207" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-208"><a href="#cb17-208" aria-hidden="true" tabindex="-1"></a><span class="fu">### `str()` function</span></span>
-<span id="cb17-209"><a href="#cb17-209" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-210"><a href="#cb17-210" aria-hidden="true" tabindex="-1"></a>The <span class="co">[</span><span class="ot">`str()` (for &quot;structure&quot;) function</span><span class="co">](https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/str)</span> tells you about the structure of the dataset. It shows the number of rows and columns, and summarizes some basic info about each variable (like whether it&#39;s a number or character variable and the possible values).</span>
-<span id="cb17-211"><a href="#cb17-211" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-214"><a href="#cb17-214" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb17-215"><a href="#cb17-215" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(gapminder)</span>
-<span id="cb17-216"><a href="#cb17-216" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb17-217"><a href="#cb17-217" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-218"><a href="#cb17-218" aria-hidden="true" tabindex="-1"></a><span class="fu">### `glimpse()` function</span></span>
-<span id="cb17-219"><a href="#cb17-219" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-220"><a href="#cb17-220" aria-hidden="true" tabindex="-1"></a>The <span class="co">[</span><span class="ot">`glimpse()` function</span><span class="co">](https://dplyr.tidyverse.org/reference/glimpse.html)</span> is in the **dplyr** package in the **tidyverse**. We&#39;re going to talk about **dplyr** more next week, but I wanted to include this function here. This function shows you the number of rows and columns in the dataset. It also flips your dataset so that the variables are rows and prints the dataset out. </span>
-<span id="cb17-221"><a href="#cb17-221" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-224"><a href="#cb17-224" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb17-225"><a href="#cb17-225" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb17-226"><a href="#cb17-226" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(gapminder)</span>
-<span id="cb17-227"><a href="#cb17-227" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb17-228"><a href="#cb17-228" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-229"><a href="#cb17-229" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
-<span id="cb17-230"><a href="#cb17-230" aria-hidden="true" tabindex="-1"></a>Don&#39;t worry about all those warnings that show up about tidyverse and such after <span class="in">`library(tidyverse)`</span>. That&#39;s normal.</span>
-<span id="cb17-231"><a href="#cb17-231" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb17-232"><a href="#cb17-232" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-233"><a href="#cb17-233" aria-hidden="true" tabindex="-1"></a><span class="fu">## Activities</span></span>
-<span id="cb17-234"><a href="#cb17-234" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-235"><a href="#cb17-235" aria-hidden="true" tabindex="-1"></a>Complete these tasks by adding to this .qmd (quarto) file.</span>
-<span id="cb17-236"><a href="#cb17-236" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-237"><a href="#cb17-237" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Render / knit the file together into an HTML file. </span>
-<span id="cb17-238"><a href="#cb17-238" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-239"><a href="#cb17-239" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Render / knit the file together into a PDF file. You&#39;ll need to install the **tinytex** package for this to work (or have LaTeX installed on your computer).</span>
-<span id="cb17-240"><a href="#cb17-240" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-241"><a href="#cb17-241" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>How many rows are in the <span class="in">`gapminder`</span> dataset? Where did you find that out?</span>
-<span id="cb17-242"><a href="#cb17-242" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-243"><a href="#cb17-243" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>How many columns are in the <span class="in">`gapminder`</span> dataset? Where did you find that out?</span>
-<span id="cb17-244"><a href="#cb17-244" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-245"><a href="#cb17-245" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>How many **countries** are represented in the <span class="in">`gapminder`</span> dataset? Where did you find that out?</span>
-<span id="cb17-246"><a href="#cb17-246" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-247"><a href="#cb17-247" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>The <span class="in">`gapminder`</span> dataset is longitudinal. Is it organized as tall or wide?</span>
-<span id="cb17-248"><a href="#cb17-248" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-249"><a href="#cb17-249" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-130"><a href="#cb17-130" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Beautiful!</span>
+<span id="cb17-131"><a href="#cb17-131" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Though notice that R decided that <span class="in">`year`</span> is now a character variable...</span>
+<span id="cb17-132"><a href="#cb17-132" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>If you wanted to, you could change that with the <span class="in">`as.numeric()`</span> function as we did to convert variables to factors</span>
+<span id="cb17-133"><a href="#cb17-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-134"><a href="#cb17-134" aria-hidden="true" tabindex="-1"></a><span class="fu">## Manipulate some data</span></span>
+<span id="cb17-135"><a href="#cb17-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-136"><a href="#cb17-136" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**For each task, start with the original data, `gap`**, and use appropriate functions (e.g., <span class="in">`print()`</span>, <span class="in">`head()`</span>, <span class="in">`str()`</span>, <span class="in">`glimpse()`</span>) to *check that you have the data you were trying to get*.</span>
+<span id="cb17-137"><a href="#cb17-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-138"><a href="#cb17-138" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Keep only observations from countries in Asia and Europe.</span>
+<span id="cb17-139"><a href="#cb17-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-140"><a href="#cb17-140" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Create a new variable that is the ratio of life expectancy to GDP. </span>
+<span id="cb17-141"><a href="#cb17-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-142"><a href="#cb17-142" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Create a new data frame with the mean GDP per capita for each continent.</span>
+<span id="cb17-143"><a href="#cb17-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-144"><a href="#cb17-144" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Find the country in the Americas with the largest population. What country was it and what year was it? </span>
+<span id="cb17-145"><a href="#cb17-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-146"><a href="#cb17-146" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Keep only data from Asia prior to 1975 and sort it according to population.</span>
+<span id="cb17-147"><a href="#cb17-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-148"><a href="#cb17-148" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>How many countries have a life expectancy greater than 80 in 2007?</span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

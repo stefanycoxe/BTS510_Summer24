@@ -17,7 +17,7 @@ website:
           - materials/index.qmd   
           - materials/00-mats.qmd
           - materials/01-mats.qmd 
-          #- materials/02-mats.qmd
+          - materials/02-mats.qmd 
           #- materials/03-mats.qmd
           #- materials/04-mats.qmd
           #- materials/05-mats.qmd
@@ -27,7 +27,7 @@ website:
       - section: "Assignments"
         contents:
           - assignments/index.qmd    
-          #- assignments/hw1.qmd
+          - assignments/hw1.qmd
           #- assignments/hw2.qmd
           #- assignments/hw3.qmd  
           #- assignments/hw4.qmd

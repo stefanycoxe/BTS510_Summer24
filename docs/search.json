@@ -4,7 +4,7 @@
     "href": "syllabus.html",
     "title": "Syllabus",
     "section": "",
-    "text": "Stefany Coxe, Ph.D. \n\nstefany.coxe@cshs.org\n\nOffice hours: By appointment (send me an email to schedule)\n\nYujie Cui, M.S.\n\nyujie.cui@cshs.org\nOffice hours: TBD\n\nMichael Luu, M.P.H.\n\nmichael.luu@cshs.org\nOffice hours: TBD\n\n\n\n\n\n\n\nThis course covers topics related to statistical analysis of experimental studies. Topics include using and manipulating datasets, plotting data, probability, estimation and uncertainty, and statistical methods for experimental designs, such as comparing 2 independent or dependent means, comparing 2 independent or dependent proportions, and controlling for multiple comparisons.\n\n\n\nCompare and contrast possible analysis options based on the experimental design and research question\nSelect the appropriate analysis approach for the research question\nAnalyze data with statistical methods appropriate to the research question\nCreate a written report of your findings\nMake conclusions about your research question(s) based on those results\n\n\n\n\n\n\n\nWe will meet in-person on Thursday from 9am to 10:30am in G-511 Auditorium in PDC.\n\n\n\nThis course takes place in a flipped, hybrid format. We will meet in person for 1 hour 30 minutes each week. This time will be spent on hands-on statistical programming in R. You will be responsible for completing course assignments such as videos and readings prior to class in order to be prepared to participate in the in-person meeting. You will also have assignments to complete after class.\nEach week will follow a similar structure:\n\nMonday: Lecture videos posted\nWednesday: Watch lecture and respond to survey by 8pm Wednesday\nThursday: In-person meeting to review material and work on applications\nSunday: Homework assignment due by end of day (midnight)\n\n\n\n\n\nWe will be using R for this course. It’s ok if you don’t know how to use R (but also great if you do!). We’ll start from scratch in the first few weeks. I will provide information about the specific procedures you will need to know for this course.\n\nR is free and open source and works on any platform (Windows, Mac, Unix)\n\nDownload R here\nI also recommend using Rstudio, which can be downloaded here\nIf you use a Chromebook or tablet, you can use Rstudio via the cloud\n\nI have not used this much, so I don’t know all its shortcomings\n\n\nWe’ll also be using Quarto\n\nPublishing system based on markdown\nIntersperse plain text and code\nOutput to convenient formats, like HTML, PDF, Word\nInstall Quarto\n\n\n\n\n\nYour work in this course will be assessed using a variety of methods.\n\n\nWatch the lecture video. Respond to the survey afterward with questions and comments.\n\n\n\nThere will be six (6) homework assignments. The assignments generally involve running analyses in R, interpreting output, and presenting the results.\n\n\n\nYou will pick one of the five special topics and write a summary of the topic, primarily using the listed readings. More details to come.\n\n\n\n\nFind the tentative schedule here.\n\n\n\n\n\n\nGrade\nPercentage\n\n\n\n\nA+\n&gt;=97\n\n\nA\n93 - 96.99\n\n\nA-\n90 - 92.99\n\n\nB+\n87 - 89.99\n\n\nB\n83 - 86.99\n\n\nB-\n80 - 82.99\n\n\nC+\n77 - 79.99\n\n\nC\n70 - 76.99\n\n\nD+\n65 - 69.99\n\n\nD\n60 - 64.99\n\n\nF\n&lt;= 59.99\n\n\n\n\n\n\n\n\n\nAttendance is not explicitly part of your grade in this course, but activities completed during the in-person portion of the course will be very helpful. If you need to miss class (such as for illness, religious event, professional activity, university-sanctioned event, or any other reason), please contact me to make any necessary arrangements.\n\n\n\nPlease refer to your policy handbook for a description of what constitutes academic dishonesty.\n\nWhile you may work with other students on your homework assignments, I expect all students to complete and turn in their own work.",
+    "text": "Stefany Coxe, Ph.D. \n\nstefany.coxe@cshs.org\n\nOffice hours: By appointment (send me an email to schedule)\n\nYujie Cui, M.S.\n\nyujie.cui@cshs.org\nOffice hours: TBD\n\nMichael Luu, M.P.H.\n\nmichael.luu@cshs.org\nOffice hours: TBD\n\n\n\n\n\n\n\nThis course covers topics related to statistical analysis of experimental studies. Topics include using and manipulating datasets, plotting data, probability, estimation and uncertainty, and statistical methods for experimental designs, such as comparing 2 independent or dependent means, comparing 2 independent or dependent proportions, and controlling for multiple comparisons.\n\n\n\nCompare and contrast possible analysis options based on the experimental design and research question\nSelect the appropriate analysis approach for the research question\nAnalyze data with statistical methods appropriate to the research question\nCreate a written report of your findings\nMake conclusions about your research question(s) based on those results\n\n\n\n\n\n\n\nWe will meet in-person on Thursday from 9am to 10:30am in G-511 Auditorium in PDC Picasso conference room in PDC.\n\n\n\nThis course takes place in a flipped, hybrid format. We will meet in person for 1 hour 30 minutes each week. This time will be spent on hands-on statistical programming in R. You will be responsible for completing course assignments such as videos and readings prior to class in order to be prepared to participate in the in-person meeting. You will also have assignments to complete after class.\nEach week will follow a similar structure:\n\nMonday: Lecture videos posted\nWednesday: Watch lecture and respond to survey by 8pm Wednesday\nThursday: In-person meeting to review material and work on applications\nSunday: Homework assignment due by end of day (midnight)\n\n\n\n\n\nWe will be using R for this course. It’s ok if you don’t know how to use R (but also great if you do!). We’ll start from scratch in the first few weeks. I will provide information about the specific procedures you will need to know for this course.\n\nR is free and open source and works on any platform (Windows, Mac, Unix)\n\nDownload R here\nI also recommend using Rstudio, which can be downloaded here\nIf you use a Chromebook or tablet, you can use Rstudio via the cloud\n\nI have not used this much, so I don’t know all its shortcomings\n\n\nWe’ll also be using Quarto\n\nPublishing system based on markdown\nIntersperse plain text and code\nOutput to convenient formats, like HTML, PDF, Word\nInstall Quarto\n\n\n\n\n\nYour work in this course will be assessed using a variety of methods.\n\n\nWatch the lecture video. Respond to the survey afterward with questions and comments.\n\n\n\nThere will be six (6) homework assignments. The assignments generally involve running analyses in R, interpreting output, and presenting the results.\n\n\n\nYou will pick one of the five special topics and write a summary of the topic, primarily using the listed readings. More details to come.\n\n\n\n\nFind the tentative schedule here.\n\n\n\n\n\n\nGrade\nPercentage\n\n\n\n\nA+\n&gt;=97\n\n\nA\n93 - 96.99\n\n\nA-\n90 - 92.99\n\n\nB+\n87 - 89.99\n\n\nB\n83 - 86.99\n\n\nB-\n80 - 82.99\n\n\nC+\n77 - 79.99\n\n\nC\n70 - 76.99\n\n\nD+\n65 - 69.99\n\n\nD\n60 - 64.99\n\n\nF\n&lt;= 59.99\n\n\n\n\n\n\n\n\n\nAttendance is not explicitly part of your grade in this course, but activities completed during the in-person portion of the course will be very helpful. If you need to miss class (such as for illness, religious event, professional activity, university-sanctioned event, or any other reason), please contact me to make any necessary arrangements.\n\n\n\nPlease refer to your policy handbook for a description of what constitutes academic dishonesty.\n\nWhile you may work with other students on your homework assignments, I expect all students to complete and turn in their own work.",
     "crumbs": [
       "Syllabus"
     ]
@@ -24,7 +24,7 @@
     "href": "syllabus.html#course-information",
     "title": "Syllabus",
     "section": "",
-    "text": "This course covers topics related to statistical analysis of experimental studies. Topics include using and manipulating datasets, plotting data, probability, estimation and uncertainty, and statistical methods for experimental designs, such as comparing 2 independent or dependent means, comparing 2 independent or dependent proportions, and controlling for multiple comparisons.\n\n\n\nCompare and contrast possible analysis options based on the experimental design and research question\nSelect the appropriate analysis approach for the research question\nAnalyze data with statistical methods appropriate to the research question\nCreate a written report of your findings\nMake conclusions about your research question(s) based on those results\n\n\n\n\n\n\n\nWe will meet in-person on Thursday from 9am to 10:30am in G-511 Auditorium in PDC.\n\n\n\nThis course takes place in a flipped, hybrid format. We will meet in person for 1 hour 30 minutes each week. This time will be spent on hands-on statistical programming in R. You will be responsible for completing course assignments such as videos and readings prior to class in order to be prepared to participate in the in-person meeting. You will also have assignments to complete after class.\nEach week will follow a similar structure:\n\nMonday: Lecture videos posted\nWednesday: Watch lecture and respond to survey by 8pm Wednesday\nThursday: In-person meeting to review material and work on applications\nSunday: Homework assignment due by end of day (midnight)\n\n\n\n\n\nWe will be using R for this course. It’s ok if you don’t know how to use R (but also great if you do!). We’ll start from scratch in the first few weeks. I will provide information about the specific procedures you will need to know for this course.\n\nR is free and open source and works on any platform (Windows, Mac, Unix)\n\nDownload R here\nI also recommend using Rstudio, which can be downloaded here\nIf you use a Chromebook or tablet, you can use Rstudio via the cloud\n\nI have not used this much, so I don’t know all its shortcomings\n\n\nWe’ll also be using Quarto\n\nPublishing system based on markdown\nIntersperse plain text and code\nOutput to convenient formats, like HTML, PDF, Word\nInstall Quarto\n\n\n\n\n\nYour work in this course will be assessed using a variety of methods.\n\n\nWatch the lecture video. Respond to the survey afterward with questions and comments.\n\n\n\nThere will be six (6) homework assignments. The assignments generally involve running analyses in R, interpreting output, and presenting the results.\n\n\n\nYou will pick one of the five special topics and write a summary of the topic, primarily using the listed readings. More details to come.\n\n\n\n\nFind the tentative schedule here.\n\n\n\n\n\n\nGrade\nPercentage\n\n\n\n\nA+\n&gt;=97\n\n\nA\n93 - 96.99\n\n\nA-\n90 - 92.99\n\n\nB+\n87 - 89.99\n\n\nB\n83 - 86.99\n\n\nB-\n80 - 82.99\n\n\nC+\n77 - 79.99\n\n\nC\n70 - 76.99\n\n\nD+\n65 - 69.99\n\n\nD\n60 - 64.99\n\n\nF\n&lt;= 59.99",
+    "text": "This course covers topics related to statistical analysis of experimental studies. Topics include using and manipulating datasets, plotting data, probability, estimation and uncertainty, and statistical methods for experimental designs, such as comparing 2 independent or dependent means, comparing 2 independent or dependent proportions, and controlling for multiple comparisons.\n\n\n\nCompare and contrast possible analysis options based on the experimental design and research question\nSelect the appropriate analysis approach for the research question\nAnalyze data with statistical methods appropriate to the research question\nCreate a written report of your findings\nMake conclusions about your research question(s) based on those results\n\n\n\n\n\n\n\nWe will meet in-person on Thursday from 9am to 10:30am in G-511 Auditorium in PDC Picasso conference room in PDC.\n\n\n\nThis course takes place in a flipped, hybrid format. We will meet in person for 1 hour 30 minutes each week. This time will be spent on hands-on statistical programming in R. You will be responsible for completing course assignments such as videos and readings prior to class in order to be prepared to participate in the in-person meeting. You will also have assignments to complete after class.\nEach week will follow a similar structure:\n\nMonday: Lecture videos posted\nWednesday: Watch lecture and respond to survey by 8pm Wednesday\nThursday: In-person meeting to review material and work on applications\nSunday: Homework assignment due by end of day (midnight)\n\n\n\n\n\nWe will be using R for this course. It’s ok if you don’t know how to use R (but also great if you do!). We’ll start from scratch in the first few weeks. I will provide information about the specific procedures you will need to know for this course.\n\nR is free and open source and works on any platform (Windows, Mac, Unix)\n\nDownload R here\nI also recommend using Rstudio, which can be downloaded here\nIf you use a Chromebook or tablet, you can use Rstudio via the cloud\n\nI have not used this much, so I don’t know all its shortcomings\n\n\nWe’ll also be using Quarto\n\nPublishing system based on markdown\nIntersperse plain text and code\nOutput to convenient formats, like HTML, PDF, Word\nInstall Quarto\n\n\n\n\n\nYour work in this course will be assessed using a variety of methods.\n\n\nWatch the lecture video. Respond to the survey afterward with questions and comments.\n\n\n\nThere will be six (6) homework assignments. The assignments generally involve running analyses in R, interpreting output, and presenting the results.\n\n\n\nYou will pick one of the five special topics and write a summary of the topic, primarily using the listed readings. More details to come.\n\n\n\n\nFind the tentative schedule here.\n\n\n\n\n\n\nGrade\nPercentage\n\n\n\n\nA+\n&gt;=97\n\n\nA\n93 - 96.99\n\n\nA-\n90 - 92.99\n\n\nB+\n87 - 89.99\n\n\nB\n83 - 86.99\n\n\nB-\n80 - 82.99\n\n\nC+\n77 - 79.99\n\n\nC\n70 - 76.99\n\n\nD+\n65 - 69.99\n\n\nD\n60 - 64.99\n\n\nF\n&lt;= 59.99",
     "crumbs": [
       "Syllabus"
     ]
@@ -298,6 +298,109 @@
     ]
   },
   {
+    "objectID": "lab/BTS510-24-lab2.html",
+    "href": "lab/BTS510-24-lab2.html",
+    "title": "BTS 510 Lab 2",
+    "section": "",
+    "text": "set.seed(12345)\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors"
+  },
+  {
+    "objectID": "lab/BTS510-24-lab2.html#learning-objectives",
+    "href": "lab/BTS510-24-lab2.html#learning-objectives",
+    "title": "BTS 510 Lab 2",
+    "section": "1 Learning objectives",
+    "text": "1 Learning objectives\n\nRead data into R from external formats (e.g., Excel, .csv, SPSS)\nUse dplyr functions in R to manipulate datasets (e.g., create new variables)\nUse tidyr functions in R to organize and re-structure datasets"
+  },
+  {
+    "objectID": "lab/BTS510-24-lab2.html#read-in-data",
+    "href": "lab/BTS510-24-lab2.html#read-in-data",
+    "title": "BTS 510 Lab 2",
+    "section": "2 Read in data",
+    "text": "2 Read in data\n\nRead in the “gapminder.csv” file\n\nYou’ll need to either\n\nSave it in the same folder as your .qmd file OR\nSupply the entire path to the file\n\nI have it saved in the same folder, so I’ll just give the file name\n\n\n\ngap &lt;- read.csv(\"gapminder.csv\")\n\n\nBecause I already looked at the data, I know that it read in a couple variables differently from how the original data frame was set up\n\nSpecifically, the country and continent variables were originally “factor” variables but have read in here as “character” variables\nSo I’m going to force them to be factor variables using the as.factor() function\nAmong other things, this will make some of the “data view” functions show us the number of levels of the variable\n\n\n\ngap$country &lt;- as.factor(gap$country)\ngap$continent &lt;- as.factor(gap$continent)\n\n\n2.1 Check out the data\n\nhead() function\n\n\nhead(gap)\n\n      country continent year lifeExp      pop gdpPercap\n1 Afghanistan      Asia 1952  28.801  8425333  779.4453\n2 Afghanistan      Asia 1957  30.332  9240934  820.8530\n3 Afghanistan      Asia 1962  31.997 10267083  853.1007\n4 Afghanistan      Asia 1967  34.020 11537966  836.1971\n5 Afghanistan      Asia 1972  36.088 13079460  739.9811\n6 Afghanistan      Asia 1977  38.438 14880372  786.1134\n\n\n\nstr() function\n\n\nstr(gap)\n\n'data.frame':   1704 obs. of  6 variables:\n $ country  : Factor w/ 142 levels \"Afghanistan\",..: 1 1 1 1 1 1 1 1 1 1 ...\n $ continent: Factor w/ 5 levels \"Africa\",\"Americas\",..: 3 3 3 3 3 3 3 3 3 3 ...\n $ year     : int  1952 1957 1962 1967 1972 1977 1982 1987 1992 1997 ...\n $ lifeExp  : num  28.8 30.3 32 34 36.1 ...\n $ pop      : int  8425333 9240934 10267083 11537966 13079460 14880372 12881816 13867957 16317921 22227415 ...\n $ gdpPercap: num  779 821 853 836 740 ...\n\n\n\nglimpse() function\n\n\nglimpse(gap)\n\nRows: 1,704\nColumns: 6\n$ country   &lt;fct&gt; \"Afghanistan\", \"Afghanistan\", \"Afghanistan\", \"Afghanistan\", …\n$ continent &lt;fct&gt; Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, …\n$ year      &lt;int&gt; 1952, 1957, 1962, 1967, 1972, 1977, 1982, 1987, 1992, 1997, …\n$ lifeExp   &lt;dbl&gt; 28.801, 30.332, 31.997, 34.020, 36.088, 38.438, 39.854, 40.8…\n$ pop       &lt;int&gt; 8425333, 9240934, 10267083, 11537966, 13079460, 14880372, 12…\n$ gdpPercap &lt;dbl&gt; 779.4453, 820.8530, 853.1007, 836.1971, 739.9811, 786.1134, …\n\n\n\nData looks like it read in correctly\n\nHow many countries?\nHow many years?\nHow many variables (besides country, continent, and year)?"
+  },
+  {
+    "objectID": "lab/BTS510-24-lab2.html#convert-from-tall-to-wide-and-back-successfully",
+    "href": "lab/BTS510-24-lab2.html#convert-from-tall-to-wide-and-back-successfully",
+    "title": "BTS 510 Lab 2",
+    "section": "3 Convert from tall to wide and back successfully",
+    "text": "3 Convert from tall to wide and back successfully\n\nPart of the issue in the lecture with going back and forth easily is that we were converting multiple variables\n\nThis made it too complicated\n\n(Although, of course, that’s what real data is like…)\n\nSo let’s make this a little simpler and use only 1 variable: lifeExp\n\n\n\n3.1 Step 1: select() only some variables (lifeExp)\n\ngap1 &lt;- gap %&gt;% select(country, continent, year, lifeExp)\nhead(gap1)\n\n      country continent year lifeExp\n1 Afghanistan      Asia 1952  28.801\n2 Afghanistan      Asia 1957  30.332\n3 Afghanistan      Asia 1962  31.997\n4 Afghanistan      Asia 1967  34.020\n5 Afghanistan      Asia 1972  36.088\n6 Afghanistan      Asia 1977  38.438\n\n\n\n\n3.2 Step 2: pivot_wider() to convert to a wide dataset\n\ngap1_wide &lt;- gap1 %&gt;% pivot_wider(names_from = year, \n                                  values_from = lifeExp)\nhead(gap1_wide)\n\n# A tibble: 6 × 14\n  country     continent `1952` `1957` `1962` `1967` `1972` `1977` `1982` `1987`\n  &lt;fct&gt;       &lt;fct&gt;      &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;\n1 Afghanistan Asia        28.8   30.3   32.0   34.0   36.1   38.4   39.9   40.8\n2 Albania     Europe      55.2   59.3   64.8   66.2   67.7   68.9   70.4   72  \n3 Algeria     Africa      43.1   45.7   48.3   51.4   54.5   58.0   61.4   65.8\n4 Angola      Africa      30.0   32.0   34     36.0   37.9   39.5   39.9   39.9\n5 Argentina   Americas    62.5   64.4   65.1   65.6   67.1   68.5   69.9   70.8\n6 Australia   Oceania     69.1   70.3   70.9   71.1   71.9   73.5   74.7   76.3\n# ℹ 4 more variables: `1992` &lt;dbl&gt;, `1997` &lt;dbl&gt;, `2002` &lt;dbl&gt;, `2007` &lt;dbl&gt;\n\n\n\nHow many years of data are in this dataset?\n\n\n\n3.3 Step 3: pivot_longer() to convert back to a tall dataset\n\ngap1_tall &lt;- gap1_wide %&gt;% pivot_longer(cols = 3:14, \n                                        names_to = \"year\", \n                                        values_to = \"lifeExp\")\nhead(gap1_tall)\n\n# A tibble: 6 × 4\n  country     continent year  lifeExp\n  &lt;fct&gt;       &lt;fct&gt;     &lt;chr&gt;   &lt;dbl&gt;\n1 Afghanistan Asia      1952     28.8\n2 Afghanistan Asia      1957     30.3\n3 Afghanistan Asia      1962     32.0\n4 Afghanistan Asia      1967     34.0\n5 Afghanistan Asia      1972     36.1\n6 Afghanistan Asia      1977     38.4\n\n\n\nBeautiful!\n\nThough notice that R decided that year is now a character variable…\nIf you wanted to, you could change that with the as.numeric() function as we did to convert variables to factors"
+  },
+  {
+    "objectID": "lab/BTS510-24-lab2.html#manipulate-some-data",
+    "href": "lab/BTS510-24-lab2.html#manipulate-some-data",
+    "title": "BTS 510 Lab 2",
+    "section": "4 Manipulate some data",
+    "text": "4 Manipulate some data\n\nFor each task, start with the original data, gap, and use appropriate functions (e.g., print(), head(), str(), glimpse()) to check that you have the data you were trying to get.\n\n\nKeep only observations from countries in Asia and Europe.\nCreate a new variable that is the ratio of life expectancy to GDP.\nCreate a new data frame with the mean GDP per capita for each continent.\nFind the country in the Americas with the largest population. What country was it and what year was it?\nKeep only data from Asia prior to 1975 and sort it according to population.\nHow many countries have a life expectancy greater than 80 in 2007?"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
+    "section": "",
+    "text": "Welcome to the course website for BTS 510: Biostatistics for Summer 2024!\nFollow the links to the left to find the syllabus, schedule, and course materials\nYou can contact me at: stefany.coxe@cshs.org\nWe will meet each Thursday from 9am to 10:30am in G-511 Auditorium in PDC Picasso conference room in PDC",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "assignments/index.html",
+    "href": "assignments/index.html",
+    "title": "Assignments overview",
+    "section": "",
+    "text": "You will be assessed in this course using 3 types of assignments\nIn this section\n\nHomework assignments: About every other week\nFinal project: End of semester project\n\nIn the Materials section\n\nLecture videos and surveys",
+    "crumbs": [
+      "Assignments",
+      "Assignments overview"
+    ]
+  },
+  {
+    "objectID": "assignments/hw1.html",
+    "href": "assignments/hw1.html",
+    "title": "Homework 1",
+    "section": "",
+    "text": "Due Sunday, May 12 by end of day (midnight)\nComplete the assignment in a Quarto (.qmd) document and render it to HTML and PDF. Email all 3 files (.qmd, .html, .pdf) to Stefany, Yujie, and Michael.\nPlease write your response to each question. Don’t just print out your data frame (though you can also do that. And then write / type your answer based on that.)\nUse the gapminder dataset that we’ve been working with. You can read it in via the gapminder package or via the external files. Either way, show the code for reading in the data.\n\n\nWhat is the mean GDP (not GDP per capita) for each continent in 2002?\nHow many countries had a life expectancy greater than 80 in 2007?\nWhat was the population of Japan in 1977?\nWhat continent had the highest mean life expectancy in 2007?\nWhich country had the highest GDP per capita in 2002, among countries with a population of at least 20 million?",
+    "crumbs": [
+      "Assignments",
+      "Homework 1"
+    ]
+  },
+  {
+    "objectID": "assignments/hw1.html#quarto-r-markdown-and-manipulating-data",
+    "href": "assignments/hw1.html#quarto-r-markdown-and-manipulating-data",
+    "title": "Homework 1",
+    "section": "",
+    "text": "Due Sunday, May 12 by end of day (midnight)\nComplete the assignment in a Quarto (.qmd) document and render it to HTML and PDF. Email all 3 files (.qmd, .html, .pdf) to Stefany, Yujie, and Michael.\nPlease write your response to each question. Don’t just print out your data frame (though you can also do that. And then write / type your answer based on that.)\nUse the gapminder dataset that we’ve been working with. You can read it in via the gapminder package or via the external files. Either way, show the code for reading in the data.\n\n\nWhat is the mean GDP (not GDP per capita) for each continent in 2002?\nHow many countries had a life expectancy greater than 80 in 2007?\nWhat was the population of Japan in 1977?\nWhat continent had the highest mean life expectancy in 2007?\nWhich country had the highest GDP per capita in 2002, among countries with a population of at least 20 million?",
+    "crumbs": [
+      "Assignments",
+      "Homework 1"
+    ]
+  },
+  {
+    "objectID": "assignments/final.html",
+    "href": "assignments/final.html",
+    "title": "Final project",
+    "section": "",
+    "text": "You will pick one of the five special topics and write a longer summary of the topic, primarily using the listed readings.\nWe will also have a discussion of these topics in the last class session\nMore details to come…",
+    "crumbs": [
+      "Assignments",
+      "Final project"
+    ]
+  },
+  {
+    "objectID": "assignments/hw2.html#descriptive-statistics",
+    "href": "assignments/hw2.html#descriptive-statistics",
+    "title": "Homework 2",
+    "section": "Descriptive statistics",
+    "text": "Descriptive statistics"
+  },
+  {
+    "objectID": "final.html",
+    "href": "final.html",
+    "title": "Final Project",
+    "section": "",
+    "text": "Blah blah blah"
+  },
+  {
     "objectID": "lab/BTS510-24-lab1.html",
     "href": "lab/BTS510-24-lab1.html",
     "title": "BTS 510 Lab 1",
@@ -351,7 +454,7 @@
     "href": "lab/BTS510-24-lab1.html#looking-at-your-data",
     "title": "BTS 510 Lab 1",
     "section": "7 Looking at your data",
-    "text": "7 Looking at your data\nThere are a number of functions to help you examine your data. You should always look at your data to make sure it was read in correctly.\n\n\n\n\n\n\nNote\n\n\n\nWhat should your data look like? If you’re doing a typical experimental study, the organization of your dataset should follow a pretty standard format:\n\nEach row is a unit of study (i.e., person, animal, petri dish)\nEach column is a variable\n\nThere are some deviations from this\n\nLongitudinal studies have multiple observations per unit and can be organized 2 different ways\n\nWide or multivariate format: Each repeated measure is a new variable (e.g., X1, X2, X3 for the X variable at 3 different time points)\nTall or stacked or univariate format: Each repeated measure is a new row, so each unit will have multiple rows of data (with an additional variable that indicates which time point is which)\n\nData from non-experiments is often structured differently or even unstructured\n\nWeb scraping\nData from devices or automated processes\nData from someone who doesn’t know what they’re doing…\n\n\n\n\n\n7.1 List the dataset\nIf you want to view the dataset, you can just name the dataset. (You can also print() the dataset for the same result.)\n\ngapminder\n\n# A tibble: 1,704 × 6\n   country     continent  year lifeExp      pop gdpPercap\n   &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;\n 1 Afghanistan Asia       1952    28.8  8425333      779.\n 2 Afghanistan Asia       1957    30.3  9240934      821.\n 3 Afghanistan Asia       1962    32.0 10267083      853.\n 4 Afghanistan Asia       1967    34.0 11537966      836.\n 5 Afghanistan Asia       1972    36.1 13079460      740.\n 6 Afghanistan Asia       1977    38.4 14880372      786.\n 7 Afghanistan Asia       1982    39.9 12881816      978.\n 8 Afghanistan Asia       1987    40.8 13867957      852.\n 9 Afghanistan Asia       1992    41.7 16317921      649.\n10 Afghanistan Asia       1997    41.8 22227415      635.\n# ℹ 1,694 more rows\n\n\n\n\n7.2 head() function\nThe head() function will show the head of the dataset. By default, this shows the first 6 rows of the dataset\n\nhead(gapminder)\n\n# A tibble: 6 × 6\n  country     continent  year lifeExp      pop gdpPercap\n  &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;\n1 Afghanistan Asia       1952    28.8  8425333      779.\n2 Afghanistan Asia       1957    30.3  9240934      821.\n3 Afghanistan Asia       1962    32.0 10267083      853.\n4 Afghanistan Asia       1967    34.0 11537966      836.\n5 Afghanistan Asia       1972    36.1 13079460      740.\n6 Afghanistan Asia       1977    38.4 14880372      786.\n\n\nYou can change the number of rows it shows using the n argument. Here, I’ve asked for the first 15 rows instead.\n\nhead(gapminder, n = 15)\n\n# A tibble: 15 × 6\n   country     continent  year lifeExp      pop gdpPercap\n   &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;\n 1 Afghanistan Asia       1952    28.8  8425333      779.\n 2 Afghanistan Asia       1957    30.3  9240934      821.\n 3 Afghanistan Asia       1962    32.0 10267083      853.\n 4 Afghanistan Asia       1967    34.0 11537966      836.\n 5 Afghanistan Asia       1972    36.1 13079460      740.\n 6 Afghanistan Asia       1977    38.4 14880372      786.\n 7 Afghanistan Asia       1982    39.9 12881816      978.\n 8 Afghanistan Asia       1987    40.8 13867957      852.\n 9 Afghanistan Asia       1992    41.7 16317921      649.\n10 Afghanistan Asia       1997    41.8 22227415      635.\n11 Afghanistan Asia       2002    42.1 25268405      727.\n12 Afghanistan Asia       2007    43.8 31889923      975.\n13 Albania     Europe     1952    55.2  1282697     1601.\n14 Albania     Europe     1957    59.3  1476505     1942.\n15 Albania     Europe     1962    64.8  1728137     2313.\n\n\n\n\n\n\n\n\nNote\n\n\n\nThere is also a tail() function that – guess what – prints the last 6 rows of the dataset. If you wanted to check the end for some reason.\n\n\n\n\n7.3 str() function\nThe str() (for “structure”) function tells you about the structure of the dataset. It shows the number of rows and columns, and summarizes some basic info about each variable (like whether it’s a number or character variable and the possible values).\n\nstr(gapminder)\n\ntibble [1,704 × 6] (S3: tbl_df/tbl/data.frame)\n $ country  : Factor w/ 142 levels \"Afghanistan\",..: 1 1 1 1 1 1 1 1 1 1 ...\n $ continent: Factor w/ 5 levels \"Africa\",\"Americas\",..: 3 3 3 3 3 3 3 3 3 3 ...\n $ year     : int [1:1704] 1952 1957 1962 1967 1972 1977 1982 1987 1992 1997 ...\n $ lifeExp  : num [1:1704] 28.8 30.3 32 34 36.1 ...\n $ pop      : int [1:1704] 8425333 9240934 10267083 11537966 13079460 14880372 12881816 13867957 16317921 22227415 ...\n $ gdpPercap: num [1:1704] 779 821 853 836 740 ...\n\n\n\n\n7.4 glimpse() function\nThe glimpse() function is in the dplyr package in the tidyverse. We’re going to talk about dplyr more next week, but I wanted to include this function here. This function shows you the number of rows and columns in the dataset. It also flips your dataset so that the variables are rows and prints the dataset out.\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.0     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nglimpse(gapminder)\n\nRows: 1,704\nColumns: 6\n$ country   &lt;fct&gt; \"Afghanistan\", \"Afghanistan\", \"Afghanistan\", \"Afghanistan\", …\n$ continent &lt;fct&gt; Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, …\n$ year      &lt;int&gt; 1952, 1957, 1962, 1967, 1972, 1977, 1982, 1987, 1992, 1997, …\n$ lifeExp   &lt;dbl&gt; 28.801, 30.332, 31.997, 34.020, 36.088, 38.438, 39.854, 40.8…\n$ pop       &lt;int&gt; 8425333, 9240934, 10267083, 11537966, 13079460, 14880372, 12…\n$ gdpPercap &lt;dbl&gt; 779.4453, 820.8530, 853.1007, 836.1971, 739.9811, 786.1134, …\n\n\n\n\n\n\n\n\nNote\n\n\n\nDon’t worry about all those warnings that show up about tidyverse and such after library(tidyverse). That’s normal."
+    "text": "7 Looking at your data\nThere are a number of functions to help you examine your data. You should always look at your data to make sure it was read in correctly.\n\n\n\n\n\n\nNote\n\n\n\nWhat should your data look like? If you’re doing a typical experimental study, the organization of your dataset should follow a pretty standard format:\n\nEach row is a unit of study (i.e., person, animal, petri dish)\nEach column is a variable\n\nThere are some deviations from this\n\nLongitudinal studies have multiple observations per unit and can be organized 2 different ways\n\nWide or multivariate format: Each repeated measure is a new variable (e.g., X1, X2, X3 for the X variable at 3 different time points)\nTall or stacked or univariate format: Each repeated measure is a new row, so each unit will have multiple rows of data (with an additional variable that indicates which time point is which)\n\nData from non-experiments is often structured differently or even unstructured\n\nWeb scraping\nData from devices or automated processes\nData from someone who doesn’t know what they’re doing…\n\n\n\n\n\n7.1 List the dataset\nIf you want to view the dataset, you can just name the dataset. (You can also print() the dataset for the same result.)\n\ngapminder\n\n# A tibble: 1,704 × 6\n   country     continent  year lifeExp      pop gdpPercap\n   &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;\n 1 Afghanistan Asia       1952    28.8  8425333      779.\n 2 Afghanistan Asia       1957    30.3  9240934      821.\n 3 Afghanistan Asia       1962    32.0 10267083      853.\n 4 Afghanistan Asia       1967    34.0 11537966      836.\n 5 Afghanistan Asia       1972    36.1 13079460      740.\n 6 Afghanistan Asia       1977    38.4 14880372      786.\n 7 Afghanistan Asia       1982    39.9 12881816      978.\n 8 Afghanistan Asia       1987    40.8 13867957      852.\n 9 Afghanistan Asia       1992    41.7 16317921      649.\n10 Afghanistan Asia       1997    41.8 22227415      635.\n# ℹ 1,694 more rows\n\n\n\n\n7.2 head() function\nThe head() function will show the head of the dataset. By default, this shows the first 6 rows of the dataset\n\nhead(gapminder)\n\n# A tibble: 6 × 6\n  country     continent  year lifeExp      pop gdpPercap\n  &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;\n1 Afghanistan Asia       1952    28.8  8425333      779.\n2 Afghanistan Asia       1957    30.3  9240934      821.\n3 Afghanistan Asia       1962    32.0 10267083      853.\n4 Afghanistan Asia       1967    34.0 11537966      836.\n5 Afghanistan Asia       1972    36.1 13079460      740.\n6 Afghanistan Asia       1977    38.4 14880372      786.\n\n\nYou can change the number of rows it shows using the n argument. Here, I’ve asked for the first 15 rows instead.\n\nhead(gapminder, n = 15)\n\n# A tibble: 15 × 6\n   country     continent  year lifeExp      pop gdpPercap\n   &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;\n 1 Afghanistan Asia       1952    28.8  8425333      779.\n 2 Afghanistan Asia       1957    30.3  9240934      821.\n 3 Afghanistan Asia       1962    32.0 10267083      853.\n 4 Afghanistan Asia       1967    34.0 11537966      836.\n 5 Afghanistan Asia       1972    36.1 13079460      740.\n 6 Afghanistan Asia       1977    38.4 14880372      786.\n 7 Afghanistan Asia       1982    39.9 12881816      978.\n 8 Afghanistan Asia       1987    40.8 13867957      852.\n 9 Afghanistan Asia       1992    41.7 16317921      649.\n10 Afghanistan Asia       1997    41.8 22227415      635.\n11 Afghanistan Asia       2002    42.1 25268405      727.\n12 Afghanistan Asia       2007    43.8 31889923      975.\n13 Albania     Europe     1952    55.2  1282697     1601.\n14 Albania     Europe     1957    59.3  1476505     1942.\n15 Albania     Europe     1962    64.8  1728137     2313.\n\n\n\n\n\n\n\n\nNote\n\n\n\nThere is also a tail() function that – guess what – prints the last 6 rows of the dataset. If you wanted to check the end for some reason.\n\n\n\n\n7.3 str() function\nThe str() (for “structure”) function tells you about the structure of the dataset. It shows the number of rows and columns, and summarizes some basic info about each variable (like whether it’s a number or character variable and the possible values).\n\nstr(gapminder)\n\ntibble [1,704 × 6] (S3: tbl_df/tbl/data.frame)\n $ country  : Factor w/ 142 levels \"Afghanistan\",..: 1 1 1 1 1 1 1 1 1 1 ...\n $ continent: Factor w/ 5 levels \"Africa\",\"Americas\",..: 3 3 3 3 3 3 3 3 3 3 ...\n $ year     : int [1:1704] 1952 1957 1962 1967 1972 1977 1982 1987 1992 1997 ...\n $ lifeExp  : num [1:1704] 28.8 30.3 32 34 36.1 ...\n $ pop      : int [1:1704] 8425333 9240934 10267083 11537966 13079460 14880372 12881816 13867957 16317921 22227415 ...\n $ gdpPercap: num [1:1704] 779 821 853 836 740 ...\n\n\n\n\n7.4 glimpse() function\nThe glimpse() function is in the dplyr package in the tidyverse. We’re going to talk about dplyr more next week, but I wanted to include this function here. This function shows you the number of rows and columns in the dataset. It also flips your dataset so that the variables are rows and prints the dataset out.\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nglimpse(gapminder)\n\nRows: 1,704\nColumns: 6\n$ country   &lt;fct&gt; \"Afghanistan\", \"Afghanistan\", \"Afghanistan\", \"Afghanistan\", …\n$ continent &lt;fct&gt; Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, …\n$ year      &lt;int&gt; 1952, 1957, 1962, 1967, 1972, 1977, 1982, 1987, 1992, 1997, …\n$ lifeExp   &lt;dbl&gt; 28.801, 30.332, 31.997, 34.020, 36.088, 38.438, 39.854, 40.8…\n$ pop       &lt;int&gt; 8425333, 9240934, 10267083, 11537966, 13079460, 14880372, 12…\n$ gdpPercap &lt;dbl&gt; 779.4453, 820.8530, 853.1007, 836.1971, 739.9811, 786.1134, …\n\n\n\n\n\n\n\n\nNote\n\n\n\nDon’t worry about all those warnings that show up about tidyverse and such after library(tidyverse). That’s normal."
   },
   {
     "objectID": "lab/BTS510-24-lab1.html#activities",
@@ -359,52 +462,6 @@
     "title": "BTS 510 Lab 1",
     "section": "8 Activities",
     "text": "8 Activities\nComplete these tasks by adding to this .qmd (quarto) file.\n\nRender / knit the file together into an HTML file.\nRender / knit the file together into a PDF file. You’ll need to install the tinytex package for this to work (or have LaTeX installed on your computer).\nHow many rows are in the gapminder dataset? Where did you find that out?\nHow many columns are in the gapminder dataset? Where did you find that out?\nHow many countries are represented in the gapminder dataset? Where did you find that out?\nThe gapminder dataset is longitudinal. Is it organized as tall or wide?"
-  },
-  {
-    "objectID": "final.html",
-    "href": "final.html",
-    "title": "Final Project",
-    "section": "",
-    "text": "Blah blah blah"
-  },
-  {
-    "objectID": "assignments/hw2.html#descriptive-statistics",
-    "href": "assignments/hw2.html#descriptive-statistics",
-    "title": "Homework 2",
-    "section": "Descriptive statistics",
-    "text": "Descriptive statistics"
-  },
-  {
-    "objectID": "assignments/final.html",
-    "href": "assignments/final.html",
-    "title": "Final project",
-    "section": "",
-    "text": "You will pick one of the five special topics and write a longer summary of the topic, primarily using the listed readings.\nWe will also have a discussion of these topics in the last class session\nMore details to come…",
-    "crumbs": [
-      "Assignments",
-      "Final project"
-    ]
-  },
-  {
-    "objectID": "assignments/index.html",
-    "href": "assignments/index.html",
-    "title": "Assignments overview",
-    "section": "",
-    "text": "You will be assessed in this course using 3 types of assignments\nIn this section\n\nHomework assignments: About every other week\nFinal project: End of semester project\n\nIn the Materials section\n\nLecture videos and surveys",
-    "crumbs": [
-      "Assignments",
-      "Assignments overview"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Home",
-    "section": "",
-    "text": "Welcome to the course website for BTS 510: Biostatistics for Summer 2024!\nFollow the links to the left to find the syllabus, schedule, and course materials\nYou can contact me at: stefany.coxe@cshs.org\nWe will meet each Thursday from 9am to 10:30am in G-511 Auditorium in PDC",
-    "crumbs": [
-      "Home"
-    ]
   },
   {
     "objectID": "materials/00-mats.html",
@@ -422,35 +479,55 @@
     "href": "materials/02-mats.html",
     "title": "Week 2: Data manipulation",
     "section": "",
-    "text": "Read data into R from external formats (e.g., Excel, .csv, SPSS)\nUse dplyr functions in R to manipulate datasets (e.g., create new variables)\nUse tidyr functions in R to organize and re-structure datasets"
+    "text": "Read data into R from external formats (e.g., Excel, .csv, SPSS)\nUse dplyr functions in R to manipulate datasets (e.g., create new variables)\nUse tidyr functions in R to organize and re-structure datasets",
+    "crumbs": [
+      "Materials",
+      "Week 2: Data manipulation"
+    ]
   },
   {
     "objectID": "materials/02-mats.html#learning-objectives",
     "href": "materials/02-mats.html#learning-objectives",
     "title": "Week 2: Data manipulation",
     "section": "",
-    "text": "Read data into R from external formats (e.g., Excel, .csv, SPSS)\nUse dplyr functions in R to manipulate datasets (e.g., create new variables)\nUse tidyr functions in R to organize and re-structure datasets"
+    "text": "Read data into R from external formats (e.g., Excel, .csv, SPSS)\nUse dplyr functions in R to manipulate datasets (e.g., create new variables)\nUse tidyr functions in R to organize and re-structure datasets",
+    "crumbs": [
+      "Materials",
+      "Week 2: Data manipulation"
+    ]
   },
   {
     "objectID": "materials/02-mats.html#before-class-lecture",
     "href": "materials/02-mats.html#before-class-lecture",
     "title": "Week 2: Data manipulation",
     "section": "Before class: Lecture",
-    "text": "Before class: Lecture\n\n\nLecture survey: Complete by XXX\nSlides"
+    "text": "Before class: Lecture\n\nLecture 2\nLecture survey: Complete by Wednesday, May 8 at 8pm\nSlides (html)",
+    "crumbs": [
+      "Materials",
+      "Week 2: Data manipulation"
+    ]
   },
   {
     "objectID": "materials/02-mats.html#during-class-lab",
     "href": "materials/02-mats.html#during-class-lab",
     "title": "Week 2: Data manipulation",
     "section": "During class: Lab",
-    "text": "During class: Lab"
+    "text": "During class: Lab\n\nCSV file of gapminder data\nSPSS file of gapminder data\nLab 2 (html with link to code)",
+    "crumbs": [
+      "Materials",
+      "Week 2: Data manipulation"
+    ]
   },
   {
     "objectID": "materials/02-mats.html#after-class-assignment",
     "href": "materials/02-mats.html#after-class-assignment",
     "title": "Week 2: Data manipulation",
     "section": "After class: Assignment",
-    "text": "After class: Assignment\n\nHomework 1"
+    "text": "After class: Assignment\n\nHomework 1",
+    "crumbs": [
+      "Materials",
+      "Week 2: Data manipulation"
+    ]
   },
   {
     "objectID": "refs.html",
@@ -478,6 +555,16 @@
     "title": "References",
     "section": "R, Rstudio, markdown, Quarto",
     "text": "R, Rstudio, markdown, Quarto\n\nCommonly used R packages for different tasks\nR packages in the tidyverse, which includes:\n\ndplyr: https://dplyr.tidyverse.org/\nggplot2: https://ggplot2.tidyverse.org/\ntidyr: https://tidyr.tidyverse.org/\n\nWickham, H., Çetinkaya-Rundel, M., & Grolemund, G. (2023). R for data science. “O’Reilly Media, Inc.”.\n\nFull book available here: https://r4ds.hadley.nz/\n\nXie, Y., Allaire, J. J., & Grolemund, G. (2018). R markdown: The definitive guide. Chapman and Hall/CRC.\n\nFull book available here: https://bookdown.org/yihui/rmarkdown/\n\nCheatsheets on various topics, including markdown: https://posit.co/resources/cheatsheets/\nQuarto: “Next gen” of markdown\nImai, K., & Williams, N. W. (2022). Quantitative Social Science: An Introduction in Tidyverse. Princeton University Press.",
+    "crumbs": [
+      "References"
+    ]
+  },
+  {
+    "objectID": "refs.html#missing-data",
+    "href": "refs.html#missing-data",
+    "title": "References",
+    "section": "Missing data",
+    "text": "Missing data\nEnders, C. K. (2022). Applied missing data analysis. Guilford Publications.\nEnders, C. K. (2023). Missing data: An update on the state of the art. Psychological Methods. https://doi.org/10.1037/met0000563\nLittle, R. J., & Rubin, D. B. (2019). Statistical analysis with missing data (Vol. 793). John Wiley & Sons.\nNational Research Council, Division of Behavioral, Committee on National Statistics, & Panel on Handling Missing Data in Clinical Trials. (2010). The prevention and treatment of missing data in clinical trials.\nRubin, D. B. (1976). Inference and missing data. Biometrika, 63(3), 581-592.",
     "crumbs": [
       "References"
     ]
@@ -598,13 +685,272 @@
     "href": "slides/BTS510-24-2.html#learning-objectives-1",
     "title": "Introduction to Biostatistics",
     "section": "1.1 Learning objectives",
-    "text": "1.1 Learning objectives"
+    "text": "1.1 Learning objectives\n\nRead data into R from external formats (e.g., Excel, .csv, SPSS)\nUse dplyr functions in R to manipulate datasets\nUse tidyr functions in R to organize and re-structure datasets"
+  },
+  {
+    "objectID": "slides/BTS510-24-2.html#functions-to-read-in-external-data",
+    "href": "slides/BTS510-24-2.html#functions-to-read-in-external-data",
+    "title": "Introduction to Biostatistics",
+    "section": "2.1 Functions to read in external data",
+    "text": "2.1 Functions to read in external data\n\nComma-separated values (CSV) file: Use read.csv() (built-in)\nExcel: Use read_excel() function from readxl package\nSAS, SPSS, Stata: Use the appropriate function from the haven package\nSAS, SPSS, S, Stata, Systat, Epi Info, Minitab: Use the appropriate function from the foreign package\nJSON: rjson or jsonlite packages\nThere are other packages to read in data, but these are the most commonly used / best maintained ones"
+  },
+  {
+    "objectID": "slides/BTS510-24-2.html#read-in-.csv-file",
+    "href": "slides/BTS510-24-2.html#read-in-.csv-file",
+    "title": "Introduction to Biostatistics",
+    "section": "2.2 Read in .csv file",
+    "text": "2.2 Read in .csv file\n\ngap &lt;- read.csv(\"gapminder.csv\")\n\n\n\n\n\n\n\nNote\n\n\n\nYou can give the read in data frame a name in R that is shorter than the file name. Here, I named the R data frame gap – much shorter to type.\nThe data file is in the same folder as the .qmd file here, so I just give the file name. If it were in a different folder, you’d need to supply the full path, such as C:\\Users\\stefany\\Desktop (Windows) or Users/stefany/Desktop (Mac)\nSometimes the \\s can cause problems because they’re “escape” characters. If you get an error about that, just switch the \\s to /s"
+  },
+  {
+    "objectID": "slides/BTS510-24-2.html#check-the-read-in-.csv-file",
+    "href": "slides/BTS510-24-2.html#check-the-read-in-.csv-file",
+    "title": "Introduction to Biostatistics",
+    "section": "2.3 Check the read in .csv file",
+    "text": "2.3 Check the read in .csv file\n\nhead(gap)\n\n      country continent year lifeExp      pop gdpPercap\n1 Afghanistan      Asia 1952  28.801  8425333  779.4453\n2 Afghanistan      Asia 1957  30.332  9240934  820.8530\n3 Afghanistan      Asia 1962  31.997 10267083  853.1007\n4 Afghanistan      Asia 1967  34.020 11537966  836.1971\n5 Afghanistan      Asia 1972  36.088 13079460  739.9811\n6 Afghanistan      Asia 1977  38.438 14880372  786.1134"
+  },
+  {
+    "objectID": "slides/BTS510-24-2.html#read-in-spss-file-1",
+    "href": "slides/BTS510-24-2.html#read-in-spss-file-1",
+    "title": "Introduction to Biostatistics",
+    "section": "2.4 Read in SPSS file 1",
+    "text": "2.4 Read in SPSS file 1\n\nlibrary(haven)\ngap_spss1 &lt;- read_sav(\"gapminder.sav\")\n\n\n\n\n\n\n\nNote\n\n\n\nread_sav function from the haven package\nAgain, you can give the read in data frame a name in R that is shorter than or different from the file name. I called this one gap_spss1 so it wouldn’t overwrite the CSV version that was just called gap.\nSame comments as above about file location, paths, and slashes"
+  },
+  {
+    "objectID": "slides/BTS510-24-2.html#check-the-read-in-spss-file-1",
+    "href": "slides/BTS510-24-2.html#check-the-read-in-spss-file-1",
+    "title": "Introduction to Biostatistics",
+    "section": "2.5 Check the read in SPSS file 1",
+    "text": "2.5 Check the read in SPSS file 1\n\nhead(gap_spss1)\n\n# A tibble: 6 × 6\n  country         continent  year lifeExp      pop gdpPercap\n  &lt;dbl+lbl&gt;       &lt;dbl+lbl&gt; &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n1 1 [Afghanistan] 3 [Asia]   1952    28.8  8425333      779.\n2 1 [Afghanistan] 3 [Asia]   1957    30.3  9240934      821.\n3 1 [Afghanistan] 3 [Asia]   1962    32.0 10267083      853.\n4 1 [Afghanistan] 3 [Asia]   1967    34.0 11537966      836.\n5 1 [Afghanistan] 3 [Asia]   1972    36.1 13079460      740.\n6 1 [Afghanistan] 3 [Asia]   1977    38.4 14880372      786.\n\n\n\n\n\n\n\n\nNote\n\n\n\nSPSS has a lot of additional features like labels for data. This is helpful if you have a multi-category variable assigned numbers (i.e., 1, 2, 3, 4) but you want to have information on what the values mean in the dataset. So here, the country and continent variables are type dbl+lbl: dbl is the number, lbl is the actual name label."
+  },
+  {
+    "objectID": "slides/BTS510-24-2.html#read-in-spss-2",
+    "href": "slides/BTS510-24-2.html#read-in-spss-2",
+    "title": "Introduction to Biostatistics",
+    "section": "2.6 Read in SPSS 2",
+    "text": "2.6 Read in SPSS 2\n\nlibrary(foreign)\ngap_spss2 &lt;- read.spss(\"gapminder.sav\", \n                     to.data.frame = TRUE, \n                     use.value.labels = TRUE)\n\n\n\n\n\n\n\nNote\n\n\n\nread.spss function from the foreign package\nAgain, you can give the read in data frame a name in R that is shorter than or different from the file name. I called this one gap_spss2 so it wouldn’t overwrite the CSV version that was just called gap.\nSame comments as above about file location, paths, and slashes\nto.data.frame = TRUE forces the file into a data frame (in case it wasn’t already)\nuse.value.labels = TRUE uses the variable labels from SPSS (ignoring the numbers)"
+  },
+  {
+    "objectID": "slides/BTS510-24-2.html#check-the-read-in-spss-file-2",
+    "href": "slides/BTS510-24-2.html#check-the-read-in-spss-file-2",
+    "title": "Introduction to Biostatistics",
+    "section": "2.7 Check the read in SPSS file 2",
+    "text": "2.7 Check the read in SPSS file 2\n\nhead(gap_spss2)\n\n      country continent year lifeExp      pop gdpPercap\n1 Afghanistan      Asia 1952  28.801  8425333  779.4453\n2 Afghanistan      Asia 1957  30.332  9240934  820.8530\n3 Afghanistan      Asia 1962  31.997 10267083  853.1007\n4 Afghanistan      Asia 1967  34.020 11537966  836.1971\n5 Afghanistan      Asia 1972  36.088 13079460  739.9811\n6 Afghanistan      Asia 1977  38.438 14880372  786.1134\n\n\n\n\n\n\n\n\nNote\n\n\n\nNote that country and continent are now the labels, not the numbers."
+  },
+  {
+    "objectID": "slides/BTS510-24-2.html#reading-in-data",
+    "href": "slides/BTS510-24-2.html#reading-in-data",
+    "title": "Introduction to Biostatistics",
+    "section": "2.8 Reading in data",
+    "text": "2.8 Reading in data\n\nThere are a lot of data formats and a lot of methods to read them in\nIf you commonly use a particular data format, make sure you know the ins and outs of the packages for that data format\n\nAnd always look at your data to make sure it was read in correctly\nhead(), glimpse(), str(), etc."
+  },
+  {
+    "objectID": "slides/BTS510-24-2.html#tidyr-package",
+    "href": "slides/BTS510-24-2.html#tidyr-package",
+    "title": "Introduction to Biostatistics",
+    "section": "3.1 tidyr package",
+    "text": "3.1 tidyr package\n\ntidyr has a lot of features to “tidy” your data\n\nHelp get data into “tidy” format\n\nRows = observations, columns = variables\n\n“Reshape” data from “wide” to “tall” format (and vice versa)\nSplit “combo” variables into multiple variables\nComplex nested data, missing data"
+  },
+  {
+    "objectID": "slides/BTS510-24-2.html#gapminder-dataset",
+    "href": "slides/BTS510-24-2.html#gapminder-dataset",
+    "title": "Introduction to Biostatistics",
+    "section": "3.2 gapminder dataset",
+    "text": "3.2 gapminder dataset\n\nThis dataset is tall / stacked / univariate\n\n\nhead(gap, n = 15)\n\n       country continent year lifeExp      pop gdpPercap\n1  Afghanistan      Asia 1952  28.801  8425333  779.4453\n2  Afghanistan      Asia 1957  30.332  9240934  820.8530\n3  Afghanistan      Asia 1962  31.997 10267083  853.1007\n4  Afghanistan      Asia 1967  34.020 11537966  836.1971\n5  Afghanistan      Asia 1972  36.088 13079460  739.9811\n6  Afghanistan      Asia 1977  38.438 14880372  786.1134\n7  Afghanistan      Asia 1982  39.854 12881816  978.0114\n8  Afghanistan      Asia 1987  40.822 13867957  852.3959\n9  Afghanistan      Asia 1992  41.674 16317921  649.3414\n10 Afghanistan      Asia 1997  41.763 22227415  635.3414\n11 Afghanistan      Asia 2002  42.129 25268405  726.7341\n12 Afghanistan      Asia 2007  43.828 31889923  974.5803\n13     Albania    Europe 1952  55.230  1282697 1601.0561\n14     Albania    Europe 1957  59.280  1476505 1942.2842\n15     Albania    Europe 1962  64.820  1728137 2312.8890\n\n\n\nHow can we convert this to a wide / multivariate format?"
+  },
+  {
+    "objectID": "slides/BTS510-24-2.html#tidyr-functions",
+    "href": "slides/BTS510-24-2.html#tidyr-functions",
+    "title": "Introduction to Biostatistics",
+    "section": "3.3 tidyr functions",
+    "text": "3.3 tidyr functions\n\nCheatsheet for tidyr\n\n\npivot_wider(table2, names_from = type, values_from = count)\n\n\npivot_wider() function\n\ntable2 is the dataset you start from (in this case, the tall one)\nnames_from is the variable that defines the repeated measure\nvalues_from is the variable you are interested in “widening”\n\nYou can have multiple variables"
+  },
+  {
+    "objectID": "slides/BTS510-24-2.html#gapminder-dataset-1",
+    "href": "slides/BTS510-24-2.html#gapminder-dataset-1",
+    "title": "Introduction to Biostatistics",
+    "section": "3.4 gapminder dataset",
+    "text": "3.4 gapminder dataset\n\nhead(gap, n = 15)\n\n       country continent year lifeExp      pop gdpPercap\n1  Afghanistan      Asia 1952  28.801  8425333  779.4453\n2  Afghanistan      Asia 1957  30.332  9240934  820.8530\n3  Afghanistan      Asia 1962  31.997 10267083  853.1007\n4  Afghanistan      Asia 1967  34.020 11537966  836.1971\n5  Afghanistan      Asia 1972  36.088 13079460  739.9811\n6  Afghanistan      Asia 1977  38.438 14880372  786.1134\n7  Afghanistan      Asia 1982  39.854 12881816  978.0114\n8  Afghanistan      Asia 1987  40.822 13867957  852.3959\n9  Afghanistan      Asia 1992  41.674 16317921  649.3414\n10 Afghanistan      Asia 1997  41.763 22227415  635.3414\n11 Afghanistan      Asia 2002  42.129 25268405  726.7341\n12 Afghanistan      Asia 2007  43.828 31889923  974.5803\n13     Albania    Europe 1952  55.230  1282697 1601.0561\n14     Albania    Europe 1957  59.280  1476505 1942.2842\n15     Albania    Europe 1962  64.820  1728137 2312.8890\n\n\n\nyear defines the repeated measure\nlifeExp, pop, and gdpPercap into one column per year"
+  },
+  {
+    "objectID": "slides/BTS510-24-2.html#pivot_wider-tall-to-wide",
+    "href": "slides/BTS510-24-2.html#pivot_wider-tall-to-wide",
+    "title": "Introduction to Biostatistics",
+    "section": "3.5 pivot_wider(): Tall to wide",
+    "text": "3.5 pivot_wider(): Tall to wide\n\nlibrary(tidyr)\ngap_wide &lt;- gap %&gt;% pivot_wider(names_from = year, \n                                values_from = c(lifeExp, pop, gdpPercap))\n\n\nCreate new data frame called gap_wide\nAssign to it (&lt;-) the data frame called gap\nThen “pipe” (%&gt;%) gap into the pivot_wider() function\npivot_wider() has 2 arguments (plus the data)\n\nnames_from = year\nvalues_from = c(lifeExp, pop, gdpPercap)"
+  },
+  {
+    "objectID": "slides/BTS510-24-2.html#pivot_wider-now-wide",
+    "href": "slides/BTS510-24-2.html#pivot_wider-now-wide",
+    "title": "Introduction to Biostatistics",
+    "section": "3.6 pivot_wider(): Now wide",
+    "text": "3.6 pivot_wider(): Now wide\n\nhead(gap_wide)\n\n# A tibble: 6 × 38\n  country     continent lifeExp_1952 lifeExp_1957 lifeExp_1962 lifeExp_1967\n  &lt;chr&gt;       &lt;chr&gt;            &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;\n1 Afghanistan Asia              28.8         30.3         32.0         34.0\n2 Albania     Europe            55.2         59.3         64.8         66.2\n3 Algeria     Africa            43.1         45.7         48.3         51.4\n4 Angola      Africa            30.0         32.0         34           36.0\n5 Argentina   Americas          62.5         64.4         65.1         65.6\n6 Australia   Oceania           69.1         70.3         70.9         71.1\n# ℹ 32 more variables: lifeExp_1972 &lt;dbl&gt;, lifeExp_1977 &lt;dbl&gt;,\n#   lifeExp_1982 &lt;dbl&gt;, lifeExp_1987 &lt;dbl&gt;, lifeExp_1992 &lt;dbl&gt;,\n#   lifeExp_1997 &lt;dbl&gt;, lifeExp_2002 &lt;dbl&gt;, lifeExp_2007 &lt;dbl&gt;, pop_1952 &lt;int&gt;,\n#   pop_1957 &lt;int&gt;, pop_1962 &lt;int&gt;, pop_1967 &lt;int&gt;, pop_1972 &lt;int&gt;,\n#   pop_1977 &lt;int&gt;, pop_1982 &lt;int&gt;, pop_1987 &lt;int&gt;, pop_1992 &lt;int&gt;,\n#   pop_1997 &lt;int&gt;, pop_2002 &lt;int&gt;, pop_2007 &lt;int&gt;, gdpPercap_1952 &lt;dbl&gt;,\n#   gdpPercap_1957 &lt;dbl&gt;, gdpPercap_1962 &lt;dbl&gt;, gdpPercap_1967 &lt;dbl&gt;, …"
+  },
+  {
+    "objectID": "slides/BTS510-24-2.html#pivot_longer-wide-to-tall",
+    "href": "slides/BTS510-24-2.html#pivot_longer-wide-to-tall",
+    "title": "Introduction to Biostatistics",
+    "section": "3.7 pivot_longer(): Wide to tall",
+    "text": "3.7 pivot_longer(): Wide to tall\n\nlibrary(tidyr)\ngap_tall &lt;- gap_wide %&gt;% pivot_longer(cols = 3:38, \n                                      names_to = \"var_year\", \n                                      values_to = \"value\")\n\n\n\n\n\n\n\nNote\n\n\n\nYou (and I) want this to magically turn the wide data back to its original form. It will not. Unfortunately, this relatively simple situation is actually pretty complicated.\nInstead, we get two columns\n\nColumn 1: Combination of the variable name and the year variable\nColumn 2: Actual value for that combination\n\nA few more steps to get it back (if that’s what you wanted – it might not be)\n\nChance to learn a couple more functions (woo!)"
+  },
+  {
+    "objectID": "slides/BTS510-24-2.html#pivot_longer-now-tallish",
+    "href": "slides/BTS510-24-2.html#pivot_longer-now-tallish",
+    "title": "Introduction to Biostatistics",
+    "section": "3.8 pivot_longer(): Now tall(ish)",
+    "text": "3.8 pivot_longer(): Now tall(ish)\n\nprint(gap_tall, n = 30)\n\n# A tibble: 5,112 × 4\n   country     continent var_year            value\n   &lt;chr&gt;       &lt;chr&gt;     &lt;chr&gt;               &lt;dbl&gt;\n 1 Afghanistan Asia      lifeExp_1952         28.8\n 2 Afghanistan Asia      lifeExp_1957         30.3\n 3 Afghanistan Asia      lifeExp_1962         32.0\n 4 Afghanistan Asia      lifeExp_1967         34.0\n 5 Afghanistan Asia      lifeExp_1972         36.1\n 6 Afghanistan Asia      lifeExp_1977         38.4\n 7 Afghanistan Asia      lifeExp_1982         39.9\n 8 Afghanistan Asia      lifeExp_1987         40.8\n 9 Afghanistan Asia      lifeExp_1992         41.7\n10 Afghanistan Asia      lifeExp_1997         41.8\n11 Afghanistan Asia      lifeExp_2002         42.1\n12 Afghanistan Asia      lifeExp_2007         43.8\n13 Afghanistan Asia      pop_1952        8425333  \n14 Afghanistan Asia      pop_1957        9240934  \n15 Afghanistan Asia      pop_1962       10267083  \n16 Afghanistan Asia      pop_1967       11537966  \n17 Afghanistan Asia      pop_1972       13079460  \n18 Afghanistan Asia      pop_1977       14880372  \n19 Afghanistan Asia      pop_1982       12881816  \n20 Afghanistan Asia      pop_1987       13867957  \n21 Afghanistan Asia      pop_1992       16317921  \n22 Afghanistan Asia      pop_1997       22227415  \n23 Afghanistan Asia      pop_2002       25268405  \n24 Afghanistan Asia      pop_2007       31889923  \n25 Afghanistan Asia      gdpPercap_1952      779. \n26 Afghanistan Asia      gdpPercap_1957      821. \n27 Afghanistan Asia      gdpPercap_1962      853. \n28 Afghanistan Asia      gdpPercap_1967      836. \n29 Afghanistan Asia      gdpPercap_1972      740. \n30 Afghanistan Asia      gdpPercap_1977      786. \n# ℹ 5,082 more rows"
+  },
+  {
+    "objectID": "slides/BTS510-24-2.html#tall-to-wide-to-tall",
+    "href": "slides/BTS510-24-2.html#tall-to-wide-to-tall",
+    "title": "Introduction to Biostatistics",
+    "section": "3.9 Tall to wide to tall",
+    "text": "3.9 Tall to wide to tall\n\n\n\n\n\n\nNote\n\n\n\nA lot of the things you’ll do with pivot_wider() and pivot_longer() are a little bespoke to your particular dataset\n\nI used names_from to create the new variables, but there are a lot of other options, depending on how your dataset is set up\nCheck the documentation for tidyr to see all the options, as well as examples\n\nI don’t think that I have ever used pivot_wider() or pivot_longer() successfully on the first try"
+  },
+  {
+    "objectID": "slides/BTS510-24-2.html#split-cells",
+    "href": "slides/BTS510-24-2.html#split-cells",
+    "title": "Introduction to Biostatistics",
+    "section": "3.10 Split cells",
+    "text": "3.10 Split cells\n\nThe var_year variable has 2 pieces of information:\n\nThe original variable: lifeExp, pop, gpdPercap\nThe year variable: 1952, 1957, etc.\n(tidyr example: rates, such as 0.7K/10M, 2K/20M, etc.)\n\nWant to split those two pieces of information into 2 variables\n\nseparate(): multiple columns\nseparate_longer_delim(): multiple rows"
+  },
+  {
+    "objectID": "slides/BTS510-24-2.html#split-cells-separate",
+    "href": "slides/BTS510-24-2.html#split-cells-separate",
+    "title": "Introduction to Biostatistics",
+    "section": "3.11 Split cells: separate()",
+    "text": "3.11 Split cells: separate()\n\nAlso listed in documentation as separate_wider_delim()\n\n\ngap_tall2 &lt;- gap_tall %&gt;% separate(var_year, \n                                    sep = \"_\", \n                                    into = c(\"variable\", \"year\"))\n\n\nvar_year is the variable we want to split\nsep is the separation character – here, underscore (_)\ninto are the names of the new variables: variable and year"
+  },
+  {
+    "objectID": "slides/BTS510-24-2.html#split-cells-separate-1",
+    "href": "slides/BTS510-24-2.html#split-cells-separate-1",
+    "title": "Introduction to Biostatistics",
+    "section": "3.12 Split cells: separate()",
+    "text": "3.12 Split cells: separate()\n\ngap_tall2\n\n# A tibble: 5,112 × 5\n   country     continent variable year  value\n   &lt;chr&gt;       &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt; &lt;dbl&gt;\n 1 Afghanistan Asia      lifeExp  1952   28.8\n 2 Afghanistan Asia      lifeExp  1957   30.3\n 3 Afghanistan Asia      lifeExp  1962   32.0\n 4 Afghanistan Asia      lifeExp  1967   34.0\n 5 Afghanistan Asia      lifeExp  1972   36.1\n 6 Afghanistan Asia      lifeExp  1977   38.4\n 7 Afghanistan Asia      lifeExp  1982   39.9\n 8 Afghanistan Asia      lifeExp  1987   40.8\n 9 Afghanistan Asia      lifeExp  1992   41.7\n10 Afghanistan Asia      lifeExp  1997   41.8\n# ℹ 5,102 more rows"
+  },
+  {
+    "objectID": "slides/BTS510-24-2.html#combine-cells-unite",
+    "href": "slides/BTS510-24-2.html#combine-cells-unite",
+    "title": "Introduction to Biostatistics",
+    "section": "3.13 Combine cells: unite()",
+    "text": "3.13 Combine cells: unite()\n\ntidyr example\n\nColumn 1 is century: 19 or 20\nColumn 2 is year: 00 to 99\nCombine into a single year variable: 1998, 1999, 2000, 2001\n\n\n\nunite(data, century, year, col = \"year\", sep = \"\")"
+  },
+  {
+    "objectID": "slides/BTS510-24-2.html#combine-cells-unite-1",
+    "href": "slides/BTS510-24-2.html#combine-cells-unite-1",
+    "title": "Introduction to Biostatistics",
+    "section": "3.14 Combine cells: unite()",
+    "text": "3.14 Combine cells: unite()\n\nCombine data across sites or cohorts\n\nColumn 1 is site: 1, 2, 3, 4\nColumn 2 is ID: 001, 002, 003, etc.\nCombine into a single newID variable: 1001, 1002, 1003, 2001, 2002\n\n\n\nunite(data, site, ID, col = \"newID\", sep = \"\")"
+  },
+  {
+    "objectID": "slides/BTS510-24-2.html#missing-values",
+    "href": "slides/BTS510-24-2.html#missing-values",
+    "title": "Introduction to Biostatistics",
+    "section": "3.15 Missing values",
+    "text": "3.15 Missing values\n\n\n\n\n\n\nNote\n\n\nThe tidyr functions for missing values might be useful for something. Dropping missing values or replacing them with a specific value is NOT a good choice in experimental data. We don’t have time to go in much depth with this but check the References for more info on handling missing data.\n\n\n\n\nI know that it’s common practice in some fields to do single imputation or list-wise deletion – but those are not good methods and introduce bias in your later analysis\n\nSometimes there aren’t a lot of good options, but be aware of these major limitations"
+  },
+  {
+    "objectID": "slides/BTS510-24-2.html#replacing-missing-values",
+    "href": "slides/BTS510-24-2.html#replacing-missing-values",
+    "title": "Introduction to Biostatistics",
+    "section": "3.16 Replacing missing values",
+    "text": "3.16 Replacing missing values\n\nThe missing value code in R is NA\nIf you read in external data, missing values may have other values\n\nSome software allows a blank\nSPSS default: .\nCommon practice in surveys to use 99, -99, 999, or -999 (depending on the scale) for missing and 98, -98, 998, -998 for refused to answer"
+  },
+  {
+    "objectID": "slides/BTS510-24-2.html#replacing-missing-values-1",
+    "href": "slides/BTS510-24-2.html#replacing-missing-values-1",
+    "title": "Introduction to Biostatistics",
+    "section": "3.17 Replacing missing values",
+    "text": "3.17 Replacing missing values\n\nIf R recognizes your missing value as a missing value, it will replace it with NA\n\nIf not, you’ll need to manually replace your missing values with NA\n\nReplace all missing value codes (here, -999) with NA\n\n\nmydata[mydata == -999] &lt;- NA"
+  },
+  {
+    "objectID": "slides/BTS510-24-2.html#mutate-create-new-variables",
+    "href": "slides/BTS510-24-2.html#mutate-create-new-variables",
+    "title": "Introduction to Biostatistics",
+    "section": "4.1 mutate(): Create new variables",
+    "text": "4.1 mutate(): Create new variables\n\nCreate gdp variable from gdpPercap and pop\n\n\nlibrary(dplyr)\ngap1 &lt;- gap %&gt;% mutate(gdp = gdpPercap * pop)\n\n\nCan create multiple new variables in same mutate() statement"
+  },
+  {
+    "objectID": "slides/BTS510-24-2.html#mutate-create-new-variables-1",
+    "href": "slides/BTS510-24-2.html#mutate-create-new-variables-1",
+    "title": "Introduction to Biostatistics",
+    "section": "4.2 mutate(): Create new variables",
+    "text": "4.2 mutate(): Create new variables\n\nhead(gap1)\n\n      country continent year lifeExp      pop gdpPercap         gdp\n1 Afghanistan      Asia 1952  28.801  8425333  779.4453  6567086330\n2 Afghanistan      Asia 1957  30.332  9240934  820.8530  7585448670\n3 Afghanistan      Asia 1962  31.997 10267083  853.1007  8758855797\n4 Afghanistan      Asia 1967  34.020 11537966  836.1971  9648014150\n5 Afghanistan      Asia 1972  36.088 13079460  739.9811  9678553274\n6 Afghanistan      Asia 1977  38.438 14880372  786.1134 11697659231"
+  },
+  {
+    "objectID": "slides/BTS510-24-2.html#select-select-columns-variables",
+    "href": "slides/BTS510-24-2.html#select-select-columns-variables",
+    "title": "Introduction to Biostatistics",
+    "section": "4.3 select(): Select columns (variables)",
+    "text": "4.3 select(): Select columns (variables)\n\nSelect only country, continent, year, and lifeExp\n\n\nlibrary(dplyr)\ngap2 &lt;- gap %&gt;% select(c(country, continent, year, lifeExp))\n\n\nCheck dplyr documentation\n\nSelect multiple with c() function\nA lot of options and helper functions to help you select only certain variables, such as starts_with(), ends_with(), contains()"
+  },
+  {
+    "objectID": "slides/BTS510-24-2.html#select-select-columns",
+    "href": "slides/BTS510-24-2.html#select-select-columns",
+    "title": "Introduction to Biostatistics",
+    "section": "4.4 select(): Select columns",
+    "text": "4.4 select(): Select columns\n\nhead(gap2)\n\n      country continent year lifeExp\n1 Afghanistan      Asia 1952  28.801\n2 Afghanistan      Asia 1957  30.332\n3 Afghanistan      Asia 1962  31.997\n4 Afghanistan      Asia 1967  34.020\n5 Afghanistan      Asia 1972  36.088\n6 Afghanistan      Asia 1977  38.438"
+  },
+  {
+    "objectID": "slides/BTS510-24-2.html#filter-select-rows",
+    "href": "slides/BTS510-24-2.html#filter-select-rows",
+    "title": "Introduction to Biostatistics",
+    "section": "4.5 filter(): Select rows",
+    "text": "4.5 filter(): Select rows\n\nRetain only countries in Asia\n\n\nlibrary(dplyr)\ngap3 &lt;- gap %&gt;% filter(continent == \"Asia\")\n\n\nCheck dplyr documentation\n\nMultiple criteria with &, any criteria with |, not this criteria with !\nFor numeric values, you can use &lt;, &gt;, &lt;=, &gt;=, etc."
+  },
+  {
+    "objectID": "slides/BTS510-24-2.html#filter-select-rows-1",
+    "href": "slides/BTS510-24-2.html#filter-select-rows-1",
+    "title": "Introduction to Biostatistics",
+    "section": "4.6 filter(): Select rows",
+    "text": "4.6 filter(): Select rows\n\nhead(gap3, n = 15)\n\n       country continent year lifeExp      pop  gdpPercap\n1  Afghanistan      Asia 1952  28.801  8425333   779.4453\n2  Afghanistan      Asia 1957  30.332  9240934   820.8530\n3  Afghanistan      Asia 1962  31.997 10267083   853.1007\n4  Afghanistan      Asia 1967  34.020 11537966   836.1971\n5  Afghanistan      Asia 1972  36.088 13079460   739.9811\n6  Afghanistan      Asia 1977  38.438 14880372   786.1134\n7  Afghanistan      Asia 1982  39.854 12881816   978.0114\n8  Afghanistan      Asia 1987  40.822 13867957   852.3959\n9  Afghanistan      Asia 1992  41.674 16317921   649.3414\n10 Afghanistan      Asia 1997  41.763 22227415   635.3414\n11 Afghanistan      Asia 2002  42.129 25268405   726.7341\n12 Afghanistan      Asia 2007  43.828 31889923   974.5803\n13     Bahrain      Asia 1952  50.939   120447  9867.0848\n14     Bahrain      Asia 1957  53.832   138655 11635.7995\n15     Bahrain      Asia 1962  56.923   171863 12753.2751"
+  },
+  {
+    "objectID": "slides/BTS510-24-2.html#summarise-summarize-data",
+    "href": "slides/BTS510-24-2.html#summarise-summarize-data",
+    "title": "Introduction to Biostatistics",
+    "section": "4.7 summarise(): Summarize data",
+    "text": "4.7 summarise(): Summarize data\n\nCreate a new data frame with summary statistics, such as the mean\n\n\nlibrary(dplyr)\ngap4 &lt;- gap %&gt;% summarize(meanlifeExp = mean(lifeExp))\n\n\nCheck dplyr documentation\n\nA lot of default functions to use: mean(), sd(), n()"
+  },
+  {
+    "objectID": "slides/BTS510-24-2.html#summarise-summarize-data-1",
+    "href": "slides/BTS510-24-2.html#summarise-summarize-data-1",
+    "title": "Introduction to Biostatistics",
+    "section": "4.8 summarise(): Summarize data",
+    "text": "4.8 summarise(): Summarize data\n\nhead(gap4)\n\n  meanlifeExp\n1    59.47444\n\n\n\nNew data frame with the mean of lifeExp\n\nIs this really useful? The mean for the whole dataset?\nStay tuned"
+  },
+  {
+    "objectID": "slides/BTS510-24-2.html#arrange-change-row-order",
+    "href": "slides/BTS510-24-2.html#arrange-change-row-order",
+    "title": "Introduction to Biostatistics",
+    "section": "4.9 arrange(): Change row order",
+    "text": "4.9 arrange(): Change row order\n\nSort rows from smallest to largest value (ascending, default)\n\n\nlibrary(dplyr)\ngap5 &lt;- gap %&gt;% arrange(lifeExp)\n\n\nSort in descending order by wrapping variable name(s) in desc()"
+  },
+  {
+    "objectID": "slides/BTS510-24-2.html#arrange-change-row-order-1",
+    "href": "slides/BTS510-24-2.html#arrange-change-row-order-1",
+    "title": "Introduction to Biostatistics",
+    "section": "4.10 arrange(): Change row order",
+    "text": "4.10 arrange(): Change row order\n\nhead(gap5)\n\n       country continent year lifeExp     pop gdpPercap\n1       Rwanda    Africa 1992  23.599 7290203  737.0686\n2  Afghanistan      Asia 1952  28.801 8425333  779.4453\n3       Gambia    Africa 1952  30.000  284320  485.2307\n4       Angola    Africa 1952  30.015 4232095 3520.6103\n5 Sierra Leone    Africa 1952  30.331 2143249  879.7877\n6  Afghanistan      Asia 1957  30.332 9240934  820.8530"
+  },
+  {
+    "objectID": "slides/BTS510-24-2.html#group_by-separately-by-group",
+    "href": "slides/BTS510-24-2.html#group_by-separately-by-group",
+    "title": "Introduction to Biostatistics",
+    "section": "4.11 group_by(): Separately by group",
+    "text": "4.11 group_by(): Separately by group\n\nDo any of the above operations separately for each group\nGet mean life expectancy for each continent\n\n\nlibrary(dplyr)\ngap6 &lt;- gap %&gt;% group_by(continent) %&gt;% \n                summarize(meanlifeExp = mean(lifeExp)) %&gt;% \n                ungroup()\n\n\n\n\n\n\n\nNote\n\n\n\nVERY IMPORTANT\n\nMake sure to ungroup() after you do whatever you need the group_by() for\nIf you don’t, anything you do will still be done by group, including analyses"
+  },
+  {
+    "objectID": "slides/BTS510-24-2.html#group_by-separately-by-group-1",
+    "href": "slides/BTS510-24-2.html#group_by-separately-by-group-1",
+    "title": "Introduction to Biostatistics",
+    "section": "4.12 group_by(): Separately by group",
+    "text": "4.12 group_by(): Separately by group\n\nhead(gap6)\n\n# A tibble: 5 × 2\n  continent meanlifeExp\n  &lt;chr&gt;           &lt;dbl&gt;\n1 Africa           48.9\n2 Americas         64.7\n3 Asia             60.1\n4 Europe           71.9\n5 Oceania          74.3"
   },
   {
     "objectID": "slides/BTS510-24-2.html#in-class-activities-1",
     "href": "slides/BTS510-24-2.html#in-class-activities-1",
     "title": "Introduction to Biostatistics",
-    "section": "2.1 In-class activities",
-    "text": "2.1 In-class activities"
+    "section": "5.1 In-class activities",
+    "text": "5.1 In-class activities\n\nRead data into R from external formats (e.g., Excel, .csv, SPSS)\nUse dplyr functions in R to manipulate datasets\nUse tidyr functions in R to organize and re-structure datasets"
   }
 ]

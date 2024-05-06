@@ -31,9 +31,21 @@ title: "References"
     
 * Imai, K., & Williams, N. W. (2022). Quantitative Social Science: An Introduction in Tidyverse. Princeton University Press.
 
+## Missing data
+
+Enders, C. K. (2022). Applied missing data analysis. Guilford Publications.
+
+Enders, C. K. (2023). Missing data: An update on the state of the art. Psychological Methods. <https://doi.org/10.1037/met0000563>
+
+Little, R. J., & Rubin, D. B. (2019). Statistical analysis with missing data (Vol. 793). John Wiley & Sons.
+
+National Research Council, Division of Behavioral, Committee on National Statistics, & Panel on Handling Missing Data in Clinical Trials. (2010). The prevention and treatment of missing data in clinical trials.
+
+Rubin, D. B. (1976). Inference and missing data. Biometrika, 63(3), 581-592.
+
 ## Graphical comparisons
 
-* Cumming, G., & Finch, S. (2005). Inference by Eye: Confidence Intervals and How to Read Pictures of Data. American Psychologist, 60(2), 170–180. https://doi.org/10.1037/0003-066X.60.2.170
+* Cumming, G., & Finch, S. (2005). Inference by Eye: Confidence Intervals and How to Read Pictures of Data. American Psychologist, 60(2), 170–180. <https://doi.org/10.1037/0003-066X.60.2.170>
 
 * Cumming, G. (2009). Inference by eye: Reading the overlap of independent confidence intervals. Statistics in medicine, 28(2), 205-220.
 

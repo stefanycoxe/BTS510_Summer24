@@ -26,7 +26,7 @@ format:
     width: 1200
 knitr: 
   opts_chunk:
-    echo: false
+    echo: true
     message: false
     warning: false
 ---
@@ -35,11 +35,402 @@ knitr:
 
 ## Learning objectives
 
+* Read data into R from external formats (e.g., Excel, .csv, SPSS)
+* Use [**dplyr** functions](https://dplyr.tidyverse.org/) in R to manipulate datasets
+* Use [**tidyr** functions](https://tidyr.tidyverse.org/) in R to organize and re-structure datasets
 
+# Reading in external data
+
+## Functions to read in external data
+
+* Comma-separated values (CSV) file: Use `read.csv()` (built-in)
+* Excel: Use `read_excel()` function from [**readxl** package](https://readxl.tidyverse.org/)
+* SAS, SPSS, Stata: Use the appropriate function from the [**haven** package](https://haven.tidyverse.org/)
+* SAS, SPSS, S, Stata, Systat, Epi Info, Minitab: Use the appropriate function from the [**foreign** package](https://www.rdocumentation.org/packages/foreign/versions/0.8-86)
+* JSON: **rjson** or **jsonlite** packages
+* There are other packages to read in data, but these are the most commonly used / best maintained ones
+
+## Read in .csv file
+
+```{r}
+gap <- read.csv("gapminder.csv")
+```
+
+::: {.callout-note}
+1. You can give the read in data frame a **name in R** that is **shorter** than the file name. Here, I named the R data frame `gap` -- much shorter to type.
+2. The data file is in the same folder as the .qmd file here, so I just give the file name. If it were in a different folder, you'd need to supply the full path, such as `C:\Users\stefany\Desktop` (Windows) or `Users/stefany/Desktop` (Mac)
+3. Sometimes the `\`s can cause problems because they're "escape" characters. If you get an error about that, just switch the `\`s to `/`s
+:::
+
+## Check the read in .csv file
+
+```{r}
+head(gap)
+```
+
+## Read in SPSS file 1
+
+```{r}
+library(haven)
+gap_spss1 <- read_sav("gapminder.sav")
+```
+
+::: {.callout-note}
+1. `read_sav` function from the **haven** package
+2. Again, you can give the read in data frame a **name in R** that is **shorter** than or different from the file name. I called this one `gap_spss1` so it wouldn't overwrite the CSV version that was just called `gap`.
+3. Same comments as above about file location, paths, and slashes
+:::
+
+## Check the read in SPSS file 1
+
+```{r}
+head(gap_spss1)
+```
+
+::: {.callout-note}
+1. SPSS has a lot of additional features like labels for data. This is helpful if you have a multi-category variable assigned numbers (i.e., 1, 2, 3, 4) but you want to have information on what the values mean **in the dataset**. So here, the `country` and `continent` variables are type `dbl+lbl`: `dbl` is the number, `lbl` is the actual name label.
+:::
+
+## Read in SPSS 2
+
+```{r}
+library(foreign)
+gap_spss2 <- read.spss("gapminder.sav", 
+                     to.data.frame = TRUE, 
+                     use.value.labels = TRUE)
+```
+
+::: {.callout-note}
+1. `read.spss` function from the **foreign** package
+2. Again, you can give the read in data frame a **name in R** that is **shorter** than or different from the file name. I called this one `gap_spss2` so it wouldn't overwrite the CSV version that was just called `gap`.
+3. Same comments as above about file location, paths, and slashes
+4. `to.data.frame = TRUE` forces the file into a data frame (in case it wasn't already)
+5. `use.value.labels = TRUE` uses the variable *labels* from SPSS (ignoring the numbers)
+:::
+
+## Check the read in SPSS file 2
+
+```{r}
+head(gap_spss2)
+```
+
+::: {.callout-note}
+1. Note that `country` and `continent` are now the labels, not the numbers. 
+:::
+
+## Reading in data
+
+* There are a lot of data formats and a lot of methods to read them in
+* If you commonly use a particular data format, make sure you know the ins and outs of the packages for that data format
+  * And **always** look at your data to make sure it was read in correctly
+  * `head()`, `glimpse()`, `str()`, etc.
+
+# "Tidy" your data
+
+## **tidyr** package 
+
+* **tidyr** has a lot of features to "tidy" your data
+  * Help get data into "tidy" format
+    * Rows = observations, columns = variables
+  * "Reshape" data from "wide" to "tall" format (and vice versa)
+  * Split "combo" variables into multiple variables
+  * Complex nested data, missing data
+
+## `gapminder` dataset
+
+* This dataset is tall / stacked / univariate
+
+```{r}
+head(gap, n = 15)
+```
+
+* How can we convert this to a wide / multivariate format?
+
+## **tidyr** functions
+
+* [Cheatsheet for **tidyr**](https://tidyr.tidyverse.org/#cheatsheet)
+
+```{r}
+#| eval: false
+pivot_wider(table2, names_from = type, values_from = count)
+```
+
+* `pivot_wider()` function
+  * `table2` is the dataset you start from (in this case, the tall one)
+  * `names_from` is the variable that defines the repeated measure
+  * `values_from` is the variable you are interested in "widening"
+    * You can have *multiple* variables
+
+## `gapminder` dataset
+
+```{r}
+head(gap, n = 15)
+```
+
+* `year` defines the repeated measure
+* `lifeExp`, `pop`, and `gdpPercap` into one column per `year`
+
+## `pivot_wider()`: Tall to wide
+
+```{r}
+library(tidyr)
+gap_wide <- gap %>% pivot_wider(names_from = year, 
+                                values_from = c(lifeExp, pop, gdpPercap))
+```
+
+* Create new data frame called `gap_wide`
+* Assign to it (`<-`) the data frame called `gap`
+* Then "pipe" (`%>%`) `gap` into the `pivot_wider()` function
+* `pivot_wider()` has 2 arguments (plus the data)
+  * `names_from = year` 
+  * `values_from = c(lifeExp, pop, gdpPercap)` 
+
+## `pivot_wider()`: Now wide
+
+```{r}
+head(gap_wide)
+```
+
+## `pivot_longer()`: Wide to tall
+
+```{r}
+library(tidyr)
+gap_tall <- gap_wide %>% pivot_longer(cols = 3:38, 
+                                      names_to = "var_year", 
+                                      values_to = "value")
+```
+
+::: {.callout-note}
+* You (and I) want this to magically turn the wide data back to its original form. *It will not.* Unfortunately, this relatively simple situation is actually pretty complicated. 
+* Instead, we get two columns
+  * Column 1: Combination of the variable name and the year variable
+  * Column 2: Actual value for that combination
+* A few more steps to get it back (if that's what you wanted -- it might not be)
+  * Chance to learn a couple more functions (woo!)
+:::
+
+## `pivot_longer()`: Now tall(ish)
+
+```{r}
+print(gap_tall, n = 30)
+```
+
+## Tall to wide to tall
+
+::: {.callout-note}
+* A lot of the things you'll do with `pivot_wider()` and `pivot_longer()` are a little bespoke to your particular dataset
+  * I used `names_from` to create the new variables, but there are a lot of other options, depending on how your dataset is set up
+  * Check the [documentation for **tidyr**](https://tidyr.tidyverse.org/) to see all the options, as well as **examples**
+* I don't think that I have **ever** used `pivot_wider()` or `pivot_longer()` successfully on the first try
+:::
+
+## Split cells
+
+* The `var_year` variable has 2 pieces of information:
+  * The original variable: `lifeExp`, `pop`, `gpdPercap`
+  * The `year` variable: 1952, 1957, etc.
+  * (**tidyr** example: rates, such as 0.7K/10M, 2K/20M, etc.)
+* Want to split those two pieces of information into 2 variables
+  * `separate()`: multiple columns
+  * `separate_longer_delim()`: multiple rows
+
+## Split cells: `separate()`
+
+* Also listed in documentation as `separate_wider_delim()`
+
+```{r}
+gap_tall2 <- gap_tall %>% separate(var_year, 
+                                    sep = "_", 
+                                    into = c("variable", "year"))
+```
+
+* `var_year` is the variable we want to split
+* `sep` is the separation character -- here, underscore (_)
+* `into` are the names of the new variables: `variable` and `year`
+
+## Split cells: `separate()`
+
+```{r}
+gap_tall2
+```
+
+## Combine cells: `unite()`
+
+* **tidyr** example
+  * Column 1 is `century`: 19 or 20
+  * Column 2 is `year`: 00 to 99
+  * Combine into a single `year` variable: 1998, 1999, 2000, 2001
+
+```{r}
+#| eval: false
+unite(data, century, year, col = "year", sep = "")
+```
+
+## Combine cells: `unite()`
+
+* Combine data across sites or cohorts
+  * Column 1 is `site`: 1, 2, 3, 4
+  * Column 2 is `ID`: 001, 002, 003, etc.
+  * Combine into a single `newID` variable: 1001, 1002, 1003, 2001, 2002
+
+```{r}
+#| eval: false
+unite(data, site, ID, col = "newID", sep = "")
+```
+
+## Missing values
+
+::: {.callout-note}
+The **tidyr** functions for missing values might be useful for something. Dropping missing values or replacing them with a specific value is **NOT** a good choice in experimental data. We don't have time to go in much depth with this but check the [References](https://stefanycoxe.github.io/BTS510_Summer24/refs.html) for more info on handling missing data.
+:::
+
+* I know that it's common practice in some fields to do single imputation or list-wise deletion -- but those are **not good methods** and introduce bias in your later analysis
+  * Sometimes there aren't a lot of good options, but **be aware** of these major limitations
+
+## Replacing missing values
+
+* The missing value code in R is `NA`
+* If you read in external data, missing values may have other values
+  * Some software allows a blank
+  * SPSS default: `.`
+  * Common practice in surveys to use 99, -99, 999, or -999 (depending on the scale) for **missing** and 98, -98, 998, -998 for **refused to answer**
+
+## Replacing missing values
+
+* If R recognizes your missing value as a missing value, it will replace it with `NA`
+  * If not, you'll need to manually replace your missing values with `NA`
+* Replace all missing value codes (here, -999) with `NA`
+
+```{r}
+#| eval: false
+mydata[mydata == -999] <- NA
+```
+
+# Manipulate your data
+
+## `mutate()`: Create new variables
+
+* Create `gdp` variable from `gdpPercap` and `pop`
+
+```{r}
+library(dplyr)
+gap1 <- gap %>% mutate(gdp = gdpPercap * pop)
+```
+
+* Can create multiple new variables in same `mutate()` statement
+
+## `mutate()`: Create new variables
+
+```{r}
+head(gap1)
+```
+
+## `select()`: Select columns (variables)
+
+* Select only `country`, `continent`, `year`, and `lifeExp`
+
+```{r}
+library(dplyr)
+gap2 <- gap %>% select(c(country, continent, year, lifeExp))
+```
+
+* Check [**dplyr** documentation](https://dplyr.tidyverse.org/)
+  * Select multiple with `c()` function
+  * A lot of options and helper functions to help you select only certain variables, such as `starts_with()`, `ends_with()`, `contains()`
+
+## `select()`: Select columns
+
+```{r}
+head(gap2)
+```
+
+## `filter()`: Select rows
+
+* Retain only countries in Asia
+
+```{r}
+library(dplyr)
+gap3 <- gap %>% filter(continent == "Asia")
+```
+
+* Check [**dplyr** documentation](https://dplyr.tidyverse.org/)
+  * Multiple criteria with `&`, any criteria with `|`, not this criteria with `!`
+  * For numeric values, you can use `<`, `>`, `<=`, `>=`, etc.
+
+## `filter()`: Select rows
+
+```{r}
+head(gap3, n = 15)
+```
+
+## `summarise()`: Summarize data
+
+* Create a new data frame with summary statistics, such as the mean
+
+```{r}
+library(dplyr)
+gap4 <- gap %>% summarize(meanlifeExp = mean(lifeExp))
+```
+
+* Check [**dplyr** documentation](https://dplyr.tidyverse.org/)
+  * A lot of default functions to use: `mean()`, `sd()`, `n()`
+
+## `summarise()`: Summarize data
+
+```{r}
+head(gap4)
+```
+
+* New data frame with the mean of `lifeExp`
+  * Is this really useful? The mean for the whole dataset?
+  * Stay tuned
+
+## `arrange()`: Change row order
+
+* Sort rows from smallest to largest value (ascending, default)
+
+```{r}
+library(dplyr)
+gap5 <- gap %>% arrange(lifeExp)
+```
+
+* Sort in descending order by wrapping variable name(s) in `desc()`
+
+## `arrange()`: Change row order
+
+```{r}
+head(gap5)
+```
+
+## `group_by()`: Separately by group
+
+* Do any of the above operations separately for each group 
+* Get mean life expectancy **for each continent**
+
+```{r}
+library(dplyr)
+gap6 <- gap %>% group_by(continent) %>% 
+                summarize(meanlifeExp = mean(lifeExp)) %>% 
+                ungroup()
+```
+
+::: {.callout-note}
+* **VERY IMPORTANT**
+  * Make sure to `ungroup()` after you do whatever you need the `group_by()` for
+  * If you don't, anything you do will still be done by group, including analyses
+:::
+
+## `group_by()`: Separately by group
+
+```{r}
+head(gap6)
+```
 
 # In-class activities
 
 ## In-class activities
 
-
+* Read data into R from external formats (e.g., Excel, .csv, SPSS)
+* Use [**dplyr** functions](https://dplyr.tidyverse.org/) in R to manipulate datasets
+* Use [**tidyr** functions](https://tidyr.tidyverse.org/) in R to organize and re-structure datasets
 

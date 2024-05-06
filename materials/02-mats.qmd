@@ -10,14 +10,17 @@ title: "Week 2: Data manipulation"
 
 ## Before class: Lecture 
 
-{{< video https://youtu.be/2YJ4wZd5pmk width="400" height="300" >}}
-
-* [Lecture survey](https://forms.gle/FpY1tmQxW99NjLiA6){target="_blank"}: Complete by XXX
-* [Slides](/_site/slides/Mult23-0.html){target="_blank"}
+* [Lecture 2](https://youtu.be/W6Swl8vLsos){target="_blank"} 
+* [Lecture survey](https://forms.gle/b6CZB29d2kR4stnK9){target="_blank"}: Complete by Wednesday, May 8 at 8pm
+* [Slides (html)](../slides/BTS510-24-2.qmd){target="_blank"}
     
 ## During class: Lab
+
+* [CSV file of `gapminder` data](../lab/gapminder.csv){target="_blank"}
+* [SPSS file of `gapminder` data](../lab/gapminder.sav){target="_blank"}
+* [Lab 2 (html with link to code)](../lab/BTS510-24-lab2.qmd){target="_blank"}
 
 
 ## After class: Assignment
 
-* [Homework 1](../assignments/homework.html#homework-1)
+* [Homework 1](../assignments/hw1.qmd)

@@ -1,7 +1,30 @@
 ---
 title: "Homework 1"
+format:
+  html:
+    self-contained: true
+    self-contained-math: true
+    html-math-method: katex
+    code-tools: true
 ---
 
 ## Quarto / R markdown and manipulating data
 
-### Due Sunday, May 12 by end of day (midnight)
+* **Due Sunday, May 12 by end of day (midnight)**
+
+* Complete the assignment in a Quarto (.qmd) document and render it to HTML and PDF. Email all 3 files (.qmd, .html, .pdf) to Stefany, Yujie, and Michael.
+
+* Please write your response to each question. Don't *just* print out your data frame (though you can **also** do that. And then write / type your answer based on that.)
+
+* Use the `gapminder` dataset that we've been working with. You can read it in via the **gapminder** package or via the external files. Either way, show the code for reading in the data.
+
+1. What is the mean GDP (not GDP per capita) for each continent in 2002?
+
+2. How many countries had a life expectancy greater than 80 in 2007?
+
+3. What was the population of Japan in 1977?
+
+4. What continent had the highest mean life expectancy in 2007?
+
+5. Which country had the highest GDP per capita in 2002, among countries with a population of at least 20 million?
+

@@ -1,0 +1,131 @@
+---
+title: "BTS 510 Lab 2"
+format:
+  html:
+    self-contained: true
+    self-contained-math: true
+    html-math-method: katex
+    number-sections: true
+    toc: true
+    code-tools: true
+    code-block-bg: true
+    code-block-border-left: "#31BAE9"
+---
+
+```{r}
+#| label: setup
+set.seed(12345)
+library(tidyverse)
+```
+
+::: {.callout-note}
+* Note that I'm loading all the packages at the top here
+  * `library(tidyverse)` will load all packages in the "tidyverse", which includes **dplyr** and **tidyr** as well as **ggplot2** and some others
+:::
+
+## Learning objectives
+
+* Read data into R from external formats (e.g., Excel, .csv, SPSS)
+* Use [**dplyr** functions](https://dplyr.tidyverse.org/) in R to manipulate datasets (e.g., create new variables)
+* Use [**tidyr** functions](https://tidyr.tidyverse.org/) in R to organize and re-structure datasets
+
+## Read in data
+
+* Read in the "gapminder.csv" file
+  * You'll need to either
+    * Save it in the same folder as your .qmd file OR
+    * Supply the entire path to the file
+  * I have it saved in the same folder, so I'll just give the file name
+
+```{r}
+gap <- read.csv("gapminder.csv")
+```
+
+* Because I already looked at the data, I know that it read in a couple variables differently from how the original data frame was set up
+  * Specifically, the `country` and `continent` variables were originally "factor" variables but have read in here as "character" variables
+  * So I'm going to force them to be factor variables using the `as.factor()` function
+  * Among other things, this will make some of the "data view" functions show us the number of levels of the variable
+  
+```{r}
+gap$country <- as.factor(gap$country)
+gap$continent <- as.factor(gap$continent)
+```
+
+### Check out the data
+
+* `head()` function
+
+```{r}
+head(gap)
+```
+
+* `str()` function
+
+```{r}
+str(gap)
+```
+
+* `glimpse()` function
+
+```{r}
+glimpse(gap)
+```
+
+* Data looks like it read in correctly
+  * How many countries?
+  * How many years?
+  * How many variables (besides `country`, `continent`, and `year`)?
+
+## Convert from tall to wide and back **successfully**
+
+* Part of the issue in the lecture with going back and forth easily is that we were converting **multiple variables**
+  * This made it too complicated 
+    * (Although, of course, that's what real data is like...)
+  * So let's make this a little simpler and use only 1 variable: `lifeExp`
+  
+### Step 1: `select()` only some variables (`lifeExp`)
+
+```{r}
+gap1 <- gap %>% select(country, continent, year, lifeExp)
+head(gap1)
+```
+
+### Step 2: `pivot_wider()` to convert to a wide dataset
+
+```{r}
+gap1_wide <- gap1 %>% pivot_wider(names_from = year, 
+                                  values_from = lifeExp)
+head(gap1_wide)
+```
+
+* How many years of data are in this dataset?
+
+### Step 3: `pivot_longer()` to convert back to a tall dataset
+
+```{r}
+gap1_tall <- gap1_wide %>% pivot_longer(cols = 3:14, 
+                                        names_to = "year", 
+                                        values_to = "lifeExp")
+head(gap1_tall)
+```
+
+* Beautiful!
+  * Though notice that R decided that `year` is now a character variable...
+  * If you wanted to, you could change that with the `as.numeric()` function as we did to convert variables to factors
+
+## Manipulate some data
+
+* **For each task, start with the original data, `gap`**, and use appropriate functions (e.g., `print()`, `head()`, `str()`, `glimpse()`) to *check that you have the data you were trying to get*.
+
+1. Keep only observations from countries in Asia and Europe.
+
+2. Create a new variable that is the ratio of life expectancy to GDP. 
+
+3. Create a new data frame with the mean GDP per capita for each continent.
+
+4. Find the country in the Americas with the largest population. What country was it and what year was it? 
+
+5. Keep only data from Asia prior to 1975 and sort it according to population.
+
+6. How many countries have a life expectancy greater than 80 in 2007?
+
