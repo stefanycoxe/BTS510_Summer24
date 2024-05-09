@@ -1,0 +1,82 @@
+---
+title: "Pivot wider then reverse back to tall data"
+format:
+  html:
+    self-contained: true
+    self-contained-math: true
+    html-math-method: katex
+    number-sections: true
+    toc: true
+    code-tools: true
+    code-block-bg: true
+    code-block-border-left: "#31BAE9"
+---
+
+```{r}
+#| label: setup
+library(gapminder)
+library(tidyverse)
+```
+
+## Read in and view data
+
+```{r}
+data(gapminder)
+head(gapminder)
+```
+
+## Full wide dataset with `pivot_wider()`
+
+```{r}
+gap_wide <- gapminder %>% pivot_wider(names_from = year, 
+                                values_from = c(lifeExp, pop, gdpPercap))
+
+head(gap_wide)
+```
+
+* One column per variable (`lifeExp`, `pop`, `gdpPercap`) per `year`
+
+## Step 1: Reverse part way with `pivot_longer()`
+
+```{r}
+gap_tall <- gap_wide %>% pivot_longer(cols = 3:38, 
+                                      names_to = "var_year", 
+                                      values_to = "value")
+
+head(gap_tall) 
+```
+
+* `var_year` contains both variable and year information
+* `value` has the actual number value
+* Many rows!
+
+## Step 2: Split `var_year` into two variables with `separate()`
+
+```{r}
+gap_tall2 <- gap_tall %>% separate(var_year, 
+                                   sep = "_", 
+                                   into = c("variable", "year"))
+
+head(gap_tall2)
+```
+
+* Still many rows, but the variable name and year are split into 2 variables now
+
+## Step 3: Finish converting back to tall data with another `pivot_wider()`
+
+* Weird to have to use `pivot_wider()` to get back to the tall dataset...
+
+```{r}
+gap_tall3 <- gap_tall2 %>% pivot_wider(names_from = variable,
+                                       values_from = value)
+
+head(gap_tall3)
+```
+
+## Compare to original data
+
+```{r}
+head(gapminder) 
+head(gap_tall3)
+```
+
