@@ -1,0 +1,432 @@
+---
+title: "Introduction to Biostatistics"
+format:
+  # html: 
+  #   toc: true
+  #   toc-location: left
+  #   slide-level: 3
+  #   number-sections: true
+  #   toc-depth: 2
+  #   self-contained: true
+  #   #output-file: "Mult22-1-handout"
+  # pdf: 
+  #   toc: true
+  #   number-sections: true
+  #   #slide-level: 3
+  #   toc-depth: 2
+  #   shift-heading-level-by: 0
+  #   number-offset: [2]
+  revealjs:
+    toc: false
+    number-sections: true
+    #slide-level: 3
+    scrollable: true
+    self-contained: true
+    slide-number: true
+    width: 1200
+knitr: 
+  opts_chunk:
+    echo: true
+    message: false
+    warning: false
+---
+
+```{r, include = FALSE, echo = FALSE, wanring = FALSE, message= FALSE}
+library(tidyverse)
+library(gapminder)
+library(DescTools)
+theme_set(theme_classic(base_size = 16))
+set.seed(12345)
+```
+
+# Learning objectives
+
+## Learning objectives
+
+* Understand the different **types** of variables that can be measured
+* Think about variables in terms of **central tendency** or **location**
+* Think about variables in terms of **dispersion** or **spread**
+* Start to think about variable **distributions** and **plots**
+
+# Types of variables
+
+## Types of variables
+
+* There are a lot of ways to talk about variables
+  * Continuous vs categorical
+  * Quantitative vs qualitative
+  * Numeric vs non-numeric
+* Often loose, ambiguous, and arbitrary
+
+## Levels of measurement
+
+* Four **ordered** levels of measurement based on the **mathematical** operations that can be performed
+  * Nominal
+  * Ordinal
+  * Interval
+  * Ratio
+
+> Stevens, S. S. (1946). On the theory of scales of measurement. Science, 103(2684), 677-680.
+  
+## Nominal variables
+
+* **Categories** with **no intrinsic ordering**
+  * Nominal = "name"
+* Examples
+  * Department: Psychology, Epidemiology, Statistics, Business
+  * Religion: Christian, Jewish, Muslim, Atheist
+  * Ice cream flavor: vanilla, chocolate, strawberry
+
+## Ordinal variables
+
+* **Categories** with **some intrinsic ordering**
+  * Ordinal = "ordered"
+  * Differences between categories are **not meaningful/equal**
+* Examples
+  * Dose of treatment: low, medium, high
+  * Rankings: 1st, 2nd, 3rd, 4th
+  * Education: high school, some college, college grad, graduate
+  * Likert scales: agree, neutral, disagree
+
+## Interval variables
+
+* **Quantitative variables** with **no meaningful 0 point**
+  * (“Meaningful 0”: value of 0 = nothing)
+  * **Differences** between values are meaningful but **ratios** are not!
+* Example: Temperature in Fahrenheit or Celsius
+  * **Difference** from 100F to 90F = **difference** from 90F to 80F
+  * But 100F is **not twice** 50F (because 0F is arbitrary)
+* Most “continuous” variables you deal with are **interval**
+  * Most statistical procedures assume interval-level measurement
+  
+## Ratio variables
+
+* **Quantitative variables** with **meaningful 0 point**
+  * (“Meaningful 0”: value of 0 = nothing)
+  * **Differences** between values are meaningful and so are **ratios**!
+* Example: Temperature in Kelvin
+  * **Difference** from 100K to 90K = **difference** from 90K to 80K
+  * 100K is **twice as hot** as 50K (0K is *zero* molecular movement)
+* Height, weight, age, counts
+
+## Stevens (1946)
+
+The *levels of measurement* determine what **mathematical** (and **statistical**) operations you can perform
+
+Mathematical operation | Nominal | Ordinal | Interval | Ratio
+-------------------------|:------:|:------:|:------:|:------:
+equal, not equal | $\checkmark$ | $\checkmark$ | $\checkmark$ | $\checkmark$
+greater or less than |  | $\checkmark$ | $\checkmark$ | $\checkmark$
+add, subtract |  |  | $\checkmark$ | $\checkmark$
+multiply, divide |  |  |  | $\checkmark$
+central tendency | mode | median | mean | mean
+
+## **R** "translations" of variable types
+
+* Nominal
+  * `char` = "character": Text variable, also called "string"
+* Nominal or ordinal
+  * `fctr` = "factor": Ordered or unordered categories
+  * `log` = "logical" or "boolean": `TRUE` or `FALSE`
+* Interval or ratio
+  * `int` = "integer": Whole number (no decimals)
+  * `dbl` = "double" (`num`): Number w possible decimal places
+
+# Central tendency
+
+## Central tendency
+
+* Also called "location"
+  * Where are the observations *located*?
+* Several measures of central tendency
+  * Depend on scale type
+  * Mode, median, mean
+
+## Mode
+
+* The most frequently occurring value
+  * Value actually exists in the data
+* Used for *nominal*, *ordinal*
+  * Can also be used for *interval*, and *ratio* variables but less useful
+
+## Median
+
+* Order observations from smallest to largest 
+  * Select the **middle** observation
+  * Value actually exists in the data (if $n$ is even)
+* Used for *ordinal*, *interval*, and *ratio* variables
+  
+## Mean
+
+* Add up all observations and divide by the number of observations
+  * *Value may not actually occur in the data*
+* Mathematically: $\frac{\sum_{i=1}^n X_i}{n}$
+* Used for *interval* and *ratio* variables
+
+## **gapminder** dataset
+
+```{r}
+gap <- gapminder
+head(gap)
+```
+
+## **gapminder** variables
+
+Variable | R variable type | Scale type
+---------|-----------------|-----------
+`country`       | factor            | nominal
+`continent`     | factor            | nominal
+`year`          | integer           | ordinal / interval
+`lifeExp`       | double / numeric  | ratio
+`pop`           | integer           | ratio (count)
+`gdpPercap`     | double / numeric  | ratio
+
+## Nominal variables: Mode
+
+* `Mode()` function from **DescTools** package
+
+```{r}
+Mode(gap$country)
+```
+
+* There is *no single mode* for `country`
+
+## Nominal variables: Mode
+
+* `Mode()` function from **DescTools** package
+
+```{r}
+Mode(gap$continent)
+```
+
+* There are 52 countries (52 countries * 12 years = 624) in Africa
+  * The value of "Africa" is the **mode** of the `continent` variable
+
+## Ordinal variables: Median
+
+```{r}
+median(gap$year, na.rm = TRUE)
+```
+
+* <span style="color:red">1952, 1957, 1962, 1967, 1972, 1977,</span> <span style="color:blue">1982, 1987, 1992, 1997, 2002, 2007</span>
+  * Median is halfway between 1977 and 1982
+* `na.rm = TRUE` option removes missing values
+  * If you have missing values and don't include this, you will get `NA`
+
+## Interval variables: Mean
+
+```{r}
+mean(gap$year, na.rm = TRUE)
+```
+
+* $(1952 + 1957 + \dots + 2002 + 2007)/12$
+* You can also calculate the median of an interval variable, but we just did that for this variable (treating it as ordinal)
+* `na.rm = TRUE` option removes missing values
+  * If you have missing values and don't include this, you will get `NA`
+
+## Use only data from 2007
+
+* Including all data gives us a confusing mish-mash of information
+  * I'm just going to include data from 2007 for these variables
+* Also going to create the `gdp` variable at the same time
+
+```{r}
+gap_2007 <- gapminder %>% 
+  mutate(gdp = gdpPercap * pop) %>%
+  filter(year == 2007)
+```
+
+## Ratio variables: Median
+
+```{r}
+median(gap_2007$lifeExp, na.rm = TRUE)
+median(gap_2007$pop, na.rm = TRUE)
+median(gap_2007$gdpPercap, na.rm = TRUE)
+median(gap_2007$gdp, na.rm = TRUE)
+```
+
+* 50% of countries have a life expectancy **less than** 71.9355 years 
+* 50% of countries have a life expectancy **greater than** 71.9355 years
+
+## Ratio variables: Mean
+
+```{r}
+mean(gap_2007$lifeExp, na.rm = TRUE)
+mean(gap_2007$pop, na.rm = TRUE)
+mean(gap_2007$gdpPercap, na.rm = TRUE)
+mean(gap_2007$gdp, na.rm = TRUE)
+```
+
+* The average life expectancy is 67.00742 years
+
+## Compare mean and median
+
+* Mean and median are both measures of *central tendency* for numbers
+  * **What does it mean when they differ?**
+* Median involves only values near it
+  * Extreme values don't impact it
+* Mean involves **all** values
+  * **Extreme values impact the mean**
+  * Mean is "pulled toward" extreme values
+
+## Mean and median of `lifeExp`
+
+```{r}
+#| code-fold: true
+ggplot(data = gap_2007, aes(x = lifeExp)) + 
+  geom_histogram(bins = 30, color = "grey80") +
+  geom_vline(xintercept = mean(gap_2007$lifeExp), color = "blue", linewidth = 1.5) +
+  geom_vline(xintercept = median(gap_2007$lifeExp), color = "red", linewidth = 1.5, linetype = "dashed")
+```
+
+## Mean and median of `pop`
+
+```{r}
+#| code-fold: true
+ggplot(data = gap_2007, aes(x = pop)) + 
+  geom_histogram(bins = 30, color = "grey80") +
+  geom_vline(xintercept = mean(gap_2007$pop), color = "blue", linewidth = 1.5) +
+  geom_vline(xintercept = median(gap_2007$pop), color = "red", linewidth = 1.5, linetype = "dashed")
+```
+
+## Mean and median of `gdpPercap`
+
+```{r}
+#| code-fold: true
+ggplot(data = gap_2007, aes(x = gdpPercap)) + 
+  geom_histogram(bins = 30, color = "grey80") +
+  geom_vline(xintercept = mean(gap_2007$gdpPercap), color = "blue", linewidth = 1.5) +
+  geom_vline(xintercept = median(gap_2007$gdpPercap), color = "red", linewidth = 1.5, linetype = "dashed")
+```
+
+<!-- ## Mean and median of `gdp` in 2007 -->
+
+<!-- ```{r} -->
+<!-- ggplot(data = gap_2007, aes(x = gdp)) +  -->
+<!--   geom_histogram(bins = 30, color = "grey80") + -->
+<!--   geom_vline(xintercept = mean(gap_2007$gdp), color = "blue", linewidth = 1.5) + -->
+<!--   geom_vline(xintercept = median(gap_2007$gdp), color = "red", linewidth = 1.5, linetype = "dashed") -->
+<!-- ``` -->
+
+# Dispersion
+
+## Dispersion
+
+* Also called "spread"
+  * How spread out or *dispersed* are the observations?
+  * Only applies to numeric (interval or ratio) variables
+* Several measures of dispersion
+  * Depend on scale type and variable distribution
+  * Minimum and maximum, percentiles, standard deviation
+
+## Minimum and maximum
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+* Minimum
+
+```{r}
+min(gap_2007$lifeExp, na.rm = TRUE)
+min(gap_2007$pop, na.rm = TRUE)
+min(gap_2007$gdpPercap, na.rm = TRUE)
+```
+
+:::
+
+::: {.column width="50%"}
+
+* Maximum
+
+```{r}
+max(gap_2007$lifeExp, na.rm = TRUE)
+max(gap_2007$pop, na.rm = TRUE)
+max(gap_2007$gdpPercap, na.rm = TRUE)
+```
+
+:::
+
+::::
+
+## Percentiles 
+
+* Value **below which** some percentage of observations lie
+  * 67th percentile: 67% of observations have values below this value
+  * Median is the 50th percentile: 50% below (and 50% above)
+  * Quartiles divide into 4 parts: 25th, 50th, 75th percentiles
+  * Standardized tests: 97th percentile means you scored higher than 97% of people taking the test
+  
+## Percentiles
+
+```{r}
+quantile(gap_2007$lifeExp, c(0.25, 0.5, 0.75))
+quantile(gap_2007$pop, c(0.25, 0.5, 0.75))
+quantile(gap_2007$gdpPercap, c(0.1, 0.9))
+```
+
+## Standard deviation (& variance)
+
+* Spread around the mean
+* Same units as the variable 
+  * Unlike variance, with is $SD^2$
+* Influenced by extreme values
+* Mathematically: $\sqrt{\frac{\sum (X_i - \overline{X})^2}{n-1}}$
+
+## Presenting location & dispersion
+
+* Symmetric distribution
+  * Mean $\pm$ standard deviation
+  * Median (25th to 75th percentile)
+  * Median (min, max)
+* Asymmetric distribution
+  * Median (25th to 75th percentile)
+  * Median (min, max)
+
+## Presenting
+
+```{r}
+#| code-fold: true
+lifeexp_perc <- quantile(gap_2007$lifeExp, c(0, 0.25, 0.5, 0.75, 1))
+lifeexp_sd <- sd(gap_2007$lifeExp, na.rm = TRUE)
+lifeexp_mean <- mean(gap_2007$lifeExp, na.rm= TRUE)
+ggplot(data = gap_2007, aes(x = lifeExp)) + 
+  geom_histogram(bins = 30, color = "grey80")
+```
+
+## Presenting: Mean plus/minus 1 SD
+
+```{r}
+#| code-fold: true
+ggplot(data = gap_2007, aes(x = lifeExp)) + 
+  geom_histogram(bins = 30, color = "grey80") +
+  annotate("pointrange", x = lifeexp_mean, y = 5, 
+            xmin = mean(gap_2007$lifeExp) - lifeexp_sd,
+            xmax = mean(gap_2007$lifeExp) + lifeexp_sd,
+            size = 1.5, linewidth = 1.5, color = "red") +
+  ylab("count")
+```
+
+## Presenting: Median, 25th, 75th %iles
+
+```{r}
+#| code-fold: true
+ggplot(data = gap_2007, aes(x = lifeExp)) + 
+  geom_histogram(bins = 30, color = "grey80") +
+  annotate("pointrange", x = lifeexp_perc[3], y = 5, 
+            xmin = lifeexp_perc[2],
+            xmax = lifeexp_perc[4],
+            size = 1.5, linewidth = 1.5, color = "red") +
+  ylab("count")
+```
+
+# In-class activities
+
+## In-class activities
+
+* Look at some data and **variables**
+  * Think about what **type(s)** of variables they are
+* Examine **central tendency** and **dispersion** for the variables
+  * Present the **best values** to describe the data
+* Start to think about variable **distributions** and **plots**
+

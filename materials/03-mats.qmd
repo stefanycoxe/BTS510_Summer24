@@ -1,0 +1,24 @@
+---
+title: "Week 3: Descriptives"
+---
+
+## Learning objectives
+
+* Understand the different **types** of variables that can be measured
+* Think about variables in terms of **central tendency** or **location**
+* Think about variables in terms of **dispersion** or **spread**
+* Start to think about variable **distributions** and **plots**
+
+## Before class: Lecture 
+
+* [Lecture 3](https://youtu.be/0bNUpfgNlUg){target="_blank"} 
+* [Lecture survey](https://forms.gle/sV8KZzoZHuykN41E8){target="_blank"}: Complete by Wednesday, May 15 at 8pm
+* [Slides (html)](../slides/BTS510-24-3.qmd){target="_blank"}
+    
+## During class: Lab
+
+* [Lab 3 (html with link to code)](../lab/BTS510-24-lab3.qmd){target="_blank"}
+
+## After class: Assignment
+
+* **No homework this week**
