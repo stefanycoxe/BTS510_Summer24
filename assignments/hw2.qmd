@@ -21,7 +21,6 @@ title: "Homework 2"
         `Hgt`: Height (in inches)
         `Wgt`: Weight (in pounds)
 
-
 ## Tasks
 
 1. Calculate the mean height for men and women separately. Calculate the standard deviation for height for men and women separately. Which group has a higher mean height? How do you know? Which group has more spread in height? How do you know?
