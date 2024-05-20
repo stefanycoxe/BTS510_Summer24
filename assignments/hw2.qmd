@@ -2,6 +2,34 @@
 title: "Homework 2"
 ---
 
-## Due XXXX
+## Descriptive statistics and plots
 
-## Descriptive statistics
+* **Due Sunday, May 26 by end of day (midnight)**
+
+* Complete the assignment in a Quarto (.qmd) document and render it to HTML and PDF. Email all 3 files (.qmd, .html, .pdf) to Stefany, Yujie, and Michael.
+    * Remember to include `embed-resources: true` in the `html` options. If you don't, we won't see any of your figures when you send the files. **THIS IS SUPER IMPORTANT FOR THIS ASSIGNMENT!**
+    
+## Data
+
+* `Pulse` dataset from the **Stat2Data** package
+    * A dataset with 232 observations on the following 7 variables.
+        `Active`: Pulse rate (beats per minute) after exercise
+        `Rest`: Resting pulse rate (beats per minute)
+        `Smoke`: 1=smoker or 0=nonsmoker
+        `Sex`: 1=female or 0=male
+        `Exercise`: Typical hours of exercise (per week)
+        `Hgt`: Height (in inches)
+        `Wgt`: Weight (in pounds)
+
+
+## Tasks
+
+1. Calculate the mean height for men and women separately. Calculate the standard deviation for height for men and women separately. Which group has a higher mean height? How do you know? Which group has more spread in height? How do you know?
+
+2. Show the distribution of resting pulse rate for smokers vs non-smokers. Use both a dotplot (with a good number of bins or bin width) and a box plot. You will make two plots. Which plot do you think best conveys the information and why?
+
+3. Show the distribution of BMI using a histogram. You will need to calculate BMI from height and weight. Pick a good number of bins or bin width. Change the outline and fill colors on the histogram -- your choice. Add vertical lines for the mean and median BMI. Make the two lines different colors -- your choice. What are the mean and median of BMI? What is the standard deviation? What are the 25th and 75th percentiles? Is BMI skewed or symmetric? How can you tell? 
+
+4. Show the distribution of active pulse rate by hours of exercise. Use jittered points that have only been jittered horizontally. What do you notice about the distributions?
+
+5. Show the relative numbers of male and female smokers and non-smokers using jittered points. Which group is largest? Which group is smallest?

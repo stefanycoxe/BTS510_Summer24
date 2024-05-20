@@ -31,6 +31,27 @@ title: "References"
     
 * Imai, K., & Williams, N. W. (2022). Quantitative Social Science: An Introduction in Tidyverse. Princeton University Press.
 
+## Genomics
+
+[Computational Genomics with R](https://compgenomr.github.io/book/)
+
+Bareyre, F. M., & Schwab, M. E. (2003). Inflammation, degeneration and regeneration in the injured spinal cord: insights from DNA microarrays. Trends in neurosciences, 26(10), 555-563.
+
+## **ggplot**
+
+* Wickham, H. (2010). A layered grammar of graphics. *Journal of computational and graphical statistics, 19*(1), 3-28.
+
+* Wickham, H. (2016). *ggplot2: elegant graphics for data analysis*.
+Springer.
+
+* Wilkinson, L. (2005). *The Grammar of Graphics (2nd ed.)*. Statistics and Computing, New York: Springer.
+
+## Graphical comparisons
+
+* Cumming, G., & Finch, S. (2005). Inference by Eye: Confidence Intervals and How to Read Pictures of Data. American Psychologist, 60(2), 170–180. <https://doi.org/10.1037/0003-066X.60.2.170>
+
+* Cumming, G. (2009). Inference by eye: Reading the overlap of independent confidence intervals. Statistics in medicine, 28(2), 205-220.
+
 ## Missing data
 
 Enders, C. K. (2022). Applied missing data analysis. Guilford Publications.
@@ -42,12 +63,6 @@ Little, R. J., & Rubin, D. B. (2019). Statistical analysis with missing data (Vo
 National Research Council, Division of Behavioral, Committee on National Statistics, & Panel on Handling Missing Data in Clinical Trials. (2010). The prevention and treatment of missing data in clinical trials.
 
 Rubin, D. B. (1976). Inference and missing data. Biometrika, 63(3), 581-592.
-
-## Graphical comparisons
-
-* Cumming, G., & Finch, S. (2005). Inference by Eye: Confidence Intervals and How to Read Pictures of Data. American Psychologist, 60(2), 170–180. <https://doi.org/10.1037/0003-066X.60.2.170>
-
-* Cumming, G. (2009). Inference by eye: Reading the overlap of independent confidence intervals. Statistics in medicine, 28(2), 205-220.
 
 ## Special Topics for Final Project
 
