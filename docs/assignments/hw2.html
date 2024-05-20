@@ -80,9 +80,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
-      BTS 510 &lt;br&gt; Summer 2024
-      </li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../assignments/index.html">Assignments</a></li><li class="breadcrumb-item"><a href="../assignments/hw2.html">Homework 2</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -164,17 +162,23 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Week 3: Descriptives</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/04-mats.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 4: Plots and ggplot</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
  <span class="menu-text">Assignments</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../assignments/index.html" class="sidebar-item-text sidebar-link">
@@ -185,6 +189,12 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../assignments/hw1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Homework 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../assignments/hw2.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Homework 2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -211,15 +221,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#due-xxxx" id="toc-due-xxxx" class="nav-link active" data-scroll-target="#due-xxxx">Due XXXX</a></li>
-  <li><a href="#descriptive-statistics" id="toc-descriptive-statistics" class="nav-link" data-scroll-target="#descriptive-statistics">Descriptive statistics</a></li>
+  <li><a href="#descriptive-statistics-and-plots" id="toc-descriptive-statistics-and-plots" class="nav-link active" data-scroll-target="#descriptive-statistics-and-plots">Descriptive statistics and plots</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../assignments/index.html">Assignments</a></li><li class="breadcrumb-item"><a href="../assignments/hw2.html">Homework 2</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Homework 2</h1>
 </div>
@@ -238,11 +248,31 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="due-xxxx" class="level2">
-<h2 class="anchored" data-anchor-id="due-xxxx">Due XXXX</h2>
+<section id="descriptive-statistics-and-plots" class="level2">
+<h2 class="anchored" data-anchor-id="descriptive-statistics-and-plots">Descriptive statistics and plots</h2>
+<ul>
+<li><p><strong>Due Sunday, May 26 by end of day (midnight)</strong></p></li>
+<li><p>Complete the assignment in a Quarto (.qmd) document and render it to HTML and PDF. Email all 3 files (.qmd, .html, .pdf) to Stefany, Yujie, and Michael.</p>
+<ul>
+<li>Remember to include <code>embed-resources: true</code> in the <code>html</code> options. If you don’t, we won’t see any of your figures when you send the files. <strong>THIS IS SUPER IMPORTANT FOR THIS ASSIGNMENT!</strong></li>
+</ul></li>
+</ul>
 </section>
-<section id="descriptive-statistics" class="level2">
-<h2 class="anchored" data-anchor-id="descriptive-statistics">Descriptive statistics</h2>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<ul>
+<li><code>Pulse</code> dataset from the <strong>Stat2Data</strong> package
+<ul>
+<li>A dataset with 232 observations on the following 7 variables. <code>Active</code>: Pulse rate (beats per minute) after exercise <code>Rest</code>: Resting pulse rate (beats per minute) <code>Smoke</code>: 1=smoker or 0=nonsmoker <code>Sex</code>: 1=female or 0=male <code>Exercise</code>: Typical hours of exercise (per week) <code>Hgt</code>: Height (in inches) <code>Wgt</code>: Weight (in pounds)</li>
+</ul></li>
+</ul>
+<ol type="1">
+<li><p>Calculate the mean height for men and women separately. Calculate the standard deviation for height for men and women separately. Which group has a higher mean height? How do you know? Which group has more spread in height? How do you know?</p></li>
+<li><p>Show the distribution of resting pulse rate for smokers vs non-smokers. Use both a dotplot (with a good number of bins or bin width) and a box plot. You will make two plots. Which plot do you think best conveys the information and why?</p></li>
+<li><p>Show the distribution of BMI using a histogram. You will need to calculate BMI from height and weight. Pick a good number of bins or bin width. Change the outline and fill colors on the histogram – your choice. Add vertical lines for the mean and median BMI. Make the two lines different colors – your choice. What are the mean and median of BMI? What is the standard deviation? What are the 25th and 75th percentiles? Is BMI skewed or symmetric? How can you tell?</p></li>
+<li><p>Show the distribution of active pulse rate by hours of exercise. Use jittered points that have only been jittered horizontally. What do you notice about the distributions?</p></li>
+<li><p>Show the relative numbers of male and female smokers and non-smokers using jittered points. Which group is largest? Which group is smallest?</p></li>
+</ol>
 
 
 </section>

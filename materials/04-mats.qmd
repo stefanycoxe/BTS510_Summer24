@@ -1,0 +1,22 @@
+---
+title: "Week 4: Plots and ggplot"
+---
+
+## Learning objectives
+
+* Select an **appropriate plot** for the **variable type**
+* Create plots in **ggplot2** (part of the **tidyverse**)
+
+## Before class: Lecture 
+
+* [Lecture 4](https://youtu.be/DS2MdNj6at0){target="_blank"} 
+* [Lecture survey](https://forms.gle/bCNnmu1zTnm5Sza68){target="_blank"}: Complete by Wednesday, May 22 at 8pm
+* [Slides (html)](../slides/BTS510-24-4.qmd){target="_blank"}
+    
+## During class: Lab
+
+* [Lab 4 (html with link to code)](../lab/BTS510-24-lab4.qmd){target="_blank"}
+
+## After class: Assignment
+
+* [Homework 2](../assignments/hw2.qmd)
