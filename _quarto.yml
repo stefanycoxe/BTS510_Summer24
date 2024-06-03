@@ -20,7 +20,7 @@ website:
           - materials/02-mats.qmd 
           - materials/03-mats.qmd
           - materials/04-mats.qmd
-          #- materials/05-mats.qmd
+          - materials/05-mats.qmd
           #- materials/06-mats.qmd  
           #- materials/07-mats.qmd
           #- materials/08-mats.qmd 

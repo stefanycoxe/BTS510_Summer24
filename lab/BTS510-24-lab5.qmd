@@ -1,0 +1,58 @@
+---
+title: "BTS 510 Lab 5"
+format:
+  html:
+    embed-resources: true
+    self-contained-math: true
+    html-math-method: katex
+    number-sections: true
+    toc: true
+    code-tools: true
+    code-block-bg: true
+    code-block-border-left: "#31BAE9"
+---
+
+```{r}
+#| label: setup
+set.seed(12345)
+library(tidyverse)
+library(Stat2Data)
+theme_set(theme_classic(base_size = 16))
+```
+
+## Learning objectives
+
+* Advanced plotting
+  * Color, size, opacity
+  * Annotations
+  * Changing themes, axis labels, re-ordering categories
+  * Complex and combined plots 
+
+## Data 
+
+* `ICU` data from the **Stat2Data** package
+  * `ID`: Patient ID code
+  * `Survive`: 1 = patient survived to discharge or 0 = patient died
+  * `Age`: Age (in years)
+  * `AgeGroup`: 1 = young (under 50), 2 = middle (50-69), 3 = old (70+)
+  * `Sex`: 1 = female or 0 = male
+  * `Infection`: 1 = infection suspected or 0 = no infection
+  * `SysBP`: Systolic blood pressure (in mm of Hg)
+  * `Pulse`: Heart rate (beats per minute)
+  * `Emergency`: 1 = emergency admission or 0 = elective admission
+
+* Convert the factor variables to factor variables, as in the lecture
+  * `as.factor()` function
+
+## Tasks
+
+1. Make boxplots of blood pressure for emergency and non-emergency admits. One of the groups have more extreme values (both high and low) than the other. Annotate the plot with rectangles and text to describe this. Modify the X and Y axes to have useful labels and categories (i.e., not just 0 and 1 for `Emergency`).
+
+2. Make a scatterplot of blood pressure (Y) vs pulse (X). Define a color palette with a few colors you like and that are distinguishable from one another. Use the palette to change the color of the points based on whether the patients survived or not. Change the axis labels and the legend label.
+
+3. Make a barplot of the number of patients in each age category. Change the color of the outline and fill for the bars to something nice. Make the outlines size 2. Look at the built in themes and change the theme to something besides the default theme.
+
+
+
+
+

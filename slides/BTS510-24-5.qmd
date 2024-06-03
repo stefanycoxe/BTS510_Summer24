@@ -1,0 +1,702 @@
+---
+title: "Introduction to Biostatistics"
+format:
+  # html: 
+  #   toc: true
+  #   toc-location: left
+  #   slide-level: 3
+  #   number-sections: true
+  #   toc-depth: 2
+  #   self-contained: true
+  #   #output-file: "Mult22-1-handout"
+  # pdf: 
+  #   toc: true
+  #   number-sections: true
+  #   #slide-level: 3
+  #   toc-depth: 2
+  #   shift-heading-level-by: 0
+  #   number-offset: [2]
+  revealjs:
+    toc: false
+    number-sections: true
+    #slide-level: 3
+    scrollable: true
+    embed-resources: true
+    slide-number: true
+    width: 1200
+knitr: 
+  opts_chunk:
+    echo: true
+    message: false
+    warning: false
+---
+
+```{r, include = FALSE, echo = FALSE, wanring = FALSE, message= FALSE}
+library(tidyverse)
+theme_set(theme_classic(base_size = 16))
+set.seed(12345)
+```
+
+# Learning objectives
+
+## Learning objectives
+
+* Advanced plotting
+  * Color, size, opacity
+  * Annotations
+  * Changing themes, axis labels, re-ordering categories
+  * Complex and combined plots
+
+# Perception
+
+## Perception
+
+* Data is encoded in graphics
+  * How can we make it easier for people to understand?
+  * What are humans good (and bad) at? 
+
+## What are we good (and bad) at?
+
+* Good: Comparing position and length
+  * Scatterplots, bar plots
+
+* Good: Color!
+  * Use color to highlight, identify, group
+  * Caveats: Colorblindness, contrast, accessibility
+
+* Bad: Comparing areas, volume, curvature
+  * Pie charts
+
+# Data
+
+## Data
+
+```{r}
+library(gapminder)
+data(gapminder)
+gap_2007 <- gapminder %>% filter(year == 2007)
+head(gap_2007)
+```
+
+# Colors
+
+## "color" and "fill"
+
+* Some objects have a "`color`" attribute
+  * This is the color for the whole object
+* Some objects have both "`color`" and "`fill`" attributes
+  * "`color`" is the outline color
+  * "`fill`" is the "filled in" color
+
+## Built-in colors in R
+
+* [http://sape.inf.usi.ch/quick-reference/ggplot2/colour](http://sape.inf.usi.ch/quick-reference/ggplot2/colour)
+* [https://r-charts.com/colors/](https://r-charts.com/colors/)
+* Type `colors()` in the Console for a list of all colors in R
+  * Use the color's name
+
+## Specific colors: Cedars-Sinai
+
+* Red
+  * RGB: 220, 30, 52
+  * HEX: #dc1e34
+* Grey
+  * RGB: 118, 119, 122
+  * HEX: #76777a
+  
+```{r}
+CS_red <- "#dc1e34"
+CS_grey <- "#76777a"
+```
+
+## Create a color palette
+
+* Color-blind friendly colors from [https://jfly.uni-koeln.de/color/](https://jfly.uni-koeln.de/color/)
+
+```{r}
+color_blind_friendly <- c("#E69F00", "#000000", "#56B4E9", "#009E73", 
+                          "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
+```
+
+![](colorblindcolors.png)
+
+* [Check your plot for color-blind-friendliness](https://www.color-blindness.com/coblis-color-blindness-simulator/)
+
+## Change colors manually
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+ggplot(data = gap_2007, 
+       aes(x = continent)) +
+  geom_bar(color = "black", 
+           fill = "pink")
+```
+
+## Change colors manually
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+ggplot(data = gap_2007, 
+       aes(x = continent)) +
+  geom_bar(color = CS_grey, fill = CS_red)
+```
+
+## Colors based on a variable
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+ggplot(data = gap_2007, 
+       aes(x = gdpPercap,
+           y = lifeExp, 
+           color = continent)) +
+  geom_point()
+```
+
+## Colors based on a variable (CB)
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+ggplot(data = gap_2007, 
+       aes(x = gdpPercap, 
+           y = lifeExp, 
+           color = continent)) +
+  geom_point() +
+  scale_color_manual(values = color_blind_friendly)
+```
+
+* `scale_color_manual()` for `color`
+* `scale_fill_manual()` for `fill`
+
+# Size and opacity
+
+## Change line width
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+ggplot(data = gap_2007, 
+       aes(x = continent)) +
+  geom_bar(color = "black", 
+           fill = "pink", 
+           linewidth = 1.5)
+```
+
+## Change point size
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+ggplot(data = gap_2007, 
+       aes(x = gdpPercap, 
+           y = lifeExp, 
+           color = continent)) + 
+  geom_point(size = 4)
+```
+
+## Change opacity of points
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+ggplot(data = gap_2007, 
+       aes(x = gdpPercap, 
+           y = lifeExp, 
+           color = continent)) + 
+  geom_point(size = 4, alpha = 0.3)
+```
+
+
+# Annotations
+
+## `annotate()` layer
+
+* General function to add different **types** of annotations
+  * `"text"`
+  * `"rect"`
+  * `"segment"`
+  * `"pointrange"`
+* Also specify location of the annotation
+  * x, y
+  * xmin, ymin, xmax, ymax, xend, yend
+  
+## Add some text
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+ggplot(data = gap_2007, 
+       aes(x = gdpPercap, 
+           y = lifeExp, 
+           color = continent)) +
+  geom_point() +
+  annotate("text", 
+           x = 30000, y = 60, 
+           label = "Some text here")
+```
+
+## Add a rectangle
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+ggplot(data = gap_2007, 
+       aes(x = gdpPercap, 
+           y = lifeExp, 
+           color = continent)) +
+  geom_point() +
+  annotate("rect", 
+           xmin = 20000, xmax = 40000, 
+           ymin = 50, ymax = 70)
+```
+
+## Useful annotation
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+ggplot(data = gap_2007, 
+       aes(x = gdpPercap, 
+           y = lifeExp, 
+           color = continent)) +
+  geom_point() +
+  annotate("text", 
+           x = 40000, y = 73, 
+           label = "Countries with \nhigh GDP per capita and \nhigh life expectancy") +
+  annotate("rect", 
+           xmin = 30000, xmax = 50000, 
+           ymin = 75, ymax = 83, 
+           alpha = 0.2)
+```
+
+# Labels and axes
+
+## `labs()` layer
+
+* **All the labels** in the plot
+  * Title, subtitle, caption
+  * Legend title
+  * X and Y axis labels
+* Still supports older versions: `xlab()`, `ylab()`, `ggtitle()`
+
+## Title and subtitle
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+ggplot(data = gap_2007, 
+       aes(x = gdpPercap, 
+           y = lifeExp, 
+           color = continent)) +
+  geom_point() +
+  labs(title = "This is the title",
+       subtitle = "This is the subtitle",
+       caption = "And here's a caption")
+```
+
+## Title and subtitle
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+ggplot(data = gap_2007, 
+       aes(x = gdpPercap, 
+           y = lifeExp, 
+           color = continent)) +
+  geom_point() +
+  labs(title = "Scatterplot of life expectancy vs GDP per capita",
+       subtitle = "There is a nonlinear relationship",
+       caption = "Data: gapminder package, year 2007")
+```
+
+## Axis and legend labels
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+ggplot(data = gap_2007, 
+       aes(x = gdpPercap, 
+           y = lifeExp, 
+           color = continent)) +
+  geom_point() +
+  labs(x = "GDP (per capita)",
+       y = "Life expectancy (years)",
+       color = "The continents")
+```
+
+# Changes to theme
+
+## Themes
+
+* Built-in themes: `theme_classic()`, `theme_grey()`, etc.
+* Packages to change theme
+  * **ggthemes**: 538, WSJ, Economist
+  * **bbplot**: BBC
+* Make your own theme: Branding
+* Change theme for whole document
+  * e.g., `theme_set(theme_classic())` in setup chunk
+
+## Theme elements
+
+* If you know the name of the part you want to change, you can change it
+  * [https://ggplot2.tidyverse.org/reference/theme.html](https://ggplot2.tidyverse.org/reference/theme.html)
+  
+## Theme elements
+
+* Change color of outer background to green
+  * `theme(panel.background = element_rect(fill = "green"))`
+* Change inner background to white with medium grey border
+  * `theme(plot.background = element_rect(fill = "white", colour = "grey50"))`
+* Change axis label text to blue
+  * `theme(axis.text = element_text(colour = "blue"))`
+* Remove the legend
+  * `theme(legend.position = "none")`
+
+## Limits, ticks, etc.
+
+* Adjust the axis limits, labels, or ticks for **continuous** variable
+  * `scale_x_continuous()` and `scale_y_continuous()`
+* Adjust the axis limits, labels, or ticks for **discrete** variable
+  * `scale_x_discrete()` and `scale_y_discrete()`
+* Adjust just the limits
+  * `xlim()` and `ylim()`
+
+# Adjust variables on the fly
+
+## Default order for factors
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+ggplot(data = gap_2007, 
+       aes(x = continent)) +
+  geom_bar()
+```
+
+## Re-order factor levels in the plot
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+ggplot(data = gap_2007, 
+       aes(x = reorder(continent, 
+                       pop, 
+                       fun = median))) +
+  geom_bar()
+```
+
+## Re-order factor levels in the plot
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+ggplot(data = gap_2007, 
+       aes(x = reorder(continent, 
+                       lifeExp, 
+                       fun = median), 
+           y = lifeExp)) +
+  geom_boxplot()
+```
+
+## Re-order and other things
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+gap_2007_americas <- gap_2007 %>% 
+  filter(continent == "Americas")
+ggplot(data = gap_2007_americas, 
+       aes(x = country,
+           y = lifeExp)) +
+  geom_col()
+```
+
+## Re-order and other things
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+ggplot(data = gap_2007_americas, 
+       aes(x = country,
+           y = lifeExp)) +
+  geom_col() +
+  coord_flip()
+```
+
+
+## Re-order and other things
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+ggplot(data = gap_2007_americas, 
+       aes(x = reorder(country, 
+                       lifeExp, 
+                       fun = mean),
+           y = lifeExp)) +
+  geom_col() +
+  coord_flip()
+```
+
+## Alternative: Rotate axis text
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+ggplot(data = gap_2007_americas, 
+       aes(x = reorder(country,
+                       lifeExp, 
+                       fun = mean),
+           y = lifeExp)) +
+  geom_col() +
+  theme(axis.text.x = element_text(angle = 90, 
+                                   hjust=1))
+```
+
+# Complex / combined plots
+
+## Index plot (Manhattan plot)
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+ggplot(data = gap_2007, 
+       aes(x = 1:nrow(gap_2007), 
+           y = pop)) +
+  geom_point()
+```
+
+## Index plot with labels
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+ggplot(data = gap_2007, 
+       aes(x = 1:nrow(gap_2007), 
+           y = pop)) +
+  geom_point() +
+  geom_text(aes(label=as.character(country)),
+            hjust = 0, nudge_x = 2)
+```
+
+## Index plot with labels
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+ggplot(data = gap_2007, 
+       aes(x = 1:nrow(gap_2007), 
+           y = pop)) +
+  geom_point() +
+  geom_text(aes(label=ifelse((pop > 500000000), 
+                             as.character(country), 
+                             '')),
+            hjust = 0, nudge_x = 2)
+```
+
+## Bells and whistles version
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+ggplot(data = gap_2007, 
+       aes(x = 1:nrow(gap_2007), 
+           y = pop)) +
+  geom_point() +
+  geom_text(aes(label=ifelse((pop > 500000000), 
+                             as.character(country), 
+                             '')),
+            hjust = 0, nudge_x = 2) +
+  geom_hline(yintercept = 500000000, 
+             color = "blue", 
+             linetype = "dashed") +
+  annotate("text", 
+           x = 50, y = 850000000, 
+           label = "China and India have notably larger populations") +
+  annotate("rect", 
+           xmin = 20, xmax = 75, 
+           ymin = 1000000000, ymax = 1400000000, 
+           alpha = 0.2) +
+  labs(title = "Most countries have populations below 500 million",
+       x = "Country number (index)",
+       y = "Population")
+```
+
+## Add rugs to a scatterplot
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+ggplot(data = gap_2007, 
+       aes(x = gdpPercap, 
+           y = lifeExp)) + 
+  geom_point(size = 4, alpha = 0.3) +
+  geom_rug()
+```
+
+## Add rugs to a scatterplot
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+ggplot(data = gap_2007, 
+       aes(x = gdpPercap, 
+           y = lifeExp)) + 
+  geom_point(size = 4, alpha = 0.3) +
+  geom_rug(sides = "tr")
+```
+
+## Lollipop plot
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+ggplot(data = gap_2007_americas, 
+       aes(x = country,
+           y = lifeExp)) +
+  theme(axis.text.x = element_text(angle = 90, 
+                                   hjust=1, 
+                                   vjust = 0.5)) +
+  geom_point() +
+  geom_segment(aes(x = country, 
+                   xend = country, 
+                   y = 0, 
+                   yend = lifeExp))
+```
+
+## Lollipop plot
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+ggplot(data = gap_2007_americas, 
+       aes(x = country,
+           y = lifeExp)) +
+  theme(axis.text.x = element_text(angle = 90, 
+                                   hjust=1, 
+                                   vjust = 0.5)) +
+  geom_point(size = 4) +
+  geom_segment(aes(x = country, 
+                   xend = country, 
+                   y = 0, 
+                   yend = lifeExp))
+```
+
+## Raincloud plot
+
+* [Allen, M., Poggiali, D., Whitaker, K., Marshall, T. R., van Langen, J., & Kievit, R. A. (2019). Raincloud plots: a multi-platform tool for robust data visualization. Wellcome open research, 4.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6480976/)
+* Install **ggrain** package
+  * Or use custom scripts in the article 
+* Dot plot + box plot + (half) violin plot
+
+## Raincloud plot
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+library(ggrain)
+ggplot(gap_2007,
+       aes(x = continent,
+           y = gdpPercap)) +
+  geom_rain()
+```
+
+## Raincloud plot
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+library(ggrain)
+ggplot(gap_2007,
+       aes(x = 1,
+           y = gdpPercap)) +
+  geom_rain(color = "black",
+            fill = "forestgreen",
+            alpha = 0.5) +
+  coord_flip()
+```
+
+## Raincloud plot
+
+```{r}
+#| output-location: column
+#| results: hold
+#| echo: true
+library(ggrain)
+ggplot(gap_2007,
+       aes(x = 1,
+           y = gdpPercap)) +
+  geom_rain(color = "black",
+            fill = "forestgreen",
+            alpha = 0.5) +
+  coord_flip() +
+  labs(x = "", y = "GDP (per capita)") +
+  scale_x_continuous(labels = NULL, 
+                     breaks = NULL)
+```
+
+# Final thoughts
+
+## Final thoughts
+
+* **ggplot** creates *layers*
+  * Make your plot a layer at a time
+* Keep *perception* in mind
+  * What are we good at seeing and processing?
+* Use *color* carefully
+  * And sparingly
+
+## Label your axes (meaningfully)!
+
+![](axes.png)
+
+[https://xkcd.com/833/](https://xkcd.com/833/)
+
+# In-class activities
+
+## In-class activities
+
+* Make some plots
+  * Some of them will be ugly
+  * Let's try to fix them
+
+## Next week
+
+* Sample vs population
+  * Conceptual: Statistical inference
+* Probability and distributions
+  * Sampling distributions
+
