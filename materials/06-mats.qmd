@@ -1,0 +1,25 @@
+---
+title: "Week 6: Distributions"
+---
+
+## Learning objectives
+
+* Understand **probability** as a measure of **uncertainty**
+* **Summarize** probabilities with *probability distributions* 
+* Describe the difference between **population** and **sample**
+* Think about **uncertainty** in sampling
+* **Summarize** uncertainty in sampling: **Sampling distribution**
+
+## Before class: Lecture 
+
+* [Lecture 6](https://youtu.be/thCsgkjuxuQ){target="_blank"} 
+* [Lecture survey](https://forms.gle/59BaFwpBH2cUZ9My6){target="_blank"}: Complete by Wednesday, June 12 at 8pm
+* [Slides (html)](../slides/BTS510-24-6.qmd){target="_blank"}
+    
+## During class: Lab
+
+* [Lab 6 (html with link to code)](../lab/BTS510-24-lab6.qmd){target="_blank"}
+
+## After class: Assignment
+
+* **No homework this week**

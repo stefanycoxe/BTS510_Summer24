@@ -1,0 +1,930 @@
+---
+title: "Introduction to Biostatistics"
+format:
+  # html: 
+  #   toc: true
+  #   toc-location: left
+  #   slide-level: 3
+  #   number-sections: true
+  #   toc-depth: 2
+  #   self-contained: true
+  #   #output-file: "Mult22-1-handout"
+  # pdf: 
+  #   toc: true
+  #   number-sections: true
+  #   #slide-level: 3
+  #   toc-depth: 2
+  #   shift-heading-level-by: 0
+  #   number-offset: [2]
+  revealjs:
+    toc: false
+    number-sections: true
+    #slide-level: 3
+    scrollable: true
+    embed-resources: true
+    slide-number: true
+    width: 1200
+knitr: 
+  opts_chunk:
+    echo: true
+    message: false
+    warning: false
+---
+
+```{r, include = FALSE, echo = FALSE, wanring = FALSE, message= FALSE}
+library(tidyverse)
+theme_set(theme_classic(base_size = 16))
+set.seed(12345)
+options(scipen= 100)
+```
+
+# Learning objectives
+
+## Learning objectives
+
+* Understand **probability** as a measure of **uncertainty**
+* **Summarize** probabilities with *probability distributions* 
+* Describe the difference between **population** and **sample**
+* Think about **uncertainty** in sampling
+* **Summarize** uncertainty in sampling: **Sampling distribution**
+
+# Probability (distributions)
+
+## Probability
+
+* How likely a specific event is to happen
+  * Value between 0 and 1 (inclusive) 
+  * Values near 1 = very likely, values near 0 = very unlikely
+  * Probability of all possible options adds up to 1
+* Flip a coin
+  * 50% chance of heads, 50% chance of tails
+  * 0.5 probability of heads, 0.5 probability of tails
+  * 0.5 + 0.5 = 1
+
+## Probability
+
+* Probability is a way to quantify uncertainty
+  * Roll a die
+    * How likely is it to roll a 6?
+  * Select a playing card from a deck
+    * How likely is it to select a heart from the deck?
+  * Measure anything
+    * How likely is any specific value?
+
+## Roll a die
+
+* 1 in 6 chance of each value: 1, 2, 3, 4, 5, 6
+  * Expect to see each value 1/6 of the time
+* In very large samples, the probability will be close to 1/6
+  * In typical samples, it will be less close
+
+## Roll a die 6 times
+
+```{r}
+#| code-fold: true
+set.seed(12345)
+die6 <- sample(1:6, size = 6, replace = TRUE)
+die6
+table(die6)
+prop.table(table(die6))
+```
+
+## Roll a die 100 times
+
+```{r}
+#| code-fold: true
+set.seed(12345)
+die100 <- sample(1:6, size = 100, replace = TRUE)
+#die100
+table(die100)
+prop.table(table(die100))
+```
+
+## Roll a die 10000 times
+
+```{r}
+#| code-fold: true
+set.seed(12345)
+die10000 <- sample(1:6, size = 10000, replace = TRUE)
+#die10000
+table(die10000)
+prop.table(table(die10000))
+```  
+
+## Measuring (random) variables
+
+* **"Variable"**: Anything we measure that can take on more than 1 value 
+  * In statistics, we would call it a **random variable**
+* *Random variable* follows some **probability distribution**
+  * There is some probability between 0 and 1 of *each possible value*
+* Table of probabilities works fine for rolling a die
+  * What about more complex and/or continuous random variables?
+  
+## Probability distributions
+
+* **Summarize** probabilities across all possible values
+* Two broad types of probability distributions
+  * Discrete: Probability *mass* function
+  * Continuous: Probability *density* function
+* [List of many distributions](https://en.wikipedia.org/wiki/List_of_probability_distributions)
+  * Some distributions are for outcomes, some are for statistical testing, some are for both
+
+## Probability distribution of die rolls
+
+* Probability of each value is 1/6 = 0.1667
+
+```{r}
+#| code-fold: true
+value <- c(1, 2, 3, 4, 5, 6)
+probability <- c(1/6, 1/6, 1/6, 1/6, 1/6, 1/6)
+rolls <- data.frame(as.factor(value), probability)
+ggplot(data = rolls, aes(x = as.factor(value), y = probability)) +
+  geom_col() +
+  scale_x_discrete(labels = c(1:6)) +
+  labs(x = "value")
+```
+
+
+## Discrete distributions
+
+* Discrete (categorical) values
+* Probability for a value = height of the bar for that value
+* Sum of height for all bars = 1
+* Uniform, Bernoulli, Binomial, Poisson (and negative binomial)
+
+## Uniform distribution (discrete)
+
+* All possible values are equally likely (uniform probability)
+  * Die roll, coin flip
+* Notation: $X \sim U\{a,b\}$
+* $E(X) = \frac{a+b}{2}$
+* $Var(X) = \frac{(b - a + 1)^2 - 1}{12}$
+
+## Uniform: 6 sided die 
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| code-fold: true
+unid_dat <- data.frame(x = 1:6, y = 1/6)
+
+ggplot(data = unid_dat, aes(x = x, y = y)) +
+  geom_col() +
+  scale_x_continuous(breaks = 1:6) +
+  ylim(0,1) +
+  labs(x = "X", y = "P(X = x)")
+```
+
+:::
+
+::: {.column width="50%"}
+
+* $X \sim U\{1,6\}$
+* $E(X) = 3.5$
+* $Var(X) = 2.916667$
+
+:::
+
+::::
+
+## Bernoulli distribution
+
+* Single trials, each with two possible values (0 = failure, 1 = success)
+  * Alive or dead, pass or fail
+* Notation: $X \sim B(p)$, where $p$ is the probability of success
+* Distribution: $P(X = x) = p^x (1 - p)^{1 -x}$
+* $E(X) = p$
+* $Var(X) = p(1-p)$
+
+## Bernoulli: $p$ = 0.3
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| code-fold: true
+bern_dat <- data.frame(x = 0:1, y = dbinom(0:1, 1, 0.3))
+ggplot(data = bern_dat, aes(x = x, y = y)) +
+  geom_col() +
+  scale_x_continuous(breaks = 0:1) +
+  ylim(0,1) +
+  labs(x = "X", y = "P(X = x)")
+```
+
+:::
+
+::: {.column width="50%"}
+
+* $X \sim B(0.3)$
+* $E(X) = 0.3$
+* $Var(X) = 0.21$
+
+:::
+
+::::
+
+## Binomial distribution
+
+* The sum of $m$ Bernoulli trials (each of which is 0/1)
+  * Deaths in a group, passes in a class, voting (yes/no)  
+* Notation: $X \sim Bin(m, p)$
+* Distribution: $P(X = x) = {m \choose x} p^x (1 - p)^{m -x}$
+  * ${m \choose x}$ is "$m$ choose $x$"
+* $E(X) = mp$
+* $Var(X) = mp(1-p)$
+
+## Binomial: $m$ = 15, $p$ = 0.5
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| code-fold: true
+binom_dat <- data.frame(x = 0:15, y = dbinom(0:15, 15, 0.5))
+ggplot(data = binom_dat, aes(x = x, y = y)) +
+  geom_col() +
+  scale_x_continuous(breaks = 0:15) +
+  ylim(0,1) +
+  labs(x = "X", y = "P(X = x)")
+```
+
+:::
+
+::: {.column width="50%"}
+
+* $X \sim Binom(15, 0.5)$
+* $E(X) = 7.5$
+* $Var(X) = 3.75$
+
+:::
+
+::::
+
+## Binomial: $m$ = 25, $p$ = 0.1
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| code-fold: true
+binom_dat <- data.frame(x = 0:15, y = dbinom(0:15, 25, 0.1))
+ggplot(data = binom_dat, aes(x = x, y = y)) +
+  geom_col() +
+  scale_x_continuous(breaks = 0:15) +
+  ylim(0,1) +
+  labs(x = "X", y = "P(X = x)")
+```
+
+:::
+
+::: {.column width="50%"}
+
+* $X \sim Binom(25, 0.1)$
+* $E(X) = 2.5$
+* $Var(X) = 2.25$
+
+:::
+
+::::
+
+## Poisson distribution
+
+* Distribution of *counts* in a fixed period of time
+  * Gene expression, earthquakes, days per month in pain
+* Notation: $X \sim Pois(\lambda)$, where $\lambda$ is the mean and variance
+* Distribution: $P(X = x) = \frac{\lambda^x e^{-\lambda}}{x!}$
+* $E(X) = \lambda$
+* $Var(X) = \lambda$
+* Negative binomial distribution relaxes the mean-variance equality 
+
+## Poisson: $\lambda$ = 2.5
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| code-fold: true
+pois_dat <- data.frame(x = 0:15, y = dpois(0:15, 2.5))
+ggplot(data = pois_dat, aes(x = x, y = y)) +
+  geom_col() +
+  scale_x_continuous(breaks = 0:15) +
+  ylim(0,1) +
+  labs(x = "X", y = "P(X = x)")
+```
+
+:::
+
+::: {.column width="50%"}
+
+* $X \sim Pois(2.5)$
+* $E(X) = \lambda = 2.5$
+* $Var(X) = \lambda = 2.5$
+
+:::
+
+::::
+
+## Poisson: $\lambda$ = 5
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| code-fold: true
+pois_dat <- data.frame(x = 0:15, y = dpois(0:15, 5))
+ggplot(data = pois_dat, aes(x = x, y = y)) +
+  geom_col() +
+  scale_x_continuous(breaks = 0:15) +
+  ylim(0,1) +
+  labs(x = "X", y = "P(X = x)")
+```
+
+:::
+
+::: {.column width="50%"}
+
+* $X \sim Pois(5)$
+* $E(X) = \lambda = 5$
+* $Var(X) = \lambda = 5$
+
+:::
+
+::::
+
+## Continuous distributions
+
+* Continuous (numeric) values
+* Height of the line for a value **is not** probability for that value
+  * Area under the curve *between* two values = probability *between* those values
+* Area under the *entire* curve = 1
+* Uniform, Normal (Gaussian), $t$, $F$, Chi-square ($\chi^2$)
+
+## Uniform distribution (continuous)
+
+* All possible values are equally likely (uniform probability)
+  * Wait times
+* Notation: $X \sim U(a,b)$
+* Distribution: $f(x) = \frac{1}{b-a}$ for $a \le x \le b$
+  * $f(x) = 0$ for $x < a$ or $x > b$
+* $E(X) = \frac{a+b}{2}$
+* $Var(X) = \frac{(b - a)^2}{12}$
+
+## Uniform: between 0 and 5
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| code-fold: true
+x <- seq(-1, 13, by = 0.01)
+y <- dunif(x, 0, 5)
+uni_dat <- data.frame(x, y)
+ggplot(data = uni_dat, aes(x = x, y = y)) +
+  geom_line() +
+  scale_x_continuous(limits = c(-1, 13), breaks = 0:12) +
+  ylim(0,.25) + 
+  labs(x = "X", y = "f(x)")
+```
+
+:::
+
+::: {.column width="50%"}
+
+* $X \sim U(0,5)$
+* $E(X) = 2.5$
+* $Var(X) = 2.08$
+
+:::
+
+::::
+
+## Uniform: between 3 and 12
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| code-fold: true
+uni_dat <- data.frame(x = seq(-1, 13, by = 0.01), y = dunif(x, 3, 12))
+ggplot(data = uni_dat, aes(x = x, y = y)) +
+  geom_line() +
+  scale_x_continuous(limits = c(-1, 13), breaks = 0:12) +
+  ylim(0,.25) + 
+  labs(x = "X", y = "f(x)")
+```
+
+:::
+
+::: {.column width="50%"}
+
+* $X \sim U(3,12)$
+* $E(X) = 7.5$
+* $Var(X) = 6.75$
+
+:::
+
+::::
+
+
+## Normal distribution
+
+* Gaussian, bell-shaped curve
+  * Height, random error, birth weight, SAT scores, statistical tests 
+* Notation: $X \sim \mathcal{N}(\mu, \sigma^2)$
+* Distribution: $f(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{1}{2}\left(\frac{x - \mu}{\sigma}\right)}$
+* $E(X) = \mu$
+* $Var(X) = \sigma^2$
+* Modifications: skew-normal, log-normal
+
+## Normal: $\mu$ = 0, $\sigma^2$ = 1
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| code-fold: true
+ggplot(data.frame(x = c(-3, 10)), aes(x)) +
+  stat_function(fun = dnorm, args = list(mean = 0, sd = 1), geom = "line") +
+  ylim(0,.5) + 
+  scale_x_continuous(breaks = -3:10) +
+  labs(x = "X", y = "f(x)") 
+```
+
+:::
+
+::: {.column width="50%"}
+
+* $X \sim \mathcal{N}(0, 1)$
+* $E(X) = \mu = 0$
+* $Var(X) = \sigma^2 = 1$
+
+:::
+
+::::
+
+## Normal: $\mu$ = 5, $\sigma^2$ = 2
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| code-fold: true
+ggplot(data.frame(x = c(-3, 10)), aes(x)) +
+  stat_function(fun = dnorm, args = list(mean = 5, sd = sqrt(2)), geom = "line") +
+  ylim(0,.5) + 
+  scale_x_continuous(breaks = -3:10) +
+  labs(x = "X", y = "f(x)") 
+```
+
+:::
+
+::: {.column width="50%"}
+
+* $X \sim \mathcal{N}(5, 2)$
+* $E(X) = \mu = 5$
+* $Var(X) = \sigma^2 = 2$
+
+:::
+
+::::
+
+## (Student's) $t$ distribution
+
+* **Sampling distribution** for many statistical tests
+  * Approximation to normal distribution in small samples
+  * Closer as *degrees of freedom* increase
+* Notation: $X \sim t(df, ncp)$ or $X \sim t(\mu, \sigma^2, \nu)$
+* Distribution: See [here](https://en.wikipedia.org/wiki/Student%27s_t-distribution#Definition) if you're interested
+* $E(X) = 0$ (when $ncp$ = 0)
+* $Var(X) = \frac{df}{df-2}$ (when $ncp$ = 0)
+
+## $t$: $df$ = 10
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| code-fold: true
+ggplot(data.frame(x = c(-3, 3)), aes(x)) +
+  stat_function(fun = dt, args = list(df = 10, ncp = 0), geom = "line") +
+  ylim(0,.5) + 
+  scale_x_continuous(breaks = -3:3) +
+  labs(x = "X", y = "f(x)") 
+```
+
+:::
+
+::: {.column width="50%"}
+
+* $X \sim t(10)$
+* $E(X) = 0$
+* $Var(X) = 1.25$
+
+:::
+
+::::
+
+## $t$: $df$ = 150
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| code-fold: true
+ggplot(data.frame(x = c(-3, 3)), aes(x)) +
+  stat_function(fun = dt, args = list(df = 150, ncp = 0), geom = "line") +
+  ylim(0,.5) + 
+  scale_x_continuous(breaks = -3:3) +
+  labs(x = "X", y = "f(x)") 
+```
+
+:::
+
+::: {.column width="50%"}
+
+* $X \sim t(150)$
+* $E(X) = 0$
+* $Var(X) = 1.0135$
+
+:::
+
+::::
+
+## $\mathcal{N}(0, 1)$ (red) vs $t(10)$ (blue)
+
+```{r}
+#| code-fold: true
+ggplot(data.frame(x = c(-3, 3)), aes(x)) +
+  stat_function(fun = dt, args = list(df = 10, ncp = 0), geom = "line", color = "blue", linewidth = 0.75) +
+  stat_function(fun = dnorm, args = list(mean = 0, sd = 1), geom = "line", color = "red", linewidth = 0.75) +
+  ylim(0,.5) + 
+  scale_x_continuous(breaks = -3:3) +
+  labs(x = "X", y = "f(x)") 
+```
+
+## $F$ distribution
+
+* **Sampling distribution** for many statistical tests
+* Notation: $X \sim F(d_1, d_2)$
+* Distribution: See [here](https://en.wikipedia.org/wiki/F-distribution#Definition) if you're interested
+* $E(X) = \frac{d_2}{d_2-2}$ 
+* $Var(X) = \frac {2\,d_{2}^{2}\,(d_{1}+d_{2}-2)}{d_{1}(d_{2}-2)^{2}(d_{2}-4)}$ 
+
+## $F$: $d_1$ = 1, $d_2 = 49$
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| code-fold: true
+ggplot(data.frame(x = c(0, 10)), aes(x)) +
+  stat_function(fun = df, args = list(df1 = 1, df2 = 49), geom = "line") +
+  ylim(0,1) + 
+  scale_x_continuous(breaks = 0:10) +
+  labs(x = "X", y = "f(x)") 
+```
+
+:::
+
+::: {.column width="50%"}
+
+* $X \sim F(1, 49)$
+* $E(X) = 1.0426$ 
+* $Var(X) = 2.3187$ 
+
+:::
+
+::::
+
+## $F$: $d_1$ = 5, $d_2 = 99$
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| code-fold: true
+ggplot(data.frame(x = c(0, 10)), aes(x)) +
+  stat_function(fun = df, args = list(df1 = 5, df2 = 99), geom = "line") +
+  ylim(0,1) + 
+  scale_x_continuous(breaks = 0:10) +
+  labs(x = "X", y = "f(x)") 
+```
+
+:::
+
+::: {.column width="50%"}
+
+* $X \sim F(5, 99)$
+* $E(X) = 1.0206$ 
+* $Var(X) = 0.4474$
+
+:::
+
+::::
+
+
+## Chi-square ($\chi^2$) distribution
+
+* **Sampling distribution** for many statistical tests
+* Notation: $X \sim \chi^2(k)$
+* Distribution: See [here](https://en.wikipedia.org/wiki/Chi-squared_distribution#Definitions) if you're interested
+* $E(X) = k$ 
+* $Var(X) = 2k$
+
+## $\chi^2$: $k$ = 1
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| code-fold: true
+ggplot(data.frame(x = c(0, 15)), aes(x)) +
+  stat_function(fun = dchisq, args = list(df = 1), geom = "line") +
+  ylim(0,1) + 
+  scale_x_continuous(breaks = 0:15) +
+  labs(x = "X", y = "f(x)") 
+```
+
+:::
+
+::: {.column width="50%"}
+
+* $X \sim \chi^2(1)$
+* $E(X) = k = 1$ 
+* $Var(X) = 2k = 2$ 
+
+:::
+
+::::
+
+## $\chi^2$: $k$ = 5
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| code-fold: true
+ggplot(data.frame(x = c(0, 15)), aes(x)) +
+  stat_function(fun = dchisq, args = list(df = 5), geom = "line") +
+  ylim(0,1) + 
+  scale_x_continuous(breaks = 0:15) +
+  labs(x = "X", y = "f(x)") 
+```
+
+:::
+
+::: {.column width="50%"}
+
+* $X \sim \chi^2(5)$
+* $E(X) = k = 5$ 
+* $Var(X) = 2k = 10$ 
+
+:::
+
+::::
+
+## Summary: Probability distributions
+
+* **Probability** is a way to *quantify uncertainty*
+* **Probability distributions** summarize probabilities across all possible values of a random variable
+* Variety of discrete and continuous **probability distributions**
+  * Some for actual variables, some for statistical tests
+
+# Populations and samples
+
+## How does a study work?
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{mermaid}
+flowchart LR
+  A(Population) --> B{Sampling}
+  B{Sampling} --> D[Sample]
+```
+
+* Sample from a population
+
+:::
+
+::: {.column width="50%"}
+
+```{mermaid}
+flowchart RL
+  C{Inference} --> A(Population)
+  D[Sample] --> C{Inference}
+```
+
+* Make inference from sample back to population
+
+:::
+
+::::
+
+## How does a study work?
+
+Step 1. Identify a **population** that you're interested in
+
+* This can be very broad
+  * All adults in the United States
+* Or very specific
+  * All *adults* living in *Southern California* who are *> 65 years old* who have had a *heart attack* in *2015*
+    
+## How does a study work?
+
+Step 2. **Sample** from the population
+
+* Select a *subset* of individuals from the population
+  * Do your study on the sample
+    * Randomize to groups
+    * Estimate means
+    * Statistical tests
+    
+## Who cares about the sample?
+
+* **We don't actually care about the sample**
+* The sole purpose of the sample is to let us make inferences about the **population**
+* Any individual sample doesn't matter
+  * Any individual in the sample doesn't matter
+
+# Uncertainty
+
+## Uncertainty in sampling
+
+* Major problem with samples: They're **not** the population that you're actually interested in
+  * They are not *fully* representative of the population
+  * Do not reflect the full variability of the population
+  * May be biased (intentionally or not)
+* **Different samples** are also different from **one another**
+
+## Uncertainty in sampling
+
+* Create a (normally distributed) population of 1 million values with a mean of 0 and standard deviation of 1
+  * $pop \sim \mathcal{N}(0,1)$
+
+```{r}
+pop <- rnorm(1000000, 0, 1)
+mean(pop)
+sd(pop)
+```
+
+## Sample 1
+
+* Draw a sample from the population of size N = 100
+
+```{r}
+sample1 <- sample(pop, 100)
+mean(sample1)
+sd(sample1)
+```
+
+## Sample 2
+
+* Draw another sample from the population of size N = 100
+
+```{r}
+sample2 <- sample(pop, 100)
+mean(sample2)
+sd(sample2)
+```
+
+## Sample 3
+
+* Draw another sample from the population of size N = 100
+
+```{r}
+sample3 <- sample(pop, 100)
+mean(sample3)
+sd(sample3)
+```
+
+## Sampling variability
+
+* Each sample mean is different from the other sample means
+* Each sample SD is different from the other sample SDs
+* Each sample mean is different from the population mean
+* Each sample SD is different from the population SD
+
+# Sampling distribution
+
+## Sampling distribution
+
+* Sampling distribution is a **probability distribution**
+  * Distribution of a **statistic** (often the *mean*)
+  * Under repeated sampling (or all possible samples) from the population 
+  * With the **same sample size (N)**
+
+## How do we get sampling distributions?
+
+* Mathematically derived
+  * Common distributions, like Normal, Bernoulli, etc.
+* Computationally derived
+  * Monte Carlo simulations, bootstrapping
+  * Literally, repeatedly sample from the population, save the test statistic from each sample, make a distribution (i.e., histogram) of those values
+
+## Sampling distribution
+
+* **Normally** distributed population: $\mathcal{N}(0,1)$
+* Sampling distribution of the **mean**
+* Different **sample sizes**
+* This situation can use either method
+  * Mathematically derived: $\bar{X} \sim \mathcal{N}(\mu,\frac{\sigma^2}{n})$
+  * Simulation based
+
+## Sampling distribution: $n$ = 10, 50, 100
+
+```{r}
+#| code-fold: true
+ggplot(data.frame(x = c(-2, 2)), aes(x)) +
+  #stat_function(fun = dnorm, args = list(mean = 0, sd = 1), geom = "line") +
+  stat_function(fun = dnorm, args = list(mean = 0, sd = 1/sqrt(10)), geom = "line", color = "red") +
+  stat_function(fun = dnorm, args = list(mean = 0, sd = 1/sqrt(50)), geom = "line", color = "green") +
+  stat_function(fun = dnorm, args = list(mean = 0, sd = 1/sqrt(100)), geom = "line", color = "purple") +
+  #ylim(0,1) + 
+  scale_x_continuous(breaks = -2:2) +
+  labs(x = "X", y = "f(x)") 
+```
+
+## Sampling distribution via simulation: $n$ = 10
+
+```{r}
+#| code-fold: true
+library(infer)
+means10 <- data.frame(pop) %>%
+  rep_sample_n(size = 10, reps = 10000, replace = TRUE) %>%
+  summarise(x_bar = mean(pop))
+
+ggplot(data = means10, aes(x = x_bar)) +
+  geom_histogram(bins = 30) +
+  xlim(-1.5,1.5)
+```
+
+## Sampling distribution via simulation: $n$ = 50
+
+```{r}
+#| code-fold: true
+library(infer)
+means10 <- data.frame(pop) %>%
+  rep_sample_n(size = 50, reps = 10000, replace = TRUE) %>%
+  summarise(x_bar = mean(pop))
+
+ggplot(data = means10, aes(x = x_bar)) +
+  geom_histogram(bins = 30) +
+  xlim(-1.5, 1.5) 
+```
+
+## Sampling distribution via simulation: $n$ = 100
+
+```{r}
+#| code-fold: true
+library(infer)
+means10 <- data.frame(pop) %>%
+  rep_sample_n(size = 100, reps = 10000, replace = TRUE) %>%
+  summarise(x_bar = mean(pop))
+
+ggplot(data = means10, aes(x = x_bar)) +
+  geom_histogram(bins = 30) +
+  xlim(-1.5, 1.5)
+```
+
+## Why do we care about this?
+
+* Sampling distribution of the *mean* gives the **standard error** of the *mean*
+  * Standard deviation of the sampling distribution
+  * Tells us about sampling variability in the test statistic
+  * Across all samples from this population, how variable can we expect the test statistic to be?
+  * Context
+  * Used in significance testing
+
+# In-class activities
+
+## In-class activities
+
+* Explore some sampling distributions using simulation
+* See how changing the population distribution and sample size affect the sampling distribution
+
+## Next week
+
+* Estimation
+  * Point estimates vs interval estimates
+  * Confidence intervals
+  * Inference by eye?
+
