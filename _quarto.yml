@@ -22,19 +22,19 @@ website:
           - materials/04-mats.qmd
           - materials/05-mats.qmd
           - materials/06-mats.qmd  
-          #- materials/07-mats.qmd
+          - materials/07-mats.qmd   
           #- materials/08-mats.qmd 
           #- materials/09-mats.qmd 
           #- materials/10-mats.qmd 
-          #- materials/11-mats.qmd 
+          #- materials/11-mats.qmd   
           #- materials/12-mats.qmd 
       - section: "Assignments"
         contents:
           - assignments/index.qmd    
           - assignments/hw1.qmd
           - assignments/hw2.qmd
-          #- assignments/hw3.qmd  
-          #- assignments/hw4.qmd
+          - assignments/hw3.qmd  
+          #- assignments/hw4.qmd            
           #- assignments/hw5.qmd
           #- assignments/hw6.qmd
           - assignments/final.qmd  

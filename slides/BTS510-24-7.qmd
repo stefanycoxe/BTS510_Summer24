@@ -1,0 +1,666 @@
+---
+title: "Introduction to Biostatistics"
+format:
+  # html: 
+  #   toc: true
+  #   toc-location: left
+  #   slide-level: 3
+  #   number-sections: true
+  #   toc-depth: 2
+  #   self-contained: true
+  #   #output-file: "Mult22-1-handout"
+  # pdf: 
+  #   toc: true
+  #   number-sections: true
+  #   #slide-level: 3
+  #   toc-depth: 2
+  #   shift-heading-level-by: 0
+  #   number-offset: [2]
+  revealjs:
+    toc: false
+    number-sections: true
+    #slide-level: 3
+    scrollable: true
+    embed-resources: true
+    slide-number: true
+    width: 1200
+knitr: 
+  opts_chunk:
+    echo: true
+    message: false
+    warning: false
+---
+
+```{r, include = FALSE, echo = FALSE, wanring = FALSE, message= FALSE}
+library(tidyverse)
+library(infer)
+theme_set(theme_classic(base_size = 16))
+set.seed(12345)
+options(scipen= 100)
+```
+
+# Learning objectives
+
+## Learning objectives
+
+* **Compare** and **contrast** *point estimates* and *interval estimates*
+* **Construct** *confidence intervals*
+* **Interpret** *confidence intervals*
+
+# Review
+
+## Sample vs population
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{mermaid}
+flowchart LR
+  A(Population) --> B{Sampling}
+  B{Sampling} --> D[Sample]
+```
+
+* Sample from a population
+
+:::
+
+::: {.column width="50%"}
+
+```{mermaid}
+flowchart RL
+  C{Inference} --> A(Population)
+  D[Sample] --> C{Inference}
+```
+
+* Make inference from sample back to population
+
+:::
+
+::::
+
+## Sampling distribution
+
+* **Probability distribution**
+* **Quantifies** the *uncertainty* in sampling from a population
+  * Sample isn't representative of the whole population
+  * Sampling variability in the test statistic
+  * Across all samples from this population, how variable can we expect the test statistic to be?
+* **Standard error** is the *standard deviation* of the sampling distribution
+  
+## Sampling distribution
+
+* Sampling distribution depends on 
+  * Population distribution (sometimes)
+  * Sample size
+  * Test statistic (e.g., mean, regression coefficient)
+* In last week's lab, we demonstrated the **central limit theorem**
+
+## Last week
+
+* Different *population* distributions
+  * Normal, Bernoulli, binomial, Poisson
+* *Sample* 10000 times from each population
+  * With different *sample sizes*: $n = 10, 50, 100$
+* Calculate sample mean ($\bar{X}$) for each sample
+  * Examine *distributions of means*
+
+## $population \sim \mathcal{N}(0, 1)$
+
+```{r}
+#| echo: false
+
+norm_pop <- rnorm(1000000, 0, 1)
+
+norm_means10 <- data.frame(norm_pop) %>%
+  rep_sample_n(size = 10, reps = 10000, replace = TRUE) %>%
+  summarise(x_bar = mean(norm_pop))
+
+norm_means50 <- data.frame(norm_pop) %>%
+  rep_sample_n(size = 50, reps = 10000, replace = TRUE) %>%
+  summarise(x_bar = mean(norm_pop))
+
+norm_means100 <- data.frame(norm_pop) %>%
+  rep_sample_n(size = 100, reps = 10000, replace = TRUE) %>%
+  summarise(x_bar = mean(norm_pop))
+```
+
+:::: {.columns}
+
+::: {.column width="33%"}
+
+* $n = 10$
+
+```{r}
+#| echo: false
+ggplot(data = norm_means10, aes(x = x_bar)) +
+  geom_histogram(aes(x = x_bar, , y = ..density..), bins = 50) +
+  xlim(-1.5, 1.5) +
+  stat_function(fun = dnorm, args = list(mean = mean(norm_means10$x_bar), sd = sd(norm_means10$x_bar)), color = "blue", linewidth = 1.5)
+```
+
+:::
+
+::: {.column width="33%"}
+
+* $n = 50$
+
+```{r}
+#| echo: false
+ggplot(data = norm_means50, aes(x = x_bar)) +
+  geom_histogram(aes(x = x_bar, , y = ..density..), bins = 50) +
+  xlim(-1.5, 1.5) +
+  stat_function(fun = dnorm, args = list(mean = mean(norm_means50$x_bar), sd = sd(norm_means50$x_bar)), color = "blue", linewidth = 1.5)
+```
+
+:::
+
+::: {.column width="33%"}
+
+* $n = 100$
+
+```{r}
+#| echo: false
+ggplot(data = norm_means100, aes(x = x_bar)) +
+  geom_histogram(aes(x = x_bar, , y = ..density..), bins = 50) +
+  xlim(-1.5, 1.5) +
+  stat_function(fun = dnorm, args = list(mean = mean(norm_means100$x_bar), sd = sd(norm_means100$x_bar)), color = "blue", linewidth = 1.5)
+```
+
+:::
+
+::::
+
+## $population \sim \mathcal{N}(0, 1)$
+
+$n$   | $\mu$ | mean($\bar{X}$) | $\sigma^2$ | var($\bar{X}$) | $\frac{\sigma^2}{n}$ 
+------|------|------|------|------|------
+10    | 0    | `r mean(norm_means10$x_bar)`  | 1   | `r var(norm_means10$x_bar)`  | `r 1/10`  
+50    | 0    | `r mean(norm_means50$x_bar)`  | 1   | `r var(norm_means50$x_bar)`  | `r 1/50`  
+100   | 0    | `r mean(norm_means100$x_bar)` | 1   | `r var(norm_means100$x_bar)` | `r 1/100` 
+
+## $population \sim B(0.3)$
+
+```{r}
+#| echo: false
+
+bernoulli_pop <- rbinom(1000000, 1, 0.3)
+
+bern_means10 <- data.frame(bernoulli_pop) %>%
+  rep_sample_n(size = 10, reps = 10000, replace = TRUE) %>%
+  summarise(x_bar = mean(bernoulli_pop))
+
+bern_means50 <- data.frame(bernoulli_pop) %>%
+  rep_sample_n(size = 50, reps = 10000, replace = TRUE) %>%
+  summarise(x_bar = mean(bernoulli_pop))
+
+bern_means100 <- data.frame(bernoulli_pop) %>%
+  rep_sample_n(size = 100, reps = 10000, replace = TRUE) %>%
+  summarise(x_bar = mean(bernoulli_pop))
+```
+
+:::: {.columns}
+
+::: {.column width="33%"}
+
+* $n = 10$
+
+```{r}
+#| echo: false
+ggplot(data = bern_means10, aes(x = x_bar)) +
+  geom_histogram(aes(x = x_bar, , y = ..density..), bins = 50) +
+  xlim(-.5,1) +
+  stat_function(fun = dnorm, args = list(mean = mean(bern_means10$x_bar), sd = sd(bern_means10$x_bar)), color = "blue", linewidth = 1.5)
+```
+
+:::
+
+::: {.column width="33%"}
+
+* $n = 50$
+
+```{r}
+#| echo: false
+ggplot(data = bern_means50, aes(x = x_bar)) +
+  geom_histogram(aes(x = x_bar, , y = ..density..), bins = 50) +
+  xlim(-.5,1) +
+  stat_function(fun = dnorm, args = list(mean = mean(bern_means50$x_bar), sd = sd(bern_means50$x_bar)), color = "blue", linewidth = 1.5)
+```
+
+:::
+
+::: {.column width="33%"}
+
+* $n = 100$
+
+```{r}
+#| echo: false
+ggplot(data = bern_means100, aes(x = x_bar)) +
+  geom_histogram(aes(x = x_bar, , y = ..density..), bins = 50) +
+  xlim(-.5,1) +
+  stat_function(fun = dnorm, args = list(mean = mean(bern_means100$x_bar), sd = sd(bern_means100$x_bar)), color = "blue", linewidth = 1.5)
+```
+
+:::
+
+::::
+
+## $population \sim B(0.3)$
+
+$n$   | $\mu$ | mean($\bar{X}$) | $\sigma^2$ | var($\bar{X}$) | $\frac{\sigma^2}{n}$ 
+------|------|------|------|------|------
+10    | 0.3  | `r mean(bern_means10$x_bar)`  | 0.21   | `r var(bern_means10$x_bar)`  | `r 0.21/10`  
+50    | 0.3  | `r mean(bern_means50$x_bar)`  | 0.21   | `r var(bern_means50$x_bar)`  | `r 0.21/50`  
+100   | 0.3  | `r mean(bern_means100$x_bar)` | 0.21   | `r var(bern_means100$x_bar)` | `r 0.21/100` 
+
+## Central limit theorem
+
+* **Regardless** of the *population distribution*
+  * the *sampling distribution* of the **mean**
+  * follows a normal distribution 
+    * $\bar{X} \sim \mathcal{N}(mean=\mu, variance=\frac{\sigma^2}{n})$
+  * as $n \rightarrow \infty$
+    * Can happens very quickly: often $n \ge 30$
+
+# Point estimates
+
+## Point estimates
+
+* Single number estimate of the population value
+  * Sample mean
+  * Sample variance
+  * Mean difference
+  * Correlation coefficient
+
+## Estimation methods: Point estimates
+
+* Sample estimate
+* Maximum likelihood
+* (Ordinary) least squares: "OLS regression"
+* (Weighted) least squares
+
+## Maximum likelihood: Conceptual
+
+* **Likelihood function** based on the distributions of the variable(s)
+  * Likelihood is similar to probability
+    * Doesn't have some properties
+  * Likelihood of different potential *parameter values* (e.g., means)
+  * **Maximum likelihood estimates** are the parameter estimates that are *most likely* **given the data**
+
+## Maximum likeihood: Figure
+
+![](MLE.png)
+
+* Maximum likelihood estimate is found at $\mu = 15.4$
+
+> Figure 2 from Enders, C. K. (2005). Maximum likelihood estimation. *Encyclopedia of statistics in behavioral science*.
+
+# Interval estimates
+
+## Estimation methods: Interval estimates
+
+* **Known formulas** for some situations
+* **Monte Carlo simulation**
+* Resampling methods: bootstrap, jackknife (leave one out), etc.
+* Other computational methods
+
+## Why an interval?
+
+* Point estimate is **almost certainly wrong**
+  * e.g., single mean from a single sample
+* Point estimates are **random variables**
+  * Random variables have a **distribution**
+  * Distributions tell us about probability
+  * What are the **most likely values**?
+
+## Normal distribution
+
+* Remember: *Sampling distribution* is **normal**
+  * Sample means follow a *normal distribution*
+  * If we want to talk about **this sample mean** in the *context* of **all sample means**, then we can use the sampling distribution
+
+## Aside: $z$-scores
+
+* $z$-scores are scores on a **standard normal distribution**
+  * $\mathcal{N}(0,1)$
+* Mean = 0
+* Variance = standard deviation = 1
+* Often called "standardized scores": Subtract mean, divide by SD
+
+## (Standard) Normal: mean = 0, SD = 1
+
+```{r}
+#| code-fold: true
+ggplot(data.frame(x = c(-4, 4)), aes(x)) +
+  stat_function(fun = dnorm,
+                geom = "line",
+                xlim = c(-4, 4)) +
+  xlim(-4, 4)
+```
+
+## Symmetric around the mean
+
+```{r}
+#| code-fold: true
+ggplot(data.frame(x = c(-4, 4)), aes(x)) +
+  stat_function(fun = dnorm,
+                geom = "line",
+                xlim = c(-4, 4)) +
+  stat_function(fun = dnorm,
+                geom = "area",
+                fill = "steelblue",
+                xlim = c(0, 4)) +
+  annotate("text", x = 0.8, y = 0.1, label = "50%", color = "white", size = 6) +
+  annotate("text", x = -0.8, y = 0.1, label = "50%", size = 6) +
+  xlim(-4, 4)
+```
+
+## Proportion for each standard deviation
+
+```{r}
+#| code-fold: true
+ggplot(data.frame(x = c(-4, 4)), aes(x)) +
+  stat_function(fun = dnorm,
+                geom = "line",
+                xlim = c(-4, 4)) +
+  stat_function(fun = dnorm,
+                geom = "area",
+                fill = "steelblue",
+                xlim = c(-3, -2)) +
+  stat_function(fun = dnorm,
+                geom = "area",
+                fill = "steelblue",
+                xlim = c(-1, 0)) +
+  stat_function(fun = dnorm,
+                geom = "area",
+                fill = "steelblue",
+                xlim = c(1, 2)) +
+  stat_function(fun = dnorm,
+                geom = "area",
+                fill = "steelblue",
+                xlim = c(3, 4)) +
+  annotate("text", x = -3.5, y = 0.05, label = "0.13%") +
+  annotate("text", x = -2.5, y = 0.1, label = "2.14%") +
+  annotate("text", x = -1.5, y = 0.05, label = "13.59%") +
+  annotate("text", x = -0.5, y = 0.2, label = "34.13%", color = "white") +
+  annotate("text", x = 0.5, y = 0.2, label = "34.13%") +
+  annotate("text", x = 1.5, y = 0.05, label = "13.59%", color = "white") +
+  annotate("text", x = 2.5, y = 0.1, label = "2.14%") +
+  annotate("text", x = 3.5, y = 0.05, label = "0.13%") +
+  geom_vline(xintercept = -3, linetype = "dashed", alpha = 0.3) +
+  geom_vline(xintercept = -2, linetype = "dashed", alpha = 0.3) +
+  geom_vline(xintercept = -1, linetype = "dashed", alpha = 0.3) +
+  geom_vline(xintercept = 0, linetype = "dashed", alpha = 0.3) +
+  geom_vline(xintercept = 1, linetype = "dashed", alpha = 0.3) +
+  geom_vline(xintercept = 2, linetype = "dashed", alpha = 0.3) +
+  geom_vline(xintercept = 3, linetype = "dashed", alpha = 0.3) +
+  xlim(-4, 4)
+```
+
+## Between -1 SD and +1 SD: 68.26%
+
+```{r}
+#| code-fold: true
+ggplot(data.frame(x = c(-4, 4)), aes(x)) +
+  stat_function(fun = dnorm,
+                geom = "line",
+                xlim = c(-4, 4)) +
+  stat_function(fun = dnorm,
+                geom = "area",
+                fill = "steelblue",
+                xlim = c(-1, 1)) +
+  annotate("text", x = 0, y = 0.1, label = "68.26%", color = "white", size = 6) +
+  annotate("text", x = 2.5, y = 0.1, label = "15.87%", size = 6) +
+  annotate("text", x = -2.5, y = 0.1, label = "15.87%", size = 6) +
+  geom_vline(xintercept = -3, linetype = "dashed", alpha = 0.3) +
+  geom_vline(xintercept = -2, linetype = "dashed", alpha = 0.3) +
+  geom_vline(xintercept = -1, linetype = "dashed", alpha = 0.3) +
+  geom_vline(xintercept = 0, linetype = "dashed", alpha = 0.3) +
+  geom_vline(xintercept = 1, linetype = "dashed", alpha = 0.3) +
+  geom_vline(xintercept = 2, linetype = "dashed", alpha = 0.3) +
+  geom_vline(xintercept = 3, linetype = "dashed", alpha = 0.3) +
+  xlim(-4, 4)
+```
+
+## 90% between -1.645 SD and +1.645 SD
+
+```{r}
+#| code-fold: true
+ggplot(data.frame(x = c(-4, 4)), aes(x)) +
+  stat_function(fun = dnorm,
+                geom = "line",
+                xlim = c(-4, 4)) +
+  stat_function(fun = dnorm,
+                geom = "area",
+                fill = "steelblue",
+                xlim = c(-1.645, 1.645)) +
+  annotate("text", x = 0, y = 0.1, label = "90%", color = "white", size = 6) +
+  annotate("text", x = 3, y = 0.05, label = "5%", size = 6) +
+  annotate("text", x = -3, y = 0.05, label = "5%", size = 6) +
+  geom_vline(xintercept = -3, linetype = "dashed", alpha = 0.3) +
+  geom_vline(xintercept = -2, linetype = "dashed", alpha = 0.3) +
+  geom_vline(xintercept = -1, linetype = "dashed", alpha = 0.3) +
+  geom_vline(xintercept = 0, linetype = "dashed", alpha = 0.3) +
+  geom_vline(xintercept = 1, linetype = "dashed", alpha = 0.3) +
+  geom_vline(xintercept = 2, linetype = "dashed", alpha = 0.3) +
+  geom_vline(xintercept = 3, linetype = "dashed", alpha = 0.3) +
+  xlim(-4, 4)
+```
+
+## 95% between -1.96 SD and +1.96 SD
+
+```{r}
+#| code-fold: true
+ggplot(data.frame(x = c(-4, 4)), aes(x)) +
+  stat_function(fun = dnorm,
+                geom = "line",
+                xlim = c(-4, 4)) +
+  stat_function(fun = dnorm,
+                geom = "area",
+                fill = "steelblue",
+                xlim = c(-1.96, 1.96)) +
+  annotate("text", x = 0, y = 0.1, label = "95%", color = "white", size = 6) +
+  annotate("text", x = 3, y = 0.05, label = "2.5%", size = 6) +
+  annotate("text", x = -3, y = 0.05, label = "2.5%", size = 6) +
+  geom_vline(xintercept = -3, linetype = "dashed", alpha = 0.3) +
+  geom_vline(xintercept = -2, linetype = "dashed", alpha = 0.3) +
+  geom_vline(xintercept = -1, linetype = "dashed", alpha = 0.3) +
+  geom_vline(xintercept = 0, linetype = "dashed", alpha = 0.3) +
+  geom_vline(xintercept = 1, linetype = "dashed", alpha = 0.3) +
+  geom_vline(xintercept = 2, linetype = "dashed", alpha = 0.3) +
+  geom_vline(xintercept = 3, linetype = "dashed", alpha = 0.3) +
+  xlim(-4, 4)
+```
+
+## 99% between -2.326 SD and +2.326 SD
+
+```{r}
+#| code-fold: true
+ggplot(data.frame(x = c(-4, 4)), aes(x)) +
+  stat_function(fun = dnorm,
+                geom = "line",
+                xlim = c(-4, 4)) +
+  stat_function(fun = dnorm,
+                geom = "area",
+                fill = "steelblue",
+                xlim = c(-2.326, 2.326)) +
+  annotate("text", x = 0, y = 0.1, label = "99%", color = "white", size = 6) +
+  annotate("text", x = 3, y = 0.05, label = "0.5%", size = 6) +
+  annotate("text", x = -3, y = 0.05, label = "0.5%", size = 6) +
+  geom_vline(xintercept = -3, linetype = "dashed", alpha = 0.3) +
+  geom_vline(xintercept = -2, linetype = "dashed", alpha = 0.3) +
+  geom_vline(xintercept = -1, linetype = "dashed", alpha = 0.3) +
+  geom_vline(xintercept = 0, linetype = "dashed", alpha = 0.3) +
+  geom_vline(xintercept = 1, linetype = "dashed", alpha = 0.3) +
+  geom_vline(xintercept = 2, linetype = "dashed", alpha = 0.3) +
+  geom_vline(xintercept = 3, linetype = "dashed", alpha = 0.3) +
+  xlim(-4, 4)
+```
+
+## Confidence intervals
+
+* Interval estimate of likely values for an estimate
+  * Sample mean is 52.1, but the population mean is unlikely to be exactly that
+  * Range of values in which the population mean exists
+* Leverage normal distribution of sampling distribution   
+  * Use proportion of distribution between different values
+
+## $100 \times (1-\alpha)\%$ CI for mean
+
+* $[\bar{X} - z_{1-\alpha/2}\ \sqrt{\frac{\sigma^2}{n}}, \bar{X} + z_{1-\alpha/2}\ \sqrt{\frac{\sigma^2}{n}}]$
+  * $z_{1-\alpha/2}\ \sqrt{\frac{\sigma^2}{n}}$: margin of error
+  * $\bar{X}$: sample mean
+  * $\alpha$: probability of type I error (probability in the tails)
+  * $z_{1-\alpha/2}$: $z$-score corresponding to a specific $\alpha$
+  * Example: $95\%$ CI: $\alpha$ = .05, $z_{1-\alpha/2}$ = 1.96
+
+## Percentiles
+
+```{r}
+#| code-fold: true
+ggplot(data.frame(x = c(-4, 4)), aes(x)) +
+  stat_function(fun = dnorm,
+                geom = "line",
+                xlim = c(-4, 4)) +
+  stat_function(fun = dnorm,
+                geom = "area",
+                fill = "steelblue",
+                xlim = c(-1.96, 1.96)) +
+  annotate("text", x = 0, y = 0.1, label = "95%", color = "white", size = 6) +
+  annotate("text", x = 3, y = 0.05, label = "2.5%", size = 6) +
+  annotate("text", x = -3, y = 0.05, label = "2.5%", size = 6) +
+  geom_vline(xintercept = -3, linetype = "dashed", alpha = 0.3) +
+  geom_vline(xintercept = -2, linetype = "dashed", alpha = 0.3) +
+  geom_vline(xintercept = -1, linetype = "dashed", alpha = 0.3) +
+  geom_vline(xintercept = 0, linetype = "dashed", alpha = 0.3) +
+  geom_vline(xintercept = 1, linetype = "dashed", alpha = 0.3) +
+  geom_vline(xintercept = 2, linetype = "dashed", alpha = 0.3) +
+  geom_vline(xintercept = 3, linetype = "dashed", alpha = 0.3) +
+  xlim(-4, 4)
+```
+
+## Percentiles from `qnorm()` function
+
+* Percentile: proportion of distribution to the **left** of a score
+* For a 95% CI, you **do not** want the 95th percentile
+  * 2.5% in the left tail, 95% in middle, 2.5% in right tail
+  * **97.5th percentile** (95 + 2.5 = 97.5) provides the $z$-score you want
+  
+```{r}
+qnorm(0.975)
+```
+
+* Default is mean = 0, SD = 1 but you can specify different in arguments
+  * e.g., `qnorm(0.975, mean = 5, sd = 2)`
+
+## CI interpretation
+
+* One experiment: 95% chance the CI captures the population mean
+  * Don't say: "95% chance that the population mean is in the CI"
+  * Population value is **fixed**; CI either captures it or not
+* Long run: Over repeated versions of the same experiment, $100 \times (1 - \alpha)\%$ of the intervals will contain the population value
+  * Population value is **fixed**; CI either captures it or not
+* Frequentist (vs Bayesian)
+
+## CI width
+
+* **Decreases** as $n$ **increases**
+  * Because the *sampling distribution* narrows as $n$ increases
+  * $\frac{\sigma^2}{n}$ decreases as $n$ increases
+* **Increases** as population variability **increases**
+  * Because $\frac{\sigma^2}{n}$ increases as $\sigma^2$ increases
+* **Increases** as $\alpha$ **decreases**
+  * Because the $z$-score used increases as $\alpha$ decreases
+
+## Example: $95\%$ confidence interval
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+n <- 50
+n
+x <- rnorm(n, mean = 5, sd = 2)
+datx <- data.frame(x)
+meanx <- mean(x)
+meanx
+sdx <- sd(x)
+sdx
+varx <- var(x)
+varx
+```
+
+:::
+
+::: {.column width="50%"}
+
+$[\bar{X} - z_{1-\alpha/2}\ \sqrt{\frac{\sigma^2}{n}}, \bar{X} + z_{1-\alpha/2}\ \sqrt{\frac{\sigma^2}{n}}]$
+
+$[`r round(meanx, 3)` - 1.96 \times \sqrt{\frac{`r round(varx, 3)`}{`r n`}}, `r round(meanx, 3)` + 1.96 \times \sqrt{\frac{`r round(varx, 3)`}{`r n`}}]$
+
+$[`r round(meanx, 3)` - `r round(1.96*sqrt(varx/n), 3)`, `r round(meanx, 3)` + `r round(1.96*sqrt(varx/n), 3)`]$
+
+$[`r round(meanx - 1.96*sqrt(varx/n), 2)`, `r round(meanx + 1.96*sqrt(varx/n), 2)`]$
+
+:::
+
+::::
+
+## What does it look like?
+
+```{r}
+#| code-fold: true
+ci95min <- meanx - 1.96*sqrt(varx/n)
+ci95max <- meanx + 1.96*sqrt(varx/n)
+ggplot(data = datx, aes(x = x)) +
+  geom_histogram(bins = 30) +
+  geom_vline(xintercept = meanx) +
+  geom_vline(xintercept = ci95min, linetype = "dashed") +
+  geom_vline(xintercept = ci95max, linetype = "dashed") +
+  scale_x_continuous(breaks = c(0:10))
+```
+
+## Why is it so narrow?
+
+* Shouldn't it cover 95% of the observations?
+  * **NO!!!**
+* Remember: We don't care about the sample
+  * We care about the **population**
+  * The confidence interval tells us about the **population mean**
+  * Relatively narrow band is where we think the **population mean** is
+
+# Test hypotheses using CIs
+
+## Hypothesized population mean 
+
+* Does sample come from population with a mean of **\[some value\]**?
+  * Check whether the confidence interval contains **\[some value\]**
+  * Yes: It could come from that population
+  * No: We are **\[some %\] confident** it doesn't
+* Example data: Does it come from a population with mean = 3?
+  * 95% confidence interval is $[`r round(meanx - 1.96*sqrt(varx/n), 2)`, `r round(meanx + 1.96*sqrt(varx/n), 2)`]$
+  * 3 is not in CI: **95% confident** that this sample **did not** come from a population with mean = 3
+
+## Compare groups using CIs
+
+* Can we compare two groups using their confidence intervals?
+  * Yes, but it's not intuitive
+* If CIs **don't** overlap
+  * Groups are different
+* If CIs **do** overlap
+  * The groups may or may not be different
+* Check References on course website for "Graphical comparisons"
+
+# In-class activities
+
+## In-class activities
+
+* Construct some confidence intervals
+* Interpret the confidence intervals in words
+
+## Next two weeks
+
+* Hypothesis testing
+  * One mean vs hypothesized value
+  * Two means compared to each other

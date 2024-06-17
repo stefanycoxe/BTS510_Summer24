@@ -1,0 +1,23 @@
+---
+title: "Week 7: Estimation"
+---
+
+## Learning objectives
+
+* **Compare** and **contrast** *point estimates* and *interval estimates*
+* **Construct** *confidence intervals*
+* **Interpret** *confidence intervals*
+
+## Before class: Lecture 
+
+* [Lecture 7](https://youtu.be/5KDk1DVPyJ8){target="_blank"} 
+* [Lecture survey](https://forms.gle/M5amYZG5hdaVK98v5){target="_blank"}: Complete by Wednesday, June 19 at 8pm
+* [Slides (html)](../slides/BTS510-24-7.qmd){target="_blank"}
+    
+## During class: Lab
+
+* [Lab 7 (html with link to code)](../lab/BTS510-24-lab7.qmd){target="_blank"}
+
+## After class: Assignment
+
+* [Homework 3](../assignments/hw3.qmd)
