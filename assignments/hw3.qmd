@@ -4,6 +4,46 @@ title: "Homework 3"
 
 ## Sampling and estimation
 
-Not ready yet
+* **Due Sunday, June 23 by end of day (midnight)**
 
-Check back soon...
+* Complete the assignment in a Quarto (.qmd) document and render it to HTML and PDF. Email all 3 files (.qmd, .html, .pdf) to Stefany, Yujie, and Michael. **Be sure to look at your output files and check that they've rendered correctly.** 
+
+## Data
+
+* `Pulse` dataset from the **Stat2Data** package
+    * A dataset with $n$ = 232 observations on the following 7 variables.
+        * `Active`: Pulse rate (beats per minute) after exercise
+        * `Rest`: Resting pulse rate (beats per minute)
+        * `Smoke`: 1=smoker or 0=nonsmoker
+        * `Sex`: 1=female or 0=male
+        * `Exercise`: Typical hours of exercise (per week)
+        * `Hgt`: Height (in inches)
+        * `Wgt`: Weight (in pounds)
+
+## Probability distributions
+
+1. **Plot** each variable in the dataset using an appropriate plot. No need to be fancy with it, unless you want to.
+
+2. **What probability distribution best represents each variable**? For example, uniform, normal, binomial, etc. You can stick to just the distributions we've talked about in class -- no need to go researching new and unusual distributions (unless you want to). 
+
+3. Briefly describe (1 to 2 sentences max) **why you selected each distribution** in the previous question. This need not be technical or extremely detailed.
+
+## Sampling distributions
+
+4. For resting pulse rate (`Rest`), what is the **sampling distribution of the mean**? Specifically, what *distribution*, what is its *mean*, and what is its *variance*?
+
+5. For height (`Hgt`), what is the **sampling distribution of the mean**? Specifically, what *distribution*, what is its *mean*, and what is its *variance*?
+
+6. For smoking status (`Smoke`), what is the **sampling distribution of the mean**? Specifically, what *distribution*, what is its *mean*, and what is its *variance*?
+
+## Confidence intervals
+
+7. Construct the **95% confidence interval** for the mean of resting pulse rate (`Rest`).
+
+8. Based on the confidence interval, what can you say about whether this sample comes from a **population** with a mean of 65?
+
+9. Construct the 99% confidence interval for the mean of proportion smokers (`Smoke`).
+
+10. Based on the confidence interval, what can you say about whether this sample comes from a **population** with 15% smokers?
+
+

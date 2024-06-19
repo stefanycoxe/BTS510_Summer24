@@ -67,6 +67,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -246,6 +275,10 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#sampling-and-estimation" id="toc-sampling-and-estimation" class="nav-link active" data-scroll-target="#sampling-and-estimation">Sampling and estimation</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
+  <li><a href="#probability-distributions" id="toc-probability-distributions" class="nav-link" data-scroll-target="#probability-distributions">Probability distributions</a></li>
+  <li><a href="#sampling-distributions" id="toc-sampling-distributions" class="nav-link" data-scroll-target="#sampling-distributions">Sampling distributions</a></li>
+  <li><a href="#confidence-intervals" id="toc-confidence-intervals" class="nav-link" data-scroll-target="#confidence-intervals">Confidence intervals</a></li>
   </ul>
 </nav>
     </div>
@@ -273,8 +306,53 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="sampling-and-estimation" class="level2">
 <h2 class="anchored" data-anchor-id="sampling-and-estimation">Sampling and estimation</h2>
-<p>Not ready yet</p>
-<p>Check back soon…</p>
+<ul>
+<li><p><strong>Due Sunday, June 23 by end of day (midnight)</strong></p></li>
+<li><p>Complete the assignment in a Quarto (.qmd) document and render it to HTML and PDF. Email all 3 files (.qmd, .html, .pdf) to Stefany, Yujie, and Michael. <strong>Be sure to look at your output files and check that they’ve rendered correctly.</strong></p></li>
+</ul>
+</section>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<ul>
+<li><code>Pulse</code> dataset from the <strong>Stat2Data</strong> package
+<ul>
+<li>A dataset with <span class="math inline">\(n\)</span> = 232 observations on the following 7 variables.
+<ul>
+<li><code>Active</code>: Pulse rate (beats per minute) after exercise</li>
+<li><code>Rest</code>: Resting pulse rate (beats per minute)</li>
+<li><code>Smoke</code>: 1=smoker or 0=nonsmoker</li>
+<li><code>Sex</code>: 1=female or 0=male</li>
+<li><code>Exercise</code>: Typical hours of exercise (per week)</li>
+<li><code>Hgt</code>: Height (in inches)</li>
+<li><code>Wgt</code>: Weight (in pounds)</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="probability-distributions" class="level2">
+<h2 class="anchored" data-anchor-id="probability-distributions">Probability distributions</h2>
+<ol type="1">
+<li><p><strong>Plot</strong> each variable in the dataset using an appropriate plot. No need to be fancy with it, unless you want to.</p></li>
+<li><p><strong>What probability distribution best represents each variable</strong>? For example, uniform, normal, binomial, etc. You can stick to just the distributions we’ve talked about in class – no need to go researching new and unusual distributions (unless you want to).</p></li>
+<li><p>Briefly describe (1 to 2 sentences max) <strong>why you selected each distribution</strong> in the previous question. This need not be technical or extremely detailed.</p></li>
+</ol>
+</section>
+<section id="sampling-distributions" class="level2">
+<h2 class="anchored" data-anchor-id="sampling-distributions">Sampling distributions</h2>
+<ol start="4" type="1">
+<li><p>For resting pulse rate (<code>Rest</code>), what is the <strong>sampling distribution of the mean</strong>? Specifically, what <em>distribution</em>, what is its <em>mean</em>, and what is its <em>variance</em>?</p></li>
+<li><p>For height (<code>Hgt</code>), what is the <strong>sampling distribution of the mean</strong>? Specifically, what <em>distribution</em>, what is its <em>mean</em>, and what is its <em>variance</em>?</p></li>
+<li><p>For smoking status (<code>Smoke</code>), what is the <strong>sampling distribution of the mean</strong>? Specifically, what <em>distribution</em>, what is its <em>mean</em>, and what is its <em>variance</em>?</p></li>
+</ol>
+</section>
+<section id="confidence-intervals" class="level2">
+<h2 class="anchored" data-anchor-id="confidence-intervals">Confidence intervals</h2>
+<ol start="7" type="1">
+<li><p>Construct the <strong>95% confidence interval</strong> for the mean of resting pulse rate (<code>Rest</code>).</p></li>
+<li><p>Based on the confidence interval, what can you say about whether this sample comes from a <strong>population</strong> with a mean of 65?</p></li>
+<li><p>Construct the 99% confidence interval for the mean of proportion smokers (<code>Smoke</code>).</p></li>
+<li><p>Based on the confidence interval, what can you say about whether this sample comes from a <strong>population</strong> with 15% smokers?</p></li>
+</ol>
 
 
 </section>

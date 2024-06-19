@@ -1674,7 +1674,7 @@
     "href": "assignments/hw3.html",
     "title": "Homework 3",
     "section": "",
-    "text": "Not ready yet\nCheck back soon…",
+    "text": "Due Sunday, June 23 by end of day (midnight)\nComplete the assignment in a Quarto (.qmd) document and render it to HTML and PDF. Email all 3 files (.qmd, .html, .pdf) to Stefany, Yujie, and Michael. Be sure to look at your output files and check that they’ve rendered correctly.",
     "crumbs": [
       "Assignments",
       "Homework 3"
@@ -1685,7 +1685,51 @@
     "href": "assignments/hw3.html#sampling-and-estimation",
     "title": "Homework 3",
     "section": "",
-    "text": "Not ready yet\nCheck back soon…",
+    "text": "Due Sunday, June 23 by end of day (midnight)\nComplete the assignment in a Quarto (.qmd) document and render it to HTML and PDF. Email all 3 files (.qmd, .html, .pdf) to Stefany, Yujie, and Michael. Be sure to look at your output files and check that they’ve rendered correctly.",
+    "crumbs": [
+      "Assignments",
+      "Homework 3"
+    ]
+  },
+  {
+    "objectID": "assignments/hw3.html#data",
+    "href": "assignments/hw3.html#data",
+    "title": "Homework 3",
+    "section": "Data",
+    "text": "Data\n\nPulse dataset from the Stat2Data package\n\nA dataset with \\(n\\) = 232 observations on the following 7 variables.\n\nActive: Pulse rate (beats per minute) after exercise\nRest: Resting pulse rate (beats per minute)\nSmoke: 1=smoker or 0=nonsmoker\nSex: 1=female or 0=male\nExercise: Typical hours of exercise (per week)\nHgt: Height (in inches)\nWgt: Weight (in pounds)",
+    "crumbs": [
+      "Assignments",
+      "Homework 3"
+    ]
+  },
+  {
+    "objectID": "assignments/hw3.html#probability-distributions",
+    "href": "assignments/hw3.html#probability-distributions",
+    "title": "Homework 3",
+    "section": "Probability distributions",
+    "text": "Probability distributions\n\nPlot each variable in the dataset using an appropriate plot. No need to be fancy with it, unless you want to.\nWhat probability distribution best represents each variable? For example, uniform, normal, binomial, etc. You can stick to just the distributions we’ve talked about in class – no need to go researching new and unusual distributions (unless you want to).\nBriefly describe (1 to 2 sentences max) why you selected each distribution in the previous question. This need not be technical or extremely detailed.",
+    "crumbs": [
+      "Assignments",
+      "Homework 3"
+    ]
+  },
+  {
+    "objectID": "assignments/hw3.html#sampling-distributions",
+    "href": "assignments/hw3.html#sampling-distributions",
+    "title": "Homework 3",
+    "section": "Sampling distributions",
+    "text": "Sampling distributions\n\nFor resting pulse rate (Rest), what is the sampling distribution of the mean? Specifically, what distribution, what is its mean, and what is its variance?\nFor height (Hgt), what is the sampling distribution of the mean? Specifically, what distribution, what is its mean, and what is its variance?\nFor smoking status (Smoke), what is the sampling distribution of the mean? Specifically, what distribution, what is its mean, and what is its variance?",
+    "crumbs": [
+      "Assignments",
+      "Homework 3"
+    ]
+  },
+  {
+    "objectID": "assignments/hw3.html#confidence-intervals",
+    "href": "assignments/hw3.html#confidence-intervals",
+    "title": "Homework 3",
+    "section": "Confidence intervals",
+    "text": "Confidence intervals\n\nConstruct the 95% confidence interval for the mean of resting pulse rate (Rest).\nBased on the confidence interval, what can you say about whether this sample comes from a population with a mean of 65?\nConstruct the 99% confidence interval for the mean of proportion smokers (Smoke).\nBased on the confidence interval, what can you say about whether this sample comes from a population with 15% smokers?",
     "crumbs": [
       "Assignments",
       "Homework 3"
