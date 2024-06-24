@@ -11,7 +11,7 @@ title: "Homework 3"
 ## Data
 
 * `Pulse` dataset from the **Stat2Data** package
-    * A dataset with $n$ = 232 observations on the following 7 variables.
+    * A dataset with $n$ = 232 observations on the following 7 variables
         * `Active`: Pulse rate (beats per minute) after exercise
         * `Rest`: Resting pulse rate (beats per minute)
         * `Smoke`: 1=smoker or 0=nonsmoker

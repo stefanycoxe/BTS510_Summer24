@@ -64,6 +64,12 @@ National Research Council, Division of Behavioral, Committee on National Statist
 
 Rubin, D. B. (1976). Inference and missing data. Biometrika, 63(3), 581-592.
 
+## Tests of proportions
+
+Agresti, A. (1996). An introduction to categorical data analysis.
+
+Agresti, A. (2012). Categorical data analysis (Vol. 792). John Wiley & Sons.
+
 ## Special Topics for Final Project
 
 ### Heterogeneity

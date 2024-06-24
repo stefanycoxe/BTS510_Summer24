@@ -1,0 +1,727 @@
+---
+title: "Introduction to Biostatistics"
+format:
+  # html: 
+  #   toc: true
+  #   toc-location: left
+  #   slide-level: 3
+  #   number-sections: true
+  #   toc-depth: 2
+  #   self-contained: true
+  #   #output-file: "Mult22-1-handout"
+  # pdf: 
+  #   toc: true
+  #   number-sections: true
+  #   #slide-level: 3
+  #   toc-depth: 2
+  #   shift-heading-level-by: 0
+  #   number-offset: [2]
+  revealjs:
+    toc: false
+    number-sections: true
+    #slide-level: 3
+    scrollable: true
+    embed-resources: true
+    slide-number: true
+    width: 1200
+knitr: 
+  opts_chunk:
+    echo: true
+    message: false
+    warning: false
+---
+
+```{r, include = FALSE, echo = FALSE, wanring = FALSE, message= FALSE}
+library(tidyverse)
+theme_set(theme_classic(base_size = 16))
+set.seed(12345)
+options(scipen= 100)
+```
+
+# Learning objectives
+
+## Learning objectives
+
+* *Describe* the logic of **hypothesis testing**
+* *Interpret* tests comparing **one sample** to hypothesized value
+* *Relate* **hypothesis testing** to **confidence intervals**
+* *Recognize* when to use a **nonparametric test**
+
+# Hypothesis testing
+
+## History of hypothesis testing
+
+* William Gossett (Student)
+  * $t$ distribution, $t$-test
+* Sir Ronald Fisher
+  * "Significance testing"
+  * $p$-values, $\alpha$ = .05, $\beta$ = .2, degrees of freedom
+* Jerzy Neyman, Karl Pearson, Egon Pearson
+  * "Hypothesis testing"
+
+## Null and alternative hypotheses
+
+* *Null* hypothesis = no effect in *population*
+  * $H_0$
+* *Alternative* hypothesis = effect in *population*
+  * $H_1$ or $H_A$
+* If there is enough evidence, we can **reject $H_0$**
+  * Otherwise, we *retain* or *accept* $H_0$
+  * **We cannot reject $H_A$**
+
+## Directional vs non-directional tests
+
+* Directional (one-tailed) tests
+  * $H_0$: $\mu \le \mu_0$
+  * $H_1$: $\mu > \mu_0$
+* Non-directional (two-tailed) tests
+  * $H_0$: $\mu = \mu_0$
+  * $H_1$: $\mu \ne \mu_0$
+
+## 95% One tailed vs two tailed
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+* One-tailed test ($H_1: \mu > 0$)
+
+```{r}
+#| code-fold: true
+ggplot(data.frame(x = c(-4, 4)), aes(x)) +
+  stat_function(fun = dnorm,
+                geom = "line",
+                xlim = c(-4, 4)) +
+  stat_function(fun = dnorm,
+                geom = "area",
+                fill = "steelblue",
+                xlim = c(-4, 1.65)) +
+  annotate("text", x = 0, y = 0.1, label = "95%", color = "white", size = 6) +
+  annotate("text", x = 3, y = 0.1, label = "5%", size = 6) +
+  geom_vline(xintercept = 1.65, linetype = "dashed", linewidth = 1) +
+  annotate("text", x = 2.25, y = 0.35, label = "z=1.65", size = 6) +
+  xlim(-4, 4) +
+  labs(x = "z", y = "f(z)")
+```
+
+:::
+
+::: {.column width="50%"}
+
+* Two-tailed test ($H_1: \mu \ne 0$)
+
+```{r}
+#| code-fold: true
+ggplot(data.frame(x = c(-4, 4)), aes(x)) +
+  stat_function(fun = dnorm,
+                geom = "line",
+                xlim = c(-4, 4)) +
+  stat_function(fun = dnorm,
+                geom = "area",
+                fill = "steelblue",
+                xlim = c(-1.96, 1.96)) +
+  annotate("text", x = 0, y = 0.1, label = "95%", color = "white", size = 6) +
+  annotate("text", x = 3, y = 0.1, label = "2.5%", size = 6) +
+  annotate("text", x = -3, y = 0.1, label = "2.5%", size = 6) +
+  geom_vline(xintercept = 1.96, linetype = "dashed", linewidth = 1) +
+  geom_vline(xintercept = -1.96, linetype = "dashed", linewidth = 1) +
+  annotate("text", x = 2.6, y = 0.35, label = "z=+1.96", size = 6) +
+  annotate("text", x = -2.6, y = 0.35, label = "z=-1.96", size = 6) +
+  xlim(-4, 4) +
+  labs(x = "z", y = "f(z)")
+```
+
+:::
+
+::::
+
+## Critical values and decisions
+
+* **Critical value**: Distribution value that puts $\alpha$ in the tail(s)
+  * i.e., $\pm$ 1.96 for a two-tailed $z$-test, 1.65 for a one-tailed $z$-test 
+* If the *test statistic* is more extreme than the **critical value**
+  * Reject $H_0$
+* Otherwise, retain $H_0$ or accept $H_0$
+  
+## Rejection region(s)
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+* One-tailed test ($H_1: \mu > 0$)
+
+```{r}
+#| code-fold: true
+ggplot(data.frame(x = c(-4, 4)), aes(x)) +
+  stat_function(fun = dnorm,
+                geom = "line",
+                xlim = c(-4, 4)) +
+  stat_function(fun = dnorm,
+                geom = "area",
+                fill = "steelblue",
+                xlim = c(-4, 1.65)) +
+  annotate("text", x = 0, y = 0.1, label = "95%", color = "white", size = 6) +
+  annotate("text", x = 3, y = 0.1, label = "5%", size = 6) +
+  geom_vline(xintercept = 1.65, linetype = "dashed", linewidth = 1) +
+  annotate("text", x = 2.25, y = 0.35, label = "z=1.65", size = 6) +
+  annotate("text", x = 3, y = 0.25, label = "Rejection \nregion", size = 6) +
+  xlim(-4, 4) +
+  labs(x = "z", y = "f(z)")
+```
+
+:::
+
+::: {.column width="50%"}
+
+* Two-tailed test ($H_1: \mu \ne 0$)
+
+```{r}
+#| code-fold: true
+ggplot(data.frame(x = c(-4, 4)), aes(x)) +
+  stat_function(fun = dnorm,
+                geom = "line",
+                xlim = c(-4, 4)) +
+  stat_function(fun = dnorm,
+                geom = "area",
+                fill = "steelblue",
+                xlim = c(-1.96, 1.96)) +
+  annotate("text", x = 0, y = 0.1, label = "95%", color = "white", size = 6) +
+  annotate("text", x = 3, y = 0.1, label = "2.5%", size = 6) +
+  annotate("text", x = -3, y = 0.1, label = "2.5%", size = 6) +
+  geom_vline(xintercept = 1.96, linetype = "dashed", linewidth = 1) +
+  geom_vline(xintercept = -1.96, linetype = "dashed", linewidth = 1) +
+  annotate("text", x = 2.6, y = 0.35, label = "z=+1.96", size = 6) +
+  annotate("text", x = -2.6, y = 0.35, label = "z=-1.96", size = 6) +
+  annotate("text", x = 3, y = 0.25, label = "Rejection \nregion", size = 6) +
+  annotate("text", x = -3, y = 0.25, label = "Rejection \nregion", size = 6) +
+  xlim(-4, 4) +
+  labs(x = "z", y = "f(z)")
+```
+
+:::
+
+::::
+
+## Statistical errors
+
+* Any statistical decision has some probability of being an **error**
+  * **Type I error**: *Detecting* an effect in the sample that *doesn't exist in the population*
+  * **Type II error**: *Not detecting* an effect in the sample that *does exist in the population*
+
+&nbsp; | Effect in population | No effect in population
+------|------|------
+Effect in sample | Correct | Type I error ($\alpha$)
+No effect in sample | Type II error ($\beta$) | Correct
+
+## Alpha ($\alpha$)
+
+* $\alpha$ = Probability of type I error
+  * P(*incorrectly detecting* an effect that *doesn't exist* in the population)
+* Typical $\alpha$ values: **.05**, .01, .001
+  * Correspond to 95%, 99%, 99.9% confidence levels, respectively
+* Fisher: Type I error should happen 1 time in 20 $\rightarrow$ $\alpha$ = .05
+
+## Beta ($\beta$)
+
+* $\beta$ = Probability of type II error
+  * P(*incorrectly missing* an effect that *exists* in the population)
+* Statistical power = $1 - \beta$
+  * Probability of correctly detecting an effect that does exist
+* Typical $\beta$ values: **.2**, .1
+  * Correspond to .8, .9 power, respectively
+* Fisher: Type II:Type I ratio = 4 $\rightarrow$ 0.2:0.05 = 4
+
+# One sample tests
+
+## One sample tests
+
+* Compare *one sample mean* to a *hypothesized population mean value*
+* Reject $H_0$
+  * Sample is **unlikely** to have come from a population with that mean
+* Retain $H_0$ 
+  * Sample **could have** come from a population with that mean
+* Three tests here: $z$-test, $t$-test, binomial test
+
+## $z$-test: Assumptions
+
+* Data are **continuous** (i.e., ratio or interval)
+* Data are **randomly sampled** from the population
+* Data are **independent**
+* Data are **approximately normally distributed** **OR** sample size is large enough for **normally distributed sampling distribution** (*central limit theorem*)
+* Population variance (or standard deviation) is **known**
+  
+## $z$-test: Hypotheses
+
+* Directional (one-tailed) tests
+  * $H_0$: $\mu \le \mu_0$
+  * $H_1$: $\mu > \mu_0$
+* Non-directional (two-tailed) tests
+  * $H_0$: $\mu = \mu_0$
+  * $H_1$: $\mu \ne \mu_0$
+
+## $z$-test: Test statistic
+
+$$z = \frac{\bar{X} - \mu_0}{\sigma /\sqrt{n}}$$
+
+* *Sample mean* minus *hypothesized population mean*, divided by **standard error**
+  * Standard error is the **standard deviation** of the *sampling distribution*
+
+## $z$-test: Decision
+
+* Determine critical value for $\alpha$
+  * e.g., 1.96 for 2-tailed test at $\alpha = .05$
+* If observed $z$ statistic is **more extreme** than the critical value
+  * Reject $H_0$
+* Otherwise, retain $H_0$
+
+## $z$-test: Example 1
+
+* Sample of $n$ = 50
+* **Known population SD** = 15
+* Does this sample come from a population with a mean of 100?
+* Two-tailed test
+  * $H_0$: $\mu = 100$
+  * $H_1$: $\mu \ne 100$
+
+```{r}
+#| code-fold: true
+sample1 <- rnorm(n = 50, mean = 103, sd = 15)
+```
+
+## $z$-test: Example 2
+
+$$z = \frac{\bar{X} - \mu_0}{\sigma /\sqrt{n}}$$
+
+```{r}
+mean(sample1)
+z <- (mean(sample1) - 100) / (15 / sqrt(50)) 
+z
+```
+
+* Two tailed test, $\alpha$ = .05: Critical value = 1.96
+  * Is the observed test statistic greater than +1.96 or lower than -1.96?
+  * If yes, reject $H_0$
+
+## $z$-test: Example 3
+
+* Another option: `z.test()` function from **BSDA** (Basic Statistics and Data Analysis) package
+  * `x`: Data
+  * `alternative`: "two.tailed" (default), "greater", or "less"
+  * `mu`: Hypothesized population mean ($\mu_0$) 
+  * `sigma.x`: Known population standard deviation
+  * `conf.level`: Confidence level (default = .95)
+
+## $z$-test: Example 4
+
+```{r}
+library(BSDA)
+z.test(x = sample1, 
+       alternative = "two.sided",
+       mu = 100, 
+       sigma.x = 15,
+       conf.level = .95)
+```
+
+## $z$-test: Report results
+
+* $p$-value < .05 and 95% confidence interval don't contain 100
+  * Reject $H_0: \mu = 100$
+  * This sample came from a population with a **different mean**
+* Using a **one sample $z$-test**, we rejected the null hypothesis that $\mu$ = 100, $z$ = `r round(z, 3)`, $p$ = `r round(2*(1 - pnorm(z, lower.tail = TRUE)), 3)`. 
+
+## What is the $p$-value?
+
+* P(detecting an effect this large or larger **if the null hypothesis is true**)
+
+```{r}
+#| code-fold: true
+mu0 <- paste0("mu[0]")
+ggplot(data.frame(x = c(90, 110)), aes(x)) +
+  stat_function(fun = dnorm,
+                args = list(mean = 100, sd = 15/sqrt(50)),
+                geom = "line",
+                xlim = c(90, 110)) +
+  stat_function(fun = dnorm,
+                args = list(mean = 100, sd = 15/sqrt(50)),
+                geom = "area",
+                fill = "steelblue",
+                xlim = c(100 - 1.96*15/sqrt(50), 100 + 1.96*15/sqrt(50))) +
+  stat_function(fun = dnorm,
+                args = list(mean = 100, sd = 15/sqrt(50)),
+                geom = "area",
+                fill = "red",
+                xlim = c(mean(sample1), 110)) +
+  geom_vline(xintercept = mean(sample1), linewidth = 1) +
+  annotate("text", x = mean(sample1) - 2, y = 0.15, label = "Observed \nmean", size = 6) +
+  annotate("text", x = mean(sample1) + 2, y = 0.02, label = "p-value", size = 6, color = "red") +
+  geom_vline(xintercept = 100, linewidth = 1, color = "white", linetype = "dashed") +
+  annotate("text", x = 99, y = 0.05, label = mu0, size = 6, color = "white", parse = TRUE) +
+  xlim(90, 110) +
+  labs(x = "X", y = "f(x)")
+```
+
+## $t$-test: Assumptions
+
+* Data are **continuous** (i.e., ratio or interval)
+* Data are **randomly sampled** from the population
+* Data are **independent**
+* Data are **approximately normally distributed** **OR** sample size is large enough for **normally distributed sampling distribution** (*central limit theorem*)
+* Population variance (or standard deviation) is **unknown**
+
+## Unknown population variance
+
+* Population variance is *not known* when using a $t$-test
+  * So we *estimate* it with the *sample variance*
+  
+Estimate | Definition | Computational
+-----------------|------------|---------------
+Population variance ($\sigma^2$)  | $\frac{\sum (X - \mu)^2}{N}$ | $\frac{\sum X^2 - \frac{(\sum X)^2}{N}}{N}$
+Sample variance ($s^2$)           | $\frac{\sum (X - \overline{X})^2}{n-1}$ | $\frac{\sum X^2 - \frac{(\sum X)^2}{n}}{n-1}$
+
+## $t$-test: Hypotheses
+
+* Directional (one-tailed) tests
+  * $H_0$: $\mu \le \mu_0$
+  * $H_1$: $\mu > \mu_0$
+* Non-directional (two-tailed) tests
+  * $H_0$: $\mu = \mu_0$
+  * $H_1$: $\mu \ne \mu_0$
+
+## $t$-test: Test statistic
+
+$$t = \frac{\bar{X} - \mu_0}{s /\sqrt{n}}$$
+
+* *Sample mean* minus *hypothesized population mean*, divided by **standard error**
+  * Standard error is the **standard deviation** of the *sampling distribution*
+
+## Degrees of freedom
+
+* How many independent pieces of information do we have?
+  * In general, this is the sample size ($n$)
+* But if we estimate something (e.g., $\bar{X}$) and then **use that** to estimate something else (e.g., $s^2$), we have **less information**
+  * Once you know $n - 1$ values and the mean, you know everything
+* Degrees of freedom **quantify** how much *independent information*
+
+## Degrees of freedom: $t$ distribution
+
+```{r}
+#| code-fold: true
+ggplot(data.frame(x = c(-3, 3)), aes(x)) +
+  stat_function(fun = dnorm, args = list(mean = 0, sd = 1), geom = "line", color = "black", linewidth = 1) +
+  stat_function(fun = dt, args = list(df = 1, ncp = 0), geom = "line", color = "red", linewidth = 1, linetype = "dashed") +
+  stat_function(fun = dt, args = list(df = 30, ncp = 0), geom = "line", color = "darkgreen", linewidth = 1, linetype = "dashed") +
+  ylim(0,.5) + 
+  scale_x_continuous(breaks = -3:3) +
+  annotate("text", x = 0, y = 0.29, label = "t(1)", color = "red", size = 6) +
+  annotate("text", x = 0, y = 0.37, label = "t(30)", color = "darkgreen", size = 6) +
+  annotate("text", x = 0, y = 0.43, label = "z", color = "black", size = 6) +
+  labs(x = "t", y = "f(t)") 
+```
+
+## $t$-test: Decision
+
+* Determine critical value for $\alpha$ **and degrees of freedom**
+  * Degrees of freedom = $n - 1$
+* If observed $t$ statistic is **more extreme** than the critical value
+  * Reject $H_0$
+* Otherwise, retain $H_0$
+
+## $t$-test: Example 1
+
+* Same data as for $z$-test
+* Sample of $n$ = 50
+* **Unknown population SD**
+* Does this sample come from a population with a mean of 100?
+* Two-tailed test
+  * $H_0$: $\mu = 100$
+  * $H_1$: $\mu \ne 100$
+
+## $t$-test: Example 2
+
+$$t = \frac{\bar{X} - \mu_0}{s /\sqrt{n}}$$
+
+```{r}
+mean(sample1)
+t <- (mean(sample1) - 100) / (sd(sample1) / sqrt(50)) 
+t
+```
+
+* Two tailed test, $\alpha$ = .05, df = 49: Critical value = `r round(qt(p = .025, df = 49, lower.tail = FALSE), 2)`
+  * Is the observed test statistic greater than +`r round(qt(p = .025, df = 49, lower.tail = FALSE), 2)` or lower than -`r round(qt(p = .025, df = 49, lower.tail = FALSE), 2)`?
+  * If yes, reject $H_0$
+
+## $t$-test: Example 3
+
+* Another option: `t.test()` function in **stats** package 
+  * `x`: Data
+  * `alternative`: "two.sided" (default), "greater", or "less"
+  * `mu`: Hypothesized population mean ($\mu_0$) 
+  * `conf.level`: Confidence level (default = .95)
+
+## $t$-test: Example 4
+
+```{r}
+t.test(x = sample1,
+       alternative = "two.sided",
+       mu = 100, 
+       conf.level = .95)
+```
+
+## $t$-test: Report results
+
+* $p$-value < .05 and 95% confidence interval don't contain 100
+  * Reject $H_0: \mu = 100$
+  * This sample came from a population with a different mean
+* Using a **one sample $t$-test**, we rejected the null hypothesis that $\mu$ = 100, $t(49)$ = `r round(t, 3)`, $p$ = `r round(2*(1 - pt(t, df = 49, lower.tail = TRUE)), 3)`
+
+## Compare $z$-test and $t$-test
+
+&nbsp; | $z$-test | $t$-test
+-----------|------|------
+Sample mean | `r round(mean(sample1), 2)` | `r round(mean(sample1), 2)`
+Population SD | 15 (known) | `r round(sd(sample1), 2)` (estimated)
+Test statistic | `r round(z, 3)` | `r round(t, 3)`
+Degrees of freedom | N/A | 49
+Critical value | 1.96 | `r round(qt(p = .025, df = 49, lower.tail = FALSE), 2)`
+$p$-value | `r round(2*(1 - pnorm(z, lower.tail = TRUE)), 3)` | `r round(2*(1 - pt(t, df = 49, lower.tail = TRUE)), 3)`
+Decision | Reject $H_0$ | Reject $H_0$
+
+## $\mathcal{N}(0, 1)$ vs $t(49)$
+
+```{r}
+#| code-fold: true
+ggplot(data.frame(x = c(-3, 3)), aes(x)) +
+  stat_function(fun = dnorm, args = list(mean = 0, sd = 1), geom = "line", color = "black", linewidth = 1) +
+  #stat_function(fun = dt, args = list(df = 1, ncp = 0), geom = "line", color = "red", linewidth = 1, linetype = "dashed") +
+  #stat_function(fun = dt, args = list(df = 10, ncp = 0), geom = "line", color = "darkgreen", linewidth = 1, linetype = "dashed") +
+  stat_function(fun = dt, args = list(df = 49, ncp = 0), geom = "line", color = "red", linewidth = 1, linetype = "dashed") +
+  ylim(0,.5) + 
+  scale_x_continuous(breaks = -3:3) +
+  labs(x = "", y = "") 
+```
+
+## Binomial test: Assumptions
+
+* Data are **binomial** (i.e., several 0,1 Bernoulli trials) 
+  * With same probability of success ($p$) for each trial
+* Data are **randomly sampled** from the population
+* Data are **independent**
+
+## Binomial test: Hypotheses
+
+* Directional (one-tailed) tests
+  * $H_0$: $\pi \le \pi_0$
+  * $H_1$: $\pi > \pi_0$
+* Non-directional (two-tailed) tests
+  * $H_0$: $\pi = \pi_0$
+  * $H_1$: $\pi \ne \pi_0$
+
+## Binomial test: Test and decision
+
+$P(X = x) = {m \choose x} p^x (1 - p)^{m -x}$
+
+* **Binomial test** uses the *binomial distribution*
+  * Exact test
+  * Does not require "large" sample
+  * Compare observed proportion (i.e., number of successes) to binomial distribution with hypothesized $m$ and $p$ 
+
+## Binomial test: Example 1
+
+* Sample of $n$ = 50 coin flips
+* Does this sample come from a fair coin ($\pi$ = 0.5)?
+* Two-tailed test
+  * $H_0$: $\pi = 0.5$
+  * $H_1$: $\pi \ne 0.5$
+
+```{r}
+#| code-fold: true
+sample2 <- rbinom(50, 1, 0.53)
+table(sample2)
+```
+
+## Binomial test: Example 2
+
+$P(X = x) = {m \choose x} p^x (1 - p)^{m - x}$
+
+```{r}
+#| code-fold: true
+binom_dat <- data.frame(x = 0:50, y = dbinom(0:50, 50, 0.5))
+ggplot(data = binom_dat, aes(x = x, y = y)) +
+  geom_col() +
+  #scale_x_continuous(breaks = 0:50) +
+  ylim(0,0.15) +
+  labs(x = "X", y = "P(X = x)") +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+```
+
+
+<!-- ## Binomial test: Example 4 -->
+
+<!-- ```{r} -->
+<!-- #| code-fold: true -->
+<!-- x <- c(0:50) -->
+<!-- px <- dbinom(x, 50, 0.5) -->
+<!-- binom <- data.frame(x, px) -->
+<!-- binom -->
+<!-- ``` -->
+
+
+## Binomial test: Example 3
+
+* `binom.test()` function from **stats** package
+  * `x`: number of successes 
+  * `n`: sample size 
+  * `p`: hypothesized probability of success (median = 50th %ile)  
+  * `alternative`: "two.sided" (default), "less", "greater"
+
+## Binomial test: Example 4
+
+```{r}
+binom.test(x = sum(sample2 > 0), 
+           n = length(sample2), 
+           p = 0.5, 
+           alternative = "two.sided")
+```
+
+## Binomial test: Report results
+
+* $p$-value > .05 and 95% confidence interval contain 0.5
+  * Retain $H_0: \pi = 0.5$
+  * This sample came from a population with mean = 0.5
+* Using a **binomial test**, we retained the null hypothesis that $\pi$ = 0.5, observed mean = 0.4, $p$ = 0.2026.
+
+## Alternative: $z$-test for proportion
+
+* Proportion = mean of binary (i.e., Bernoulli) variable
+  * $z$-test as test of proportion
+* Observed distribution is not normal
+  * **Sampling distribution** is normal with a "large" sample
+  * *Approximate* test based on assumption of normality
+* Assumptions, hypotheses, critical values are the same as $z$-test
+  * Replace $\mu$ with $\pi$ and $\bar{X}$ with $p$
+  
+## Proportion: $z$-test statistic
+
+$$z = \frac{p - \pi_0}{\sqrt{\pi_0(1-\pi_0)/n}}$$
+
+* If $H_0$ is true
+  * Population mean = $\pi_0$ 
+  * Population variance = $\pi_0(1-\pi_0)$
+* Works best when $p$ and $\pi$ are between 0.2 and 0.8
+
+# Non-parametric tests
+
+## Parametric vs non-parametric tests
+
+* Parametric = following a distribution
+  * e.g., sampling distribution of the mean is **normally distributed**
+* Non-parametric = not following a distribution
+  * Don't assume any particular **sampling distribution**
+  * Often assume the **variables** don't have a particular distribution
+  
+## Non-parametric tests
+
+* Many non-parametric tests
+  * Not well organized or named
+* Two commonly used one sample non-parametric tests
+  * Sign test: Test of median for ordinal+ data
+  * Wilcoxon signed rank test: Test of median for interval+ data 
+
+## Why non-parametric tests?
+
+* Non-numeric data (i.e., nominal or ordinal)
+* Continuous but very non-normal variables
+* **Especially** with smaller samples, where CLT doesn't apply
+* Note that **parametric** tests are *more powerful* than **non-parametric** tests if their assumptions are met
+
+## Sign test: Assumptions
+
+* Data are **at least ordinal** (ordinal, interval, or ratio)
+* Data are **randomly sampled** from the population
+* No assumptions about distribution of the data
+* No assumptions about sampling distribution of the median
+* Hypotheses are about **median**
+
+## Sign test: Logic
+
+* Count observations **above** and **below** hypothesized median
+  * If observed median = population median: 50% above, 50% below
+* Compare to *binomial distribution* to determine probability of observed number of "successes"
+
+## Sign test: Example
+
+* `binom.test()` function from **stats** package
+  * `x`: number of successes (here, values > hypothesized median)
+  * `n`: sample size 
+  * `p`: hypothesized probability of success (median = 50th %ile)  
+  * `alternative`: "two.sided" (default), "less", "greater"
+
+## Sign test: Example
+
+```{r}
+binom.test(x = sum(sample1 > 100), 
+           n = length(sample1), 
+           p = 0.5, 
+           alternative = "two.sided")
+```
+
+## Wilcoxon Signed rank test: Assumptions
+
+* Data are **at least interval** (interval or ratio)
+* Data are **randomly sampled** from the population
+* No assumptions about distribution of the data
+* No assumptions about sampling distribution of the median
+* Hypotheses are about **median** 
+
+## Signed rank test: Logic
+
+* Rank **absolute values** of all values
+* Above hypothesized median: Assign "+" 
+* Below hypothesized median: Assign "-" 
+* Add positive ranks, add negative ranks
+* Compare to distribution under the null hypothesis
+  * i.e., sum of positive ranks = sum of negative ranks
+
+## Signed rank test: Example 
+
+* `wilcox.test()` function from **stats** package
+
+```{r}
+median(sample1)
+wilcox.test(sample1, mu = 100, alternative = "two.sided")
+```
+
+# Summary
+
+## Hypothesis testing
+
+* Null and alternative hypotheses
+  * Retain or reject $H_0$
+* Hypotheses are about the **population** value (mean, median, etc.)
+  * We use the sample to make **inference** about the population
+* If we reject $H_0$, that just means that it's **very unlikely** that the sample came from a population with that mean
+  * We can still make a type I error
+
+## Deciding on a test
+
+* Normal outcome, known $\sigma^2$: $z$-test
+* Normal outcome, unknown $\sigma^2$: $t$-test
+* Proportion: Binomial test for small sample, $z$-test for large sample
+* Ordinal or very non-normal, especially with small sample: Non-parametric test
+
+# In-class activities
+
+## In-class activities
+
+* Assess some hypotheses about some variables
+  * What type of variable?
+  * What type of test?
+  * What do we conclude?
+
+## Next week
+
+* Tests for two unrelated samples
+* Tests for two related samples
+* Chi-square test of independence for two binary variables
+

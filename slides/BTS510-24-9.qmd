@@ -1,0 +1,73 @@
+---
+title: "Introduction to Biostatistics"
+format:
+  # html: 
+  #   toc: true
+  #   toc-location: left
+  #   slide-level: 3
+  #   number-sections: true
+  #   toc-depth: 2
+  #   self-contained: true
+  #   #output-file: "Mult22-1-handout"
+  # pdf: 
+  #   toc: true
+  #   number-sections: true
+  #   #slide-level: 3
+  #   toc-depth: 2
+  #   shift-heading-level-by: 0
+  #   number-offset: [2]
+  revealjs:
+    toc: false
+    number-sections: true
+    #slide-level: 3
+    scrollable: true
+    embed-resources: true
+    slide-number: true
+    width: 1200
+knitr: 
+  opts_chunk:
+    echo: true
+    message: false
+    warning: false
+---
+
+```{r, include = FALSE, echo = FALSE, wanring = FALSE, message= FALSE}
+library(tidyverse)
+theme_set(theme_classic(base_size = 16))
+set.seed(12345)
+options(scipen= 100)
+```
+
+# Learning objectives
+
+## Learning objectives
+
+* *Interpret* tests comparing **two unrelated samples**
+* *Interpret* tests comparing **two related samples**
+* *Interpret* chi-square test for **two binary variables**
+
+
+# Two sample tests
+
+## $z$-test
+
+
+## $t$-test
+
+
+## Proportions
+
+
+## Equal vs unequal variances
+
+
+
+
+# In-class activities
+
+## In-class activities
+
+
+
+## Next week
+
