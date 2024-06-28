@@ -1,0 +1,195 @@
+---
+title: "BTS 510 Lab 3"
+format:
+  html:
+    embed-resources: true
+    self-contained-math: true
+    html-math-method: katex
+    number-sections: true
+    toc: true
+    code-tools: true
+    code-block-bg: true
+    code-block-border-left: "#31BAE9"
+---
+
+```{r}
+#| label: setup
+set.seed(12345)
+library(tidyverse)
+library(Stat2Data)
+theme_set(theme_classic(base_size = 16))
+```
+
+::: {.callout-note}
+* **tidyverse** really just for **ggplot2**
+* The data comes from the **Stat2Data** package, which I've loaded here
+* `theme_set(theme_classic(base_size = 16))` makes the plots a little simpler and makes their fonts a bit bigger -- this is purely my preference
+:::
+
+## Learning objectives
+
+* Understand the different **types** of variables that can be measured
+* Think about variables in terms of **central tendency** or **location**
+* Think about variables in terms of **dispersion** or **spread**
+* Start to think about variable **distributions** and **plots**
+
+## Read in data
+
+`Pulse` dataset from the **Stat2Data** package
+  
+* A dataset with 232 observations on the following 7 variables.
+  * `Active`: Pulse rate (beats per minute) after exercise
+  * `Rest`: Resting pulse rate (beats per minute)
+  * `Smoke`: 1=smoker or 0=nonsmoker
+  * `Sex`: 1=female or 0=male
+  * `Exercise`: Typical hours of exercise (per week)
+  * `Hgt`: Height (in inches)
+  * `Wgt`: Weight (in pounds)
+  
+```{r}
+data(Pulse)
+head(Pulse)
+str(Pulse)
+```
+
+::: {.callout-note}
+Notice that all of the variables are type `int` in the dataframe. This probably works in this situation, but you can "coerce" the variables into different types, such as `Smoke` and `Sex` into `factor` variables.
+:::
+
+* What type of variable (*nominal, ordinal, interval, ratio*) are each variable?
+  * Think about the criteria: category vs number, ordered vs not, meaningful 0
+  * Are some ambiguous?
+  
+## Central tendency
+
+* Based on the *variable types* you decided on above, estimate the appropriate measure(s) of *central tendency* for each variable
+
+* Continuous(ish) variables
+
+```{r}
+mean(Pulse$Active)
+median(Pulse$Active)
+mean(Pulse$Rest)
+median(Pulse$Rest)
+mean(Pulse$Exercise)
+median(Pulse$Exercise)
+mean(Pulse$Hgt)
+median(Pulse$Hgt)
+mean(Pulse$Wgt)
+median(Pulse$Wgt)
+```
+
+* Binary variables
+
+```{r}
+mean(Pulse$Smoke)
+median(Pulse$Smoke)
+mean(Pulse$Sex)
+median(Pulse$Sex)
+```
+
+## Dispersion
+
+* Based on the *variable types* you decided on above, estimate the appropriate measure(s) of *dispersion* for each variable
+  * The variables `Smoke` and `Sex` are a little tricky
+
+* Percentiles
+
+```{r}
+quantile(Pulse$Active, c(0.25, 0.75))
+quantile(Pulse$Rest, c(0.25, 0.75))
+quantile(Pulse$Smoke, c(0.25, 0.75))
+quantile(Pulse$Sex, c(0.25, 0.75))
+quantile(Pulse$Exercise, c(0.25, 0.75))
+quantile(Pulse$Hgt, c(0.25, 0.75))
+quantile(Pulse$Wgt, c(0.25, 0.75))
+```
+
+* Standard deviation
+
+```{r}
+sd(Pulse$Active)
+sd(Pulse$Rest)
+sd(Pulse$Exercise)
+sd(Pulse$Hgt)
+sd(Pulse$Wgt)
+```
+
+## Plots
+
+* Based on the plots, what should you present for each variable? 
+  * Does what you presented do a good job representing each variable?
+
+::: {.callout-note}
+Code is hidden, so you can look at it if you'd like, but don't panic about not understanding it
+:::
+
+* `Active`
+
+```{r}
+#| code-fold: true
+ggplot(data = Pulse, aes(x = Active)) + 
+  geom_histogram(bins = 30, color = "grey80") +
+  geom_vline(xintercept = mean(Pulse$Active), color = "blue", linewidth = 1.5) +
+  geom_vline(xintercept = median(Pulse$Active), color = "red", linewidth = 1.5, linetype = "dashed")
+```
+
+* `Rest`
+
+```{r}
+#| code-fold: true
+ggplot(data = Pulse, aes(x = Rest)) + 
+  geom_histogram(bins = 30, color = "grey80") +
+  geom_vline(xintercept = mean(Pulse$Rest), color = "blue", linewidth = 1.5) +
+  geom_vline(xintercept = median(Pulse$Rest), color = "red", linewidth = 1.5, linetype = "dashed")
+```
+
+* `Smoke`
+
+```{r}
+#| code-fold: true
+ggplot(data = Pulse, aes(x = Smoke)) + 
+  geom_histogram(bins = 30, color = "grey80") +
+  geom_vline(xintercept = mean(Pulse$Smoke), color = "blue", linewidth = 1.5) +
+  geom_vline(xintercept = median(Pulse$Smoke), color = "red", linewidth = 1.5, linetype = "dashed")
+```
+
+* `Sex`
+
+```{r}
+#| code-fold: true
+ggplot(data = Pulse, aes(x = Sex)) + 
+  geom_histogram(bins = 30, color = "grey80") +
+  geom_vline(xintercept = mean(Pulse$Sex), color = "blue", linewidth = 1.5) +
+  geom_vline(xintercept = median(Pulse$Sex), color = "red", linewidth = 1.5, linetype = "dashed")
+```
+
+* `Exercise`
+
+```{r}
+#| code-fold: true
+ggplot(data = Pulse, aes(x = Exercise)) + 
+  geom_histogram(bins = 30, color = "grey80") +
+  geom_vline(xintercept = mean(Pulse$Exercise), color = "blue", linewidth = 1.5) +
+  geom_vline(xintercept = median(Pulse$Exercise), color = "red", linewidth = 1.5, linetype = "dashed")
+```
+
+* `Hgt`
+
+```{r}
+#| code-fold: true
+ggplot(data = Pulse, aes(x = Hgt)) + 
+  geom_histogram(bins = 30, color = "grey80") +
+  geom_vline(xintercept = mean(Pulse$Hgt), color = "blue", linewidth = 1.5) +
+  geom_vline(xintercept = median(Pulse$Hgt), color = "red", linewidth = 1.5, linetype = "dashed")
+```
+
+* `Wgt`
+
+```{r}
+#| code-fold: true
+ggplot(data = Pulse, aes(x = Wgt)) + 
+  geom_histogram(bins = 30, color = "grey80") +
+  geom_vline(xintercept = mean(Pulse$Wgt), color = "blue", linewidth = 1.5) +
+  geom_vline(xintercept = median(Pulse$Wgt), color = "red", linewidth = 1.5, linetype = "dashed")
+```

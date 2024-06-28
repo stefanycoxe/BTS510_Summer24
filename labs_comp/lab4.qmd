@@ -1,0 +1,107 @@
+---
+title: "BTS 510 Lab 4"
+format:
+  html:
+    embed-resources: true
+    self-contained-math: true
+    html-math-method: katex
+    number-sections: true
+    toc: true
+    code-tools: true
+    code-block-bg: true
+    code-block-border-left: "#31BAE9"
+---
+
+```{r}
+#| label: setup
+set.seed(12345)
+library(tidyverse)
+library(Stat2Data)
+theme_set(theme_classic(base_size = 16))
+```
+
+## Learning objectives
+
+* Select an **appropriate plot** for the **variable type**
+* Create plots in **ggplot2** 
+
+## Data 
+
+* `ICU` data from the **Stat2Data** package
+  * `ID`: Patient ID code
+  * `Survive`: 1 = patient survived to discharge or 0 = patient died
+  * `Age`: Age (in years)
+  * `AgeGroup`: 1 = young (under 50), 2 = middle (50-69), 3 = old (70+)
+  * `Sex`: 1 = female or 0 = male
+  * `Infection`: 1 = infection suspected or 0 = no infection
+  * `SysBP`: Systolic blood pressure (in mm of Hg)
+  * `Pulse`: Heart rate (beats per minute)
+  * `Emergency`: 1 = emergency admission or 0 = elective admission
+
+* Convert the factor variables to factor variables, as in the lecture
+  * `as.factor()` function
+
+```{r}
+library(Stat2Data)
+data(ICU)
+nrow(ICU)
+ICU$Survive <- as.factor(ICU$Survive)
+ICU$Sex <- as.factor(ICU$Sex)
+ICU$Infection <- as.factor(ICU$Infection)
+ICU$Emergency <- as.factor(ICU$Emergency)
+ICU$AgeGroup <- as.factor(ICU$AgeGroup)
+```
+
+
+## Tasks
+
+1. Make a histogram of blood pressure. Make the bars grey with a black outline. Add vertical lines at the standard cutoffs ([https://newsroom.heart.org/news/high-blood-pressure-redefined-for-first-time-in-14-years-130-is-the-new-high](https://newsroom.heart.org/news/high-blood-pressure-redefined-for-first-time-in-14-years-130-is-the-new-high)) of 120, 130, and 140. Make those lines green, yellow, and red, respectively.
+
+```{r}
+plot1a <- ggplot(data = ICU, aes(x = SysBP)) +
+    geom_histogram(color = "black", fill = "grey")
+plot1a
+
+plot1b <- plot1a +
+    geom_vline(xintercept = 120, color = "green", linewidth = 1.5) +
+    geom_vline(xintercept = 130, color = "yellow", linewidth = 1.5) +
+    geom_vline(xintercept = 140, color = "red", linewidth = 1.5)
+plot1b
+```
+
+
+2. Make dotplots of blood pressure for emergency vs elective admission patients. Try different numbers of bins or binwidths. 
+
+```{r}
+plot2a <- ggplot(data = ICU, aes(x = Emergency, y = SysBP)) +
+    geom_dotplot(binwidth = 1,
+                 method = "histodot",
+                 binaxis = "y",
+                 stackdir = "center")
+plot2b <- ggplot(data = ICU, aes(x = Emergency, y = SysBP)) +
+    geom_dotplot(binwidth = 5,
+                 method = "histodot",
+                 binaxis = "y",
+                 stackdir = "center")
+plot2c <- ggplot(data = ICU, aes(x = Emergency, y = SysBP)) +
+    geom_dotplot(binwidth = 10,
+                 method = "histodot",
+                 binaxis = "y",
+                 stackdir = "center")
+plot2a
+plot2b
+plot2c
+```
+
+
+3. Make a scatterplot of blood pressure (Y) vs age (X). Add a straight line to the plot. Does it look like blood pressure increases, decreases, or is relatively stable over ages?
+
+```{r}
+ggplot(data = ICU, aes(x = Age, y = SysBP)) +
+    geom_point() +
+    geom_smooth(method = "lm", se = FALSE)
+ggplot(data = ICU, aes(x = Age, y = SysBP)) +
+    geom_point() +
+    geom_smooth(method = "lm", se = TRUE)
+```
+

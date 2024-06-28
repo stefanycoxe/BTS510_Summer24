@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>BTS 510  Summer 2024 - BTS 510 Lab 7</title>
+<title>BTS 510  Summer 2024 - BTS 510 Lab 8</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -4708,9 +4708,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
-      BTS 510 &lt;br&gt; Summer 2024
-      </li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs_comp/index.html">Complete labs</a></li><li class="breadcrumb-item"><a href="../labs_comp/lab8.html">BTS 510 Lab 8</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label onclick="window.quartoOpenSearch();">
@@ -4826,13 +4824,13 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
  <span class="menu-text">Complete labs</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../labs_comp/index.html" class="sidebar-item-text sidebar-link">
@@ -4871,7 +4869,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../labs_comp/lab8.html" class="sidebar-item-text sidebar-link">
+  <a href="../labs_comp/lab8.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">BTS 510 Lab 8</span></a>
   </div>
 </li>
@@ -4935,23 +4933,23 @@ window.Quarto = {
    
   <ul>
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">1</span> Learning objectives</a></li>
-  <li><a href="#vary-population-distribution-sample-size-confidence-interval-level" id="toc-vary-population-distribution-sample-size-confidence-interval-level" class="nav-link" data-scroll-target="#vary-population-distribution-sample-size-confidence-interval-level"><span class="header-section-number">2</span> Vary population distribution, sample size, confidence interval level</a>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data"><span class="header-section-number">2</span> Data</a></li>
+  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks"><span class="header-section-number">3</span> Tasks</a>
   <ul class="collapse">
-  <li><a href="#normally-distributed-population-sim-mathcalnmu-10-sigma2-25" id="toc-normally-distributed-population-sim-mathcalnmu-10-sigma2-25" class="nav-link" data-scroll-target="#normally-distributed-population-sim-mathcalnmu-10-sigma2-25"><span class="header-section-number">2.1</span> Normally distributed: <span class="math inline">population \sim \mathcal{N}(\mu = 10, \sigma^2 = 25)</span></a></li>
-  <li><a href="#bernoulli-distributed-population-sim-b0.3" id="toc-bernoulli-distributed-population-sim-b0.3" class="nav-link" data-scroll-target="#bernoulli-distributed-population-sim-b0.3"><span class="header-section-number">2.2</span> Bernoulli distributed: <span class="math inline">population \sim B(0.3)</span></a></li>
-  <li><a href="#binomial-distributed-population-sim-bin50-0.3" id="toc-binomial-distributed-population-sim-bin50-0.3" class="nav-link" data-scroll-target="#binomial-distributed-population-sim-bin50-0.3"><span class="header-section-number">2.3</span> Binomial distributed: <span class="math inline">population \sim Bin(50, 0.3)</span></a></li>
-  <li><a href="#poisson-distributed-population-sim-poisson1.5" id="toc-poisson-distributed-population-sim-poisson1.5" class="nav-link" data-scroll-target="#poisson-distributed-population-sim-poisson1.5"><span class="header-section-number">2.4</span> Poisson distributed: <span class="math inline">population \sim Poisson(1.5)</span></a></li>
+  <li><a href="#gender-split" id="toc-gender-split" class="nav-link" data-scroll-target="#gender-split"><span class="header-section-number">3.1</span> Gender split</a></li>
+  <li><a href="#smoking-rate" id="toc-smoking-rate" class="nav-link" data-scroll-target="#smoking-rate"><span class="header-section-number">3.2</span> Smoking rate</a></li>
+  <li><a href="#elevated-pulse-rate" id="toc-elevated-pulse-rate" class="nav-link" data-scroll-target="#elevated-pulse-rate"><span class="header-section-number">3.3</span> Elevated pulse rate</a></li>
+  <li><a href="#height-among-men" id="toc-height-among-men" class="nav-link" data-scroll-target="#height-among-men"><span class="header-section-number">3.4</span> Height among men</a></li>
   </ul></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">3</span> Summary</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs_comp/index.html">Complete labs</a></li><li class="breadcrumb-item"><a href="../labs_comp/lab8.html">BTS 510 Lab 8</a></li></ol></nav>
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">BTS 510 Lab 7</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">BTS 510 Lab 8</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -4988,163 +4986,320 @@ window.Quarto = {
 <section id="learning-objectives" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">1</span> Learning objectives</h2>
 <ul>
-<li><strong>Compare</strong> and <strong>contrast</strong> <em>point estimates</em> and <em>interval estimates</em></li>
-<li><strong>Construct</strong> <em>confidence intervals</em></li>
-<li><strong>Interpret</strong> <em>confidence intervals</em></li>
+<li><em>Describe</em> the logic of <strong>hypothesis testing</strong></li>
+<li><em>Interpret</em> tests comparing <strong>one sample</strong> to hypothesized value</li>
+<li><em>Relate</em> <strong>hypothesis testing</strong> to <strong>confidence intervals</strong></li>
+<li><em>Recognize</em> when to use a <strong>nonparametric test</strong></li>
 </ul>
 </section>
-<section id="vary-population-distribution-sample-size-confidence-interval-level" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="vary-population-distribution-sample-size-confidence-interval-level"><span class="header-section-number">2</span> Vary population distribution, sample size, confidence interval level</h2>
-<section id="normally-distributed-population-sim-mathcalnmu-10-sigma2-25" class="level3" data-number="2.1">
-<h3 data-number="2.1" class="anchored" data-anchor-id="normally-distributed-population-sim-mathcalnmu-10-sigma2-25"><span class="header-section-number">2.1</span> Normally distributed: <span class="math inline">population \sim \mathcal{N}(\mu = 10, \sigma^2 = 25)</span></h3>
+<section id="data" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="data"><span class="header-section-number">2</span> Data</h2>
 <ul>
-<li>Two sample sizes: 30 and 100</li>
-<li>Note that <code>rnorm()</code> takes standard deviation as an argument, not variance</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>norm30 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">30</span>, <span class="at">mean =</span> <span class="dv">10</span>, <span class="at">sd =</span> <span class="dv">5</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>norm100 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">100</span>, <span class="at">mean =</span> <span class="dv">10</span>, <span class="at">sd =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<li><code>Pulse</code> dataset from the <strong>Stat2Data</strong> package
 <ul>
-<li>Calculate the means, variances, and standard deviations for each sample</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(norm30)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 10.39404</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(norm100)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 11.11517</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(norm30)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 22.00669</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(norm100)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 34.24083</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(norm30)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 4.691129</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(norm100)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 5.851567</code></pre>
-</div>
-</div>
+<li>A dataset with <span class="math inline">n</span> = 232 observations on the following 7 variables.
 <ul>
-<li>Construct the 95% and 99% confidence intervals for each mean</li>
-</ul>
-<p><span class="math inline">[\bar{X} - z_{1-\alpha/2}\ \sqrt{\frac{\sigma^2}{n}}, \bar{X} + z_{1-\alpha/2}\ \sqrt{\frac{\sigma^2}{n}}]</span></p>
+<li><code>Active</code>: Pulse rate (beats per minute) after exercise</li>
+<li><code>Rest</code>: Resting pulse rate (beats per minute)</li>
+<li><code>Smoke</code>: 1=smoker or 0=nonsmoker</li>
+<li><code>Sex</code>: 1=female or 0=male</li>
+<li><code>Exercise</code>: Typical hours of exercise (per week)</li>
+<li><code>Hgt</code>: Height (in inches)</li>
+<li><code>Wgt</code>: Weight (in pounds)</li>
+</ul></li>
+</ul></li>
+<li>Convert the factor variables to factor variables, as in the lecture
 <ul>
-<li>I’m just having R make the calculations for me, rather than doing by hand
-<ul>
-<li>I’m also doing it in several steps so you can see where each piece comes from, but you can do it all in one step if you’re confident</li>
+<li><code>as.factor()</code> function</li>
 </ul></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>norm30_95moe <span class="ot">&lt;-</span> <span class="fl">1.96</span> <span class="sc">*</span> <span class="fu">sqrt</span>(<span class="fu">var</span>(norm30)<span class="sc">/</span><span class="dv">30</span>)</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>norm30_95lcl <span class="ot">&lt;-</span> <span class="fu">mean</span>(norm30) <span class="sc">-</span> norm30_95moe</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>norm30_95ucl <span class="ot">&lt;-</span> <span class="fu">mean</span>(norm30) <span class="sc">+</span> norm30_95moe</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>norm30_99moe <span class="ot">&lt;-</span> <span class="fl">2.326</span> <span class="sc">*</span> <span class="fu">sqrt</span>(<span class="fu">var</span>(norm30)<span class="sc">/</span><span class="dv">30</span>)</span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>norm30_99lcl <span class="ot">&lt;-</span> <span class="fu">mean</span>(norm30) <span class="sc">-</span> norm30_99moe</span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>norm30_99ucl <span class="ot">&lt;-</span> <span class="fu">mean</span>(norm30) <span class="sc">+</span> norm30_99moe  </span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>norm100_95moe <span class="ot">&lt;-</span> <span class="fl">1.96</span> <span class="sc">*</span> <span class="fu">sqrt</span>(<span class="fu">var</span>(norm100)<span class="sc">/</span><span class="dv">100</span>)</span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>norm100_95lcl <span class="ot">&lt;-</span> <span class="fu">mean</span>(norm100) <span class="sc">-</span> norm100_95moe</span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>norm100_95ucl <span class="ot">&lt;-</span> <span class="fu">mean</span>(norm100) <span class="sc">+</span> norm100_95moe</span>
-<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>norm100_99moe <span class="ot">&lt;-</span> <span class="fl">2.326</span> <span class="sc">*</span> <span class="fu">sqrt</span>(<span class="fu">var</span>(norm100)<span class="sc">/</span><span class="dv">100</span>)</span>
-<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>norm100_99lcl <span class="ot">&lt;-</span> <span class="fu">mean</span>(norm100) <span class="sc">-</span> norm100_99moe</span>
-<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>norm100_99ucl <span class="ot">&lt;-</span> <span class="fu">mean</span>(norm100) <span class="sc">+</span> norm100_99moe  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Stat2Data)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(Pulse)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Pulse$Smoke &lt;- as.factor(Pulse$Smoke)</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Pulse$Sex &lt;- as.factor(Pulse$Sex)</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(Pulse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Active Rest Smoke Sex Exercise Hgt Wgt
+1     97   78     0   1        1  63 119
+2     82   68     1   0        3  70 225
+3     88   62     0   0        3  72 175
+4    106   74     0   0        3  72 170
+5     78   63     0   1        3  67 125
+6    109   65     0   0        3  74 188</code></pre>
 </div>
+</div>
+</section>
+<section id="tasks" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="tasks"><span class="header-section-number">3</span> Tasks</h2>
 <ul>
-<li>You can look at them in the output, or you can have R print them in your Quarto document * (Look at the code to see how this was done)
+<li>Make plots of variables as needed</li>
+</ul>
+<section id="gender-split" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="gender-split"><span class="header-section-number">3.1</span> Gender split</h3>
 <ul>
-<li>n = 30, 95%: [8.715, 12.073]</li>
-<li>n = 30, 99%: [8.402, 12.386]</li>
-<li>n = 100, 95%: [9.968, 12.262]</li>
-<li>n = 100, 99%: [9.754, 12.476]</li>
+<li>Is the gender split in this sample the same as in the total population (i.e., 50/50)?
+<ul>
+<li>What kind of variable is this?</li>
+<li>What test should you do?</li>
+<li>Directional or non-directional?</li>
+<li>Present the results of the test</li>
+<li>Write your conclusions: Is the gender split in this sample comparable to that in the total population?</li>
 </ul></li>
-<li>How do the confidence intervals vary with 1) sample size (i.e., n = 30 vs n = 100) and 2) confidence level (i.e., 95% vs 99%)?</li>
-</ul>
-</section>
-<section id="bernoulli-distributed-population-sim-b0.3" class="level3" data-number="2.2">
-<h3 data-number="2.2" class="anchored" data-anchor-id="bernoulli-distributed-population-sim-b0.3"><span class="header-section-number">2.2</span> Bernoulli distributed: <span class="math inline">population \sim B(0.3)</span></h3>
-<ul>
-<li>Two sample sizes: 30 and 100</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>bern30 <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">30</span>, <span class="dv">1</span>, <span class="fl">0.3</span>)</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>bern100 <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">100</span>, <span class="dv">1</span>, <span class="fl">0.3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(Pulse<span class="sc">$</span>Sex)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+  0   1 
+122 110 </code></pre>
 </div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">binom.test</span>(<span class="at">x =</span> <span class="dv">110</span>, </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">n =</span> <span class="dv">232</span>, </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">p =</span> <span class="fl">0.5</span>, </span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Exact binomial test
+
+data:  110 and 232
+number of successes = 110, number of trials = 232, p-value = 0.4703
+alternative hypothesis: true probability of success is not equal to 0.5
+95 percent confidence interval:
+ 0.4084248 0.5405202
+sample estimates:
+probability of success 
+             0.4741379 </code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
-<li>Calculate the means, variances, and standard deviations for each sample</li>
-</ul>
+<li><code>sigma.x</code> is the standard deviation
 <ul>
-<li>Construct the 95% and 99% confidence intervals for each mean</li>
+<li>I accidentally used the variance in class</li>
+<li>Remember that <span class="math inline">SD = \sqrt{variance}</span></li>
+</ul></li>
 </ul>
-<p><span class="math inline">[\bar{X} - z_{1-\alpha/2}\ \sqrt{\frac{\sigma^2}{n}}, \bar{X} + z_{1-\alpha/2}\ \sqrt{\frac{\sigma^2}{n}}]</span></p>
-<ul>
-<li>How do the confidence intervals vary with 1) sample size (i.e., n = 30 vs n = 100) and 2) confidence level (i.e., 95% vs 99%)?</li>
-</ul>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(BSDA)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: lattice</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: &#39;BSDA&#39;</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from &#39;package:datasets&#39;:
+
+    Orange</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">z.test</span>(<span class="at">x =</span> Pulse<span class="sc">$</span>Sex, </span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>,</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">mu =</span> <span class="fl">0.5</span>, </span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">sigma.x =</span> <span class="fu">sqrt</span>(<span class="fl">0.25</span>),</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">conf.level =</span> .<span class="dv">95</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    One-sample z-Test
+
+data:  Pulse$Sex
+z = -0.78784, p-value = 0.4308
+alternative hypothesis: true mean is not equal to 0.5
+95 percent confidence interval:
+ 0.4097990 0.5384769
+sample estimates:
+mean of x 
+0.4741379 </code></pre>
+</div>
+</div>
 </section>
-<section id="binomial-distributed-population-sim-bin50-0.3" class="level3" data-number="2.3">
-<h3 data-number="2.3" class="anchored" data-anchor-id="binomial-distributed-population-sim-bin50-0.3"><span class="header-section-number">2.3</span> Binomial distributed: <span class="math inline">population \sim Bin(50, 0.3)</span></h3>
+<section id="smoking-rate" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="smoking-rate"><span class="header-section-number">3.2</span> Smoking rate</h3>
 <ul>
-<li>Two sample sizes: 30 and 100</li>
+<li>Is the smoking rate in this sample the same as the 11.5% rate in the US? (CDC info on smoking <a href="https://www.cdc.gov/tobacco/campaign/tips/resources/data/cigarette-smoking-in-united-states.html">here</a>
+<ul>
+<li>What kind of variable is this?</li>
+<li>What test should you do?</li>
+<li>Directional or non-directional?</li>
+<li>Present the results of the test</li>
+<li>Write your conclusions: Is the smoking rate in this sample comparable to the 11.5% rate in the US?</li>
+</ul></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>binom30 <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">30</span>, <span class="dv">50</span>, <span class="fl">0.3</span>)</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>binom100 <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">100</span>, <span class="dv">50</span>, <span class="fl">0.3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(Pulse<span class="sc">$</span>Smoke)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+  0   1 
+206  26 </code></pre>
 </div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">binom.test</span>(<span class="at">x =</span> <span class="dv">26</span>, </span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">n =</span> <span class="dv">232</span>, </span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">p =</span> <span class="fl">0.115</span>, </span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Exact binomial test
+
+data:  26 and 232
+number of successes = 26, number of trials = 232, p-value = 1
+alternative hypothesis: true probability of success is not equal to 0.115
+95 percent confidence interval:
+ 0.07452657 0.15988360
+sample estimates:
+probability of success 
+              0.112069 </code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ul>
-<li>Calculate the means, variances, and standard deviations for each sample</li>
-</ul>
+<li><code>sigma.x</code> is the standard deviation
 <ul>
-<li>Construct the 95% and 99% confidence intervals for each mean</li>
+<li>I accidentally used the variance in class</li>
+<li>Remember that <span class="math inline">SD = \sqrt{variance}</span></li>
+</ul></li>
 </ul>
-<p><span class="math inline">[\bar{X} - z_{1-\alpha/2}\ \sqrt{\frac{\sigma^2}{n}}, \bar{X} + z_{1-\alpha/2}\ \sqrt{\frac{\sigma^2}{n}}]</span></p>
-<ul>
-<li>How do the confidence intervals vary with 1) sample size (i.e., n = 30 vs n = 100) and 2) confidence level (i.e., 95% vs 99%)?</li>
-</ul>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(BSDA)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">z.test</span>(<span class="at">x =</span> Pulse<span class="sc">$</span>Smoke, </span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>,</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">mu =</span> <span class="fl">0.115</span>, </span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">sigma.x =</span> <span class="fu">sqrt</span>(<span class="fl">0.115</span><span class="sc">*</span>(<span class="dv">1</span><span class="fl">-0.115</span>)),</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">conf.level =</span> .<span class="dv">95</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    One-sample z-Test
+
+data:  Pulse$Smoke
+z = -0.13994, p-value = 0.8887
+alternative hypothesis: true mean is not equal to 0.115
+95 percent confidence interval:
+ 0.07101788 0.15312005
+sample estimates:
+mean of x 
+ 0.112069 </code></pre>
+</div>
+</div>
 </section>
-<section id="poisson-distributed-population-sim-poisson1.5" class="level3" data-number="2.4">
-<h3 data-number="2.4" class="anchored" data-anchor-id="poisson-distributed-population-sim-poisson1.5"><span class="header-section-number">2.4</span> Poisson distributed: <span class="math inline">population \sim Poisson(1.5)</span></h3>
+<section id="elevated-pulse-rate" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="elevated-pulse-rate"><span class="header-section-number">3.3</span> Elevated pulse rate</h3>
 <ul>
-<li>Two sample sizes: 30 and 100</li>
+<li>Is the <strong>active</strong> pulse rate <strong>higher</strong> than the <strong>high end of resting pulse rate</strong> of 100 bpm?
+<ul>
+<li>What kind of variable is this?</li>
+<li>What test should you do?</li>
+<li>Directional or non-directional?</li>
+<li>Present the results of the test</li>
+<li>Write your conclusions: Is the active pulse rate different from the high end of resting pulse rate of 100 bpm?</li>
+</ul></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>pois30 <span class="ot">&lt;-</span> <span class="fu">rpois</span>(<span class="at">n =</span> <span class="dv">30</span>, <span class="at">lambda =</span> <span class="fl">1.5</span>)</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>pois100 <span class="ot">&lt;-</span> <span class="fu">rpois</span>(<span class="at">n =</span> <span class="dv">30</span>, <span class="at">lambda =</span> <span class="fl">1.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(<span class="at">x =</span> Pulse<span class="sc">$</span>Active,</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">alternative =</span> <span class="st">&quot;greater&quot;</span>,</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">mu =</span> <span class="dv">100</span>, </span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">conf.level =</span> .<span class="dv">95</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    One Sample t-test
+
+data:  Pulse$Active
+t = -7.0432, df = 231, p-value = 1
+alternative hypothesis: true mean is greater than 100
+95 percent confidence interval:
+ 89.25683      Inf
+sample estimates:
+mean of x 
+ 91.29741 </code></pre>
 </div>
-<ul>
-<li>Calculate the means, variances, and standard deviations for each sample</li>
-</ul>
-<ul>
-<li>Construct the 95% and 99% confidence intervals for each mean</li>
-</ul>
-<p><span class="math inline">[\bar{X} - z_{1-\alpha/2}\ \sqrt{\frac{\sigma^2}{n}}, \bar{X} + z_{1-\alpha/2}\ \sqrt{\frac{\sigma^2}{n}}]</span></p>
-<ul>
-<li>How do the confidence intervals vary with 1) sample size (i.e., n = 30 vs n = 100) and 2) confidence level (i.e., 95% vs 99%)?</li>
-</ul>
+</div>
 </section>
-</section>
-<section id="summary" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="summary"><span class="header-section-number">3</span> Summary</h2>
+<section id="height-among-men" class="level3" data-number="3.4">
+<h3 data-number="3.4" class="anchored" data-anchor-id="height-among-men"><span class="header-section-number">3.4</span> Height among men</h3>
 <ul>
-<li><p>How do the confidence intervals vary with sample size?</p></li>
-<li><p>How do the confidence intervals vary with confidence level?</p></li>
-<li><p>How do the confidence intervals vary with population distribution?</p></li>
-<li><p>Did you notice anything else?</p></li>
+<li>Is the height of <strong>men</strong> in this sample <strong>different</strong> from the US average of 5 feet 9 inches?
+<ul>
+<li>What kind of variable is this?</li>
+<li>What test should you do?</li>
+<li>Directional or non-directional?</li>
+<li>Present the results of the test</li>
+<li>Write your conclusions: Is the height of men in this sample different from the US average of 5 feet 9 inches?</li>
+</ul></li>
 </ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>PulseM <span class="ot">&lt;-</span> Pulse <span class="sc">%&gt;%</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(Sex <span class="sc">==</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(<span class="at">x =</span> PulseM<span class="sc">$</span>Hgt,</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>,</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">mu =</span> <span class="dv">69</span>, </span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">conf.level =</span> .<span class="dv">95</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    One Sample t-test
+
+data:  PulseM$Hgt
+t = 8.5883, df = 121, p-value = 3.622e-14
+alternative hypothesis: true mean is not equal to 69
+95 percent confidence interval:
+ 70.46958 71.35009
+sample estimates:
+mean of x 
+ 70.90984 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(BSDA)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(PulseM<span class="sc">$</span>Hgt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2.456242</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">z.test</span>(<span class="at">x =</span> PulseM<span class="sc">$</span>Hgt, </span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>,</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">mu =</span> <span class="dv">69</span>, </span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">sigma.x =</span> <span class="dv">3</span>,</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">conf.level =</span> .<span class="dv">95</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    One-sample z-Test
+
+data:  PulseM$Hgt
+z = 7.0316, p-value = 2.042e-12
+alternative hypothesis: true mean is not equal to 69
+95 percent confidence interval:
+ 70.37750 71.44218
+sample estimates:
+mean of x 
+ 70.90984 </code></pre>
+</div>
+</div>
 
 
 <!-- -->
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -5586,173 +5741,178 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class>
-<div class="sourceCode" id="cb21" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;BTS 510 Lab 7&quot;</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="co">    embed-resources: true</span></span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="co">    self-contained-math: true</span></span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="co">    html-math-method: katex</span></span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="co">    number-sections: true</span></span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a><span class="co">    code-block-bg: true</span></span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a><span class="co">    code-block-border-left: &quot;#31BAE9&quot;</span></span>
-<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: setup</span></span>
-<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12345</span>)</span>
-<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_classic</span>(<span class="at">base_size =</span> <span class="dv">16</span>))</span>
-<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a><span class="fu">## Learning objectives</span></span>
-<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Compare** and **contrast** *point estimates* and *interval estimates*</span>
-<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Construct** *confidence intervals*</span>
-<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Interpret** *confidence intervals*</span>
-<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-30"><a href="#cb21-30" aria-hidden="true" tabindex="-1"></a><span class="fu">## Vary population distribution, sample size, confidence interval level</span></span>
-<span id="cb21-31"><a href="#cb21-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-32"><a href="#cb21-32" aria-hidden="true" tabindex="-1"></a><span class="fu">### Normally distributed: $population \sim \mathcal{N}(\mu = 10, \sigma^2 = 25)$</span></span>
-<span id="cb21-33"><a href="#cb21-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-34"><a href="#cb21-34" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Two sample sizes: 30 and 100</span>
-<span id="cb21-35"><a href="#cb21-35" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Note that <span class="in">`rnorm()`</span> takes standard deviation as an argument, not variance</span>
-<span id="cb21-36"><a href="#cb21-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-39"><a href="#cb21-39" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb21-40"><a href="#cb21-40" aria-hidden="true" tabindex="-1"></a>norm30 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">30</span>, <span class="at">mean =</span> <span class="dv">10</span>, <span class="at">sd =</span> <span class="dv">5</span>)</span>
-<span id="cb21-41"><a href="#cb21-41" aria-hidden="true" tabindex="-1"></a>norm100 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">100</span>, <span class="at">mean =</span> <span class="dv">10</span>, <span class="at">sd =</span> <span class="dv">5</span>)</span>
-<span id="cb21-42"><a href="#cb21-42" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb21-43"><a href="#cb21-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-44"><a href="#cb21-44" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Calculate the means, variances, and standard deviations for each sample</span>
-<span id="cb21-45"><a href="#cb21-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-48"><a href="#cb21-48" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb21-49"><a href="#cb21-49" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(norm30)</span>
-<span id="cb21-50"><a href="#cb21-50" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(norm100)</span>
-<span id="cb21-51"><a href="#cb21-51" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(norm30)</span>
-<span id="cb21-52"><a href="#cb21-52" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(norm100)</span>
-<span id="cb21-53"><a href="#cb21-53" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(norm30)</span>
-<span id="cb21-54"><a href="#cb21-54" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(norm100)</span>
-<span id="cb21-55"><a href="#cb21-55" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb21-56"><a href="#cb21-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-57"><a href="#cb21-57" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Construct the 95% and 99% confidence intervals for each mean</span>
-<span id="cb21-58"><a href="#cb21-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-59"><a href="#cb21-59" aria-hidden="true" tabindex="-1"></a>$<span class="co">[</span><span class="ot">\bar{X} - z_{1-\alpha/2}\ \sqrt{\frac{\sigma^2}{n}}, \bar{X} + z_{1-\alpha/2}\ \sqrt{\frac{\sigma^2}{n}}</span><span class="co">]</span>$</span>
-<span id="cb21-60"><a href="#cb21-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-61"><a href="#cb21-61" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>I&#39;m just having R make the calculations for me, rather than doing by hand</span>
-<span id="cb21-62"><a href="#cb21-62" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>I&#39;m also doing it in several steps so you can see where each piece comes from, but you can do it all in one step if you&#39;re confident</span>
-<span id="cb21-63"><a href="#cb21-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-64"><a href="#cb21-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-67"><a href="#cb21-67" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb21-68"><a href="#cb21-68" aria-hidden="true" tabindex="-1"></a>norm30_95moe <span class="ot">&lt;-</span> <span class="fl">1.96</span> <span class="sc">*</span> <span class="fu">sqrt</span>(<span class="fu">var</span>(norm30)<span class="sc">/</span><span class="dv">30</span>)</span>
-<span id="cb21-69"><a href="#cb21-69" aria-hidden="true" tabindex="-1"></a>norm30_95lcl <span class="ot">&lt;-</span> <span class="fu">mean</span>(norm30) <span class="sc">-</span> norm30_95moe</span>
-<span id="cb21-70"><a href="#cb21-70" aria-hidden="true" tabindex="-1"></a>norm30_95ucl <span class="ot">&lt;-</span> <span class="fu">mean</span>(norm30) <span class="sc">+</span> norm30_95moe</span>
-<span id="cb21-71"><a href="#cb21-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-72"><a href="#cb21-72" aria-hidden="true" tabindex="-1"></a>norm30_99moe <span class="ot">&lt;-</span> <span class="fl">2.326</span> <span class="sc">*</span> <span class="fu">sqrt</span>(<span class="fu">var</span>(norm30)<span class="sc">/</span><span class="dv">30</span>)</span>
-<span id="cb21-73"><a href="#cb21-73" aria-hidden="true" tabindex="-1"></a>norm30_99lcl <span class="ot">&lt;-</span> <span class="fu">mean</span>(norm30) <span class="sc">-</span> norm30_99moe</span>
-<span id="cb21-74"><a href="#cb21-74" aria-hidden="true" tabindex="-1"></a>norm30_99ucl <span class="ot">&lt;-</span> <span class="fu">mean</span>(norm30) <span class="sc">+</span> norm30_99moe  </span>
-<span id="cb21-75"><a href="#cb21-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-76"><a href="#cb21-76" aria-hidden="true" tabindex="-1"></a>norm100_95moe <span class="ot">&lt;-</span> <span class="fl">1.96</span> <span class="sc">*</span> <span class="fu">sqrt</span>(<span class="fu">var</span>(norm100)<span class="sc">/</span><span class="dv">100</span>)</span>
-<span id="cb21-77"><a href="#cb21-77" aria-hidden="true" tabindex="-1"></a>norm100_95lcl <span class="ot">&lt;-</span> <span class="fu">mean</span>(norm100) <span class="sc">-</span> norm100_95moe</span>
-<span id="cb21-78"><a href="#cb21-78" aria-hidden="true" tabindex="-1"></a>norm100_95ucl <span class="ot">&lt;-</span> <span class="fu">mean</span>(norm100) <span class="sc">+</span> norm100_95moe</span>
-<span id="cb21-79"><a href="#cb21-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-80"><a href="#cb21-80" aria-hidden="true" tabindex="-1"></a>norm100_99moe <span class="ot">&lt;-</span> <span class="fl">2.326</span> <span class="sc">*</span> <span class="fu">sqrt</span>(<span class="fu">var</span>(norm100)<span class="sc">/</span><span class="dv">100</span>)</span>
-<span id="cb21-81"><a href="#cb21-81" aria-hidden="true" tabindex="-1"></a>norm100_99lcl <span class="ot">&lt;-</span> <span class="fu">mean</span>(norm100) <span class="sc">-</span> norm100_99moe</span>
-<span id="cb21-82"><a href="#cb21-82" aria-hidden="true" tabindex="-1"></a>norm100_99ucl <span class="ot">&lt;-</span> <span class="fu">mean</span>(norm100) <span class="sc">+</span> norm100_99moe  </span>
-<span id="cb21-83"><a href="#cb21-83" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb21-84"><a href="#cb21-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-85"><a href="#cb21-85" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>You can look at them in the output, or you can have R print them in your Quarto document * (Look at the code to see how this was done)</span>
-<span id="cb21-86"><a href="#cb21-86" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>n = 30, 95%: <span class="co">[</span><span class="ot">`r round(norm30_95lcl, 3)`, `r round(norm30_95ucl, 3)`</span><span class="co">]</span></span>
-<span id="cb21-87"><a href="#cb21-87" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>n = 30, 99%: <span class="co">[</span><span class="ot">`r round(norm30_99lcl, 3)`, `r round(norm30_99ucl, 3)`</span><span class="co">]</span></span>
-<span id="cb21-88"><a href="#cb21-88" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>n = 100, 95%: <span class="co">[</span><span class="ot">`r round(norm100_95lcl, 3)`, `r round(norm100_95ucl, 3)`</span><span class="co">]</span></span>
-<span id="cb21-89"><a href="#cb21-89" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>n = 100, 99%: <span class="co">[</span><span class="ot">`r round(norm100_99lcl, 3)`, `r round(norm100_99ucl, 3)`</span><span class="co">]</span></span>
-<span id="cb21-90"><a href="#cb21-90" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-91"><a href="#cb21-91" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>How do the confidence intervals vary with 1) sample size (i.e., n = 30 vs n = 100) and 2) confidence level (i.e., 95% vs 99%)?</span>
-<span id="cb21-92"><a href="#cb21-92" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-93"><a href="#cb21-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-94"><a href="#cb21-94" aria-hidden="true" tabindex="-1"></a><span class="fu">### Bernoulli distributed: $population \sim B(0.3)$</span></span>
-<span id="cb21-95"><a href="#cb21-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-96"><a href="#cb21-96" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Two sample sizes: 30 and 100</span>
-<span id="cb21-97"><a href="#cb21-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-100"><a href="#cb21-100" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb21-101"><a href="#cb21-101" aria-hidden="true" tabindex="-1"></a>bern30 <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">30</span>, <span class="dv">1</span>, <span class="fl">0.3</span>)</span>
-<span id="cb21-102"><a href="#cb21-102" aria-hidden="true" tabindex="-1"></a>bern100 <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">100</span>, <span class="dv">1</span>, <span class="fl">0.3</span>)</span>
-<span id="cb21-103"><a href="#cb21-103" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb21-104"><a href="#cb21-104" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-105"><a href="#cb21-105" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Calculate the means, variances, and standard deviations for each sample</span>
-<span id="cb21-106"><a href="#cb21-106" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-109"><a href="#cb21-109" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb21-110"><a href="#cb21-110" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb21-111"><a href="#cb21-111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-112"><a href="#cb21-112" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Construct the 95% and 99% confidence intervals for each mean</span>
-<span id="cb21-113"><a href="#cb21-113" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-114"><a href="#cb21-114" aria-hidden="true" tabindex="-1"></a>$<span class="co">[</span><span class="ot">\bar{X} - z_{1-\alpha/2}\ \sqrt{\frac{\sigma^2}{n}}, \bar{X} + z_{1-\alpha/2}\ \sqrt{\frac{\sigma^2}{n}}</span><span class="co">]</span>$</span>
-<span id="cb21-115"><a href="#cb21-115" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-116"><a href="#cb21-116" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-119"><a href="#cb21-119" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb21-120"><a href="#cb21-120" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb21-121"><a href="#cb21-121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-122"><a href="#cb21-122" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>How do the confidence intervals vary with 1) sample size (i.e., n = 30 vs n = 100) and 2) confidence level (i.e., 95% vs 99%)?</span>
-<span id="cb21-123"><a href="#cb21-123" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-124"><a href="#cb21-124" aria-hidden="true" tabindex="-1"></a><span class="fu">### Binomial distributed: $population \sim Bin(50, 0.3)$</span></span>
-<span id="cb21-125"><a href="#cb21-125" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-126"><a href="#cb21-126" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Two sample sizes: 30 and 100</span>
-<span id="cb21-127"><a href="#cb21-127" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-130"><a href="#cb21-130" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb21-131"><a href="#cb21-131" aria-hidden="true" tabindex="-1"></a>binom30 <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">30</span>, <span class="dv">50</span>, <span class="fl">0.3</span>)</span>
-<span id="cb21-132"><a href="#cb21-132" aria-hidden="true" tabindex="-1"></a>binom100 <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">100</span>, <span class="dv">50</span>, <span class="fl">0.3</span>)</span>
-<span id="cb21-133"><a href="#cb21-133" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb21-134"><a href="#cb21-134" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-135"><a href="#cb21-135" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Calculate the means, variances, and standard deviations for each sample</span>
-<span id="cb21-136"><a href="#cb21-136" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-139"><a href="#cb21-139" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb21-140"><a href="#cb21-140" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb21-141"><a href="#cb21-141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-142"><a href="#cb21-142" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Construct the 95% and 99% confidence intervals for each mean</span>
-<span id="cb21-143"><a href="#cb21-143" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-144"><a href="#cb21-144" aria-hidden="true" tabindex="-1"></a>$<span class="co">[</span><span class="ot">\bar{X} - z_{1-\alpha/2}\ \sqrt{\frac{\sigma^2}{n}}, \bar{X} + z_{1-\alpha/2}\ \sqrt{\frac{\sigma^2}{n}}</span><span class="co">]</span>$</span>
-<span id="cb21-145"><a href="#cb21-145" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-148"><a href="#cb21-148" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb21-149"><a href="#cb21-149" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb21-150"><a href="#cb21-150" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-151"><a href="#cb21-151" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>How do the confidence intervals vary with 1) sample size (i.e., n = 30 vs n = 100) and 2) confidence level (i.e., 95% vs 99%)?</span>
-<span id="cb21-152"><a href="#cb21-152" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-153"><a href="#cb21-153" aria-hidden="true" tabindex="-1"></a><span class="fu">### Poisson distributed: $population \sim Poisson(1.5)$</span></span>
-<span id="cb21-154"><a href="#cb21-154" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-155"><a href="#cb21-155" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Two sample sizes: 30 and 100</span>
-<span id="cb21-156"><a href="#cb21-156" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-159"><a href="#cb21-159" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb21-160"><a href="#cb21-160" aria-hidden="true" tabindex="-1"></a>pois30 <span class="ot">&lt;-</span> <span class="fu">rpois</span>(<span class="at">n =</span> <span class="dv">30</span>, <span class="at">lambda =</span> <span class="fl">1.5</span>)</span>
-<span id="cb21-161"><a href="#cb21-161" aria-hidden="true" tabindex="-1"></a>pois100 <span class="ot">&lt;-</span> <span class="fu">rpois</span>(<span class="at">n =</span> <span class="dv">30</span>, <span class="at">lambda =</span> <span class="fl">1.5</span>)</span>
-<span id="cb21-162"><a href="#cb21-162" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb21-163"><a href="#cb21-163" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-164"><a href="#cb21-164" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Calculate the means, variances, and standard deviations for each sample</span>
-<span id="cb21-165"><a href="#cb21-165" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-168"><a href="#cb21-168" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb21-169"><a href="#cb21-169" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb21-170"><a href="#cb21-170" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-171"><a href="#cb21-171" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Construct the 95% and 99% confidence intervals for each mean</span>
-<span id="cb21-172"><a href="#cb21-172" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-173"><a href="#cb21-173" aria-hidden="true" tabindex="-1"></a>$<span class="co">[</span><span class="ot">\bar{X} - z_{1-\alpha/2}\ \sqrt{\frac{\sigma^2}{n}}, \bar{X} + z_{1-\alpha/2}\ \sqrt{\frac{\sigma^2}{n}}</span><span class="co">]</span>$</span>
-<span id="cb21-174"><a href="#cb21-174" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-177"><a href="#cb21-177" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb21-178"><a href="#cb21-178" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb21-179"><a href="#cb21-179" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-180"><a href="#cb21-180" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>How do the confidence intervals vary with 1) sample size (i.e., n = 30 vs n = 100) and 2) confidence level (i.e., 95% vs 99%)?</span>
-<span id="cb21-181"><a href="#cb21-181" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-182"><a href="#cb21-182" aria-hidden="true" tabindex="-1"></a><span class="fu">## Summary</span></span>
-<span id="cb21-183"><a href="#cb21-183" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-184"><a href="#cb21-184" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>How do the confidence intervals vary with sample size?</span>
-<span id="cb21-185"><a href="#cb21-185" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-186"><a href="#cb21-186" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>How do the confidence intervals vary with confidence level?</span>
-<span id="cb21-187"><a href="#cb21-187" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-188"><a href="#cb21-188" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>How do the confidence intervals vary with population distribution?</span>
-<span id="cb21-189"><a href="#cb21-189" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-190"><a href="#cb21-190" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Did you notice anything else? </span>
-<span id="cb21-191"><a href="#cb21-191" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-192"><a href="#cb21-192" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-193"><a href="#cb21-193" aria-hidden="true" tabindex="-1"></a></span>
+<div class="sourceCode" id="cb31" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;BTS 510 Lab 8&quot;</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="co">    embed-resources: true</span></span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="co">    self-contained-math: true</span></span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="co">    html-math-method: katex</span></span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a><span class="co">    number-sections: true</span></span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a><span class="co">    code-block-bg: true</span></span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a><span class="co">    code-block-border-left: &quot;#31BAE9&quot;</span></span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: setup</span></span>
+<span id="cb31-19"><a href="#cb31-19" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb31-20"><a href="#cb31-20" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12345</span>)</span>
+<span id="cb31-21"><a href="#cb31-21" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_classic</span>(<span class="at">base_size =</span> <span class="dv">16</span>))</span>
+<span id="cb31-22"><a href="#cb31-22" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb31-23"><a href="#cb31-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-24"><a href="#cb31-24" aria-hidden="true" tabindex="-1"></a><span class="fu">## Learning objectives</span></span>
+<span id="cb31-25"><a href="#cb31-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-26"><a href="#cb31-26" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>*Describe* the logic of **hypothesis testing**</span>
+<span id="cb31-27"><a href="#cb31-27" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>*Interpret* tests comparing **one sample** to hypothesized value</span>
+<span id="cb31-28"><a href="#cb31-28" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>*Relate* **hypothesis testing** to **confidence intervals**</span>
+<span id="cb31-29"><a href="#cb31-29" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>*Recognize* when to use a **nonparametric test**</span>
+<span id="cb31-30"><a href="#cb31-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-31"><a href="#cb31-31" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data </span></span>
+<span id="cb31-32"><a href="#cb31-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-33"><a href="#cb31-33" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="in">`Pulse`</span> dataset from the **Stat2Data** package</span>
+<span id="cb31-34"><a href="#cb31-34" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>A dataset with $n$ = 232 observations on the following 7 variables.</span>
+<span id="cb31-35"><a href="#cb31-35" aria-hidden="true" tabindex="-1"></a><span class="ss">        * </span><span class="in">`Active`</span>: Pulse rate (beats per minute) after exercise</span>
+<span id="cb31-36"><a href="#cb31-36" aria-hidden="true" tabindex="-1"></a><span class="ss">        * </span><span class="in">`Rest`</span>: Resting pulse rate (beats per minute)</span>
+<span id="cb31-37"><a href="#cb31-37" aria-hidden="true" tabindex="-1"></a><span class="ss">        * </span><span class="in">`Smoke`</span>: 1=smoker or 0=nonsmoker</span>
+<span id="cb31-38"><a href="#cb31-38" aria-hidden="true" tabindex="-1"></a><span class="ss">        * </span><span class="in">`Sex`</span>: 1=female or 0=male</span>
+<span id="cb31-39"><a href="#cb31-39" aria-hidden="true" tabindex="-1"></a><span class="ss">        * </span><span class="in">`Exercise`</span>: Typical hours of exercise (per week)</span>
+<span id="cb31-40"><a href="#cb31-40" aria-hidden="true" tabindex="-1"></a><span class="ss">        * </span><span class="in">`Hgt`</span>: Height (in inches)</span>
+<span id="cb31-41"><a href="#cb31-41" aria-hidden="true" tabindex="-1"></a><span class="ss">        * </span><span class="in">`Wgt`</span>: Weight (in pounds)</span>
+<span id="cb31-42"><a href="#cb31-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-43"><a href="#cb31-43" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Convert the factor variables to factor variables, as in the lecture</span>
+<span id="cb31-44"><a href="#cb31-44" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`as.factor()`</span> function</span>
+<span id="cb31-45"><a href="#cb31-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-48"><a href="#cb31-48" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb31-49"><a href="#cb31-49" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Stat2Data)</span>
+<span id="cb31-50"><a href="#cb31-50" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(Pulse)</span>
+<span id="cb31-51"><a href="#cb31-51" aria-hidden="true" tabindex="-1"></a><span class="co">#Pulse$Smoke &lt;- as.factor(Pulse$Smoke)</span></span>
+<span id="cb31-52"><a href="#cb31-52" aria-hidden="true" tabindex="-1"></a><span class="co">#Pulse$Sex &lt;- as.factor(Pulse$Sex)</span></span>
+<span id="cb31-53"><a href="#cb31-53" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(Pulse)</span>
+<span id="cb31-54"><a href="#cb31-54" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb31-55"><a href="#cb31-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-56"><a href="#cb31-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-57"><a href="#cb31-57" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tasks</span></span>
+<span id="cb31-58"><a href="#cb31-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-59"><a href="#cb31-59" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Make plots of variables as needed</span>
+<span id="cb31-60"><a href="#cb31-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-61"><a href="#cb31-61" aria-hidden="true" tabindex="-1"></a><span class="fu">### Gender split</span></span>
+<span id="cb31-62"><a href="#cb31-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-63"><a href="#cb31-63" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Is the gender split in this sample the same as in the total population (i.e., 50/50)?</span>
+<span id="cb31-64"><a href="#cb31-64" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>What kind of variable is this?</span>
+<span id="cb31-65"><a href="#cb31-65" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>What test should you do?</span>
+<span id="cb31-66"><a href="#cb31-66" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Directional or non-directional?</span>
+<span id="cb31-67"><a href="#cb31-67" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Present the results of the test</span>
+<span id="cb31-68"><a href="#cb31-68" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Write your conclusions: Is the gender split in this sample comparable to that in the total population?</span>
+<span id="cb31-69"><a href="#cb31-69" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb31-72"><a href="#cb31-72" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb31-73"><a href="#cb31-73" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(Pulse<span class="sc">$</span>Sex)</span>
+<span id="cb31-74"><a href="#cb31-74" aria-hidden="true" tabindex="-1"></a><span class="fu">binom.test</span>(<span class="at">x =</span> <span class="dv">110</span>, </span>
+<span id="cb31-75"><a href="#cb31-75" aria-hidden="true" tabindex="-1"></a>           <span class="at">n =</span> <span class="dv">232</span>, </span>
+<span id="cb31-76"><a href="#cb31-76" aria-hidden="true" tabindex="-1"></a>           <span class="at">p =</span> <span class="fl">0.5</span>, </span>
+<span id="cb31-77"><a href="#cb31-77" aria-hidden="true" tabindex="-1"></a>           <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>)</span>
+<span id="cb31-78"><a href="#cb31-78" aria-hidden="true" tabindex="-1"></a><span class="in">```</span> </span>
+<span id="cb31-79"><a href="#cb31-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-80"><a href="#cb31-80" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
+<span id="cb31-81"><a href="#cb31-81" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="in">`sigma.x`</span> is the standard deviation</span>
+<span id="cb31-82"><a href="#cb31-82" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>I accidentally used the variance in class</span>
+<span id="cb31-83"><a href="#cb31-83" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Remember that $SD = \sqrt{variance}$</span>
+<span id="cb31-84"><a href="#cb31-84" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb31-85"><a href="#cb31-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-88"><a href="#cb31-88" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb31-89"><a href="#cb31-89" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(BSDA)</span>
+<span id="cb31-90"><a href="#cb31-90" aria-hidden="true" tabindex="-1"></a><span class="fu">z.test</span>(<span class="at">x =</span> Pulse<span class="sc">$</span>Sex, </span>
+<span id="cb31-91"><a href="#cb31-91" aria-hidden="true" tabindex="-1"></a>       <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>,</span>
+<span id="cb31-92"><a href="#cb31-92" aria-hidden="true" tabindex="-1"></a>       <span class="at">mu =</span> <span class="fl">0.5</span>, </span>
+<span id="cb31-93"><a href="#cb31-93" aria-hidden="true" tabindex="-1"></a>       <span class="at">sigma.x =</span> <span class="fu">sqrt</span>(<span class="fl">0.25</span>),</span>
+<span id="cb31-94"><a href="#cb31-94" aria-hidden="true" tabindex="-1"></a>       <span class="at">conf.level =</span> .<span class="dv">95</span>)</span>
+<span id="cb31-95"><a href="#cb31-95" aria-hidden="true" tabindex="-1"></a><span class="in">```</span>  </span>
+<span id="cb31-96"><a href="#cb31-96" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb31-97"><a href="#cb31-97" aria-hidden="true" tabindex="-1"></a><span class="fu">### Smoking rate</span></span>
+<span id="cb31-98"><a href="#cb31-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-99"><a href="#cb31-99" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Is the smoking rate in this sample the same as the 11.5% rate in the US? (CDC info on smoking <span class="co">[</span><span class="ot">here</span><span class="co">](https://www.cdc.gov/tobacco/campaign/tips/resources/data/cigarette-smoking-in-united-states.html)</span></span>
+<span id="cb31-100"><a href="#cb31-100" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>What kind of variable is this?</span>
+<span id="cb31-101"><a href="#cb31-101" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>What test should you do?</span>
+<span id="cb31-102"><a href="#cb31-102" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Directional or non-directional?</span>
+<span id="cb31-103"><a href="#cb31-103" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Present the results of the test</span>
+<span id="cb31-104"><a href="#cb31-104" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Write your conclusions: Is the smoking rate in this sample comparable to the 11.5% rate in the US?</span>
+<span id="cb31-105"><a href="#cb31-105" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb31-108"><a href="#cb31-108" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb31-109"><a href="#cb31-109" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(Pulse<span class="sc">$</span>Smoke)</span>
+<span id="cb31-110"><a href="#cb31-110" aria-hidden="true" tabindex="-1"></a><span class="fu">binom.test</span>(<span class="at">x =</span> <span class="dv">26</span>, </span>
+<span id="cb31-111"><a href="#cb31-111" aria-hidden="true" tabindex="-1"></a>           <span class="at">n =</span> <span class="dv">232</span>, </span>
+<span id="cb31-112"><a href="#cb31-112" aria-hidden="true" tabindex="-1"></a>           <span class="at">p =</span> <span class="fl">0.115</span>, </span>
+<span id="cb31-113"><a href="#cb31-113" aria-hidden="true" tabindex="-1"></a>           <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>)</span>
+<span id="cb31-114"><a href="#cb31-114" aria-hidden="true" tabindex="-1"></a><span class="in">```</span> </span>
+<span id="cb31-115"><a href="#cb31-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-116"><a href="#cb31-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-117"><a href="#cb31-117" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
+<span id="cb31-118"><a href="#cb31-118" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="in">`sigma.x`</span> is the standard deviation</span>
+<span id="cb31-119"><a href="#cb31-119" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>I accidentally used the variance in class</span>
+<span id="cb31-120"><a href="#cb31-120" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Remember that $SD = \sqrt{variance}$</span>
+<span id="cb31-121"><a href="#cb31-121" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb31-122"><a href="#cb31-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-125"><a href="#cb31-125" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb31-126"><a href="#cb31-126" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(BSDA)</span>
+<span id="cb31-127"><a href="#cb31-127" aria-hidden="true" tabindex="-1"></a><span class="fu">z.test</span>(<span class="at">x =</span> Pulse<span class="sc">$</span>Smoke, </span>
+<span id="cb31-128"><a href="#cb31-128" aria-hidden="true" tabindex="-1"></a>       <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>,</span>
+<span id="cb31-129"><a href="#cb31-129" aria-hidden="true" tabindex="-1"></a>       <span class="at">mu =</span> <span class="fl">0.115</span>, </span>
+<span id="cb31-130"><a href="#cb31-130" aria-hidden="true" tabindex="-1"></a>       <span class="at">sigma.x =</span> <span class="fu">sqrt</span>(<span class="fl">0.115</span><span class="sc">*</span>(<span class="dv">1</span><span class="fl">-0.115</span>)),</span>
+<span id="cb31-131"><a href="#cb31-131" aria-hidden="true" tabindex="-1"></a>       <span class="at">conf.level =</span> .<span class="dv">95</span>)</span>
+<span id="cb31-132"><a href="#cb31-132" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb31-133"><a href="#cb31-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-134"><a href="#cb31-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-135"><a href="#cb31-135" aria-hidden="true" tabindex="-1"></a><span class="fu">### Elevated pulse rate</span></span>
+<span id="cb31-136"><a href="#cb31-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-137"><a href="#cb31-137" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Is the **active** pulse rate **higher** than the **high end of resting pulse rate** of 100 bpm?</span>
+<span id="cb31-138"><a href="#cb31-138" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>What kind of variable is this?</span>
+<span id="cb31-139"><a href="#cb31-139" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>What test should you do?</span>
+<span id="cb31-140"><a href="#cb31-140" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Directional or non-directional?</span>
+<span id="cb31-141"><a href="#cb31-141" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Present the results of the test</span>
+<span id="cb31-142"><a href="#cb31-142" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Write your conclusions: Is the active pulse rate different from the high end of resting pulse rate of 100 bpm?</span>
+<span id="cb31-143"><a href="#cb31-143" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb31-146"><a href="#cb31-146" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb31-147"><a href="#cb31-147" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(<span class="at">x =</span> Pulse<span class="sc">$</span>Active,</span>
+<span id="cb31-148"><a href="#cb31-148" aria-hidden="true" tabindex="-1"></a>       <span class="at">alternative =</span> <span class="st">&quot;greater&quot;</span>,</span>
+<span id="cb31-149"><a href="#cb31-149" aria-hidden="true" tabindex="-1"></a>       <span class="at">mu =</span> <span class="dv">100</span>, </span>
+<span id="cb31-150"><a href="#cb31-150" aria-hidden="true" tabindex="-1"></a>       <span class="at">conf.level =</span> .<span class="dv">95</span>)</span>
+<span id="cb31-151"><a href="#cb31-151" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb31-152"><a href="#cb31-152" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb31-153"><a href="#cb31-153" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb31-154"><a href="#cb31-154" aria-hidden="true" tabindex="-1"></a><span class="fu">### Height among men</span></span>
+<span id="cb31-155"><a href="#cb31-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-156"><a href="#cb31-156" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Is the height of **men** in this sample **different** from the US average of 5 feet 9 inches?</span>
+<span id="cb31-157"><a href="#cb31-157" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>What kind of variable is this?</span>
+<span id="cb31-158"><a href="#cb31-158" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>What test should you do?</span>
+<span id="cb31-159"><a href="#cb31-159" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Directional or non-directional?</span>
+<span id="cb31-160"><a href="#cb31-160" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Present the results of the test</span>
+<span id="cb31-161"><a href="#cb31-161" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Write your conclusions: Is the height of men in this sample different from the US average of 5 feet 9 inches?</span>
+<span id="cb31-162"><a href="#cb31-162" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb31-165"><a href="#cb31-165" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb31-166"><a href="#cb31-166" aria-hidden="true" tabindex="-1"></a>PulseM <span class="ot">&lt;-</span> Pulse <span class="sc">%&gt;%</span></span>
+<span id="cb31-167"><a href="#cb31-167" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(Sex <span class="sc">==</span> <span class="dv">0</span>)</span>
+<span id="cb31-168"><a href="#cb31-168" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb31-169"><a href="#cb31-169" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb31-170"><a href="#cb31-170" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb31-173"><a href="#cb31-173" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb31-174"><a href="#cb31-174" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(<span class="at">x =</span> PulseM<span class="sc">$</span>Hgt,</span>
+<span id="cb31-175"><a href="#cb31-175" aria-hidden="true" tabindex="-1"></a>       <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>,</span>
+<span id="cb31-176"><a href="#cb31-176" aria-hidden="true" tabindex="-1"></a>       <span class="at">mu =</span> <span class="dv">69</span>, </span>
+<span id="cb31-177"><a href="#cb31-177" aria-hidden="true" tabindex="-1"></a>       <span class="at">conf.level =</span> .<span class="dv">95</span>)</span>
+<span id="cb31-178"><a href="#cb31-178" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb31-179"><a href="#cb31-179" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb31-180"><a href="#cb31-180" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb31-183"><a href="#cb31-183" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb31-184"><a href="#cb31-184" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(BSDA)</span>
+<span id="cb31-185"><a href="#cb31-185" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(PulseM<span class="sc">$</span>Hgt)</span>
+<span id="cb31-186"><a href="#cb31-186" aria-hidden="true" tabindex="-1"></a><span class="fu">z.test</span>(<span class="at">x =</span> PulseM<span class="sc">$</span>Hgt, </span>
+<span id="cb31-187"><a href="#cb31-187" aria-hidden="true" tabindex="-1"></a>       <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>,</span>
+<span id="cb31-188"><a href="#cb31-188" aria-hidden="true" tabindex="-1"></a>       <span class="at">mu =</span> <span class="dv">69</span>, </span>
+<span id="cb31-189"><a href="#cb31-189" aria-hidden="true" tabindex="-1"></a>       <span class="at">sigma.x =</span> <span class="dv">3</span>,</span>
+<span id="cb31-190"><a href="#cb31-190" aria-hidden="true" tabindex="-1"></a>       <span class="at">conf.level =</span> .<span class="dv">95</span>)</span>
+<span id="cb31-191"><a href="#cb31-191" aria-hidden="true" tabindex="-1"></a><span class="in">```</span> </span>
+<span id="cb31-192"><a href="#cb31-192" aria-hidden="true" tabindex="-1"></a>  </span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

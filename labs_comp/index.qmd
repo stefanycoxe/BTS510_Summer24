@@ -1,0 +1,7 @@
+---
+title: "Complete labs"
+#callout-icon: false
+---
+
+* "Complete" versions of the labs are in this section
+    * Some are pretty fully complete, others are only partial, depending on what I actually did during class

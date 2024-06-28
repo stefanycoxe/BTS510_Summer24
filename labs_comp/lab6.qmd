@@ -1,0 +1,351 @@
+---
+title: "BTS 510 Lab 5"
+format:
+  html:
+    embed-resources: true
+    self-contained-math: true
+    html-math-method: katex
+    number-sections: true
+    toc: true
+    code-tools: true
+    code-block-bg: true
+    code-block-border-left: "#31BAE9"
+---
+
+```{r}
+#| label: setup
+library(tidyverse)
+theme_set(theme_classic(base_size = 16))
+```
+
+## Learning objectives
+
+* Understand **probability** as a measure of **uncertainty**
+* **Summarize** probabilities with *probability distributions* 
+* Describe the difference between **population** and **sample**
+* Think about **uncertainty** in sampling
+* **Summarize** uncertainty in sampling: **Sampling distribution**
+
+## Mathematically-derived sampling distribution
+
+* Many combinations of **population distribution** and **test statistic** have *mathematically-derived* sampling distributions
+  * For example, with a **normally distributed** population ($\mathcal{N}(\mu, \sigma^2)$), the sampling distribution of the **mean** is $\bar{X} \sim \mathcal{N}(\mu, \frac{\sigma^2}{n})$
+    * In this case, the *population* distribution and *sampling* distribution are the **same distribution**: Normal
+    * The variance (or standard deviation) of the sampling distribution **decreases** as $n$ increases: A *larger sample* leads to a smaller, *more precise standard error*
+
+::: {.callout-note}
+
+* There is not a mathematically-derived sampling distribution for every population distribution and test statistic
+  * If you're dealing with *unknown or unusual distributions or test statistics*, your only option may be *computational methods*
+  
+:::
+
+## Computationally-derived sampling distribution
+
+### Getting started
+
+* Set a **random number seed**
+  * If you don't do this, every time you run the code, you'll get different numbers
+  * Setting a random seed makes your simulation *replicable*
+  * (I normally set a seed at the start of each document, but I moved it down here because it's very important in this lab.)
+* Load (and install, if needed) the [**infer** package](https://infer.tidymodels.org/)
+  * **infer** has a function that we'll use to *repeatedly sample* 
+  * There are other ways to do this, but this is very simple and works well
+* Only have to do this once per document
+
+```{r}
+set.seed(12345)
+library(infer)
+```
+
+
+### Standard Normal population: $population \sim \mathcal{N}(0, 1)$
+
+#### Create a population
+
+* `rnorm()` creates a random variable that follows a **normal** distribution 
+  * First argument = Number of observations (population size)
+  * Second argument = $\mu$
+  * Third argument = $\sigma$ (not $\sigma^2$)
+
+```{r}
+norm_pop <- rnorm(1000000, 0, 1)
+mean(norm_pop)
+var(norm_pop)
+```
+
+#### Sample from the population
+
+* Small sample: $n$ = 10
+  * `rep_sample_n()` repeatedly samples from the dataset
+    * Piped (`%>%`) from the `norm_pop` dataset, so it resamples from that
+    * `size = 10`: Sample size for each sample
+    * `reps = 10000`: Number of repeated samples (could be larger but this is good enough to show how things work and doesn't take too long to run)
+    * `replace = TRUE`: Sample with replacement
+  * `summarise(x_bar = mean(norm_pop))`: Create a data frame with each of the means from each sample
+
+```{r}
+norm_means10 <- data.frame(norm_pop) %>%
+  rep_sample_n(size = 10, reps = 10000, replace = TRUE) %>%
+  summarise(x_bar = mean(norm_pop))
+
+ggplot(data = norm_means10, aes(x = x_bar)) +
+  geom_histogram(bins = 50) +
+  xlim(-1.5, 1.5)
+```
+
+* Moderate sample: $n$ = 50
+
+```{r}
+norm_means50 <- data.frame(norm_pop) %>%
+  rep_sample_n(size = 50, reps = 10000, replace = TRUE) %>%
+  summarise(x_bar = mean(norm_pop))
+
+ggplot(data = norm_means50, aes(x = x_bar)) +
+  geom_histogram(bins = 50) +
+  xlim(-1.5, 1.5) 
+```
+
+* Large sample: $n$ = 100
+
+```{r}
+norm_means100 <- data.frame(norm_pop) %>%
+  rep_sample_n(size = 100, reps = 10000, replace = TRUE) %>%
+  summarise(x_bar = mean(norm_pop))
+
+ggplot(data = norm_means100, aes(x = x_bar)) +
+  geom_histogram(bins = 50) +
+  xlim(-1.5, 1.5)
+```
+
+::: {.callout-note}
+
+* Note that I adjusted the X axis to be the same for all three plots using `xlim()` so that you can easily compare the distributions 
+* You'll want to do the same in your later plots too
+  
+:::
+
+#### Compare estimates
+
+* Compare means and variances for each sample size
+
+```{r}
+mean(norm_means10$x_bar)
+mean(norm_means50$x_bar)
+mean(norm_means100$x_bar)
+```
+
+```{r}
+var(norm_means10$x_bar)
+var(norm_means50$x_bar)
+var(norm_means100$x_bar)
+```
+
+* How does each value correspond to what you'd expect based on the mathematically-derived sampling distribution?
+  * $\bar{X} \sim \mathcal{N}(\mu, \frac{\sigma^2}{n})$
+
+### Bernoulli population: $population \sim B(0.3)$
+
+#### Create a population
+
+* `rbinom()` creates a random variable that follows a **binomial** distribution 
+  * First argument = Number of observations (population size)
+  * Second argument = number of trials (here, just 1 for a **Bernoulli** trial)
+  * Third argument = $p$ (probability of success)
+
+```{r}
+bernoulli_pop <- rbinom(1000000, 1, 0.3)
+mean(bernoulli_pop)
+var(bernoulli_pop)
+```
+
+#### Sample from the population
+
+* Small sample: $n$ = 10
+
+```{r}
+bern_means10 <- data.frame(bernoulli_pop) %>%
+  rep_sample_n(size = 10, reps = 10000, replace = TRUE) %>%
+  summarise(x_bar = mean(bernoulli_pop))
+
+ggplot(data = bern_means10, aes(x = x_bar)) +
+  geom_histogram(bins = 50) +
+    xlim(0,1)
+```
+
+* Moderate sample: $n$ = 50
+
+```{r}
+bern_means50 <- data.frame(bernoulli_pop) %>%
+  rep_sample_n(size = 50, reps = 10000, replace = TRUE) %>%
+  summarise(x_bar = mean(bernoulli_pop))
+
+ggplot(data = bern_means50, aes(x = x_bar)) +
+  geom_histogram(bins = 50) +
+    xlim(0,1)
+```
+
+* Large sample: $n$ = 100
+
+```{r}
+bern_means100 <- data.frame(bernoulli_pop) %>%
+  rep_sample_n(size = 100, reps = 10000, replace = TRUE) %>%
+  summarise(x_bar = mean(bernoulli_pop))
+
+ggplot(data = bern_means100, aes(x = x_bar)) +
+  geom_histogram(bins = 50) +
+    xlim(0,1)
+```
+
+#### Compare estimates
+
+* Compare means and variances for each sample size
+
+```{r}
+mean(bern_means10$x_bar)
+mean(bern_means50$x_bar)
+mean(bern_means100$x_bar)
+```
+
+```{r}
+var(bern_means10$x_bar)
+var(bern_means50$x_bar)
+var(bern_means100$x_bar)
+```
+
+### Binomial population: $population \sim Bin(50, 0.3)$
+
+#### Create a population
+
+* `rbinom()` creates a random variable that follows a **binomial** distribution 
+  * First argument = Number of observations (population size)
+  * Second argument = $m$ (number of trials)
+  * Third argument = $p$ (probability of success)
+
+```{r}
+binomial_pop <- rbinom(1000000, 50, 0.3)
+mean(binomial_pop)
+var(binomial_pop)
+```
+
+#### Sample from the population
+
+* Small sample: $n$ = 10
+
+```{r}
+bin_means10 <- data.frame(binomial_pop) %>%
+  rep_sample_n(size = 10, reps = 10000, replace = TRUE) %>%
+  summarise(x_bar = mean(binomial_pop))
+
+ggplot(data = bin_means10, aes(x = x_bar)) +
+  geom_histogram(bins = 50) +
+    xlim(10,20)
+```
+
+* Moderate sample: $n$ = 50
+
+```{r}
+bin_means50 <- data.frame(binomial_pop) %>%
+  rep_sample_n(size = 50, reps = 10000, replace = TRUE) %>%
+  summarise(x_bar = mean(binomial_pop))
+
+ggplot(data = bin_means50, aes(x = x_bar)) +
+  geom_histogram(bins = 50) +
+    xlim(10,20)
+```
+
+* Large sample: $n$ = 100
+
+```{r}
+bin_means100 <- data.frame(binomial_pop) %>%
+  rep_sample_n(size = 100, reps = 10000, replace = TRUE) %>%
+  summarise(x_bar = mean(binomial_pop))
+
+ggplot(data = bin_means100, aes(x = x_bar)) +
+  geom_histogram(bins = 50) +
+    xlim(10,20)
+```
+
+#### Compare estimates
+
+* Compare means and variances for each sample size
+
+```{r}
+mean(bin_means10$x_bar)
+mean(bin_means50$x_bar)
+mean(bin_means100$x_bar)
+```
+
+```{r}
+var(bin_means10$x_bar)
+var(bin_means50$x_bar)
+var(bin_means100$x_bar)
+```
+
+### Poisson population: $population \sim Poisson(1.5)$
+
+#### Create a population
+
+* `rpois()` creates a random variable that follows a **Poisson** distribution 
+  * First argument = Number of observations (population size)
+  * Second argument = $\lambda$ (mean and variance)
+
+```{r}
+poisson_pop <- rpois(1000000, 1.5)
+mean(poisson_pop)
+var(poisson_pop)
+```
+
+#### Sample from the population
+
+* Small sample: $n$ = 10
+
+```{r}
+poi_means10 <- data.frame(poisson_pop) %>%
+  rep_sample_n(size = 10, reps = 10000, replace = TRUE) %>%
+  summarise(x_bar = mean(poisson_pop))
+
+ggplot(data = poi_means10, aes(x = x_bar)) +
+  geom_histogram(bins = 50) +
+    xlim(0,5) 
+```
+
+* Moderate sample: $n$ = 50
+
+```{r}
+poi_means50 <- data.frame(poisson_pop) %>%
+  rep_sample_n(size = 50, reps = 10000, replace = TRUE) %>%
+  summarise(x_bar = mean(poisson_pop))
+
+ggplot(data = poi_means50, aes(x = x_bar)) +
+  geom_histogram(bins = 50) +
+    xlim(0,5)  
+```
+
+* Large sample: $n$ = 100
+
+```{r}
+poi_means100 <- data.frame(poisson_pop) %>%
+  rep_sample_n(size = 100, reps = 10000, replace = TRUE) %>%
+  summarise(x_bar = mean(poisson_pop))
+
+ggplot(data = poi_means100, aes(x = x_bar)) +
+  geom_histogram(bins = 50) +
+    xlim(0,5)  
+```
+
+#### Compare estimates
+
+* Compare means and variances for each sample size
+
+```{r}
+mean(poi_means10$x_bar)
+mean(poi_means50$x_bar)
+mean(poi_means100$x_bar)
+```
+
+```{r}
+var(poi_means10$x_bar)
+var(poi_means50$x_bar)
+var(poi_means100$x_bar)
+```

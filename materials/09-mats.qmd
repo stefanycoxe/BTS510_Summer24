@@ -1,0 +1,24 @@
+---
+title: "Week 8: Hypothesis testing"
+---
+
+## Learning objectives
+
+* *Describe* the logic of **hypothesis testing**
+* *Interpret* tests comparing **one sample** to hypothesized value
+* *Relate* **hypothesis testing** to **confidence intervals**
+* *Recognize* when to use a **nonparametric test**
+
+## Before class: Lecture 
+
+* [Lecture 8](https://youtu.be/wjV00D9DcWE){target="_blank"} 
+* [Lecture survey](https://forms.gle/u8f1NYxX2ubX2YMQ8){target="_blank"}: Complete by Wednesday, June 26 at 8pm
+* [Slides (html)](../slides/BTS510-24-8.qmd){target="_blank"}
+    
+## During class: Lab
+
+* [Lab 8 (html with link to code)](../lab/BTS510-24-lab8.qmd){target="_blank"}
+
+## After class: Assignment
+
+* **No homework this week**

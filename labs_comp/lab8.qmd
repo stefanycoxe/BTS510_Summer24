@@ -1,0 +1,172 @@
+---
+title: "BTS 510 Lab 8"
+format:
+  html:
+    embed-resources: true
+    self-contained-math: true
+    html-math-method: katex
+    number-sections: true
+    toc: true
+    code-tools: true
+    code-block-bg: true
+    code-block-border-left: "#31BAE9"
+---
+
+```{r}
+#| label: setup
+library(tidyverse)
+set.seed(12345)
+theme_set(theme_classic(base_size = 16))
+```
+
+## Learning objectives
+
+* *Describe* the logic of **hypothesis testing**
+* *Interpret* tests comparing **one sample** to hypothesized value
+* *Relate* **hypothesis testing** to **confidence intervals**
+* *Recognize* when to use a **nonparametric test**
+
+## Data 
+
+* `Pulse` dataset from the **Stat2Data** package
+    * A dataset with $n$ = 232 observations on the following 7 variables.
+        * `Active`: Pulse rate (beats per minute) after exercise
+        * `Rest`: Resting pulse rate (beats per minute)
+        * `Smoke`: 1=smoker or 0=nonsmoker
+        * `Sex`: 1=female or 0=male
+        * `Exercise`: Typical hours of exercise (per week)
+        * `Hgt`: Height (in inches)
+        * `Wgt`: Weight (in pounds)
+
+* Convert the factor variables to factor variables, as in the lecture
+  * `as.factor()` function
+
+```{r}
+library(Stat2Data)
+data(Pulse)
+#Pulse$Smoke <- as.factor(Pulse$Smoke)
+#Pulse$Sex <- as.factor(Pulse$Sex)
+head(Pulse)
+```
+
+
+## Tasks
+
+* Make plots of variables as needed
+
+### Gender split
+
+* Is the gender split in this sample the same as in the total population (i.e., 50/50)?
+  * What kind of variable is this?
+  * What test should you do?
+  * Directional or non-directional?
+  * Present the results of the test
+  * Write your conclusions: Is the gender split in this sample comparable to that in the total population?
+  
+```{r}
+table(Pulse$Sex)
+binom.test(x = 110, 
+           n = 232, 
+           p = 0.5, 
+           alternative = "two.sided")
+``` 
+
+::: {.callout-note}
+* `sigma.x` is the standard deviation
+  * I accidentally used the variance in class
+  * Remember that $SD = \sqrt{variance}$
+:::
+
+```{r}
+library(BSDA)
+z.test(x = Pulse$Sex, 
+       alternative = "two.sided",
+       mu = 0.5, 
+       sigma.x = sqrt(0.25),
+       conf.level = .95)
+```  
+  
+### Smoking rate
+
+* Is the smoking rate in this sample the same as the 11.5% rate in the US? (CDC info on smoking [here](https://www.cdc.gov/tobacco/campaign/tips/resources/data/cigarette-smoking-in-united-states.html)
+  * What kind of variable is this?
+  * What test should you do?
+  * Directional or non-directional?
+  * Present the results of the test
+  * Write your conclusions: Is the smoking rate in this sample comparable to the 11.5% rate in the US?
+  
+```{r}
+table(Pulse$Smoke)
+binom.test(x = 26, 
+           n = 232, 
+           p = 0.115, 
+           alternative = "two.sided")
+``` 
+
+
+::: {.callout-note}
+* `sigma.x` is the standard deviation
+  * I accidentally used the variance in class
+  * Remember that $SD = \sqrt{variance}$
+:::
+
+```{r}
+library(BSDA)
+z.test(x = Pulse$Smoke, 
+       alternative = "two.sided",
+       mu = 0.115, 
+       sigma.x = sqrt(0.115*(1-0.115)),
+       conf.level = .95)
+```
+
+
+### Elevated pulse rate
+
+* Is the **active** pulse rate **higher** than the **high end of resting pulse rate** of 100 bpm?
+  * What kind of variable is this?
+  * What test should you do?
+  * Directional or non-directional?
+  * Present the results of the test
+  * Write your conclusions: Is the active pulse rate different from the high end of resting pulse rate of 100 bpm?
+  
+```{r}
+t.test(x = Pulse$Active,
+       alternative = "greater",
+       mu = 100, 
+       conf.level = .95)
+```
+  
+  
+### Height among men
+
+* Is the height of **men** in this sample **different** from the US average of 5 feet 9 inches?
+  * What kind of variable is this?
+  * What test should you do?
+  * Directional or non-directional?
+  * Present the results of the test
+  * Write your conclusions: Is the height of men in this sample different from the US average of 5 feet 9 inches?
+  
+```{r}
+PulseM <- Pulse %>%
+    filter(Sex == 0)
+```
+  
+  
+```{r}
+t.test(x = PulseM$Hgt,
+       alternative = "two.sided",
+       mu = 69, 
+       conf.level = .95)
+```
+  
+ 
+```{r}
+library(BSDA)
+sd(PulseM$Hgt)
+z.test(x = PulseM$Hgt, 
+       alternative = "two.sided",
+       mu = 69, 
+       sigma.x = 3,
+       conf.level = .95)
+``` 
+  

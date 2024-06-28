@@ -1,0 +1,200 @@
+---
+title: "BTS 510 Lab 7"
+format:
+  html:
+    embed-resources: true
+    self-contained-math: true
+    html-math-method: katex
+    number-sections: true
+    toc: true
+    code-tools: true
+    code-block-bg: true
+    code-block-border-left: "#31BAE9"
+---
+
+```{r}
+#| label: setup
+library(tidyverse)
+set.seed(12345)
+theme_set(theme_classic(base_size = 16))
+```
+
+## Learning objectives
+
+* **Compare** and **contrast** *point estimates* and *interval estimates*
+* **Construct** *confidence intervals*
+* **Interpret** *confidence intervals*
+
+## Vary population distribution, sample size, confidence interval level
+
+### Normally distributed: $population \sim \mathcal{N}(\mu = 10, \sigma^2 = 25)$
+
+* Two sample sizes: 30 and 100
+* Note that `rnorm()` takes standard deviation as an argument, not variance
+
+```{r}
+norm30 <- rnorm(n = 30, mean = 10, sd = 5)
+norm100 <- rnorm(n = 100, mean = 10, sd = 5)
+```
+
+* Calculate the means, variances, and standard deviations for each sample
+
+```{r}
+mean(norm30)
+mean(norm100)
+var(norm30)
+var(norm100)
+sd(norm30)
+sd(norm100)
+```
+
+* Construct the 95% and 99% confidence intervals for each mean
+
+$[\bar{X} - z_{1-\alpha/2}\ \sqrt{\frac{\sigma^2}{n}}, \bar{X} + z_{1-\alpha/2}\ \sqrt{\frac{\sigma^2}{n}}]$
+
+* I'm just having R make the calculations for me, rather than doing by hand
+  * I'm also doing it in several steps so you can see where each piece comes from, but you can do it all in one step if you're confident
+
+
+```{r}
+norm30_95moe <- 1.96 * sqrt(var(norm30)/30)
+norm30_95lcl <- mean(norm30) - norm30_95moe
+norm30_95ucl <- mean(norm30) + norm30_95moe
+
+norm30_99moe <- 2.326 * sqrt(var(norm30)/30)
+norm30_99lcl <- mean(norm30) - norm30_99moe
+norm30_99ucl <- mean(norm30) + norm30_99moe  
+
+norm100_95moe <- 1.96 * sqrt(var(norm100)/100)
+norm100_95lcl <- mean(norm100) - norm100_95moe
+norm100_95ucl <- mean(norm100) + norm100_95moe
+
+norm100_99moe <- 2.326 * sqrt(var(norm100)/100)
+norm100_99lcl <- mean(norm100) - norm100_99moe
+norm100_99ucl <- mean(norm100) + norm100_99moe  
+```
+
+* You can look at them in the output, or you can have R print them in your Quarto document 
+* (Look at the code to see how this was done)
+  * n = 30, 95%: [`r round(norm30_95lcl, 3)`, `r round(norm30_95ucl, 3)`]
+  * n = 30, 99%: [`r round(norm30_99lcl, 3)`, `r round(norm30_99ucl, 3)`]
+  * n = 100, 95%: [`r round(norm100_95lcl, 3)`, `r round(norm100_95ucl, 3)`]
+  * n = 100, 99%: [`r round(norm100_99lcl, 3)`, `r round(norm100_99ucl, 3)`]
+
+* How do the confidence intervals vary with 1) sample size (i.e., n = 30 vs n = 100) and 2) confidence level (i.e., 95% vs 99%)?
+
+
+### Bernoulli distributed: $population \sim B(0.3)$
+
+* Two sample sizes: 30 and 100
+
+```{r}
+bern30 <- rbinom(30, 1, 0.3)
+bern100 <- rbinom(100, 1, 0.3)
+```
+
+```{r}
+ggplot(data = data.frame(bern30), aes(x = bern30)) +
+    geom_histogram()
+```
+
+* Calculate the means, variances, and standard deviations for each sample
+
+```{r}
+mean(bern30)
+sd(bern30)
+var(bern30)
+mean(bern100)
+sd(bern100)
+var(bern100)
+```
+
+* Construct the 95% and 99% confidence intervals for each mean
+
+$[\bar{X} - z_{1-\alpha/2}\ \sqrt{\frac{\sigma^2}{n}}, \bar{X} + z_{1-\alpha/2}\ \sqrt{\frac{\sigma^2}{n}}]$
+
+
+```{r}
+bern30_95moe <- 1.96 * sqrt(var(bern30)/30)
+bern30_95lcl <- mean(bern30) - bern30_95moe
+bern30_95ucl <- mean(bern30) + bern30_95moe
+
+bern30_99moe <- 2.326 * sqrt(var(bern30)/30)
+bern30_99lcl <- mean(bern30) - bern30_99moe
+bern30_99ucl <- mean(bern30) + bern30_99moe  
+
+bern100_95moe <- 1.96 * sqrt(var(bern100)/100)
+bern100_95lcl <- mean(bern100) - bern100_95moe
+bern100_95ucl <- mean(bern100) + bern100_95moe
+
+bern100_99moe <- 2.326 * sqrt(var(bern100)/100)
+bern100_99lcl <- mean(bern100) - bern100_99moe
+bern100_99ucl <- mean(bern100) + bern100_99moe  
+```
+
+* You can look at them in the output, or you can have R print them in your Quarto document 
+* (Look at the code to see how this was done)
+  * n = 30, 95%: [`r round(bern30_95lcl, 3)`, `r round(bern30_95ucl, 3)`]
+  * n = 30, 99%: [`r round(bern30_99lcl, 3)`, `r round(bern30_99ucl, 3)`]
+  * n = 100, 95%: [`r round(bern100_95lcl, 3)`, `r round(bern100_95ucl, 3)`]
+  * n = 100, 99%: [`r round(bern100_99lcl, 3)`, `r round(bern100_99ucl, 3)`]
+
+* How do the confidence intervals vary with 1) sample size (i.e., n = 30 vs n = 100) and 2) confidence level (i.e., 95% vs 99%)?
+
+### Binomial distributed: $population \sim Bin(50, 0.3)$
+
+* Two sample sizes: 30 and 100
+
+```{r}
+binom30 <- rbinom(30, 50, 0.3)
+binom100 <- rbinom(100, 50, 0.3)
+```
+
+* Calculate the means, variances, and standard deviations for each sample
+
+```{r}
+```
+
+* Construct the 95% and 99% confidence intervals for each mean
+
+$[\bar{X} - z_{1-\alpha/2}\ \sqrt{\frac{\sigma^2}{n}}, \bar{X} + z_{1-\alpha/2}\ \sqrt{\frac{\sigma^2}{n}}]$
+
+```{r}
+```
+
+* How do the confidence intervals vary with 1) sample size (i.e., n = 30 vs n = 100) and 2) confidence level (i.e., 95% vs 99%)?
+
+### Poisson distributed: $population \sim Poisson(1.5)$
+
+* Two sample sizes: 30 and 100
+
+```{r}
+pois30 <- rpois(n = 30, lambda = 1.5)
+pois100 <- rpois(n = 30, lambda = 1.5)
+```
+
+* Calculate the means, variances, and standard deviations for each sample
+
+```{r}
+```
+
+* Construct the 95% and 99% confidence intervals for each mean
+
+$[\bar{X} - z_{1-\alpha/2}\ \sqrt{\frac{\sigma^2}{n}}, \bar{X} + z_{1-\alpha/2}\ \sqrt{\frac{\sigma^2}{n}}]$
+
+```{r}
+```
+
+* How do the confidence intervals vary with 1) sample size (i.e., n = 30 vs n = 100) and 2) confidence level (i.e., 95% vs 99%)?
+
+## Summary
+
+* How do the confidence intervals vary with sample size?
+
+* How do the confidence intervals vary with confidence level?
+
+* How do the confidence intervals vary with population distribution?
+
+* Did you notice anything else? 
+
+

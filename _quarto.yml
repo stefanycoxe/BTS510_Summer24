@@ -28,6 +28,15 @@ website:
           #- materials/10-mats.qmd 
           #- materials/11-mats.qmd   
           #- materials/12-mats.qmd 
+      - section: "Complete labs"
+        contents: 
+          - labs_comp/index.qmd   
+          - labs_comp/lab3.qmd   
+          - labs_comp/lab4.qmd   
+          - labs_comp/lab5.qmd
+          - labs_comp/lab6.qmd   
+          - labs_comp/lab7.qmd   
+          - labs_comp/lab8.qmd   
       - section: "Assignments"
         contents:
           - assignments/index.qmd    
