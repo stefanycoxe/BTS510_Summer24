@@ -1461,220 +1461,262 @@
     "text": "5.1 In-class activities\n\nRead data into R from external formats (e.g., Excel, .csv, SPSS)\nUse dplyr functions in R to manipulate datasets\nUse tidyr functions in R to organize and re-structure datasets"
   },
   {
-    "objectID": "slides/BTS510-24-0.html#about-me",
-    "href": "slides/BTS510-24-0.html#about-me",
+    "objectID": "slides/BTS510-24-1.html#learning-objectives-1",
+    "href": "slides/BTS510-24-1.html#learning-objectives-1",
     "title": "Introduction to Biostatistics",
-    "section": "1.1 About me",
-    "text": "1.1 About me\n\nDr. Stefany Coxe\n\nPh.D. in Quantitative Psychology from Arizona State University\nBiostatistician in Biostatistics Shared Resource\nAssociate Professor in Computational Biomedicine\n\nOriginally from Southern California but I’ve lived in other warm places like Phoenix and Miami\nI love statistics and want you to love them too!"
+    "section": "1.1 Learning objectives",
+    "text": "1.1 Learning objectives\n\nReview the course topics and goals\nStart using R and Rstudio\nStart using Quarto documents in R as a reproducible method to present analyses along with narrative text"
   },
   {
-    "objectID": "slides/BTS510-24-0.html#about-your-co-instructors",
-    "href": "slides/BTS510-24-0.html#about-your-co-instructors",
+    "objectID": "slides/BTS510-24-1.html#what-is-statistics-interdisciplinary",
+    "href": "slides/BTS510-24-1.html#what-is-statistics-interdisciplinary",
     "title": "Introduction to Biostatistics",
-    "section": "1.2 About your co-instructors",
-    "text": "1.2 About your co-instructors\n\nYujie Cui, M.S.\n\nyujie.cui@cshs.org\n\nMichael Luu, M.P.H.\n\nmichael.luu@cshs.org"
+    "section": "2.1 What is statistics? Interdisciplinary",
+    "text": "2.1 What is statistics? Interdisciplinary\n\nMathematics\nProbability\nUncertainty\nDecision making\nProgramming / computer science\nStudy design and methodology\nIntegrated into science"
   },
   {
-    "objectID": "slides/BTS510-24-0.html#this-course",
-    "href": "slides/BTS510-24-0.html#this-course",
+    "objectID": "slides/BTS510-24-1.html#what-is-statistics-people",
+    "href": "slides/BTS510-24-1.html#what-is-statistics-people",
     "title": "Introduction to Biostatistics",
-    "section": "1.3 This course",
-    "text": "1.3 This course\n\nThis course covers topics related to applied statistical analysis of experimental studies\n\nUsing and manipulating datasets, plotting data, probability, estimation and uncertainty, comparing 2 independent or dependent means, comparing 2 independent or dependent proportions, controlling for multiple comparisons\n\n\n\nJeff Edwards, September 2017 CARMA talk:\nBecoming methodologically self-reliant is empowering, satisfying, and essential to your success as a researcher."
+    "section": "2.2 What is statistics? People",
+    "text": "2.2 What is statistics? People\n\nWilliam Sealy Gosset\n\nGuinness Brewing Company: Making better beer\n\\(t\\)-distribution and \\(t\\)-test\n\nRonald Fisher\n\nRothamsted Experimental Station: Agricultural questions\nAnalysis of variance (ANOVA) and \\(F\\)-distribution\nPopularized the \\(p\\)-value and \\(p &lt; .05\\) as a cut-off"
   },
   {
-    "objectID": "slides/BTS510-24-0.html#hybrid-flipped-course",
-    "href": "slides/BTS510-24-0.html#hybrid-flipped-course",
+    "objectID": "slides/BTS510-24-1.html#what-is-statistics-context",
+    "href": "slides/BTS510-24-1.html#what-is-statistics-context",
     "title": "Introduction to Biostatistics",
-    "section": "1.4 Hybrid, flipped course",
-    "text": "1.4 Hybrid, flipped course\n\nWe meet in person for 1 hour 30 minutes each week for active learning\n\nWork through R code\n\nInterpret output\nQ & A\n\nAll other content is delivered asynchronously via web\n\nRecorded lectures (before meeting)\n\nHomework (after meeting)"
+    "section": "2.3 What is statistics? Context",
+    "text": "2.3 What is statistics? Context\n\nhttps://www.instagram.com/p/Bx8p0Pih6qs/"
   },
   {
-    "objectID": "slides/BTS510-24-0.html#course-schedule",
-    "href": "slides/BTS510-24-0.html#course-schedule",
+    "objectID": "slides/BTS510-24-1.html#what-is-statistics-context-1",
+    "href": "slides/BTS510-24-1.html#what-is-statistics-context-1",
     "title": "Introduction to Biostatistics",
-    "section": "2.1 Course schedule",
-    "text": "2.1 Course schedule\n\nMonday: Materials for the week will be available\nWednesday by 8pm: Watch lecture video and complete survey\nThursday at 9am: Meet in person in G-511 Auditorium (PDC)\nSunday by midnight: Homework assignment due"
+    "section": "2.4 What is statistics? Context",
+    "text": "2.4 What is statistics? Context\n\nThis thing is 8 feet tall. Is that tall?\n\nFor a person: Yes\nFor a building: No\n\nThese two things are 12 inches different in height. Is that a lot?\n\nFor people: Yes\nFor buildings: No"
   },
   {
-    "objectID": "slides/BTS510-24-0.html#lecture-and-survey",
-    "href": "slides/BTS510-24-0.html#lecture-and-survey",
+    "objectID": "slides/BTS510-24-1.html#when-to-think-about-statistics",
+    "href": "slides/BTS510-24-1.html#when-to-think-about-statistics",
     "title": "Introduction to Biostatistics",
-    "section": "3.1 Lecture and survey",
-    "text": "3.1 Lecture and survey\n\nEach week, there will be a recorded lecture video\n\nBackground material to do in-class exercises\nWatch the video\nComplete the survey to provide comments and questions"
+    "section": "2.5 When to think about statistics?",
+    "text": "2.5 When to think about statistics?\n\n\nStudy design\nData collection\n\n\n\nData analysis\n\n\n\n\nInterpretation\n\n\n\n\nRonald Fisher:   To call in the statistician after the experiment is done may be no more than asking him to perform a post-mortem examination: he may be able to say what the experiment died of."
   },
   {
-    "objectID": "slides/BTS510-24-0.html#in-person-class-time",
-    "href": "slides/BTS510-24-0.html#in-person-class-time",
+    "objectID": "slides/BTS510-24-1.html#topics",
+    "href": "slides/BTS510-24-1.html#topics",
     "title": "Introduction to Biostatistics",
-    "section": "3.2 In-person class time",
-    "text": "3.2 In-person class time\n\nBriefly review the lecture and answer any questions\nCode, output, and interpretation\nWrap up and final questions"
+    "section": "2.6 Topics",
+    "text": "2.6 Topics\n\nReading in and manipulating data in R\nMaking plots in R\nDescriptive statistics\nProbability, sampling distributions, uncertainty\nComparing 2 means or proportions\nControlling for multiple comparisons\nComparing 3 or more means"
   },
   {
-    "objectID": "slides/BTS510-24-0.html#homework-assignments",
-    "href": "slides/BTS510-24-0.html#homework-assignments",
+    "objectID": "slides/BTS510-24-1.html#what-youll-learn-about",
+    "href": "slides/BTS510-24-1.html#what-youll-learn-about",
     "title": "Introduction to Biostatistics",
-    "section": "3.3 Homework assignments",
-    "text": "3.3 Homework assignments\n\nSix (6) homework assignments\n\nProgramming assignments\n\nWrite code to learn to program in R\n\nData and research question\n\nYou run the appropriate analyses and write up the results"
+    "section": "2.7 What you’ll learn about",
+    "text": "2.7 What you’ll learn about\n\nProgramming (in R)\nProbability and mathematics underlying statistical methods\nConducting (some) statistical analyses\nPresenting results of statistical analyses\nThinking about issues in science related to statistics"
   },
   {
-    "objectID": "slides/BTS510-24-0.html#final-project",
-    "href": "slides/BTS510-24-0.html#final-project",
+    "objectID": "slides/BTS510-24-1.html#what-is-r",
+    "href": "slides/BTS510-24-1.html#what-is-r",
     "title": "Introduction to Biostatistics",
-    "section": "3.4 Final project",
-    "text": "3.4 Final project\n\nPick one of five special topics (see References)\nWrite a short “guidebook” on the topic\nMore details to come"
+    "section": "3.1 What is R?",
+    "text": "3.1 What is R?\n\nFree, open source software\n\nWindows, Mac, Unix, cloud\n\nObject-oriented programming language\nBuilt-in capabilities (“packages”)\nUsers can write their own packages and functions"
   },
   {
-    "objectID": "slides/BTS510-24-0.html#statistical-software",
-    "href": "slides/BTS510-24-0.html#statistical-software",
+    "objectID": "slides/BTS510-24-1.html#what-is-r-1",
+    "href": "slides/BTS510-24-1.html#what-is-r-1",
     "title": "Introduction to Biostatistics",
-    "section": "4.1 Statistical software",
-    "text": "4.1 Statistical software\n\nR software\n\nOK if you don’t know how to use it (but also great if you do!)\nFree and open source and works on any platform\n\nRstudio is a graphical IDE (integrated development environment) for R\nLinks in the syllabus to install R and Rstudio"
+    "section": "3.2 What is R?",
+    "text": "3.2 What is R?"
   },
   {
-    "objectID": "slides/BTS510-24-0.html#how-can-you-be-successful",
-    "href": "slides/BTS510-24-0.html#how-can-you-be-successful",
+    "objectID": "slides/BTS510-24-1.html#what-does-object-oriented-mean",
+    "href": "slides/BTS510-24-1.html#what-does-object-oriented-mean",
     "title": "Introduction to Biostatistics",
-    "section": "5.1 How can you be successful?",
-    "text": "5.1 How can you be successful?\n\nCome to class prepared and ready to run analyses\n\nVideos watched. On time. Software ready. Fed. Caffeinated.\n\nCommunicate with instructors\n\nThere are more of you than there are us\nI don’t know what’s going on with each of you"
+    "section": "3.3 What does “object-oriented” mean?",
+    "text": "3.3 What does “object-oriented” mean?\n\nProgramming built on the idea of “objects”\nEverything is an object\n\nIf you have an object’s name, you can do something with it\n\nObjects: Datasets, variables, analyses, plots"
   },
   {
-    "objectID": "slides/BTS510-24-0.html#where-can-i-find-out-more-about",
-    "href": "slides/BTS510-24-0.html#where-can-i-find-out-more-about",
+    "objectID": "slides/BTS510-24-1.html#what-does-object-oriented-mean-1",
+    "href": "slides/BTS510-24-1.html#what-does-object-oriented-mean-1",
     "title": "Introduction to Biostatistics",
-    "section": "5.2 Where can I find out more about…?",
-    "text": "5.2 Where can I find out more about…?\n\nCheck the website. Really.\n\nSyllabus, all the course materials, due dates, policies, etc.\nMany pages of references, organized by topic\n\nEmail me or Yujie or Michael\n\nIf you can get your question into an email, I can almost always answer it in an email"
+    "section": "3.4 What does “object-oriented” mean?",
+    "text": "3.4 What does “object-oriented” mean?\n\nx &lt;- c(1, 1, 2, 3, 5, 8)\nx\n\n[1] 1 1 2 3 5 8\n\n\n\nLine 1\n\nDefine an object called x that is this set of numbers\n&lt;- is the assignment operator\n\nLine 2\n\nPrint the object x"
   },
   {
-    "objectID": "slides/BTS510-24-0.html#whats-next",
-    "href": "slides/BTS510-24-0.html#whats-next",
+    "objectID": "slides/BTS510-24-1.html#what-is-a-function",
+    "href": "slides/BTS510-24-1.html#what-is-a-function",
     "title": "Introduction to Biostatistics",
-    "section": "5.3 What’s next?",
-    "text": "5.3 What’s next?\nGet prepared for our in-person meeting on Thursday\n\nWatch the Lecture 1 video\n\nComplete the survey to provide feedback\n\nGet your software set up\n\nInstall R (and Rstudio)\n\nCome to class ready to do things!"
+    "section": "3.5 What is a function?",
+    "text": "3.5 What is a function?\n\nPre-written piece of code that\n\nTakes one or more inputs (or arguments)\nProduces one or more outputs"
   },
   {
-    "objectID": "refs.html",
-    "href": "refs.html",
-    "title": "References",
+    "objectID": "slides/BTS510-24-1.html#what-is-a-function-1",
+    "href": "slides/BTS510-24-1.html#what-is-a-function-1",
+    "title": "Introduction to Biostatistics",
+    "section": "3.6 What is a function?",
+    "text": "3.6 What is a function?\n\nmean(x)\n\n[1] 3.333333\n\n\n\nFunction: mean()\nInput: x\nOutput: mean of x\n\nDocumentation for mean() function"
+  },
+  {
+    "objectID": "slides/BTS510-24-1.html#what-is-a-package",
+    "href": "slides/BTS510-24-1.html#what-is-a-package",
+    "title": "Introduction to Biostatistics",
+    "section": "3.7 What is a package?",
+    "text": "3.7 What is a package?\n\nCollection of functions (that work together in some way)\n\ndplyr package is a set of functions to manipulate data\nggplot package is a set of functions to create plots\nstats package (built-in) is a set of functions to perform basic statistical operations"
+  },
+  {
+    "objectID": "slides/BTS510-24-1.html#what-is-a-package-1",
+    "href": "slides/BTS510-24-1.html#what-is-a-package-1",
+    "title": "Introduction to Biostatistics",
+    "section": "3.8 What is a package?",
+    "text": "3.8 What is a package?\n\nTo use functions in a package, you need to\n\nInstall the package\n\nJust once per machine / R install\n\nLoad or library() the package\n\nEvery time you use it"
+  },
+  {
+    "objectID": "slides/BTS510-24-1.html#what-is-rstudio",
+    "href": "slides/BTS510-24-1.html#what-is-rstudio",
+    "title": "Introduction to Biostatistics",
+    "section": "3.9 What is Rstudio?",
+    "text": "3.9 What is Rstudio?\n\nIntegrated development environment (IDE) for R\nGraphical user interface to use R\n\nManage installed packages\nConnect to git / github\nEasily see loaded datasets"
+  },
+  {
+    "objectID": "slides/BTS510-24-1.html#what-is-rstudio-1",
+    "href": "slides/BTS510-24-1.html#what-is-rstudio-1",
+    "title": "Introduction to Biostatistics",
+    "section": "3.10 What is Rstudio?",
+    "text": "3.10 What is Rstudio?"
+  },
+  {
+    "objectID": "slides/BTS510-24-1.html#what-is-markdown",
+    "href": "slides/BTS510-24-1.html#what-is-markdown",
+    "title": "Introduction to Biostatistics",
+    "section": "4.1 What is “markdown”?",
+    "text": "4.1 What is “markdown”?\n\n“Markup” language to format plain text\n\nHTML: Hyper-Text Markup Language\n\nHeadings, links, italics / bold, bullet points, equations\nOutput final, formatted document into multiple formats\n\nHTML, Word, PDF documents or slides\n\nUsed across a wide variety of platforms, not just in R\n\nGithub, Jekyll, note-taking apps"
+  },
+  {
+    "objectID": "slides/BTS510-24-1.html#markdown-example",
+    "href": "slides/BTS510-24-1.html#markdown-example",
+    "title": "Introduction to Biostatistics",
+    "section": "4.2 markdown example",
+    "text": "4.2 markdown example\n\nhttps://www.markdownguide.org/getting-started/#kicking-the-tires"
+  },
+  {
+    "objectID": "slides/BTS510-24-1.html#markdown-example-organization",
+    "href": "slides/BTS510-24-1.html#markdown-example-organization",
+    "title": "Introduction to Biostatistics",
+    "section": "4.3 markdown example: Organization",
+    "text": "4.3 markdown example: Organization\n\nOrganize document with headings\n\n# Level 1 heading\n## Level 2 heading\n### Level 3 heading\n\nMost documents can have a table of contents, which will use these headings\n\nSlides have a table of contents accessed from bottom left"
+  },
+  {
+    "objectID": "slides/BTS510-24-1.html#markdown-example-format-text",
+    "href": "slides/BTS510-24-1.html#markdown-example-format-text",
+    "title": "Introduction to Biostatistics",
+    "section": "4.4 markdown example: Format text",
+    "text": "4.4 markdown example: Format text\n\n*italics* turns into italics\n**bold** turns into bold\nMathematical text in between pairs of $\n\n$R^2_{multiple}$ turns into \\(R^2_{multiple}\\)\n$\\hat{Y} = b_0 + b_1 X_1$ turns into \\(\\hat{Y} = b_0 + b_1 X_1\\)"
+  },
+  {
+    "objectID": "slides/BTS510-24-1.html#markdown-example-code-chunks",
+    "href": "slides/BTS510-24-1.html#markdown-example-code-chunks",
+    "title": "Introduction to Biostatistics",
+    "section": "4.5 markdown example: Code chunks",
+    "text": "4.5 markdown example: Code chunks\n```{r, echo = TRUE}\nx &lt;- c(1, 1, 2, 3, 5, 8)\nmean(x)\n```\n\nIntersperse text and code in the same document\n\nDescription of data and analysis\nAnalysis\nSummarize the results"
+  },
+  {
+    "objectID": "slides/BTS510-24-1.html#rmarkdown-package",
+    "href": "slides/BTS510-24-1.html#rmarkdown-package",
+    "title": "Introduction to Biostatistics",
+    "section": "4.6 rmarkdown package",
+    "text": "4.6 rmarkdown package\n\nImplements markdown in R\nLets you create several document types\n\nHTML or PDF or Word documents\nSlides in HTML or PDF or Powerpoint\n\nDoes all the heavy lifting to convert your markdown document to the final, formatted version"
+  },
+  {
+    "objectID": "slides/BTS510-24-1.html#quarto",
+    "href": "slides/BTS510-24-1.html#quarto",
+    "title": "Introduction to Biostatistics",
+    "section": "4.7 Quarto",
+    "text": "4.7 Quarto\n\n“Next gen” of markdown\nWorks with multiple languages (even in the same document): R, Python, Julia\nAdditional features\nInstall Quarto from here\n\nMore general info here"
+  },
+  {
+    "objectID": "slides/BTS510-24-1.html#in-class-activities-1",
+    "href": "slides/BTS510-24-1.html#in-class-activities-1",
+    "title": "Introduction to Biostatistics",
+    "section": "5.1 In-class activities",
+    "text": "5.1 In-class activities\n\nAny questions on the course topics and goals\nStart using R and Rstudio\nStart using Quarto in R as a reproducible method to present analyses along with narrative text"
+  },
+  {
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "Schedule",
     "section": "",
-    "text": "UCLA Statistical Consulting: https://stats.oarc.ucla.edu/\nStatistics for Biologists portfolio: https://www.nature.com/collections/qghhqm\nMotulsky, H. (2014). Intuitive biostatistics: a nonmathematical guide to statistical thinking. Oxford University Press, USA.",
+    "text": "Due dates subject to change due to weather, emergency, scheduling changes, etc.\nL: Watch lecture videos and respond to survey by Wednesday at 8pm.\nH: Homework assignments are due by the end of Sunday (midnight).\nFinal project due week of August 12 (date TBD)\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nL\nH\n\n\n\n\n1\nApril 29\nIntroduction, R, markdown\n1\n\n\n\n2\nMay 06\nData manipulation\n2\n1\n\n\n3\nMay 13\nDescriptives\n3\n\n\n\n4\nMay 20\nggplot\n4\n2\n\n\n5\nMay 27\nHOLIDAY\n\n\n\n\n6\nJune 03\nggplot\n5\n\n\n\n7\nJune 10\nSampling distributions\n6\n\n\n\n8\nJune 17\nEstimation and uncertainty\n7\n3\n\n\n9\nJune 24\nHypothesis testing 1\n8\n\n\n\n10\nJuly 01\nHOLIDAY\n\n\n\n\n11\nJuly 08\nHypothesis testing 2\n9\n\n\n\n12\nJuly 15\nHypothesis testing 3\n10\n4\n\n\n13\nJuly 22\nMultiple comparisons\n11\n5\n\n\n14\nJuly 29\nOne way ANOVA\n12\n\n\n\n15\nAugust 05\nTwo way ANOVA\n13\n6\n\n\n16\nAugust 12\nTBD\n\nFinal",
     "crumbs": [
-      "References"
+      "Schedule"
     ]
   },
   {
-    "objectID": "refs.html#general-resources",
-    "href": "refs.html#general-resources",
-    "title": "References",
+    "objectID": "materials/index.html",
+    "href": "materials/index.html",
+    "title": "Materials overview",
     "section": "",
-    "text": "UCLA Statistical Consulting: https://stats.oarc.ucla.edu/\nStatistics for Biologists portfolio: https://www.nature.com/collections/qghhqm\nMotulsky, H. (2014). Intuitive biostatistics: a nonmathematical guide to statistical thinking. Oxford University Press, USA.",
+    "text": "Week by week materials are listed in the left menu\n\nFor each week, there are lecture notes, lecture videos, code files, and other materials for the course\nAll lecture videos (only) can be found here\n\nCheck the menu on the left for week-by-week materials\n\n\n\n\n\n\n\nNote\n\n\n\n\nRight click (or control click) and select “Save link as…” to download html files",
     "crumbs": [
-      "References"
-    ]
-  },
-  {
-    "objectID": "refs.html#r-rstudio-markdown-quarto",
-    "href": "refs.html#r-rstudio-markdown-quarto",
-    "title": "References",
-    "section": "R, Rstudio, markdown, Quarto",
-    "text": "R, Rstudio, markdown, Quarto\n\nCommonly used R packages for different tasks\nR packages in the tidyverse, which includes:\n\ndplyr: https://dplyr.tidyverse.org/\nggplot2: https://ggplot2.tidyverse.org/\ntidyr: https://tidyr.tidyverse.org/\n\nWickham, H., Çetinkaya-Rundel, M., & Grolemund, G. (2023). R for data science. “O’Reilly Media, Inc.”.\n\nFull book available here: https://r4ds.hadley.nz/\n\nXie, Y., Allaire, J. J., & Grolemund, G. (2018). R markdown: The definitive guide. Chapman and Hall/CRC.\n\nFull book available here: https://bookdown.org/yihui/rmarkdown/\n\nCheatsheets on various topics, including markdown: https://posit.co/resources/cheatsheets/\nQuarto: “Next gen” of markdown\nImai, K., & Williams, N. W. (2022). Quantitative Social Science: An Introduction in Tidyverse. Princeton University Press.",
-    "crumbs": [
-      "References"
-    ]
-  },
-  {
-    "objectID": "refs.html#genomics",
-    "href": "refs.html#genomics",
-    "title": "References",
-    "section": "Genomics",
-    "text": "Genomics\nComputational Genomics with R\nBareyre, F. M., & Schwab, M. E. (2003). Inflammation, degeneration and regeneration in the injured spinal cord: insights from DNA microarrays. Trends in neurosciences, 26(10), 555-563.",
-    "crumbs": [
-      "References"
-    ]
-  },
-  {
-    "objectID": "refs.html#ggplot",
-    "href": "refs.html#ggplot",
-    "title": "References",
-    "section": "ggplot",
-    "text": "ggplot\n\nWickham, H. (2010). A layered grammar of graphics. Journal of computational and graphical statistics, 19(1), 3-28.\nWickham, H. (2016). ggplot2: elegant graphics for data analysis. Springer.\nWilkinson, L. (2005). The Grammar of Graphics (2nd ed.). Statistics and Computing, New York: Springer.",
-    "crumbs": [
-      "References"
-    ]
-  },
-  {
-    "objectID": "refs.html#graphical-comparisons",
-    "href": "refs.html#graphical-comparisons",
-    "title": "References",
-    "section": "Graphical comparisons",
-    "text": "Graphical comparisons\n\nCumming, G., & Finch, S. (2005). Inference by Eye: Confidence Intervals and How to Read Pictures of Data. American Psychologist, 60(2), 170–180. https://doi.org/10.1037/0003-066X.60.2.170\nCumming, G. (2009). Inference by eye: Reading the overlap of independent confidence intervals. Statistics in medicine, 28(2), 205-220.",
-    "crumbs": [
-      "References"
-    ]
-  },
-  {
-    "objectID": "refs.html#missing-data",
-    "href": "refs.html#missing-data",
-    "title": "References",
-    "section": "Missing data",
-    "text": "Missing data\nEnders, C. K. (2022). Applied missing data analysis. Guilford Publications.\nEnders, C. K. (2023). Missing data: An update on the state of the art. Psychological Methods. https://doi.org/10.1037/met0000563\nLittle, R. J., & Rubin, D. B. (2019). Statistical analysis with missing data (Vol. 793). John Wiley & Sons.\nNational Research Council, Division of Behavioral, Committee on National Statistics, & Panel on Handling Missing Data in Clinical Trials. (2010). The prevention and treatment of missing data in clinical trials.\nRubin, D. B. (1976). Inference and missing data. Biometrika, 63(3), 581-592.",
-    "crumbs": [
-      "References"
-    ]
-  },
-  {
-    "objectID": "refs.html#tests-of-proportions",
-    "href": "refs.html#tests-of-proportions",
-    "title": "References",
-    "section": "Tests of proportions",
-    "text": "Tests of proportions\nAgresti, A. (1996). An introduction to categorical data analysis.\nAgresti, A. (2012). Categorical data analysis (Vol. 792). John Wiley & Sons.",
-    "crumbs": [
-      "References"
-    ]
-  },
-  {
-    "objectID": "refs.html#special-topics-for-final-project",
-    "href": "refs.html#special-topics-for-final-project",
-    "title": "References",
-    "section": "Special Topics for Final Project",
-    "text": "Special Topics for Final Project\n\nHeterogeneity\n\nRichter SH. Systematic heterogenization for better reproducibility in animal experimentation. Lab animal. 2017 Sep;46(9):343-9.\nUsui T, Macleod MR, McCann SK, Senior AM, Nakagawa S. Meta-analysis of variation suggests that embracing variability improves both replicability and generalizability in preclinical research. PLoS biology. 2021 May 19;19(5):e3001009.\nVoelkl B, Vogt L, Sena ES, Würbel H. Reproducibility of preclinical animal research improves with heterogeneity of study samples. PLoS biology. 2018 Feb 22;16(2):e2003693.\n\n\n\n\\(p\\)-value misuses\n\nCohen, J. (1994). The earth is round (p&lt;. 05). American psychologist, 49(12), 997.\nHead ML, Holman L, Lanfear R, Kahn AT, Jennions MD. The extent and consequences of p-hacking in science. PLoS Biol. 2015 Mar 13;13(3):e1002106.\nGelman A, Stern H. The difference between “significant” and “not significant” is not itself statistically significant. The American Statistician. 2006 Nov 1;60(4):328-31.\nGreenland S, Senn SJ, Rothman KJ, Carlin JB, Poole C, Goodman SN, Altman DG. Statistical tests, P values, confidence intervals, and power: a guide to misinterpretations. European journal of epidemiology. 2016 Apr;31(4):337-50.\nRosnow, R. L., & Rosenthal, R. (1989). Statistical procedures and the justification of knowledge in psychological science. American Psychologist, 44(10), 1276-1284.\n\n\n\nReporting in pre-clinical sciences\n\nAvey MT, Moher D, Sullivan KJ, Fergusson D, Griffin G, Grimshaw JM, Hutton B, Lalu MM, Macleod M, Marshall J, Mei SH. The devil is in the details: incomplete reporting in preclinical animal research. PLoS One. 2016 Nov 17;11(11):e0166733.\nPercie du Sert N, Ahluwalia A, Alam S, Avey MT, Baker M, Browne WJ, Clark A, Cuthill IC, Dirnagl U, Emerson M, Garner P. Reporting animal research: Explanation and elaboration for the ARRIVE guidelines 2.0. PLoS biology. 2020 Jul 14;18(7):e3000411.\nSerghiou S, Contopoulos-Ioannidis DG, Boyack KW, Riedel N, Wallach JD, Ioannidis JP. Assessment of transparency indicators across the biomedical literature: How open is open?. PLoS biology. 2021 Mar 1;19(3):e3001107.\n\n\n\nReproducibility in science\n\nBegley CG, Ellis LM. Raise standards for preclinical cancer research. Nature. 2012 Mar;483(7391):531-3.\nBegley CG, Ioannidis JP. Reproducibility in science: improving the standard for basic and preclinical research. Circulation research. 2015 Jan 2;116(1):116-26.\nErrington TM, Denis A, Perfito N, Iorns E, Nosek BA. Reproducibility in Cancer Biology: Challenges for assessing replicability in preclinical cancer biology. eLife. 2021 Dec 7;10:e67995.\n\n\n\nSex as a biological variable\n\nBeery AK. Inclusion of females does not increase variability in rodent research studies. Current opinion in behavioral sciences. 2018 Oct 1;23:143-9.\nGarcia-Sifuentes Y, Maney DL. Reporting and misreporting of sex differences in the biological sciences. eLife 2021;10:e70817\nWoitowich NC, Beery A, Woodruff T. Meta-research: a 10-year follow-up study of sex inclusion in the biological sciences. eLife. 2020 Jun 9;9:e56344.",
-    "crumbs": [
-      "References"
+      "Materials",
+      "Materials overview"
     ]
   },
   {
     "objectID": "materials/09-mats.html",
     "href": "materials/09-mats.html",
-    "title": "Week 8: Hypothesis testing",
+    "title": "Week 9: Hypothesis testing",
     "section": "",
-    "text": "Describe the logic of hypothesis testing\nInterpret tests comparing one sample to hypothesized value\nRelate hypothesis testing to confidence intervals\nRecognize when to use a nonparametric test"
+    "text": "Interpret tests comparing two unrelated samples\nSummarize data using contingency tables\nDescribe different study designs for contingency tables",
+    "crumbs": [
+      "Materials",
+      "Week 9: Hypothesis testing"
+    ]
   },
   {
     "objectID": "materials/09-mats.html#learning-objectives",
     "href": "materials/09-mats.html#learning-objectives",
-    "title": "Week 8: Hypothesis testing",
+    "title": "Week 9: Hypothesis testing",
     "section": "",
-    "text": "Describe the logic of hypothesis testing\nInterpret tests comparing one sample to hypothesized value\nRelate hypothesis testing to confidence intervals\nRecognize when to use a nonparametric test"
+    "text": "Interpret tests comparing two unrelated samples\nSummarize data using contingency tables\nDescribe different study designs for contingency tables",
+    "crumbs": [
+      "Materials",
+      "Week 9: Hypothesis testing"
+    ]
   },
   {
     "objectID": "materials/09-mats.html#before-class-lecture",
     "href": "materials/09-mats.html#before-class-lecture",
-    "title": "Week 8: Hypothesis testing",
+    "title": "Week 9: Hypothesis testing",
     "section": "Before class: Lecture",
-    "text": "Before class: Lecture\n\nLecture 8\nLecture survey: Complete by Wednesday, June 26 at 8pm\nSlides (html)"
+    "text": "Before class: Lecture\n\nLecture 9\nLecture survey: Complete by Wednesday, July 10 at 8pm\nSlides (html)",
+    "crumbs": [
+      "Materials",
+      "Week 9: Hypothesis testing"
+    ]
   },
   {
     "objectID": "materials/09-mats.html#during-class-lab",
     "href": "materials/09-mats.html#during-class-lab",
-    "title": "Week 8: Hypothesis testing",
+    "title": "Week 9: Hypothesis testing",
     "section": "During class: Lab",
-    "text": "During class: Lab\n\nLab 8 (html with link to code)"
+    "text": "During class: Lab\n\nLab 9 (html with link to code)",
+    "crumbs": [
+      "Materials",
+      "Week 9: Hypothesis testing"
+    ]
   },
   {
     "objectID": "materials/09-mats.html#after-class-assignment",
     "href": "materials/09-mats.html#after-class-assignment",
-    "title": "Week 8: Hypothesis testing",
+    "title": "Week 9: Hypothesis testing",
     "section": "After class: Assignment",
-    "text": "After class: Assignment\n\nNo homework this week"
+    "text": "After class: Assignment\n\nNo homework this week",
+    "crumbs": [
+      "Materials",
+      "Week 9: Hypothesis testing"
+    ]
   },
   {
     "objectID": "materials/07-mats.html",
@@ -1943,45 +1985,45 @@
   {
     "objectID": "labs_comp/lab6.html",
     "href": "labs_comp/lab6.html",
-    "title": "BTS 510 Lab 5",
+    "title": "BTS 510 Lab 6",
     "section": "",
     "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\ntheme_set(theme_classic(base_size = 16))",
     "crumbs": [
       "Complete labs",
-      "BTS 510 Lab 5"
+      "BTS 510 Lab 6"
     ]
   },
   {
     "objectID": "labs_comp/lab6.html#learning-objectives",
     "href": "labs_comp/lab6.html#learning-objectives",
-    "title": "BTS 510 Lab 5",
+    "title": "BTS 510 Lab 6",
     "section": "1 Learning objectives",
     "text": "1 Learning objectives\n\nUnderstand probability as a measure of uncertainty\nSummarize probabilities with probability distributions\nDescribe the difference between population and sample\nThink about uncertainty in sampling\nSummarize uncertainty in sampling: Sampling distribution",
     "crumbs": [
       "Complete labs",
-      "BTS 510 Lab 5"
+      "BTS 510 Lab 6"
     ]
   },
   {
     "objectID": "labs_comp/lab6.html#mathematically-derived-sampling-distribution",
     "href": "labs_comp/lab6.html#mathematically-derived-sampling-distribution",
-    "title": "BTS 510 Lab 5",
+    "title": "BTS 510 Lab 6",
     "section": "2 Mathematically-derived sampling distribution",
     "text": "2 Mathematically-derived sampling distribution\n\nMany combinations of population distribution and test statistic have mathematically-derived sampling distributions\n\nFor example, with a normally distributed population (\\mathcal{N}(\\mu, \\sigma^2)), the sampling distribution of the mean is \\bar{X} \\sim \\mathcal{N}(\\mu, \\frac{\\sigma^2}{n})\n\nIn this case, the population distribution and sampling distribution are the same distribution: Normal\nThe variance (or standard deviation) of the sampling distribution decreases as n increases: A larger sample leads to a smaller, more precise standard error\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\nThere is not a mathematically-derived sampling distribution for every population distribution and test statistic\n\nIf you’re dealing with unknown or unusual distributions or test statistics, your only option may be computational methods",
     "crumbs": [
       "Complete labs",
-      "BTS 510 Lab 5"
+      "BTS 510 Lab 6"
     ]
   },
   {
     "objectID": "labs_comp/lab6.html#computationally-derived-sampling-distribution",
     "href": "labs_comp/lab6.html#computationally-derived-sampling-distribution",
-    "title": "BTS 510 Lab 5",
+    "title": "BTS 510 Lab 6",
     "section": "3 Computationally-derived sampling distribution",
     "text": "3 Computationally-derived sampling distribution\n\n3.1 Getting started\n\nSet a random number seed\n\nIf you don’t do this, every time you run the code, you’ll get different numbers\nSetting a random seed makes your simulation replicable\n(I normally set a seed at the start of each document, but I moved it down here because it’s very important in this lab.)\n\nLoad (and install, if needed) the infer package\n\ninfer has a function that we’ll use to repeatedly sample\nThere are other ways to do this, but this is very simple and works well\n\nOnly have to do this once per document\n\n\nset.seed(12345)\nlibrary(infer)\n\n\n\n3.2 Standard Normal population: population \\sim \\mathcal{N}(0, 1)\n\n3.2.1 Create a population\n\nrnorm() creates a random variable that follows a normal distribution\n\nFirst argument = Number of observations (population size)\nSecond argument = \\mu\nThird argument = \\sigma (not \\sigma^2)\n\n\n\nnorm_pop &lt;- rnorm(1000000, 0, 1)\nmean(norm_pop)\n\n[1] 0.0002941277\n\nvar(norm_pop)\n\n[1] 1.002632\n\n\n\n\n3.2.2 Sample from the population\n\nSmall sample: n = 10\n\nrep_sample_n() repeatedly samples from the dataset\n\nPiped (%&gt;%) from the norm_pop dataset, so it resamples from that\nsize = 10: Sample size for each sample\nreps = 10000: Number of repeated samples (could be larger but this is good enough to show how things work and doesn’t take too long to run)\nreplace = TRUE: Sample with replacement\n\nsummarise(x_bar = mean(norm_pop)): Create a data frame with each of the means from each sample\n\n\n\nnorm_means10 &lt;- data.frame(norm_pop) %&gt;%\n  rep_sample_n(size = 10, reps = 10000, replace = TRUE) %&gt;%\n  summarise(x_bar = mean(norm_pop))\n\nggplot(data = norm_means10, aes(x = x_bar)) +\n  geom_histogram(bins = 50) +\n  xlim(-1.5, 1.5)\n\n\n\n\n\n\n\n\n\nModerate sample: n = 50\n\n\nnorm_means50 &lt;- data.frame(norm_pop) %&gt;%\n  rep_sample_n(size = 50, reps = 10000, replace = TRUE) %&gt;%\n  summarise(x_bar = mean(norm_pop))\n\nggplot(data = norm_means50, aes(x = x_bar)) +\n  geom_histogram(bins = 50) +\n  xlim(-1.5, 1.5) \n\n\n\n\n\n\n\n\n\nLarge sample: n = 100\n\n\nnorm_means100 &lt;- data.frame(norm_pop) %&gt;%\n  rep_sample_n(size = 100, reps = 10000, replace = TRUE) %&gt;%\n  summarise(x_bar = mean(norm_pop))\n\nggplot(data = norm_means100, aes(x = x_bar)) +\n  geom_histogram(bins = 50) +\n  xlim(-1.5, 1.5)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\nNote that I adjusted the X axis to be the same for all three plots using xlim() so that you can easily compare the distributions\nYou’ll want to do the same in your later plots too\n\n\n\n\n\n3.2.3 Compare estimates\n\nCompare means and variances for each sample size\n\n\nmean(norm_means10$x_bar)\n\n[1] -0.003408017\n\nmean(norm_means50$x_bar)\n\n[1] -0.0009473133\n\nmean(norm_means100$x_bar)\n\n[1] 0.001145927\n\n\n\nvar(norm_means10$x_bar)\n\n[1] 0.09805018\n\nvar(norm_means50$x_bar)\n\n[1] 0.02006937\n\nvar(norm_means100$x_bar)\n\n[1] 0.01009301\n\n\n\nHow does each value correspond to what you’d expect based on the mathematically-derived sampling distribution?\n\n\\bar{X} \\sim \\mathcal{N}(\\mu, \\frac{\\sigma^2}{n})\n\n\n\n\n\n3.3 Bernoulli population: population \\sim B(0.3)\n\n3.3.1 Create a population\n\nrbinom() creates a random variable that follows a binomial distribution\n\nFirst argument = Number of observations (population size)\nSecond argument = number of trials (here, just 1 for a Bernoulli trial)\nThird argument = p (probability of success)\n\n\n\nbernoulli_pop &lt;- rbinom(1000000, 1, 0.3)\nmean(bernoulli_pop)\n\n[1] 0.300871\n\nvar(bernoulli_pop)\n\n[1] 0.2103479\n\n\n\n\n3.3.2 Sample from the population\n\nSmall sample: n = 10\n\n\nbern_means10 &lt;- data.frame(bernoulli_pop) %&gt;%\n  rep_sample_n(size = 10, reps = 10000, replace = TRUE) %&gt;%\n  summarise(x_bar = mean(bernoulli_pop))\n\nggplot(data = bern_means10, aes(x = x_bar)) +\n  geom_histogram(bins = 50) +\n    xlim(0,1)\n\nWarning: Removed 2 rows containing missing values or values outside the scale range\n(`geom_bar()`).\n\n\n\n\n\n\n\n\n\n\nModerate sample: n = 50\n\n\nbern_means50 &lt;- data.frame(bernoulli_pop) %&gt;%\n  rep_sample_n(size = 50, reps = 10000, replace = TRUE) %&gt;%\n  summarise(x_bar = mean(bernoulli_pop))\n\nggplot(data = bern_means50, aes(x = x_bar)) +\n  geom_histogram(bins = 50) +\n    xlim(0,1)\n\nWarning: Removed 2 rows containing missing values or values outside the scale range\n(`geom_bar()`).\n\n\n\n\n\n\n\n\n\n\nLarge sample: n = 100\n\n\nbern_means100 &lt;- data.frame(bernoulli_pop) %&gt;%\n  rep_sample_n(size = 100, reps = 10000, replace = TRUE) %&gt;%\n  summarise(x_bar = mean(bernoulli_pop))\n\nggplot(data = bern_means100, aes(x = x_bar)) +\n  geom_histogram(bins = 50) +\n    xlim(0,1)\n\nWarning: Removed 2 rows containing missing values or values outside the scale range\n(`geom_bar()`).\n\n\n\n\n\n\n\n\n\n\n\n3.3.3 Compare estimates\n\nCompare means and variances for each sample size\n\n\nmean(bern_means10$x_bar)\n\n[1] 0.29996\n\nmean(bern_means50$x_bar)\n\n[1] 0.300286\n\nmean(bern_means100$x_bar)\n\n[1] 0.301151\n\n\n\nvar(bern_means10$x_bar)\n\n[1] 0.02168417\n\nvar(bern_means50$x_bar)\n\n[1] 0.004174456\n\nvar(bern_means100$x_bar)\n\n[1] 0.002125338\n\n\n\n\n\n3.4 Binomial population: population \\sim Bin(50, 0.3)\n\n3.4.1 Create a population\n\nrbinom() creates a random variable that follows a binomial distribution\n\nFirst argument = Number of observations (population size)\nSecond argument = m (number of trials)\nThird argument = p (probability of success)\n\n\n\nbinomial_pop &lt;- rbinom(1000000, 50, 0.3)\nmean(binomial_pop)\n\n[1] 15.00374\n\nvar(binomial_pop)\n\n[1] 10.50284\n\n\n\n\n3.4.2 Sample from the population\n\nSmall sample: n = 10\n\n\nbin_means10 &lt;- data.frame(binomial_pop) %&gt;%\n  rep_sample_n(size = 10, reps = 10000, replace = TRUE) %&gt;%\n  summarise(x_bar = mean(binomial_pop))\n\nggplot(data = bin_means10, aes(x = x_bar)) +\n  geom_histogram(bins = 50) +\n    xlim(10,20)\n\nWarning: Removed 2 rows containing missing values or values outside the scale range\n(`geom_bar()`).\n\n\n\n\n\n\n\n\n\n\nModerate sample: n = 50\n\n\nbin_means50 &lt;- data.frame(binomial_pop) %&gt;%\n  rep_sample_n(size = 50, reps = 10000, replace = TRUE) %&gt;%\n  summarise(x_bar = mean(binomial_pop))\n\nggplot(data = bin_means50, aes(x = x_bar)) +\n  geom_histogram(bins = 50) +\n    xlim(10,20)\n\nWarning: Removed 2 rows containing missing values or values outside the scale range\n(`geom_bar()`).\n\n\n\n\n\n\n\n\n\n\nLarge sample: n = 100\n\n\nbin_means100 &lt;- data.frame(binomial_pop) %&gt;%\n  rep_sample_n(size = 100, reps = 10000, replace = TRUE) %&gt;%\n  summarise(x_bar = mean(binomial_pop))\n\nggplot(data = bin_means100, aes(x = x_bar)) +\n  geom_histogram(bins = 50) +\n    xlim(10,20)\n\nWarning: Removed 2 rows containing missing values or values outside the scale range\n(`geom_bar()`).\n\n\n\n\n\n\n\n\n\n\n\n3.4.3 Compare estimates\n\nCompare means and variances for each sample size\n\n\nmean(bin_means10$x_bar)\n\n[1] 15.00175\n\nmean(bin_means50$x_bar)\n\n[1] 15.00399\n\nmean(bin_means100$x_bar)\n\n[1] 15.00949\n\n\n\nvar(bin_means10$x_bar)\n\n[1] 1.038956\n\nvar(bin_means50$x_bar)\n\n[1] 0.2092708\n\nvar(bin_means100$x_bar)\n\n[1] 0.1037692\n\n\n\n\n\n3.5 Poisson population: population \\sim Poisson(1.5)\n\n3.5.1 Create a population\n\nrpois() creates a random variable that follows a Poisson distribution\n\nFirst argument = Number of observations (population size)\nSecond argument = \\lambda (mean and variance)\n\n\n\npoisson_pop &lt;- rpois(1000000, 1.5)\nmean(poisson_pop)\n\n[1] 1.501162\n\nvar(poisson_pop)\n\n[1] 1.49775\n\n\n\n\n3.5.2 Sample from the population\n\nSmall sample: n = 10\n\n\npoi_means10 &lt;- data.frame(poisson_pop) %&gt;%\n  rep_sample_n(size = 10, reps = 10000, replace = TRUE) %&gt;%\n  summarise(x_bar = mean(poisson_pop))\n\nggplot(data = poi_means10, aes(x = x_bar)) +\n  geom_histogram(bins = 50) +\n    xlim(0,5) \n\nWarning: Removed 2 rows containing missing values or values outside the scale range\n(`geom_bar()`).\n\n\n\n\n\n\n\n\n\n\nModerate sample: n = 50\n\n\npoi_means50 &lt;- data.frame(poisson_pop) %&gt;%\n  rep_sample_n(size = 50, reps = 10000, replace = TRUE) %&gt;%\n  summarise(x_bar = mean(poisson_pop))\n\nggplot(data = poi_means50, aes(x = x_bar)) +\n  geom_histogram(bins = 50) +\n    xlim(0,5)  \n\nWarning: Removed 2 rows containing missing values or values outside the scale range\n(`geom_bar()`).\n\n\n\n\n\n\n\n\n\n\nLarge sample: n = 100\n\n\npoi_means100 &lt;- data.frame(poisson_pop) %&gt;%\n  rep_sample_n(size = 100, reps = 10000, replace = TRUE) %&gt;%\n  summarise(x_bar = mean(poisson_pop))\n\nggplot(data = poi_means100, aes(x = x_bar)) +\n  geom_histogram(bins = 50) +\n    xlim(0,5)  \n\nWarning: Removed 2 rows containing missing values or values outside the scale range\n(`geom_bar()`).\n\n\n\n\n\n\n\n\n\n\n\n3.5.3 Compare estimates\n\nCompare means and variances for each sample size\n\n\nmean(poi_means10$x_bar)\n\n[1] 1.49879\n\nmean(poi_means50$x_bar)\n\n[1] 1.500166\n\nmean(poi_means100$x_bar)\n\n[1] 1.501913\n\n\n\nvar(poi_means10$x_bar)\n\n[1] 0.1520507\n\nvar(poi_means50$x_bar)\n\n[1] 0.02967762\n\nvar(poi_means100$x_bar)\n\n[1] 0.01483781",
     "crumbs": [
       "Complete labs",
-      "BTS 510 Lab 5"
+      "BTS 510 Lab 6"
     ]
   },
   {
@@ -2070,28 +2112,28 @@
   {
     "objectID": "lab/BTS510-24-lab6.html",
     "href": "lab/BTS510-24-lab6.html",
-    "title": "BTS 510 Lab 5",
+    "title": "BTS 510 Lab 6",
     "section": "",
     "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\ntheme_set(theme_classic(base_size = 16))"
   },
   {
     "objectID": "lab/BTS510-24-lab6.html#learning-objectives",
     "href": "lab/BTS510-24-lab6.html#learning-objectives",
-    "title": "BTS 510 Lab 5",
+    "title": "BTS 510 Lab 6",
     "section": "1 Learning objectives",
     "text": "1 Learning objectives\n\nUnderstand probability as a measure of uncertainty\nSummarize probabilities with probability distributions\nDescribe the difference between population and sample\nThink about uncertainty in sampling\nSummarize uncertainty in sampling: Sampling distribution"
   },
   {
     "objectID": "lab/BTS510-24-lab6.html#mathematically-derived-sampling-distribution",
     "href": "lab/BTS510-24-lab6.html#mathematically-derived-sampling-distribution",
-    "title": "BTS 510 Lab 5",
+    "title": "BTS 510 Lab 6",
     "section": "2 Mathematically-derived sampling distribution",
     "text": "2 Mathematically-derived sampling distribution\n\nMany combinations of population distribution and test statistic have mathematically-derived sampling distributions\n\nFor example, with a normally distributed population (\\mathcal{N}(\\mu, \\sigma^2)), the sampling distribution of the mean is \\bar{X} \\sim \\mathcal{N}(\\mu, \\frac{\\sigma^2}{n})\n\nIn this case, the population distribution and sampling distribution are the same distribution: Normal\nThe variance (or standard deviation) of the sampling distribution decreases as n increases: A larger sample leads to a smaller, more precise standard error\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\nThere is not a mathematically-derived sampling distribution for every population distribution and test statistic\n\nIf you’re dealing with unknown or unusual distributions or test statistics, your only option may be computational methods"
   },
   {
     "objectID": "lab/BTS510-24-lab6.html#computationally-derived-sampling-distribution",
     "href": "lab/BTS510-24-lab6.html#computationally-derived-sampling-distribution",
-    "title": "BTS 510 Lab 5",
+    "title": "BTS 510 Lab 6",
     "section": "3 Computationally-derived sampling distribution",
     "text": "3 Computationally-derived sampling distribution\n\n3.1 Getting started\n\nSet a random number seed\n\nIf you don’t do this, every time you run the code, you’ll get different numbers\nSetting a random seed makes your simulation replicable\n(I normally set a seed at the start of each document, but I moved it down here because it’s very important in this lab.)\n\nLoad (and install, if needed) the infer package\n\ninfer has a function that we’ll use to repeatedly sample\nThere are other ways to do this, but this is very simple and works well\n\nOnly have to do this once per document\n\n\nset.seed(12345)\nlibrary(infer)\n\n\n\n3.2 Standard Normal population: population \\sim \\mathcal{N}(0, 1)\n\n3.2.1 Create a population\n\nrnorm() creates a random variable that follows a normal distribution\n\nFirst argument = Number of observations (population size)\nSecond argument = \\mu\nThird argument = \\sigma (not \\sigma^2)\n\n\n\nnorm_pop &lt;- rnorm(1000000, 0, 1)\nmean(norm_pop)\n\n[1] 0.0002941277\n\nvar(norm_pop)\n\n[1] 1.002632\n\n\n\n\n3.2.2 Sample from the population\n\nSmall sample: n = 10\n\nrep_sample_n() repeatedly samples from the dataset\n\nPiped (%&gt;%) from the norm_pop dataset, so it resamples from that\nsize = 10: Sample size for each sample\nreps = 10000: Number of repeated samples (could be larger but this is good enough to show how things work and doesn’t take too long to run)\nreplace = TRUE: Sample with replacement\n\nsummarise(x_bar = mean(norm_pop)): Create a data frame with each of the means from each sample\n\n\n\nnorm_means10 &lt;- data.frame(norm_pop) %&gt;%\n  rep_sample_n(size = 10, reps = 10000, replace = TRUE) %&gt;%\n  summarise(x_bar = mean(norm_pop))\n\nggplot(data = norm_means10, aes(x = x_bar)) +\n  geom_histogram(bins = 50) +\n  xlim(-1.5, 1.5)\n\n\n\n\n\n\n\n\n\nModerate sample: n = 50\n\n\nnorm_means50 &lt;- data.frame(norm_pop) %&gt;%\n  rep_sample_n(size = 50, reps = 10000, replace = TRUE) %&gt;%\n  summarise(x_bar = mean(norm_pop))\n\nggplot(data = norm_means50, aes(x = x_bar)) +\n  geom_histogram(bins = 50) +\n  xlim(-1.5, 1.5) \n\n\n\n\n\n\n\n\n\nLarge sample: n = 100\n\n\nnorm_means100 &lt;- data.frame(norm_pop) %&gt;%\n  rep_sample_n(size = 100, reps = 10000, replace = TRUE) %&gt;%\n  summarise(x_bar = mean(norm_pop))\n\nggplot(data = norm_means100, aes(x = x_bar)) +\n  geom_histogram(bins = 50) +\n  xlim(-1.5, 1.5)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n\nNote that I adjusted the X axis to be the same for all three plots using xlim() so that you can easily compare the distributions\nYou’ll want to do the same in your later plots too\n\n\n\n\n\n3.2.3 Compare estimates\n\nCompare means and variances for each sample size\n\n\nmean(norm_means10$x_bar)\n\n[1] -0.003408017\n\nmean(norm_means50$x_bar)\n\n[1] -0.0009473133\n\nmean(norm_means100$x_bar)\n\n[1] 0.001145927\n\n\n\nvar(norm_means10$x_bar)\n\n[1] 0.09805018\n\nvar(norm_means50$x_bar)\n\n[1] 0.02006937\n\nvar(norm_means100$x_bar)\n\n[1] 0.01009301\n\n\n\nHow does each value correspond to what you’d expect based on the mathematically-derived sampling distribution?\n\n\\bar{X} \\sim \\mathcal{N}(\\mu, \\frac{\\sigma^2}{n})\n\n\n\n\n\n3.3 Bernoulli population: population \\sim B(0.3)\n\n3.3.1 Create a population\n\nrbinom() creates a random variable that follows a binomial distribution\n\nFirst argument = Number of observations (population size)\nSecond argument = number of trials (here, just 1 for a Bernoulli trial)\nThird argument = p (probability of success)\n\n\n\nbernoulli_pop &lt;- rbinom(1000000, 1, 0.3)\nmean(bernoulli_pop)\n\n[1] 0.300871\n\nvar(bernoulli_pop)\n\n[1] 0.2103479\n\n\n\n\n3.3.2 Sample from the population\n\nSmall sample: n = 10\n\n\nModerate sample: n = 50\n\n\nLarge sample: n = 100\n\n\n\n3.3.3 Compare estimates\n\nCompare means and variances for each sample size\n\n\n\n\n3.4 Binomial population: population \\sim Bin(50, 0.3)\n\n3.4.1 Create a population\n\nrbinom() creates a random variable that follows a binomial distribution\n\nFirst argument = Number of observations (population size)\nSecond argument = m (number of trials)\nThird argument = p (probability of success)\n\n\n\nbinomial_pop &lt;- rbinom(1000000, 50, 0.3)\nmean(binomial_pop)\n\n[1] 14.99967\n\nvar(binomial_pop)\n\n[1] 10.5042\n\n\n\n\n3.4.2 Sample from the population\n\nSmall sample: n = 10\n\n\nModerate sample: n = 50\n\n\nLarge sample: n = 100\n\n\n\n3.4.3 Compare estimates\n\nCompare means and variances for each sample size\n\n\n\n\n3.5 Poisson population: population \\sim Poisson(1.5)\n\n3.5.1 Create a population\n\nrpois() creates a random variable that follows a Poisson distribution\n\nFirst argument = Number of observations (population size)\nSecond argument = \\lambda (mean and variance)\n\n\n\npoisson_pop &lt;- rpois(1000000, 1.5)\nmean(poisson_pop)\n\n[1] 1.498677\n\nvar(poisson_pop)\n\n[1] 1.498406\n\n\n\n\n3.5.2 Sample from the population\n\nSmall sample: n = 10\n\n\nModerate sample: n = 50\n\n\nLarge sample: n = 100\n\n\n\n3.5.3 Compare estimates\n\nCompare means and variances for each sample size"
   },
@@ -2173,74 +2215,60 @@
     "text": "6 Compare to original data\n\nhead(gapminder) \n\n# A tibble: 6 × 6\n  country     continent  year lifeExp      pop gdpPercap\n  &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;\n1 Afghanistan Asia       1952    28.8  8425333      779.\n2 Afghanistan Asia       1957    30.3  9240934      821.\n3 Afghanistan Asia       1962    32.0 10267083      853.\n4 Afghanistan Asia       1967    34.0 11537966      836.\n5 Afghanistan Asia       1972    36.1 13079460      740.\n6 Afghanistan Asia       1977    38.4 14880372      786.\n\nhead(gap_tall3)\n\n# A tibble: 6 × 6\n  country     continent year  lifeExp      pop gdpPercap\n  &lt;fct&gt;       &lt;fct&gt;     &lt;chr&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n1 Afghanistan Asia      1952     28.8  8425333      779.\n2 Afghanistan Asia      1957     30.3  9240934      821.\n3 Afghanistan Asia      1962     32.0 10267083      853.\n4 Afghanistan Asia      1967     34.0 11537966      836.\n5 Afghanistan Asia      1972     36.1 13079460      740.\n6 Afghanistan Asia      1977     38.4 14880372      786."
   },
   {
-    "objectID": "lab/BTS510-24-lab1.html",
-    "href": "lab/BTS510-24-lab1.html",
-    "title": "BTS 510 Lab 1",
+    "objectID": "lab/BTS510-24-lab10.html",
+    "href": "lab/BTS510-24-lab10.html",
+    "title": "BTS 510 Lab 10",
     "section": "",
-    "text": "set.seed(12345)"
+    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nset.seed(12345)\ntheme_set(theme_classic(base_size = 16))"
   },
   {
-    "objectID": "lab/BTS510-24-lab1.html#learning-objectives",
-    "href": "lab/BTS510-24-lab1.html#learning-objectives",
-    "title": "BTS 510 Lab 1",
+    "objectID": "lab/BTS510-24-lab10.html#learning-objectives",
+    "href": "lab/BTS510-24-lab10.html#learning-objectives",
+    "title": "BTS 510 Lab 10",
     "section": "1 Learning objectives",
-    "text": "1 Learning objectives\n\nStart using R and Rstudio\nStart using Quarto documents as a reproducible method to present analyses along with narrative text"
+    "text": "1 Learning objectives"
   },
   {
-    "objectID": "lab/BTS510-24-lab1.html#where-is-the-code",
-    "href": "lab/BTS510-24-lab1.html#where-is-the-code",
-    "title": "BTS 510 Lab 1",
-    "section": "2 Where is the code???",
-    "text": "2 Where is the code???\n\nAt the top of the page, in the upper right, there is a button that reads “&lt;/&gt; Code”\n\nClick on that and a window with the code that made this page will pop up\nClick on the little notepad icon in the upper right to copy the entire document"
+    "objectID": "lab/BTS510-24-lab10.html#stuff",
+    "href": "lab/BTS510-24-lab10.html#stuff",
+    "title": "BTS 510 Lab 10",
+    "section": "2 Stuff",
+    "text": "2 Stuff"
   },
   {
-    "objectID": "lab/BTS510-24-lab1.html#a-few-miscellaneous-things-about-r-and-quarto",
-    "href": "lab/BTS510-24-lab1.html#a-few-miscellaneous-things-about-r-and-quarto",
-    "title": "BTS 510 Lab 1",
-    "section": "3 A few miscellaneous things about R and Quarto",
-    "text": "3 A few miscellaneous things about R and Quarto\n\n3.1 About R\n\nR is case sensitive\n\nmean is not the same as Mean\nThe object b is not the same as the object B\n\nExtra returns don’t matter\n\nExtra spaces generally don’t matter either\nI often add extra spaces, tabs, and returns to make the code more readable\n\nThe assignment operator is &lt;-\n\n“Put whatever is on the right side in the object named on the left side”\n\nSometimes, equal isn’t equal\n\nIf you’re talking about assigning something to a value, you can use =\nIf you want to compare two values and make a decision based on it, you use ==\n\nThere isn’t a standard, widely-used naming convention for variables, so you should pick something and try to be consistent\n\nIn general, variable names must start with a letter – no numbers or special characters\nThere are some options for multi-word variable naming\n\nvariablename: Just smush it all together\nvariableName or VariableName: Camel case\nvariable_name or Variable_Name: Snake case\nvariable-name or Variable-Name: Kebab case\n\nIn general, make the variable names as short as possible while keeping each name unique\n\n\n\n\n3.2 About Quarto\n\nLook at the top of the Quarto file. The section with --- at the top and bottom. This is the YAML (pronounced “yam-ull”). It provides options for the overall document.\n\ntitle: is pretty obvious\nformat: tells R which output format to produce when you knit the document together\nThis is an html document, but you can specify different or multiple output formats, like both HTML and PDF\n\nThere are additional options that are specific to this format\nself-contained: true and self-contained-math: true make sure that any additional files that are created, like figures are part of the HTML file. If I didn’t include this and sent you to the HTML file, the figures would be missing.\nhtml-math-method: katex is an option about the equations and math text. It’s probably not necessary, but I include it anyway.\nnumber-sections: true and toc: true produce the table of contents on the right side of this page and number the sections and sub-sections (remember headings and organization?) to make it easier to navigate\ncode-tools: true adds the &lt;/&gt; Code button at the top that shows the code that made this page. You can copy the code (using the little “Copy to clipboard” icon in the upper right) and paste it right into R\ncode-block-bg: true and code-block-border-left: \"#31BAE9\" make the code chunks a little more noticeable – they blended into the background too much otherwise.\nThe YAML is one of the few places that spacing matters. Note how each sub-option is indented more than it’s over-option. If you don’t get this right, the file won’t run\nRead more about YAML options here\n\n\nYou can label each code chunk in the document\n\nThis is a very smart thing to do – but I don’t do it consistently :(\nIf you have an error, R will tell you which chunk has the problem\n\nIf the chunks are named, it will use the name so it’s easy to find\nIf they’re not named, it will tell you something like “Unnamed chunk 52”, which is less helpful\n\nName your chunks with #| label: name-of-this-chunk\n\nSee the setup chunk above – that’s just its name, “setup”\n\n\nThere are other options for code chunks. Here are some useful ones\n\necho: true: Repeats the code in the output\nwarning: false: Suppress any warnings from R (not recommended)\neval: false: Don’t run this code, just print it (useful for teaching)\nFor any of these, you can swap from true to false or vice versa and get the opposite effect\nfig-cap: \"My figure caption is cool\": Adds a caption to the figure produced in that chunk – useful for accessibility\nMore info here and here"
+    "objectID": "lab/BTS510-24-lab10.html#contingency-tables",
+    "href": "lab/BTS510-24-lab10.html#contingency-tables",
+    "title": "BTS 510 Lab 10",
+    "section": "3 Contingency tables",
+    "text": "3 Contingency tables\n\nCross-tabs, summary tables, 2x2 table\n\nRelationship between two (or more) categorical variables\nEach cell is a frequency for that combination\n\n\nsmoke_sex &lt;- table(PulseSmoke, PulseSex) rownames(smoke_sex) &lt;- c(“Non-smoker”, “Smoker”) colnames(smoke_sex) &lt;- c(“Male”, “Female”) smoke_sex_margins &lt;- addmargins(smoke_sex) smoke_sex_margins"
   },
   {
-    "objectID": "lab/BTS510-24-lab1.html#installing-packages",
-    "href": "lab/BTS510-24-lab1.html#installing-packages",
-    "title": "BTS 510 Lab 1",
-    "section": "4 Installing packages",
-    "text": "4 Installing packages\nYou must install a new package the first time you use it\n\n#install.packages(gapminder)\n\nYou only need to do this once. I have commented out this part of the code by putting # at the start of the line because I already have the package installed. If you try to install a package that is already installed, you will probably get an error.\n\n\n\n\n\n\nNote\n\n\n\nIn my own work, I usually install packages via the Rstudio graphical user interface (GUI). I’m doing it this way for pedagogical reasons.\n\n\nAlternatively, if you’re using Rstudio, you can quickly install packages in the “Packages” pane using the “Install” button, and exclude this code."
+    "objectID": "lab/BTS510-24-lab10.html#proportions",
+    "href": "lab/BTS510-24-lab10.html#proportions",
+    "title": "BTS 510 Lab 10",
+    "section": "4 Proportions",
+    "text": "4 Proportions\n\nProportions for the original table, then add margins\n\naddmargins(prop.table(smoke_sex))"
   },
   {
-    "objectID": "lab/BTS510-24-lab1.html#loading-packages",
-    "href": "lab/BTS510-24-lab1.html#loading-packages",
-    "title": "BTS 510 Lab 1",
-    "section": "5 Loading packages",
-    "text": "5 Loading packages\nYou must load or library() a package each time you use it. This means that you need to load it at the top of each markdown or quarto file you write.\n\nlibrary(gapminder)\n\nThis allows us to use the functions in these packages. If you’re loading multiple packages, just list each on it’s own line.\n\n\n\n\n\n\nNote\n\n\n\nIn my own work, I usually load all packages in the “setup” chunk at the top of the document. I’m doing it this way for pedagogical reasons.\n\n\nThe gapminder package is a data package. It provides a subset of the data available at gapminder.org. You may have heard about this data from Hans Rosling’s very famous TED talk."
-  },
-  {
-    "objectID": "lab/BTS510-24-lab1.html#reading-in-data",
-    "href": "lab/BTS510-24-lab1.html#reading-in-data",
-    "title": "BTS 510 Lab 1",
-    "section": "6 Reading in data",
-    "text": "6 Reading in data\n\n6.1 External data\nYou can read in data from almost any source.\n\nComma-separated values (CSV) file: Use read.csv() (built-in)\nExcel: Use read_excel() function from readxl package\nSAS, SPSS, Stata: Use the appropriate function from the haven package\nSAS, SPSS, S, Stata, Systat, Epi Info, Minitab: Use the appropriate function from the foreign package\n\nIf you’re using Rstudio, you can read in most types of data using “Import Dataset” in the “Environment” tab in the upper right pane.\nWe’ll focus on this more next week. You’ll almost always be using external data (not internal R data) in your own research, so this is really important.\n\n\n6.2 Data from a package\nSome packages contain data. We will use the gapminder dataset from the gapminder package. Another great source of dataset is the datasets package, which includes commonly used datasets such as iris and mtcars. (Note that if you want to use iris or mtcars, you’ll need to load it – it is installed with R by default, so you don’t need to install it.)\nTo load a dataset, use the data() function\n\ndata(gapminder)"
-  },
-  {
-    "objectID": "lab/BTS510-24-lab1.html#looking-at-your-data",
-    "href": "lab/BTS510-24-lab1.html#looking-at-your-data",
-    "title": "BTS 510 Lab 1",
-    "section": "7 Looking at your data",
-    "text": "7 Looking at your data\nThere are a number of functions to help you examine your data. You should always look at your data to make sure it was read in correctly.\n\n\n\n\n\n\nNote\n\n\n\nWhat should your data look like? If you’re doing a typical experimental study, the organization of your dataset should follow a pretty standard format:\n\nEach row is a unit of study (i.e., person, animal, petri dish)\nEach column is a variable\n\nThere are some deviations from this\n\nLongitudinal studies have multiple observations per unit and can be organized 2 different ways\n\nWide or multivariate format: Each repeated measure is a new variable (e.g., X1, X2, X3 for the X variable at 3 different time points)\nTall or stacked or univariate format: Each repeated measure is a new row, so each unit will have multiple rows of data (with an additional variable that indicates which time point is which)\n\nData from non-experiments is often structured differently or even unstructured\n\nWeb scraping\nData from devices or automated processes\nData from someone who doesn’t know what they’re doing…\n\n\n\n\n\n7.1 List the dataset\nIf you want to view the dataset, you can just name the dataset. (You can also print() the dataset for the same result.)\n\ngapminder\n\n# A tibble: 1,704 × 6\n   country     continent  year lifeExp      pop gdpPercap\n   &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;\n 1 Afghanistan Asia       1952    28.8  8425333      779.\n 2 Afghanistan Asia       1957    30.3  9240934      821.\n 3 Afghanistan Asia       1962    32.0 10267083      853.\n 4 Afghanistan Asia       1967    34.0 11537966      836.\n 5 Afghanistan Asia       1972    36.1 13079460      740.\n 6 Afghanistan Asia       1977    38.4 14880372      786.\n 7 Afghanistan Asia       1982    39.9 12881816      978.\n 8 Afghanistan Asia       1987    40.8 13867957      852.\n 9 Afghanistan Asia       1992    41.7 16317921      649.\n10 Afghanistan Asia       1997    41.8 22227415      635.\n# ℹ 1,694 more rows\n\n\n\n\n7.2 head() function\nThe head() function will show the head of the dataset. By default, this shows the first 6 rows of the dataset\n\nhead(gapminder)\n\n# A tibble: 6 × 6\n  country     continent  year lifeExp      pop gdpPercap\n  &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;\n1 Afghanistan Asia       1952    28.8  8425333      779.\n2 Afghanistan Asia       1957    30.3  9240934      821.\n3 Afghanistan Asia       1962    32.0 10267083      853.\n4 Afghanistan Asia       1967    34.0 11537966      836.\n5 Afghanistan Asia       1972    36.1 13079460      740.\n6 Afghanistan Asia       1977    38.4 14880372      786.\n\n\nYou can change the number of rows it shows using the n argument. Here, I’ve asked for the first 15 rows instead.\n\nhead(gapminder, n = 15)\n\n# A tibble: 15 × 6\n   country     continent  year lifeExp      pop gdpPercap\n   &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;\n 1 Afghanistan Asia       1952    28.8  8425333      779.\n 2 Afghanistan Asia       1957    30.3  9240934      821.\n 3 Afghanistan Asia       1962    32.0 10267083      853.\n 4 Afghanistan Asia       1967    34.0 11537966      836.\n 5 Afghanistan Asia       1972    36.1 13079460      740.\n 6 Afghanistan Asia       1977    38.4 14880372      786.\n 7 Afghanistan Asia       1982    39.9 12881816      978.\n 8 Afghanistan Asia       1987    40.8 13867957      852.\n 9 Afghanistan Asia       1992    41.7 16317921      649.\n10 Afghanistan Asia       1997    41.8 22227415      635.\n11 Afghanistan Asia       2002    42.1 25268405      727.\n12 Afghanistan Asia       2007    43.8 31889923      975.\n13 Albania     Europe     1952    55.2  1282697     1601.\n14 Albania     Europe     1957    59.3  1476505     1942.\n15 Albania     Europe     1962    64.8  1728137     2313.\n\n\n\n\n\n\n\n\nNote\n\n\n\nThere is also a tail() function that – guess what – prints the last 6 rows of the dataset. If you wanted to check the end for some reason.\n\n\n\n\n7.3 str() function\nThe str() (for “structure”) function tells you about the structure of the dataset. It shows the number of rows and columns, and summarizes some basic info about each variable (like whether it’s a number or character variable and the possible values).\n\nstr(gapminder)\n\ntibble [1,704 × 6] (S3: tbl_df/tbl/data.frame)\n $ country  : Factor w/ 142 levels \"Afghanistan\",..: 1 1 1 1 1 1 1 1 1 1 ...\n $ continent: Factor w/ 5 levels \"Africa\",\"Americas\",..: 3 3 3 3 3 3 3 3 3 3 ...\n $ year     : int [1:1704] 1952 1957 1962 1967 1972 1977 1982 1987 1992 1997 ...\n $ lifeExp  : num [1:1704] 28.8 30.3 32 34 36.1 ...\n $ pop      : int [1:1704] 8425333 9240934 10267083 11537966 13079460 14880372 12881816 13867957 16317921 22227415 ...\n $ gdpPercap: num [1:1704] 779 821 853 836 740 ...\n\n\n\n\n7.4 glimpse() function\nThe glimpse() function is in the dplyr package in the tidyverse. We’re going to talk about dplyr more next week, but I wanted to include this function here. This function shows you the number of rows and columns in the dataset. It also flips your dataset so that the variables are rows and prints the dataset out.\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nglimpse(gapminder)\n\nRows: 1,704\nColumns: 6\n$ country   &lt;fct&gt; \"Afghanistan\", \"Afghanistan\", \"Afghanistan\", \"Afghanistan\", …\n$ continent &lt;fct&gt; Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, …\n$ year      &lt;int&gt; 1952, 1957, 1962, 1967, 1972, 1977, 1982, 1987, 1992, 1997, …\n$ lifeExp   &lt;dbl&gt; 28.801, 30.332, 31.997, 34.020, 36.088, 38.438, 39.854, 40.8…\n$ pop       &lt;int&gt; 8425333, 9240934, 10267083, 11537966, 13079460, 14880372, 12…\n$ gdpPercap &lt;dbl&gt; 779.4453, 820.8530, 853.1007, 836.1971, 739.9811, 786.1134, …\n\n\n\n\n\n\n\n\nNote\n\n\n\nDon’t worry about all those warnings that show up about tidyverse and such after library(tidyverse). That’s normal."
-  },
-  {
-    "objectID": "lab/BTS510-24-lab1.html#activities",
-    "href": "lab/BTS510-24-lab1.html#activities",
-    "title": "BTS 510 Lab 1",
-    "section": "8 Activities",
-    "text": "8 Activities\nComplete these tasks by adding to this .qmd (quarto) file.\n\nRender / knit the file together into an HTML file.\nRender / knit the file together into a PDF file. You’ll need to install the tinytex package for this to work (or have LaTeX installed on your computer).\nHow many rows are in the gapminder dataset? Where did you find that out?\nHow many columns are in the gapminder dataset? Where did you find that out?\nHow many countries are represented in the gapminder dataset? Where did you find that out?\nThe gapminder dataset is longitudinal. Is it organized as tall or wide?"
-  },
-  {
-    "objectID": "final.html",
-    "href": "final.html",
-    "title": "Final Project",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
     "section": "",
-    "text": "Blah blah blah"
+    "text": "Welcome to the course website for BTS 510: Biostatistics for Summer 2024!\nFollow the links to the left to find the syllabus, schedule, and course materials\nYou can contact me at: stefany.coxe@cshs.org\nWe will meet each Thursday from 9am to 10:30am in G-511 Auditorium in PDC Picasso conference room in PDC",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "assignments/index.html",
+    "href": "assignments/index.html",
+    "title": "Assignments overview",
+    "section": "",
+    "text": "You will be assessed in this course using 3 types of assignments\nIn this section\n\nHomework assignments: About every other week\nFinal project: End of semester project\n\nIn the Materials section\n\nLecture videos and surveys",
+    "crumbs": [
+      "Assignments",
+      "Assignments overview"
+    ]
   },
   {
     "objectID": "assignments/hw3.html",
@@ -2335,7 +2363,18 @@
     "href": "assignments/final.html",
     "title": "Final project",
     "section": "",
-    "text": "You will pick one of the five special topics and write a longer summary of the topic, primarily using the listed readings.\nWe will also have a discussion of these topics in the last class session\nDue Sunday, June 2, 2024: Email me your choice of topic",
+    "text": "You will pick one of the five special topics and write a longer summary of the topic, primarily using the listed readings.\nWe will also have a discussion of these topics in the last class session\n\n\n\n\nWrite a 3 to 5 page “guide” or “introduction” to your chosen topic\nUse the listed readings as well as at least 3 more articles\n\n\n\n\n\nDue Sunday, June 2, 2024: Email me your choice of topic",
+    "crumbs": [
+      "Assignments",
+      "Final project"
+    ]
+  },
+  {
+    "objectID": "assignments/final.html#overview",
+    "href": "assignments/final.html#overview",
+    "title": "Final project",
+    "section": "",
+    "text": "You will pick one of the five special topics and write a longer summary of the topic, primarily using the listed readings.\nWe will also have a discussion of these topics in the last class session\n\n\n\n\nWrite a 3 to 5 page “guide” or “introduction” to your chosen topic\nUse the listed readings as well as at least 3 more articles\n\n\n\n\n\nDue Sunday, June 2, 2024: Email me your choice of topic",
     "crumbs": [
       "Assignments",
       "Final project"
@@ -2386,25 +2425,74 @@
     ]
   },
   {
-    "objectID": "assignments/index.html",
-    "href": "assignments/index.html",
-    "title": "Assignments overview",
+    "objectID": "final.html",
+    "href": "final.html",
+    "title": "Final Project",
     "section": "",
-    "text": "You will be assessed in this course using 3 types of assignments\nIn this section\n\nHomework assignments: About every other week\nFinal project: End of semester project\n\nIn the Materials section\n\nLecture videos and surveys",
-    "crumbs": [
-      "Assignments",
-      "Assignments overview"
-    ]
+    "text": "Blah blah blah"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Home",
+    "objectID": "lab/BTS510-24-lab1.html",
+    "href": "lab/BTS510-24-lab1.html",
+    "title": "BTS 510 Lab 1",
     "section": "",
-    "text": "Welcome to the course website for BTS 510: Biostatistics for Summer 2024!\nFollow the links to the left to find the syllabus, schedule, and course materials\nYou can contact me at: stefany.coxe@cshs.org\nWe will meet each Thursday from 9am to 10:30am in G-511 Auditorium in PDC Picasso conference room in PDC",
-    "crumbs": [
-      "Home"
-    ]
+    "text": "set.seed(12345)"
+  },
+  {
+    "objectID": "lab/BTS510-24-lab1.html#learning-objectives",
+    "href": "lab/BTS510-24-lab1.html#learning-objectives",
+    "title": "BTS 510 Lab 1",
+    "section": "1 Learning objectives",
+    "text": "1 Learning objectives\n\nStart using R and Rstudio\nStart using Quarto documents as a reproducible method to present analyses along with narrative text"
+  },
+  {
+    "objectID": "lab/BTS510-24-lab1.html#where-is-the-code",
+    "href": "lab/BTS510-24-lab1.html#where-is-the-code",
+    "title": "BTS 510 Lab 1",
+    "section": "2 Where is the code???",
+    "text": "2 Where is the code???\n\nAt the top of the page, in the upper right, there is a button that reads “&lt;/&gt; Code”\n\nClick on that and a window with the code that made this page will pop up\nClick on the little notepad icon in the upper right to copy the entire document"
+  },
+  {
+    "objectID": "lab/BTS510-24-lab1.html#a-few-miscellaneous-things-about-r-and-quarto",
+    "href": "lab/BTS510-24-lab1.html#a-few-miscellaneous-things-about-r-and-quarto",
+    "title": "BTS 510 Lab 1",
+    "section": "3 A few miscellaneous things about R and Quarto",
+    "text": "3 A few miscellaneous things about R and Quarto\n\n3.1 About R\n\nR is case sensitive\n\nmean is not the same as Mean\nThe object b is not the same as the object B\n\nExtra returns don’t matter\n\nExtra spaces generally don’t matter either\nI often add extra spaces, tabs, and returns to make the code more readable\n\nThe assignment operator is &lt;-\n\n“Put whatever is on the right side in the object named on the left side”\n\nSometimes, equal isn’t equal\n\nIf you’re talking about assigning something to a value, you can use =\nIf you want to compare two values and make a decision based on it, you use ==\n\nThere isn’t a standard, widely-used naming convention for variables, so you should pick something and try to be consistent\n\nIn general, variable names must start with a letter – no numbers or special characters\nThere are some options for multi-word variable naming\n\nvariablename: Just smush it all together\nvariableName or VariableName: Camel case\nvariable_name or Variable_Name: Snake case\nvariable-name or Variable-Name: Kebab case\n\nIn general, make the variable names as short as possible while keeping each name unique\n\n\n\n\n3.2 About Quarto\n\nLook at the top of the Quarto file. The section with --- at the top and bottom. This is the YAML (pronounced “yam-ull”). It provides options for the overall document.\n\ntitle: is pretty obvious\nformat: tells R which output format to produce when you knit the document together\nThis is an html document, but you can specify different or multiple output formats, like both HTML and PDF\n\nThere are additional options that are specific to this format\nself-contained: true and self-contained-math: true make sure that any additional files that are created, like figures are part of the HTML file. If I didn’t include this and sent you to the HTML file, the figures would be missing.\nhtml-math-method: katex is an option about the equations and math text. It’s probably not necessary, but I include it anyway.\nnumber-sections: true and toc: true produce the table of contents on the right side of this page and number the sections and sub-sections (remember headings and organization?) to make it easier to navigate\ncode-tools: true adds the &lt;/&gt; Code button at the top that shows the code that made this page. You can copy the code (using the little “Copy to clipboard” icon in the upper right) and paste it right into R\ncode-block-bg: true and code-block-border-left: \"#31BAE9\" make the code chunks a little more noticeable – they blended into the background too much otherwise.\nThe YAML is one of the few places that spacing matters. Note how each sub-option is indented more than it’s over-option. If you don’t get this right, the file won’t run\nRead more about YAML options here\n\n\nYou can label each code chunk in the document\n\nThis is a very smart thing to do – but I don’t do it consistently :(\nIf you have an error, R will tell you which chunk has the problem\n\nIf the chunks are named, it will use the name so it’s easy to find\nIf they’re not named, it will tell you something like “Unnamed chunk 52”, which is less helpful\n\nName your chunks with #| label: name-of-this-chunk\n\nSee the setup chunk above – that’s just its name, “setup”\n\n\nThere are other options for code chunks. Here are some useful ones\n\necho: true: Repeats the code in the output\nwarning: false: Suppress any warnings from R (not recommended)\neval: false: Don’t run this code, just print it (useful for teaching)\nFor any of these, you can swap from true to false or vice versa and get the opposite effect\nfig-cap: \"My figure caption is cool\": Adds a caption to the figure produced in that chunk – useful for accessibility\nMore info here and here"
+  },
+  {
+    "objectID": "lab/BTS510-24-lab1.html#installing-packages",
+    "href": "lab/BTS510-24-lab1.html#installing-packages",
+    "title": "BTS 510 Lab 1",
+    "section": "4 Installing packages",
+    "text": "4 Installing packages\nYou must install a new package the first time you use it\n\n#install.packages(gapminder)\n\nYou only need to do this once. I have commented out this part of the code by putting # at the start of the line because I already have the package installed. If you try to install a package that is already installed, you will probably get an error.\n\n\n\n\n\n\nNote\n\n\n\nIn my own work, I usually install packages via the Rstudio graphical user interface (GUI). I’m doing it this way for pedagogical reasons.\n\n\nAlternatively, if you’re using Rstudio, you can quickly install packages in the “Packages” pane using the “Install” button, and exclude this code."
+  },
+  {
+    "objectID": "lab/BTS510-24-lab1.html#loading-packages",
+    "href": "lab/BTS510-24-lab1.html#loading-packages",
+    "title": "BTS 510 Lab 1",
+    "section": "5 Loading packages",
+    "text": "5 Loading packages\nYou must load or library() a package each time you use it. This means that you need to load it at the top of each markdown or quarto file you write.\n\nlibrary(gapminder)\n\nThis allows us to use the functions in these packages. If you’re loading multiple packages, just list each on it’s own line.\n\n\n\n\n\n\nNote\n\n\n\nIn my own work, I usually load all packages in the “setup” chunk at the top of the document. I’m doing it this way for pedagogical reasons.\n\n\nThe gapminder package is a data package. It provides a subset of the data available at gapminder.org. You may have heard about this data from Hans Rosling’s very famous TED talk."
+  },
+  {
+    "objectID": "lab/BTS510-24-lab1.html#reading-in-data",
+    "href": "lab/BTS510-24-lab1.html#reading-in-data",
+    "title": "BTS 510 Lab 1",
+    "section": "6 Reading in data",
+    "text": "6 Reading in data\n\n6.1 External data\nYou can read in data from almost any source.\n\nComma-separated values (CSV) file: Use read.csv() (built-in)\nExcel: Use read_excel() function from readxl package\nSAS, SPSS, Stata: Use the appropriate function from the haven package\nSAS, SPSS, S, Stata, Systat, Epi Info, Minitab: Use the appropriate function from the foreign package\n\nIf you’re using Rstudio, you can read in most types of data using “Import Dataset” in the “Environment” tab in the upper right pane.\nWe’ll focus on this more next week. You’ll almost always be using external data (not internal R data) in your own research, so this is really important.\n\n\n6.2 Data from a package\nSome packages contain data. We will use the gapminder dataset from the gapminder package. Another great source of dataset is the datasets package, which includes commonly used datasets such as iris and mtcars. (Note that if you want to use iris or mtcars, you’ll need to load it – it is installed with R by default, so you don’t need to install it.)\nTo load a dataset, use the data() function\n\ndata(gapminder)"
+  },
+  {
+    "objectID": "lab/BTS510-24-lab1.html#looking-at-your-data",
+    "href": "lab/BTS510-24-lab1.html#looking-at-your-data",
+    "title": "BTS 510 Lab 1",
+    "section": "7 Looking at your data",
+    "text": "7 Looking at your data\nThere are a number of functions to help you examine your data. You should always look at your data to make sure it was read in correctly.\n\n\n\n\n\n\nNote\n\n\n\nWhat should your data look like? If you’re doing a typical experimental study, the organization of your dataset should follow a pretty standard format:\n\nEach row is a unit of study (i.e., person, animal, petri dish)\nEach column is a variable\n\nThere are some deviations from this\n\nLongitudinal studies have multiple observations per unit and can be organized 2 different ways\n\nWide or multivariate format: Each repeated measure is a new variable (e.g., X1, X2, X3 for the X variable at 3 different time points)\nTall or stacked or univariate format: Each repeated measure is a new row, so each unit will have multiple rows of data (with an additional variable that indicates which time point is which)\n\nData from non-experiments is often structured differently or even unstructured\n\nWeb scraping\nData from devices or automated processes\nData from someone who doesn’t know what they’re doing…\n\n\n\n\n\n7.1 List the dataset\nIf you want to view the dataset, you can just name the dataset. (You can also print() the dataset for the same result.)\n\ngapminder\n\n# A tibble: 1,704 × 6\n   country     continent  year lifeExp      pop gdpPercap\n   &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;\n 1 Afghanistan Asia       1952    28.8  8425333      779.\n 2 Afghanistan Asia       1957    30.3  9240934      821.\n 3 Afghanistan Asia       1962    32.0 10267083      853.\n 4 Afghanistan Asia       1967    34.0 11537966      836.\n 5 Afghanistan Asia       1972    36.1 13079460      740.\n 6 Afghanistan Asia       1977    38.4 14880372      786.\n 7 Afghanistan Asia       1982    39.9 12881816      978.\n 8 Afghanistan Asia       1987    40.8 13867957      852.\n 9 Afghanistan Asia       1992    41.7 16317921      649.\n10 Afghanistan Asia       1997    41.8 22227415      635.\n# ℹ 1,694 more rows\n\n\n\n\n7.2 head() function\nThe head() function will show the head of the dataset. By default, this shows the first 6 rows of the dataset\n\nhead(gapminder)\n\n# A tibble: 6 × 6\n  country     continent  year lifeExp      pop gdpPercap\n  &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;\n1 Afghanistan Asia       1952    28.8  8425333      779.\n2 Afghanistan Asia       1957    30.3  9240934      821.\n3 Afghanistan Asia       1962    32.0 10267083      853.\n4 Afghanistan Asia       1967    34.0 11537966      836.\n5 Afghanistan Asia       1972    36.1 13079460      740.\n6 Afghanistan Asia       1977    38.4 14880372      786.\n\n\nYou can change the number of rows it shows using the n argument. Here, I’ve asked for the first 15 rows instead.\n\nhead(gapminder, n = 15)\n\n# A tibble: 15 × 6\n   country     continent  year lifeExp      pop gdpPercap\n   &lt;fct&gt;       &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;    &lt;int&gt;     &lt;dbl&gt;\n 1 Afghanistan Asia       1952    28.8  8425333      779.\n 2 Afghanistan Asia       1957    30.3  9240934      821.\n 3 Afghanistan Asia       1962    32.0 10267083      853.\n 4 Afghanistan Asia       1967    34.0 11537966      836.\n 5 Afghanistan Asia       1972    36.1 13079460      740.\n 6 Afghanistan Asia       1977    38.4 14880372      786.\n 7 Afghanistan Asia       1982    39.9 12881816      978.\n 8 Afghanistan Asia       1987    40.8 13867957      852.\n 9 Afghanistan Asia       1992    41.7 16317921      649.\n10 Afghanistan Asia       1997    41.8 22227415      635.\n11 Afghanistan Asia       2002    42.1 25268405      727.\n12 Afghanistan Asia       2007    43.8 31889923      975.\n13 Albania     Europe     1952    55.2  1282697     1601.\n14 Albania     Europe     1957    59.3  1476505     1942.\n15 Albania     Europe     1962    64.8  1728137     2313.\n\n\n\n\n\n\n\n\nNote\n\n\n\nThere is also a tail() function that – guess what – prints the last 6 rows of the dataset. If you wanted to check the end for some reason.\n\n\n\n\n7.3 str() function\nThe str() (for “structure”) function tells you about the structure of the dataset. It shows the number of rows and columns, and summarizes some basic info about each variable (like whether it’s a number or character variable and the possible values).\n\nstr(gapminder)\n\ntibble [1,704 × 6] (S3: tbl_df/tbl/data.frame)\n $ country  : Factor w/ 142 levels \"Afghanistan\",..: 1 1 1 1 1 1 1 1 1 1 ...\n $ continent: Factor w/ 5 levels \"Africa\",\"Americas\",..: 3 3 3 3 3 3 3 3 3 3 ...\n $ year     : int [1:1704] 1952 1957 1962 1967 1972 1977 1982 1987 1992 1997 ...\n $ lifeExp  : num [1:1704] 28.8 30.3 32 34 36.1 ...\n $ pop      : int [1:1704] 8425333 9240934 10267083 11537966 13079460 14880372 12881816 13867957 16317921 22227415 ...\n $ gdpPercap: num [1:1704] 779 821 853 836 740 ...\n\n\n\n\n7.4 glimpse() function\nThe glimpse() function is in the dplyr package in the tidyverse. We’re going to talk about dplyr more next week, but I wanted to include this function here. This function shows you the number of rows and columns in the dataset. It also flips your dataset so that the variables are rows and prints the dataset out.\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nglimpse(gapminder)\n\nRows: 1,704\nColumns: 6\n$ country   &lt;fct&gt; \"Afghanistan\", \"Afghanistan\", \"Afghanistan\", \"Afghanistan\", …\n$ continent &lt;fct&gt; Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, …\n$ year      &lt;int&gt; 1952, 1957, 1962, 1967, 1972, 1977, 1982, 1987, 1992, 1997, …\n$ lifeExp   &lt;dbl&gt; 28.801, 30.332, 31.997, 34.020, 36.088, 38.438, 39.854, 40.8…\n$ pop       &lt;int&gt; 8425333, 9240934, 10267083, 11537966, 13079460, 14880372, 12…\n$ gdpPercap &lt;dbl&gt; 779.4453, 820.8530, 853.1007, 836.1971, 739.9811, 786.1134, …\n\n\n\n\n\n\n\n\nNote\n\n\n\nDon’t worry about all those warnings that show up about tidyverse and such after library(tidyverse). That’s normal."
+  },
+  {
+    "objectID": "lab/BTS510-24-lab1.html#activities",
+    "href": "lab/BTS510-24-lab1.html#activities",
+    "title": "BTS 510 Lab 1",
+    "section": "8 Activities",
+    "text": "8 Activities\nComplete these tasks by adding to this .qmd (quarto) file.\n\nRender / knit the file together into an HTML file.\nRender / knit the file together into a PDF file. You’ll need to install the tinytex package for this to work (or have LaTeX installed on your computer).\nHow many rows are in the gapminder dataset? Where did you find that out?\nHow many columns are in the gapminder dataset? Where did you find that out?\nHow many countries are represented in the gapminder dataset? Where did you find that out?\nThe gapminder dataset is longitudinal. Is it organized as tall or wide?"
   },
   {
     "objectID": "lab/BTS510-24-lab2.html",
@@ -2542,30 +2630,30 @@
   {
     "objectID": "lab/BTS510-24-lab9.html",
     "href": "lab/BTS510-24-lab9.html",
-    "title": "BTS 510 Lab 8",
+    "title": "BTS 510 Lab 9",
     "section": "",
     "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nset.seed(12345)\ntheme_set(theme_classic(base_size = 16))"
   },
   {
     "objectID": "lab/BTS510-24-lab9.html#learning-objectives",
     "href": "lab/BTS510-24-lab9.html#learning-objectives",
-    "title": "BTS 510 Lab 8",
+    "title": "BTS 510 Lab 9",
     "section": "1 Learning objectives",
-    "text": "1 Learning objectives\n\nDescribe the logic of hypothesis testing\nInterpret tests comparing one sample to hypothesized value\nRelate hypothesis testing to confidence intervals\nRecognize when to use a nonparametric test"
+    "text": "1 Learning objectives\n\nInterpret tests comparing two unrelated samples\nSummarize data using contingency tables\nDescribe different study designs for contingency tables"
   },
   {
     "objectID": "lab/BTS510-24-lab9.html#data",
     "href": "lab/BTS510-24-lab9.html#data",
-    "title": "BTS 510 Lab 8",
+    "title": "BTS 510 Lab 9",
     "section": "2 Data",
-    "text": "2 Data\n\nPulse dataset from the Stat2Data package\n\nA dataset with n = 232 observations on the following 7 variables.\n\nActive: Pulse rate (beats per minute) after exercise\nRest: Resting pulse rate (beats per minute)\nSmoke: 1=smoker or 0=nonsmoker\nSex: 1=female or 0=male\nExercise: Typical hours of exercise (per week)\nHgt: Height (in inches)\nWgt: Weight (in pounds)\n\n\nConvert the factor variables to factor variables, as in the lecture\n\nas.factor() function"
+    "text": "2 Data\n\nPulse dataset from the Stat2Data package\n\nA dataset with n = 232 observations on the following 7 variables.\n\nActive: Pulse rate (beats per minute) after exercise\nRest: Resting pulse rate (beats per minute)\nSmoke: 1=smoker or 0=nonsmoker\nSex: 1=female or 0=male\nExercise: Typical hours of exercise (per week)\nHgt: Height (in inches)\nWgt: Weight (in pounds)"
   },
   {
     "objectID": "lab/BTS510-24-lab9.html#tasks",
     "href": "lab/BTS510-24-lab9.html#tasks",
-    "title": "BTS 510 Lab 8",
+    "title": "BTS 510 Lab 9",
     "section": "3 Tasks",
-    "text": "3 Tasks\n\nMake plots of variables as needed\n\n\n3.1 Gender split\n\nIs the gender split in this sample the same as in the total population (i.e., 50/50)?\n\nWhat kind of variable is this?\nWhat test should you do?\nDirectional or non-directional?\nPresent the results of the test\nWrite your conclusions: Is the gender split in this sample comparable to that in the total population?\n\n\n\n\n3.2 Smoking rate\n\nIs the smoking rate in this sample the same as the 11.5% rate in the US? (CDC info on smoking here\n\nWhat kind of variable is this?\nWhat test should you do?\nDirectional or non-directional?\nPresent the results of the test\nWrite your conclusions: Is the smoking rate in this sample comparable to the 11.5% rate in the US?\n\n\n\n\n3.3 Elevated pulse rate\n\nIs the active pulse rate higher than the high end of resting pulse rate of 100 bpm?\n\nWhat kind of variable is this?\nWhat test should you do?\nDirectional or non-directional?\nPresent the results of the test\nWrite your conclusions: Is the active pulse rate different from the high end of resting pulse rate of 100 bpm?\n\n\n\n\n3.4 Height among men\n\nIs the height of men in this sample different from the US average of 5 feet 9 inches?\n\nWhat kind of variable is this?\nWhat test should you do?\nDirectional or non-directional?\nPresent the results of the test\nWrite your conclusions: Is the height of men in this sample different from the US average of 5 feet 9 inches?"
+    "text": "3 Tasks\n\nMake plots of variables as needed (e.g., to assess assumptions)\nConduct a z-test, t-test, and Welch’s t-test\n\nWhat is/are your conclusion(s) based on the tests?\nAre the assumptions met?\n\ne.g., large enough sample to justify z test using sample variance\ne.g., equal variances in both groups\n\nWhich test seems the best choice? (Don’t make this decision based on what is significant – here or elsewhere)\n\nDo you think a non-parametric test might be a good option?\n\n\n\n\n3.1 Some useful code\n\nTo split the dataset into Smoke = 0 and Smoke = 1\n\nThere are other ways to do this, so you don’t need to use this code\n\n\n\nlibrary(Stat2Data)\ndata(Pulse)\nlibrary(tidyverse)\nPulse_smoke &lt;- Pulse %&gt;% filter(Smoke == 1)\nPulse_nosmoke &lt;- Pulse %&gt;% filter(Smoke == 0)\nhead(Pulse_smoke)\n\n  Active Rest Smoke Sex Exercise Hgt Wgt\n1     82   68     1   0        3  70 225\n2     86   68     1   0        2  73 195\n3     87   72     1   0        2  70 173\n4    102   77     1   0        2  72 200\n5     80   67     1   1        2  65 133\n6     99   78     1   0        3  71 165\n\nhead(Pulse_nosmoke)\n\n  Active Rest Smoke Sex Exercise Hgt Wgt\n1     97   78     0   1        1  63 119\n2     88   62     0   0        3  72 175\n3    106   74     0   0        3  72 170\n4     78   63     0   1        3  67 125\n5    109   65     0   0        3  74 188\n6     66   43     0   1        3  67 140\n\n\n\nUse alternative = \"greater\" if H_1: \\mu_1 &gt; \\mu_2\n\nUse alternative = \"less\" if H_1: \\mu_1 &lt; \\mu_2\nWhere \\mu_1 is the mean for the first-entered group (x)\nThe order you enter them (x vs y) doesn’t matter, just make sure you set up the directional hypothesis accordingly\n\n\n\n\n3.2 Active pulse rate\n\nIs active pulse rate higher among smokers than non-smokers?\n\n\n\n3.3 Weight\n\nDo smokers weight less than non-smokers?\n\n\n\n3.4 Exercise\n\nDo smokers and non-smokers exercise the same amount?"
   },
   {
     "objectID": "labs_comp/lab3.html",
@@ -2953,207 +3041,318 @@
     ]
   },
   {
-    "objectID": "materials/index.html",
-    "href": "materials/index.html",
-    "title": "Materials overview",
+    "objectID": "materials/10-mats.html#before-class-lecture",
+    "href": "materials/10-mats.html#before-class-lecture",
+    "title": "Week 10: Hypothesis testing",
+    "section": "Before class: Lecture",
+    "text": "Before class: Lecture\n\nLecture 10\nLecture survey: Complete by Wednesday, July 10 at 8pm\nSlides (html)"
+  },
+  {
+    "objectID": "materials/10-mats.html#during-class-lab",
+    "href": "materials/10-mats.html#during-class-lab",
+    "title": "Week 10: Hypothesis testing",
+    "section": "During class: Lab",
+    "text": "During class: Lab\n\nLab 10 (html with link to code)"
+  },
+  {
+    "objectID": "materials/10-mats.html#after-class-assignment",
+    "href": "materials/10-mats.html#after-class-assignment",
+    "title": "Week 10: Hypothesis testing",
+    "section": "After class: Assignment",
+    "text": "After class: Assignment\n\nHomework 10"
+  },
+  {
+    "objectID": "refs.html",
+    "href": "refs.html",
+    "title": "References",
     "section": "",
-    "text": "Week by week materials are listed in the left menu\n\nFor each week, there are lecture notes, lecture videos, code files, and other materials for the course\nAll lecture videos (only) can be found here\n\nCheck the menu on the left for week-by-week materials\n\n\n\n\n\n\n\nNote\n\n\n\n\nRight click (or control click) and select “Save link as…” to download html files",
+    "text": "UCLA Statistical Consulting: https://stats.oarc.ucla.edu/\nStatistics for Biologists portfolio: https://www.nature.com/collections/qghhqm\nMotulsky, H. (2014). Intuitive biostatistics: a nonmathematical guide to statistical thinking. Oxford University Press, USA.",
     "crumbs": [
-      "Materials",
-      "Materials overview"
+      "References"
     ]
   },
   {
-    "objectID": "schedule.html",
-    "href": "schedule.html",
-    "title": "Schedule",
+    "objectID": "refs.html#general-resources",
+    "href": "refs.html#general-resources",
+    "title": "References",
     "section": "",
-    "text": "Due dates subject to change due to weather, emergency, scheduling changes, etc.\nL: Watch lecture videos and respond to survey by Wednesday at 8pm.\nH: Homework assignments are due by the end of Sunday (midnight).\nFinal project due week of August 12 (date TBD)\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nL\nH\n\n\n\n\n1\nApril 29\nIntroduction, R, markdown\n1\n\n\n\n2\nMay 06\nData manipulation\n2\n1\n\n\n3\nMay 13\nDescriptives\n3\n\n\n\n4\nMay 20\nggplot\n4\n2\n\n\n5\nMay 27\nHOLIDAY\n\n\n\n\n6\nJune 03\nggplot\n5\n\n\n\n7\nJune 10\nSampling distributions\n6\n\n\n\n8\nJune 17\nEstimation and uncertainty\n7\n3\n\n\n9\nJune 24\nHypothesis testing 1\n8\n\n\n\n10\nJuly 01\nHOLIDAY\n\n\n\n\n11\nJuly 08\nHypothesis testing 2\n9\n4\n\n\n12\nJuly 15\nMultiple comparisons\n10\n5\n\n\n13\nJuly 22\nOne way ANOVA\n11\n\n\n\n14\nJuly 29\nTwo way ANOVA\n12\n6\n\n\n15\nAugust 05\nTBD\n\n\n\n\n16\nAugust 12\nTBD\n\nFinal",
+    "text": "UCLA Statistical Consulting: https://stats.oarc.ucla.edu/\nStatistics for Biologists portfolio: https://www.nature.com/collections/qghhqm\nMotulsky, H. (2014). Intuitive biostatistics: a nonmathematical guide to statistical thinking. Oxford University Press, USA.",
     "crumbs": [
-      "Schedule"
+      "References"
     ]
   },
   {
-    "objectID": "slides/BTS510-24-1.html#learning-objectives-1",
-    "href": "slides/BTS510-24-1.html#learning-objectives-1",
+    "objectID": "refs.html#r-rstudio-markdown-quarto",
+    "href": "refs.html#r-rstudio-markdown-quarto",
+    "title": "References",
+    "section": "R, Rstudio, markdown, Quarto",
+    "text": "R, Rstudio, markdown, Quarto\n\nCommonly used R packages for different tasks\nR packages in the tidyverse, which includes:\n\ndplyr: https://dplyr.tidyverse.org/\nggplot2: https://ggplot2.tidyverse.org/\ntidyr: https://tidyr.tidyverse.org/\n\nWickham, H., Çetinkaya-Rundel, M., & Grolemund, G. (2023). R for data science. “O’Reilly Media, Inc.”.\n\nFull book available here: https://r4ds.hadley.nz/\n\nXie, Y., Allaire, J. J., & Grolemund, G. (2018). R markdown: The definitive guide. Chapman and Hall/CRC.\n\nFull book available here: https://bookdown.org/yihui/rmarkdown/\n\nCheatsheets on various topics, including markdown: https://posit.co/resources/cheatsheets/\nQuarto: “Next gen” of markdown\nImai, K., & Williams, N. W. (2022). Quantitative Social Science: An Introduction in Tidyverse. Princeton University Press.",
+    "crumbs": [
+      "References"
+    ]
+  },
+  {
+    "objectID": "refs.html#genomics",
+    "href": "refs.html#genomics",
+    "title": "References",
+    "section": "Genomics",
+    "text": "Genomics\nComputational Genomics with R\nBareyre, F. M., & Schwab, M. E. (2003). Inflammation, degeneration and regeneration in the injured spinal cord: insights from DNA microarrays. Trends in neurosciences, 26(10), 555-563.",
+    "crumbs": [
+      "References"
+    ]
+  },
+  {
+    "objectID": "refs.html#ggplot",
+    "href": "refs.html#ggplot",
+    "title": "References",
+    "section": "ggplot",
+    "text": "ggplot\n\nWickham, H. (2010). A layered grammar of graphics. Journal of computational and graphical statistics, 19(1), 3-28.\nWickham, H. (2016). ggplot2: elegant graphics for data analysis. Springer.\nWilkinson, L. (2005). The Grammar of Graphics (2nd ed.). Statistics and Computing, New York: Springer.",
+    "crumbs": [
+      "References"
+    ]
+  },
+  {
+    "objectID": "refs.html#graphical-comparisons",
+    "href": "refs.html#graphical-comparisons",
+    "title": "References",
+    "section": "Graphical comparisons",
+    "text": "Graphical comparisons\n\nCumming, G., & Finch, S. (2005). Inference by Eye: Confidence Intervals and How to Read Pictures of Data. American Psychologist, 60(2), 170–180. https://doi.org/10.1037/0003-066X.60.2.170\nCumming, G. (2009). Inference by eye: Reading the overlap of independent confidence intervals. Statistics in medicine, 28(2), 205-220.",
+    "crumbs": [
+      "References"
+    ]
+  },
+  {
+    "objectID": "refs.html#missing-data",
+    "href": "refs.html#missing-data",
+    "title": "References",
+    "section": "Missing data",
+    "text": "Missing data\nEnders, C. K. (2022). Applied missing data analysis. Guilford Publications.\nEnders, C. K. (2023). Missing data: An update on the state of the art. Psychological Methods. https://doi.org/10.1037/met0000563\nLittle, R. J., & Rubin, D. B. (2019). Statistical analysis with missing data (Vol. 793). John Wiley & Sons.\nNational Research Council, Division of Behavioral, Committee on National Statistics, & Panel on Handling Missing Data in Clinical Trials. (2010). The prevention and treatment of missing data in clinical trials.\nRubin, D. B. (1976). Inference and missing data. Biometrika, 63(3), 581-592.",
+    "crumbs": [
+      "References"
+    ]
+  },
+  {
+    "objectID": "refs.html#tests-of-proportions",
+    "href": "refs.html#tests-of-proportions",
+    "title": "References",
+    "section": "Tests of proportions",
+    "text": "Tests of proportions\nAgresti, A. (1996). An introduction to categorical data analysis.\nAgresti, A. (2012). Categorical data analysis (Vol. 792). John Wiley & Sons.",
+    "crumbs": [
+      "References"
+    ]
+  },
+  {
+    "objectID": "refs.html#special-topics-for-final-project",
+    "href": "refs.html#special-topics-for-final-project",
+    "title": "References",
+    "section": "Special Topics for Final Project",
+    "text": "Special Topics for Final Project\n\nHeterogeneity\n\nRichter SH. Systematic heterogenization for better reproducibility in animal experimentation. Lab animal. 2017 Sep;46(9):343-9.\nUsui T, Macleod MR, McCann SK, Senior AM, Nakagawa S. Meta-analysis of variation suggests that embracing variability improves both replicability and generalizability in preclinical research. PLoS biology. 2021 May 19;19(5):e3001009.\nVoelkl B, Vogt L, Sena ES, Würbel H. Reproducibility of preclinical animal research improves with heterogeneity of study samples. PLoS biology. 2018 Feb 22;16(2):e2003693.\n\n\n\n\\(p\\)-value misuses\n\nCohen, J. (1994). The earth is round (p&lt;. 05). American psychologist, 49(12), 997.\nHead ML, Holman L, Lanfear R, Kahn AT, Jennions MD. The extent and consequences of p-hacking in science. PLoS Biol. 2015 Mar 13;13(3):e1002106.\nGelman A, Stern H. The difference between “significant” and “not significant” is not itself statistically significant. The American Statistician. 2006 Nov 1;60(4):328-31.\nGreenland S, Senn SJ, Rothman KJ, Carlin JB, Poole C, Goodman SN, Altman DG. Statistical tests, P values, confidence intervals, and power: a guide to misinterpretations. European journal of epidemiology. 2016 Apr;31(4):337-50.\nRosnow, R. L., & Rosenthal, R. (1989). Statistical procedures and the justification of knowledge in psychological science. American Psychologist, 44(10), 1276-1284.\n\n\n\nReporting in pre-clinical sciences\n\nAvey MT, Moher D, Sullivan KJ, Fergusson D, Griffin G, Grimshaw JM, Hutton B, Lalu MM, Macleod M, Marshall J, Mei SH. The devil is in the details: incomplete reporting in preclinical animal research. PLoS One. 2016 Nov 17;11(11):e0166733.\nPercie du Sert N, Ahluwalia A, Alam S, Avey MT, Baker M, Browne WJ, Clark A, Cuthill IC, Dirnagl U, Emerson M, Garner P. Reporting animal research: Explanation and elaboration for the ARRIVE guidelines 2.0. PLoS biology. 2020 Jul 14;18(7):e3000411.\nSerghiou S, Contopoulos-Ioannidis DG, Boyack KW, Riedel N, Wallach JD, Ioannidis JP. Assessment of transparency indicators across the biomedical literature: How open is open?. PLoS biology. 2021 Mar 1;19(3):e3001107.\n\n\n\nReproducibility in science\n\nBegley CG, Ellis LM. Raise standards for preclinical cancer research. Nature. 2012 Mar;483(7391):531-3.\nBegley CG, Ioannidis JP. Reproducibility in science: improving the standard for basic and preclinical research. Circulation research. 2015 Jan 2;116(1):116-26.\nErrington TM, Denis A, Perfito N, Iorns E, Nosek BA. Reproducibility in Cancer Biology: Challenges for assessing replicability in preclinical cancer biology. eLife. 2021 Dec 7;10:e67995.\n\n\n\nSex as a biological variable\n\nBeery AK. Inclusion of females does not increase variability in rodent research studies. Current opinion in behavioral sciences. 2018 Oct 1;23:143-9.\nGarcia-Sifuentes Y, Maney DL. Reporting and misreporting of sex differences in the biological sciences. eLife 2021;10:e70817\nWoitowich NC, Beery A, Woodruff T. Meta-research: a 10-year follow-up study of sex inclusion in the biological sciences. eLife. 2020 Jun 9;9:e56344.",
+    "crumbs": [
+      "References"
+    ]
+  },
+  {
+    "objectID": "slides/BTS510-24-0.html#about-me",
+    "href": "slides/BTS510-24-0.html#about-me",
+    "title": "Introduction to Biostatistics",
+    "section": "1.1 About me",
+    "text": "1.1 About me\n\nDr. Stefany Coxe\n\nPh.D. in Quantitative Psychology from Arizona State University\nBiostatistician in Biostatistics Shared Resource\nAssociate Professor in Computational Biomedicine\n\nOriginally from Southern California but I’ve lived in other warm places like Phoenix and Miami\nI love statistics and want you to love them too!"
+  },
+  {
+    "objectID": "slides/BTS510-24-0.html#about-your-co-instructors",
+    "href": "slides/BTS510-24-0.html#about-your-co-instructors",
+    "title": "Introduction to Biostatistics",
+    "section": "1.2 About your co-instructors",
+    "text": "1.2 About your co-instructors\n\nYujie Cui, M.S.\n\nyujie.cui@cshs.org\n\nMichael Luu, M.P.H.\n\nmichael.luu@cshs.org"
+  },
+  {
+    "objectID": "slides/BTS510-24-0.html#this-course",
+    "href": "slides/BTS510-24-0.html#this-course",
+    "title": "Introduction to Biostatistics",
+    "section": "1.3 This course",
+    "text": "1.3 This course\n\nThis course covers topics related to applied statistical analysis of experimental studies\n\nUsing and manipulating datasets, plotting data, probability, estimation and uncertainty, comparing 2 independent or dependent means, comparing 2 independent or dependent proportions, controlling for multiple comparisons\n\n\n\nJeff Edwards, September 2017 CARMA talk:\nBecoming methodologically self-reliant is empowering, satisfying, and essential to your success as a researcher."
+  },
+  {
+    "objectID": "slides/BTS510-24-0.html#hybrid-flipped-course",
+    "href": "slides/BTS510-24-0.html#hybrid-flipped-course",
+    "title": "Introduction to Biostatistics",
+    "section": "1.4 Hybrid, flipped course",
+    "text": "1.4 Hybrid, flipped course\n\nWe meet in person for 1 hour 30 minutes each week for active learning\n\nWork through R code\n\nInterpret output\nQ & A\n\nAll other content is delivered asynchronously via web\n\nRecorded lectures (before meeting)\n\nHomework (after meeting)"
+  },
+  {
+    "objectID": "slides/BTS510-24-0.html#course-schedule",
+    "href": "slides/BTS510-24-0.html#course-schedule",
+    "title": "Introduction to Biostatistics",
+    "section": "2.1 Course schedule",
+    "text": "2.1 Course schedule\n\nMonday: Materials for the week will be available\nWednesday by 8pm: Watch lecture video and complete survey\nThursday at 9am: Meet in person in G-511 Auditorium (PDC)\nSunday by midnight: Homework assignment due"
+  },
+  {
+    "objectID": "slides/BTS510-24-0.html#lecture-and-survey",
+    "href": "slides/BTS510-24-0.html#lecture-and-survey",
+    "title": "Introduction to Biostatistics",
+    "section": "3.1 Lecture and survey",
+    "text": "3.1 Lecture and survey\n\nEach week, there will be a recorded lecture video\n\nBackground material to do in-class exercises\nWatch the video\nComplete the survey to provide comments and questions"
+  },
+  {
+    "objectID": "slides/BTS510-24-0.html#in-person-class-time",
+    "href": "slides/BTS510-24-0.html#in-person-class-time",
+    "title": "Introduction to Biostatistics",
+    "section": "3.2 In-person class time",
+    "text": "3.2 In-person class time\n\nBriefly review the lecture and answer any questions\nCode, output, and interpretation\nWrap up and final questions"
+  },
+  {
+    "objectID": "slides/BTS510-24-0.html#homework-assignments",
+    "href": "slides/BTS510-24-0.html#homework-assignments",
+    "title": "Introduction to Biostatistics",
+    "section": "3.3 Homework assignments",
+    "text": "3.3 Homework assignments\n\nSix (6) homework assignments\n\nProgramming assignments\n\nWrite code to learn to program in R\n\nData and research question\n\nYou run the appropriate analyses and write up the results"
+  },
+  {
+    "objectID": "slides/BTS510-24-0.html#final-project",
+    "href": "slides/BTS510-24-0.html#final-project",
+    "title": "Introduction to Biostatistics",
+    "section": "3.4 Final project",
+    "text": "3.4 Final project\n\nPick one of five special topics (see References)\nWrite a short “guidebook” on the topic\nMore details to come"
+  },
+  {
+    "objectID": "slides/BTS510-24-0.html#statistical-software",
+    "href": "slides/BTS510-24-0.html#statistical-software",
+    "title": "Introduction to Biostatistics",
+    "section": "4.1 Statistical software",
+    "text": "4.1 Statistical software\n\nR software\n\nOK if you don’t know how to use it (but also great if you do!)\nFree and open source and works on any platform\n\nRstudio is a graphical IDE (integrated development environment) for R\nLinks in the syllabus to install R and Rstudio"
+  },
+  {
+    "objectID": "slides/BTS510-24-0.html#how-can-you-be-successful",
+    "href": "slides/BTS510-24-0.html#how-can-you-be-successful",
+    "title": "Introduction to Biostatistics",
+    "section": "5.1 How can you be successful?",
+    "text": "5.1 How can you be successful?\n\nCome to class prepared and ready to run analyses\n\nVideos watched. On time. Software ready. Fed. Caffeinated.\n\nCommunicate with instructors\n\nThere are more of you than there are us\nI don’t know what’s going on with each of you"
+  },
+  {
+    "objectID": "slides/BTS510-24-0.html#where-can-i-find-out-more-about",
+    "href": "slides/BTS510-24-0.html#where-can-i-find-out-more-about",
+    "title": "Introduction to Biostatistics",
+    "section": "5.2 Where can I find out more about…?",
+    "text": "5.2 Where can I find out more about…?\n\nCheck the website. Really.\n\nSyllabus, all the course materials, due dates, policies, etc.\nMany pages of references, organized by topic\n\nEmail me or Yujie or Michael\n\nIf you can get your question into an email, I can almost always answer it in an email"
+  },
+  {
+    "objectID": "slides/BTS510-24-0.html#whats-next",
+    "href": "slides/BTS510-24-0.html#whats-next",
+    "title": "Introduction to Biostatistics",
+    "section": "5.3 What’s next?",
+    "text": "5.3 What’s next?\nGet prepared for our in-person meeting on Thursday\n\nWatch the Lecture 1 video\n\nComplete the survey to provide feedback\n\nGet your software set up\n\nInstall R (and Rstudio)\n\nCome to class ready to do things!"
+  },
+  {
+    "objectID": "slides/BTS510-24-10.html#learning-objectives-1",
+    "href": "slides/BTS510-24-10.html#learning-objectives-1",
     "title": "Introduction to Biostatistics",
     "section": "1.1 Learning objectives",
-    "text": "1.1 Learning objectives\n\nReview the course topics and goals\nStart using R and Rstudio\nStart using Quarto documents in R as a reproducible method to present analyses along with narrative text"
+    "text": "1.1 Learning objectives\n\nSelect the appropriate test for a contingency table based on study design\nInterpret tests comparing two related samples"
   },
   {
-    "objectID": "slides/BTS510-24-1.html#what-is-statistics-interdisciplinary",
-    "href": "slides/BTS510-24-1.html#what-is-statistics-interdisciplinary",
+    "objectID": "slides/BTS510-24-10.html#chi-square-test",
+    "href": "slides/BTS510-24-10.html#chi-square-test",
     "title": "Introduction to Biostatistics",
-    "section": "2.1 What is statistics? Interdisciplinary",
-    "text": "2.1 What is statistics? Interdisciplinary\n\nMathematics\nProbability\nUncertainty\nDecision making\nProgramming / computer science\nStudy design and methodology\nIntegrated into science"
+    "section": "1.2 Chi-square test",
+    "text": "1.2 Chi-square test\n\nAnalysis of contingency tables\n\nCross-tabs, summary tables\nAll categorical variables\nEach cell is a count for that combination\nSums at the edges: Margins\n\nTest of proportions\n\n\nlibrary(Stat2Data)\ndata(Pulse)\nsmoke_sex &lt;- table(Pulse$Smoke, Pulse$Sex)\nrownames(smoke_sex) &lt;- c(\"Non-smoker\", \"Smoker\")\ncolnames(smoke_sex) &lt;- c(\"Male\", \"Female\")\nsmoke_sex_margins &lt;- addmargins(smoke_sex)\nsmoke_sex_margins"
   },
   {
-    "objectID": "slides/BTS510-24-1.html#what-is-statistics-people",
-    "href": "slides/BTS510-24-1.html#what-is-statistics-people",
+    "objectID": "slides/BTS510-24-10.html#chi-square-test-proportions",
+    "href": "slides/BTS510-24-10.html#chi-square-test-proportions",
     "title": "Introduction to Biostatistics",
-    "section": "2.2 What is statistics? People",
-    "text": "2.2 What is statistics? People\n\nWilliam Sealy Gosset\n\nGuinness Brewing Company: Making better beer\n\\(t\\)-distribution and \\(t\\)-test\n\nRonald Fisher\n\nRothamsted Experimental Station: Agricultural questions\nAnalysis of variance (ANOVA) and \\(F\\)-distribution\nPopularized the \\(p\\)-value and \\(p &lt; .05\\) as a cut-off"
+    "section": "1.3 Chi-square test: Proportions",
+    "text": "1.3 Chi-square test: Proportions\n\nProportions for the original table, then add margins\n\n\naddmargins(prop.table(smoke_sex))"
   },
   {
-    "objectID": "slides/BTS510-24-1.html#what-is-statistics-context",
-    "href": "slides/BTS510-24-1.html#what-is-statistics-context",
+    "objectID": "slides/BTS510-24-10.html#chi-square-test-assumptions",
+    "href": "slides/BTS510-24-10.html#chi-square-test-assumptions",
     "title": "Introduction to Biostatistics",
-    "section": "2.3 What is statistics? Context",
-    "text": "2.3 What is statistics? Context\n\nhttps://www.instagram.com/p/Bx8p0Pih6qs/"
+    "section": "1.4 Chi-square test: Assumptions",
+    "text": "1.4 Chi-square test: Assumptions\n\nCategorical variables (nominal or ordinal)\nCells are counts of observations in each combination"
   },
   {
-    "objectID": "slides/BTS510-24-1.html#what-is-statistics-context-1",
-    "href": "slides/BTS510-24-1.html#what-is-statistics-context-1",
+    "objectID": "slides/BTS510-24-10.html#chi-square-test-hypotheses",
+    "href": "slides/BTS510-24-10.html#chi-square-test-hypotheses",
     "title": "Introduction to Biostatistics",
-    "section": "2.4 What is statistics? Context",
-    "text": "2.4 What is statistics? Context\n\nThis thing is 8 feet tall. Is that tall?\n\nFor a person: Yes\nFor a building: No\n\nThese two things are 12 inches different in height. Is that a lot?\n\nFor people: Yes\nFor buildings: No"
+    "section": "1.5 Chi-square test: Hypotheses",
+    "text": "1.5 Chi-square test: Hypotheses"
   },
   {
-    "objectID": "slides/BTS510-24-1.html#when-to-think-about-statistics",
-    "href": "slides/BTS510-24-1.html#when-to-think-about-statistics",
+    "objectID": "slides/BTS510-24-10.html#chi-square-test-test-statistic-1",
+    "href": "slides/BTS510-24-10.html#chi-square-test-test-statistic-1",
     "title": "Introduction to Biostatistics",
-    "section": "2.5 When to think about statistics?",
-    "text": "2.5 When to think about statistics?\n\n\nStudy design\nData collection\n\n\n\nData analysis\n\n\n\n\nInterpretation\n\n\n\n\nRonald Fisher:   To call in the statistician after the experiment is done may be no more than asking him to perform a post-mortem examination: he may be able to say what the experiment died of."
+    "section": "1.6 Chi-square test: Test statistic 1",
+    "text": "1.6 Chi-square test: Test statistic 1"
   },
   {
-    "objectID": "slides/BTS510-24-1.html#topics",
-    "href": "slides/BTS510-24-1.html#topics",
+    "objectID": "slides/BTS510-24-10.html#chi-square-test-test-statistic-2",
+    "href": "slides/BTS510-24-10.html#chi-square-test-test-statistic-2",
     "title": "Introduction to Biostatistics",
-    "section": "2.6 Topics",
-    "text": "2.6 Topics\n\nReading in and manipulating data in R\nMaking plots in R\nDescriptive statistics\nProbability, sampling distributions, uncertainty\nComparing 2 means or proportions\nControlling for multiple comparisons\nComparing 3 or more means"
+    "section": "1.7 Chi-square test: Test statistic 2",
+    "text": "1.7 Chi-square test: Test statistic 2\n\nYates’ continuity correction\n\nMore accurate with small cell sizes\nDoesn’t matter much with very large samples"
   },
   {
-    "objectID": "slides/BTS510-24-1.html#what-youll-learn-about",
-    "href": "slides/BTS510-24-1.html#what-youll-learn-about",
+    "objectID": "slides/BTS510-24-10.html#chi-square-test-example-1",
+    "href": "slides/BTS510-24-10.html#chi-square-test-example-1",
     "title": "Introduction to Biostatistics",
-    "section": "2.7 What you’ll learn about",
-    "text": "2.7 What you’ll learn about\n\nProgramming (in R)\nProbability and mathematics underlying statistical methods\nConducting (some) statistical analyses\nPresenting results of statistical analyses\nThinking about issues in science related to statistics"
+    "section": "1.8 Chi-square test: Example 1",
+    "text": "1.8 Chi-square test: Example 1\n\nIs the gender split the same for smokers and non-smokers?\n\n\nprop.test(x = smoke_sex[,1], \n          n = smoke_sex_margins[c(1,2),3],\n          alternative = \"two.sided\",\n          conf.level = 0.95,\n          correct = TRUE)"
   },
   {
-    "objectID": "slides/BTS510-24-1.html#what-is-r",
-    "href": "slides/BTS510-24-1.html#what-is-r",
+    "objectID": "slides/BTS510-24-10.html#fishers-exact-test",
+    "href": "slides/BTS510-24-10.html#fishers-exact-test",
     "title": "Introduction to Biostatistics",
-    "section": "3.1 What is R?",
-    "text": "3.1 What is R?\n\nFree, open source software\n\nWindows, Mac, Unix, cloud\n\nObject-oriented programming language\nBuilt-in capabilities (“packages”)\nUsers can write their own packages and functions"
+    "section": "1.9 Fisher’s exact test",
+    "text": "1.9 Fisher’s exact test\n\nAlternative to \\(\\chi^2\\) for small samples: \\(\\le\\) 5 in a cell\n\nBut that’s not 100% correct\n\nUsed when all margins are “fixed”\nfisher.test() function\n\n\n\n\n&nbsp\nTea first\nMilk first\nTotal\n\n\n\n\nGuess tea\n3\n1\n4\n\n\nGuess milk\n1\n3\n4\n\n\nTotal\n4\n4\n8\n\n\n\n\nTeaTasting &lt;- matrix(c(3, 1, 1, 3),\n                     nrow = 2,\n                     dimnames = list(Guess = c(\"Milk\", \"Tea\"),\n                                     Truth = c(\"Milk\", \"Tea\")))\nfisher.test(TeaTasting, alternative = \"greater\")"
   },
   {
-    "objectID": "slides/BTS510-24-1.html#what-is-r-1",
-    "href": "slides/BTS510-24-1.html#what-is-r-1",
+    "objectID": "slides/BTS510-24-10.html#dependent-samples-tests",
+    "href": "slides/BTS510-24-10.html#dependent-samples-tests",
     "title": "Introduction to Biostatistics",
-    "section": "3.2 What is R?",
-    "text": "3.2 What is R?"
+    "section": "2.1 Dependent samples tests",
+    "text": "2.1 Dependent samples tests\n\nParametric tests\n\nMatched pairs \\(z\\)-test\nMatched pairs (or paired) \\(t\\)-test\n\nNon-parametric tests\n\nSign test\nMcNemar’s test (proportion)"
   },
   {
-    "objectID": "slides/BTS510-24-1.html#what-does-object-oriented-mean",
-    "href": "slides/BTS510-24-1.html#what-does-object-oriented-mean",
+    "objectID": "slides/BTS510-24-10.html#non-independence",
+    "href": "slides/BTS510-24-10.html#non-independence",
     "title": "Introduction to Biostatistics",
-    "section": "3.3 What does “object-oriented” mean?",
-    "text": "3.3 What does “object-oriented” mean?\n\nProgramming built on the idea of “objects”\nEverything is an object\n\nIf you have an object’s name, you can do something with it\n\nObjects: Datasets, variables, analyses, plots"
+    "section": "2.2 Non-independence",
+    "text": "2.2 Non-independence\n\nOpposite of independence\n\nThe two samples are made up of the same (or related) individuals\n\nWhen does this happen?\n\nMost common: Pre-post designs, each unit in multiple conditions\nAlso: Dyads, multiple reporters or sources"
   },
   {
-    "objectID": "slides/BTS510-24-1.html#what-does-object-oriented-mean-1",
-    "href": "slides/BTS510-24-1.html#what-does-object-oriented-mean-1",
+    "objectID": "slides/BTS510-24-10.html#matched-pairs-t-test",
+    "href": "slides/BTS510-24-10.html#matched-pairs-t-test",
     "title": "Introduction to Biostatistics",
-    "section": "3.4 What does “object-oriented” mean?",
-    "text": "3.4 What does “object-oriented” mean?\n\nx &lt;- c(1, 1, 2, 3, 5, 8)\nx\n\n[1] 1 1 2 3 5 8\n\n\n\nLine 1\n\nDefine an object called x that is this set of numbers\n&lt;- is the assignment operator\n\nLine 2\n\nPrint the object x"
+    "section": "2.3 Matched pairs \\(t\\)-test",
+    "text": "2.3 Matched pairs \\(t\\)-test"
   },
   {
-    "objectID": "slides/BTS510-24-1.html#what-is-a-function",
-    "href": "slides/BTS510-24-1.html#what-is-a-function",
+    "objectID": "slides/BTS510-24-10.html#sign-test",
+    "href": "slides/BTS510-24-10.html#sign-test",
     "title": "Introduction to Biostatistics",
-    "section": "3.5 What is a function?",
-    "text": "3.5 What is a function?\n\nPre-written piece of code that\n\nTakes one or more inputs (or arguments)\nProduces one or more outputs"
+    "section": "2.4 Sign test",
+    "text": "2.4 Sign test"
   },
   {
-    "objectID": "slides/BTS510-24-1.html#what-is-a-function-1",
-    "href": "slides/BTS510-24-1.html#what-is-a-function-1",
+    "objectID": "slides/BTS510-24-10.html#mcnemars-test",
+    "href": "slides/BTS510-24-10.html#mcnemars-test",
     "title": "Introduction to Biostatistics",
-    "section": "3.6 What is a function?",
-    "text": "3.6 What is a function?\n\nmean(x)\n\n[1] 3.333333\n\n\n\nFunction: mean()\nInput: x\nOutput: mean of x\n\nDocumentation for mean() function"
+    "section": "2.5 McNemar’s test",
+    "text": "2.5 McNemar’s test"
   },
   {
-    "objectID": "slides/BTS510-24-1.html#what-is-a-package",
-    "href": "slides/BTS510-24-1.html#what-is-a-package",
+    "objectID": "slides/BTS510-24-10.html#in-class-activities-1",
+    "href": "slides/BTS510-24-10.html#in-class-activities-1",
     "title": "Introduction to Biostatistics",
-    "section": "3.7 What is a package?",
-    "text": "3.7 What is a package?\n\nCollection of functions (that work together in some way)\n\ndplyr package is a set of functions to manipulate data\nggplot package is a set of functions to create plots\nstats package (built-in) is a set of functions to perform basic statistical operations"
+    "section": "3.1 In-class activities",
+    "text": "3.1 In-class activities"
   },
   {
-    "objectID": "slides/BTS510-24-1.html#what-is-a-package-1",
-    "href": "slides/BTS510-24-1.html#what-is-a-package-1",
+    "objectID": "slides/BTS510-24-10.html#next-week",
+    "href": "slides/BTS510-24-10.html#next-week",
     "title": "Introduction to Biostatistics",
-    "section": "3.8 What is a package?",
-    "text": "3.8 What is a package?\n\nTo use functions in a package, you need to\n\nInstall the package\n\nJust once per machine / R install\n\nLoad or library() the package\n\nEvery time you use it"
-  },
-  {
-    "objectID": "slides/BTS510-24-1.html#what-is-rstudio",
-    "href": "slides/BTS510-24-1.html#what-is-rstudio",
-    "title": "Introduction to Biostatistics",
-    "section": "3.9 What is Rstudio?",
-    "text": "3.9 What is Rstudio?\n\nIntegrated development environment (IDE) for R\nGraphical user interface to use R\n\nManage installed packages\nConnect to git / github\nEasily see loaded datasets"
-  },
-  {
-    "objectID": "slides/BTS510-24-1.html#what-is-rstudio-1",
-    "href": "slides/BTS510-24-1.html#what-is-rstudio-1",
-    "title": "Introduction to Biostatistics",
-    "section": "3.10 What is Rstudio?",
-    "text": "3.10 What is Rstudio?"
-  },
-  {
-    "objectID": "slides/BTS510-24-1.html#what-is-markdown",
-    "href": "slides/BTS510-24-1.html#what-is-markdown",
-    "title": "Introduction to Biostatistics",
-    "section": "4.1 What is “markdown”?",
-    "text": "4.1 What is “markdown”?\n\n“Markup” language to format plain text\n\nHTML: Hyper-Text Markup Language\n\nHeadings, links, italics / bold, bullet points, equations\nOutput final, formatted document into multiple formats\n\nHTML, Word, PDF documents or slides\n\nUsed across a wide variety of platforms, not just in R\n\nGithub, Jekyll, note-taking apps"
-  },
-  {
-    "objectID": "slides/BTS510-24-1.html#markdown-example",
-    "href": "slides/BTS510-24-1.html#markdown-example",
-    "title": "Introduction to Biostatistics",
-    "section": "4.2 markdown example",
-    "text": "4.2 markdown example\n\nhttps://www.markdownguide.org/getting-started/#kicking-the-tires"
-  },
-  {
-    "objectID": "slides/BTS510-24-1.html#markdown-example-organization",
-    "href": "slides/BTS510-24-1.html#markdown-example-organization",
-    "title": "Introduction to Biostatistics",
-    "section": "4.3 markdown example: Organization",
-    "text": "4.3 markdown example: Organization\n\nOrganize document with headings\n\n# Level 1 heading\n## Level 2 heading\n### Level 3 heading\n\nMost documents can have a table of contents, which will use these headings\n\nSlides have a table of contents accessed from bottom left"
-  },
-  {
-    "objectID": "slides/BTS510-24-1.html#markdown-example-format-text",
-    "href": "slides/BTS510-24-1.html#markdown-example-format-text",
-    "title": "Introduction to Biostatistics",
-    "section": "4.4 markdown example: Format text",
-    "text": "4.4 markdown example: Format text\n\n*italics* turns into italics\n**bold** turns into bold\nMathematical text in between pairs of $\n\n$R^2_{multiple}$ turns into \\(R^2_{multiple}\\)\n$\\hat{Y} = b_0 + b_1 X_1$ turns into \\(\\hat{Y} = b_0 + b_1 X_1\\)"
-  },
-  {
-    "objectID": "slides/BTS510-24-1.html#markdown-example-code-chunks",
-    "href": "slides/BTS510-24-1.html#markdown-example-code-chunks",
-    "title": "Introduction to Biostatistics",
-    "section": "4.5 markdown example: Code chunks",
-    "text": "4.5 markdown example: Code chunks\n```{r, echo = TRUE}\nx &lt;- c(1, 1, 2, 3, 5, 8)\nmean(x)\n```\n\nIntersperse text and code in the same document\n\nDescription of data and analysis\nAnalysis\nSummarize the results"
-  },
-  {
-    "objectID": "slides/BTS510-24-1.html#rmarkdown-package",
-    "href": "slides/BTS510-24-1.html#rmarkdown-package",
-    "title": "Introduction to Biostatistics",
-    "section": "4.6 rmarkdown package",
-    "text": "4.6 rmarkdown package\n\nImplements markdown in R\nLets you create several document types\n\nHTML or PDF or Word documents\nSlides in HTML or PDF or Powerpoint\n\nDoes all the heavy lifting to convert your markdown document to the final, formatted version"
-  },
-  {
-    "objectID": "slides/BTS510-24-1.html#quarto",
-    "href": "slides/BTS510-24-1.html#quarto",
-    "title": "Introduction to Biostatistics",
-    "section": "4.7 Quarto",
-    "text": "4.7 Quarto\n\n“Next gen” of markdown\nWorks with multiple languages (even in the same document): R, Python, Julia\nAdditional features\nInstall Quarto from here\n\nMore general info here"
-  },
-  {
-    "objectID": "slides/BTS510-24-1.html#in-class-activities-1",
-    "href": "slides/BTS510-24-1.html#in-class-activities-1",
-    "title": "Introduction to Biostatistics",
-    "section": "5.1 In-class activities",
-    "text": "5.1 In-class activities\n\nAny questions on the course topics and goals\nStart using R and Rstudio\nStart using Quarto in R as a reproducible method to present analyses along with narrative text"
+    "section": "3.2 Next week",
+    "text": "3.2 Next week"
   },
   {
     "objectID": "slides/BTS510-24-3.html#learning-objectives-1",
@@ -4028,48 +4227,377 @@
     "href": "slides/BTS510-24-9.html#learning-objectives-1",
     "title": "Introduction to Biostatistics",
     "section": "1.1 Learning objectives",
-    "text": "1.1 Learning objectives\n\nInterpret tests comparing two unrelated samples\nInterpret tests comparing two related samples\nInterpret chi-square test for two binary variables"
+    "text": "1.1 Learning objectives\n\nInterpret tests comparing two unrelated samples\nSummarize data using contingency tables\nDescribe different study designs for contingency tables"
   },
   {
-    "objectID": "slides/BTS510-24-9.html#z-test",
-    "href": "slides/BTS510-24-9.html#z-test",
+    "objectID": "slides/BTS510-24-9.html#independent-samples-tests",
+    "href": "slides/BTS510-24-9.html#independent-samples-tests",
     "title": "Introduction to Biostatistics",
-    "section": "2.1 \\(z\\)-test",
-    "text": "2.1 \\(z\\)-test"
+    "section": "2.1 Independent samples tests",
+    "text": "2.1 Independent samples tests\n\nCompare means (or medians) from two unrelated samples\nDo the two samples come from populations with the same mean?\n\nIs the difference between the two population means 0?"
   },
   {
-    "objectID": "slides/BTS510-24-9.html#t-test",
-    "href": "slides/BTS510-24-9.html#t-test",
+    "objectID": "slides/BTS510-24-9.html#independent-samples-tests-1",
+    "href": "slides/BTS510-24-9.html#independent-samples-tests-1",
     "title": "Introduction to Biostatistics",
-    "section": "2.2 \\(t\\)-test",
-    "text": "2.2 \\(t\\)-test"
+    "section": "2.2 Independent samples tests",
+    "text": "2.2 Independent samples tests\n\nParametric tests\n\nIndependent samples \\(z\\)-test\nIndependent samples \\(t\\)-test (also Welch’s \\(t\\)-test)\n\nNon-parametric tests\n\nMedian test\nWilcoxon-Mann-Whitney U test\nChi-square test and Fisher’s exact test (next week)"
   },
   {
-    "objectID": "slides/BTS510-24-9.html#proportions",
-    "href": "slides/BTS510-24-9.html#proportions",
+    "objectID": "slides/BTS510-24-9.html#independence",
+    "href": "slides/BTS510-24-9.html#independence",
     "title": "Introduction to Biostatistics",
-    "section": "2.3 Proportions",
-    "text": "2.3 Proportions"
+    "section": "2.3 Independence",
+    "text": "2.3 Independence\n\nStatistical independence\n\nTwo events are independent if the occurrence of one event doesn’t impact the occurrence of another event\nKnowing about one event tells you nothing about the other event\n\nIndependent samples\n\nIndividuals in one sample are not related to individuals in the other sample\nThe two samples are made up of different individuals"
   },
   {
-    "objectID": "slides/BTS510-24-9.html#equal-vs-unequal-variances",
-    "href": "slides/BTS510-24-9.html#equal-vs-unequal-variances",
+    "objectID": "slides/BTS510-24-9.html#z-test-assumptions",
+    "href": "slides/BTS510-24-9.html#z-test-assumptions",
     "title": "Introduction to Biostatistics",
-    "section": "2.4 Equal vs unequal variances",
-    "text": "2.4 Equal vs unequal variances"
+    "section": "2.4 \\(z\\)-test: Assumptions",
+    "text": "2.4 \\(z\\)-test: Assumptions\n\nData are continuous (i.e., ratio or interval)\nData are randomly sampled from the population(s)\nData are independent (within and across groups)\nData are approximately normally distributed OR sample size is large enough for normally distributed sampling distribution (central limit theorem)\nPopulation variance (or SD) is known and same in both groups\n\n“Large sample”: population variance estimated by sample variance"
+  },
+  {
+    "objectID": "slides/BTS510-24-9.html#z-test-hypotheses",
+    "href": "slides/BTS510-24-9.html#z-test-hypotheses",
+    "title": "Introduction to Biostatistics",
+    "section": "2.5 \\(z\\)-test: Hypotheses",
+    "text": "2.5 \\(z\\)-test: Hypotheses\n\nDirectional (one-tailed) tests\n\n\\(H_0\\): \\(\\mu_1 \\le \\mu_2\\) or \\(\\mu_1 - \\mu_2 \\le 0\\)\n\n\\(H_1\\): \\(\\mu_1 &gt; \\mu_2\\) or \\(\\mu_1 - \\mu_2 &gt; 0\\)\n\n\\(H_0\\): \\(\\mu_1 \\ge \\mu_2\\) or \\(\\mu_1 - \\mu_2 \\ge 0\\)\n\n\\(H_1\\): \\(\\mu_1 &lt; \\mu_2\\) or \\(\\mu_1 - \\mu_2 &lt; 0\\)\n\n\nNon-directional (two-tailed) tests\n\n\\(H_0\\): \\(\\mu_1 = \\mu_2\\) or \\(\\mu_1 - \\mu_2 = 0\\)\n\n\\(H_1\\): \\(\\mu_1 \\ne \\mu_2\\) or \\(\\mu_1 - \\mu_2 \\ne 0\\)"
+  },
+  {
+    "objectID": "slides/BTS510-24-9.html#z-test-test-statistic",
+    "href": "slides/BTS510-24-9.html#z-test-test-statistic",
+    "title": "Introduction to Biostatistics",
+    "section": "2.6 \\(z\\)-test: Test statistic",
+    "text": "2.6 \\(z\\)-test: Test statistic\n\\[z = \\frac{(\\bar{X_1} - \\bar{X_2}) - (\\mu_1 - \\mu_2)}{\\sqrt{\\frac{\\sigma^2_1}{n_1} + \\frac{\\sigma^2_2}{n_2}}}\\]\n\n\\(\\mu_1 - \\mu_2 = 0\\) (according to \\(H_0\\))\n\\(\\sigma^2_1\\) and \\(\\sigma^2_2\\) are the variances of the two groups\n\\(n_1\\) and \\(n_2\\) are the sample sizes of the two groups"
+  },
+  {
+    "objectID": "slides/BTS510-24-9.html#z-test-example-1",
+    "href": "slides/BTS510-24-9.html#z-test-example-1",
+    "title": "Introduction to Biostatistics",
+    "section": "2.7 \\(z\\)-test: Example 1",
+    "text": "2.7 \\(z\\)-test: Example 1\n\nIs resting pulse rate the same for smokers and non-smokers?\n\nOne dataset / variable (column) for each group\n\n\n\n\n\n\nCode\nlibrary(Stat2Data)\ndata(Pulse)\n#head(Pulse)\nlibrary(tidyverse)\nPulse_smoke &lt;- Pulse %&gt;% filter(Smoke == 1)\nPulse_nosmoke &lt;- Pulse %&gt;% filter(Smoke == 0)\nhead(Pulse_smoke)\n\n\n  Active Rest Smoke Sex Exercise Hgt Wgt\n1     82   68     1   0        3  70 225\n2     86   68     1   0        2  73 195\n3     87   72     1   0        2  70 173\n4    102   77     1   0        2  72 200\n5     80   67     1   1        2  65 133\n6     99   78     1   0        3  71 165\n\n\n\n\n\nCode\nhead(Pulse_nosmoke)\n\n\n  Active Rest Smoke Sex Exercise Hgt Wgt\n1     97   78     0   1        1  63 119\n2     88   62     0   0        3  72 175\n3    106   74     0   0        3  72 170\n4     78   63     0   1        3  67 125\n5    109   65     0   0        3  74 188\n6     66   43     0   1        3  67 140"
+  },
+  {
+    "objectID": "slides/BTS510-24-9.html#z-test-example-2",
+    "href": "slides/BTS510-24-9.html#z-test-example-2",
+    "title": "Introduction to Biostatistics",
+    "section": "2.8 \\(z\\)-test: Example 2",
+    "text": "2.8 \\(z\\)-test: Example 2\n\nIs resting pulse rate the same for smokers and non-smokers?\n\nCheck out the data\n\n\n\n\n\nGroup\nn\nMean\nSD\n\n\n\n\nNon-smokers\n206\n67.791\n9.851\n\n\nSmokers\n26\n72.769\n9.799"
+  },
+  {
+    "objectID": "slides/BTS510-24-9.html#z-test-example-3",
+    "href": "slides/BTS510-24-9.html#z-test-example-3",
+    "title": "Introduction to Biostatistics",
+    "section": "2.9 \\(z\\)-test: Example 3",
+    "text": "2.9 \\(z\\)-test: Example 3\n\nIs resting pulse rate the same for smokers and non-smokers?\n\nCheck out the data\n\n\n\n\nCode\nggplot(data = Pulse_nosmoke, \n       aes(x = Rest)) +\n  geom_histogram(fill = \"red\", \n                 alpha = 0.5, \n                 bins = 30) +\n  geom_histogram(data = Pulse_smoke, \n                 aes(x = Rest), \n                 fill = \"black\", \n                 bins = 30)"
+  },
+  {
+    "objectID": "slides/BTS510-24-9.html#z-test-example-4",
+    "href": "slides/BTS510-24-9.html#z-test-example-4",
+    "title": "Introduction to Biostatistics",
+    "section": "2.10 \\(z\\)-test: Example 4",
+    "text": "2.10 \\(z\\)-test: Example 4\n\nIs resting pulse rate the same for smokers and non-smokers?\n\nz.test() function from BSDA package\n\n\n\nlibrary(BSDA)\nztest &lt;- z.test(x = Pulse_smoke$Rest, \n                y = Pulse_nosmoke$Rest, \n                sigma.x = sd(Pulse_smoke$Rest), \n                sigma.y = sd(Pulse_nosmoke$Rest), \n                alternative = \"two.sided\")\nztest\n\n\n    Two-sample z-Test\n\ndata:  Pulse_smoke$Rest and Pulse_nosmoke$Rest\nz = 2.4394, p-value = 0.01471\nalternative hypothesis: true difference in means is not equal to 0\n95 percent confidence interval:\n 0.9783252 8.9776121\nsample estimates:\nmean of x mean of y \n 72.76923  67.79126"
+  },
+  {
+    "objectID": "slides/BTS510-24-9.html#z-test-report-results",
+    "href": "slides/BTS510-24-9.html#z-test-report-results",
+    "title": "Introduction to Biostatistics",
+    "section": "2.11 \\(z\\)-test: Report results",
+    "text": "2.11 \\(z\\)-test: Report results\n\nReject \\(H_0\\): \\(\\mu_1 = \\mu_2\\) or \\(\\mu_1 - \\mu_2 = 0\\)\n\n\\(p\\)-value &lt; .05\n95% confidence interval doesn’t contain 0 (value from \\(H_0\\))\nThese two samples came from different populations\n\nUsing a two-sample \\(z\\)-test, we rejected the null hypothesis that the means are equal, \\(z\\) = 2.44, \\(p\\) = .01\n\nSmokers and non-smokers have different resting pulse rates"
+  },
+  {
+    "objectID": "slides/BTS510-24-9.html#t-test-assumptions",
+    "href": "slides/BTS510-24-9.html#t-test-assumptions",
+    "title": "Introduction to Biostatistics",
+    "section": "2.12 \\(t\\)-test: Assumptions",
+    "text": "2.12 \\(t\\)-test: Assumptions\n\nData are continuous (i.e., ratio or interval)\nData are randomly sampled from the population\nData are independent (within and across groups)\nData are approximately normally distributed OR sample size is large enough for normally distributed sampling distribution (central limit theorem)\nPopulation variance (or SD) is unknown and same in both groups"
+  },
+  {
+    "objectID": "slides/BTS510-24-9.html#t-test-hypotheses",
+    "href": "slides/BTS510-24-9.html#t-test-hypotheses",
+    "title": "Introduction to Biostatistics",
+    "section": "2.13 \\(t\\)-test: Hypotheses",
+    "text": "2.13 \\(t\\)-test: Hypotheses\n\nDirectional (one-tailed) tests\n\n\\(H_0\\): \\(\\mu_1 \\le \\mu_2\\) or \\(\\mu_1 - \\mu_2 \\le 0\\)\n\n\\(H_1\\): \\(\\mu_1 &gt; \\mu_2\\) or \\(\\mu_1 - \\mu_2 &gt; 0\\)\n\n\\(H_0\\): \\(\\mu_1 \\ge \\mu_2\\) or \\(\\mu_1 - \\mu_2 \\ge 0\\)\n\n\\(H_1\\): \\(\\mu_1 &lt; \\mu_2\\) or \\(\\mu_1 - \\mu_2 &lt; 0\\)\n\n\nNon-directional (two-tailed) tests\n\n\\(H_0\\): \\(\\mu_1 = \\mu_2\\) or \\(\\mu_1 - \\mu_2 = 0\\)\n\n\\(H_1\\): \\(\\mu_1 \\ne \\mu_2\\) or \\(\\mu_1 - \\mu_2 \\ne 0\\)"
+  },
+  {
+    "objectID": "slides/BTS510-24-9.html#t-test-test-statistic",
+    "href": "slides/BTS510-24-9.html#t-test-test-statistic",
+    "title": "Introduction to Biostatistics",
+    "section": "2.14 \\(t\\)-test: Test statistic",
+    "text": "2.14 \\(t\\)-test: Test statistic\n\\[t = \\frac{(\\bar{X_1} - \\bar{X_2}) - (\\mu_1 - \\mu_2)}{\\sqrt{\\frac{s^2_p}{n_1} + \\frac{s^2_p}{n_2}}}\\]\n\nwhere \\(s^2_p = \\frac{(n_1 -1)s^2_1 + (n_2 -1)s^2_2}{n_1 + n_2 -2}\\)\n\nAssumes equal variances and pools (combines)\n\nwith degrees of freedom = \\(n_1 + n_2 - 2\\)"
+  },
+  {
+    "objectID": "slides/BTS510-24-9.html#t-test-example-1",
+    "href": "slides/BTS510-24-9.html#t-test-example-1",
+    "title": "Introduction to Biostatistics",
+    "section": "2.15 \\(t\\)-test: Example 1",
+    "text": "2.15 \\(t\\)-test: Example 1\n\nIs resting pulse rate the same for smokers and non-smokers?\n\nt.test() function from stats package\n\n\n\nttest &lt;- t.test(x = Pulse_smoke$Rest, \n                y = Pulse_nosmoke$Rest, \n                alternative = \"two.sided\",\n                var.equal = TRUE)\nttest\n\n\n    Two Sample t-test\n\ndata:  Pulse_smoke$Rest and Pulse_nosmoke$Rest\nt = 2.4294, df = 230, p-value = 0.01589\nalternative hypothesis: true difference in means is not equal to 0\n95 percent confidence interval:\n 0.9405909 9.0153463\nsample estimates:\nmean of x mean of y \n 72.76923  67.79126"
+  },
+  {
+    "objectID": "slides/BTS510-24-9.html#t-test-report-results",
+    "href": "slides/BTS510-24-9.html#t-test-report-results",
+    "title": "Introduction to Biostatistics",
+    "section": "2.16 \\(t\\)-test: Report results",
+    "text": "2.16 \\(t\\)-test: Report results\n\nReject \\(H_0\\): \\(\\mu_1 = \\mu_2\\) or \\(\\mu_1 - \\mu_2 = 0\\)\n\n\\(p\\)-value &lt; .05\n95% confidence interval doesn’t contain 0 (value from \\(H_0\\))\nThese two samples came from different populations\n\nUsing a independent samples \\(t\\)-test, we rejected the null hypothesis that the means are equal, \\(t(230)\\) = 2.43, \\(p\\) = .02\n\nSmokers and non-smokers have different resting pulse rates"
+  },
+  {
+    "objectID": "slides/BTS510-24-9.html#welchs-t-test-unequal-variances",
+    "href": "slides/BTS510-24-9.html#welchs-t-test-unequal-variances",
+    "title": "Introduction to Biostatistics",
+    "section": "2.17 Welch’s \\(t\\)-test: Unequal variances",
+    "text": "2.17 Welch’s \\(t\\)-test: Unequal variances\n\\[t = \\frac{(\\bar{X_1} - \\bar{X_2}) - (\\mu_1 - \\mu_2)}{\\sqrt{\\frac{s^2_1}{n_1} + \\frac{s^2_2}{n_2}}}\\]\n\nwith degrees of freedom = something much more complicated\n\nMay be fractional"
+  },
+  {
+    "objectID": "slides/BTS510-24-9.html#welchs-t-test-example",
+    "href": "slides/BTS510-24-9.html#welchs-t-test-example",
+    "title": "Introduction to Biostatistics",
+    "section": "2.18 Welch’s \\(t\\)-test: Example",
+    "text": "2.18 Welch’s \\(t\\)-test: Example\n\nwelch &lt;- t.test(x = Pulse_smoke$Rest, \n                y = Pulse_nosmoke$Rest, \n                alternative = \"two.sided\",\n                var.equal = FALSE)\nwelch\n\n\n    Welch Two Sample t-test\n\ndata:  Pulse_smoke$Rest and Pulse_nosmoke$Rest\nt = 2.4394, df = 31.721, p-value = 0.02049\nalternative hypothesis: true difference in means is not equal to 0\n95 percent confidence interval:\n 0.8198241 9.1361131\nsample estimates:\nmean of x mean of y \n 72.76923  67.79126"
+  },
+  {
+    "objectID": "slides/BTS510-24-9.html#welchs-t-test-report-results",
+    "href": "slides/BTS510-24-9.html#welchs-t-test-report-results",
+    "title": "Introduction to Biostatistics",
+    "section": "2.19 Welch’s \\(t\\)-test: Report results",
+    "text": "2.19 Welch’s \\(t\\)-test: Report results\n\nReject \\(H_0\\): \\(\\mu_1 = \\mu_2\\) or \\(\\mu_1 - \\mu_2 = 0\\)\n\n\\(p\\)-value &lt; .05\n95% confidence interval doesn’t contain 0 (value from \\(H_0\\))\nThese two samples came from different populations\n\nUsing a Welch’s \\(t\\)-test, we rejected the null hypothesis that the means are equal, \\(t(31.721)\\) = 2.44, \\(p\\) = .02\n\nSmokers and non-smokers have different resting pulse rates"
+  },
+  {
+    "objectID": "slides/BTS510-24-9.html#very-similar-results",
+    "href": "slides/BTS510-24-9.html#very-similar-results",
+    "title": "Introduction to Biostatistics",
+    "section": "2.20 Very similar results",
+    "text": "2.20 Very similar results\n\n\n\nTest\nDiff\nStatistic\ndf\n\\(p\\)\nCI\n\n\n\n\n\\(z\\)\n4.978\n2.439\nNA\n0.015\n[0.978, 8.978]\n\n\n\\(t\\)\n4.978\n2.429\n230\n0.016\n[0.941, 9.015]\n\n\nWelch\n4.978\n2.439\n31.721\n0.02\n[0.82, 9.136]"
+  },
+  {
+    "objectID": "slides/BTS510-24-9.html#non-parametric-tests",
+    "href": "slides/BTS510-24-9.html#non-parametric-tests",
+    "title": "Introduction to Biostatistics",
+    "section": "2.21 Non-parametric tests",
+    "text": "2.21 Non-parametric tests\n\nNon-parametric versions of \\(z\\) or \\(t\\)-test for 2 independent samples\n\nMedian test\nWilcoxon-Mann-Whitney U test (or Mann-Whitney or Mann-Whitney-Wilcoxon)\n\nDifferences in median (technically, “location”)\nMann-Whitney is a somewhat better test"
+  },
+  {
+    "objectID": "slides/BTS510-24-9.html#non-parametric-tests-1",
+    "href": "slides/BTS510-24-9.html#non-parametric-tests-1",
+    "title": "Introduction to Biostatistics",
+    "section": "2.22 Non-parametric tests",
+    "text": "2.22 Non-parametric tests\n\n\n\nMedian test\n\n\n\nCode\nlibrary(coin)\nmedian_test(Rest ~ as.factor(Smoke), data = Pulse)\n\n\n\n    Asymptotic Two-Sample Brown-Mood Median Test\n\ndata:  Rest by as.factor(Smoke) (0, 1)\nZ = -0.88412, p-value = 0.3766\nalternative hypothesis: true mu is not equal to 0\n\n\n\n\nWilcoxon-Mann-Whitney test\n\n\n\nCode\nwilcox.test(Rest ~ as.factor(Smoke), data = Pulse)\n\n\n\n    Wilcoxon rank sum test with continuity correction\n\ndata:  Rest by as.factor(Smoke)\nW = 1967, p-value = 0.02746\nalternative hypothesis: true location shift is not equal to 0"
+  },
+  {
+    "objectID": "slides/BTS510-24-9.html#contingency-tables-1",
+    "href": "slides/BTS510-24-9.html#contingency-tables-1",
+    "title": "Introduction to Biostatistics",
+    "section": "3.1 Contingency tables",
+    "text": "3.1 Contingency tables\n\nCross-tabs, summary tables, 2x2 table\n\nRelationship between two (or more) categorical variables\nEach cell is a frequency for that combination\n\nSex and Smoke from the Pulse dataset\n\n\n\nCode\nsmoke_sex &lt;- table(Pulse$Sex, Pulse$Smoke)\ncolnames(smoke_sex) &lt;- c(\"Non-smoker\", \"Smoker\")\nrownames(smoke_sex) &lt;- c(\"Male\", \"Female\")\nsmoke_sex_margins &lt;- addmargins(smoke_sex)\nsmoke_sex_prop_margins &lt;- addmargins(prop.table(smoke_sex))\nsmoke_sex\n\n\n        \n         Non-smoker Smoker\n  Male          105     17\n  Female        101      9"
+  },
+  {
+    "objectID": "slides/BTS510-24-9.html#notation-for-frequencies",
+    "href": "slides/BTS510-24-9.html#notation-for-frequencies",
+    "title": "Introduction to Biostatistics",
+    "section": "3.2 Notation for frequencies",
+    "text": "3.2 Notation for frequencies\n\n\n\n \n\\(J = 1\\)\n\\(J = 2\\)\n \n\n\n\n\n\\(I = 1\\)\n\\(n_{11}\\)\n\\(n_{12}\\)\n\\(\\color{white}{n_{1+}}\\)\n\n\n\\(I = 2\\)\n\\(n_{21}\\)\n\\(n_{22}\\)"
+  },
+  {
+    "objectID": "slides/BTS510-24-9.html#notation-for-frequencies-1",
+    "href": "slides/BTS510-24-9.html#notation-for-frequencies-1",
+    "title": "Introduction to Biostatistics",
+    "section": "3.3 Notation for frequencies",
+    "text": "3.3 Notation for frequencies\n\n\n\n \n\\(J = 1\\)\n\\(J = 2\\)\n \n\n\n\n\n\\(I = 1\\)\n\\(n_{11}\\)\n\\(n_{12}\\)\n\\(n_{1+}\\)\n\n\n\\(I = 2\\)\n\\(n_{21}\\)\n\\(n_{22}\\)\n\\(n_{2+}\\)\n\n\n \n\\(n_{+1}\\)\n\\(n_{+2}\\)\n\\(n\\)\n\n\n\n\n\\(n_{11}\\), \\(n_{12}\\), \\(n_{21}\\), \\(n_{22}\\) are joint frequencies\n\\(n_{1+}\\), \\(n_{2+}\\), \\(n_{+1}\\), \\(n_{+2}\\) are marginal frequencies"
+  },
+  {
+    "objectID": "slides/BTS510-24-9.html#notation-for-probabilities",
+    "href": "slides/BTS510-24-9.html#notation-for-probabilities",
+    "title": "Introduction to Biostatistics",
+    "section": "3.4 Notation for probabilities",
+    "text": "3.4 Notation for probabilities\n\n\n\n \n\\(J = 1\\)\n\\(J = 2\\)\n \n\n\n\n\n\\(I = 1\\)\n\\(p_{11}\\)\n\\(p_{12}\\)\n\\(\\color{white}{p_{1+}}\\)\n\n\n\\(I = 2\\)\n\\(p_{21}\\)\n\\(p_{22}\\)"
+  },
+  {
+    "objectID": "slides/BTS510-24-9.html#notation-for-probabilities-1",
+    "href": "slides/BTS510-24-9.html#notation-for-probabilities-1",
+    "title": "Introduction to Biostatistics",
+    "section": "3.5 Notation for probabilities",
+    "text": "3.5 Notation for probabilities\n\n\n\n \n\\(J = 1\\)\n\\(J = 2\\)\n \n\n\n\n\n\\(I = 1\\)\n\\(p_{11}\\)\n\\(p_{12}\\)\n\\(p_{1+}\\)\n\n\n\\(I = 2\\)\n\\(p_{21}\\)\n\\(p_{22}\\)\n\\(p_{2+}\\)\n\n\n \n\\(p_{+1}\\)\n\\(p_{+2}\\)\n\\(1\\)\n\n\n\n\n\\(p_{11}\\), \\(p_{12}\\), \\(p_{21}\\), \\(p_{22}\\) are joint probabilities = \\(\\frac{n_{ij}}{n}\\)\n\\(p_{1+}\\), \\(p_{2+}\\), \\(p_{+1}\\), \\(p_{+2}\\) are marginal probabilities = \\(\\frac{n_{i+}}{n}\\) or \\(\\frac{n_{+j}}{n}\\)"
+  },
+  {
+    "objectID": "slides/BTS510-24-9.html#marginal-probability",
+    "href": "slides/BTS510-24-9.html#marginal-probability",
+    "title": "Introduction to Biostatistics",
+    "section": "3.6 Marginal probability",
+    "text": "3.6 Marginal probability\n\nMarginal probability: Probability of \\(X\\) or \\(Y\\), collapsing over the other\n\nWhat is the distribution of \\(X\\), ignoring \\(Y\\)?\nWhat is the distribution of \\(Y\\), ignoring \\(X\\)?"
+  },
+  {
+    "objectID": "slides/BTS510-24-9.html#marginal-probability-1",
+    "href": "slides/BTS510-24-9.html#marginal-probability-1",
+    "title": "Introduction to Biostatistics",
+    "section": "3.7 Marginal probability",
+    "text": "3.7 Marginal probability\n\nStart with frequencies\n\n\n\n\n\n\n\n\n\n\n \n\\(Y\\) = 1: No smoke\n\\(Y\\) = 2: Smoke\n \n\n\n\n\n\\(X = 1\\): Male\n\\(n_{11} = \\color{red}{105}\\)\n\\(n_{12} = \\color{red}{17}\\)\n\\(n_{1+} = \\color{blue}{122}\\)\n\n\n\\(X = 2\\): Female\n\\(n_{21} = \\color{red}{101}\\)\n\\(n_{22} = \\color{red}{9}\\)\n\\(n_{2+} = \\color{blue}{110}\\)\n\n\n \n\\(n_{+1} = \\color{blue}{206}\\)\n\\(n_{+2} = \\color{blue}{26}\\)\n\\(n = \\color{blue}{232}\\)"
+  },
+  {
+    "objectID": "slides/BTS510-24-9.html#marginal-probability-2",
+    "href": "slides/BTS510-24-9.html#marginal-probability-2",
+    "title": "Introduction to Biostatistics",
+    "section": "3.8 Marginal probability",
+    "text": "3.8 Marginal probability\n\nDivide each value by \\(n\\): The total sample size\n\n\n\n\n\n\n\n\n\n\n \n\\(Y\\) = 1: No smoke\n\\(Y\\) = 2: Smoke\n \n\n\n\n\n\\(X = 1\\): Male\n\\(p_{11} = \\color{red}{0.45}\\)\n\\(p_{12} = \\color{red}{0.07}\\)\n\\(p_{1+} = \\color{blue}{0.53}\\)\n\n\n\\(X = 2\\): Female\n\\(p_{21} = \\color{red}{0.44}\\)\n\\(p_{22} = \\color{red}{0.04}\\)\n\\(p_{2+} = \\color{blue}{0.47}\\)\n\n\n \n\\(p_{+1} = \\color{blue}{0.89}\\)\n\\(p_{+2} = \\color{blue}{0.11}\\)\n\\(p = \\color{blue}{1}\\)\n\n\n\n\n\\(\\color{red}{Joint}\\) probabilities sum to 1\n\\(\\color{blue}{Marginal}\\) probabilities for rows sum to 1\n\\(\\color{blue}{Marginal}\\) probabilities for columns sum to 1"
+  },
+  {
+    "objectID": "slides/BTS510-24-9.html#conditional-probability",
+    "href": "slides/BTS510-24-9.html#conditional-probability",
+    "title": "Introduction to Biostatistics",
+    "section": "3.9 Conditional probability",
+    "text": "3.9 Conditional probability\n\nOften, \\(X\\) is an explanatory variable, \\(Y\\) is an outcome variable\n\nBut it doesn’t need to be\n\nConditional probability: Probability of \\(Y\\) at a given value of \\(X\\)\n\nWhen \\(X = 1\\), what is the distribution of \\(Y\\)?\nWhen \\(X = 2\\), what is the distribution of \\(Y\\)?\n\nConditional probability is the \\(\\color{red}{joint~value}\\) divided by the \\(\\color{blue}{marginal~value}\\) for that value of \\(X\\)\n\nIt is conditional on that value of \\(X\\)"
+  },
+  {
+    "objectID": "slides/BTS510-24-9.html#conditional-probability-1",
+    "href": "slides/BTS510-24-9.html#conditional-probability-1",
+    "title": "Introduction to Biostatistics",
+    "section": "3.10 Conditional probability",
+    "text": "3.10 Conditional probability\n\n\n\n\n\n\n\n\n\n \n\\(Y\\) = 1: No smoke\n\\(Y\\) = 2: Smoke\n \n\n\n\n\n\\(X = 1\\): Male\n\\(n_{11} = \\color{red}{105}\\)\n\\(n_{12} = \\color{red}{17}\\)\n\\(n_{1+} = \\color{blue}{122}\\)\n\n\n\\(X = 2\\): Female\n\\(n_{21} = \\color{red}{101}\\)\n\\(n_{22} = \\color{red}{9}\\)\n\\(n_{2+} = \\color{blue}{110}\\)\n\n\n \n\\(n_{+1} = \\color{blue}{206}\\)\n\\(n_{+2} = \\color{blue}{26}\\)\n\\(n = \\color{blue}{232}\\)"
+  },
+  {
+    "objectID": "slides/BTS510-24-9.html#conditional-probability-2",
+    "href": "slides/BTS510-24-9.html#conditional-probability-2",
+    "title": "Introduction to Biostatistics",
+    "section": "3.11 Conditional probability",
+    "text": "3.11 Conditional probability\n\n\n\n\n\n\n\n\n\n \n\\(Y\\) = 1: No smoke\n\\(Y\\) = 2: Smoke\n \n\n\n\n\n\\(X = 1\\): Male\n\\(n_{11} = \\color{red}{105}\\)\n\\(n_{12} = \\color{red}{17}\\)\n\\(n_{1+} = \\color{blue}{122}\\)\n\n\n\\(X = 2\\): Female\n\\(n_{21} = \\color{red}{101}\\)\n\\(n_{22} = \\color{red}{9}\\)\n\\(n_{2+} = \\color{blue}{110}\\)\n\n\n \n\\(n_{+1} = \\color{blue}{206}\\)\n\\(n_{+2} = \\color{blue}{26}\\)\n\\(n = \\color{blue}{232}\\)\n\n\n\n\n\n\nWhen \\(X = 1\\) (male):\n\n\\(P(no\\ smoke) = \\frac{\\color{red}{105}}{\\color{blue}{122}} = 0.861\\)\n\\(P(smoke) = \\frac{\\color{red}{17}}{\\color{blue}{122}} = 0.139\\)\n\n\n\n\nWhen \\(X = 2\\) (female):\n\n\\(P(no\\ smoke) = \\frac{\\color{red}{101}}{\\color{blue}{110}} = 0.918\\)\n\\(P(smoke) = \\frac{\\color{red}{9}}{\\color{blue}{110}} = 0.082\\)"
+  },
+  {
+    "objectID": "slides/BTS510-24-9.html#sex-and-smoke-frequencies",
+    "href": "slides/BTS510-24-9.html#sex-and-smoke-frequencies",
+    "title": "Introduction to Biostatistics",
+    "section": "3.12 Sex and Smoke: Frequencies",
+    "text": "3.12 Sex and Smoke: Frequencies\n\n\nCode\nsmoke_sex\n\n\n        \n         Non-smoker Smoker\n  Male          105     17\n  Female        101      9"
+  },
+  {
+    "objectID": "slides/BTS510-24-9.html#sex-and-smoke-and-margins",
+    "href": "slides/BTS510-24-9.html#sex-and-smoke-and-margins",
+    "title": "Introduction to Biostatistics",
+    "section": "3.13 Sex and Smoke: And margins",
+    "text": "3.13 Sex and Smoke: And margins\n\n\nCode\nsmoke_sex_margins\n\n\n        \n         Non-smoker Smoker Sum\n  Male          105     17 122\n  Female        101      9 110\n  Sum           206     26 232"
+  },
+  {
+    "objectID": "slides/BTS510-24-9.html#sex-and-smoke-marginal-prob",
+    "href": "slides/BTS510-24-9.html#sex-and-smoke-marginal-prob",
+    "title": "Introduction to Biostatistics",
+    "section": "3.14 Sex and Smoke: Marginal prob",
+    "text": "3.14 Sex and Smoke: Marginal prob\n\n\nCode\nsmoke_sex_prop_margins\n\n\n        \n         Non-smoker     Smoker        Sum\n  Male   0.45258621 0.07327586 0.52586207\n  Female 0.43534483 0.03879310 0.47413793\n  Sum    0.88793103 0.11206897 1.00000000"
+  },
+  {
+    "objectID": "slides/BTS510-24-9.html#sex-and-smoke-conditional-prob",
+    "href": "slides/BTS510-24-9.html#sex-and-smoke-conditional-prob",
+    "title": "Introduction to Biostatistics",
+    "section": "3.15 Sex and Smoke: Conditional prob",
+    "text": "3.15 Sex and Smoke: Conditional prob\n\n\nCode\nprop.table(smoke_sex, margin = 1)\n\n\n        \n         Non-smoker     Smoker\n  Male   0.86065574 0.13934426\n  Female 0.91818182 0.08181818\n\n\n\nConditional on Sex"
+  },
+  {
+    "objectID": "slides/BTS510-24-9.html#fixed-vs-random",
+    "href": "slides/BTS510-24-9.html#fixed-vs-random",
+    "title": "Introduction to Biostatistics",
+    "section": "4.1 Fixed vs random",
+    "text": "4.1 Fixed vs random\n\nThe marginal frequencies of a contingency table can be either fixed or random\n\nFixed: Chosen by the researcher\n\ne.g., Collect data on 50 men and 50 women\n\nRandom: Vary depending on the sample\n\ne.g., Collect data on gender in the sample"
+  },
+  {
+    "objectID": "slides/BTS510-24-9.html#why-do-we-care",
+    "href": "slides/BTS510-24-9.html#why-do-we-care",
+    "title": "Introduction to Biostatistics",
+    "section": "4.2 Why do we care?",
+    "text": "4.2 Why do we care?\n\nProbability = random divided by fixed\n\nIf there are no fixed marginals, we can’t calculate a probability\n\nRatio = random divided by random\n\nWe can always calculate ratios (e.g., odds ratios)\n\nWhat is “fixed” is what you can “condition on”\n\nWhat are probabilities “out of”?"
+  },
+  {
+    "objectID": "slides/BTS510-24-9.html#why-do-we-care-1",
+    "href": "slides/BTS510-24-9.html#why-do-we-care-1",
+    "title": "Introduction to Biostatistics",
+    "section": "4.3 Why do we care?",
+    "text": "4.3 Why do we care?\n\nDesign of the contingency table determines\n\nWhat is conditioned on\nWhat are probabilities (and what are just ratios)\nHow you can talk about the relationship in the table\nWhat statistical tests you can perform"
+  },
+  {
+    "objectID": "slides/BTS510-24-9.html#types-of-study-designs",
+    "href": "slides/BTS510-24-9.html#types-of-study-designs",
+    "title": "Introduction to Biostatistics",
+    "section": "4.4 Types of study designs",
+    "text": "4.4 Types of study designs\n\nThree study designs with different fixed and random marginals\n\nCross-sectional (or multinomial)\nRetrospective\nProspective (or product binomial)"
+  },
+  {
+    "objectID": "slides/BTS510-24-9.html#overall-study-design",
+    "href": "slides/BTS510-24-9.html#overall-study-design",
+    "title": "Introduction to Biostatistics",
+    "section": "4.5 Overall study design",
+    "text": "4.5 Overall study design\n\n\n\n \nHeart attack\nNo heart attack\n\\(\\color{white}{White text}\\)\n\n\n\n\nPlacebo\n \n \n \n\n\nAspirin\n \n \n \n\n\n \n \n \n \n\n\n\n\nRelationship between aspirin use (vs placebo) and heart attack\n\n\\(X\\): Aspirin vs placebo\n\\(Y\\): Heart attack vs no heart attack"
+  },
+  {
+    "objectID": "slides/BTS510-24-9.html#cross-sectional",
+    "href": "slides/BTS510-24-9.html#cross-sectional",
+    "title": "Introduction to Biostatistics",
+    "section": "4.6 Cross-sectional",
+    "text": "4.6 Cross-sectional\n\n\n\n \nHeart attack\nNo heart attack\n\\(\\color{white}{White text}\\)\n\n\n\n\nPlacebo\n \n \nRandom\n\n\nAspirin\n \n \nRandom\n\n\n \nRandom\nRandom\nFixed\n\n\n\n\nCollect data from \\(n\\) people\n\nMeasure aspirin vs placebo, heart attack vs not"
+  },
+  {
+    "objectID": "slides/BTS510-24-9.html#retrospective",
+    "href": "slides/BTS510-24-9.html#retrospective",
+    "title": "Introduction to Biostatistics",
+    "section": "4.7 Retrospective",
+    "text": "4.7 Retrospective\n\n\n\n \nHeart attack\nNo heart attack\n\\(\\color{white}{White text}\\)\n\n\n\n\nPlacebo\n \n \nRandom\n\n\nAspirin\n \n \nRandom\n\n\n \nFixed\nFixed\n \n\n\n\n\nCollect data from specific numbers of heart attack and non patients\n\nMeasure whether they took aspirin"
+  },
+  {
+    "objectID": "slides/BTS510-24-9.html#prospective",
+    "href": "slides/BTS510-24-9.html#prospective",
+    "title": "Introduction to Biostatistics",
+    "section": "4.8 Prospective",
+    "text": "4.8 Prospective\n\n\n\n \nHeart attack\nNo heart attack\n\\(\\color{white}{White text}\\)\n\n\n\n\nPlacebo\n \n \nFixed\n\n\nAspirin\n \n \nFixed\n\n\n \nRandom\nRandom\n \n\n\n\n\nCollect data from specific number of aspirin and placebo people\n\nMeasure whether they have a heart attack"
+  },
+  {
+    "objectID": "slides/BTS510-24-9.html#smoke-and-sex-example",
+    "href": "slides/BTS510-24-9.html#smoke-and-sex-example",
+    "title": "Introduction to Biostatistics",
+    "section": "4.9 Smoke and Sex example",
+    "text": "4.9 Smoke and Sex example\n\nWhat type of study design was this?\n\nMultinomial: Total \\(n\\) is fixed\nRetrospective: Smoke is fixed\nProspective: Sex is fixed\n\n\n\n\nCode\nsmoke_sex_margins\n\n\n        \n         Non-smoker Smoker Sum\n  Male          105     17 122\n  Female        101      9 110\n  Sum           206     26 232"
+  },
+  {
+    "objectID": "slides/BTS510-24-9.html#measures-of-relationship",
+    "href": "slides/BTS510-24-9.html#measures-of-relationship",
+    "title": "Introduction to Biostatistics",
+    "section": "4.10 Measures of relationship",
+    "text": "4.10 Measures of relationship\n\nAny design\n\nOdds ratio\nTest of independence\n\nProspective design only\n\nDifference in proportion\nRelative risk\nOdds ratio\nTest of independence"
+  },
+  {
+    "objectID": "slides/BTS510-24-9.html#difference-in-proportion",
+    "href": "slides/BTS510-24-9.html#difference-in-proportion",
+    "title": "Introduction to Biostatistics",
+    "section": "4.11 Difference in proportion",
+    "text": "4.11 Difference in proportion\n\nIf we assume it is a prospective design re: Sex\n\n\n\n\nMale\n\n\\(P(smoke) = \\frac{\\color{red}{17}}{\\color{blue}{122}} = 0.139\\)\n\n\n\n\nFemale\n\n\\(P(smoke) = \\frac{\\color{red}{9}}{\\color{blue}{110}} = 0.082\\)\n\n\n\n\n\nDifference in proportion = \\(0.139 - 0.082 = 0.058\\)\n\nA man is 5.8 percentage points more likely to be a smoker than a woman"
+  },
+  {
+    "objectID": "slides/BTS510-24-9.html#relative-risk",
+    "href": "slides/BTS510-24-9.html#relative-risk",
+    "title": "Introduction to Biostatistics",
+    "section": "4.12 Relative risk",
+    "text": "4.12 Relative risk\n\nIf we assume it is a prospective design re: Sex\n\n\n\n\nMale\n\n\\(P(smoke) = \\frac{\\color{red}{17}}{\\color{blue}{122}} = 0.139\\)\n\n\n\n\nFemale\n\n\\(P(smoke) = \\frac{\\color{red}{9}}{\\color{blue}{110}} = 0.082\\)\n\n\n\n\n\nRelative risk = \\(\\frac{0.139}{0.082} = 1.703\\)\n\nA man is 1.703 times more likely to be a smoker than a woman"
+  },
+  {
+    "objectID": "slides/BTS510-24-9.html#odds-ratio",
+    "href": "slides/BTS510-24-9.html#odds-ratio",
+    "title": "Introduction to Biostatistics",
+    "section": "4.13 Odds ratio",
+    "text": "4.13 Odds ratio\n\\[odds(smoke) = P(smoke)/P(no\\ smoke)\\]\n\n\n\nMale\n\n\\(P(smoke) = \\frac{\\color{red}{17}}{\\color{blue}{122}} = 0.139\\)\n\\(odds = \\frac{0.139}{0.861} = 0.162\\)\n\n\n\n\nFemale\n\n\\(P(smoke) = \\frac{\\color{red}{9}}{\\color{blue}{110}} = 0.082\\)\n\\(odds = \\frac{0.082}{0.918} = 0.089\\)\n\n\n\n\n\n\\(odds\\ ratio = \\frac{0.089}{0.162} =\n0.55\\)\n\nThe odds of a woman smoking is 0.55 times the odds of a man smoking"
+  },
+  {
+    "objectID": "slides/BTS510-24-9.html#independence-1",
+    "href": "slides/BTS510-24-9.html#independence-1",
+    "title": "Introduction to Biostatistics",
+    "section": "4.14 Independence",
+    "text": "4.14 Independence\n\nDo the observed frequencies match what we’d expect if the variables were unrelated or independent?\n\n\n\n\nObserved\n\n\n\nCode\nsmoke_sex\n\n\n        \n         Non-smoker Smoker\n  Male          105     17\n  Female        101      9\n\n\n\n\nExpected (independence)\n\n\n\nCode\nlibrary(epitools)\nexpected(smoke_sex)\n\n\n        \n         Non-smoker   Smoker\n  Male    108.32759 13.67241\n  Female   97.67241 12.32759"
   },
   {
     "objectID": "slides/BTS510-24-9.html#in-class-activities-1",
     "href": "slides/BTS510-24-9.html#in-class-activities-1",
     "title": "Introduction to Biostatistics",
-    "section": "3.1 In-class activities",
-    "text": "3.1 In-class activities"
+    "section": "5.1 In-class activities",
+    "text": "5.1 In-class activities\n\nConduct two independent samples tests\n\n\\(z\\)-test, \\(t\\)-test, Welch’s \\(t\\)-test\n\nLook at contingency tables and orient to them\nThink about study design"
   },
   {
     "objectID": "slides/BTS510-24-9.html#next-week",
     "href": "slides/BTS510-24-9.html#next-week",
     "title": "Introduction to Biostatistics",
-    "section": "3.2 Next week",
-    "text": "3.2 Next week"
+    "section": "5.2 Next week",
+    "text": "5.2 Next week\n\nRelate study design to tests for contingency tables\n\nSome tests are only available for some designs\n\nRelated-samples tests"
   }
 ]

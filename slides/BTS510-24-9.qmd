@@ -43,31 +43,652 @@ options(scipen= 100)
 ## Learning objectives
 
 * *Interpret* tests comparing **two unrelated samples**
-* *Interpret* tests comparing **two related samples**
-* *Interpret* chi-square test for **two binary variables**
+* *Summarize data* using **contingency tables**
+* *Describe* different study designs for **contingency tables** 
 
+# Two independent samples
 
-# Two sample tests
+## Independent samples tests
 
-## $z$-test
+* Compare **means** (or *medians*) from two *unrelated* samples
+* Do the two samples come from populations with the same mean?
+  * Is the difference between the two population means 0?
 
+## Independent samples tests
 
-## $t$-test
+* Parametric tests
+  * Independent samples $z$-test
+  * Independent samples $t$-test (also Welch's $t$-test)
+* Non-parametric tests
+  * Median test
+  * Wilcoxon-Mann-Whitney U test
+  * Chi-square test and Fisher's exact test (*next week*)
 
+## Independence
 
-## Proportions
+* Statistical independence
+  * Two events are **independent** if the occurrence of one event doesn't impact the occurrence of another event
+  * Knowing about one event tells you nothing about the other event
+* Independent samples
+  * Individuals in one sample are **not related** to individuals in the other sample
+  * The two samples are made up of **different** individuals
 
+## $z$-test: Assumptions
 
-## Equal vs unequal variances
+* Data are **continuous** (i.e., ratio or interval)
+* Data are **randomly sampled** from the population(s)
+* Data are **independent** (*within* and *across* groups)
+* Data are **approximately normally distributed OR** sample size is large enough for **normally distributed sampling distribution** (*central limit theorem*)
+* Population variance (or SD) is **known** and **same in both groups**
+  * "Large sample": population variance estimated by sample variance
 
+## $z$-test: Hypotheses
 
+* Directional (one-tailed) tests
+  * $H_0$: $\mu_1 \le \mu_2$ or $\mu_1 - \mu_2 \le 0$
+    * $H_1$: $\mu_1 > \mu_2$ or $\mu_1 - \mu_2 > 0$
+  * $H_0$: $\mu_1 \ge \mu_2$ or $\mu_1 - \mu_2 \ge 0$
+    * $H_1$: $\mu_1 < \mu_2$ or $\mu_1 - \mu_2 < 0$
+* Non-directional (two-tailed) tests
+  * $H_0$: $\mu_1 = \mu_2$ or $\mu_1 - \mu_2 = 0$
+    * $H_1$: $\mu_1 \ne \mu_2$ or $\mu_1 - \mu_2 \ne 0$
 
+## $z$-test: Test statistic
+
+$$z = \frac{(\bar{X_1} - \bar{X_2}) - (\mu_1 - \mu_2)}{\sqrt{\frac{\sigma^2_1}{n_1} + \frac{\sigma^2_2}{n_2}}}$$ 
+
+* $\mu_1 - \mu_2 = 0$ (according to $H_0$)
+* $\sigma^2_1$ and $\sigma^2_2$ are the variances of the two groups
+* $n_1$ and $n_2$ are the sample sizes of the two groups
+
+## $z$-test: Example 1
+
+* Is resting pulse rate the same for smokers and non-smokers?
+  * One dataset / variable (column) for each group
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| code-fold: true
+library(Stat2Data)
+data(Pulse)
+#head(Pulse)
+library(tidyverse)
+Pulse_smoke <- Pulse %>% filter(Smoke == 1)
+Pulse_nosmoke <- Pulse %>% filter(Smoke == 0)
+head(Pulse_smoke)
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+#| code-fold: true
+head(Pulse_nosmoke)
+```
+
+:::
+
+::::
+
+## $z$-test: Example 2
+
+* Is resting pulse rate the same for smokers and non-smokers?
+  * Check out the data
+
+Group       | n     | Mean  | SD    
+------------|-------|-------|-------
+Non-smokers | `r nrow(Pulse_nosmoke)` | `r round(mean(Pulse_nosmoke$Rest), 3)` | `r round(sd(Pulse_nosmoke$Rest), 3)`
+Smokers     | `r nrow(Pulse_smoke)` | `r round(mean(Pulse_smoke$Rest), 3)` | `r round(sd(Pulse_smoke$Rest), 3)`
+
+## $z$-test: Example 3
+
+* Is resting pulse rate the same for smokers and non-smokers?
+  * Check out the data
+  
+```{r}
+#| code-fold: true
+ggplot(data = Pulse_nosmoke, 
+       aes(x = Rest)) +
+  geom_histogram(fill = "red", 
+                 alpha = 0.5, 
+                 bins = 30) +
+  geom_histogram(data = Pulse_smoke, 
+                 aes(x = Rest), 
+                 fill = "black", 
+                 bins = 30)
+```
+
+## $z$-test: Example 4
+
+* Is resting pulse rate the same for smokers and non-smokers?
+  * `z.test()` function from **BSDA** package
+
+```{r}
+library(BSDA)
+ztest <- z.test(x = Pulse_smoke$Rest, 
+                y = Pulse_nosmoke$Rest, 
+                sigma.x = sd(Pulse_smoke$Rest), 
+                sigma.y = sd(Pulse_nosmoke$Rest), 
+                alternative = "two.sided")
+ztest
+```
+
+## $z$-test: Report results
+
+* Reject $H_0$: $\mu_1 = \mu_2$ or $\mu_1 - \mu_2 = 0$
+  * $p$-value < .05 
+  * 95% confidence interval doesn't contain 0 (value from $H_0$)
+  * These two samples came from *different* populations
+* Using a two-sample $z$-test, we rejected the null hypothesis that the means are equal, $z$ = 2.44, $p$ = .01
+  * Smokers and non-smokers have *different* resting pulse rates
+
+## $t$-test: Assumptions
+
+* Data are **continuous** (i.e., ratio or interval)
+* Data are **randomly sampled** from the population
+* Data are **independent** (*within* and *across* groups)
+* Data are **approximately normally distributed OR** sample size is large enough for **normally distributed sampling distribution** (*central limit theorem*)
+* Population variance (or SD) is **unknown** and **same in both groups**
+
+## $t$-test: Hypotheses
+
+* Directional (one-tailed) tests
+  * $H_0$: $\mu_1 \le \mu_2$ or $\mu_1 - \mu_2 \le 0$
+    * $H_1$: $\mu_1 > \mu_2$ or $\mu_1 - \mu_2 > 0$
+  * $H_0$: $\mu_1 \ge \mu_2$ or $\mu_1 - \mu_2 \ge 0$
+    * $H_1$: $\mu_1 < \mu_2$ or $\mu_1 - \mu_2 < 0$
+* Non-directional (two-tailed) tests
+  * $H_0$: $\mu_1 = \mu_2$ or $\mu_1 - \mu_2 = 0$
+    * $H_1$: $\mu_1 \ne \mu_2$ or $\mu_1 - \mu_2 \ne 0$
+
+## $t$-test: Test statistic
+
+$$t = \frac{(\bar{X_1} - \bar{X_2}) - (\mu_1 - \mu_2)}{\sqrt{\frac{s^2_p}{n_1} + \frac{s^2_p}{n_2}}}$$ 
+
+* where $s^2_p = \frac{(n_1 -1)s^2_1 + (n_2 -1)s^2_2}{n_1 + n_2 -2}$
+  * Assumes equal variances and pools (combines)
+* with degrees of freedom = $n_1 + n_2 - 2$
+
+## $t$-test: Example 1
+
+* Is resting pulse rate the same for smokers and non-smokers?
+  * `t.test()` function from **stats** package
+
+```{r}
+ttest <- t.test(x = Pulse_smoke$Rest, 
+                y = Pulse_nosmoke$Rest, 
+                alternative = "two.sided",
+                var.equal = TRUE)
+ttest
+```
+
+## $t$-test: Report results
+
+* Reject $H_0$: $\mu_1 = \mu_2$ or $\mu_1 - \mu_2 = 0$
+  * $p$-value < .05 
+  * 95% confidence interval doesn't contain 0 (value from $H_0$)
+  * These two samples came from *different* populations
+* Using a independent samples $t$-test, we rejected the null hypothesis that the means are equal, $t(230)$ = 2.43, $p$ = .02
+  * Smokers and non-smokers have *different* resting pulse rates
+
+## Welch's $t$-test: Unequal variances
+
+$$t = \frac{(\bar{X_1} - \bar{X_2}) - (\mu_1 - \mu_2)}{\sqrt{\frac{s^2_1}{n_1} + \frac{s^2_2}{n_2}}}$$ 
+
+* with degrees of freedom = **something much more complicated** 
+  * May be fractional
+
+## Welch's $t$-test: Example
+
+```{r}
+welch <- t.test(x = Pulse_smoke$Rest, 
+                y = Pulse_nosmoke$Rest, 
+                alternative = "two.sided",
+                var.equal = FALSE)
+welch
+```
+
+## Welch's $t$-test: Report results
+
+* Reject $H_0$: $\mu_1 = \mu_2$ or $\mu_1 - \mu_2 = 0$
+  * $p$-value < .05 
+  * 95% confidence interval doesn't contain 0 (value from $H_0$)
+  * These two samples came from *different* populations
+* Using a Welch's $t$-test, we rejected the null hypothesis that the means are equal, $t(31.721)$ = 2.44, $p$ = .02
+  * Smokers and non-smokers have *different* resting pulse rates
+
+## Very similar results
+
+Test | Diff | Statistic | df | $p$ | CI
+------|------|------|------|------|------
+$z$   | `r round(mean(Pulse_smoke$Rest) - mean(Pulse_nosmoke$Rest), 3)` | `r round(ztest$statistic, 3)` | NA | `r round(ztest$p.value, 3)` | [`r round(ztest$conf.int, 3)`]
+$t$   | `r round(mean(Pulse_smoke$Rest) - mean(Pulse_nosmoke$Rest), 3)` | `r round(ttest$statistic, 3)` | `r round(ttest$parameter, 3)` | `r round(ttest$p.value, 3)` | [`r round(ttest$conf.int, 3)`]
+Welch | `r round(mean(Pulse_smoke$Rest) - mean(Pulse_nosmoke$Rest), 3)` | `r round(welch$statistic, 3)` | `r round(welch$parameter, 3)` | `r round(welch$p.value, 3)` | [`r round(welch$conf.int, 3)`]
+
+## Non-parametric tests
+
+* Non-parametric versions of $z$ or $t$-test for 2 independent samples
+  * Median test
+  * Wilcoxon-Mann-Whitney U test (or Mann-Whitney or Mann-Whitney-Wilcoxon)
+* Differences in **median** (technically, "location")
+* Mann-Whitney is a somewhat better test
+
+## Non-parametric tests
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+* Median test
+
+```{r}
+#| code-fold: true
+library(coin)
+median_test(Rest ~ as.factor(Smoke), data = Pulse)
+```
+
+:::
+
+::: {.column width="50%"}
+
+* Wilcoxon-Mann-Whitney test
+
+```{r}
+#| code-fold: true
+wilcox.test(Rest ~ as.factor(Smoke), data = Pulse)
+```
+
+:::
+
+::::
+
+# Contingency tables
+
+## Contingency tables
+
+* Cross-tabs, summary tables, 2x2 table
+  * Relationship between two (or more) categorical variables
+  * Each cell is a **frequency** for that combination
+* `Sex` and `Smoke` from the `Pulse` dataset
+
+```{r}
+#| code-fold: true
+smoke_sex <- table(Pulse$Sex, Pulse$Smoke)
+colnames(smoke_sex) <- c("Non-smoker", "Smoker")
+rownames(smoke_sex) <- c("Male", "Female")
+smoke_sex_margins <- addmargins(smoke_sex)
+smoke_sex_prop_margins <- addmargins(prop.table(smoke_sex))
+smoke_sex
+```
+
+## Notation for frequencies
+
+&nbsp;   | $J = 1$    | $J = 2$    | &nbsp;
+---------|:----------:|:----------:|:-----------:
+$I = 1$  | $n_{11}$   | $n_{12}$   | $\color{white}{n_{1+}}$
+$I = 2$  | $n_{21}$   | $n_{22}$   | &nbsp;
+&nbsp;   | &nbsp;     | &nbsp;     | &nbsp;
+
+## Notation for frequencies
+
+&nbsp;   | $J = 1$    | $J = 2$    | &nbsp;
+---------|:----------:|:----------:|:-----------:
+$I = 1$  | $n_{11}$   | $n_{12}$   | $n_{1+}$
+$I = 2$  | $n_{21}$   | $n_{22}$   | $n_{2+}$
+&nbsp;   | $n_{+1}$   | $n_{+2}$   | $n$
+
+* $n_{11}$, $n_{12}$, $n_{21}$, $n_{22}$ are **joint** frequencies
+* $n_{1+}$, $n_{2+}$, $n_{+1}$, $n_{+2}$ are **marginal** frequencies
+
+## Notation for probabilities
+
+&nbsp;   | $J = 1$    | $J = 2$    | &nbsp;
+---------|:----------:|:----------:|:-----------:
+$I = 1$  | $p_{11}$   | $p_{12}$   | $\color{white}{p_{1+}}$
+$I = 2$  | $p_{21}$   | $p_{22}$   | &nbsp;
+&nbsp;   | &nbsp;     | &nbsp;     | &nbsp;
+
+## Notation for probabilities
+
+&nbsp;   | $J = 1$    | $J = 2$    | &nbsp;
+---------|:----------:|:----------:|:-----------:
+$I = 1$  | $p_{11}$   | $p_{12}$   | $p_{1+}$
+$I = 2$  | $p_{21}$   | $p_{22}$   | $p_{2+}$
+&nbsp;   | $p_{+1}$   | $p_{+2}$   | $1$
+
+* $p_{11}$, $p_{12}$, $p_{21}$, $p_{22}$ are **joint** probabilities = $\frac{n_{ij}}{n}$
+* $p_{1+}$, $p_{2+}$, $p_{+1}$, $p_{+2}$ are **marginal** probabilities = $\frac{n_{i+}}{n}$ or $\frac{n_{+j}}{n}$
+
+## Marginal probability
+
+* **Marginal probability**: Probability of $X$ or $Y$, collapsing over the other
+  * What is the distribution of $X$, ignoring $Y$?
+  * What is the distribution of $Y$, ignoring $X$?
+ 
+## Marginal probability
+
+* Start with frequencies
+
+&nbsp;          | $Y$ = 1: No smoke   | $Y$ = 2: Smoke    | &nbsp;
+------------------|:------------------:|:--------------:|:--------------:
+$X = 1$: Male  | $n_{11} = \color{red}{`r smoke_sex_margins[1,1]`}$ | $n_{12} = \color{red}{`r smoke_sex_margins[1,2]`}$ | $n_{1+} = \color{blue}{`r smoke_sex_margins[1,3]`}$
+$X = 2$: Female   | $n_{21} = \color{red}{`r smoke_sex_margins[2,1]`}$ | $n_{22} = \color{red}{`r smoke_sex_margins[2,2]`}$ | $n_{2+} = \color{blue}{`r smoke_sex_margins[2,3]`}$
+&nbsp;          | $n_{+1} = \color{blue}{`r smoke_sex_margins[3,1]`}$ | $n_{+2} = \color{blue}{`r smoke_sex_margins[3,2]`}$ | $n = \color{blue}{`r smoke_sex_margins[3,3]`}$
+
+## Marginal probability
+
+* Divide each value by $n$: The total sample size    
+
+&nbsp;          | $Y$ = 1: No smoke   | $Y$ = 2: Smoke    | &nbsp;
+------------------|:------------------:|:--------------:|:--------------:
+$X = 1$: Male  | $p_{11} = \color{red}{`r round(smoke_sex_prop_margins[1,1], 2)`}$ | $p_{12} = \color{red}{`r round(smoke_sex_prop_margins[1,2], 2)`}$ | $p_{1+} = \color{blue}{`r round(smoke_sex_prop_margins[1,3], 2)`}$
+$X = 2$: Female   | $p_{21} = \color{red}{`r round(smoke_sex_prop_margins[2,1], 2)`}$ | $p_{22} = \color{red}{`r round(smoke_sex_prop_margins[2,2], 2)`}$ | $p_{2+} = \color{blue}{`r round(smoke_sex_prop_margins[2,3], 2)`}$
+&nbsp;          | $p_{+1} = \color{blue}{`r round(smoke_sex_prop_margins[3,1], 2)`}$ | $p_{+2} = \color{blue}{`r round(smoke_sex_prop_margins[3,2], 2)`}$ | $p = \color{blue}{`r round(smoke_sex_prop_margins[3,3], 2)`}$
+
+* $\color{red}{Joint}$ probabilities sum to 1
+* $\color{blue}{Marginal}$ probabilities for *rows* sum to 1
+* $\color{blue}{Marginal}$ probabilities for *columns* sum to 1
+
+## Conditional probability
+
+* Often, $X$ is an explanatory variable, $Y$ is an outcome variable
+  * **But it doesn't need to be**
+
+* **Conditional probability**: Probability of $Y$ **at a given value of $X$**
+  * When $X = 1$, what is the distribution of $Y$?
+  * When $X = 2$, what is the distribution of $Y$?
+
+* Conditional probability is the $\color{red}{joint~value}$ divided by the $\color{blue}{marginal~value}$ **for that value of $X$**
+  * It is **conditional** on that value of $X$
+
+## Conditional probability
+
+&nbsp;          | $Y$ = 1: No smoke   | $Y$ = 2: Smoke    | &nbsp;
+------------------|:------------------:|:--------------:|:--------------:
+$X = 1$: Male  | $n_{11} = \color{red}{`r smoke_sex_margins[1,1]`}$ | $n_{12} = \color{red}{`r smoke_sex_margins[1,2]`}$ | $n_{1+} = \color{blue}{`r smoke_sex_margins[1,3]`}$
+$X = 2$: Female   | $n_{21} = \color{red}{`r smoke_sex_margins[2,1]`}$ | $n_{22} = \color{red}{`r smoke_sex_margins[2,2]`}$ | $n_{2+} = \color{blue}{`r smoke_sex_margins[2,3]`}$
+&nbsp;          | $n_{+1} = \color{blue}{`r smoke_sex_margins[3,1]`}$ | $n_{+2} = \color{blue}{`r smoke_sex_margins[3,2]`}$ | $n = \color{blue}{`r smoke_sex_margins[3,3]`}$
+
+## Conditional probability
+
+&nbsp;          | $Y$ = 1: No smoke   | $Y$ = 2: Smoke    | &nbsp;
+------------------|:------------------:|:--------------:|:--------------:
+$X = 1$: Male  | $n_{11} = \color{red}{`r smoke_sex_margins[1,1]`}$ | $n_{12} = \color{red}{`r smoke_sex_margins[1,2]`}$ | $n_{1+} = \color{blue}{`r smoke_sex_margins[1,3]`}$
+$X = 2$: Female   | $n_{21} = \color{red}{`r smoke_sex_margins[2,1]`}$ | $n_{22} = \color{red}{`r smoke_sex_margins[2,2]`}$ | $n_{2+} = \color{blue}{`r smoke_sex_margins[2,3]`}$
+&nbsp;          | $n_{+1} = \color{blue}{`r smoke_sex_margins[3,1]`}$ | $n_{+2} = \color{blue}{`r smoke_sex_margins[3,2]`}$ | $n = \color{blue}{`r smoke_sex_margins[3,3]`}$
+
+:::: {.columns}
+
+::: {.column width="50%"}
+* When $X = 1$ (male):
+  * $P(no\ smoke) = \frac{\color{red}{`r smoke_sex_margins[1,1]`}}{\color{blue}{`r smoke_sex_margins[1,3]`}} = `r round(smoke_sex_margins[1,1]/smoke_sex_margins[1,3], 3)`$
+  * $P(smoke) = \frac{\color{red}{`r smoke_sex_margins[1,2]`}}{\color{blue}{`r smoke_sex_margins[1,3]`}} = `r round(smoke_sex_margins[1,2]/smoke_sex_margins[1,3], 3)`$
+:::
+
+::: {.column width="50%"}
+* When $X = 2$ (female):
+  * $P(no\ smoke) = \frac{\color{red}{`r smoke_sex_margins[2,1]`}}{\color{blue}{`r smoke_sex_margins[2,3]`}} = `r round(smoke_sex_margins[2,1]/smoke_sex_margins[2,3], 3)`$
+  * $P(smoke) = \frac{\color{red}{`r smoke_sex_margins[2,2]`}}{\color{blue}{`r smoke_sex_margins[2,3]`}} = `r round(smoke_sex_margins[2,2]/smoke_sex_margins[2,3], 3)`$
+:::
+
+::::
+
+## `Sex` and `Smoke`: Frequencies
+
+```{r}
+#| code-fold: true
+smoke_sex
+```
+
+## `Sex` and `Smoke`: And margins
+
+```{r}
+#| code-fold: true
+smoke_sex_margins
+```
+
+## `Sex` and `Smoke`: Marginal prob
+
+```{r}
+#| code-fold: true
+smoke_sex_prop_margins
+```
+
+## `Sex` and `Smoke`: Conditional prob
+
+```{r}
+#| code-fold: true
+prop.table(smoke_sex, margin = 1)
+```
+
+* Conditional on `Sex`
+
+# Study design
+
+## Fixed vs random
+
+* The *marginal frequencies* of a contingency table can be either **fixed** or **random**
+  * **Fixed**: Chosen by the researcher
+    * e.g., Collect data on 50 men and 50 women
+  * **Random**: Vary depending on the sample
+    * e.g., Collect data on gender in the sample
+
+## Why do we care?
+
+* **Probability** = random divided by fixed
+  * If there are no fixed marginals, **we can’t calculate a probability**
+* **Ratio** = random divided by random
+  * We can always calculate ratios (e.g., odds ratios)
+* What is “fixed” is what you can “condition on”
+  * What are probabilities "out of"?
+
+## Why do we care?
+
+* Design of the contingency table determines 
+  * What is **conditioned on** 
+  * What are **probabilities** (and what are just *ratios*)
+  * How you can talk about the **relationship** in the table
+  * What **statistical tests** you can perform
+
+## Types of study designs
+
+* Three study designs with different fixed and random marginals
+  * Cross-sectional (or multinomial)
+  * Retrospective
+  * Prospective (or product binomial)
+
+## Overall study design
+
+&nbsp;  | Heart attack | No heart attack | $\color{white}{White text}$
+--------|:------------:|:---------------:|:--------:
+Placebo | &nbsp;       | &nbsp;          | &nbsp;
+Aspirin | &nbsp;       | &nbsp;          | &nbsp;
+&nbsp;  | &nbsp;       | &nbsp;          | &nbsp;
+
+* Relationship between aspirin use (vs placebo) and heart attack
+  * $X$: Aspirin vs placebo
+  * $Y$: Heart attack vs no heart attack
+
+## Cross-sectional
+
+&nbsp;  | Heart attack | No heart attack | $\color{white}{White text}$
+--------|:------------:|:---------------:|:--------:
+Placebo | &nbsp;       | &nbsp;          | Random
+Aspirin | &nbsp;       | &nbsp;          | Random
+&nbsp;  | Random       | Random          | **Fixed**
+
+* Collect data from $n$ people
+  * Measure aspirin vs placebo, heart attack vs not
+
+## Retrospective
+
+&nbsp;  | Heart attack | No heart attack | $\color{white}{White text}$
+--------|:------------:|:---------------:|:--------:
+Placebo | &nbsp;       | &nbsp;          | Random
+Aspirin | &nbsp;       | &nbsp;          | Random
+&nbsp;  | **Fixed**    | **Fixed**       | &nbsp;
+
+* Collect data from specific numbers of heart attack and non patients
+  * Measure whether they took aspirin
+
+## Prospective
+
+&nbsp;  | Heart attack | No heart attack | $\color{white}{White text}$
+--------|:------------:|:---------------:|:--------:
+Placebo | &nbsp;       | &nbsp;          | **Fixed**
+Aspirin | &nbsp;       | &nbsp;          | **Fixed**
+&nbsp;  | Random       | Random          | &nbsp;
+
+* Collect data from specific number of aspirin and placebo people
+  * Measure whether they have a heart attack
+
+## `Smoke` and `Sex` example
+
+* What type of study design was this?
+  * Multinomial: Total $n$ is fixed
+  * Retrospective: `Smoke` is fixed
+  * Prospective: `Sex` is fixed
+  
+```{r}
+#| code-fold: true
+smoke_sex_margins
+```
+
+## Measures of relationship
+
+* Any design
+  * Odds ratio
+  * Test of independence
+* Prospective design only
+  * Difference in proportion
+  * Relative risk
+  * Odds ratio
+  * Test of independence
+
+## Difference in proportion
+
+* If we assume it is a **prospective** design re: `Sex`
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+* Male
+  * $P(smoke) = \frac{\color{red}{`r smoke_sex_margins[1,2]`}}{\color{blue}{`r smoke_sex_margins[1,3]`}} = `r round(smoke_sex_margins[1,2]/smoke_sex_margins[1,3], 3)`$
+
+:::
+
+::: {.column width="50%"}
+
+* Female
+  * $P(smoke) = \frac{\color{red}{`r smoke_sex_margins[2,2]`}}{\color{blue}{`r smoke_sex_margins[2,3]`}} = `r round(smoke_sex_margins[2,2]/smoke_sex_margins[2,3], 3)`$
+
+:::
+
+::::
+
+* Difference in proportion = $`r round(smoke_sex_margins[1,2]/smoke_sex_margins[1,3], 3)` - `r round(smoke_sex_margins[2,2]/smoke_sex_margins[2,3], 3)` = `r round(smoke_sex_margins[1,2]/smoke_sex_margins[1,3] - smoke_sex_margins[2,2]/smoke_sex_margins[2,3], 3)`$
+  * A man is `r round(100*(smoke_sex_margins[1,2]/smoke_sex_margins[1,3] - smoke_sex_margins[2,2]/smoke_sex_margins[2,3]), 1)` percentage points more likely to be a smoker than a woman
+
+## Relative risk
+
+* If we assume it is a **prospective** design re: `Sex`
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+* Male
+  * $P(smoke) = \frac{\color{red}{`r smoke_sex_margins[1,2]`}}{\color{blue}{`r smoke_sex_margins[1,3]`}} = `r round(smoke_sex_margins[1,2]/smoke_sex_margins[1,3], 3)`$
+
+:::
+
+::: {.column width="50%"}
+
+* Female
+  * $P(smoke) = \frac{\color{red}{`r smoke_sex_margins[2,2]`}}{\color{blue}{`r smoke_sex_margins[2,3]`}} = `r round(smoke_sex_margins[2,2]/smoke_sex_margins[2,3], 3)`$
+
+:::
+
+::::
+
+* Relative risk = $\frac{`r round(smoke_sex_margins[1,2]/smoke_sex_margins[1,3], 3)`}{`r round(smoke_sex_margins[2,2]/smoke_sex_margins[2,3], 3)`} = `r round((smoke_sex_margins[1,2]/smoke_sex_margins[1,3]) / (smoke_sex_margins[2,2]/smoke_sex_margins[2,3]), 3)`$
+  * A man is `r round((smoke_sex_margins[1,2]/smoke_sex_margins[1,3]) / (smoke_sex_margins[2,2]/smoke_sex_margins[2,3]), 3)` times more likely to be a smoker than a woman
+
+## Odds ratio
+
+$$odds(smoke) = P(smoke)/P(no\ smoke)$$
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+* Male
+  * $P(smoke) = \frac{\color{red}{`r smoke_sex_margins[1,2]`}}{\color{blue}{`r smoke_sex_margins[1,3]`}} = `r round(smoke_sex_margins[1,2]/smoke_sex_margins[1,3], 3)`$
+  * $odds = \frac{`r round(smoke_sex_margins[1,2]/smoke_sex_margins[1,3], 3)`}{`r round(1 - smoke_sex_margins[1,2]/smoke_sex_margins[1,3], 3)`} = `r round(smoke_sex_margins[1,2]/smoke_sex_margins[1,3]/(1 - smoke_sex_margins[1,2]/smoke_sex_margins[1,3]), 3)`$
+
+:::
+
+::: {.column width="50%"}
+
+* Female
+  * $P(smoke) = \frac{\color{red}{`r smoke_sex_margins[2,2]`}}{\color{blue}{`r smoke_sex_margins[2,3]`}} = `r round(smoke_sex_margins[2,2]/smoke_sex_margins[2,3], 3)`$
+  * $odds = \frac{`r round(smoke_sex_margins[2,2]/smoke_sex_margins[2,3], 3)`}{`r round(1 - smoke_sex_margins[2,2]/smoke_sex_margins[2,3], 3)`} = `r round(smoke_sex_margins[2,2]/smoke_sex_margins[2,3] / (1 - smoke_sex_margins[2,2]/smoke_sex_margins[2,3]), 3)`$
+
+:::
+
+::::
+
+* $odds\ ratio = \frac{`r round(smoke_sex_margins[2,2]/smoke_sex_margins[2,3] / (1 - smoke_sex_margins[2,2]/smoke_sex_margins[2,3]), 3)`}{`r round(smoke_sex_margins[1,2]/smoke_sex_margins[1,3]/(1 - smoke_sex_margins[1,2]/smoke_sex_margins[1,3]), 3)`} = 
+`r round(((smoke_sex_margins[2,2]/smoke_sex_margins[2,3]) / (1 - smoke_sex_margins[2,2]/smoke_sex_margins[2,3]))/(smoke_sex_margins[1,2]/smoke_sex_margins[1,3]/(1 - smoke_sex_margins[1,2]/smoke_sex_margins[1,3])), 3)`$
+  * The **odds** of a woman smoking is `r round(((smoke_sex_margins[2,2]/smoke_sex_margins[2,3]) / (1 - smoke_sex_margins[2,2]/smoke_sex_margins[2,3]))/(smoke_sex_margins[1,2]/smoke_sex_margins[1,3]/(1 - smoke_sex_margins[1,2]/smoke_sex_margins[1,3])), 3)` times the **odds** of a man smoking
+
+## Independence
+
+* Do the **observed** frequencies match what we'd *expect* if the variables were **unrelated** or **independent**?
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+* Observed
+
+```{r}
+#| code-fold: true
+smoke_sex
+```
+
+:::
+
+::: {.column width="50%"}
+
+* Expected (independence)
+
+```{r}
+#| code-fold: true
+library(epitools)
+expected(smoke_sex)
+```
+
+:::
+
+::::
 
 # In-class activities
 
 ## In-class activities
 
-
+* Conduct two independent samples tests
+  * $z$-test, $t$-test, Welch's $t$-test
+* Look at contingency tables and orient to them
+* Think about study design
 
 ## Next week
 
+* Relate study design to tests for contingency tables
+  * Some tests are only available for some designs
+* Related-samples tests

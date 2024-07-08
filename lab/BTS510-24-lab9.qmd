@@ -1,5 +1,5 @@
 ---
-title: "BTS 510 Lab 8"
+title: "BTS 510 Lab 9"
 format:
   html:
     embed-resources: true
@@ -21,10 +21,9 @@ theme_set(theme_classic(base_size = 16))
 
 ## Learning objectives
 
-* *Describe* the logic of **hypothesis testing**
-* *Interpret* tests comparing **one sample** to hypothesized value
-* *Relate* **hypothesis testing** to **confidence intervals**
-* *Recognize* when to use a **nonparametric test**
+* *Interpret* tests comparing **two unrelated samples**
+* *Summarize data* using **contingency tables**
+* *Describe* different study designs for **contingency tables** 
 
 ## Data 
 
@@ -38,46 +37,58 @@ theme_set(theme_classic(base_size = 16))
         * `Hgt`: Height (in inches)
         * `Wgt`: Weight (in pounds)
 
-* Convert the factor variables to factor variables, as in the lecture
-  * `as.factor()` function
-
 ## Tasks
 
-* Make plots of variables as needed
+* Make plots of variables as needed (e.g., to assess assumptions)
+* Conduct a $z$-test, $t$-test, and Welch's $t$-test
+  * What is/are your conclusion(s) based on the tests?
+  * Are the assumptions met?
+    * e.g., large enough sample to justify $z$ test using sample variance
+    * e.g., equal variances in both groups
+  * Which test seems the best choice? (Don't make this decision based on what is significant -- here or elsewhere)
+    * Do you think a non-parametric test might be a good option?
 
-### Gender split
+### Some useful code
 
-* Is the gender split in this sample the same as in the total population (i.e., 50/50)?
-  * What kind of variable is this?
-  * What test should you do?
-  * Directional or non-directional?
-  * Present the results of the test
-  * Write your conclusions: Is the gender split in this sample comparable to that in the total population?
+* To split the dataset into `Smoke` = 0 and `Smoke` = 1
+  * There are other ways to do this, so you don't *need* to use this code
 
-### Smoking rate
+```{r}
+library(Stat2Data)
+data(Pulse)
+library(tidyverse)
+Pulse_smoke <- Pulse %>% filter(Smoke == 1)
+Pulse_nosmoke <- Pulse %>% filter(Smoke == 0)
+head(Pulse_smoke)
+head(Pulse_nosmoke)
+```
 
-* Is the smoking rate in this sample the same as the 11.5% rate in the US? (CDC info on smoking [here](https://www.cdc.gov/tobacco/campaign/tips/resources/data/cigarette-smoking-in-united-states.html)
-  * What kind of variable is this?
-  * What test should you do?
-  * Directional or non-directional?
-  * Present the results of the test
-  * Write your conclusions: Is the smoking rate in this sample comparable to the 11.5% rate in the US?
+* Use `alternative = "greater"` if $H_1$: $\mu_1 > \mu_2$
+  * Use `alternative = "less"` if $H_1$: $\mu_1 < \mu_2$
+  * Where $\mu_1$ is the mean for the first-entered group (`x`)
+  * The order you enter them (`x` vs `y`) doesn't matter, **just make sure you set up the directional hypothesis accordingly**
 
-### Elevated pulse rate
+### Active pulse rate
 
-* Is the **active** pulse rate **higher** than the **high end of resting pulse rate** of 100 bpm?
-  * What kind of variable is this?
-  * What test should you do?
-  * Directional or non-directional?
-  * Present the results of the test
-  * Write your conclusions: Is the active pulse rate different from the high end of resting pulse rate of 100 bpm?
-  
-### Height among men
+* Is active pulse rate **higher** among smokers than non-smokers?
 
-* Is the height of **men** in this sample **different** from the US average of 5 feet 9 inches?
-  * What kind of variable is this?
-  * What test should you do?
-  * Directional or non-directional?
-  * Present the results of the test
-  * Write your conclusions: Is the height of men in this sample different from the US average of 5 feet 9 inches?
+```{r}
+
+```
+
+### Weight
+
+* Do smokers weight **less than** non-smokers?
+
+```{r}
+
+```
+
+### Exercise
+
+* Do smokers and non-smokers exercise the **same** amount?
+
+```{r}
+
+```
 
