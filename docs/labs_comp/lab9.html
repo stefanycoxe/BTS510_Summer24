@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>BTS 510  Summer 2024 - BTS 510 Lab 8</title>
+<title>BTS 510  Summer 2024 - BTS 510 Lab 9</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -4708,9 +4708,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
-      BTS 510 &lt;br&gt; Summer 2024
-      </li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs_comp/index.html">Complete labs</a></li><li class="breadcrumb-item"><a href="../labs_comp/lab9.html">BTS 510 Lab 9</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label onclick="window.quartoOpenSearch();">
@@ -4838,13 +4836,13 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
  <span class="menu-text">Complete labs</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../labs_comp/index.html" class="sidebar-item-text sidebar-link">
@@ -4889,7 +4887,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../labs_comp/lab9.html" class="sidebar-item-text sidebar-link">
+  <a href="../labs_comp/lab9.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">BTS 510 Lab 9</span></a>
   </div>
 </li>
@@ -4956,10 +4954,10 @@ window.Quarto = {
   <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data"><span class="header-section-number">2</span> Data</a></li>
   <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks"><span class="header-section-number">3</span> Tasks</a>
   <ul class="collapse">
-  <li><a href="#gender-split" id="toc-gender-split" class="nav-link" data-scroll-target="#gender-split"><span class="header-section-number">3.1</span> Gender split</a></li>
-  <li><a href="#smoking-rate" id="toc-smoking-rate" class="nav-link" data-scroll-target="#smoking-rate"><span class="header-section-number">3.2</span> Smoking rate</a></li>
-  <li><a href="#elevated-pulse-rate" id="toc-elevated-pulse-rate" class="nav-link" data-scroll-target="#elevated-pulse-rate"><span class="header-section-number">3.3</span> Elevated pulse rate</a></li>
-  <li><a href="#height-among-men" id="toc-height-among-men" class="nav-link" data-scroll-target="#height-among-men"><span class="header-section-number">3.4</span> Height among men</a></li>
+  <li><a href="#some-useful-code" id="toc-some-useful-code" class="nav-link" data-scroll-target="#some-useful-code"><span class="header-section-number">3.1</span> Some useful code</a></li>
+  <li><a href="#active-pulse-rate" id="toc-active-pulse-rate" class="nav-link" data-scroll-target="#active-pulse-rate"><span class="header-section-number">3.2</span> Active pulse rate</a></li>
+  <li><a href="#weight" id="toc-weight" class="nav-link" data-scroll-target="#weight"><span class="header-section-number">3.3</span> Weight</a></li>
+  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise"><span class="header-section-number">3.4</span> Exercise</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -4967,9 +4965,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../labs_comp/index.html">Complete labs</a></li><li class="breadcrumb-item"><a href="../labs_comp/lab9.html">BTS 510 Lab 9</a></li></ol></nav>
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">BTS 510 Lab 8</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">BTS 510 Lab 9</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -5006,10 +5004,9 @@ window.Quarto = {
 <section id="learning-objectives" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">1</span> Learning objectives</h2>
 <ul>
-<li><em>Describe</em> the logic of <strong>hypothesis testing</strong></li>
-<li><em>Interpret</em> tests comparing <strong>one sample</strong> to hypothesized value</li>
-<li><em>Relate</em> <strong>hypothesis testing</strong> to <strong>confidence intervals</strong></li>
-<li><em>Recognize</em> when to use a <strong>nonparametric test</strong></li>
+<li><em>Interpret</em> tests comparing <strong>two unrelated samples</strong></li>
+<li><em>Summarize data</em> using <strong>contingency tables</strong></li>
+<li><em>Describe</em> different study designs for <strong>contingency tables</strong></li>
 </ul>
 </section>
 <section id="data" class="level2" data-number="2">
@@ -5028,68 +5025,397 @@ window.Quarto = {
 <li><code>Wgt</code>: Weight (in pounds)</li>
 </ul></li>
 </ul></li>
-<li>Convert the factor variables to factor variables, as in the lecture
-<ul>
-<li><code>as.factor()</code> function</li>
-</ul></li>
 </ul>
 </section>
 <section id="tasks" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="tasks"><span class="header-section-number">3</span> Tasks</h2>
 <ul>
-<li>Make plots of variables as needed</li>
+<li>Make plots of variables as needed (e.g., to assess assumptions)</li>
+<li>Conduct a <span class="math inline">z</span>-test, <span class="math inline">t</span>-test, and Welch’s <span class="math inline">t</span>-test
+<ul>
+<li>What is/are your conclusion(s) based on the tests?</li>
+<li>Are the assumptions met?
+<ul>
+<li>e.g., large enough sample to justify <span class="math inline">z</span> test using sample variance</li>
+<li>e.g., equal variances in both groups</li>
+</ul></li>
+<li>Which test seems the best choice? (Don’t make this decision based on what is significant – here or elsewhere)
+<ul>
+<li>Do you think a non-parametric test might be a good option?</li>
+</ul></li>
+</ul></li>
 </ul>
-<section id="gender-split" class="level3" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="gender-split"><span class="header-section-number">3.1</span> Gender split</h3>
+<section id="some-useful-code" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="some-useful-code"><span class="header-section-number">3.1</span> Some useful code</h3>
 <ul>
-<li>Is the gender split in this sample the same as in the total population (i.e., 50/50)?
+<li>To split the dataset into <code>Smoke</code> = 0 and <code>Smoke</code> = 1
 <ul>
-<li>What kind of variable is this?</li>
-<li>What test should you do?</li>
-<li>Directional or non-directional?</li>
-<li>Present the results of the test</li>
-<li>Write your conclusions: Is the gender split in this sample comparable to that in the total population?</li>
+<li>There are other ways to do this, so you don’t <em>need</em> to use this code</li>
+</ul></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Stat2Data)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(Pulse)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>Pulse_smoke <span class="ot">&lt;-</span> Pulse <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Smoke <span class="sc">==</span> <span class="dv">1</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>Pulse_nosmoke <span class="ot">&lt;-</span> Pulse <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Smoke <span class="sc">==</span> <span class="dv">0</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(Pulse_smoke)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Active Rest Smoke Sex Exercise Hgt Wgt
+1     82   68     1   0        3  70 225
+2     86   68     1   0        2  73 195
+3     87   72     1   0        2  70 173
+4    102   77     1   0        2  72 200
+5     80   67     1   1        2  65 133
+6     99   78     1   0        3  71 165</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(Pulse_nosmoke)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Active Rest Smoke Sex Exercise Hgt Wgt
+1     97   78     0   1        1  63 119
+2     88   62     0   0        3  72 175
+3    106   74     0   0        3  72 170
+4     78   63     0   1        3  67 125
+5    109   65     0   0        3  74 188
+6     66   43     0   1        3  67 140</code></pre>
+</div>
+</div>
+<ul>
+<li>Use <code>alternative = &quot;greater&quot;</code> if <span class="math inline">H_1</span>: <span class="math inline">\mu_1 &gt; \mu_2</span>
+<ul>
+<li>Use <code>alternative = &quot;less&quot;</code> if <span class="math inline">H_1</span>: <span class="math inline">\mu_1 &lt; \mu_2</span></li>
+<li>Where <span class="math inline">\mu_1</span> is the mean for the first-entered group (<code>x</code>)</li>
+<li>The order you enter them (<code>x</code> vs <code>y</code>) doesn’t matter, <strong>just make sure you set up the directional hypothesis accordingly</strong></li>
 </ul></li>
 </ul>
 </section>
-<section id="smoking-rate" class="level3" data-number="3.2">
-<h3 data-number="3.2" class="anchored" data-anchor-id="smoking-rate"><span class="header-section-number">3.2</span> Smoking rate</h3>
+<section id="active-pulse-rate" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="active-pulse-rate"><span class="header-section-number">3.2</span> Active pulse rate</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(Pulse_smoke<span class="sc">$</span>Active)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 97.46154</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(Pulse_nosmoke<span class="sc">$</span>Active)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 90.51942</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(Pulse_smoke<span class="sc">$</span>Active)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 357.2185</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(Pulse_nosmoke<span class="sc">$</span>Active)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 350.1338</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> Pulse_nosmoke, </span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Active)) <span class="sc">+</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill =</span> <span class="st">&quot;red&quot;</span>, </span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">alpha =</span> <span class="fl">0.5</span>, </span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">bins =</span> <span class="dv">30</span>) <span class="sc">+</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">data =</span> Pulse_smoke, </span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">aes</span>(<span class="at">x =</span> Active), </span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>                 <span class="at">fill =</span> <span class="st">&quot;black&quot;</span>, </span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>                 <span class="at">bins =</span> <span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABUAAAAPACAMAAADDuCPrAAABQVBMVEUAAAAAADoAAGYAOjoAOmYAOpAAZpAAZrYzMzM6AAA6ADo6OgA6Ojo6OmY6ZmY6ZpA6ZrY6kNtNTU1NTW5NTY5Nbm5Nbo5NbqtNjshmAABmOgBmOjpmZjpmZmZmZpBmkJBmkLZmkNtmtttmtv9uTU1ubk1ubm5ubo5ujqtujshuq8huq+SOTU2Obk2Obm6Oq8iOyOSOyP+QOgCQZjqQkGaQkLaQtraQttuQtv+Q2/+rbk2rjm6ryOSr5P+2ZgC2Zjq2kGa2kJC2tpC2tra2ttu229u22/+2///Ijk3Ijm7Iq27Iq47I5OTI5P/I///bkDrbtmbbtpDbtrbb27bb29vb2//b///kq27kyI7kyKvk5Mjk5P/k/+Tk////f3//tmb/yI7/25D/27b/29v/5Kv/5Mj//7b//8j//9v//+T////nhrhqAAAACXBIWXMAAB2HAAAdhwGP5fFlAAAgAElEQVR4nO3dfYNkRZmm8UJwkV0ctVBUWFx3RNnhRcFZx/WtZUQdRgdbFG2d2V4ahpbu+v4fYCuzXvJkVmZlnHjueO4451y/P2baAuJERkVcnZUvlSdnAIAqJ+4JAMBUEVAAqERAAaASAQWASgQUACoRUACoREABoBIBBYBKBBQAKhFQAKhEQAGgEgEFgEoEFAAqEVAAqERAAaASAQWASgQUACoRUACoREABoBIBBYBK9oCenHPPAQBq2ONFQAFMlT1eBBTAVNnjRUABTJU9XgQUwFTZ40VAAUyVPV4EFMBU2eNFQAFMlT1eBBTAVNnjRUABTJU9XgQUwFTZ40VAAUyVPV4EFMBU2eNFQAFMlT1eBBTAVNnjRUABTJU9XgQUwFTZ40VAAUyVPV4EFMBU2eNFQAFMlT1eBBTAVNnjRUABTJU9XgQUwFTZ40VAAUyVPV4EFMBU2eNFQAFMlT1eBBTAVNnjRUABTJU9XgQUwFTZ40VAAUyVPV4EFMBU2eNFQAFMlT1eBBTAVNnjRUABTJU9XgQUwFTZ40VAAUyVPV4EFMBU2eNFQI3+XwH3HIGO2eNFQI0IKBBijxcBNSKgQIg9XgTUiIACIfZ4EVAjAgqE2ONFQI0IKBBijxcBNSKgQIg9XgTUiIACIfZ4EVAjAgqE2ONFQI0IKBBijxcBNSKgQIg9XgTUiIACIfZ4EVAjAgqE2ONFQI0IKBBijxcBNSKgQIg9XgTUiIACIfZ4EVAjAgqE2ONFQI0IKBBijxcBNSKgQIg9XgTUiIACIfZ4EVAjAgqE2ONFQI0IKBBijxcBNSKgQIg9XgTUiIACIfZ4EVAjAgqE2ONFQI0IKBBijxcBNSKgQIg9XgTUiIACIfZ4EVAjAgqE2ONFQI0IKBBijxcBNSKgQIg9XgTUiIACIfZ4EVAjAgqE2ONFQI0IKBBijxcBNSKgQIg9XgTUiIACIfZ4EVAjAgqE2ONFQI0IKBBijxcBNSKgQIg9XgTUiIACIfZ4EVAjAgqE2ONFQI0IKBBijxcBNSKgQIg9XgTUiIACIfZ4EVAjAgqE2ONFQI0IKBBijxcBNSKgQIg9XgTUiIACIfZ4EVAjAgqE2ONFQI0IKBBijxcBNSKgQIg9XgTUiIACIfZ4EVAjAgqE2ONFQI0IKBBijxcBNSKgQIg9XgTUiIACIfZ4EVAjAgqE2ONFQI0IKBBijxcBNSKgQIg9XgTUiIACIfZ4EVAjAgqE2ONFQI0IKBBijxcBNSKgQIg9XgTUiIACIfZ4EVAjAgqE2ONFQI0IKBBijxcBNSKgQIg9XgTUiIACIfZ4EVAjAgqE2ONFQI0IKBBijxcBNSKgQIg9XgTUiIACIfZ4EVAjAgqE2ONFQI0IKBBijxcBNSKgQIg9XgTUiIACIfZ4EVAjAgqE2ONFQI0IKBBijxcBNSKgQIg9XgTUiIACIfZ4EVAjAgqE2ONFQI0IKBBijxcBNSKgQIg9XgTUiIACIfZ4EVAjAgqE2ONFQI0IKBBijxcBNSKgQIg9XgTUiIACIfZ4EVAjAgqE2ONFQI0IKBBijxcBNSKgQIg9XgTUiIACIfZ4EVAjAgqE2ONFQI0IKBBijxcBNSKgQIg9XgTUiIACIfZ4EVAjAgqE2ONFQI0IKBBijxcBNSKgQIg9XgTUiIACIfZ4EVAjAgqE2ONFQI0IKBBijxcBNSKgQIg9XgTUiIACIfZ4EVAjAgqE2ONFQI0IKBBijxcBNSKgQIg9XgTUiIACIfZ4EVAjAgqE2ONFQI0IKBBijxcBNSKgQIg9XgTUiIACIfZ4EVAjAgqE2ONFQI0IKBBijxcBNSKgQIg9XgTUiIACIfZ4EVAjAgqE2ONFQI0IKBBijxcBNSKgQIg9XgTU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" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 <ul>
-<li>Is the smoking rate in this sample the same as the 11.5% rate in the US? (CDC info on smoking <a href="https://www.cdc.gov/tobacco/campaign/tips/resources/data/cigarette-smoking-in-united-states.html">here</a>
-<ul>
-<li>What kind of variable is this?</li>
-<li>What test should you do?</li>
-<li>Directional or non-directional?</li>
-<li>Present the results of the test</li>
-<li>Write your conclusions: Is the smoking rate in this sample comparable to the 11.5% rate in the US?</li>
-</ul></li>
+<li>Is active pulse rate <strong>higher</strong> among smokers than non-smokers?</li>
 </ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(BSDA)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: lattice</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: &#39;BSDA&#39;</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from &#39;package:datasets&#39;:
+
+    Orange</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>ztest1 <span class="ot">&lt;-</span> <span class="fu">z.test</span>(<span class="at">x =</span> Pulse_smoke<span class="sc">$</span>Active, </span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> Pulse_nosmoke<span class="sc">$</span>Active, </span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">sigma.x =</span> <span class="fu">sd</span>(Pulse_smoke<span class="sc">$</span>Active), </span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">sigma.y =</span> <span class="fu">sd</span>(Pulse_nosmoke<span class="sc">$</span>Active), </span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">alternative =</span> <span class="st">&quot;greater&quot;</span>)</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>ztest1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Two-sample z-Test
+
+data:  Pulse_smoke$Active and Pulse_nosmoke$Active
+z = 1.7668, p-value = 0.03863
+alternative hypothesis: true difference in means is greater than 0
+95 percent confidence interval:
+ 0.4791124        NA
+sample estimates:
+mean of x mean of y 
+ 97.46154  90.51942 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>ttest1 <span class="ot">&lt;-</span> <span class="fu">t.test</span>(<span class="at">x =</span> Pulse_smoke<span class="sc">$</span>Active, </span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> Pulse_nosmoke<span class="sc">$</span>Active, </span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">alternative =</span> <span class="st">&quot;greater&quot;</span>,</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">var.equal =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>ttest1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Two Sample t-test
+
+data:  Pulse_smoke$Active and Pulse_nosmoke$Active
+t = 1.7806, df = 230, p-value = 0.03815
+alternative hypothesis: true difference in means is greater than 0
+95 percent confidence interval:
+ 0.5034263       Inf
+sample estimates:
+mean of x mean of y 
+ 97.46154  90.51942 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>ttest1b <span class="ot">&lt;-</span> <span class="fu">t.test</span>(<span class="at">x =</span> Pulse_smoke<span class="sc">$</span>Active, </span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> Pulse_nosmoke<span class="sc">$</span>Active, </span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">alternative =</span> <span class="st">&quot;greater&quot;</span>,</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">var.equal =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>ttest1b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Welch Two Sample t-test
+
+data:  Pulse_smoke$Active and Pulse_nosmoke$Active
+t = 1.7668, df = 31.509, p-value = 0.04348
+alternative hypothesis: true difference in means is greater than 0
+95 percent confidence interval:
+ 0.2833517       Inf
+sample estimates:
+mean of x mean of y 
+ 97.46154  90.51942 </code></pre>
+</div>
+</div>
 </section>
-<section id="elevated-pulse-rate" class="level3" data-number="3.3">
-<h3 data-number="3.3" class="anchored" data-anchor-id="elevated-pulse-rate"><span class="header-section-number">3.3</span> Elevated pulse rate</h3>
+<section id="weight" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="weight"><span class="header-section-number">3.3</span> Weight</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(Pulse_smoke<span class="sc">$</span>Wgt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 172.0385</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(Pulse_nosmoke<span class="sc">$</span>Wgt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 156.1359</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(Pulse_smoke<span class="sc">$</span>Wgt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1347.718</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(Pulse_nosmoke<span class="sc">$</span>Wgt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 948.9961</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> Pulse_nosmoke, </span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Wgt)) <span class="sc">+</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill =</span> <span class="st">&quot;red&quot;</span>, </span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">alpha =</span> <span class="fl">0.5</span>, </span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">bins =</span> <span class="dv">30</span>) <span class="sc">+</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">data =</span> Pulse_smoke, </span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">aes</span>(<span class="at">x =</span> Wgt), </span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>                 <span class="at">fill =</span> <span class="st">&quot;black&quot;</span>, </span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>                 <span class="at">bins =</span> <span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABUAAAAPACAMAAADDuCPrAAABR1BMVEUAAAAAADoAAGYAOjoAOmYAOpAAZpAAZrYzMzM6AAA6Ojo6OmY6ZmY6ZpA6ZrY6kNtNTU1NTW5NTY5Nbm5Nbo5NbqtNjshmAABmOgBmOjpmZjpmZmZmZpBmkJBmkLZmkNtmtttmtv9uTU1ubk1ubm5ubo5ujqtujshuq8huq+SOTU2Obk2Obm6Oq8iOyOSOyP+QOgCQOjqQZjqQkDqQkGaQkLaQtraQttuQtv+Q29uQ2/+rbk2rjm6ryOSr5P+2ZgC2Zjq2kGa2kJC2tpC2tra2ttu229u22/+2///Ijk3Ijm7Iq27Iq47I5OTI5P/I///bkDrbtmbbtpDbtrbb27bb29vb2//b/9vb///kq27kyI7kyKvk5Mjk5P/k/+Tk////f3//tmb/yI7/25D/27b/29v/5Kv/5Mj//7b//8j//9v//+T///8JNSEdAAAACXBIWXMAAB2HAAAdhwGP5fFlAAAgAElEQVR4nO3d639kV3WncdmGmDa3MhiwxxMmGDzxBWyGmSQz4dIQTMCBmMZgkoYkrW47dtyt///1qKSS6pytqq1dZ/3WWntLz/dFPkaB2mvvOudx6VpHJwCARY6yBwCAURFQAFiIgALAQgQUABYioACwEAEFgIUIKAAsREABYCECCgALEVAAWIiAAsBCBBQAFiKgALAQAQWAhQgoACxEQAFgIQIKAAsRUABYiIACwEIEFAAWSg/o0ansGQBgifR4EVAAo0qPFwEFMKr0eBFQAKNKjxcBBTCq9HgRUACjSo8XAQUwqvR4EVAAo0qPFwEFMKr0eBFQAKNKjxcBBTCq9HgRUACjSo8XAQUwqvR4EVAAo0qPFwEFMKr0eBFQAKNKjxcBBTCq9HgRUACjSo8XAQUwqvR4EVAAo0qPFwEFMKr0eBFQAKNKjxcBBTCq9HgRUACjSo8XAQUwqvR4EVAAo0qPFwEFMKr0eBFQAKNKjxcBBTCq9HgRUACjSo8XAQUwqvR4EVAAo0qPFwEFMKr0eBFQAKNKjxcBBTCq9HgRUACjSo8XAQUwqvR4EdBExw2yZwQ6lh4vApqIgAIm6fEioIkIKGCSHi8CmoiAAibp8SKgiQgoYJIeLwKaiIACJunxIqCJCChgkh4vApqIgAIm6fEioIkIKGCSHi8CmoiAAibp8SKgiQgoYJIeLwKaiIACJunxIqCJCChgkh4vApqIgAIm6fEioIkIKGCSHi8CmoiAAibp8SKgiQgoYJIeLwKaiIACJunxIqCJCChgkh4vApqIgAIm6fEioIkIKGCSHi8CmoiAAibp8SKgiQgoYJIeLwKaiIACJunxIqCJCChgkh4vApqIgAIm6fEioIkIKGCSHi8CmoiAAibp8SKgiQgoYJIeLwKaiIACJunxIqCJCChgkh4vApqIgAIm6fEioIkIKGCSHi8CmoiAAibp8SKgiQgoYJIeLwKaiIACJunxIqCJCChgkh4vApqIgAIm6fEioIkIKGCSHi8CmoiAAibp8SKgiQgoYJIeLwKaiIACJunxIqCJCChgkh4vApqIgAIm6fEioIkIKGCSHi8CmoiAAibp8SKgiQgoYJIeLwKaiIACJunxIqCJCChgkh4vApqIgAIm6fEioIkIKGCSHi8CmoiAAibp8SKgiQgoYJIeLwKaiIACJunxIqCJCChgkh4vApqIgAIm6fEioIkIKGCSHi8CmoiAAibp8SKgiQgoYJIeLwKaiIACJunxIqCJCChgkh4vApqIgAIm6fEioIkIKGCSHi8CmoiAAibp8SKgiQgoYJIeLwKaiIACJunxIqCJCChgkh4vApqIgAIm6fEioIkIKGCSHi8CmoiAAibp8SKgiQgoYJIeLwKaiIACJunxIqCJCChgkh4vApqIgAIm6fEioIkIKGCSHi8CmoiAAibp8SKgiQgoYJIeLwKaiIACJunxIqCJCChgkh4vApqIgAIm6fEioIkIKGCSHi8CmoiAAibp8SKgiQgoYJIeLwKaiIACJunxIqCJCChgkh4vApqIgAIm6fEioIkIKGCSHi8CmoiAAibp8SKgiQgoYJIeLwKaiIACJunxIqCJCChgkh4vApqIgAIm6fEioIkIKGCSHi8CmoiAAibp8SKgiQgoYJIeLwKaiIACJunxIqCJCChgkh4vApqIgAIm6fEioIkIKGCSHi8CmoiAAibp8SKgiQgoYJIeLwKaiIACJunxIqCJCChgkh4vApqIgAIm6fEioIkIKGCSHi8CmoiAAibp8SKgiQgoYJIeLwKaiIACJunxIqCJCChgkh4vApqIgAIm6fEioIkIKGCSHi8CmoiAAibp8SKgiQgoYJIeLwKaiIACJunxIqCJCChgkh4vApqIgAIm6fEioIkIKGCSHi8CmoiAAibp8SKgiQgoYJIeLwKaiIACJunxIqCJCChgkh4vApqIgAIm6fEioIkIKGCSHi8CmoiAAibp8SKgiQgoYJIeLwKaiIACJunxIqCJCChgkh4vApqIgAIm6fEioIkIKGCSHi8CmoiAAibp8SKgiQgoYJIeLwKaiIACJunxIqCJCChgkh4vApqIgAIm6fEioIkIKGCSHi8CmoiAAibp8SKgiQgoYJIeLwKaiIACJunxIqCJCChgkh4vApqIgAIm6fEioIkIKGCSHi8CmoiAAibp8SKgiQgoYJIeLwKaiIACJunxIqCJCChgkh4vApqIgAIm6fEioIkIKGCSHi8CmoiAAibp8SKgiQgoYJIeLwKaiIACJunxIqCJCChgkh4vApqIgAIm6fEioIkIKGCSHi8CmoiAAibp8SKgiQgoYJIeLwKaiIACJunxIqCJCChgkh4vApqIgAIm6fEioIkIKGCSHi8CmoiAAibp8SKgiQgoYJIeLwKaiIACJunxIqCJCChgkh4vApqIgAIm6fEioIkIKGCSHi8CmoiAAibp8SKgiQgoYJIeLwKaiIACJunxIqCJCChgkh4vApqIgAIm6fEioIkIKGCSHi8CmoiAAibp8SKgiQgoYJIeLwKaiIACJunxIqCJCChgkh4vApqIgAIm6fEioIkIKGCSHi8CmoiAAibp8SKgiQgoYJIeLwKaiIACJunxIqCJCChgoo3Xv/3o26vV6jtvPdh+6Mmfv3v6oVd//GDP/4SAJiKggIkyXk9+tNp4/icXH/v0zc2HXnhvzwAENA8BBUyE8Xryw9Wl598+/9inb1x+6Cu/3T0AAc1DQAETYbzun1byr//9NKS/eeUyl++etvR7D84/9PXdAxDQPAQUMNHFa/1ic/O68+NXNv94+Q8nj6af188GIKB5CChgoovXo8lrzPubf76//djpa9HXdw5AQPMQUMBEF6/7k0KevvL82oPzr4q+Pf/Q1QEIaB4CCpj4xGtTy9PP6i+/dTT959kABDQPAQVMfOK1+XR++qrz9NXozi+CEtBEBBQw8YnX5gue0y+Lrj/29va/8bktApqGgAImLvF6tPkxJgLaOQIKmHjE65M3Nt9PmgX0/uzb8AS0BwQUMHGI1/oHQs+/9DlrJgHtDwEFTPTx+uTNy99DqrwC3Q7AN5HyEFDARB6vj7e/x1n7Guh2AAKah4ACJup4rfv5wsXPexLQzhFQwEQcr/UfFNn+whE/B9o5AgqYaON19geZtr+wyW8idY6AAibSeP3Tav6NoumrTn4XvkMEFDBRxuv09efzb5Uf4a8xdYyAAibCeO34k5/8PdC+EVDAxOUPKm+dvu5cvfbg5MmvV/xF+g4RUMBE+vdAp85fb/KeSF0joICJLF7Tt5SbvDHnJ7wrZ8cIKGAii9fktebsnY3P3xd+9lbx8wEIaB4CCpikx4uAJiKggEl6vAhoIgIKmKTHi4AmIqCASXq8CGgiAgqYpMeLgCYioIBJerwIaCICCpikx4uAJiKggEl6vAhoIgIKmKTHi4AmIqCASXq8CGgiAgqYpMeLgCYioIBJerwIaCICCpikx4uAJiKggEl6vAhoou4C2t1AQFV6vAhoou561d1AQFV6vAhoou561d1AQFV6vAhoou561d1AQFV6vAhoou561d1AQFV6vAhoou561d1AQFV6vAhoou561d1AQFV6vAhoou561d1AQFV6vAhoou561d1AQFV6vAhoou561d1AQFV6vAhoou561d1AQFV6vAhoou561d1AQFV6vAhoou561d1AQFV6vAhoou561d1AQFV6vAhoou561d1AQFV6vAhoou561d1AQFV6vAhoou561d1AQFV6vAhoou561d1AQFV6vAhoou561d1AQFV6vAhoou561d1AQFV6vAhoou561d1AQFV6vAhoou561d1AQFV6vAhoou561d1AQFV6vAhoou561d1AQFV6vAhoou561d1AQFV6vAhoou561d1AQFV6vAhoou561d1AQFV6vAhoIbIh3fWqu4GAqvR4EdACAe1pIKAqPV4EtEBAexoIqEqPFwEtENCeBgKq0uNFQAsEtKeBgKr0eBHQAgHtaSCgKj1eBLRAQHsaCKhKjxcBLRDQngYCqtLjRUALBLSngYCq9HgR0AIB7WkgoCo9XgS0QEB7GgioSo8XAS0Q0J4GAqrS40VACwS0p4GAqvR4EdACAe1pIKAqPV4EtEBAexoIqEqPFwEtENCeBgKq0uNFQAsEtKeBgKr0eBHQAgHtaSCgKj1eBLRAQHsaCKhKjxcBLRDQngYCqtLjRUALBLSngYCq9HgR0AIB7WkgoCo9XgS0QEB7GgioSo8XAS0Q0J4GAqrS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" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 <ul>
-<li>Is the <strong>active</strong> pulse rate <strong>higher</strong> than the <strong>high end of resting pulse rate</strong> of 100 bpm?
-<ul>
-<li>What kind of variable is this?</li>
-<li>What test should you do?</li>
-<li>Directional or non-directional?</li>
-<li>Present the results of the test</li>
-<li>Write your conclusions: Is the active pulse rate different from the high end of resting pulse rate of 100 bpm?</li>
-</ul></li>
+<li>Do smokers weight <strong>less than</strong> non-smokers?</li>
 </ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>ztest2 <span class="ot">&lt;-</span> <span class="fu">z.test</span>(<span class="at">x =</span> Pulse_smoke<span class="sc">$</span>Wgt, </span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> Pulse_nosmoke<span class="sc">$</span>Wgt, </span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">sigma.x =</span> <span class="fu">sd</span>(Pulse_smoke<span class="sc">$</span>Wgt), </span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">sigma.y =</span> <span class="fu">sd</span>(Pulse_nosmoke<span class="sc">$</span>Wgt), </span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">alternative =</span> <span class="st">&quot;less&quot;</span>)</span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>ztest2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Two-sample z-Test
+
+data:  Pulse_smoke$Wgt and Pulse_nosmoke$Wgt
+z = 2.1167, p-value = 0.9829
+alternative hypothesis: true difference in means is less than 0
+95 percent confidence interval:
+       NA 28.25999
+sample estimates:
+mean of x mean of y 
+ 172.0385  156.1359 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>ttest2 <span class="ot">&lt;-</span> <span class="fu">t.test</span>(<span class="at">x =</span> Pulse_smoke<span class="sc">$</span>Wgt, </span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> Pulse_nosmoke<span class="sc">$</span>Wgt, </span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">alternative =</span> <span class="st">&quot;less&quot;</span>,</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">var.equal =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>ttest2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Two Sample t-test
+
+data:  Pulse_smoke$Wgt and Pulse_nosmoke$Wgt
+t = 2.4256, df = 230, p-value = 0.992
+alternative hypothesis: true difference in means is less than 0
+95 percent confidence interval:
+     -Inf 26.73016
+sample estimates:
+mean of x mean of y 
+ 172.0385  156.1359 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>ttest2b <span class="ot">&lt;-</span> <span class="fu">t.test</span>(<span class="at">x =</span> Pulse_smoke<span class="sc">$</span>Wgt, </span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> Pulse_nosmoke<span class="sc">$</span>Wgt, </span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">alternative =</span> <span class="st">&quot;less&quot;</span>,</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">var.equal =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>ttest2b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Welch Two Sample t-test
+
+data:  Pulse_smoke$Wgt and Pulse_nosmoke$Wgt
+t = 2.1167, df = 29.613, p-value = 0.9786
+alternative hypothesis: true difference in means is less than 0
+95 percent confidence interval:
+     -Inf 28.65903
+sample estimates:
+mean of x mean of y 
+ 172.0385  156.1359 </code></pre>
+</div>
+</div>
 </section>
-<section id="height-among-men" class="level3" data-number="3.4">
-<h3 data-number="3.4" class="anchored" data-anchor-id="height-among-men"><span class="header-section-number">3.4</span> Height among men</h3>
+<section id="exercise" class="level3" data-number="3.4">
+<h3 data-number="3.4" class="anchored" data-anchor-id="exercise"><span class="header-section-number">3.4</span> Exercise</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(Pulse_smoke<span class="sc">$</span>Exercise)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.807692</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(Pulse_nosmoke<span class="sc">$</span>Exercise)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2.31068</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(Pulse_smoke<span class="sc">$</span>Exercise)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.4815385</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(Pulse_nosmoke<span class="sc">$</span>Exercise)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.5273976</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> Pulse_nosmoke, </span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Exercise)) <span class="sc">+</span></span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill =</span> <span class="st">&quot;red&quot;</span>, </span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">alpha =</span> <span class="fl">0.5</span>, </span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">bins =</span> <span class="dv">30</span>) <span class="sc">+</span></span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">data =</span> Pulse_smoke, </span>
+<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">aes</span>(<span class="at">x =</span> Exercise), </span>
+<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a>                 <span class="at">fill =</span> <span class="st">&quot;black&quot;</span>, </span>
+<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a>                 <span class="at">bins =</span> <span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABUAAAAPACAMAAADDuCPrAAABTVBMVEUAAAAAADoAAGYAOjoAOmYAOpAAZpAAZrYzMzM6AAA6ADo6OgA6Ojo6OmY6ZmY6ZpA6ZrY6kLY6kNtNTU1NTW5NTY5Nbm5Nbo5NbqtNjshmAABmOgBmOjpmZjpmZmZmZpBmkJBmkLZmkNtmtttmtv9uTU1ubk1ubm5ubo5ujqtujshuq8huq+SOTU2Obk2Obm6Ojo6Oq8iOyOSOyP+QOgCQZjqQkGaQkLaQtraQttuQ27aQ2/+rbk2rjm6ryOSr5P+2ZgC2Zjq2kGa2kJC2tpC2tra2ttu229u22/+2///Ijk3Ijm7Iq27Iq47I5OTI5P/I///bkDrbtmbbtpDbtrbb27bb29vb2//b///kq27kq47kyI7kyKvk5Mjk5P/k/+Tk////f3//tmb/yI7/25D/27b/29v/5Kv/5Mj/5OT//7b//8j//9v//+T///9xfJkxAAAACXBIWXMAAB2HAAAdhwGP5fFlAAAgAElEQVR4nO3d+58cBZ3v4cmKB3IW1KUD4bZ4PGsAl4tHcNflyCWgqJuVmyiYBdccgpI1mf7/fzxdfa2erp4Jn3RPquv7PD/wmvRMeirFd95T3XU7GgMQObrfCwBwqAQUICSgACEBBQgJKEBIQAFCAgoQElCAkIAChAQUICSgACEBBQgJKEBIQAFCAgoQ2kNAr4+euLH60/EXPx6NRi+8dfpDAIdn9wH9+ko7oLdfGc1c/vCUhwAO0M4DeuvlUSugt18eLTz20daHAA7RrgPa9LMV0Guj0aWf3Bgfv39lNHpy60MAh2jHAf38yqgd0MnL+dFr049uTrL59paHAA7STgN6683ZS/NlQK+vNjInG54vbXloY5kmdrlYAHuxy1LdbOL54uergB6/sdjaXO5b6nhoc5kEFDgEOw7o5Q+b/y6yePvl1X6i+ccdD20uk4ACh2CnAX381fG4HdD2JuZk07N5x7Pjoc1lElDgEOy+VK2A3mzvZ782fe3e8dDCQysCChwAAQUInV9Ar0/3uXc8tCCgwGHZa0DXAjn7Q8dDCwIKHJYebYGulslOJOAQ9Og90NUyCShwCAQUILTXgDoOFBiyvQbUmUjAkO01oO1NzNW58Ccf2lwmAQUOwV4D6mpMwJDtN6DZ9UAFFDgI+w1os5E5evHG+Pi3o/YV6U8+dHKZBBQ4BHsOaHRPJAEFDsKeAzq+tXkLzo6HTiyTgAKHYN8Bnd8E/vlXT39ofZkEFDgEfSyVgAIHoY+lElDgIPSxVAIKHIQ+lkpAgYPQx1IJKHAQ+lgqAQUOQh9LJaDAQehjqQQUOAh9LJWAAgehj6USUOAg9LFUAgochD6WSkCBg9DHUgkocBD6WCoBBQ5CH0sloMBB6GOpBBQ4CH0slYACB6GPpRJQIPL/7sYOv18fSyWgQERABRQICaiAAiEBFVAgJKACCoQEVECBkIAKKBASUAEFQgIqoEBIQAUUCAmogAIhARVQICSgAgqEBFRAgZCACigQElABBUICKqBASEAFFAgJqIACIQEVUCAkoAIKhARUQIGQgAooEBJQAQVCAiqgQEhABRQICaiAAiEBFVAgJKACCoQEVECBkIAKKBASUAEFQgIqoEBIQAUUCAmogAIhARVQICSgAgqEBFRAgZCACigQElABBUICKqBASEAFFAgJqIACIQEVUCAkoAIKhARUQIGQgAooEBJQAQVCAiqgQEhABRQICaiAAiEBFVAgJKACCoQEVECBkIAKKBASUAEFQgIqoEBIQAUUCAmogAIhARVQICSgAgqEBFRAgZCACigQElABBUICKqBASEAFFAgJqIACIQEVUCAkoAIKhARUQIGQgAooEBJQAQVCAiqgQEhABRQICaiAAiEBFVAgJKACCoQEVECBkIAKKBASUAEFQgIqoEBIQAUUCAmogAIhARVQICSgAgqEBFRAgZCACigQElABBUICKqBASEAFFAgJqIACIQEVUCAkoAIKhARUQIGQgAooEBJQAQVCAiqgQEhABRQICaiAAiEBFVAgJKACCoQEVECBkIAKKBASUAEFQgIqoEBIQAUUCAmogAIhARVQICSgAgqEBFRAgZCACigQElABBUICKqBASEAFFAgJqIACIQEVUCAkoAIKhARUQIGQgAooEBJQAQVCAiqgQEhABRQICaiAAiEBFVAgJKACCoQEVECBkIAKKBASUAEFQgIqoEBIQAUUCAmogAIhARVQICSgAgqEBFRAgZCACigQElABBUICKqBASEAFlNR5//TQOwIqoKQEtDwBFVBSAlqegAooKQEtT0AFlJSAliegAkpKQMsTUAElJaDlCaiAkhLQ8gRUQEkJaHkCKqCkBLQ8ARVQUgJa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" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 <ul>
-<li>Is the height of <strong>men</strong> in this sample <strong>different</strong> from the US average of 5 feet 9 inches?
-<ul>
-<li>What kind of variable is this?</li>
-<li>What test should you do?</li>
-<li>Directional or non-directional?</li>
-<li>Present the results of the test</li>
-<li>Write your conclusions: Is the height of men in this sample different from the US average of 5 feet 9 inches?</li>
-</ul></li>
+<li>Do smokers and non-smokers exercise the <strong>same</strong> amount?</li>
 </ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>ztest3 <span class="ot">&lt;-</span> <span class="fu">z.test</span>(<span class="at">x =</span> Pulse_smoke<span class="sc">$</span>Exercise, </span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> Pulse_nosmoke<span class="sc">$</span>Exercise, </span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">sigma.x =</span> <span class="fu">sd</span>(Pulse_smoke<span class="sc">$</span>Exercise), </span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">sigma.y =</span> <span class="fu">sd</span>(Pulse_nosmoke<span class="sc">$</span>Exercise), </span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>)</span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>ztest3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Two-sample z-Test
+
+data:  Pulse_smoke$Exercise and Pulse_nosmoke$Exercise
+z = -3.4643, p-value = 0.0005317
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -0.7875596 -0.2184150
+sample estimates:
+mean of x mean of y 
+ 1.807692  2.310680 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>ttest3 <span class="ot">&lt;-</span> <span class="fu">t.test</span>(<span class="at">x =</span> Pulse_smoke<span class="sc">$</span>Exercise, </span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> Pulse_nosmoke<span class="sc">$</span>Exercise, </span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>,</span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">var.equal =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>ttest3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Two Sample t-test
+
+data:  Pulse_smoke$Exercise and Pulse_nosmoke$Exercise
+t = -3.3437, df = 230, p-value = 0.0009651
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -0.7993817 -0.2065929
+sample estimates:
+mean of x mean of y 
+ 1.807692  2.310680 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>ttest3b <span class="ot">&lt;-</span> <span class="fu">t.test</span>(<span class="at">x =</span> Pulse_smoke<span class="sc">$</span>Exercise, </span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> Pulse_nosmoke<span class="sc">$</span>Exercise, </span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>,</span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">var.equal =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a>ttest3b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Welch Two Sample t-test
+
+data:  Pulse_smoke$Exercise and Pulse_nosmoke$Exercise
+t = -3.4643, df = 32.314, p-value = 0.001521
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -0.7986223 -0.2073523
+sample estimates:
+mean of x mean of y 
+ 1.807692  2.310680 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(coin)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: survival</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median_test</span>(Exercise <span class="sc">~</span> <span class="fu">as.factor</span>(Smoke), <span class="at">data =</span> Pulse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Asymptotic Two-Sample Brown-Mood Median Test
+
+data:  Exercise by as.factor(Smoke) (0, 1)
+Z = 3.0223, p-value = 0.002509
+alternative hypothesis: true mu is not equal to 0</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wilcox.test</span>(Exercise <span class="sc">~</span> <span class="fu">as.factor</span>(Smoke), <span class="at">data =</span> Pulse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Wilcoxon rank sum test with continuity correction
+
+data:  Exercise by as.factor(Smoke)
+W = 3657, p-value = 0.001026
+alternative hypothesis: true location shift is not equal to 0</code></pre>
+</div>
+</div>
 
 
 <!-- -->
@@ -5536,88 +5862,199 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class>
-<div class="sourceCode" id="cb4" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;BTS 510 Lab 8&quot;</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">    embed-resources: true</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">    self-contained-math: true</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">    html-math-method: katex</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">    number-sections: true</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co">    code-block-bg: true</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co">    code-block-border-left: &quot;#31BAE9&quot;</span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: setup</span></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12345</span>)</span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_classic</span>(<span class="at">base_size =</span> <span class="dv">16</span>))</span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="fu">## Learning objectives</span></span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>*Describe* the logic of **hypothesis testing**</span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>*Interpret* tests comparing **one sample** to hypothesized value</span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>*Relate* **hypothesis testing** to **confidence intervals**</span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>*Recognize* when to use a **nonparametric test**</span>
-<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data </span></span>
-<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="in">`Pulse`</span> dataset from the **Stat2Data** package</span>
-<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>A dataset with $n$ = 232 observations on the following 7 variables.</span>
-<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a><span class="ss">        * </span><span class="in">`Active`</span>: Pulse rate (beats per minute) after exercise</span>
-<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a><span class="ss">        * </span><span class="in">`Rest`</span>: Resting pulse rate (beats per minute)</span>
-<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a><span class="ss">        * </span><span class="in">`Smoke`</span>: 1=smoker or 0=nonsmoker</span>
-<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a><span class="ss">        * </span><span class="in">`Sex`</span>: 1=female or 0=male</span>
-<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a><span class="ss">        * </span><span class="in">`Exercise`</span>: Typical hours of exercise (per week)</span>
-<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a><span class="ss">        * </span><span class="in">`Hgt`</span>: Height (in inches)</span>
-<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a><span class="ss">        * </span><span class="in">`Wgt`</span>: Weight (in pounds)</span>
-<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Convert the factor variables to factor variables, as in the lecture</span>
-<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`as.factor()`</span> function</span>
-<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tasks</span></span>
-<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Make plots of variables as needed</span>
-<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a><span class="fu">### Gender split</span></span>
-<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Is the gender split in this sample the same as in the total population (i.e., 50/50)?</span>
-<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>What kind of variable is this?</span>
-<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>What test should you do?</span>
-<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Directional or non-directional?</span>
-<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Present the results of the test</span>
-<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Write your conclusions: Is the gender split in this sample comparable to that in the total population?</span>
-<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a><span class="fu">### Smoking rate</span></span>
-<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Is the smoking rate in this sample the same as the 11.5% rate in the US? (CDC info on smoking <span class="co">[</span><span class="ot">here</span><span class="co">](https://www.cdc.gov/tobacco/campaign/tips/resources/data/cigarette-smoking-in-united-states.html)</span></span>
-<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>What kind of variable is this?</span>
-<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>What test should you do?</span>
-<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Directional or non-directional?</span>
-<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Present the results of the test</span>
-<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Write your conclusions: Is the smoking rate in this sample comparable to the 11.5% rate in the US?</span>
-<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a><span class="fu">### Elevated pulse rate</span></span>
-<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Is the **active** pulse rate **higher** than the **high end of resting pulse rate** of 100 bpm?</span>
-<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>What kind of variable is this?</span>
-<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>What test should you do?</span>
-<span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Directional or non-directional?</span>
-<span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Present the results of the test</span>
-<span id="cb4-75"><a href="#cb4-75" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Write your conclusions: Is the active pulse rate different from the high end of resting pulse rate of 100 bpm?</span>
-<span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a><span class="fu">### Height among men</span></span>
-<span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Is the height of **men** in this sample **different** from the US average of 5 feet 9 inches?</span>
-<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>What kind of variable is this?</span>
-<span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>What test should you do?</span>
-<span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Directional or non-directional?</span>
-<span id="cb4-83"><a href="#cb4-83" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Present the results of the test</span>
-<span id="cb4-84"><a href="#cb4-84" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Write your conclusions: Is the height of men in this sample different from the US average of 5 feet 9 inches?</span>
+<div class="sourceCode" id="cb63" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;BTS 510 Lab 9&quot;</span></span>
+<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb63-5"><a href="#cb63-5" aria-hidden="true" tabindex="-1"></a><span class="co">    embed-resources: true</span></span>
+<span id="cb63-6"><a href="#cb63-6" aria-hidden="true" tabindex="-1"></a><span class="co">    self-contained-math: true</span></span>
+<span id="cb63-7"><a href="#cb63-7" aria-hidden="true" tabindex="-1"></a><span class="co">    html-math-method: katex</span></span>
+<span id="cb63-8"><a href="#cb63-8" aria-hidden="true" tabindex="-1"></a><span class="co">    number-sections: true</span></span>
+<span id="cb63-9"><a href="#cb63-9" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb63-10"><a href="#cb63-10" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb63-11"><a href="#cb63-11" aria-hidden="true" tabindex="-1"></a><span class="co">    code-block-bg: true</span></span>
+<span id="cb63-12"><a href="#cb63-12" aria-hidden="true" tabindex="-1"></a><span class="co">    code-block-border-left: &quot;#31BAE9&quot;</span></span>
+<span id="cb63-13"><a href="#cb63-13" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb63-14"><a href="#cb63-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-17"><a href="#cb63-17" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb63-18"><a href="#cb63-18" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: setup</span></span>
+<span id="cb63-19"><a href="#cb63-19" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb63-20"><a href="#cb63-20" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12345</span>)</span>
+<span id="cb63-21"><a href="#cb63-21" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_classic</span>(<span class="at">base_size =</span> <span class="dv">16</span>))</span>
+<span id="cb63-22"><a href="#cb63-22" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb63-23"><a href="#cb63-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-24"><a href="#cb63-24" aria-hidden="true" tabindex="-1"></a><span class="fu">## Learning objectives</span></span>
+<span id="cb63-25"><a href="#cb63-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-26"><a href="#cb63-26" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>*Interpret* tests comparing **two unrelated samples**</span>
+<span id="cb63-27"><a href="#cb63-27" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>*Summarize data* using **contingency tables**</span>
+<span id="cb63-28"><a href="#cb63-28" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>*Describe* different study designs for **contingency tables** </span>
+<span id="cb63-29"><a href="#cb63-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-30"><a href="#cb63-30" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data </span></span>
+<span id="cb63-31"><a href="#cb63-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-32"><a href="#cb63-32" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="in">`Pulse`</span> dataset from the **Stat2Data** package</span>
+<span id="cb63-33"><a href="#cb63-33" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>A dataset with $n$ = 232 observations on the following 7 variables.</span>
+<span id="cb63-34"><a href="#cb63-34" aria-hidden="true" tabindex="-1"></a><span class="ss">        * </span><span class="in">`Active`</span>: Pulse rate (beats per minute) after exercise</span>
+<span id="cb63-35"><a href="#cb63-35" aria-hidden="true" tabindex="-1"></a><span class="ss">        * </span><span class="in">`Rest`</span>: Resting pulse rate (beats per minute)</span>
+<span id="cb63-36"><a href="#cb63-36" aria-hidden="true" tabindex="-1"></a><span class="ss">        * </span><span class="in">`Smoke`</span>: 1=smoker or 0=nonsmoker</span>
+<span id="cb63-37"><a href="#cb63-37" aria-hidden="true" tabindex="-1"></a><span class="ss">        * </span><span class="in">`Sex`</span>: 1=female or 0=male</span>
+<span id="cb63-38"><a href="#cb63-38" aria-hidden="true" tabindex="-1"></a><span class="ss">        * </span><span class="in">`Exercise`</span>: Typical hours of exercise (per week)</span>
+<span id="cb63-39"><a href="#cb63-39" aria-hidden="true" tabindex="-1"></a><span class="ss">        * </span><span class="in">`Hgt`</span>: Height (in inches)</span>
+<span id="cb63-40"><a href="#cb63-40" aria-hidden="true" tabindex="-1"></a><span class="ss">        * </span><span class="in">`Wgt`</span>: Weight (in pounds)</span>
+<span id="cb63-41"><a href="#cb63-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-42"><a href="#cb63-42" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tasks</span></span>
+<span id="cb63-43"><a href="#cb63-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-44"><a href="#cb63-44" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Make plots of variables as needed (e.g., to assess assumptions)</span>
+<span id="cb63-45"><a href="#cb63-45" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Conduct a $z$-test, $t$-test, and Welch&#39;s $t$-test</span>
+<span id="cb63-46"><a href="#cb63-46" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>What is/are your conclusion(s) based on the tests?</span>
+<span id="cb63-47"><a href="#cb63-47" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Are the assumptions met?</span>
+<span id="cb63-48"><a href="#cb63-48" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>e.g., large enough sample to justify $z$ test using sample variance</span>
+<span id="cb63-49"><a href="#cb63-49" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>e.g., equal variances in both groups</span>
+<span id="cb63-50"><a href="#cb63-50" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Which test seems the best choice? (Don&#39;t make this decision based on what is significant -- here or elsewhere)</span>
+<span id="cb63-51"><a href="#cb63-51" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>Do you think a non-parametric test might be a good option?</span>
+<span id="cb63-52"><a href="#cb63-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-53"><a href="#cb63-53" aria-hidden="true" tabindex="-1"></a><span class="fu">### Some useful code</span></span>
+<span id="cb63-54"><a href="#cb63-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-55"><a href="#cb63-55" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>To split the dataset into <span class="in">`Smoke`</span> = 0 and <span class="in">`Smoke`</span> = 1</span>
+<span id="cb63-56"><a href="#cb63-56" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>There are other ways to do this, so you don&#39;t *need* to use this code</span>
+<span id="cb63-57"><a href="#cb63-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-60"><a href="#cb63-60" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb63-61"><a href="#cb63-61" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Stat2Data)</span>
+<span id="cb63-62"><a href="#cb63-62" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(Pulse)</span>
+<span id="cb63-63"><a href="#cb63-63" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb63-64"><a href="#cb63-64" aria-hidden="true" tabindex="-1"></a>Pulse_smoke <span class="ot">&lt;-</span> Pulse <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Smoke <span class="sc">==</span> <span class="dv">1</span>)</span>
+<span id="cb63-65"><a href="#cb63-65" aria-hidden="true" tabindex="-1"></a>Pulse_nosmoke <span class="ot">&lt;-</span> Pulse <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Smoke <span class="sc">==</span> <span class="dv">0</span>)</span>
+<span id="cb63-66"><a href="#cb63-66" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(Pulse_smoke)</span>
+<span id="cb63-67"><a href="#cb63-67" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(Pulse_nosmoke)</span>
+<span id="cb63-68"><a href="#cb63-68" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb63-69"><a href="#cb63-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-70"><a href="#cb63-70" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Use <span class="in">`alternative = &quot;greater&quot;`</span> if $H_1$: $\mu_1 &gt; \mu_2$</span>
+<span id="cb63-71"><a href="#cb63-71" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Use <span class="in">`alternative = &quot;less&quot;`</span> if $H_1$: $\mu_1 &lt; \mu_2$</span>
+<span id="cb63-72"><a href="#cb63-72" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Where $\mu_1$ is the mean for the first-entered group (<span class="in">`x`</span>)</span>
+<span id="cb63-73"><a href="#cb63-73" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>The order you enter them (<span class="in">`x`</span> vs <span class="in">`y`</span>) doesn&#39;t matter, **just make sure you set up the directional hypothesis accordingly**</span>
+<span id="cb63-74"><a href="#cb63-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-75"><a href="#cb63-75" aria-hidden="true" tabindex="-1"></a><span class="fu">### Active pulse rate</span></span>
+<span id="cb63-76"><a href="#cb63-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-79"><a href="#cb63-79" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb63-80"><a href="#cb63-80" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(Pulse_smoke<span class="sc">$</span>Active)</span>
+<span id="cb63-81"><a href="#cb63-81" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(Pulse_nosmoke<span class="sc">$</span>Active)</span>
+<span id="cb63-82"><a href="#cb63-82" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(Pulse_smoke<span class="sc">$</span>Active)</span>
+<span id="cb63-83"><a href="#cb63-83" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(Pulse_nosmoke<span class="sc">$</span>Active)</span>
+<span id="cb63-84"><a href="#cb63-84" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> Pulse_nosmoke, </span>
+<span id="cb63-85"><a href="#cb63-85" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Active)) <span class="sc">+</span></span>
+<span id="cb63-86"><a href="#cb63-86" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill =</span> <span class="st">&quot;red&quot;</span>, </span>
+<span id="cb63-87"><a href="#cb63-87" aria-hidden="true" tabindex="-1"></a>                 <span class="at">alpha =</span> <span class="fl">0.5</span>, </span>
+<span id="cb63-88"><a href="#cb63-88" aria-hidden="true" tabindex="-1"></a>                 <span class="at">bins =</span> <span class="dv">30</span>) <span class="sc">+</span></span>
+<span id="cb63-89"><a href="#cb63-89" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">data =</span> Pulse_smoke, </span>
+<span id="cb63-90"><a href="#cb63-90" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">aes</span>(<span class="at">x =</span> Active), </span>
+<span id="cb63-91"><a href="#cb63-91" aria-hidden="true" tabindex="-1"></a>                 <span class="at">fill =</span> <span class="st">&quot;black&quot;</span>, </span>
+<span id="cb63-92"><a href="#cb63-92" aria-hidden="true" tabindex="-1"></a>                 <span class="at">bins =</span> <span class="dv">30</span>)</span>
+<span id="cb63-93"><a href="#cb63-93" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb63-94"><a href="#cb63-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-95"><a href="#cb63-95" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Is active pulse rate **higher** among smokers than non-smokers?</span>
+<span id="cb63-96"><a href="#cb63-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-99"><a href="#cb63-99" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb63-100"><a href="#cb63-100" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(BSDA)</span>
+<span id="cb63-101"><a href="#cb63-101" aria-hidden="true" tabindex="-1"></a>ztest1 <span class="ot">&lt;-</span> <span class="fu">z.test</span>(<span class="at">x =</span> Pulse_smoke<span class="sc">$</span>Active, </span>
+<span id="cb63-102"><a href="#cb63-102" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> Pulse_nosmoke<span class="sc">$</span>Active, </span>
+<span id="cb63-103"><a href="#cb63-103" aria-hidden="true" tabindex="-1"></a>                <span class="at">sigma.x =</span> <span class="fu">sd</span>(Pulse_smoke<span class="sc">$</span>Active), </span>
+<span id="cb63-104"><a href="#cb63-104" aria-hidden="true" tabindex="-1"></a>                <span class="at">sigma.y =</span> <span class="fu">sd</span>(Pulse_nosmoke<span class="sc">$</span>Active), </span>
+<span id="cb63-105"><a href="#cb63-105" aria-hidden="true" tabindex="-1"></a>                <span class="at">alternative =</span> <span class="st">&quot;greater&quot;</span>)</span>
+<span id="cb63-106"><a href="#cb63-106" aria-hidden="true" tabindex="-1"></a>ztest1</span>
+<span id="cb63-107"><a href="#cb63-107" aria-hidden="true" tabindex="-1"></a>ttest1 <span class="ot">&lt;-</span> <span class="fu">t.test</span>(<span class="at">x =</span> Pulse_smoke<span class="sc">$</span>Active, </span>
+<span id="cb63-108"><a href="#cb63-108" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> Pulse_nosmoke<span class="sc">$</span>Active, </span>
+<span id="cb63-109"><a href="#cb63-109" aria-hidden="true" tabindex="-1"></a>                <span class="at">alternative =</span> <span class="st">&quot;greater&quot;</span>,</span>
+<span id="cb63-110"><a href="#cb63-110" aria-hidden="true" tabindex="-1"></a>                <span class="at">var.equal =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb63-111"><a href="#cb63-111" aria-hidden="true" tabindex="-1"></a>ttest1</span>
+<span id="cb63-112"><a href="#cb63-112" aria-hidden="true" tabindex="-1"></a>ttest1b <span class="ot">&lt;-</span> <span class="fu">t.test</span>(<span class="at">x =</span> Pulse_smoke<span class="sc">$</span>Active, </span>
+<span id="cb63-113"><a href="#cb63-113" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> Pulse_nosmoke<span class="sc">$</span>Active, </span>
+<span id="cb63-114"><a href="#cb63-114" aria-hidden="true" tabindex="-1"></a>                <span class="at">alternative =</span> <span class="st">&quot;greater&quot;</span>,</span>
+<span id="cb63-115"><a href="#cb63-115" aria-hidden="true" tabindex="-1"></a>                <span class="at">var.equal =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb63-116"><a href="#cb63-116" aria-hidden="true" tabindex="-1"></a>ttest1b</span>
+<span id="cb63-117"><a href="#cb63-117" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb63-118"><a href="#cb63-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-119"><a href="#cb63-119" aria-hidden="true" tabindex="-1"></a><span class="fu">### Weight</span></span>
+<span id="cb63-120"><a href="#cb63-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-123"><a href="#cb63-123" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb63-124"><a href="#cb63-124" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(Pulse_smoke<span class="sc">$</span>Wgt)</span>
+<span id="cb63-125"><a href="#cb63-125" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(Pulse_nosmoke<span class="sc">$</span>Wgt)</span>
+<span id="cb63-126"><a href="#cb63-126" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(Pulse_smoke<span class="sc">$</span>Wgt)</span>
+<span id="cb63-127"><a href="#cb63-127" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(Pulse_nosmoke<span class="sc">$</span>Wgt)</span>
+<span id="cb63-128"><a href="#cb63-128" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> Pulse_nosmoke, </span>
+<span id="cb63-129"><a href="#cb63-129" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Wgt)) <span class="sc">+</span></span>
+<span id="cb63-130"><a href="#cb63-130" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill =</span> <span class="st">&quot;red&quot;</span>, </span>
+<span id="cb63-131"><a href="#cb63-131" aria-hidden="true" tabindex="-1"></a>                 <span class="at">alpha =</span> <span class="fl">0.5</span>, </span>
+<span id="cb63-132"><a href="#cb63-132" aria-hidden="true" tabindex="-1"></a>                 <span class="at">bins =</span> <span class="dv">30</span>) <span class="sc">+</span></span>
+<span id="cb63-133"><a href="#cb63-133" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">data =</span> Pulse_smoke, </span>
+<span id="cb63-134"><a href="#cb63-134" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">aes</span>(<span class="at">x =</span> Wgt), </span>
+<span id="cb63-135"><a href="#cb63-135" aria-hidden="true" tabindex="-1"></a>                 <span class="at">fill =</span> <span class="st">&quot;black&quot;</span>, </span>
+<span id="cb63-136"><a href="#cb63-136" aria-hidden="true" tabindex="-1"></a>                 <span class="at">bins =</span> <span class="dv">30</span>)</span>
+<span id="cb63-137"><a href="#cb63-137" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb63-138"><a href="#cb63-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-139"><a href="#cb63-139" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Do smokers weight **less than** non-smokers?</span>
+<span id="cb63-140"><a href="#cb63-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-143"><a href="#cb63-143" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb63-144"><a href="#cb63-144" aria-hidden="true" tabindex="-1"></a>ztest2 <span class="ot">&lt;-</span> <span class="fu">z.test</span>(<span class="at">x =</span> Pulse_smoke<span class="sc">$</span>Wgt, </span>
+<span id="cb63-145"><a href="#cb63-145" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> Pulse_nosmoke<span class="sc">$</span>Wgt, </span>
+<span id="cb63-146"><a href="#cb63-146" aria-hidden="true" tabindex="-1"></a>                <span class="at">sigma.x =</span> <span class="fu">sd</span>(Pulse_smoke<span class="sc">$</span>Wgt), </span>
+<span id="cb63-147"><a href="#cb63-147" aria-hidden="true" tabindex="-1"></a>                <span class="at">sigma.y =</span> <span class="fu">sd</span>(Pulse_nosmoke<span class="sc">$</span>Wgt), </span>
+<span id="cb63-148"><a href="#cb63-148" aria-hidden="true" tabindex="-1"></a>                <span class="at">alternative =</span> <span class="st">&quot;less&quot;</span>)</span>
+<span id="cb63-149"><a href="#cb63-149" aria-hidden="true" tabindex="-1"></a>ztest2</span>
+<span id="cb63-150"><a href="#cb63-150" aria-hidden="true" tabindex="-1"></a>ttest2 <span class="ot">&lt;-</span> <span class="fu">t.test</span>(<span class="at">x =</span> Pulse_smoke<span class="sc">$</span>Wgt, </span>
+<span id="cb63-151"><a href="#cb63-151" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> Pulse_nosmoke<span class="sc">$</span>Wgt, </span>
+<span id="cb63-152"><a href="#cb63-152" aria-hidden="true" tabindex="-1"></a>                <span class="at">alternative =</span> <span class="st">&quot;less&quot;</span>,</span>
+<span id="cb63-153"><a href="#cb63-153" aria-hidden="true" tabindex="-1"></a>                <span class="at">var.equal =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb63-154"><a href="#cb63-154" aria-hidden="true" tabindex="-1"></a>ttest2</span>
+<span id="cb63-155"><a href="#cb63-155" aria-hidden="true" tabindex="-1"></a>ttest2b <span class="ot">&lt;-</span> <span class="fu">t.test</span>(<span class="at">x =</span> Pulse_smoke<span class="sc">$</span>Wgt, </span>
+<span id="cb63-156"><a href="#cb63-156" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> Pulse_nosmoke<span class="sc">$</span>Wgt, </span>
+<span id="cb63-157"><a href="#cb63-157" aria-hidden="true" tabindex="-1"></a>                <span class="at">alternative =</span> <span class="st">&quot;less&quot;</span>,</span>
+<span id="cb63-158"><a href="#cb63-158" aria-hidden="true" tabindex="-1"></a>                <span class="at">var.equal =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb63-159"><a href="#cb63-159" aria-hidden="true" tabindex="-1"></a>ttest2b</span>
+<span id="cb63-160"><a href="#cb63-160" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb63-161"><a href="#cb63-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-162"><a href="#cb63-162" aria-hidden="true" tabindex="-1"></a><span class="fu">### Exercise</span></span>
+<span id="cb63-163"><a href="#cb63-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-166"><a href="#cb63-166" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb63-167"><a href="#cb63-167" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(Pulse_smoke<span class="sc">$</span>Exercise)</span>
+<span id="cb63-168"><a href="#cb63-168" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(Pulse_nosmoke<span class="sc">$</span>Exercise)</span>
+<span id="cb63-169"><a href="#cb63-169" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(Pulse_smoke<span class="sc">$</span>Exercise)</span>
+<span id="cb63-170"><a href="#cb63-170" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(Pulse_nosmoke<span class="sc">$</span>Exercise)</span>
+<span id="cb63-171"><a href="#cb63-171" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> Pulse_nosmoke, </span>
+<span id="cb63-172"><a href="#cb63-172" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> Exercise)) <span class="sc">+</span></span>
+<span id="cb63-173"><a href="#cb63-173" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill =</span> <span class="st">&quot;red&quot;</span>, </span>
+<span id="cb63-174"><a href="#cb63-174" aria-hidden="true" tabindex="-1"></a>                 <span class="at">alpha =</span> <span class="fl">0.5</span>, </span>
+<span id="cb63-175"><a href="#cb63-175" aria-hidden="true" tabindex="-1"></a>                 <span class="at">bins =</span> <span class="dv">30</span>) <span class="sc">+</span></span>
+<span id="cb63-176"><a href="#cb63-176" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">data =</span> Pulse_smoke, </span>
+<span id="cb63-177"><a href="#cb63-177" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">aes</span>(<span class="at">x =</span> Exercise), </span>
+<span id="cb63-178"><a href="#cb63-178" aria-hidden="true" tabindex="-1"></a>                 <span class="at">fill =</span> <span class="st">&quot;black&quot;</span>, </span>
+<span id="cb63-179"><a href="#cb63-179" aria-hidden="true" tabindex="-1"></a>                 <span class="at">bins =</span> <span class="dv">30</span>)</span>
+<span id="cb63-180"><a href="#cb63-180" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb63-181"><a href="#cb63-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-182"><a href="#cb63-182" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Do smokers and non-smokers exercise the **same** amount?</span>
+<span id="cb63-183"><a href="#cb63-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-186"><a href="#cb63-186" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb63-187"><a href="#cb63-187" aria-hidden="true" tabindex="-1"></a>ztest3 <span class="ot">&lt;-</span> <span class="fu">z.test</span>(<span class="at">x =</span> Pulse_smoke<span class="sc">$</span>Exercise, </span>
+<span id="cb63-188"><a href="#cb63-188" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> Pulse_nosmoke<span class="sc">$</span>Exercise, </span>
+<span id="cb63-189"><a href="#cb63-189" aria-hidden="true" tabindex="-1"></a>                <span class="at">sigma.x =</span> <span class="fu">sd</span>(Pulse_smoke<span class="sc">$</span>Exercise), </span>
+<span id="cb63-190"><a href="#cb63-190" aria-hidden="true" tabindex="-1"></a>                <span class="at">sigma.y =</span> <span class="fu">sd</span>(Pulse_nosmoke<span class="sc">$</span>Exercise), </span>
+<span id="cb63-191"><a href="#cb63-191" aria-hidden="true" tabindex="-1"></a>                <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>)</span>
+<span id="cb63-192"><a href="#cb63-192" aria-hidden="true" tabindex="-1"></a>ztest3</span>
+<span id="cb63-193"><a href="#cb63-193" aria-hidden="true" tabindex="-1"></a>ttest3 <span class="ot">&lt;-</span> <span class="fu">t.test</span>(<span class="at">x =</span> Pulse_smoke<span class="sc">$</span>Exercise, </span>
+<span id="cb63-194"><a href="#cb63-194" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> Pulse_nosmoke<span class="sc">$</span>Exercise, </span>
+<span id="cb63-195"><a href="#cb63-195" aria-hidden="true" tabindex="-1"></a>                <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>,</span>
+<span id="cb63-196"><a href="#cb63-196" aria-hidden="true" tabindex="-1"></a>                <span class="at">var.equal =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb63-197"><a href="#cb63-197" aria-hidden="true" tabindex="-1"></a>ttest3</span>
+<span id="cb63-198"><a href="#cb63-198" aria-hidden="true" tabindex="-1"></a>ttest3b <span class="ot">&lt;-</span> <span class="fu">t.test</span>(<span class="at">x =</span> Pulse_smoke<span class="sc">$</span>Exercise, </span>
+<span id="cb63-199"><a href="#cb63-199" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> Pulse_nosmoke<span class="sc">$</span>Exercise, </span>
+<span id="cb63-200"><a href="#cb63-200" aria-hidden="true" tabindex="-1"></a>                <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span>,</span>
+<span id="cb63-201"><a href="#cb63-201" aria-hidden="true" tabindex="-1"></a>                <span class="at">var.equal =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb63-202"><a href="#cb63-202" aria-hidden="true" tabindex="-1"></a>ttest3b</span>
+<span id="cb63-203"><a href="#cb63-203" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb63-204"><a href="#cb63-204" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb63-207"><a href="#cb63-207" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb63-208"><a href="#cb63-208" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(coin)</span>
+<span id="cb63-209"><a href="#cb63-209" aria-hidden="true" tabindex="-1"></a><span class="fu">median_test</span>(Exercise <span class="sc">~</span> <span class="fu">as.factor</span>(Smoke), <span class="at">data =</span> Pulse)</span>
+<span id="cb63-210"><a href="#cb63-210" aria-hidden="true" tabindex="-1"></a><span class="fu">wilcox.test</span>(Exercise <span class="sc">~</span> <span class="fu">as.factor</span>(Smoke), <span class="at">data =</span> Pulse)</span>
+<span id="cb63-211"><a href="#cb63-211" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

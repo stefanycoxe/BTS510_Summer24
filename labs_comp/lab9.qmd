@@ -1,0 +1,194 @@
+---
+title: "BTS 510 Lab 9"
+format:
+  html:
+    embed-resources: true
+    self-contained-math: true
+    html-math-method: katex
+    number-sections: true
+    toc: true
+    code-tools: true
+    code-block-bg: true
+    code-block-border-left: "#31BAE9"
+---
+
+```{r}
+#| label: setup
+library(tidyverse)
+set.seed(12345)
+theme_set(theme_classic(base_size = 16))
+```
+
+## Learning objectives
+
+* *Interpret* tests comparing **two unrelated samples**
+* *Summarize data* using **contingency tables**
+* *Describe* different study designs for **contingency tables** 
+
+## Data 
+
+* `Pulse` dataset from the **Stat2Data** package
+    * A dataset with $n$ = 232 observations on the following 7 variables.
+        * `Active`: Pulse rate (beats per minute) after exercise
+        * `Rest`: Resting pulse rate (beats per minute)
+        * `Smoke`: 1=smoker or 0=nonsmoker
+        * `Sex`: 1=female or 0=male
+        * `Exercise`: Typical hours of exercise (per week)
+        * `Hgt`: Height (in inches)
+        * `Wgt`: Weight (in pounds)
+
+## Tasks
+
+* Make plots of variables as needed (e.g., to assess assumptions)
+* Conduct a $z$-test, $t$-test, and Welch's $t$-test
+  * What is/are your conclusion(s) based on the tests?
+  * Are the assumptions met?
+    * e.g., large enough sample to justify $z$ test using sample variance
+    * e.g., equal variances in both groups
+  * Which test seems the best choice? (Don't make this decision based on what is significant -- here or elsewhere)
+    * Do you think a non-parametric test might be a good option?
+
+### Some useful code
+
+* To split the dataset into `Smoke` = 0 and `Smoke` = 1
+  * There are other ways to do this, so you don't *need* to use this code
+
+```{r}
+library(Stat2Data)
+data(Pulse)
+library(tidyverse)
+Pulse_smoke <- Pulse %>% filter(Smoke == 1)
+Pulse_nosmoke <- Pulse %>% filter(Smoke == 0)
+head(Pulse_smoke)
+head(Pulse_nosmoke)
+```
+
+* Use `alternative = "greater"` if $H_1$: $\mu_1 > \mu_2$
+  * Use `alternative = "less"` if $H_1$: $\mu_1 < \mu_2$
+  * Where $\mu_1$ is the mean for the first-entered group (`x`)
+  * The order you enter them (`x` vs `y`) doesn't matter, **just make sure you set up the directional hypothesis accordingly**
+
+### Active pulse rate
+
+```{r}
+mean(Pulse_smoke$Active)
+mean(Pulse_nosmoke$Active)
+var(Pulse_smoke$Active)
+var(Pulse_nosmoke$Active)
+ggplot(data = Pulse_nosmoke, 
+       aes(x = Active)) +
+  geom_histogram(fill = "red", 
+                 alpha = 0.5, 
+                 bins = 30) +
+  geom_histogram(data = Pulse_smoke, 
+                 aes(x = Active), 
+                 fill = "black", 
+                 bins = 30)
+```
+
+* Is active pulse rate **higher** among smokers than non-smokers?
+
+```{r}
+library(BSDA)
+ztest1 <- z.test(x = Pulse_smoke$Active, 
+                y = Pulse_nosmoke$Active, 
+                sigma.x = sd(Pulse_smoke$Active), 
+                sigma.y = sd(Pulse_nosmoke$Active), 
+                alternative = "greater")
+ztest1
+ttest1 <- t.test(x = Pulse_smoke$Active, 
+                y = Pulse_nosmoke$Active, 
+                alternative = "greater",
+                var.equal = TRUE)
+ttest1
+ttest1b <- t.test(x = Pulse_smoke$Active, 
+                y = Pulse_nosmoke$Active, 
+                alternative = "greater",
+                var.equal = FALSE)
+ttest1b
+```
+
+### Weight
+
+```{r}
+mean(Pulse_smoke$Wgt)
+mean(Pulse_nosmoke$Wgt)
+var(Pulse_smoke$Wgt)
+var(Pulse_nosmoke$Wgt)
+ggplot(data = Pulse_nosmoke, 
+       aes(x = Wgt)) +
+  geom_histogram(fill = "red", 
+                 alpha = 0.5, 
+                 bins = 30) +
+  geom_histogram(data = Pulse_smoke, 
+                 aes(x = Wgt), 
+                 fill = "black", 
+                 bins = 30)
+```
+
+* Do smokers weight **less than** non-smokers?
+
+```{r}
+ztest2 <- z.test(x = Pulse_smoke$Wgt, 
+                y = Pulse_nosmoke$Wgt, 
+                sigma.x = sd(Pulse_smoke$Wgt), 
+                sigma.y = sd(Pulse_nosmoke$Wgt), 
+                alternative = "less")
+ztest2
+ttest2 <- t.test(x = Pulse_smoke$Wgt, 
+                y = Pulse_nosmoke$Wgt, 
+                alternative = "less",
+                var.equal = TRUE)
+ttest2
+ttest2b <- t.test(x = Pulse_smoke$Wgt, 
+                y = Pulse_nosmoke$Wgt, 
+                alternative = "less",
+                var.equal = FALSE)
+ttest2b
+```
+
+### Exercise
+
+```{r}
+mean(Pulse_smoke$Exercise)
+mean(Pulse_nosmoke$Exercise)
+var(Pulse_smoke$Exercise)
+var(Pulse_nosmoke$Exercise)
+ggplot(data = Pulse_nosmoke, 
+       aes(x = Exercise)) +
+  geom_histogram(fill = "red", 
+                 alpha = 0.5, 
+                 bins = 30) +
+  geom_histogram(data = Pulse_smoke, 
+                 aes(x = Exercise), 
+                 fill = "black", 
+                 bins = 30)
+```
+
+* Do smokers and non-smokers exercise the **same** amount?
+
+```{r}
+ztest3 <- z.test(x = Pulse_smoke$Exercise, 
+                y = Pulse_nosmoke$Exercise, 
+                sigma.x = sd(Pulse_smoke$Exercise), 
+                sigma.y = sd(Pulse_nosmoke$Exercise), 
+                alternative = "two.sided")
+ztest3
+ttest3 <- t.test(x = Pulse_smoke$Exercise, 
+                y = Pulse_nosmoke$Exercise, 
+                alternative = "two.sided",
+                var.equal = TRUE)
+ttest3
+ttest3b <- t.test(x = Pulse_smoke$Exercise, 
+                y = Pulse_nosmoke$Exercise, 
+                alternative = "two.sided",
+                var.equal = FALSE)
+ttest3b
+```
+
+```{r}
+library(coin)
+median_test(Exercise ~ as.factor(Smoke), data = Pulse)
+wilcox.test(Exercise ~ as.factor(Smoke), data = Pulse)
+```
+

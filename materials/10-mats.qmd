@@ -1,0 +1,23 @@
+---
+title: "Week 10: Hypothesis testing"
+---
+
+## Learning objectives
+
+* *Select* a test for a contingency table based on the **research question** and the **study design**
+* *Interpret* tests comparing **two related samples**
+
+
+## Before class: Lecture 
+
+* [Lecture 10](https://youtu.be/kMkbeZu3i1s){target="_blank"} 
+* [Lecture survey](https://forms.gle/RKBZVF99VTrXkyHAA){target="_blank"}: Complete by Wednesday, July 18 at 8pm
+* [Slides (html)](../slides/BTS510-24-10.qmd){target="_blank"}
+    
+## During class: Lab
+
+* [Lab 10 (html with link to code)](../lab/BTS510-24-lab10.qmd){target="_blank"}
+
+## After class: Assignment
+
+* [Homework 4](../assignments/hw4.qmd){target="_blank"}

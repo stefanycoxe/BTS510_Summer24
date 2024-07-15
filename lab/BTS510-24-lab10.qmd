@@ -1,0 +1,203 @@
+---
+title: "BTS 510 Lab 10"
+format:
+  html:
+    embed-resources: true
+    self-contained-math: true
+    html-math-method: katex
+    number-sections: true
+    toc: true
+    code-tools: true
+    code-block-bg: true
+    code-block-border-left: "#31BAE9"
+---
+
+```{r}
+#| label: setup
+library(tidyverse)
+set.seed(12345)
+theme_set(theme_classic(base_size = 16))
+```
+
+## Learning objectives
+
+* *Select* an appropriate test for a **contingency table**, taking **study design** into consideration
+* *Interpret* tests comparing **two related samples**
+
+## Data
+
+* `MedGPA` dataset from the **Stat2Data** package
+    * A dataset with $n$ = 55 observations on the following 11 variables
+      * `Accept`: A=accepted to medical school or D=denied admission
+      * `Acceptance`: Indicator for Accept: 1=accepted or 0=denied
+      * `Sex`: F=female or M=male
+      * `BCPM`: Bio/Chem/Physics/Math grade point average
+      * `GPA`: College grade point average
+      * `VR`: Verbal reasoning (subscore)
+      * `PS`: Physical sciences (subscore)
+      * `WS`: Writing sample (subcore)
+      * `BS`: Biological sciences (subscore)
+      * `MCAT`: Score on the MCAT exam (sum of CR+PS+WS+BS)
+      * `Apps`: Number of medical schools applied to
+
+```{r}
+library(Stat2Data)
+data("MedGPA")
+```
+
+## Contingency tables
+
+* `table()` function
+  * Row variable first, then column variable
+  * Use `rownames()` and `colnames()` to add appropriate labels for each
+    * Instead of default 0 and 1, which we don't know what they are
+  * Add marginal frequencies with `addmargins()`
+
+```{r}
+accept_sex <- table(MedGPA$Sex, MedGPA$Accept)
+colnames(accept_sex) <- c("Accepted", "Denied")
+rownames(accept_sex) <- c("Female", "Male")
+accept_sex_margins <- addmargins(accept_sex)
+accept_sex_margins
+```
+
+### Difference in proportions
+
+* Assume prospective design (which this isn't)
+* `prop.test()` function from **stats** package
+  * Proportion = `x` out of `n`
+    * Choose data accordingly
+    * Use **column 1** which is the "Accepted" category to model probability of being accepted
+  * `correct = TRUE` for continuity correction
+    * Especially with smaller samples
+
+```{r}
+prop.test(x = accept_sex[,1], 
+          n = accept_sex_margins[c(1,2),3],
+          alternative = "two.sided",
+          conf.level = 0.95,
+          correct = TRUE)
+```
+
+### Relative risk
+
+* Assume prospective design (which this isn't)
+* `riskratio.wald()` function from **epitools** package
+  * Rows in table are assumed to be exposure / predictor
+    * i.e., the **fixed margins**
+  * First row is **reference group**  
+    * Relative risk = 2nd row group / 1st row group
+  * Second column is **event**
+    * Model the probability of the event
+  * Use `rev =` to switch rows and or columns
+    * Options: `"rows"`, `"columns"`, `"both"`, `"neither"` (default)
+
+```{r}
+library(epitools)
+riskratio.wald(accept_sex,
+               rev = "both",
+               correction = TRUE)
+```
+
+* Note that `rev = "both"` results in the proportion of `"Accepted"` for females compared to males
+  * Females' probability of acceptance is `r round(riskratio.wald(accept_sex, rev = "both", correction = TRUE)$measure[2,1], 3)` times that of males' probability of acceptance
+
+### Odds ratio
+
+* No assumptions about design
+* `oddsratio.wald()` function from **epitools** package
+  * Rows in table are assumed to be exposure / predictor
+    * Not necessarily fixed
+  * First row is **reference group**  
+    * Odds ratio = 2nd row group / 1st row group
+  * Second column is **event**
+    * Model the probability of the event
+  * Use `rev =` to switch rows and or columns
+    * Options: `"rows"`, `"columns"`, `"both"`, `"neither"` (default)
+
+```{r}
+library(epitools)
+accept_sex
+oddsratio.wald(accept_sex,
+               rev = "both",
+               correction = TRUE)
+```
+
+### Chi-square test of independence
+
+```{r}
+#| code-fold: true
+chisq.test(accept_sex, 
+           correct = TRUE)
+```
+
+### Compare results
+
+* What can we say about the relationship between `Sex` and `Accept`?
+  * In terms of proportions, relative risk, odds ratios, independence?
+  * Are all the tests telling a similar story?
+    * Why or why not?
+
+## Dependent samples tests
+
+* Are total GPA and Bio/Chem/Physics/Math (BCPM) GPA the same *for the same person*?
+
+### THE WRONG WAY!!!
+
+* Independent samples $t$-test
+  * Ignores that observations are from the same person
+  
+```{r}
+mean(MedGPA$GPA)
+mean(MedGPA$BCPM)
+t.test(x = MedGPA$GPA,
+       y = MedGPA$BCPM,
+       alternative = "two.sided",
+       mu = 0, 
+       conf.level = .95)
+```
+
+### Matched-pairs $t$-test
+
+```{r}
+mean(MedGPA$GPA)
+mean(MedGPA$BCPM)
+t.test(x = MedGPA$GPA,
+       y = MedGPA$BCPM,
+       paired = TRUE,
+       alternative = "two.sided",
+       mu = 0, 
+       conf.level = .95)
+```
+
+### Sign test
+
+```{r}
+library(BSDA)
+median(MedGPA$GPA)
+median(MedGPA$BCPM)
+SIGN.test(x = MedGPA$GPA,
+          y = MedGPA$BCPM,
+          mu = 0,
+          alternative = "two.sided",
+          conf.level = 0.95)
+```
+
+### Signed rank test
+
+```{r}
+median(MedGPA$GPA)
+median(MedGPA$BCPM)
+wilcox.test(x = MedGPA$GPA,
+            y = MedGPA$BCPM,
+            paired = TRUE,
+            mu = 0,
+            alternative = "two.sided",
+            conf.level = 0.95)
+```
+
+### Compare results
+
+* What can we say about individual differences between total GPA and BCPM GPA?
+  * Are all the tests telling a similar story?
+    * Why or why not?

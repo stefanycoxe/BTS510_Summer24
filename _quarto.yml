@@ -25,7 +25,7 @@ website:
           - materials/07-mats.qmd   
           - materials/08-mats.qmd 
           - materials/09-mats.qmd  
-          #- materials/10-mats.qmd  
+          - materials/10-mats.qmd  
           #- materials/11-mats.qmd   
           #- materials/12-mats.qmd 
           #- materials/13-mats.qmd 
@@ -38,7 +38,7 @@ website:
           - labs_comp/lab6.qmd   
           - labs_comp/lab7.qmd   
           - labs_comp/lab8.qmd 
-          #- labs_comp/lab9.qmd 
+          - labs_comp/lab9.qmd 
       - section: "Assignments"
         contents:
           - assignments/index.qmd    

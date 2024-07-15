@@ -1,0 +1,655 @@
+---
+title: "Introduction to Biostatistics"
+format:
+  # html: 
+  #   toc: true
+  #   toc-location: left
+  #   slide-level: 3
+  #   number-sections: true
+  #   toc-depth: 2
+  #   self-contained: true
+  #   #output-file: "Mult22-1-handout"
+  # pdf: 
+  #   toc: true
+  #   number-sections: true
+  #   #slide-level: 3
+  #   toc-depth: 2
+  #   shift-heading-level-by: 0
+  #   number-offset: [2]
+  revealjs:
+    toc: false
+    number-sections: true
+    #slide-level: 3
+    scrollable: true
+    embed-resources: true
+    slide-number: true
+    width: 1200
+knitr: 
+  opts_chunk:
+    echo: true
+    message: false
+    warning: false
+---
+
+```{r, include = FALSE, echo = FALSE, wanring = FALSE, message= FALSE}
+library(tidyverse)
+theme_set(theme_classic(base_size = 16))
+set.seed(12345)
+options(scipen= 100)
+```
+
+# Learning objectives
+
+## Learning objectives
+
+* *Select* an appropriate test for a **contingency table**, taking **study design** into consideration
+* *Interpret* tests comparing **two related samples**
+
+# Review: Contingency tables
+
+## Contingency tables
+
+* Cross-tabs, summary tables, 2x2 table
+  * Relationship between two (or more) categorical variables
+  * Each cell is a **frequency** for that combination
+* `Sex` and `Smoke` from the `Pulse` dataset
+
+```{r}
+#| code-fold: true
+library(Stat2Data)
+data(Pulse)
+smoke_sex <- table(Pulse$Sex, Pulse$Smoke)
+colnames(smoke_sex) <- c("Non-smoker", "Smoker")
+rownames(smoke_sex) <- c("Male", "Female")
+smoke_sex_margins <- addmargins(smoke_sex)
+smoke_sex_prop_margins <- addmargins(prop.table(smoke_sex))
+smoke_sex
+```
+
+## `Sex` and `Smoke`: Frequencies
+
+```{r}
+#| code-fold: true
+smoke_sex
+```
+
+## `Sex` and `Smoke`: Margins
+
+```{r}
+#| code-fold: true
+smoke_sex_margins
+```
+
+## `Sex` and `Smoke`: Marginal prob
+
+```{r}
+#| code-fold: true
+smoke_sex_prop_margins
+```
+
+## `Sex` and `Smoke`: Conditional prob
+
+```{r}
+#| code-fold: true
+prop.table(smoke_sex, margin = 1)
+```
+
+## Types of study designs
+
+* Cross-sectional
+  * Total marginal value fixed (i.e., total $n$)
+* Retrospective
+  * Outcome marginal values fixed (i.e., `Smoke`)
+* Prospective 
+  * Predictor marginal values fixed (i.e., `Sex`)
+
+## Measures of relationship
+
+* Difference in proportion (prospective design only)
+* Relative risk (prospective design only)
+* Odds ratio
+* (Chi-square) Test of independence 
+
+# Tests for contingency tables
+
+## Difference in proportion: Assumptions
+
+* $2 \times 2$ contingency table
+  * Only compare two groups
+  * Probability needs only 2 categories
+* Prospective design: $X$ marginals are *fixed*
+* "Large sample": Uses the normal distribution for CIs
+
+## Difference in proportion: Hypotheses
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+* Directional (one-tailed) tests
+  * $H_0$: $\pi_1 \le \pi_2$ 
+    * $H_1$: $\pi_1 > \pi_2$ 
+  * $H_0$: $\pi_1 \ge \pi_2$ 
+    * $H_1$: $\pi_1 < \pi_2$ 
+
+:::
+
+::: {.column width="50%"}
+
+* Non-directional (two-tailed) tests
+  * $H_0$: $\pi_1 = \pi_2$ 
+    * $H_1$: $\pi_1 \ne \pi_2$ 
+
+:::
+
+::::
+
+## Difference in proportion: Calculations
+
+* Difference: $p_1 - p_2$
+* Standard error (SE): $\sqrt{\frac{p_1(1-p_1)}{n_{1+}} + \frac{p_2(1-p_2)}{n_{2+}}}$
+* Observed $z$ statistic: $\frac{p_1 - p_2}{SE}$
+* Confidence interval for difference: $(p_1 - p_2) \pm z_{\alpha/2}(SE)$
+
+## Difference in proportion: Example
+
+* Is the proportion of smokers the same for males and females?
+* `prop.test()` function from **stats** package
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| code-fold: true
+smoke_sex
+smoke_sex_margins
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+#| code-fold: true
+prop.test(x = smoke_sex[,2], 
+          n = smoke_sex_margins[c(1,2),3],
+          alternative = "two.sided",
+          conf.level = 0.95,
+          correct = TRUE)
+p1 <- prop.test(x = smoke_sex[,2], 
+          n = smoke_sex_margins[c(1,2),3],
+          alternative = "two.sided",
+          conf.level = 0.95,
+          correct = TRUE)$estimate[1]
+p2 <- prop.test(x = smoke_sex[,2], 
+          n = smoke_sex_margins[c(1,2),3],
+          alternative = "two.sided",
+          conf.level = 0.95,
+          correct = TRUE)$estimate[2]
+```
+
+:::
+
+::::
+
+## Relative risk: Assumptions
+
+* $2 \times 2$ contingency table
+  * Only compare two groups
+  * Probability needs only 2 categories
+* Prospective design: $X$ marginals are *fixed*
+* "Large sample": Uses the normal distribution for CIs
+
+## Relative risk: Hypotheses
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+* Directional (one-tailed) tests
+  * $H_0$: $\frac{\pi_1}{\pi_2} \le 1$
+    * $H_1$: $\frac{\pi_1}{\pi_2} > 1$
+  * $H_0$: $\frac{\pi_1}{\pi_2} \ge 1$
+    * $H_1$: $\frac{\pi_1}{\pi_2} < 1$
+
+:::
+
+::: {.column width="50%"}
+
+* Non-directional (two-tailed) tests
+  * $H_0$: $\frac{\pi_1}{\pi_2} = 1$
+    * $H_1$: $\frac{\pi_1}{\pi_2} \ne 1$
+
+:::
+
+::::
+
+## Relative risk: Calculations
+
+* Relative risk: $\frac{p_1}{p_2}$
+* Standard error (SE) for $ln(RR)$: $\sqrt{\frac{1}{n_{11}} + \frac{1}{n_{21}} + \frac{1}{n_{1+}} + \frac{1}{n_{2+}}}$
+* Observed $z$ statistic: $\frac{p_1 / p_2}{SE}$
+* Confidence interval for $ln(RR)$: $ln\left(\frac{p_1}{p_2}\right) \pm z_{\alpha/2}(SE)$
+  * Exponentiate ($e^x$) to convert back to RR metric
+
+## Why transform?
+
+* **Ratios** (like relative risk) have **non-symmetric distributions**
+  * They range from 0 to $+\infty$
+  * "No effect" is 1: This is not in the middle
+* The natural log of relative risk **does** have a symmetric distribution
+  * Ranges from $-\infty$ to $+\infty$
+  * "No effect" is 0: Right in the middle
+* Have seen **symmetric** CIs
+  * Confidence interval for relative risk is **not symmetric** $\checkmark$
+
+## Relative risk: Example
+
+* Is the risk of smoking the same for males and females?
+* `riskratio.wald()` function from **epitools** package
+
+```{r}
+#| code-fold: true
+library(epitools)
+riskratio.wald(smoke_sex)
+```
+
+## Odds ratio: Assumptions
+
+* $2 \times 2$ contingency table
+  * Only compare two groups
+  * Probability needs only 2 categories
+* **Any study design**
+* "Large sample": Uses the normal distribution for CIs
+
+## Odds ratio: Hypotheses
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+* Directional (one-tailed) tests
+  * $H_0$: $\frac{\pi_1/(1-\pi_1)}{\pi_2/(1-\pi_2)} \le 1$
+    * $H_1$: $\frac{\pi_1/(1-\pi_1)}{\pi_2/(1-\pi_2)} > 1$
+  * $H_0$: $\frac{\pi_1/(1-\pi_1)}{\pi_2/(1-\pi_2)} \ge 1$
+    * $H_1$: $\frac{\pi_1/(1-\pi_1)}{\pi_2/(1-\pi_2)} < 1$
+
+:::
+
+::: {.column width="50%"}
+
+* Non-directional (two-tailed) tests
+  * $H_0$: $\frac{\pi_1/(1-\pi_1)}{\pi_2/(1-\pi_2)} = 1$
+    * $H_1$: $\frac{\pi_1/(1-\pi_1)}{\pi_2/(1-\pi_2)} \ne 1$
+
+:::
+
+::::
+
+## Odds ratio: Calculations
+
+* Odds ratio (OR): $\frac{p_1/(1-p_1)}{p_2/(1-p_2)}$
+* Standard error (SE) for $ln(OR)$: $\sqrt{\frac{1}{n_{11}} + \frac{1}{n_{12}} + \frac{1}{n_{21}} + \frac{1}{n_{22}}}$
+* Observed $z$ statistic: $\frac{OR}{SE}$
+* Confidence interval for $ln(OR)$: $ln(OR) \pm z_{\alpha/2}(SE)$
+  * Exponentiate ($e^x$) to convert back to OR metric
+
+## Odds ratio: Example
+
+* Is the odds of smoking the same for males and females?
+* `oddsratio.wald()` function from **epitools** package
+
+```{r}
+#| code-fold: true
+library(epitools)
+oddsratio.wald(smoke_sex)
+```
+
+## Compare RR and OR
+
+* Relative risk = `r round(riskratio.wald(smoke_sex)$measure[2],3)`
+* Odds ratio = `r round(oddsratio.wald(smoke_sex)$measure[2], 3)`
+
+$$odds~ratio = \frac{p_1/(1 - p_1)}{p_2/(1 - p_2)} = relative~risk \frac{(1 - p_1)}{(1 - p_2)} $$
+
+* When $p_1$ and $p_2$ are **both** close to 0 or **both** close to 1
+    * Odds ratio and relative risk are similar
+    * In this example, $p_1 = `r round(p1, 3)`$ and $p_2 = `r round(p2, 3)`$
+
+## Chi-square test: Assumptions
+
+* Categorical variables (nominal or ordinal)
+  * Can have more than 2 levels (but not covered here)
+* Cells are counts of observations in each combination
+* All *observed* frequencies > 5
+* All *expected* frequencies > 5
+
+## Chi-square test: Hypotheses
+
+* $H_0$: Variables are **independent**
+* $H_1$: Variables are **not independent**
+
+## Chi-square test: Expected values 1
+
+* Expected values under the **null hypothesis** (independence)
+* **Independence** is like *correlation* but **stronger**
+  * If variables are *independent* then *correlation = 0* 
+  * If variables are *independent* then *covariance = 0*
+
+## Chi-square test: Expected values 2
+
+* $\color{red}{Joint\ probability}$ is a fxn of $\color{blue}{marginal\ probs}$ and **covariance**
+  * $\color{red}{E(XY)} = \color{blue}{E(X)} * \color{blue}{E(Y)} - cov(XY)$
+* If $H_0$: Independence is true, then $cov(XY) = 0$
+  * $\color{red}{E(XY)} = \color{blue}{E(X)} * \color{blue}{E(Y)}$
+  * Joint frequencies depend **only** on their **marginal frequencies**
+
+## Chi-square test: Expected values 3
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+* Observed joint and marginal frequencies
+
+```{r}
+#| code-fold: true
+smoke_sex_margins
+```
+
+:::
+
+::: {.column width="50%"}
+
+* Expected joint frequencies: $\mu_{ij} = \frac{n_{i+}n_{+j}}{n}$ 
+
+```{r}
+#| code-fold: true
+expected(smoke_sex)
+```
+
+* Joint frequency for male non-smokers = $\frac{122*206}{232} = 108.328$
+
+:::
+
+::::
+
+
+## Chi-square test: Test statistic 1
+
+$$\chi^2 = \Sigma_{i = 1} ^N \frac{(O_i - E_i)^2}{E_i}$$
+
+* with $df = (\#\ rows - 1)*(\#\ columns - 1)$
+
+## Chi-square test: Test statistic 2
+
+* Yates' continuity correction
+  * Smooths discrete distribution closer to assumed continuous
+  * More accurate with small cell sizes
+  * Doesn't matter much with very large samples
+  
+$$\chi^2 = \Sigma_{i = 1} ^N \frac{(|O_i - E_i| - 0.5)^2}{E_i}$$  
+
+## Chi-square test: Example
+
+* Is the gender split the same for smokers and non-smokers?
+
+```{r}
+#| code-fold: true
+chisq.test(smoke_sex, correct = TRUE)
+```
+
+* Retain $H_0$: Variables are independent
+* Smoking and sex are independent, $\chi^2(1) = 1.389, p =.2386$
+  * Knowing someone's sex doesn't tell you whether they smoke
+
+## Fisher's exact test
+
+* "Alternative to $\chi^2$ for *small samples*: $\le$ 5 in a cell"
+  * **But that's not really correct**
+* Used when **all margins** are "fixed"
+  * Hypergeometric distribution
+* Origin: "Lady tasting tea"
+  * **Truth**: Milk first or tea first? 4 cups each
+  * **Guess**: Milk first or tea first? 4 cups each
+
+## Fisher's exact test
+
+&nbsp; | Tea first | Milk first | Total
+------|-----------|------------|-------
+Guess tea  | 3    | 1          | 4
+Guess milk | 1    | 3          | 4
+Total      | 4    | 4          | 8
+
+## Fisher's exact test
+
+* `fisher.test()` function in **stats** package
+
+```{r}
+#| code-fold: true
+TeaTasting <- matrix(c(3, 1, 1, 3),
+                     nrow = 2,
+                     dimnames = list(Guess = c("Milk", "Tea"),
+                                     Truth = c("Milk", "Tea")))
+fisher.test(TeaTasting, alternative = "greater")
+```
+
+# Two dependent sample tests
+
+## Dependent samples tests
+
+* Parametric tests
+  * ~~Matched pairs $z$-test~~
+  * Matched pairs (or paired) $t$-test
+* Non-parametric tests
+  * Sign test
+  * Wilcoxon signed-rank test
+  * McNemar's test (proportion)
+
+## Non-independence
+
+* Opposite of independence
+  * The two samples are made up of the **same** (or *related*) units
+* When does this happen?
+  * Most common: Pre-post designs, each unit in multiple conditions
+  * Also: Dyads, multiple reporters or sources
+
+## Matched pairs $t$-test: Assumptions
+
+* Data are **continuous** (i.e., ratio or interval)
+* Data are **randomly sampled** from the population
+* Data are **independent** *within* a group
+* Two matched or paired observations per unit
+* Distribution of the **difference** between two observations is **approximately normally distributed OR** sample size is large enough for **normally distributed sampling distribution**
+
+## Matched pairs $t$-test: Hypotheses
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+* Directional (one-tailed) tests
+  * $H_0$: $\mu_d \le 0$ 
+    * $H_1$: $\mu_d > 0$ 
+  * $H_0$: $\mu_d \ge 0$ 
+    * $H_1$: $\mu_d < 0$ 
+
+:::
+
+::: {.column width="50%"}
+
+* Non-directional (two-tailed) tests
+  * $H_0$: $\mu_d = 0$ 
+    * $H_1$: $\mu_d \ne 0$ 
+
+:::
+
+::::
+
+## Matched pairs $t$-test: Calculations
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| code-fold: true
+paired <- Pulse %>% 
+  select(c("Active", "Rest")) %>%
+  mutate(diff = Active - Rest)
+head(paired, n = 10)
+```
+
+:::
+
+::: {.column width="50%"}
+
+$$t = \frac{\bar{d} - 0}{\sigma_d/\sqrt{n}}$$
+
+* where $\sigma_d$ is the standard deviation of the differences
+* Degrees of freedom = $n - 1$ (where $n$ is the number of *pairs*)
+
+:::
+
+::::
+
+## Matched pairs $t$-test: Example 1
+
+* Is there is a *difference* between active and resting pulse rate in the *same person*?
+
+```{r}
+#| code-fold: true
+t.test(x = paired$Active,
+       y = paired$Rest,
+       paired = TRUE,
+       alternative = "two.sided",
+       mu = 0, 
+       conf.level = .95)
+```
+
+## Versus independent samples
+
+* **Two independent groups**: Resting pulse rate vs active pulse rate
+  * Research question: *Group* differences
+* Matched-pairs $t$-test 
+  * Research question: *Individual* differences
+    * Is the average difference **for a person** different from 0?
+  * Statistical: Use each person as their own "control"
+    * Reduces error variance
+
+## Extensions
+
+* Paired $t$-test is a **one-sample $t$-test** with $H_0: \mu_d = 0$ 
+* Can extend this to the equivalent of a **two-sample $t$-test**
+  * Is the difference between active and resting pulse rate **different** for smokers vs non-smokers?
+* Often done in ANOVA designs
+  * "Mixed ANOVA" or "between-within ANOVA"
+* Extends to *mixed models* (which are related but regression-based)
+
+## Sign test: Assumptions
+
+* Data are **at least ordinal** (ordinal, interval, or ratio)
+* Data are **randomly sampled** from the population
+* No assumptions about distribution of the data
+* No assumptions about sampling distribution of the median
+* Hypotheses are about **median differences** between two related groups
+
+## Sign test: Logic
+
+* Count how many pairs **increase** vs **decrease** 
+  * Null hypothesis: "No change" (equal numbers increase and decrease)
+* Compare to *binomial distribution* to determine probability of observed number of increases
+
+## Sign test: Example
+
+* `SIGN.test()` function in **BSDA** package
+  * But there are several functions in difference packages
+
+```{r}
+#| code-fold: true
+library(BSDA)
+SIGN.test(x = paired$Active,
+          y = paired$Rest,
+          mu = 0,
+          alternative = "two.sided",
+          conf.level = 0.95)
+```
+
+## Wilcoxon Signed rank test: Assumptions
+
+* Data are **at least interval** (interval or ratio)
+* Data are **randomly sampled** from the population
+* No assumptions about distribution of the data
+* No assumptions about sampling distribution of the median
+* Hypotheses are about **median differences** between two related groups
+
+## Signed rank test: Logic
+
+* Rank **absolute values** of all *differences*
+* Above hypothesized median (0): Assign "+" 
+* Below hypothesized median (0): Assign "-" 
+* Add positive ranks, add negative ranks
+* Compare to distribution under the null hypothesis
+  * i.e., sum of positive ranks = sum of negative ranks
+
+## Signed rank test: Example 
+
+* `wilcox.test()` function from **stats** package
+
+```{r}
+#| code-fold: true
+wilcox.test(x = paired$Active,
+            y = paired$Rest,
+            paired = TRUE,
+            mu = 0,
+            alternative = "two.sided",
+            conf.level = 0.95)
+```
+
+## McNemar's test
+
+* Test of paired proportions
+  * Proportion before vs proportion after
+
+| Design | | | | |
+|---|---|---|---|---|
+| | | Post | | |
+| | | Success | Failure | |
+| Pre | Success | a | b | a+b
+| | Failure | c | d | c+d
+| |         | a+c | b+d
+
+## McNemar's test
+
+```{r}
+#| code-fold: true
+paired_prop <- matrix(c(183, 55, 49, 13), nrow = 2, ncol = 2, byrow = TRUE)
+colnames(paired_prop) <- c("Post success", "Post failure")
+rownames(paired_prop) <- c("Pre success", "Pre failure")
+addmargins(paired_prop)
+```
+
+* `mcnemar.test()` function in **stats** package
+
+```{r}
+#| code-fold: true
+mcnemar.test(paired_prop)
+```
+
+# In-class activities
+
+## In-class activities
+
+* Create some contingency tables
+  * Perform some tests on them
+* Perform some paired tests
+
+## Next week
+
+* Multiple comparisons
+  * $\alpha$ is the type I error rate for a **single test**
+  * We often perform more than 1 test
+    * Sometimes a couple, sometimes 100s
+  * Each additional test increases $\alpha$
+    * How can we maintain the type I error rate with multiple tests?
