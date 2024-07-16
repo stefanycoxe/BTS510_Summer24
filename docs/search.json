@@ -2372,14 +2372,66 @@
     "href": "assignments/hw4.html",
     "title": "Homework 4",
     "section": "",
-    "text": "I’m not ready yet – please check back later"
+    "text": "Due Sunday, July 21 by end of day (midnight)\nComplete the assignment in a Quarto (.qmd) document and render it to HTML and PDF. Email all 3 files (.qmd, .html, .pdf) to Stefany, Yujie, and Michael. Be sure to look at your output files and check that they’ve rendered correctly.\nFor each question, fully report your statistical findings, as shown in the lecture. Include the name of the test, the test statistic, degrees of freedom (if applicable), \\(p\\)-value, statistical conclusion (retain or reject the null hypothesis), and research conclusion (what is the answer to the research question?).",
+    "crumbs": [
+      "Assignments",
+      "Homework 4"
+    ]
   },
   {
     "objectID": "assignments/hw4.html#hypothesis-testing",
     "href": "assignments/hw4.html#hypothesis-testing",
     "title": "Homework 4",
     "section": "",
-    "text": "I’m not ready yet – please check back later"
+    "text": "Due Sunday, July 21 by end of day (midnight)\nComplete the assignment in a Quarto (.qmd) document and render it to HTML and PDF. Email all 3 files (.qmd, .html, .pdf) to Stefany, Yujie, and Michael. Be sure to look at your output files and check that they’ve rendered correctly.\nFor each question, fully report your statistical findings, as shown in the lecture. Include the name of the test, the test statistic, degrees of freedom (if applicable), \\(p\\)-value, statistical conclusion (retain or reject the null hypothesis), and research conclusion (what is the answer to the research question?).",
+    "crumbs": [
+      "Assignments",
+      "Homework 4"
+    ]
+  },
+  {
+    "objectID": "assignments/hw4.html#data",
+    "href": "assignments/hw4.html#data",
+    "title": "Homework 4",
+    "section": "Data",
+    "text": "Data\n\nPulse dataset from the Stat2Data package\n\nA dataset with \\(n\\) = 232 observations on the following 7 variables\n\nActive: Pulse rate (beats per minute) after exercise\nRest: Resting pulse rate (beats per minute)\nSmoke: 1=smoker or 0=nonsmoker\nSex: 1=female or 0=male\nExercise: Typical hours of exercise (per week)\nHgt: Height (in inches)\nWgt: Weight (in pounds)",
+    "crumbs": [
+      "Assignments",
+      "Homework 4"
+    ]
+  },
+  {
+    "objectID": "assignments/hw4.html#one-sample-tests",
+    "href": "assignments/hw4.html#one-sample-tests",
+    "title": "Homework 4",
+    "section": "One sample tests",
+    "text": "One sample tests\n\nUsing an appropriate parametric test, is the gender split equal to 50/50?\n\nExplain why you selected the test that you did\n\nUsing an appropriate parametric test, is the mean resting pulse rate greater than 70?\n\nExplain why you selected the test that you did\n\nWould a non-parametric test be a better choice for either of these research questions?\n\nIf so, which one?\nWhy or why not?",
+    "crumbs": [
+      "Assignments",
+      "Homework 4"
+    ]
+  },
+  {
+    "objectID": "assignments/hw4.html#two-independent-sample-tests",
+    "href": "assignments/hw4.html#two-independent-sample-tests",
+    "title": "Homework 4",
+    "section": "Two independent sample tests",
+    "text": "Two independent sample tests\n\nUsing an appropriate parametric test, do men weigh more than women on average?\n\nExplain why you selected the test that you did\n\nUsing an appropriate parametric test, is the average resting pulse rate for smokers higher than that for non-smokers?\n\nExplain why you selected the test that you did\n\nUsing an appropriate parametric test, do men and women have the same active pulse rate on average?\n\nExplain why you selected the test that you did\n\nWould a non-parametric test be a better choice for any of these research questions?\n\nIf so, which one?\nWhy or why not?",
+    "crumbs": [
+      "Assignments",
+      "Homework 4"
+    ]
+  },
+  {
+    "objectID": "assignments/hw4.html#two-related-samples-tests",
+    "href": "assignments/hw4.html#two-related-samples-tests",
+    "title": "Homework 4",
+    "section": "Two related samples tests",
+    "text": "Two related samples tests\n\nUsing a parametric test, is a person’s active pulse rate higher than their resting pulse rate?\n\nExplain why you selected the test that you did",
+    "crumbs": [
+      "Assignments",
+      "Homework 4"
+    ]
   },
   {
     "objectID": "assignments/hw2.html",

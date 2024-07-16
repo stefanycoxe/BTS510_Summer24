@@ -4,4 +4,56 @@ title: "Homework 4"
 
 ## Hypothesis testing
 
-I'm not ready yet -- please check back later
+* **Due Sunday, July 21 by end of day (midnight)**
+
+* Complete the assignment in a Quarto (.qmd) document and render it to HTML and PDF. Email all 3 files (.qmd, .html, .pdf) to Stefany, Yujie, and Michael. **Be sure to look at your output files and check that they've rendered correctly.** 
+
+* **For each question, fully report your statistical findings, as shown in the lecture. Include the name of the test, the test statistic, degrees of freedom (if applicable), $p$-value, statistical conclusion (retain or reject the null hypothesis), and research conclusion (what is the answer to the research question?).**
+
+## Data
+
+* `Pulse` dataset from the **Stat2Data** package
+    * A dataset with $n$ = 232 observations on the following 7 variables
+        * `Active`: Pulse rate (beats per minute) after exercise
+        * `Rest`: Resting pulse rate (beats per minute)
+        * `Smoke`: 1=smoker or 0=nonsmoker
+        * `Sex`: 1=female or 0=male
+        * `Exercise`: Typical hours of exercise (per week)
+        * `Hgt`: Height (in inches)
+        * `Wgt`: Weight (in pounds)
+
+## One sample tests
+
+* Using *an appropriate parametric test*, is the gender split equal to 50/50?
+    * Explain why you selected the test that you did
+
+* Using *an appropriate parametric test*, is the mean resting pulse rate **greater** than 70?
+    * Explain why you selected the test that you did
+    
+* Would a *non-parametric test* be a **better** choice for either of these research questions?
+    * If so, which one?
+    * Why or why not? 
+
+## Two independent sample tests
+
+* Using *an appropriate parametric test*, do men weigh **more** than women on average?
+    * Explain why you selected the test that you did
+    
+* Using *an appropriate parametric test*, is the average resting pulse rate for smokers **higher** than that for non-smokers? 
+    * Explain why you selected the test that you did
+
+* Using *an appropriate parametric test*, do men and women have the **same** active pulse rate on average?
+    * Explain why you selected the test that you did
+
+* Would a *non-parametric test* be a **better** choice for any of these research questions?
+    * If so, which one?
+    * Why or why not? 
+
+## Two related samples tests
+
+* Using a *parametric test*, is a person's active pulse rate **higher** than their resting pulse rate?
+    * Explain why you selected the test that you did
+
+
+
+

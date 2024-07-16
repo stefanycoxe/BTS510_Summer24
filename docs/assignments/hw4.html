@@ -67,6 +67,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -80,9 +109,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
-      BTS 510 &lt;br&gt; Summer 2024
-      </li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../assignments/index.html">Assignments</a></li><li class="breadcrumb-item"><a href="../assignments/hw4.html">Homework 4</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -269,13 +296,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
  <span class="menu-text">Assignments</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../assignments/index.html" class="sidebar-item-text sidebar-link">
@@ -298,6 +325,12 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../assignments/hw3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Homework 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../assignments/hw4.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Homework 4</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -325,13 +358,17 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#hypothesis-testing" id="toc-hypothesis-testing" class="nav-link active" data-scroll-target="#hypothesis-testing">Hypothesis testing</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
+  <li><a href="#one-sample-tests" id="toc-one-sample-tests" class="nav-link" data-scroll-target="#one-sample-tests">One sample tests</a></li>
+  <li><a href="#two-independent-sample-tests" id="toc-two-independent-sample-tests" class="nav-link" data-scroll-target="#two-independent-sample-tests">Two independent sample tests</a></li>
+  <li><a href="#two-related-samples-tests" id="toc-two-related-samples-tests" class="nav-link" data-scroll-target="#two-related-samples-tests">Two related samples tests</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../assignments/index.html">Assignments</a></li><li class="breadcrumb-item"><a href="../assignments/hw4.html">Homework 4</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Homework 4</h1>
 </div>
@@ -352,7 +389,78 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="hypothesis-testing" class="level2">
 <h2 class="anchored" data-anchor-id="hypothesis-testing">Hypothesis testing</h2>
-<p>I’m not ready yet – please check back later</p>
+<ul>
+<li><p><strong>Due Sunday, July 21 by end of day (midnight)</strong></p></li>
+<li><p>Complete the assignment in a Quarto (.qmd) document and render it to HTML and PDF. Email all 3 files (.qmd, .html, .pdf) to Stefany, Yujie, and Michael. <strong>Be sure to look at your output files and check that they’ve rendered correctly.</strong></p></li>
+<li><p><strong>For each question, fully report your statistical findings, as shown in the lecture. Include the name of the test, the test statistic, degrees of freedom (if applicable), <span class="math inline">\(p\)</span>-value, statistical conclusion (retain or reject the null hypothesis), and research conclusion (what is the answer to the research question?).</strong></p></li>
+</ul>
+</section>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<ul>
+<li><code>Pulse</code> dataset from the <strong>Stat2Data</strong> package
+<ul>
+<li>A dataset with <span class="math inline">\(n\)</span> = 232 observations on the following 7 variables
+<ul>
+<li><code>Active</code>: Pulse rate (beats per minute) after exercise</li>
+<li><code>Rest</code>: Resting pulse rate (beats per minute)</li>
+<li><code>Smoke</code>: 1=smoker or 0=nonsmoker</li>
+<li><code>Sex</code>: 1=female or 0=male</li>
+<li><code>Exercise</code>: Typical hours of exercise (per week)</li>
+<li><code>Hgt</code>: Height (in inches)</li>
+<li><code>Wgt</code>: Weight (in pounds)</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="one-sample-tests" class="level2">
+<h2 class="anchored" data-anchor-id="one-sample-tests">One sample tests</h2>
+<ul>
+<li>Using <em>an appropriate parametric test</em>, is the gender split equal to 50/50?
+<ul>
+<li>Explain why you selected the test that you did</li>
+</ul></li>
+<li>Using <em>an appropriate parametric test</em>, is the mean resting pulse rate <strong>greater</strong> than 70?
+<ul>
+<li>Explain why you selected the test that you did</li>
+</ul></li>
+<li>Would a <em>non-parametric test</em> be a <strong>better</strong> choice for either of these research questions?
+<ul>
+<li>If so, which one?</li>
+<li>Why or why not?</li>
+</ul></li>
+</ul>
+</section>
+<section id="two-independent-sample-tests" class="level2">
+<h2 class="anchored" data-anchor-id="two-independent-sample-tests">Two independent sample tests</h2>
+<ul>
+<li>Using <em>an appropriate parametric test</em>, do men weigh <strong>more</strong> than women on average?
+<ul>
+<li>Explain why you selected the test that you did</li>
+</ul></li>
+<li>Using <em>an appropriate parametric test</em>, is the average resting pulse rate for smokers <strong>higher</strong> than that for non-smokers?
+<ul>
+<li>Explain why you selected the test that you did</li>
+</ul></li>
+<li>Using <em>an appropriate parametric test</em>, do men and women have the <strong>same</strong> active pulse rate on average?
+<ul>
+<li>Explain why you selected the test that you did</li>
+</ul></li>
+<li>Would a <em>non-parametric test</em> be a <strong>better</strong> choice for any of these research questions?
+<ul>
+<li>If so, which one?</li>
+<li>Why or why not?</li>
+</ul></li>
+</ul>
+</section>
+<section id="two-related-samples-tests" class="level2">
+<h2 class="anchored" data-anchor-id="two-related-samples-tests">Two related samples tests</h2>
+<ul>
+<li>Using a <em>parametric test</em>, is a person’s active pulse rate <strong>higher</strong> than their resting pulse rate?
+<ul>
+<li>Explain why you selected the test that you did</li>
+</ul></li>
+</ul>
 
 
 </section>
