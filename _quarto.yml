@@ -26,7 +26,7 @@ website:
           - materials/08-mats.qmd 
           - materials/09-mats.qmd  
           - materials/10-mats.qmd  
-          #- materials/11-mats.qmd   
+          - materials/11-mats.qmd   
           #- materials/12-mats.qmd 
           #- materials/13-mats.qmd 
       - section: "Complete labs"

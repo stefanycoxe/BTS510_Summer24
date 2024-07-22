@@ -1,0 +1,12 @@
+---
+title: "Homework 5"
+---
+
+## Multiple Comparisons
+
+* **Due Sunday, July 28 by end of day (midnight)**
+
+* Complete the assignment in a Quarto (.qmd) document and render it to HTML and PDF. Email all 3 files (.qmd, .html, .pdf) to Stefany, Yujie, and Michael. **Be sure to look at your output files and check that they've rendered correctly.** 
+
+## I'm not ready. Check back later.
+

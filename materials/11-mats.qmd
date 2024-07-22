@@ -1,0 +1,23 @@
+---
+title: "Week 11: Multiple comparisons"
+---
+
+## Learning objectives
+
+* **Describe** *family-wise error rate (FWER)* methods of *multiple comparison correction*
+* **Describe** *false discovery rate (FDR)* methods of *multiple comparison correction*
+* **Compare** and **contrast** the methods
+
+## Before class: Lecture 
+
+* [Lecture 11](https://youtu.be/bGzXj8K74L8){target="_blank"} 
+* [Lecture survey](https://forms.gle/v6o4wU8VPgRCLTiq7){target="_blank"}: Complete by Wednesday, July 25 at 8pm
+* [Slides (html)](../slides/BTS510-24-11.qmd){target="_blank"}
+    
+## During class: Lab
+
+* [Lab 11 (html with link to code)](../lab/BTS510-24-lab11.qmd){target="_blank"}
+
+## After class: Assignment
+
+* [Homework 5](../assignments/hw5.qmd){target="_blank"}

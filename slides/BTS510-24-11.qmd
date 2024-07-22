@@ -1,0 +1,670 @@
+---
+title: "Introduction to Biostatistics"
+format:
+  # html: 
+  #   toc: true
+  #   toc-location: left
+  #   slide-level: 3
+  #   number-sections: true
+  #   toc-depth: 2
+  #   self-contained: true
+  #   #output-file: "Mult22-1-handout"
+  # pdf: 
+  #   toc: true
+  #   number-sections: true
+  #   #slide-level: 3
+  #   toc-depth: 2
+  #   shift-heading-level-by: 0
+  #   number-offset: [2]
+  revealjs:
+    toc: false
+    number-sections: true
+    #slide-level: 3
+    scrollable: true
+    embed-resources: true
+    slide-number: true
+    width: 1200
+knitr: 
+  opts_chunk:
+    echo: true
+    message: false
+    warning: false
+---
+
+```{r, include = FALSE, echo = FALSE, wanring = FALSE, message= FALSE}
+library(tidyverse)
+theme_set(theme_classic(base_size = 16))
+set.seed(12345)
+options(scipen= 100)
+```
+
+# Learning objectives
+
+## Learning objectives
+
+* **Describe** *family-wise error rate (FWER)* methods of *multiple comparison correction*
+* **Describe** *false discovery rate (FDR)* methods of *multiple comparison correction*
+* **Compare** and **contrast** the methods
+
+# Multiple comparisons
+
+## Multiple comparisons
+
+* Multiple groups compared to control
+* Multiple time points
+* Multiple outcomes
+* Multiple tests across space
+* Subgroups
+* Stopping rules
+
+## How science "works" sometimes
+
+![](significant.png)
+
+[https://xkcd.com/882/](https://xkcd.com/882/)
+
+## How science "works" sometimes
+
+![](significant1.png)
+
+## How science "works" sometimes
+
+![](significant2.png)
+
+## How science "works" sometimes
+
+![](significant3.png)
+
+## How science "works" sometimes
+
+![](significant4.png)
+
+## How science "works" sometimes
+
+![](significant5.png)
+
+## How science "works" sometimes
+
+![](significant6.png)
+
+## Problem: Inflated type I error
+
+* Every test is a chance to make a **type I error**
+  * Find an effect that doesn't really exist
+  * Nominally $\alpha$ *per test*: 5% for $\alpha$ = .05
+* $(1 - \alpha)$ probability of **no type I error** per test
+  * $(1 - \alpha)^m$ probability of **no type I error** across $m$ tests
+  * 20 tests at $\alpha$ = .05
+    * $(1 - 0.05)^{20} = 0.358$ of **no type I error** across all 20 tests
+    * $1 - 0.358 = 0.642$ of **at least one type I error**
+
+## Two approaches to corrections
+
+* Reduce **family wise error rate (FWER)** back to nominal $\alpha$ level
+  * Probability of **at least one type I error**
+  * More conservative, less powerful
+* Maintain **false discovery rate (FDR)** at a specified level (typically higher than nominal $\alpha$)
+  * **Proportion** of *type I errors* out of *total significant effects*
+  * FDR = false positives / (false positives + true positives)
+  * More powerful, but allow more type I errors
+
+# Family-wise error rate (FWER)
+
+## Type I error rate
+
+* P(type I error for one test) = $\alpha$
+  * P(**no** type I error for one test) = $1 - \alpha$
+* P(**at least one** type I error for two tests) = $1 - (1 - \alpha)^2$
+  * P(**no** type I error for two tests) = $(1 - \alpha)*(1 - \alpha) = (1 - \alpha)^2$
+* P(**at least one** type I error for $m$ tests) = $1 - (1 - \alpha)^m$ = FWER
+  * P(**no** type I error for $m$ tests) = $(1 - \alpha)^m$
+
+## FWER by $\alpha$ and number of tests 
+
+```{r}
+#| code-fold: true
+x <- c(1:100)
+y05 <- 1 - (1 - .05)^x
+y01 <- 1 - (1 - .01)^x
+y001 <- 1 - (1 - .001)^x
+ew <- data.frame(x, y05, y01, y001)
+ggplot(data = ew, aes(x = x, y = y05)) +
+  geom_line(linewidth = 1) +
+  geom_line(aes(x = x, y = y01), linetype = "dashed", linewidth = 1) +
+  geom_line(aes(x = x, y = y001), linetype = "dotted", linewidth = 1) +
+  labs(x = "Number of tests", y = "FWER") +
+  annotate("text", x = 80, y = 0.9, label = "alpha = .05") +
+  annotate("text", x = 80, y = 0.45, label = "alpha = .01") +
+  annotate("text", x = 80, y = 0.15, label = "alpha = .001") +
+  geom_hline(yintercept = 0.5, color = "red")
+```
+
+* FWER = P(at least one type I error)
+
+## Independent vs correlated tests
+
+* Correlated tests
+  * Multiple comparisons to the same group (i.e., control)
+  * Correlated outcomes: time, space
+  * Stopping rules (time, same sample)
+* Uncorrelated tests
+  * Multiple outcomes (unless correlated in some way)
+  * Subgroup analysis
+  * Specific group comparisons that are orthogonal
+
+## Independent vs correlated tests
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+* Correlated
+  * Bonferroni (1936)
+  * Scheffe (1959)
+  * Holm (1979)
+
+:::
+
+::: {.column width="50%"}
+
+* Independent
+  * Tukey (1949)
+  * Sidak (1967)
+  * Hochberg (1988)
+  * Hommel (1988)
+  
+:::
+
+::::
+
+## Bonferroni
+
+* Simplest adjustment
+* Most conservative (FWER $\le \alpha$)
+* Two identical options
+  * Adjust the $\alpha$ 
+  * Adjust the $p$-values
+
+## Bonferroni: Adjust $\alpha$
+
+* Divide nominal $\alpha$ level by the number of tests
+  * Evaluate each test at that $\alpha$
+* Example: $\alpha$ = .05 for 3 tests with $p$-values of .04, .02, .01
+  * Evaluate each test at $\alpha$ = .05/3 = .016667
+  * Observed $p$-value = .04 > .016667 (NS at $\alpha$ = .05)
+  * Observed $p$-value = .02 > .016667 (NS at $\alpha$ = .05)
+  * Observed $p$-value = .01 < .016667 (significant at $\alpha$ = .05)
+
+## Bonferroni: Adjust $p$-values
+
+* Multiply each observed $p$-value by the number of tests
+  * Evaluate that $p$-value against nominal $\alpha$
+* Example: $\alpha$ = .05 for 3 tests with $p$-values of .04, .02, .01
+  * Evaluate each test with $p$-value $\times$ 3
+  * .04 $\times$ 3 = .12 $\rightarrow$ NS at $\alpha$ = .05
+  * .02 $\times$ 3 = .06 $\rightarrow$ NS at $\alpha$ = .05
+  * .01 $\times$ 3 = .03 $\rightarrow$ significant at $\alpha$ = .05
+
+## Holm
+
+* Simple adjustment
+* Less conservative than Bonferroni (but FWER $\le \alpha$)
+* Two identical options
+  * Adjust the $\alpha$ 
+  * Adjust the $p$-values
+  
+## Holm: Adjust $\alpha$
+
+* Sort $p$-values from **smallest** to **largest**
+  * Compare first (smallest) $p$-value to $\frac{\alpha}{m}$
+  * 2nd $p$-value vs $\frac{\alpha}{m-1}$, 3rd $p$-value vs $\frac{\alpha}{m-2}$, etc.
+  * Stop when a test is not significant
+* Example: $\alpha$ = .05 for 3 tests with $p$-values of .04, .02, .01
+  * Observed $p$-value = .01 < .05/3 = .016667 (significant at $\alpha$ = .05)
+  * Observed $p$-value = .02 < .05/2 = .025 (significant at $\alpha$ = .05)
+  * Observed $p$-value = .04 < .05/1 = .05 (significant at $\alpha$ = .05)
+
+
+## Holm: Adjust $p$-value
+
+* Sort $p$-values from **smallest** to **largest**
+  * Multiply each observed $p$-value by the number of **remaining** tests
+  * Evaluate that $p$-value against nominal $\alpha$
+* Example: $\alpha$ = .05 for 3 tests with $p$-values of .04, .02, .01
+  * .01 $\times$ 3 = .03 $\rightarrow$ significant at $\alpha$ = .05
+  * .02 $\times$ 2 = .04 $\rightarrow$ significant at $\alpha$ = .05
+  * .04 $\times$ 1 = .04 $\rightarrow$ significant at $\alpha$ = .05
+
+## Adjustments in R: $p$-values
+
+* `p.adjust()` function in **stats** package
+  * `p`: list of $p$-values for the tests
+  * `method`: Method of adjustment
+    * `"holm"`, `"hochberg"`, `"hommel"`, `"bonferroni"`, `"BH"`, `"BY"`, `"fdr"`, `"none"`
+  * `n`: number of tests
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+p.adjust(c(.04, .02, .01), 
+         "bonferroni", 
+         n = 3)
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+p.adjust(c(.04, .02, .01), 
+         "holm", 
+         n = 3)
+```
+
+:::
+
+::::
+
+# False discovery rate (FDR)
+
+## False discovery rate (FDR)
+
+* Any structure
+  * **Benjamini and Hochberg (1995)**
+* Positively correlated tests
+  * Benjamini and Yekutieli (2001)
+
+## False discovery rate
+
+&nbsp; | $H_0$ false | $H_0$ true | Total
+---------|------|------|-------
+Significant test | True positive | False positive | $Total\ signif\ tests$
+NS test | False negative | True negative | $Total\ NS\ tests$
+&nbsp; | $Total$ $H_0\ false$ | $Total$ $H_0\ true$ | $Total\ \#\ of\ Tests$
+
+## False discovery rate: What do we know?
+
+&nbsp; | $H_0$ false | $H_0$ true | Total
+---------|------|------|-------
+Significant test | True positive | False positive | $\color{red}{Total\ signif\ tests}$
+NS test | False negative | True negative | $\color{red}{Total\ NS\ tests}$
+&nbsp; | $Total$ $H_0\ false$ | $Total$ $H_0\ true$ | $\color{red}{Total\ \#\ of\ tests}$
+
+## False discovery rate: What is FDR?
+
+&nbsp; | $H_0$ false | $H_0$ true | Total
+---------|------|------|-------
+Significant test | $\color{blue}{True}$ $\color{blue}{positive}$ | $\color{blue}{False}$ $\color{blue}{positive}$ | $\color{red}{Total\ signif\ tests}$
+NS test | False negative | True negative | $\color{red}{Total\ NS\ tests}$
+&nbsp; | $Total$ $H_0\ false$ | $Total$ $H_0\ true$ | $\color{red}{Total\ \#\ of\ Tests}$
+
+* FDR = false positives / (false positives + true positives)
+
+## Distributions of $p$-values
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+* $H_0$ is true (no effect: 900)
+
+```{r}
+#| code-fold: true
+obs<-100                # obs in each single regression
+Nloops<-900            # number of experiments
+output<-numeric(Nloops) # vector holding p-values of estimated a1 parameter from Nloops experiments
+
+for(i in seq_along(output)){
+x<-rnorm(obs) 
+y<-rnorm(obs)
+# x and y are independent, so null hypothesis is true
+output[i] <-(summary(lm(y~x))$coefficients)[2,4] # we grab p-value of a1
+}
+
+h0true <- as.data.frame(output) %>%
+  mutate(true = 1)
+#h0true
+
+ggplot(data = h0true, aes(x = output)) +
+  geom_histogram(breaks = seq(from = 0, to = 1, by = .05)) +
+  ylim(0, 100) +
+  geom_vline(xintercept = 0.05, 
+             color = "red", 
+             linewidth = 1, 
+             linetype = "dashed") +
+  annotate("text", 
+           x = .2, y = 75, 
+           label = "< False positives",
+           size = 8) +
+  annotate("text", 
+           x = .75, y = 60, 
+           label = "True negatives", 
+           size = 8)
+```
+
+`r sum(h0true$output < .05)`
+
+:::
+
+::: {.column width="50%"}
+
+* $H_0$ is false (yes effect: 100)
+
+```{r}
+#| code-fold: true
+obs<-100                # obs in each single regression
+Nloops<-100            # number of experiments
+output<-numeric(Nloops) # vector holding p-values of estimated a1 parameter from Nloops experiments
+
+for(i in seq_along(output)){
+x<-rnorm(obs) 
+y<-rnorm(obs, .5*x + rnorm(obs, 0, 1))
+# x and y are related, so null hypothesis is false
+output[i] <-(summary(lm(y~x))$coefficients)[2,4] # we grab p-value of a1
+}
+
+h0false <- as.data.frame(output) %>%
+  mutate(true = 0)
+#h0false
+
+ggplot(data = h0false, aes(x = output)) +
+  geom_histogram(breaks = seq(from = 0, to = 1, by = .05)) +
+  ylim(0, 100) +
+  geom_vline(xintercept = 0.05, 
+             color = "red", 
+             linewidth = 1, 
+             linetype = "dashed") +
+  annotate("text", 
+           x = .2, y = 75, 
+           label = "< True positives",
+           size = 8) +
+  annotate("text", 
+           x = .75, y = 60, 
+           label = "False negatives", 
+           size = 8)
+```
+
+`r sum(h0false$output < .05)`
+
+:::
+
+::::
+
+## Combined distribution of $p$-values
+
+```{r}
+#| code-fold: true
+h0all <- rbind(h0true, h0false)
+ggplot(data = h0all, aes(x = output)) +
+  geom_histogram(breaks = seq(from = 0, to = 1, by = .05)) +
+  geom_vline(xintercept = 0.05, 
+             color = "red", 
+             linewidth = 1, 
+             linetype = "dashed") +
+  geom_hline(yintercept = sum(h0all$output > .05)/19, 
+             color = "blue", 
+             linewidth = 1)
+```
+
+## Ordered $p$-values
+
+```{r}
+#| code-fold: true
+h0all <- h0all %>% arrange(output)
+ggplot(data = h0all, 
+       aes(x = 1:nrow(h0all), 
+           y = output)) +
+  geom_point(alpha = .2) +
+  geom_hline(yintercept = .05, color = "blue", linewidth = 1) +
+  labs(x = "Order", y = "p-value") +
+  theme(legend.position="none")
+```
+
+## Ordered $p$-values
+
+```{r}
+#| code-fold: true
+h0all <- h0all %>% arrange(output)
+ggplot(data = h0all, 
+       aes(x = 1:nrow(h0all), 
+           y = output,
+           color = as.factor(true)),
+       alpha = .3) +
+  geom_point() +
+  geom_hline(yintercept = .05, color = "blue", linewidth = 1) +
+  labs(x = "Order", y = "p-value") +
+  theme(legend.position="none")
+```
+
+## No correction: FDR = `r sum(h0true$output < .05)`/`r sum(h0all$output < .05)` = `r round(sum(h0true$output < .05)/sum(h0all$output < .05),3)`
+
+```{r}
+#| code-fold: true
+h0all <- h0all %>% arrange(output)
+ggplot(data = h0all, 
+       aes(x = 1:nrow(h0all), 
+           y = output,
+           color = as.factor(true))) +
+  geom_point() +
+  labs(x = "Order", y = "p-value") +
+  geom_hline(yintercept = .05, color = "blue", linewidth = 1) +
+  xlim(0,150) +
+  ylim(0,.06) +
+  theme(legend.position="none")
+```
+
+## Corrected B-H FDR = .05
+
+```{r}
+#| code-fold: true
+h0all <- h0all %>% arrange(output)
+ggplot(data = h0all, 
+       aes(x = 1:nrow(h0all), 
+           y = output,
+           color = as.factor(true))) +
+  geom_point() +
+  labs(x = "Order", y = "p-value") +
+  geom_hline(yintercept = .05, 
+             color = "blue", 
+             linewidth = 1) +
+  geom_abline(slope = .05/1000, 
+              color = "blue", 
+              linewidth = 1, 
+              linetype = "dashed") +
+  xlim(0,150) +
+  ylim(0,.06) +
+  annotate("text", x = 125, y = 0.01, label = "slope = .05/1000") +
+  theme(legend.position="none")
+```
+
+## Corrected B-H FDR = .10
+
+```{r}
+#| code-fold: true
+h0all <- h0all %>% arrange(output)
+ggplot(data = h0all, 
+       aes(x = 1:nrow(h0all), 
+           y = output,
+           color = as.factor(true))) +
+  geom_point() +
+  labs(x = "Order", y = "p-value") +
+  geom_hline(yintercept = .05, color = "blue", linewidth = 1) +
+  geom_abline(slope = .1/1000, color = "blue", linewidth = 1, linetype = "dashed") +
+  xlim(0,150) +
+  ylim(0,.06) +
+  annotate("text", x = 125, y = 0.01, label = "slope = .10/1000") +
+  theme(legend.position="none")
+```
+
+## How many significant tests?
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+* Uncorrected
+
+```{r}
+#| code-fold: true
+h0all <- h0all %>% mutate(row = 1:nrow(h0all),
+                          signif = ifelse(output <.05, 1, 0),
+                          fdr10 = ifelse(output < row*(.10/1000), 1, 0),
+                          fdr05 = ifelse(output < row*(.05/1000), 1, 0))
+uncorrected <- table(h0all$signif, h0all$true)
+rownames(uncorrected) <- c("NS", "Signif")
+colnames(uncorrected) <- c("H0 false", "H0 true")
+addmargins(uncorrected)
+```
+
+:::
+
+::: {.column width="50%"}
+
+* Corrected (FDR = .10 and .05)
+
+```{r}
+#| code-fold: true
+fdr10 <- table(h0all$fdr10, h0all$true)
+rownames(fdr10) <- c("NS", "Signif")
+colnames(fdr10) <- c("H0 false", "H0 true")
+addmargins(fdr10)
+fdr05 <- table(h0all$fdr05, h0all$true)
+rownames(fdr05) <- c("NS", "Signif")
+colnames(fdr05) <- c("H0 false", "H0 true")
+addmargins(fdr05)
+```
+
+:::
+
+::::
+
+## B-H FDR: Adjust $\alpha$ (/critical $p$-value)
+
+* Sort $p$-values from **smallest** to **largest**
+  * Compare first (smallest) $p$-value to $\frac{FDR}{m}$
+  * 2nd $p$-value vs $\frac{2\times FDR}{m}$, 3rd $p$-value vs $\frac{3 \times FDR}{m}$, etc.
+  * Stop when a test is not significant
+* Example: FDR = .05 for 3 tests with $p$-values of .04, .02, .01
+  * Observed $p$-value = .01 < 1$\times$.05/3 = .0167 (significant at FDR = .05)
+  * Observed $p$-value = .02 < 2$\times$.05/3 = .0333 (significant at FDR = .05)
+  * Observed $p$-value = .04 < 3$\times$.05/3 = .05 (significant at FDR = .05)
+
+## B-H FDR: Adjust $p$-value 
+
+* Sort $p$-values from **smallest** to **largest**
+  * Multiply each observed $p$-value by $\frac{total\ number\ of\ tests}{rank\ of\ the\ test}$
+  * Evaluate that $p$-value against FDR
+* Example: FDR = .05 for 3 tests with $p$-values of .04, .02, .01
+  * .01 $\times$ 3/1 = .03 $\rightarrow$ significant at FDR = .05
+  * .02 $\times$ 3/2 = .03 $\rightarrow$ significant at FDR = .05
+  * .04 $\times$ 3/3 = .04 $\rightarrow$ significant at FDR = .05
+
+## Adjustments in R: $p$-values
+
+* `p.adjust()` function in **stats** package
+  * `p`: list of $p$-values for the tests
+  * `method`: Method of adjustment
+    * `"holm"`, `"hochberg"`, `"hommel"`, `"bonferroni"`, `"BH"`, `"BY"`, `"fdr"`, `"none"`
+  * `n`: number of tests
+
+```{r}
+bh_pvalues <- p.adjust(c(.04, .02, .01), 
+                       "BH", 
+                       n = 3)
+bh_pvalues <- as.data.frame(bh_pvalues)
+```
+
+## Adjustments in R: $p$-values
+
+* Adjusted $p$-values
+  * A test is significant if this value is < selected FDR
+
+```{r}
+bh_pvalues
+```
+
+## Adjustments in R: $p$-values
+
+* `p.adjust()` function in **stats** package
+  * `p`: list of $p$-values for the tests
+  * `method`: Method of adjustment
+    * `"holm"`, `"hochberg"`, `"hommel"`, `"bonferroni"`, `"BH"`, `"BY"`, `"fdr"`, `"none"`
+  * `n`: number of tests
+
+```{r}
+bhsim_pvalues <- p.adjust(h0all$output,
+                          "BH",
+                          n = 1000)
+bhsim_pvalues <- as.data.frame(bhsim_pvalues)
+```
+
+## Adjustments in R: $p$-values
+
+* Adjusted $p$-values
+  * A test is significant if this value is < selected FDR
+
+```{r}
+bhsim_pvalues
+```
+
+<!-- ## How many significant tests? -->
+
+<!-- * Uncorrected -->
+
+<!-- ```{r} -->
+<!-- sum(h0all$output < .05) -->
+<!-- ``` -->
+
+<!-- * Corrected (FDR = .10 and .05) -->
+
+<!-- ```{r} -->
+<!-- sum(bh_pvalues$bh_pvalues < .10) -->
+<!-- sum(bh_pvalues$bh_pvalues < .05) -->
+<!-- ``` -->
+
+# Summary
+
+## Summary of results
+
+Test | No correction | Bonferroni | Holm | FDR (B-H)
+------|------|------|------|------
+1 | .04 | .12 | .04 | .04
+2 | .02 | .06 | .04 | .03
+3 | .01 | .03 | .03 | .03
+
+## Which should I use? FWER or FDR?
+
+* For just a few tests, it probably doesn't matter which you use
+  * and/or very small $p$-values 
+* For many tests (dozens to thousands)
+  * FWER methods are too conservative: You miss real effects
+  * FDR methods are the better choice
+
+## What FDR level? **It depends**
+
+* What is more harmful?
+  * False positives: significant test when $H_0$ is true
+  * False negatives: NS test when $H_0$ is false
+
+## What do you correct for?
+
+* The **hypothesis** that you're testing
+  * If there are multiple hypotheses in a project, don't correct for **all tests** in the project
+  * Only correct for all tests about a specific **hypothesis**
+
+## Critique, commentary, and nuance
+
+* [Daniel Lakens' chapter on "error control"](https://lakens.github.io/statistical_inferences/02-errorcontrol.html)
+  * Union-intersection approach vs intersection-union approach
+    * "At least one test must be significant to make a claim" vs "All tests must be significant to make a claim"
+  * Optional stopping
+  * Positive predictive value
+
+# In-class activities
+
+## In-class activities
+
+* Do some corrections for multiple tests
+* Compare the findings and discuss 

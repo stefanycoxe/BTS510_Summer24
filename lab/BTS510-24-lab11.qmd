@@ -1,0 +1,34 @@
+---
+title: "BTS 510 Lab 11"
+format:
+  html:
+    embed-resources: true
+    self-contained-math: true
+    html-math-method: katex
+    number-sections: true
+    toc: true
+    code-tools: true
+    code-block-bg: true
+    code-block-border-left: "#31BAE9"
+---
+
+```{r}
+#| label: setup
+library(tidyverse)
+set.seed(12345)
+theme_set(theme_classic(base_size = 16))
+```
+
+## Learning objectives
+
+* **Describe** *family-wise error rate (FWER)* methods of *multiple comparison correction*
+* **Describe** *false discovery rate (FDR)* methods of *multiple comparison correction*
+* **Compare** and **contrast** the methods
+
+
+## I'm not ready. Check back later.
+
+
+
+
+
