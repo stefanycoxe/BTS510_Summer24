@@ -25,9 +25,159 @@ theme_set(theme_classic(base_size = 16))
 * **Describe** *false discovery rate (FDR)* methods of *multiple comparison correction*
 * **Compare** and **contrast** the methods
 
+## Data
 
-## I'm not ready. Check back later.
+* `mtept` dataset from **multicomp** package
+  * A data frame with 111 observations on the following 5 variables.
+    * `treatment`: a factor with levels `Drug` `Placebo`
+    * `E1`: endpoint 1
+    * `E2`: endpoint 2
+    * `E3`: endpoint 3
+    * `E4`: endpoint 4
 
+```{r}
+library(multcomp)
+data(mtept)
+head(mtept)
+```
+
+## Analyses
+
+* $t$-test for each endpoint (outcome variable)
+  * Comparing `treatment` (`Drug` vs `Placebo`)
+  * Save each analysis with a unique name: `t_e1`, `t_e2`, `t_e3`, `t_e4`
+
+```{r}
+t_e1 <- t.test(mtept$E1 ~ mtept$treatment, 
+               alternative = "two.sided",
+               var.equal = FALSE)
+t_e1
+
+t_e2 <- t.test(mtept$E2 ~ mtept$treatment, 
+               alternative = "two.sided",
+               var.equal = FALSE)
+t_e2
+
+t_e3 <- t.test(mtept$E3 ~ mtept$treatment, 
+               alternative = "two.sided",
+               var.equal = FALSE)
+t_e3
+
+t_e4 <- t.test(mtept$E4 ~ mtept$treatment, 
+               alternative = "two.sided",
+               var.equal = FALSE)
+t_e4
+```
+
+::: {.callout-note}
+If you had **a lot** of tests to do, you wouldn't do it this way. You'd write a function to loop through all the analyses and save the results. I don't want us to get caught up in the technicalities of that, so we're doing it this way.
+:::
+
+### Structure of output
+
+* Let's look at the "structure" of the output using the `str()` function
+  * This lists all of the pieces in the output (including some that are not typically shown)
+  * If you know the name of an object, you can do things with that object
+
+```{r}
+str(t_e1)
+```
+
+### Save $p$-values
+
+* The $p$-value for the test is called `p.value`
+  * You can refer to the $p$-value for the first analysis as `t_e1$p.value`
+  * Save the $p$-values in a vector
+  
+```{r}
+pvalues <- c(t_e1$p.value, t_e2$p.value, t_e3$p.value, t_e4$p.value)
+pvalues
+```
+
+## Multiple comparison methods
+
+* `p.adjust()` function in **stats** package
+  * `p`: list of $p$-values for the tests
+  * `method`: Method of adjustment
+    * `"holm"`, `"hochberg"`, `"hommel"`, `"bonferroni"`, `"BH"`, `"BY"`, `"fdr"`, `"none"`
+  * `n`: number of tests
+
+### Bonferroni correction
+
+* Adjusted $p$-values are multiplied by the number of tests
+  * Here, each observed $p$-value is multiplied by 4
+* Compare to nominal $\alpha$ (typically .05)
+
+```{r}
+p.adjust(pvalues, method = "bonferroni", n = 4)
+```
+
+### Holm correction
+
+* Sort observed $p$-values (smallest to largest)
+* Adjusted $p$-values are multiplied by the number of remaining tests
+  * Here, smallest $p$-value multiplied by 4, next smallest by 3, next smallest by 2, largest by 1
+* Compare to nominal $\alpha$ (typically .05)
+
+```{r}
+p.adjust(pvalues, method = "holm", n = 4)
+```
+
+### False discovery rate (FDR)
+
+* Sort observed $p$-values (smallest to largest)
+* Adjusted $p$-values are multiplied by $\frac{total\ number\ of\ tests}{rank\ of\ the\ test}$
+  * Here, smallest $p$-value multiplied by 4/1, next smallest by 4/2, next smallest by 4/3, largest by 4/4 
+* Compare to selected FDR (can be same as $\alpha$ but typically higher)
+
+```{r}
+p.adjust(pvalues, method = "BH", n = 4)
+```
+
+## Compare
+
+* How many of the tests were significant for each method?
+  * Which ones were selected for each?
+* Does one method seem much better or different from the others?
+* Which would you select to use? Why?
+
+## Another example
+
+* Data from [The Hitchhiker's Guide to Longitudinal Models](https://e-m-mccormick.github.io/static/longitudinal-primer/)
+  * Download the data [here](https://e-m-mccormick.github.io/static/longitudinal-primer/07-datasets.html)
+* `executive-function` dataset (Excel / CSV file on course website, loaded here)
+  * N = 342 adolescents
+  * `id`: ID variable
+  * `sex`: Self-identified sex
+  * `tx`: Treatment
+  * `dlpfc1` to `dlpfc4`: Dorsolateral prefrontal cortex activation during executive functioning task across **4 years**
+  * `ef1` to `ef4`: Scores on executive functioning task **across 4 years**
+  * `age1` to `age4`: Age at each wave
+* Simulated data made to resemble real data
+
+
+```{r}
+exfxn <- read.csv("executive-function.csv")
+head(exfxn)
+```
+
+* The structure of this dataset gives you an idea of    
+  * **How many** comparisons you might make
+  * How those are tied to **hypotheses**
+* Variables include
+  * 4 repeated measures of DLPFC activation
+  * 4 repeated measures of executive functioning
+  * Two different grouping variables 
+* Some hypotheses (that I just arbitrarily came up with based on the variables)  
+  * Are there **treatment** differences in **DLPFC activation**?
+  * Are there **treatment** differences in **executive functioning**?
+  * Are there **treatment** differences in **DLPFC activation** or **executive functioning**?
+  * Are there **sex** differences in **DLPFC activation**?
+  * Are there **sex** differences in **executive functioning**?
+  * Are there **sex** differences in **DLPFC activation** or **executive functioning**?  
+* How many tests would you do for each hypothesis?
+  * Is it different for different hypotheses?
+  * Remember that you only need to control for tests **within a hypothesis**, not all tests
 
 
 

@@ -27,9 +27,9 @@ Week	| Date          |	Topic	                    |	L	|	H	|
 10	    |	July 01	    |	HOLIDAY	                    |		|		|
 11	    |	July 08	    |	Hypothesis testing 2	    |	9	|		|
 12	    |	July 15	    |	Hypothesis testing 3	    |	10	|	4	|
-13	    |	July 22	    |	Multiple comparisons	    |	11	|	5	|
-14	    |	July 29	    |	One way ANOVA	            |	12	|		|
-15	    |	August 05	|	Two way ANOVA               |	13	|	6	|
+13	    |	July 22	    |	Multiple comparisons	    |	11	|		|
+14	    |	July 29	    |	One way ANOVA	            |	12	|	5	|
+15	    |	August 05	|	Two way ANOVA               |	13	|		|
 16	    |	August 12	|	TBD	                        |		| Final	| 
 
 

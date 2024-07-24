@@ -47,7 +47,6 @@ website:
           - assignments/hw3.qmd  
           - assignments/hw4.qmd            
           #- assignments/hw5.qmd
-          #- assignments/hw6.qmd
           - assignments/final.qmd  
       - refs.qmd 
           

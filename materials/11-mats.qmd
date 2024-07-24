@@ -20,4 +20,5 @@ title: "Week 11: Multiple comparisons"
 
 ## After class: Assignment
 
-* [Homework 5](../assignments/hw5.qmd){target="_blank"}
+* ~~[Homework 5](){target="_blank"}~~
+    * No assignment until ANOVA 

@@ -75,7 +75,7 @@ Watch the lecture video. Respond to the survey afterward with questions and comm
 
 #### Homework (60%)
 
-There will be six (6) homework assignments. The assignments generally involve running analyses in R, interpreting output, and presenting the results.
+There will be ~~six (6)~~ **five (5)** homework assignments. The assignments generally involve running analyses in R, interpreting output, and presenting the results.
 
 #### Final project (30%)
 
