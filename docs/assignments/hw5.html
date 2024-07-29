@@ -67,6 +67,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -80,9 +109,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
-      BTS 510 &lt;br&gt; Summer 2024
-      </li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../assignments/index.html">Assignments</a></li><li class="breadcrumb-item"><a href="../assignments/hw5.html">Homework 5</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -212,6 +239,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Week 11: Multiple comparisons</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../materials/12-mats.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 12: Analysis of Variance</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -275,13 +308,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
  <span class="menu-text">Assignments</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../assignments/index.html" class="sidebar-item-text sidebar-link">
@@ -314,6 +347,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../assignments/hw5.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Homework 5</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../assignments/final.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Final project</span></a>
   </div>
@@ -337,14 +376,19 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#analysis-of-variance-anova" id="toc-analysis-of-variance-anova" class="nav-link active" data-scroll-target="#analysis-of-variance-anova">Analysis of Variance (ANOVA)</a></li>
-  <li><a href="#im-not-ready.-check-back-later." id="toc-im-not-ready.-check-back-later." class="nav-link" data-scroll-target="#im-not-ready.-check-back-later.">I’m not ready. Check back later.</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a>
+  <ul class="collapse">
+  <li><a href="#data-manipulation" id="toc-data-manipulation" class="nav-link" data-scroll-target="#data-manipulation">Data manipulation</a></li>
+  </ul></li>
+  <li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis">Analysis</a></li>
+  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions">Conclusions</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../assignments/index.html">Assignments</a></li><li class="breadcrumb-item"><a href="../assignments/hw5.html">Homework 5</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Homework 5</h1>
 </div>
@@ -370,8 +414,63 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Complete the assignment in a Quarto (.qmd) document and render it to HTML and PDF. Email all 3 files (.qmd, .html, .pdf) to Stefany, Yujie, and Michael. <strong>Be sure to look at your output files and check that they’ve rendered correctly.</strong></p></li>
 </ul>
 </section>
-<section id="im-not-ready.-check-back-later." class="level2">
-<h2 class="anchored" data-anchor-id="im-not-ready.-check-back-later.">I’m not ready. Check back later.</h2>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<p><code>birthwt</code> (N = 189) from the <strong>MASS</strong> package</p>
+<ul>
+<li><code>low</code>: indicator of birth weight less than 2.5 kg.</li>
+<li><code>age</code>: mother’s age in years.</li>
+<li><code>lwt</code>: mother’s weight in pounds at last menstrual period.</li>
+<li><code>race</code>: mother’s race (1 = white, 2 = black, 3 = other).</li>
+<li><code>smoke</code>: smoking status during pregnancy.</li>
+<li><code>ptl</code>: number of previous premature labours.</li>
+<li><code>ht</code>: history of hypertension.</li>
+<li><code>ui</code>: presence of uterine irritability.</li>
+<li><code>ftv</code>: number of physician visits during the first trimester.</li>
+<li><code>bwt</code>: birth weight in grams.</li>
+</ul>
+<section id="data-manipulation" class="level3">
+<h3 class="anchored" data-anchor-id="data-manipulation">Data manipulation</h3>
+<ul>
+<li>Before you start:
+<ul>
+<li>Convert <code>race</code> from an integer to a factor using <code>as.factor()</code></li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="analysis" class="level2">
+<h2 class="anchored" data-anchor-id="analysis">Analysis</h2>
+<p><strong>Research question</strong>: Are there race differences in child birth weight?</p>
+<ul>
+<li>Conduct the <em>omnibus ANOVA test</em>
+<ul>
+<li>Are assumptions (equal variance, normality) met? Report relevant results, including statistical tests, plots, and conclusions</li>
+<li>Report omnibus test results. Be sure to include all the relevant pieces, including test statistic, <span class="math inline">\(p\)</span>-value, decision re: null hypothesis, and conclusion</li>
+</ul></li>
+<li>Use <em>dummy</em> or <em>treatment</em> coding to conduct post hoc tests
+<ul>
+<li>Note which <code>race</code> group is first – this will be the reference group</li>
+<li>Use the results of these tests to report
+<ul>
+<li>Group means</li>
+<li>Group mean differences</li>
+<li>Which group means are significantly different from one another (this won’t be exhaustive, just the comparisons you tested)</li>
+<li>Be sure to report the <span class="math inline">\(t\)</span> test results for the contrasts, just as we’ve reported <span class="math inline">\(t\)</span> tests before
+<ul>
+<li>Note that the df isn’t provided, but it’s 1</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="conclusions" class="level2">
+<h2 class="anchored" data-anchor-id="conclusions">Conclusions</h2>
+<p>In plain language:</p>
+<ol type="1">
+<li>Are there race differences in child birth weight?</li>
+<li>Which races are different?</li>
+</ol>
 
 
 </section>

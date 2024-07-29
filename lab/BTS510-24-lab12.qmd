@@ -1,0 +1,171 @@
+---
+title: "BTS 510 Lab 11"
+format:
+  html:
+    embed-resources: true
+    self-contained-math: true
+    html-math-method: katex
+    number-sections: true
+    toc: true
+    code-tools: true
+    code-block-bg: true
+    code-block-border-left: "#31BAE9"
+---
+
+```{r}
+#| label: setup
+library(tidyverse)
+set.seed(12345)
+theme_set(theme_classic(base_size = 16))
+```
+
+## Learning objectives
+
+* *Describe* the logic of ANOVA
+* *Conduct* and *interpret* the overall ANOVA test
+* *Conduct* post hoc tests
+
+## Data
+
+* `Amyloid` dataset (N = 57) in **Stat2Data** package
+  * `Group`: mAD=Alzheimer’s, MCI=mild impairment, NCI=no impairment
+  * `Abeta`: Amount of Abeta from the posterior cingulate cortex (pmol/g tissue)
+
+```{r}
+library(Stat2Data)
+data(Amyloid)
+head(Amyloid)
+```
+
+## Descriptives and data visualization
+
+### Means, variances, and SDs by group
+
+```{r}
+Amyloid %>% group_by(Group) %>%
+  summarize(mean = mean(Abeta),
+            variance = var(Abeta),
+            sd = sd(Abeta))
+```
+
+* For some reason, these values get rounded to the whole number. You can get the full numbers to print if you use a package to print prettier tables, like **kableExtra** (only works for HTML output) 
+
+```{r}
+library(kableExtra)
+Amyloid %>% group_by(Group) %>%
+  summarize(mean = mean(Abeta),
+            variance = var(Abeta),
+            sd = sd(Abeta)) %>%
+  kable()
+```
+
+### Equal variance assumption
+
+* Graphically
+
+```{r}
+ggplot(data = Amyloid,
+       aes(x = Group, y = Abeta)) +
+  geom_boxplot(alpha = 0.5) +
+  geom_jitter(width = 0.2)
+```
+
+* Statistical test
+
+```{r}
+library(car)
+leveneTest(Abeta ~ Group, data = Amyloid)
+```
+
+* Variances are roughly equal -- good to go!
+
+## Analysis of variance
+
+* Use both `lm()` with `contr.sum` and `anova()` to get correct type III sums of squares
+
+```{r}
+m1 <- lm(Abeta ~ Group,
+         contrasts=list(Group='contr.sum'),
+         data = Amyloid)
+anova(m1)
+```
+
+* Overall, there is an effect of `Group`
+  * We reject the $H_0$ that all the group means are equal, F(2, 54) = 5.97, p <.01. At least one group mean is different from the others.
+
+### Normality assumption
+
+* Graphically
+
+```{r}
+m1resid <- data.frame(residuals(m1))
+ggplot(data = m1resid, 
+       aes(sample = residuals.m1.)) +
+  geom_qq() +
+  geom_qq_line()
+
+m1resid <- data.frame(residuals(m1))
+ggplot(data = m1resid, 
+       aes(x = residuals.m1.)) +
+  geom_histogram()
+```
+
+* Statistical test
+
+```{r}
+shapiro.test(resid(m1))
+```
+
+* Normality assumption is violated
+  * We should consider non-parametric alternatives that don't assume normality
+  * But for the purposes of this class, we're going to carry on anyway
+
+## Post hoc tests
+
+* I'm only going to use the reference / dummy / `treatment` contrasts here
+  * Feel free to try out the others
+
+* Dummy coding compares each group to a specific reference group (e.g., control)
+  * In R, the default reference group is the **first** group 
+  * Factors in R are ordered alphabetically (if character names) or numerically (if number names)
+  * So this will do two comparisons (`mAD` is the reference group)
+    * `mAD` vs `MCI`
+    * `mAD` vs `NCI`
+
+```{r}
+m1_trt <- lm(Abeta ~ Group,
+         contrasts=list(Group='contr.treatment'),
+         data = Amyloid)
+summary(m1_trt)
+```
+
+* Intercept = mean for reference group
+  * Mean for `mAD` = 761.3
+* `GroupMCI` is the difference between reference group and `MCI`
+  * Mean for `MCI` = 761.3 - 420.2 = 341.1
+* `GroupNCI` is the difference between reference group and `NCI`
+  * Mean for `NCI` = 761.3 - 425.0 = 336.3
+* Compare these values to the group means calculated above
+* $t$ tests tell you whether that contrast (difference) is significant
+  * Both contrasts are significant here
+  * Mean `Abeta` for `mAD` is different from mean `Abeta` for `MCI`
+  * Mean `Abeta` for `mAD` is different from mean `Abeta` for `NCI`
+  * Report $t$ tests as we've dont before
+    * The degrees of freedom for each test is 1
+
+### Multiple comparisons
+
+* If we controlled for multiple comparisons what are our conclusions?
+  * Do those differ from the conclusions where we didn't control for multiple comparisons?
+  
+```{r}
+p.adjust(c(0.00354, 0.00392), "holm", 2)
+p.adjust(c(0.00354, 0.00392), "BH", 2)
+```
+  
+## Conclusions
+
+In plain language:
+
+1. Are there differences in amyloid beta levels for the different impairment groups?
+2. Which groups are different from one another? 

@@ -11,7 +11,7 @@ title: "Week 11: Multiple comparisons"
 ## Before class: Lecture 
 
 * [Lecture 11](https://youtu.be/bGzXj8K74L8){target="_blank"} 
-* [Lecture survey](https://forms.gle/v6o4wU8VPgRCLTiq7){target="_blank"}: Complete by Wednesday, July 25 at 8pm
+* [Lecture survey](https://forms.gle/v6o4wU8VPgRCLTiq7){target="_blank"}: Complete by Wednesday, July 24 at 8pm
 * [Slides (html)](../slides/BTS510-24-11.qmd){target="_blank"}
     
 ## During class: Lab

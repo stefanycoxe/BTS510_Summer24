@@ -1,0 +1,653 @@
+---
+title: "Introduction to Biostatistics"
+format:
+  # html: 
+  #   toc: true
+  #   toc-location: left
+  #   slide-level: 3
+  #   number-sections: true
+  #   toc-depth: 2
+  #   self-contained: true
+  #   #output-file: "Mult22-1-handout"
+  # pdf: 
+  #   toc: true
+  #   number-sections: true
+  #   #slide-level: 3
+  #   toc-depth: 2
+  #   shift-heading-level-by: 0
+  #   number-offset: [2]
+  revealjs:
+    toc: false
+    number-sections: true
+    #slide-level: 3
+    scrollable: true
+    embed-resources: true
+    slide-number: true
+    width: 1200
+knitr: 
+  opts_chunk:
+    echo: true
+    message: false
+    warning: false
+---
+
+```{r, include = FALSE, echo = FALSE, wanring = FALSE, message= FALSE}
+library(tidyverse)
+library(grid)
+library(xtable)
+library(kableExtra)
+theme_set(theme_classic(base_size = 16))
+set.seed(12345)
+options(scipen= 100)
+```
+
+# Learning objectives
+
+## Learning objectives
+
+* *Describe* the logic of ANOVA
+* *Conduct* and *interpret* the overall ANOVA test
+* *Conduct* post hoc tests
+
+# Extending the $t$-test
+
+## Review: $t$-test
+
+* Compare exactly **2 groups**
+* Focus on **difference** between group **means**
+* $t$ distribution
+* Statistical test: difference / standard error
+
+## ANOVA compares 3+ groups
+
+* Medication: Control, low dose, high dose
+* Treatment: Usual care, new treatment 1, new treatment 2
+* Modality: In-person, online, hybrid
+
+## 2 group approaches...
+
+```{r}
+#| code-fold: true
+ggplot(data.frame(x = c(-3, 7)), aes(x)) +
+  stat_function(fun = dnorm, args = list(mean = 0, sd = 1), 
+                geom = "polygon", 
+                alpha = 0.3, 
+                fill = "blue") +
+  stat_function(fun = dnorm, args = list(mean = 2, sd = 1), 
+                geom = "polygon", 
+                alpha = 0.3,
+                fill = "red") +
+  ylim(0,.5) + 
+  scale_x_continuous(breaks = -3:7) +
+  labs(x = "X", y = "") +
+  annotate("text", x = 0, y = 0.2, label = "Group 1", color = "blue") +
+  annotate("text", x = 2, y = 0.2, label = "Group 2", color = "red") +
+  annotate("segment", x = 0,, xend = 2, y = .4, yend = .4,
+           arrow = arrow(ends = "both", angle = 90, length = unit(.2,"cm"))) +
+  annotate("text", x = 1, y = .47, label = "Difference")
+```
+
+## ... don't extend well to 3+ groups
+
+```{r}
+#| code-fold: true
+ggplot(data.frame(x = c(-3, 7)), aes(x)) +
+  stat_function(fun = dnorm, args = list(mean = 0, sd = 1), 
+                geom = "polygon", 
+                alpha = 0.3, 
+                fill = "blue") +
+  stat_function(fun = dnorm, args = list(mean = 2, sd = 1), 
+                geom = "polygon", 
+                alpha = 0.3,
+                fill = "red") +
+  stat_function(fun = dnorm, args = list(mean = 4, sd = 1), 
+                geom = "polygon", 
+                alpha = 0.3,
+                fill = "forestgreen") +
+  ylim(0,.5) + 
+  scale_x_continuous(breaks = -3:7) +
+  labs(x = "X", y = "") +
+  annotate("text", x = 0, y = 0.2, label = "Group 1", color = "blue") +
+  annotate("text", x = 2, y = 0.2, label = "Group 2", color = "red") +
+  annotate("text", x = 4, y = 0.2, label = "Group 3", color = "forestgreen") +
+  annotate("segment", x = 0, xend = 1.95, y = .4, yend = .4,
+           arrow = arrow(ends = "both", angle = 90, length = unit(.2,"cm"))) +
+  annotate("text", x = 2, y = .47, label = "Differences?") +
+  annotate("segment", x = 2.05, xend = 4, y = .4, yend = .4,
+           arrow = arrow(ends = "both", angle = 90, length = unit(.2,"cm"))) +
+  annotate("segment", x = 0, xend = 4, y = .43, yend = .43,
+           arrow = arrow(ends = "both", angle = 90, length = unit(.2,"cm")))
+```
+
+# Between-subjects ANOVA
+
+## Logic
+
+* Extension of independent samples $t$-test
+* **Sources of variability** instead of differences
+  * Variability *across groups*
+  * Variability across individuals *within a group* (random error)
+* Is the *variability across groups* (i.e., mean differences) **large** in the context of the *within-group variability*?
+  * Signal to noise ratio
+
+## Between > within
+
+```{r}
+#| code-fold: true
+ggplot(data.frame(x = c(-3, 7)), aes(x)) +
+  stat_function(fun = dnorm, args = list(mean = 0, sd = 1), 
+                geom = "polygon", 
+                alpha = 0.3, 
+                fill = "blue") +
+  stat_function(fun = dnorm, args = list(mean = 4, sd = 1), 
+                geom = "polygon", 
+                alpha = 0.3,
+                fill = "red") +
+  ylim(0,.5) + 
+  scale_x_continuous(breaks = -3:7) +
+  labs(x = "X", y = "") 
+```
+
+## Within > between
+
+```{r}
+#| code-fold: true
+ggplot(data.frame(x = c(-3, 7)), aes(x)) +
+  stat_function(fun = dnorm, args = list(mean = 1.5, sd = 2), 
+                geom = "polygon", 
+                alpha = 0.3, 
+                fill = "blue") +
+  stat_function(fun = dnorm, args = list(mean = 2.5, sd = 2), 
+                geom = "polygon", 
+                alpha = 0.3,
+                fill = "red") +
+  ylim(0,.5) + 
+  scale_x_continuous(breaks = -3:7) +
+  labs(x = "X", y = "") 
+```
+
+## Total variance
+
+```{r}
+#| code-fold: true
+library(Stat2Data)
+data(Amyloid)
+#head(Amyloid)
+ggplot(data = Amyloid, aes(x = Abeta)) +
+  geom_dotplot(method = "histodot") +
+  theme(legend.position="none")
+```
+
+## Partitioned variance
+
+```{r}
+#| code-fold: true
+ggplot(data = Amyloid, aes(x = Abeta, fill= Group)) +
+  geom_dotplot(method = "histodot", stackgroups = TRUE) +
+  theme(legend.position="none")
+```
+
+## Partitioned variance
+
+```{r}
+#| code-fold: true
+means <- Amyloid %>% group_by(Group) %>% summarize(meanAbeta = mean(Abeta))
+ggplot(data = Amyloid, aes(x = Abeta, fill= Group)) +
+  geom_dotplot(method = "histodot", stackgroups = TRUE) +
+  theme(legend.position="none") +
+  geom_vline(aes(xintercept = means$meanAbeta[1]), 
+             color = "#F8766D",
+             linewidth = 1) +
+  geom_vline(aes(xintercept = means$meanAbeta[2]), 
+             color = "#00BA38",
+             linewidth = 1) +
+  geom_vline(aes(xintercept = means$meanAbeta[3]), 
+             color = "#619CFF",
+             linewidth = 1)
+```
+
+## Assumptions
+
+* One *categorical* (grouping) variable with 3+ categories
+* One *continuous* (i.e., interval or ratio) variable
+* Data are *randomly sampled* from the population
+* Data are *independent* (within and across groups)
+* Data are approximately *normally distributed* OR *sample size is large enough* for normally distributed sampling distribution
+  * Residuals from model are **normally distributed**
+* Population *variance* is unknown and *same in all groups*
+
+## Hypotheses
+
+* $H_0$: All means are equal
+  * $\mu_1 = \mu_2 = \mu_3$
+* $H_1$: **At least one mean** is different from the others
+  * (**NOT** $\mu_1 \ne \mu_2 \ne \mu_3$)
+
+## ANOVA summary table
+
+Source of variation | Sums of squares (SS) | df | Mean squares (MS) | F
+------|------|------|------|------
+Between | $SS_{between}$ | $k - 1$ | $MS_{between}$ | $F$
+Error | $SS_{error}$ | $N - k$ | $MS_{error}$
+Total | $SS_{total}$ | $N - 1$
+
+* $k$ = number of groups
+* $N$ = total number of participants
+* $n$ = number of participants in a group
+
+## Test statistic 1: Sums of squares
+
+* $SS_{between}$ = variation of $\color{red}{group\ means}$ around $\color{blue}{grand\ mean}$
+  * $SS_{between} = \Sigma_{1}^{k} (\color{red}{\bar{X}_j} - \color{blue}{\bar{X}})^2$
+* $SS_{error}$ = variation of $individual\ values$ around $\color{red}{group\ means}$
+  * $SS_{error} = \Sigma_{1}^{k}\Sigma_{1}^{n} (X - \color{red}{\bar{X}_j})^2$
+* $SS_{total}$ = variation of $individual\ values$ around $\color{blue}{grand\ mean}$
+  * $SS_{total} = \Sigma_{1}^N (X - \color{blue}{\bar{X}})^2$
+* $SS_{total} = SS_{between} + SS_{error}$
+
+## Test statistic 2: Mean squares
+
+Mean squares = Sum of squares divided by degrees of freedom
+
+* $MS_{between}$ = **between group variance**
+  * $MS_{between} = \frac{SS_{between}}{k - 1}$
+* $MS_{error}$ = **within group variance**
+  * $MS_{error} = \frac{SS_{error}}{N-k}$
+
+## Test statistic 3: $F$-statistic
+
+Analysis of "variance" = compare **variances**
+
+* $F$-statistic = **between group variance** / **within group variance**
+  * $F = \frac{MS_{between}}{MS_{error}}$
+* Compare to critical $F$ from a distribution of $k - 1$ and $N - k$ degrees of freedom
+  * If the observed $F$ statistic is larger, reject $H_0$
+  * Otherwise, retain $H_0$
+
+## $F$ distribution
+
+* Two different degrees of freedom values
+  * First is about the number of **groups**: $k - 1$
+  * Second is about the number of **subjects (and groups)**: $N - k$
+  
+::: {.callout-note}
+
+* Compare to $t$ distribution
+  * Just a single df value
+  * Always only comparing 2 groups
+  * $[t(df)]^2 = F(1, df)$
+  
+:::
+
+## $F$ distribution
+
+```{r}
+#| code-fold: true
+ggplot(data.frame(x = c(0, 5)), aes(x)) +
+  stat_function(fun = df, 
+                args = list(df1 = 2, df2 = 47), 
+                geom = "line",
+                linewidth = 1,
+                color = "red") +
+  stat_function(fun = df, 
+                args = list(df1 = 4, df2 = 45), 
+                geom = "line",
+                linewidth = 1,
+                 color = "blue") +
+stat_function(fun = df,
+              args = list(df1 = 9, df2 = 40),
+              geom = "line",
+              linewidth = 1,
+              color = "forestgreen") +
+  scale_x_continuous(breaks = 0:5) +
+  labs(x = "F", y = "") +
+  annotate("text", 
+           x = 3, y = 0.8, 
+           label = "F(2,47)", 
+           color = "red",
+           size = 6) +
+  annotate("text", 
+           x = 3, y = 0.6, 
+           label = "F(4,45)", 
+           color = "blue",
+           size = 6) +
+  annotate("text",
+           x = 3, y = 0.4,
+           label = "F(9,40)",
+           color = "forestgreen",
+           size = 6)
+```
+
+* 50 subjects in 3 vs 5 vs 10 groups
+
+## Example data
+
+* $N$ = 57 observations on the following 2 variables.
+  * `Group`
+    * `mAD`=Alzheimer’s disease
+    * `MCI`=mild impairment
+    * `NCI`=no impairment
+  * `Abeta`
+    * Amount of amyloid beta from the posterior cingulate cortex (pmol/g tissue)
+
+## Example data
+
+```{r}
+#| code-fold: true
+Amyloid %>% group_by(Group) %>%
+  summarize(mean = mean(Abeta),
+            variance = var(Abeta)) %>%
+  kable()
+```
+
+
+## Check assumptions: Equal variance
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+* Graphically
+
+```{r}
+#| code-fold: true
+ggplot(data = Amyloid,
+       aes(x = Group, y = Abeta)) +
+  geom_boxplot(alpha = 0.5) +
+  geom_jitter(width = 0.2)
+```
+
+:::
+
+::: {.column width="50%"}
+
+* `leveneTest()` in **car** package
+
+```{r}
+#| code-fold: true
+library(car)
+leveneTest(Abeta ~ Group, data = Amyloid)
+```
+
+* $H_0$: No differences in variances across groups
+  * NS result = equal variances
+
+:::
+
+::::
+
+## Example: ANOVA
+
+```{r}
+#| code-fold: true
+m1 <- lm(Abeta ~ Group,
+         contrasts=list(Group='contr.sum'),
+         data = Amyloid)
+anova(m1)
+```
+
+* We reject the null hypothesis that all means are equal, F(2, 54) = 5.9706, p = .0045. **At least one group mean is different from the others.**
+
+## Type I vs III sums of squares
+
+* **Type III sums of squares** are "corrected sums of squares"
+  * How ANOVA is taught, default in every software package except R
+* **Type I sums of squares** are "uncorrected sums of squares"
+  * Default in R
+* Different interpretations
+  * But not different numerically **if all groups are the same size**
+  * Type III recommended by *almost* everyone when groups are different sizes
+
+## Assumptions: Normality
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+* Graphically
+
+```{r}
+#| code-fold: true
+m1resid <- data.frame(residuals(m1))
+ggplot(data = m1resid, 
+       aes(sample = residuals.m1.)) +
+  geom_qq() +
+  geom_qq_line()
+```
+
+```{r}
+#| code-fold: true
+m1resid <- data.frame(residuals(m1))
+ggplot(data = m1resid, 
+       aes(x = residuals.m1.)) +
+  geom_histogram()
+```
+
+:::
+
+::: {.column width="50%"}
+
+* `shapiro.test()` in **stats**
+
+```{r}
+#| code-fold: true
+shapiro.test(resid(m1))
+```
+
+* $H_0$: Observations come from normally distributed population
+  * NS result = normally distributed residuals
+
+:::
+
+::::
+
+## Post hoc tests
+
+* Significant overall (omnibus) test for ANOVA means
+  * *At least one group mean* is different from the others
+  * But **which one(s)**?
+* Post hoc tests
+  * Figure out which means are different from one another
+  * But not all possible tests, only specific ones
+  
+## Post hoc tests
+
+* Conceptually, a series of $t$-tests
+  * Use standard error estimate based on **whole model** instead of standard error estimate from just the two groups
+  * Context of whole model
+    * Not just some random set of 2 group comparisons
+
+## Contrasts for post hoc tests
+
+* Many built-in contrasts for specific patterns
+  * Four common: dummy, deviation, polynomial, Helmert
+  * Also: User-specified contrasts
+* Contrasts / weights: [UCLA Statistical Consulting](https://stats.oarc.ucla.edu/r/library/r-library-contrast-coding-systems-for-categorical-variables/)
+* ANOVA table is the **same** regardless of which contrasts you use
+  * `summary()` of model will give you mean differences
+
+## Example again: ANOVA
+
+```{r}
+#| code-fold: true
+m1 <- lm(Abeta ~ Group,
+         contrasts=list(Group='contr.sum'),
+         data = Amyloid)
+anova(m1)
+```
+
+## Contrasts: Dummy / `treatment`
+
+* Compare each group to a specific group (e.g., control)
+
+&nbsp; | mAD v MCI | mAD v NCI  
+------|:------:|:------:
+mAD   | 0    | 0
+MCI   | 1    | 0
+NCI   | 0    | 1
+
+* Default reference: First
+
+## Contrasts: Dummy / `treatment`
+
+```{r}
+#| code-fold: true
+m1_trt <- lm(Abeta ~ Group,
+         contrasts=list(Group='contr.treatment'),
+         data = Amyloid)
+#anova(m1_trt)
+summary(m1_trt)
+```
+
+## Contrasts: Deviation / `sum`
+
+* Compare each group (except one) to *unweighted* grand mean
+  * $(\bar{X}_1 + \bar{X}_2 + \bar{X}_3)/3$
+
+&nbsp; | mAD v GM | MCI v GM 
+------|:------:|:------:
+mAD   | 1    | 0     
+MCI   | 0    | 1     
+NCI   | -1   | -1    
+
+* Default left out: Last 
+
+## Contrasts: Deviation / `sum`
+
+```{r}
+#| code-fold: true
+m1_sum <- lm(Abeta ~ Group,
+         contrasts=list(Group='contr.sum'),
+         data = Amyloid)
+#anova(m1_sum)
+summary(m1_sum)
+```
+
+## Contrasts: Polynomial / `poly`
+
+* Linear, quadatric, etc. effects (orthogonal)
+
+&nbsp; | Linear | Quadratic  
+------|:------:|:------:
+mAD   | -1   | 1
+MCI   | 0    | -2
+NCI   | 1    | 1
+
+* Only useful with ordered levels (none, low, high)
+
+## Contrasts: Polynomial / `poly`
+
+```{r}
+#| code-fold: true
+m1_poly <- lm(Abeta ~ Group,
+              contrasts=list(Group='contr.poly'),
+              data = Amyloid)
+#anova(m1_poly)
+summary(m1_poly)
+```
+
+## Contrasts: Helmert / `helmert`
+
+* Compare 1st to mean of 2 to k, 2nd to mean of 3 to k, etc.
+
+&nbsp; | mAD v MCI | mAD v NCI  
+------|:------:|:------:
+mAD   | 2/3   | 0
+MCI   | -1/3  | 1/2
+NCI   | -1/3  | -1/2
+
+## Contrasts: Helmert / `helmert`
+
+```{r}
+#| code-fold: true
+m1_helm <- lm(Abeta ~ Group,
+              contrasts=list(Group='contr.helmert'),
+              data = Amyloid)
+#anova(m1_helm)
+summary(m1_helm)
+```
+
+## Mean comparisons
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+#| code-fold: true
+ggplot(data = Amyloid,
+       aes(x = Group, 
+           y = Abeta, 
+           color = Group)) +
+  geom_jitter(width = 0.2) +
+  geom_point(data = means, 
+             aes(x = Group, 
+                 y = meanAbeta, 
+                 color = Group,
+                 size = 10)) +
+  geom_hline(yintercept = sum(means$meanAbeta)/3, 
+             linetype = "dashed") +
+  theme(legend.position="none")
+```
+
+:::
+
+::: {.column width="50%"}
+
+* Dummy: mAD v MCI, mAD v NCI
+* Sum: mAD v GM, **not** MCI v GM
+* Poly: Linear, **not** quadratic
+* Helmert: 1 v 2&3, **not** 2 v 3
+
+:::
+
+::::
+
+## Should you correct for that?
+
+* Arguments for YES
+  * You're doing multiple tests
+  * Inflated type I error rate
+* Arguments for NO
+  * Significant overall ANOVA means "there is a difference"
+  * Specific, theoretically-based comparisons
+* If you do correct, use methods we've already talked about
+
+
+## Welch ANOVA
+
+* Accounts for unequal variances across groups: Heterogeneity
+* `oneway.test()` in **stats** package
+
+
+```{r}
+oneway.test(Abeta ~ Group, data = Amyloid, var.equal = FALSE)
+```
+
+## Kruskal Wallis
+
+* Non-parametric version of ANOVA
+* `kruskal.test()` in **stats** package
+
+```{r}
+kruskal.test(Abeta ~ Group, data = Amyloid)
+```
+
+
+# In-class activities
+
+## In-class activities
+
+* Conduct an ANOVA
+* Do some post hoc tests
+* Compare some means
+
+## Next week
+
+* Last week of lecture! Woo!
+* Factorial ANOVA
+  * Multiple grouping variables
+    * Condition **and** sex
+    * Medication 1 dose **and** medication 2 dose
+* Within-subjects ANOVA
+  * Extension of paired $t$-test

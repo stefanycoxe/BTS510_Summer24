@@ -27,7 +27,7 @@ website:
           - materials/09-mats.qmd  
           - materials/10-mats.qmd  
           - materials/11-mats.qmd   
-          #- materials/12-mats.qmd 
+          - materials/12-mats.qmd 
           #- materials/13-mats.qmd 
       - section: "Complete labs"
         contents: 
@@ -46,7 +46,7 @@ website:
           - assignments/hw2.qmd
           - assignments/hw3.qmd  
           - assignments/hw4.qmd            
-          #- assignments/hw5.qmd
+          - assignments/hw5.qmd
           - assignments/final.qmd  
       - refs.qmd 
           

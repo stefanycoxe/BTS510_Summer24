@@ -1,0 +1,24 @@
+---
+title: "Week 12: Analysis of Variance"
+---
+
+## Learning objectives
+
+* *Describe* the logic of ANOVA
+* *Conduct* and *interpret* the overall ANOVA test
+* *Conduct* post hoc tests
+
+## Before class: Lecture 
+
+* [Lecture 12](https://youtu.be/Vxk-eQGZsYs){target="_blank"} 
+* [Lecture survey](https://forms.gle/jzvHUp6gxzGCkQVN8){target="_blank"}: Complete by Wednesday, July 31 at 8pm
+* [Slides (html)](../slides/BTS510-24-12.qmd){target="_blank"}
+    
+## During class: Lab
+
+* [Lab 12 (html with link to code)](../lab/BTS510-24-lab12.qmd){target="_blank"}
+
+## After class: Assignment
+
+* [Homework 5](../assignments/hw5.qmd){target="_blank"}
+ 

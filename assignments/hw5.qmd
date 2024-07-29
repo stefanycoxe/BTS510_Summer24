@@ -8,5 +8,47 @@ title: "Homework 5"
 
 * Complete the assignment in a Quarto (.qmd) document and render it to HTML and PDF. Email all 3 files (.qmd, .html, .pdf) to Stefany, Yujie, and Michael. **Be sure to look at your output files and check that they've rendered correctly.** 
 
-## I'm not ready. Check back later.
+## Data
+
+`birthwt` (N = 189) from the **MASS** package
+
+* `low`: indicator of birth weight less than 2.5 kg.
+* `age`: mother’s age in years.
+* `lwt`: mother’s weight in pounds at last menstrual period.
+* `race`: mother’s race (1 = white, 2 = black, 3 = other).
+* `smoke`: smoking status during pregnancy.
+* `ptl`: number of previous premature labours.
+* `ht`: history of hypertension.
+* `ui`: presence of uterine irritability.
+* `ftv`: number of physician visits during the first trimester.
+* `bwt`: birth weight in grams.
+
+### Data manipulation
+
+* Before you start:
+    * Convert `race` from an integer to a factor using `as.factor()`
+    
+## Analysis
+
+**Research question**: Are there race differences in child birth weight?
+
+* Conduct the *omnibus ANOVA test*
+    * Are assumptions (equal variance, normality) met? Report relevant results, including statistical tests, plots, and conclusions
+    * Report omnibus test results. Be sure to include all the relevant pieces, including test statistic, $p$-value, decision re: null hypothesis, and conclusion
+* Use *dummy* or *treatment* coding to conduct post hoc tests
+    * Note which `race` group is first -- this will be the reference group
+    * Use the results of these tests to report
+        * Group means
+        * Group mean differences
+        * Which group means are significantly different from one another (this won't be exhaustive, just the comparisons you tested)
+        * Be sure to report the $t$ test results for the contrasts, just as we've reported $t$ tests before
+            * Note that the df isn't provided, but it's 1
+
+## Conclusions
+
+In plain language:
+
+1. Are there race differences in child birth weight?
+2. Which races are different? 
+
 
