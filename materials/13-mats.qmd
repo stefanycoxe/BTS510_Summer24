@@ -1,0 +1,25 @@
+---
+title: "Week 13: Analysis of Variance"
+---
+
+## Learning objectives
+
+* *Describe* the logic of factorial ANOVA
+  * Including main effects and interactions
+* *Conduct* and *interpret* the factorial ANOVA tests
+* *Conduct* post hoc tests for the factorial ANOVA
+
+## Before class: Lecture 
+
+* [Lecture 13](https://youtu.be/6Ti7kmbKNfs){target="_blank"} 
+* [Lecture survey](https://forms.gle/25ukP7pq7ndDvY2Z6){target="_blank"}: Complete by Wednesday, August 7 at 8pm
+* [Slides (html)](../slides/BTS510-24-13.qmd){target="_blank"}
+    
+## During class: Lab
+
+* [Lab 13 (html with link to code)](../lab/BTS510-24-lab13.qmd){target="_blank"}
+
+## After class: Assignment
+
+* **No homework this week**
+ 

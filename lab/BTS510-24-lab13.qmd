@@ -1,0 +1,466 @@
+---
+title: "BTS 510 Lab 13"
+format:
+  html:
+    embed-resources: true
+    self-contained-math: true
+    html-math-method: katex
+    number-sections: true
+    toc: true
+    code-tools: true
+    code-block-bg: true
+    code-block-border-left: "#31BAE9"
+---
+
+```{r}
+#| label: setup
+library(tidyverse)
+library(kableExtra)
+set.seed(12345)
+theme_set(theme_classic(base_size = 16))
+```
+
+## Learning objectives
+
+* *Describe* the logic of factorial ANOVA
+  * Including main effects and interactions
+* *Conduct* and *interpret* the factorial ANOVA tests
+* *Conduct* post hoc tests for the factorial ANOVA
+
+## Data
+
+* `birthwt` dataset in the **MASS** package
+  * `race`: mother’s race (1 = white, 2 = black, 3 = other).
+  * `smoke`: smoking status during pregnancy.
+  * `bwt`: birth weight in grams
+* Convert both `race` and `smoke` to factor variables using `mutate()` and `as.factor()`
+
+```{r}
+library(MASS)
+data(birthwt)
+birthwt <- birthwt %>%
+  mutate(race = as.factor(race),
+         smoke = as.factor(smoke))
+head(birthwt)
+```
+
+### Research question
+
+* How are mother's race and mother's smoking status related to the birth weight of a baby?
+
+### Means
+
+* Means by `race` and `smoke`
+
+```{r}
+bwt_sum <- birthwt %>% 
+  group_by(race, smoke) %>%
+  summarize(nbwt = length(bwt),
+            meanbwt = mean(bwt),
+            sdbwt = sd(bwt))
+kable(bwt_sum)  
+```
+
+* Plot of means
+
+```{r}
+ggplot(data = bwt_sum, 
+       aes(x = race, 
+           y = meanbwt, 
+           group = smoke,
+           color = smoke)) +
+  geom_point() +
+  geom_path(aes(group = smoke)) +
+  geom_errorbar(aes(ymin = meanbwt - 1.96*sdbwt/sqrt(nbwt), 
+                    ymax = meanbwt + 1.96*sdbwt/sqrt(nbwt)), 
+                width = 0.2) +
+  labs(x = "Race", 
+       y = "Birth weight (g)") +
+  scale_x_discrete(labels=c("1" = "White", 
+                            "2" = "Black",
+                            "3" = "Other")) +
+  scale_color_discrete(name = "Smoker", 
+                       labels = c("No", "Yes")) +
+  geom_hline(yintercept = 2500, linetype = "dashed")
+```
+
+## ANOVA
+
+### Assumptions: Equal variance
+
+* Do all the groups (6 groups defined by `race` and `smoke`) have **equal variance** on the outcome variable (`bwt`)?
+
+#### Graphically
+
+```{r}
+#| code-fold: true
+ggplot(data = birthwt,
+       aes(x = race, 
+           y = bwt, 
+           group = interaction(race, smoke))) +
+  geom_boxplot(alpha = 0.5) +
+  geom_jitter(width = 0.2, aes(color = smoke)) +
+  geom_hline(yintercept = 2500, linetype = "dashed")
+```
+
+#### Levene's Test
+
+* `leveneTest()` in **car** package
+  * $H_0$: No differences in variances across groups
+  * NS result = equal variances
+
+```{r}
+#| code-fold: true
+library(car)
+leveneTest(bwt ~ race:smoke, data = birthwt)
+```
+
+* The assumption of equal variances is met
+
+### ANOVA
+
+* **Step 1**: `lm()` function for **linear model** 
+  * `outcome ~ predictors` format
+  * Effects of `race`, `smoke`, and interaction (`race*smoke`)
+  * Contrasts: Sum (`contr.sum`) in `list()` function to allow one for each factor
+* **Step 2**: `Anova()` function in **car** package
+  * Provide model (`m1` on last slide)
+  * `type = 3` for correct type III sums of squares
+
+```{r}
+m1 <- lm(bwt ~ race + smoke + race*smoke,
+         contrasts=list(race = contr.sum, 
+                        smoke = contr.sum),
+         data = birthwt)
+
+library(car)
+Anova(m1, type = 3)
+```
+
+### Overall conclusions
+
+* We **reject** the null hypothesis that all `race` means are equal, F(2, 183) = 6.18, p = .0025. **At least one `race` group mean is different from the others.**
+* We **reject** the null hypothesis that all `smoke` means are equal, F(1, 183) = 7.15, p = .0082. **At least one `smoke` group mean is different from the others.**
+* We **retain** the null hypothesis that there is **not** an interaction, F(2, 183) = 2.25, p = .1085. **There is no interaction of `race` and `smoke`.**
+  * The effect of `race` doesn't depend on `smoke`
+  * The effect of `smoke` doesn't depend on `race`
+
+### Assumptions: Normality
+
+#### Graphically
+
+```{r}
+#| code-fold: true
+m1resid <- data.frame(residuals(m1))
+ggplot(data = m1resid, 
+       aes(sample = residuals.m1.)) +
+  geom_qq() +
+  geom_qq_line()
+```
+
+```{r}
+#| code-fold: true
+m1resid <- data.frame(residuals(m1))
+ggplot(data = m1resid, 
+       aes(x = residuals.m1.)) +
+  geom_histogram()
+```
+
+#### Shapiro-Wilk Test
+
+* `shapiro.test()` in **stats**
+  * $H_0$: Observations come from normally distributed population
+  * NS result = normally distributed residuals
+
+```{r}
+#| code-fold: true
+shapiro.test(resid(m1))
+```
+
+### Post hoc tests
+
+* `emmeans()` function in **emmeans** package
+  * Provide model name (`m1`)
+  * Type of contrast (`spec = trt.vs.ctrl` for 1st group as reference)
+    * Other options: `pairwise`, `trt.vs.ctrlk` (last group as reference)
+  * Factor you want contrasts for: here, only `race`
+  * Adjustment for multiple comparisons: here, `"none"`
+    * Other options: `tukey`, `bonf`, `fdr`
+* Note that these are not the **raw means**
+  * **Estimated marginal means** (emmeans): Model based
+
+```{r}
+library(emmeans)
+emmeans(m1, spec = trt.vs.ctrl ~ race, adjust = "none")
+```
+
+* What if we used a Bonferroni correction?
+
+```{r}
+emmeans(m1, spec = trt.vs.ctrl ~ race, adjust = "bonf")
+```
+
+* What about using false discovery rate (FDR)?
+
+```{r}
+emmeans(m1, spec = trt.vs.ctrl ~ race, adjust = "fdr")
+```
+
+* What if we wanted all possible pairwise comparisons?
+
+```{r}
+emmeans(m1, spec = pairwise ~ race, adjust = "none")
+```
+
+* What if we wanted all possible pairwise comparisons and also wanted to include `smoke` in this?
+
+```{r}
+emmeans(m1, spec = pairwise ~ race*smoke, adjust = "none")
+```
+
+* Wow, let's throw a Bonferroni correction on that one...
+
+```{r}
+emmeans(m1, spec = pairwise ~ race*smoke, adjust = "bonf")
+```
+
+* What if we wanted to use the last group ("other") as the reference?
+
+```{r}
+emmeans(m1, spec = trt.vs.ctrlk ~ race, adjust = "none")
+```
+
+* Just for fun, let's look at the `smoke` contrast, even though we don't need to because there are only 2 levels
+  * Remember that squaring the $t$ statistic here will give you the $F$ statistic from the ANOVA table
+
+```{r}
+emmeans(m1, spec = pairwise ~ smoke, adjust = "none")
+```
+
+## How to do ANOVA wrong
+
+* There are a LOT of ways to do the ANOVA wrong
+  * The most obvious one is to use the `anova()` function
+  * This gives type I sums of squares instead of the correct type III
+
+```{r}
+anova(m1)
+```
+
+* Compare to correct type II SSs
+
+```{r}
+library(car)
+Anova(m1, type = 3)
+```
+
+* What's the same?
+  * Degrees of freedom
+  * Residual SS: That's what's left over after everything else
+  * Sums of squares, etc. for interaction: More on that in a second
+* What's different?
+  * Everything else
+
+### Why are they different?
+
+* Type I SS *partials out* or holds constant **all effects entered before this effect**
+  * **Order you enter effects matters**
+  * Effect of race is partialling **nothing**
+  * Effect of smoke is partialling **race only**
+  * Effect of interaction is partialling **both race and smoke**
+* Type III SS *partials out* or holds constant **all other effects**
+  * **Order you enter effects doesn't matter**
+  * Effect of race is partialling **both smoke and the interaction**
+  * Effect of smoke is partialling **both race and the interaction**
+  * Effect of interaction is partialling **both race and smoke**
+
+### Change the predictor order
+
+* Change the order of predictors: `smoke` then `race` then interaction
+
+```{r}
+m2 <- lm(bwt ~ smoke + race + race*smoke,
+         contrasts=list(race = contr.sum, 
+                        smoke = contr.sum),
+         data = birthwt)
+```
+
+
+* Type I (wrong) model
+  * **Different results from original predictor order (`m1`)**
+
+```{r}
+anova(m2)
+```
+
+* Type III (correct) model
+  * **Same results as original predictor order (`m1`)**
+  * (Note different order of predictors)
+
+```{r}
+library(car)
+Anova(m2, type = 3)
+```
+
+## How would I actually run this?
+
+* Research question: How are mother's race and mother's smoking status related to the birth weight of a baby?
+  * I rarely use an actual ANOVA
+  * Linear regression (for continuous outcomes) is more flexible
+
+### Recode grouping variables
+
+* We already recoded the group variables into factors, but I'm going to explicitly create **dummy codes** (also called "indicator variables") for them
+  * Each dummy code has a value of 1 for the group it's about
+  * e.g., `white` dummy code has a 1 when `race` = 1 and a 0 otherwise
+  * e.g., `black` dummy code has a 1 when `race` = 2 and a 0 otherwise
+  * e.g., `other` dummy code has a 1 when `race` = 3 and a 0 otherwise
+  * I use `mutate()` with `ifelse()` to create these
+    * `ifelse()` has 3 arguments:
+      * Logical argument (e.g., `race == 1`)
+      * What to do if the logical argument is true 
+      * What to do otherwise
+    * For the new variable `white`:
+      * If `race` = 1, then `white` = 1
+      * Otherwise, `white` = 0
+  * Note that I'm naming each variable after its **group**
+  
+```{r}
+birthwt <- birthwt %>%
+  mutate(white = ifelse(race == 1, 1, 0),
+         black = ifelse(race == 2, 1, 0),
+         other = ifelse(race == 3, 1, 0))
+kable(head(birthwt))
+```
+
+* `smoke` is already coded 0 and 1, but I'll do the same there
+  * I'm calling this variable `smoker`: a value of 1 means they're a smoker
+
+```{r}
+birthwt <- birthwt %>%
+  mutate(smoker = ifelse(smoke == 1, 1, 0))
+kable(head(birthwt))
+```
+
+### Use dummy codes as predictors
+
+* You already know everyone's group from any 2 of the 3 dummy codes
+  * In general, for $a$ groups, you use $a - 1$ of the variables
+  * If you tried to use all three variables, you'd get an error because you have redundant information
+    * It's like if you used weight in pounds and weight in kg in the same model
+* The dummy code you leave out is the **reference group**
+  * Use `black` and `other`: "White" is the reference group
+  * Use `white` and `other`: "Black" is the reference group
+  * Use `white` and `black`: "Other" is the reference group
+  * *You get to just pick your reference group*
+
+### Reference: "white" and "nonsmoker"
+
+```{r}
+m1_white <- lm(bwt ~ black + other + smoker + black*smoker + other*smoker,
+               data = birthwt)
+summary(m1_white)
+```
+
+* Intercept: Mean when all predictors = 0 (reference on both)
+  * 3428.7 = mean birth weight for white moms (`black` = 0 and `other` = 0) who don't smoke (`smoker` = 0)
+  * Significant $t$-test: This value is significantly different from 0 (which is likely not of interest, but could be)
+* `black`: Difference between black moms and white moms (`black` = 0 and `other` = 0) for nonsmokers (`smoker` = 0)
+  * -574.2 = Difference between white and black moms who don't smoke 
+    * 3428.7 - 574.2 = 2854.5 = mean birth weight for black moms who don't smoke
+    * Significant $t$-test: These two means are significantly different from one another
+* `other`: Difference between other race moms and white moms (`black` = 0 and `other` = 0) for nonsmokers (`smoker` = 0)
+  * -613.0 = Difference between white and other race moms who don't smoke 
+    * 3428.7 - 613.0 = 2815.7 = mean birth weight for other race moms who don't smoke
+    * Significant $t$-test: These two means are significantly different from one another
+* `smoker`: Difference between nonsmokers (`smoker` = 0) and smokers (`smoker` = 1) for  white moms (`black` = 0 and `other` = 0)
+  * -601.9 = Difference between white smokers and white nonsmokers
+    * From above: 3428.7 = mean birth weight for white moms (`black` = 0 and `other` = 0) who don't smoke (`smoker` = 0)
+    * 3428.7 - 601.9 = 2826.8 = mean birth weight for white smoker moms
+    * Significant $t$-test: These two means are significantly different from one another
+* `black:smoker`: *Difference in difference* between white smokers and white nonsmokers vs black smokers and black nonsmokers
+  * From above: -601.9 = Difference between white smokers and white nonsmokers 
+  * Difference between black smokers and black nonsmokers is 251.4 points *higher* than that, or -601.9 + 251.4 = -350.5
+  * Non-significant $t$-test: These two *differences* are **not** significantly different from one another
+* `other:smoker`: *Difference in difference* between white smokers and white nonsmokers vs other race smokers and other race nonsmokers
+  * From above: -601.9 = Difference between white smokers and white nonsmokers 
+  * Difference between other race smokers and other race nonsmokers is 543.3 points *higher* than that, or -601.9 + 543.3 = -58.6
+  * Significant $t$-test: These two *differences* are significantly different from one another
+
+#### Intercept and main effects
+
+```{r}
+library(grid)
+ggplot(data = bwt_sum, 
+       aes(x = race, 
+           y = meanbwt, 
+           group = smoke,
+           color = smoke)) +
+  geom_point(size = 8) +
+  labs(x = "Race", 
+       y = "Birth weight (g)") +
+  scale_x_discrete(labels=c("1" = "White", 
+                            "2" = "Black",
+                            "3" = "Other")) +
+  scale_color_discrete(name = "Smoker", 
+                       labels = c("No", "Yes")) +
+  annotate("text", x = 1, y = 3500, label = "3428.7 *") +
+  annotate("segment", x = 1, xend = 2, y = 3428, yend = 2854,
+           arrow = arrow(ends = "both", angle = 90, length = unit(.2,"cm"))) +
+  annotate("text", x = 1.5, y = 3125, label = "-574.2 *") +
+  annotate("segment", x = 1, xend = 3, y = 3428, yend = 2815,
+           arrow = arrow(ends = "both", angle = 90, length = unit(.2,"cm"))) +
+  annotate("text", x = 2.5, y = 3125, label = "-613.0 *") +
+  annotate("segment", x = 1, xend = 1, y = 2826, yend = 3428,
+           arrow = arrow(ends = "both", angle = 90, length = unit(.2,"cm"))) +
+  annotate("text", x = .8, y = 3125, label = "-601.9 *")
+```
+
+#### Interaction effects
+
+```{r}
+library(grid)
+ggplot(data = bwt_sum, 
+       aes(x = race, 
+           y = meanbwt, 
+           group = smoke,
+           color = smoke)) +
+  geom_point(size = 8) +
+  labs(x = "Race", 
+       y = "Birth weight (g)") +
+  scale_x_discrete(labels=c("1" = "White", 
+                            "2" = "Black",
+                            "3" = "Other")) +
+  scale_color_discrete(name = "Smoker", 
+                       labels = c("No", "Yes")) +
+  annotate("segment", x = 1, xend = 1, y = 2826, yend = 3428,
+           arrow = arrow(ends = "both", angle = 90, length = unit(.2,"cm"))) +
+  annotate("text", x = .8, y = 3125, label = "-601.9 *") +
+  
+  annotate("segment", x = 2, xend = 2, y = 2854, yend = 2504,
+           arrow = arrow(ends = "both", angle = 90, length = unit(.2,"cm"))) +
+  annotate("text", x = 2, y = 3000, label = "-350.5 = -601.9 + 251.4") +
+  
+  annotate("segment", x = 3, xend = 3, y = 2815, yend = 2757,
+           arrow = arrow(ends = "both", angle = 90, length = unit(.2,"cm"))) +
+  annotate("text", x = 3, y = 2900, label = "-58.6 = -601.9 + 543.3") +
+  
+  annotate("segment", x = 1, xend = 1.95, y = 3500, yend = 3500,
+           arrow = arrow(ends = "both", angle = 90, length = unit(.2,"cm"))) +
+  annotate("text", x = 1.5, y = 3450, label = "251.4 NS") +
+  
+  annotate("segment", x = 2.05, xend = 3, y = 3500, yend = 3500,
+           arrow = arrow(ends = "both", angle = 90, length = unit(.2,"cm"))) +
+  annotate("text", x = 2.5, y = 3450, label = "543.3 *")
+```
+
+### Reference: "black" and "nonsmoker"
+
+```{r}
+m1_black <- lm(bwt ~ white + other + smoker + white*smoker + other*smoker,
+               data = birthwt)
+summary(m1_black)
+```
+
+* Which means do each of the effects (coefficients) refer to?
+  * Use the table of raw means as guide

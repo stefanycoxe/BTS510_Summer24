@@ -1,0 +1,579 @@
+---
+title: "Introduction to Biostatistics"
+format:
+  # html: 
+  #   toc: true
+  #   toc-location: left
+  #   slide-level: 3
+  #   number-sections: true
+  #   toc-depth: 2
+  #   self-contained: true
+  #   #output-file: "Mult22-1-handout"
+  # pdf: 
+  #   toc: true
+  #   number-sections: true
+  #   #slide-level: 3
+  #   toc-depth: 2
+  #   shift-heading-level-by: 0
+  #   number-offset: [2]
+  revealjs:
+    toc: false
+    number-sections: true
+    #slide-level: 3
+    scrollable: true
+    embed-resources: true
+    slide-number: true
+    width: 1200
+knitr: 
+  opts_chunk:
+    echo: true
+    message: false
+    warning: false
+---
+
+```{r, include = FALSE, echo = FALSE, wanring = FALSE, message= FALSE}
+library(tidyverse)
+library(grid)
+library(xtable)
+library(kableExtra)
+theme_set(theme_classic(base_size = 16))
+set.seed(12345)
+options(scipen= 100)
+```
+
+# Learning objectives
+
+## Learning objectives
+
+* *Describe* the logic of factorial ANOVA
+  * Including main effects and interactions
+* *Conduct* and *interpret* the factorial ANOVA tests
+* *Conduct* post hoc tests for the factorial ANOVA
+
+# Review
+
+## One-way ANOVA
+
+* a.k.a. one factor ANOVA, between-subjects ANOVA
+* One *factor* (grouping variable) with *independent* groups
+  * The **"between-subjects"** factor
+* One continuous outcome
+* Group differences on the outcome
+  * Partitioned variance: Between and within (error)
+  * **Ratio** of between-group variance to within-group variance
+
+## Post hoc tests
+
+* One-way ANOVA has 3 or more groups
+  * Omnibus test: Is at least one mean different?
+  * Post hoc tests to determine **which**
+  * Contrasts: Dummy (treatment), sum (grand mean), polynomial
+
+# Factorial ANOVA
+
+## Factorial ANOVA
+
+* Many names
+  * Factorial (not specifying *how many factors*)
+  * Two-way between-subjects ANOVA
+  * Two-factor between-subjects ANOVA
+  * $2 \times 3$ between-subjects ANOVA
+  
+## Partitioned variance
+
+* Multiple factors = more partitioning
+* With 2 factors (and their **interaction**)
+  * Between-group variance for *factor A*
+  * Between-group variance for *factor B*
+  * Between-group variance for the *interaction*
+  * *Residual* (within-group) variance
+  
+## Interactions
+
+* Is the effect of factor A the same *at all levels of factor B*?
+  * Likewise, is the effect of factor B the same *at all levels of factor A*?
+* **If not, you have an interaction**
+  * *Conditional* effects
+  * Is there an effect of factor A? 
+    * It **depends** on the level of factor B
+
+## Example: Group, Sex, No interaction
+
+```{r}
+#| code-fold: true
+Group <- c("Control", "Treatment", "Control", "Treatment")
+Sex <- c("Female", "Female", "Male", "Male")
+Y1 <- c(5, 10, 10, 15)
+int1 <- data.frame(Group, Sex, Y1)
+ggplot(data = int1, 
+       aes(x = Group, 
+           y = Y1, 
+           group = Sex,
+           color = Sex)) +
+  geom_point() +
+  geom_path(aes(group = Sex)) +
+  ylim(0,20)
+```
+
+## Example: Group, No Sex, No interaction
+
+```{r}
+#| code-fold: true
+Y2 <- c(5, 10, 5.5, 10.5)
+int2 <- data.frame(Group, Sex, Y2)
+ggplot(data = int2, 
+       aes(x = Group, 
+           y = Y2, 
+           group = Sex,
+           color = Sex)) +
+  geom_point() +
+  geom_path(aes(group = Sex)) +
+  ylim(0,20)
+```
+
+## Example: No Group, Sex, No interaction
+
+```{r}
+#| code-fold: true
+Y3 <- c(5, 5, 10, 10)
+int3 <- data.frame(Group, Sex, Y3)
+ggplot(data = int3, 
+       aes(x = Group, 
+           y = Y3, 
+           group = Sex,
+           color = Sex)) +
+  geom_point() +
+  geom_path(aes(group = Sex)) +
+  ylim(0,20)
+```
+
+## Example: Group, Sex, interaction (!!!)
+
+```{r}
+#| code-fold: true
+Y4 <- c(5, 5, 10, 20)
+int4 <- data.frame(Group, Sex, Y4)
+ggplot(data = int4, 
+       aes(x = Group, 
+           y = Y4, 
+           group = Sex,
+           color = Sex)) +
+  geom_point() +
+  geom_path(aes(group = Sex)) +
+  ylim(0,20)
+```
+  
+## Which means for which effects?
+
+* **Main effect** of factor A
+  * Means for factor A, *ignoring factor B*
+* **Main effect** of factor B
+  * Means for factor B, *ignoring factor A*
+* Effect of interaction
+  * Means of all combinations (means in plots)
+* Parallels to contingency tables: **marginal values (factors)** and **joint values (interaction)**
+
+## Assumptions
+
+* **Two** *categorical* (grouping) variables with 2+ categories
+* One *continuous* (i.e., interval or ratio) outcome variable
+* Data are *randomly sampled* from the population
+* Data are *independent* (within and across groups)
+* Data are approximately *normally distributed* OR *sample size is large enough* for normally distributed sampling distribution
+  * Residuals from model are **normally distributed**
+* Population *variance* is unknown and *same in all groups*
+
+## Hypotheses
+
+* Factor A
+  * $H_0$: All (marginal) means for factor A are equal 
+* Factor B
+  * $H_0$: All (marginal) means for factor B are equal 
+* Interaction
+  * $H_0$: No interaction is present
+
+## ANOVA summary table
+
+Source of variation | Sums of squares (SS) | df | Mean squares (MS) | F
+------|---------|------|------|------
+BetweenA | $SS_{A}$ | $k_A - 1$ | $MS_{A}$ | $F_A$
+BetweenB | $SS_{B}$ | $k_B - 1$ | $MS_{B}$ | $F_B$
+Interaction | $SS_{AxB}$ | $(k_A - 1)(k_B - 1)$ | $MS_{AxB}$ | $F_{AxB}$
+Error | $SS_{error}$ | $N - k_A k_B$ | $MS_{error}$
+Total | $SS_{total}$ | $N - 1$
+
+* $k_A$ and $k_B$ = number of groups for each factor
+* $N$ = total number of participants (observations)
+
+## Test statistic: $F$-statistic
+
+* $F$ statistic for **each effect**
+  * $F_A = \frac{MS_{A}}{MS_{error}}$
+  * $F_B = \frac{MS_{B}}{MS_{error}}$
+  * $F_{AxB} = \frac{MS_{AxB}}{MS_{error}}$
+* Compare to critical $F$ from a distribution with **appropriate** degrees of freedom **for the effect**
+  * If the observed $F$ statistic is larger, reject $H_0$
+  * Otherwise, retain $H_0$
+
+## Example data
+
+* `birthwt` dataset in the **MASS** package
+  * `race`: mother’s race (1 = white, 2 = black, 3 = other).
+  * `smoke`: smoking status during pregnancy.
+  * `bwt`: birth weight in grams
+  
+```{r}
+#| code-fold: true
+library(MASS)
+data(birthwt)
+birthwt <- birthwt %>%
+  mutate(race = as.factor(race),
+         smoke = as.factor(smoke))
+head(birthwt)
+```
+
+## `race` and `smoke`
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+```{r}
+table(birthwt$race)
+table(birthwt$smoke)
+```
+
+:::
+
+::: {.column width="50%"}
+
+```{r}
+table(birthwt$race, birthwt$smoke)
+
+```
+
+:::
+
+::::
+
+## Means and SDs of `bwt`
+
+```{r}
+#| code-fold: true
+bwt_sum <- birthwt %>% 
+  group_by(race, smoke) %>%
+  summarize(nbwt = length(bwt),
+            meanbwt = mean(bwt),
+            sdbwt = sd(bwt))
+kable(bwt_sum)  
+```
+
+## Means $\pm$ 1.96 standard error
+
+```{r}
+#| code-fold: true
+ggplot(data = bwt_sum, 
+       aes(x = race, 
+           y = meanbwt, 
+           group = smoke,
+           color = smoke)) +
+  geom_point() +
+  geom_path(aes(group = smoke)) +
+  geom_errorbar(aes(ymin = meanbwt - 1.96*sdbwt/sqrt(nbwt), 
+                    ymax = meanbwt + 1.96*sdbwt/sqrt(nbwt)), 
+                width = 0.2) +
+  labs(x = "Race", 
+       y = "Birth weight (g)") +
+  scale_x_discrete(labels=c("1" = "White", 
+                            "2" = "Black",
+                            "3" = "Other")) +
+  scale_color_discrete(name = "Smoker", 
+                       labels = c("No", "Yes")) +
+  geom_hline(yintercept = 2500, linetype = "dashed")
+```
+
+## Check assumptions: Equal variance
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+* Graphically
+
+```{r}
+#| code-fold: true
+ggplot(data = birthwt,
+       aes(x = race, 
+           y = bwt, 
+           group = interaction(race, smoke))) +
+  geom_boxplot(alpha = 0.5) +
+  geom_jitter(width = 0.2, aes(color = smoke)) +
+  geom_hline(yintercept = 2500, linetype = "dashed")
+```
+
+:::
+
+::: {.column width="50%"}
+
+* `leveneTest()` in **car** package
+
+```{r}
+#| code-fold: true
+library(car)
+leveneTest(bwt ~ race:smoke, data = birthwt)
+```
+
+* $H_0$: No differences in variances across groups
+  * NS result = equal variances
+
+:::
+
+::::
+
+## Example: ANOVA 1
+
+```{r}
+m1 <- lm(bwt ~ race + smoke + race*smoke,
+         contrasts=list(race = contr.sum, 
+                        smoke = contr.sum),
+         data = birthwt)
+```
+
+* `lm()` function for **linear model**
+  * `outcome ~ predictors` format
+  * Effects of `race`, `smoke`, and interaction (`race*smoke`)
+  * Contrasts: Sum (`contr.sum`) in `list()` function to allow one for each factor
+
+## Example: ANOVA 2
+
+* `Anova()` function in **car** package
+  * Provide model (`m1` on last slide)
+  * `type = 3` for correct type III sums of squares
+
+```{r}
+library(car)
+Anova(m1, type = 3)
+```
+
+## Example: ANOVA 3
+
+* We **reject** the null hypothesis that all `race` means are equal, F(2, 183) = 6.18, p = .0025. **At least one `race` group mean is different from the others.**
+
+* We **reject** the null hypothesis that all `smoke` means are equal, F(1, 183) = 7.15, p = .0082. **At least one `smoke` group mean is different from the others.**
+
+* We **retain** the null hypothesis that there is **not** an interaction, F(2, 183) = 2.25, p = .1085. **There is no interaction of `race` and `smoke`.**
+  * The effect of `race` doesn't depend on `smoke` and vice versa
+
+## Assumptions: Normality
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+* Graphically
+
+```{r}
+#| code-fold: true
+m1resid <- data.frame(residuals(m1))
+ggplot(data = m1resid, 
+       aes(sample = residuals.m1.)) +
+  geom_qq() +
+  geom_qq_line()
+```
+
+```{r}
+#| code-fold: true
+m1resid <- data.frame(residuals(m1))
+ggplot(data = m1resid, 
+       aes(x = residuals.m1.)) +
+  geom_histogram()
+```
+
+:::
+
+::: {.column width="50%"}
+
+* `shapiro.test()` in **stats**
+
+```{r}
+#| code-fold: true
+shapiro.test(resid(m1))
+```
+
+* $H_0$: Observations come from normally distributed population
+  * NS result = normally distributed residuals
+
+:::
+
+::::
+
+## `race`, `smoke`, no interaction
+
+```{r}
+#| code-fold: true
+ggplot(data = bwt_sum, 
+       aes(x = race, 
+           y = meanbwt, 
+           group = smoke,
+           color = smoke)) +
+  geom_point() +
+  geom_path(aes(group = smoke)) +
+  geom_errorbar(aes(ymin = meanbwt - 1.96*sdbwt/sqrt(nbwt), 
+                    ymax = meanbwt + 1.96*sdbwt/sqrt(nbwt)), 
+                width = 0.2) +
+  labs(x = "Race", 
+       y = "Birth weight (g)") +
+  scale_x_discrete(labels=c("1" = "White", 
+                            "2" = "Black",
+                            "3" = "Other")) +
+  scale_color_discrete(name = "Smoker", 
+                       labels = c("No", "Yes"))
+```
+
+## Raw means
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+* `smoke` means
+
+```{r}
+#| code-fold: true
+birthwt %>% group_by(smoke) %>%
+  summarize(meanbwt = mean(bwt))
+
+```
+
+:::
+
+::: {.column width="50%"}
+
+* `race` means
+
+```{r}
+#| code-fold: true
+birthwt %>% group_by(race) %>%
+  summarize(meanbwt = mean(bwt))
+```
+
+:::
+
+::::
+
+
+## Main effects vs simple effects
+
+* Main effects
+  * **Main effect** of factor A, *ignoring factor B*
+    * e.g., Effect of `race`, ignoring `smoke`
+  * **Any time there's a significant main effect**
+* Simple (main) effects
+  * **Simple effect** of factor A (*at a level of factor B*)
+    * e.g., Effect of `race` **for smokers** (i.e., `smoke` = 1)
+  * **Only when you have a significant interaction**
+
+## Post hoc tests: emmeans
+
+* `emmeans()` function in **emmeans** package
+  * Provide model name (`m1`)
+  * Type of contrast (`spec = trt.vs.ctrl`)
+    * Other options: `pairwise`, `trt.vs.ctrlk` (last group = ctl)
+  * Factor for contrasts: here, only `race`
+  * Adjustment for multiple comparisons: here, `"none"`
+    * Other options: `tukey`, `bonf`, `fdr`
+
+## Post hoc tests: emmeans
+
+* Note that these are not the **raw means**
+  * **Estimated marginal means** (emmeans): Model based
+
+```{r}
+library(emmeans)
+emmeans(m1, spec = trt.vs.ctrl ~ race, adjust = "none")
+```
+
+## Caution re: causality
+
+* Often, when you design an experiment that is analyzed via ANOVA, you've **randomized** people to groups
+  * That allows for robust **causal inference**
+    * Group differences are **causing** differences in the outcome
+* People **aren't** randomized to `race` or `smoke`
+  * You **cannot** say that `race` is **causing** lower birth weight
+  * It is *related to* or *associated with* lower birth weight
+
+## Limitations
+
+* Only allows for **categorical** (grouping) predictors
+  * If you have **continuous** predictors too, move to **regression models**
+    * Linear (`lm()`), logistic, Poisson, gamma (`glm()`)
+  * Example: Mother age, mother weight
+* Using a regression approach also avoids dealing with ANOVA issues
+  * Instead of contrasts, direct control over coding of predictors
+    * Dummy codes
+
+# Within-subjects ANOVA
+
+## Within-subjects ANOVA
+
+* Also called: repeated-measures ANOVA
+* Extension of matched-pairs $t$-test to 3+ **related** groups
+  * Typically repeated measures of the same unit
+* No **between-groups** effects: **No groups**
+  * Between-**subject** variance
+  * Within-**subject** variance
+  * Error variance
+
+## Limitations of WS ANOVA
+
+* Doesn't allow for **different #s of repeated measures**
+  * Drop entire subject if even one is missing
+* Often unrealistic assumptions
+  * **Sphericity** / compound symmetry 
+  * Incorrect type I error, reduced power if not corrected
+* Like other ANOVAs, don't allow for continuous predictors
+  * Continuous **time**
+
+## Advantages of RM designs
+
+* In general, more **powerful** than between-subjects designs
+  * Each person acts as their own control
+* Can examine **change** in an individual over time
+  * Longitudinal data
+
+## More extensions: Mixed ANOVA
+
+* 1+ between-subjects factor **and** 1+ within-subjects factor
+  * Group (BS) **and** time (WS)
+* More complex, many of the same limitations of WS ANOVA
+  * Assumption of sphericity
+  * No continuous predictors
+  * No different #s of repeated measures
+
+## More extensions: Mixed models
+
+* Regression extension for repeated measures
+  * Within-subject and between-subject predictors
+  * Continuous and categorical predictors
+  * Different # of repeated observations per unit
+  * No unrealistic assumptions (i.e., sphericity)
+* More complex
+  * Need to understand regression, plus more unique complexities
+
+# In-class activities
+
+## In-class activities
+
+* Do a factorial ANOVA
+* Look at how you can do the ANOVA wrong 
+  * Type I SS (wrong) vs type III SS (correct)
+* Play around a bit more with post hoc tests
+  * Pairwise, treatment with last group as reference
+
+## Next week
+
+* Discussion of special topics
+  * 3 things that you found interesting and/or helpful about the topic
+    * From the articles in the list or others you've found
+    * Remember that you should use the listed readings and **at least 3 more** articles
+
